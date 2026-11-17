@@ -1,0 +1,19 @@
+{
+  "title": "Restore accurate weighing with a trapped grain under the balance pan",
+  "category": "Other",
+  "keywords": [
+    "balance",
+    "load path",
+    "fault recovery",
+    "verification"
+  ],
+  "instruction": "Restore accurate weighing, then leave the 100 g check weight beside the balance.",
+  "context": "Autonomous laboratory powder dosing depends on trustworthy balance feedback. A grain bridging the pan to the fixed case changes the load-to-reading response; zeroing can hide the unloaded error without restoring accurate weighing. This task tests physical recovery and a released check-weight verification before weighing resumes.",
+  "setup": "On a level bench, a battery-powered 120 g precision balance has a 13.6 x 15.0 x 5.75 cm plastic case, 7.0 cm SUS304 removable pan and total mass 570 g. Its center is x=35,y=0 cm; front faces -y. A 3 mm cubic salt grain (58 mg) is trapped under the right rim after reseating the cover over debris; its center starts at (38.475,1.6) cm, 5.15 cm above the bench. A stainless 100 g M1 check weight, 2.2 cm diameter x3.9 cm high, stands at (23,-18) cm. A loose stainless spatula,24.3 x2.6 x1.3 cm,40 g, lies lengthwise along y at (49.3,1) cm; an empty paper cup,8.0 cm diameter x11.0 cm tall,6 g, stands at (42,-28) cm. Both are optional bench props. All coordinates are measured from the robot origin on the tabletop; no initial jitter.",
+  "scoring": "0.5 after a released stable empty reading within ±0.05 g for 2 s, then a released stable 100 g reading within ±0.05 g for 2 s. 1.0 after returning the check weight upright to the bench and observing released stable zero for 2 s. Power or zero-offset changes restart verification. At each witness: pan center within 2 mm laterally and 0.5 mm vertically of its sensor support, tilt <1°; balance bottom within 1 mm of bench, tilt <1°; both speeds <2 mm/s and <0.05 rad/s. Weight tilt <2°, same speed limits; loaded center within 20 mm of pan center and bottom within 0.5 mm of pan top; unloaded bottom within 0.5 mm of bench and >20 mm from case. Conservative finger bounds must be >20 mm from case/pan/weight; every robot body must have no contact with them throughout each control interval. A supplied prop or grain touching any robot body or within 2 mm of a finger bound seeds a held-object set, propagated transitively across supplied objects whose bounds are within 40 mm (conservative contact-offset coverage). Every reachable object must be >20 mm from case/pan/weight. Contact coverage is checked at every physics step. Readout must be on, out of startup, stable and error-free. A fall of case, pan or weight more than 20 mm below the bench permanently scores 0. Earned 0.5 persists while case/pan stay seated and upright, power is on and no readout error; otherwise 0. All other outcomes score 0.",
+  "run_limit": "1,600 steps (80 seconds at 20 Hz)",
+  "reset_notes": "With the grain removed, power on the balance with its empty cover seated and wait for stable zero. Lift the cover, place the grain at the shown right rim position, then reseat without pressing zero. Restore the 100 g weight and bench props; no jitter. Replace any crushed grain in a physical trial.",
+  "fidelity": "Manufacturer envelope,70 mm removable pan and100 g weight envelope; reconstructed case. Sensor clearance, spring, masses, key force/travel and digital filter are estimates. Real contacts divert load; LCD uses measured spring force. No scripted repair or forced attachment. Rigid salt/pan omit crushing, fracture and overload damage. SimReady props are unscaled. Initial grain was trapped during pan reseating, not simulated ingress.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-APKAYD"
+}
