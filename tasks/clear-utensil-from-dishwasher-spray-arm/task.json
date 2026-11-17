@@ -1,0 +1,19 @@
+{
+  "title": "Recover a wooden spatula obstructing a dishwasher spray arm",
+  "category": "Societal relatability",
+  "keywords": [
+    "dishwasher",
+    "utensil recovery",
+    "contact",
+    "free basket"
+  ],
+  "instruction": "Restore free rotation of the dishwasher’s lower spray arm, leaving its rack fully inside and the loose wooden utensil on the counter.",
+  "context": "A utensil dropped through a dishwasher rack can stop the spray arm. Recovering the trapped handle requires working through the rack wires and appliance opening; simply returning the basket does not remove the obstruction. This is a full-size domestic countertop appliance.",
+  "setup": "Coordinates in metres: x into appliance, y left, tabletop z = 0.7475. Full-size HAVA R01 plastic/steel shell 430 × 430 × 460 mm, corresponding to 13 kg, fixed with front x = 0.330 and y = 0; cavity 340 × 350 × 320 mm. Open hinged plastic/metal door 310 × 410 × 25 mm, 1.3 kg, hinge (0.330, 0, 0.8165), extending to x = 0.020. Coated-steel rack 348 × 338 × 191 mm: 760 g frame with an ordinary rim 110 mm above its frame origin, a 187 mm tall cup rail and 4–5 mm wires and six 15 g plastic wheels (radius 17 mm, width 9 mm); free frame starts at (0.415, 0, 0.8315). Two plastic rails 350 × 10 × 19 mm at y = ±0.16441 span x = 0.350–0.700. Plastic lower arm: 310 mm span, 26–50 mm wide, 10 mm thick, 28 mm hub, 55 g; free hinge (0.525, 0, 0.8355), initially along x. NVIDIA wooden spatula 300 × 56 × 6 mm, 60 g, authored origin (0.350, 0.105, 0.9485), long axis tilted 45° upward toward the robot; gravity settles it through the rack into the arm sweep. Ceramic cup 119 × 84 × 102 mm, 200 g, upright at (0.600, −0.360, 0.7485); banana 39 × 197 × 74 mm, 130 g, at (0.400, −0.520, 0.7485). Fixed rear wood counter top 420 × 480 × 35 mm, centred x = 0.680, y = 0, top z = 0.7475, with two 45 mm square legs. All sizes unscaled, fixed layout, zero jitter. README gives wire and wheel coordinates.",
+  "scoring": "0 unless released recovery holds for 1 s: the spatula’s actual source-mesh vertices are entirely on the side counter (all y ≥ 0.235 m or all y ≤ −0.235 m), within x [−0.14, 0.86] and y [−0.60, 0.60]. Lowest point is between tabletop −4 mm and tabletop +6 mm; highest ≤ tabletop +35 mm. Speed <10 mm/s and angular speed <0.15 rad/s. All 24 sampled finger points are ≥30 mm from the utensil’s oriented source bounding box and ≥20 mm outside case box x [0.31, 0.78], y [−0.235, 0.235], z [tabletop +0.04, tabletop +0.48]. Every finger point must also be ≥20 mm outside the actual oriented rack envelope (348 × 338 × 190 mm). Rack frame x [0.190, 0.531], |y| ≤8 mm, z = 0.8315 ±4 mm, tilt and yaw ≤3°, speed <10 mm/s, angular speed <0.10 rad/s. This earns 0.5. Full 1.0 also requires rack centre x = 0.525 ±5 mm, y = 0 ±5 mm and actual 360° arm rotation under the explicit external 1 mN m clearance test, followed by 3 s continuously valid state. The test starts after 1 s qualifying home/hands-out state, removes torque after the full turn, and invalidates its witness whenever qualifying conditions fail. No elapsed-time or demonstration-phase surrogate.",
+  "run_limit": "1,800 control steps (90 seconds at 20 Hz)",
+  "reset_notes": "Reload the fixed scene; nothing is consumed. The normal gravity settling produces the photographed fault. No random seed or jitter.",
+  "fidelity": "Full-size manufacturer envelopes; reconstructed rack, wheels, arm and door, with inferred internal dimensions and moving masses. Unscaled NVIDIA props; spatula retains authored SDF shape. Rigid contacts, fixed heavy case, free wheeled basket and hinges; generic friction, no fracture/compliance/water/wash cycle. External 1 mN m arm torque is a disclosed clearance measurement after release, not wash propulsion. Scripted demo uses exact simulator poses; model does not.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-NCAQDB"
+}
