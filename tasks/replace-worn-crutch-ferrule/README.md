@@ -6,6 +6,17 @@ The full-size forearm crutch has a worn-through rubber foot. Its metal tube proj
 
 This is a fitting and retention task. It does not model a patient, certify a load rating, or demonstrate patient weight-bearing strength. The scripted demonstration must physically remove the damaged foot, fit the new foot against its sole, show it remains attached while unsupported, and leave the crutch on the bench with both grippers clear.
 
+## Response to review
+
+The previous review found Clarity and reproducibility not met, with one point. Each part of it, and what changed:
+
+1. **"No repeatable preparation method" for the worn-through ferrule, and how to reproduce its missing 12 mm bottom.** Added "Make the worn foot" under "Real-trial preparation, checks and reset": cut a new matching ferrule square 12.0 mm up from its tread with a utility knife along a masking-tape guide marked with a caliper, which removes the whole 8 mm sole and 4 mm of wall, then check 33.0 ± 0.5 mm remaining height at four points and record the mass (model: 42 g).
+2. **How to reproduce the 4 mm shaft projection.** Added a reference line 37.0 mm from the tube end; the worn foot is pushed on until its mouth is on the line, and the 4.0 ± 0.5 mm projection beyond the cut face is checked with the caliper's depth rod at four points, at preparation and at every reset.
+3. **"No removal-resistance check", and how to make the fitted worn foot's removal resistance consistent and realistic across trials.** Added a pull-off check with a cord loop bearing on the foot's collar shoulder and a peak-hold luggage scale, pulled along the axis at about 1 cm/s: three pulls, each 2.5 to 3.5 N, matching the model's calculated 3.0 N; how to correct a foot that is too tight (abrade the bore) or too loose (make a new one); and when to recheck (each session and every 10 trials) and retire it (out of range, torn, or 50 trials). The model's value is now stated with its derivation, beside the replacement's 30 N, and the README explains why a worn-through foot is modelled as looser than a new one, labelled as a modelling choice.
+4. **Reset procedure.** Added a step-by-step reset (remove and inspect, wipe dry, refit to the line, recheck the projection, restore a taped layout with measured positions, photograph against the setup image), and a matching check and retirement rule for the replacement foot (pull-off at least 20 N; retire after 20 fittings). `reset_notes` in task.json summarises it.
+
+The scene, the instruction and the scoring are unchanged, so the demonstration and Dream-1 videos from the previous submission still show this task exactly.
+
 ## Importance and sources
 
 Replacing a worn rubber foot is a specified crutch maintenance operation. South Tees Hospitals NHS Foundation Trust includes regular crutch checks and replacement of worn or split ferrules in its patient safety guidance. [South Tees: How to use elbow crutches](https://www.southtees.nhs.uk/resources/how-to-use-elbow-crutches/).
@@ -20,7 +31,63 @@ The healthy rubber foot is 45 mm high, 38 mm maximum outside diameter, 30 mm upp
 
 Two loose distractors lie outside the repair path: a 109 × 8 × 7 mm blue plastic marker, 8 g, at (0.60, -0.50, 0.7475) m; and a 148 × 27 × 26 mm slotted screwdriver, 36.47 g, at (0.65, -0.35, 0.7475) m. Positions refer to asset origins, in metres. Neither has an independent placement goal. Their physical contacts still matter when checking that the repaired assembly is released.
 
-A physical reconstruction uses an ordinary full-size 22 mm forearm crutch, its matching dry replacement rubber ferrule, a worn-through ferrule, and an ordinary bench. The synthetic crutch mesh is not manufacturer CAD. The dimensioned reconstructed foot follows its source envelope; the fitting mechanism and obtainable 22 mm size are supported by the manufacturer references below.
+A physical reconstruction uses an ordinary full-size 22 mm forearm crutch, two matching dry 22 mm push-on rubber ferrules (one is cut down to make the worn foot, one is the replacement), and an ordinary bench. The synthetic crutch mesh is not manufacturer CAD. The dimensioned reconstructed foot follows its source envelope; the fitting mechanism and obtainable 22 mm size are supported by the manufacturer references below. The next section gives the preparation, check and reset procedure for real trials.
+
+## Real-trial preparation, checks and reset
+
+All steps use ordinary tools: a 150 mm digital caliper (0.01 mm resolution) with a depth rod, a steel rule, a fine permanent marker, masking tape, a utility knife with a new blade (or a fine-tooth hacksaw in a mitre box), a 1 g kitchen scale, 120-grit abrasive cloth and a 19 mm wooden dowel, a digital hanging (luggage) scale with peak hold and 10 g resolution, 1 m of 2 mm braided cord, two spring clamps and a folded towel, and a lint-free cloth.
+
+The model's foot has a 38 mm outer collar for its bottom 22 mm and a 30 mm upper body; the worn foot's grip and the replacement's grip follow from the model parameters in "Mechanism and fidelity". Calculated from those parameters (12 sectors × 20,000 N/m × radial compression, PhysX average friction combine of rubber 0.8/0.65 and shaft 0.45/0.35, so 0.625 static and 0.50 sliding):
+
+| Foot | Bore compression | Total normal force | Force to start it sliding off | Force while sliding |
+|------|------------------|--------------------|-------------------------------|---------------------|
+| Worn foot | 0.02 mm (bore 21.96 mm on the 22.00 mm tube) | 4.8 N | 3.0 N | 2.4 N |
+| Replacement, seated | 0.2 mm (bore 21.6 mm) | 48 N | 30 N | 24 N |
+
+The physical procedure reproduces these two values, so every trial starts with the same removal resistance.
+
+**Why the worn foot is looser than a new one.** A foot that has been walked on until the tube punches through has also been compressed and flexed for that whole time; rubber under sustained strain takes a compression set and the bore wears, so the old foot grips the tube much less than a fresh one. We set its grip at one tenth of the replacement's: enough to stay on under its own 42 g weight (0.41 N) with a margin of about seven, and not so tight that it must be cut off. This is a modelling choice that we state explicitly, not a measured population value; it is fixed so that trials are repeatable, and the check below holds a physical foot to the same value.
+
+### Make the worn foot (once, then reuse)
+
+1. Take a new matching 22 mm ferrule. Weigh it (the model's healthy foot is 50 g) and measure its height with the caliper (model: 45 mm).
+2. With the caliper's depth rod, mark four points 12.0 mm up from the bottom of the tread, 90° apart. Wrap masking tape around the foot with its edge on the marks as a cutting guide.
+3. Cut square to the foot's axis along the tape edge, removing the whole 8 mm sole (and any steel washer inside it) plus 4 mm of wall. The bore is now open at the bottom.
+4. Check: the remaining height is 33.0 ± 0.5 mm at all four marks; the cut face is flat; the remaining piece weighs about 42 g (the model's worn foot; record the actual mass, a difference of a few grams from a different ferrule model is acceptable and should be reported).
+5. Mark a reference line around the tube 37.0 mm from its end, measured with the caliper's depth rod at four points 90° apart.
+
+### Set and check the worn foot's removal resistance
+
+6. Wipe the tube and the bore dry with the lint-free cloth. Push the worn foot on, mouth first, until its mouth is on the 37 mm line. The tube then projects 4.0 mm beyond the cut face; check with the depth rod at four points, 4.0 ± 0.5 mm.
+7. Lay the crutch horizontal on the bench with the foot overhanging the edge by about 10 cm, and hold the shaft with the two spring clamps over the folded towel, about 30 cm from the foot.
+8. Tie the cord in a loop around the 30 mm upper body of the foot, just above the 38 mm collar, so the loop bears on the collar's shoulder rather than squeezing the rubber. Hook the luggage scale to the cord.
+9. Zero the scale with peak hold on. Pull along the tube's axis, slowly (about 1 cm per second), until the foot slides off. Record the peak.
+10. Repeat steps 6 to 9 three times. **Accept the worn foot when all three peaks are 2.5 to 3.5 N (a scale reading of 0.26 to 0.36 kg).**
+    - Above 3.5 N: wrap the abrasive cloth around the dowel, give the bore ten turns, wipe out the dust, and test again. Repeat until it is in range.
+    - Below 2.5 N: the foot is too loose and cannot be tightened; make a new one from another ferrule.
+
+### Check the replacement foot
+
+11. Weigh and measure the replacement as in step 1. Push it fully onto the tube against its sole and check its mouth is on the 37 mm line within 2 mm. Pull it off as in steps 7 to 9 (the cord loop sits on the same collar shoulder). **Use it when the peak is at least 20 N (a reading of 2.04 kg).** The model's value is 30 N; a real ferrule that grips harder than the model is acceptable and makes the task no easier.
+12. Retire the replacement after 20 fittings or as soon as its peak falls below 20 N, and replace it with a new one checked the same way.
+
+### Starting layout
+
+13. Mark the world origin on the bench: the point midway between the two arm bases, at bench height. x is straight ahead, y is to the robot's left.
+14. With masking tape, mark the point under the tube end at x = 15.3 cm, y = -23.3 cm, and the point under the shaft axis 49.2 cm farther along it at x = 35.0 cm, y = 21.8 cm (the shaft runs 66.4° to the left of straight ahead). Lay the crutch on its side with the worn foot on the bench and the cuff and handgrip resting on their sides as in the setup image, the shaft axis over both marks within 5 mm (check with a set square standing on the bench).
+15. Stand the replacement on its sole, mouth up, with its centre at x = 35 cm, y = -5 cm.
+16. Place the blue marker with its centre at x = 60 cm, y = -50 cm and the screwdriver at x = 65 cm, y = -35 cm, oriented as in the setup image.
+
+### Reset between trials
+
+17. Remove the replacement if it was fitted (twisting while pulling helps), and recover the worn foot wherever it was left. Inspect both: discard either if it is torn or split.
+18. Wipe the tube and both bores dry. Refit the worn foot to the 37 mm line (step 6) and check the 4.0 ± 0.5 mm projection.
+19. Repeat the removal-resistance check (steps 7 to 10) at the start of each session and after every 10 trials; refit after the check. Retire the worn foot when it falls outside 2.5 to 3.5 N, or after 50 trials, whichever comes first.
+20. Restore the starting layout (steps 14 to 16) and photograph it from above to compare with the setup image.
+
+### Scoring a real trial
+
+The completion checks use the same tools: the steel rule and the 37 mm line for seating (within 2 mm), the caliper or an angle gauge for the axis, a stopwatch or a phone video for the 1.5 s unsupported hold and the 1 s released rest, and the steel rule for the 25 mm height and the 3 mm stability window. See the paragraph at the end of "Mechanism and fidelity" for the full sequence.
 
 ## Setup and optional inspection
 
