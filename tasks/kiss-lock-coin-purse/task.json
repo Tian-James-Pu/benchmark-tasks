@@ -1,0 +1,21 @@
+{
+  "title": "Put two coins back in an open kiss-lock coin purse and squeeze its ball clasp shut",
+  "category": "Societal relatability",
+  "keywords": [
+    "coin purse",
+    "kiss lock",
+    "clasp",
+    "snap fit",
+    "detent",
+    "coins"
+  ],
+  "instruction": "Put the coins back in the coin purse and close it.",
+  "context": "Kiss-lock frames close everyday coin purses, glasses pouches and clutch bags. Shutting one means pressing the two frame halves together until the balls on top ride past each other and click, with the back half held while the front half is swung over: pushed on the front half alone, the light purse gives way and the clasp does not snap, and released before the click, the clasp springs back open. The coins have to be in before it shuts.",
+  "setup": "Positions are (x forward from the arm bases, y to the left) in cm; heights above the table. Coin purse, its bottom centred at (30, 0), on an 8.5 cm round sew-in kiss-lock frame (brass, arch 4 cm tall above its rivets, a 9 mm brass ball on top of each half, 5 mm either side of the middle so they pass side by side), its width along x. Body: red fabric pouch 9.1 cm wide, 4.5 cm tall below the rivets, 5.6 cm deep at the bottom tapering to 3.6 cm at the rivet line, 3 mm walls; the frame's back half (towards +y) is sewn to it, leaning in 26.7 degrees. Purse with frame 35 g, loose. The front half (8 g, towards -y) is hinged on its rim line and starts open, leaning 25 degrees outward; it swings 51.7 degrees to shut. The clasp resists closing over the last 9.7 degrees (0.25 N m, about 5 N at the ball) and snaps shut inside the last 2 degrees. Two 2-euro coins (25.75 mm across, 2.20 mm thick, 8.5 g, white ring and yellow centre) lie flat on the table at (21.5, 11) and (21.5, -11). Distractors (SimReady, loose, not scored): eyeglasses (accessory_eyeglasses_a01, 14.5 x 17.4 x 5.7 cm, 30 g) at (45, 20), turned 90 degrees; a ceramic mug (dishware_mug_a01, 11.4 x 9.0 x 8.0 cm, 300 g) at (43, -21), turned 137 degrees. Both grippers start open at their ready poses.",
+  "scoring": "Read from the front frame half's angle, the coins' positions and the grippers' fingertip points (each finger's tip and 3 cm up it). A coin counts as inside when its centre is inside the purse's body (below the rivet line, within its walls) and no fingertip point is within 3 cm of it. The clasp is snapped when the front half is within 2 degrees of fully shut (on a real purse: the balls have passed each other and the frame stays shut when let go). 1.0: both coins inside and the clasp snapped, with every fingertip point at least 3 cm from the purse (from the box enclosing it with its frame open), all held for 2 s; kept once reached. Otherwise, at the end of the run: 0.75 if both coins are inside and the clasp is snapped (a hand still on or near the purse); else 0.25 per coin inside, whether or not the clasp is shut. 0 for the whole trial if a coin or the purse ever falls off the table (more than 2 cm below its top), even after full credit.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Open the clasp, swing the front half out to 25 degrees (stand a 25-degree card gauge against it), stand the purse on its marks and lay the coins on theirs. Nothing is consumed.",
+  "fidelity": "Purse body and frame halves are rigid shells (primitives: 3 mm walls, half-ellipse panels, brass arch bars, 9 mm balls); real fabric is soft. The clasp's snap is a detent torque on the hinge (0.25 N m against closing in the last 9.7 degrees, 0.30 N m holding it shut inside 2), not ball-on-ball contact; the balls pass side by side. Coins are rigid 2-euro discs. Friction 0.9. No SimReady purse or coin exists; distractors are SimReady.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-HD3UWB"
+}
