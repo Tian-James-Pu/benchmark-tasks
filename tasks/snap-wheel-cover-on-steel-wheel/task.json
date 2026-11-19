@@ -1,0 +1,22 @@
+{
+  "title": "Snap a plastic wheel cover onto a steel wheel with its valve notch over the valve stem and every retaining clip engaged",
+  "category": "Societal relatability",
+  "keywords": [
+    "car",
+    "wheel cover",
+    "hubcap",
+    "valve stem",
+    "snap fit",
+    "bimanual",
+    "alignment"
+  ],
+  "instruction": "Put the wheel cover on the wheel.",
+  "context": "Plastic wheel covers on steel wheels come off for every tyre change and go back on in drivers' driveways and in tyre shops. The cover has one notch for the valve stem and must be turned until that notch is over the stem before it is pressed on: pressed on anywhere else it lands on the stem, will not clip down on that side and can crush or tear the stem. A cover left loose falls off on the road.",
+  "setup": "Positions are (x forward from the line through the two arm bases, y to the left of their midpoint) in cm; heights are above the table. Steel wheel, 13 x 4.5J, black-painted 3 mm pressed steel, 36.5 cm across the flanges, 33.0 cm bead seat, 4 x 100 mm stud holes, bare (no tyre), lying face up (outboard side up) with its axis at (13, 0), fixed to the table (in a real trial, by two bolts through opposite stud holes into the table or a clamped board); its outboard flange top is 12.6 cm up. Valve stem: black rubber snap-in stem (TR414 class) with a black cap, 1.1 cm across, standing upright at the robot's left, centre (13, 14.2), its cap 1.2 cm above the flange top. Wheel cover: 13-inch silver ABS hubcap, 36.0 cm across, 4.2 cm deep, 0.45 kg, with a dark 6.4 cm centre cap, one valve notch 3.35 cm wide cut in from its edge to 12.5 cm from its centre, eight through slots (4 cm radially, about 4.8 cm wide) between eight 2.4 cm spokes, and eight black retaining clips on a sprung steel ring under its rim. It rests loosely on the wheel, centred, on its clips' lead-ins with its lip 2.75 cm above the flange, its notch towards the robot (the notch spans x -5 to 0.5 on y = 0), a quarter turn clockwise (seen from above) short of the stem. Distractors (NVIDIA SimReady, loose, not scored): an orange microfibre cleaning cloth (cleaning_cloth_a01, 26 x 23 x 2 cm, 50 g) at (52, 30) turned 15 degrees; a slotted screwdriver (handTool_screwdriver_slotted_65mm_a01, 22 cm long, 120 g) at (50, -23) turned 100 degrees; a pair of blue light-duty nitrile gloves (ppe_gloves_lightDuty_a01, 25 x 23 cm, 60 g) at (64, 2) turned -20 degrees. Both grippers start open at their ready poses.",
+  "scoring": "Each step: a clip is engaged when the cover's lip beside it is within 1.0 mm of the wheel's flange and the clip has snapped back out under the bead-seat lip (within 1.5 mm of its free position). The stem is in the notch when its axis is within 1.1 cm of the notch's centre line. 1.0: the stem in the notch, all eight clips engaged and every fingertip point of both grippers (each finger's tip and 3 cm up it) at least 3 cm from the cover, held 2 s; scored 1.0 from then on. Otherwise, at the end: the stem in the notch scores 0.2 plus 0.075 per engaged clip (0.2 to 0.8); the stem not in the notch scores 0. A stem ever bent more than 15 degrees from upright scores 0 for the whole trial.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Pull the cover off (a slotted screwdriver in the gap behind a clip), check the stem stands upright and undamaged (replace it if bent or torn) and set the cover back on its clips' lead-ins, centred, notch towards the robot. Measure the start with a ruler: cover centred within 3 mm, the notch's centre line on y = 0. Nothing is consumed.",
+  "fidelity": "Rigid PhysX bodies. No SimReady wheel or hubcap exists, so both are custom meshes; the wheel is fixed to the table. The ABS cover is rigid (a real one flexes). Its steel retaining ring is eight separate sprung clips with ramped heads, 1,500 N/m each, softer than a real ring: about 10 N per clip seats it, where a person uses palm blows. The valve stem is a sprung hinge (0.5 N m/rad). Uniform friction, no click or sound, no force sensing.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-REA7BS"
+}
