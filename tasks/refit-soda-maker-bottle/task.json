@@ -1,0 +1,21 @@
+{
+  "title": "Click a full 1 L bottle into a sparkling water maker's tilted Snap-Lock: neck in at an angle, then push up and back",
+  "category": "Societal relatability",
+  "keywords": [
+    "kitchen",
+    "sparkling water maker",
+    "snap-fit",
+    "angled insertion",
+    "heavy bottle",
+    "latch"
+  ],
+  "instruction": "Put the bottle back on the sparkling water maker so that it locks in place.",
+  "context": "Owners of a SodaStream-style sparkling water maker refit the carbonating bottle every time they refill it. The Snap-Lock hangs tilted forward: the bottle's neck has to go into it at that angle, be pushed up past the sprung jaws and then swung back to vertical until it clicks. A full 1 L bottle weighs about 1 kg, and pushing it straight up or shoving it back before the neck is in tips or slides the machine.",
+  "setup": "Positions in cm from the midpoint between the two arm bases (x forward, y to the robot's left); heights above the table top. Everything stands on the station's flat table. Sparkling water maker (a SodaStream Terra-type machine with its CO2 cylinder fitted; in simulation primitives, black ABS, 3.0 kg; free-standing, not fixed): base 20 x 13 x 2.5 cm from x 20 to 40, y -9.5 to 3.5, with a drip grille; a tower 10 cm deep at the back (x 30 to 40), 44 cm tall; a head from x 20.5 to 40, 33.5 to 44 cm up, with a button on top. Under the head the Snap-Lock holder (dark ABS cup 5.4 cm across with a 6.8 cm lead-in cone, two white POM sprung jaws) hangs on a hinge at (28.5, -3), 30 cm up, resting 15 degrees forward (its bottom toward the robot). A fitted bottle's axis is at (25, -3). Carbonating bottle (the machine's own 1 L clear PET bottle, uncapped, filled with water to its fill line, 1.05 kg): 8.5 cm across, 28 cm tall, 2.8 cm neck with a 3.4 cm collar 25.7 cm up, standing upright at (25, -17). Distractors (NVIDIA SimReady, loose): a drinking glass (dishware_glass_tumbler_a01, 8 x 8.5 cm, 300 g) at (17, 17); a paper towel roll (consumable_paperTowel_roll_a01, 12.4 x 23.1 cm, 200 g) at (40, 24); a dish soap bottle (cleaning_dishSoap_a01, 6.6 x 11.4 x 27.1 cm, 500 g) at (42, 10), turned 90 degrees. Both grippers start open at their ready poses.",
+  "scoring": "1.0 once all of these hold together for 3 s: the Snap-Lock has clicked (the holder is upright and locked with the bottle's neck collar resting on its jaws); the bottle hangs from it within 3 degrees of vertical, its bottom 2 to 15 mm above the base; and no part of either gripper is within 2 cm of the bottle or the machine. Otherwise, at the end: 0.5 if the bottle hangs by its collar from the jaws with the holder within 5 degrees of upright (for example still held); 0.25 if it hangs from the jaws with the holder tilted more; 0 otherwise. 0 for the whole trial if at any time the bottle tilts past 45 degrees or is dropped (falls faster than 1.4 m/s, about a 10 cm free fall), or the machine slides more than 2 cm, tilts more than 5 degrees or lifts more than 1.5 cm. In simulation the collar is on the jaws when its underside is at most 1.5 mm below their tops, its centre within 5 mm of the holder's axis, the bottle within 8 degrees of that axis and both jaws closed; the click is the holder reaching within 0.6 degrees of upright with the collar on the jaws.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Pull the bottle's bottom forward to unclip it, take it out and stand it on its mark; the holder springs back to 15 degrees forward. Put the machine and distractors on their marks. Nothing is consumed.",
+  "fidelity": "Rigid bodies (PhysX). Machine, holder and bottle are primitives and convex hulls sized from a SodaStream Terra; water is rigid mass. The Snap-Lock is a sprung hinge with a stop, two sprung ramped jaws (800 N/m) and a code latch that locks the hinge when it reaches upright with the collar in the jaws. Spring rates and the machine's mass are estimates. No CO2 or gas seal is modelled. Uniform contact friction. Distractors are SimReady props.",
+  "scores": "Dream-1 run: 0; demo: 1.0",
+  "media": "M-5F74TF"
+}
