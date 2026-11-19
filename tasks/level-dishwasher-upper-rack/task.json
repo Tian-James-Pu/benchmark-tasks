@@ -1,0 +1,21 @@
+{
+  "title": "Level a dishwasher's upper rack left higher on one side with its height adjusters, then roll it in to dock",
+  "category": "Societal relatability",
+  "keywords": [
+    "dishwasher",
+    "upper rack",
+    "height adjuster",
+    "lever",
+    "latch",
+    "drawer"
+  ],
+  "instruction": "Put the upper rack back into the dishwasher so it is ready to run.",
+  "context": "Upper racks with a height adjuster on each side (Bosch RackMatic, Samsung and others) are often left raised on one side only. The manuals warn that the rack must be at the same height on both sides before it goes in, or its spray arm will not connect to the water inlet and the door will not close. Pushing a side down does nothing until its lever is pressed in while the side is moved, so the robot must work the latch and the load together.",
+  "setup": "Positions (x forward from the arm bases, y left) in cm; heights above the table. Dishwasher upper section (kit-built, stainless steel), standing on the table: tub 56 cm wide inside, open front at x 45, back wall at x 93, 40 cm tall inside, side runners; a black water-inlet manifold (2 x 5 x 11 cm) at the back wall's centre. Over it, a laminate counter 3 cm thick, 52 x 64 cm, top at 44 cm, front edge at x 45. Upper rack (vinyl-coated steel wire, 2.5 kg): 46 cm deep, 50 cm wide, walls 10 cm, pulled out on its runners with its front wall at x 13 (30 cm short of docked). Height adjuster on each side: a dark grey plastic grip 9 x 1.4 x 3.5 cm on the side's top rail, x 19 to 28; a grey lever 8 x 0.6 x 3 cm, 8 mm outboard of the grip, 8 mm travel inward, 3.2 N at full travel. Three notches 2.5 cm apart. Start: left side in the bottom notch (rack floor 1.5 cm up), right side in the top notch (6.5 cm up), so the rack tilts 5.7 degrees. In the rack, upside down: two glass tumblers (SimReady dishware_glass_tumbler_a01, 8 cm across, 8.5 cm tall, 250 g) at (25, 10) and (33, -9), and a ceramic mug (dishware_mug_a01, 9 cm across, 8 cm tall, 350 g) at (46, 2). Distractors (SimReady, loose, on the counter): dish soap bottle (cleaning_dishSoap_a01, 6.6 x 11.4 x 27.1 cm, 450 g) at (52, 19); sponge (cleaning_sponge_b01, 7.1 x 10.1 x 3.3 cm, 20 g) at (51, -18); mug (dishware_mug_b01, 9.2 cm across, 9.2 cm tall, 330 g) at (53, 1). Grippers start open at their ready poses.",
+  "scoring": "Side heights are read from the notch marks on each adjuster (within 3 mm of a notch counts as in it); a lever is released when out by 2 mm or less. 0 for the whole trial if a tumbler or the mug ever leaves the rack (its origin more than 1 cm outside the rack's footprint, more than 3 cm below its floor or more than 25 cm above it). 1.0: both sides in the same notch (any of the three), both levers released, the rack within 5 mm of its docked stop, and every fingertip point of both grippers at least 3 cm from the rack, its grips and levers, held 2 s; scored 1.0 from then on. Otherwise, at the end: 0.5 for both sides in the same notch with both levers released (full credit not reached); 0.25 for the sides one notch apart with both levers released; 0 for anything else.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Pull the rack out until its front wall is at x 13, put the left side in its bottom notch and lift the right side into its top notch, and set the tumblers and mug upside down on their marks. Nothing is consumed.",
+  "fidelity": "Rigid bodies (PhysX). Tub, counter, wire rack, grips and levers are kit-built primitives at real size; the tumblers, mug and distractors are SimReady. The rack's tilt is a hinge at the left adjuster line plus a left lift slider. The notches and pawls are code: stiff springs at each notch, freed while a lever is pressed in 4 mm. The rack's weight is not on the adjusters, so a freed side stays put until pushed. Docking is the runners' end stop; no inlet coupling, door or lower rack.",
+  "scores": "Dream-1 run: 0.25; demo: 1.0",
+  "media": "M-U5BNHU"
+}
