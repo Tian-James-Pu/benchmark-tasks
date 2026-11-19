@@ -17,8 +17,11 @@ Model (declared in code):
 - The key's cam (code, each control step): the pin is driven to the cam's position for the key's angle (drawn back 8 mm from 2.5 to 25
   degrees), never pulled with more than the key's forcing torque could pull it through the cam (120 N). While the pin is short of the
   cam's position, the key is held at the angle the pin's actual position allows, with the stiffness that makes the two one rigid cam. So
-  the key turns only as far as the pin moves. The torque the cam takes from the key is recorded; more than 2.45 N m for 0.15 s is forcing
-  the key (UNECE R116's locked-cylinder torque), and scores 0.
+  the key turns only as far as the pin moves. The torque the cam takes from the key is logged (diagnostic only).
+- Forcing the key (scored, and the same rule as in a real trial): the key's head at or past the forcing mark (FORCE_MARK_DEG, the angle
+  the key reaches under 2.45 N m, UNECE R116's locked-cylinder torque, with the wheel jammed; `--mode calibrate` measures it) while the
+  wheel is still on the bolt (within JAM_TOL_DEG of its jammed angle), with the key short of 25 degrees (past it the bolt is fully drawn),
+  for 3 control steps in a row (0.15 s), before full credit: scores 0. Both quantities are angles a camera sees.
 - Key detents: LOCK 0, ACC 30, ON 65 degrees; START 80 to 92 springs back to ON.
 - The load: TAU_PRELOAD (8 N m) and K_WHEEL are estimates until measured on a car (README, "The load").
 
@@ -99,9 +102,13 @@ PHI0, PHI1 = 2.5, 25.0  # the cam's dead band, and where the pin is fully drawn
 CAM = PIN_TRAVEL / math.radians(PHI1 - PHI0)  # m of pin per radian of key
 K_KEY = K_PIN * CAM ** 2  # N m/rad: the key's stiffness through the cam
 K_DETENT, K_START = 0.5, 1.5  # N m/rad
-FORCE_LIMIT = 2.45  # N m through the key: forcing it
+FORCE_LIMIT = 2.45  # N m through the key: forcing it (UNECE R116's locked-cylinder torque)
 PIN_LAG = 0.0003  # m: a pin this far short of where the cam sent it is held back
 PULL_MAX = FORCE_LIMIT / CAM  # N: the cam's pull on the pin at the forcing torque (about 120 N)
+# The forcing mark: the key's angle under FORCE_LIMIT with the wheel jammed on the bolt. PHI0 + (PIN_LAG / CAM + FORCE_LIMIT / K_KEY) in degrees
+# is 6.73; `--mode calibrate` (a pull on a 10 cm lever, as in the real calibration) measured 6.78 at 2.45 N m (GPU and CPU), the value used here.
+FORCE_MARK_DEG = 6.78
+JAM_TOL_DEG = 0.5  # the wheel counts as still on the bolt within this of its jammed angle
 
 LOOKS = {
     "abs": m.Look(color=m.rgb(0.07, 0.07, 0.08), roughness=0.55),
@@ -344,13 +351,14 @@ def _drive(env, part, link, target, stiffness):
 
 
 class Lock:
-    """The cam between key and pin, the key's detents, and the record of a forced key. Cleared only at a reset."""
+    """The cam between key and pin and the key's detents. It also logs the torque the cam takes from the key (`tau`, `tau_max`, and
+    `tau_over`: more than FORCE_LIMIT for 3 steps in a row), a diagnostic used to check the scored forcing rule; the scorer does not use it."""
 
     def __init__(self):
         self.reset()
 
     def reset(self, env=None):
-        self.forced = False
+        self.tau_over = False
         self.over = 0
         self.tau = 0.0
         self.tau_max = 0.0
@@ -371,7 +379,7 @@ class Lock:
         self.tau_max = max(self.tau_max, self.tau)
         self.over = self.over + 1 if self.tau > FORCE_LIMIT else 0
         if self.over >= 3:
-            self.forced = True
+            self.tau_over = True
         ahead = phi + w * DT  # the key's angle at the end of this step, if it keeps turning
         # the cam sends the pin where the key will be, pulling it with no more than the key's forcing torque could through the cam
         self.sent = min(cam_draw(ahead), drawn + PULL_MAX / K_PIN)
@@ -419,10 +427,13 @@ def now(env) -> dict:
     k = lk.deg("key")
     gaps = (bow_gap(lk, tips), rim_gap(col, tips))  # the rim's gap is only reported: the wheel is not scored, and a hand may stay on it
     return {"key": k, "wheel": col.deg("wheel"), "drawn": -lk.joint("pin"), "on": 60.0 <= k <= 70.0, "acc": 25.0 <= k <= 40.0,
-            "clear": gaps[0] >= 0.03, "gaps": gaps, "forced": LOCKWORK.forced}
+            "clear": gaps[0] >= 0.03, "gaps": gaps, "forced": TRIAL.forced}
 
 
 class Trial:
+    """The score, and the record of a forced key. `jam` is the wheel's angle in the settled starting layout (on the bolt), read at the
+    first control step after a reset."""
+
     def __init__(self):
         self.reset()
 
@@ -430,8 +441,21 @@ class Trial:
         self.hold = 0
         self.full = False
         self.score = 0.0
+        self.over = 0
+        self.forced = False
+        self.jam = None  # read at the first control step, once the scene has settled
 
     def step(self, env):
+        wheel, key = m.state(env, "column").deg("wheel"), m.state(env, "lock").deg("key")
+        if self.jam is None:
+            self.jam = wheel
+        # forcing: the key at or past the forcing mark (and short of ACC, where the bolt is fully drawn) while the wheel is still on the bolt,
+        # 0.15 s running, before full credit
+        on_bolt = abs(wheel - self.jam) <= JAM_TOL_DEG
+        past = FORCE_MARK_DEG <= key < PHI1
+        self.over = self.over + 1 if (on_bolt and past and not self.full) else 0
+        if self.over >= 3:
+            self.forced = True
         c = now(env)
         ok = c["on"] and c["clear"] and not c["forced"]
         self.hold = self.hold + 1 if ok else 0
@@ -463,7 +487,7 @@ def score(objects) -> float:
 def _report(ctx, env, label=""):
     c = now(env)
     print(f"[lock] t {ctx.t:5.1f} {label}key {c['key']:6.2f} deg, wheel {c['wheel']:+6.2f} deg, pin drawn {c['drawn'] * 1000:4.1f} mm, cam torque {LOCKWORK.tau:.2f} "
-          f"(max {LOCKWORK.tau_max:.2f}) N m, forced {c['forced']}, gaps bow {c['gaps'][0] * 1000:.0f} rim {c['gaps'][1] * 1000:.0f} mm, score {TRIAL.score:.2f} "
+          f"(max {LOCKWORK.tau_max:.2f}) N m, torque over {LOCKWORK.tau_over}, forced {c['forced']}, gaps bow {c['gaps'][0] * 1000:.0f} rim {c['gaps'][1] * 1000:.0f} mm, score {TRIAL.score:.2f} "
           f"full {TRIAL.full}", flush=True)
 
 
@@ -472,16 +496,19 @@ def demo_script(ctx):
     there against the tyres' spring (closed loop on the wheel's seen angle). Right: comes down over the key's head, pinches it and turns it
     clockwise through ACC to ON (about the key's axis), lets go and moves away outside the rim. Then the left lets the wheel unwind to where
     the tyres hold it, lets go and moves back off the rim.
-    Failure checks (--mode): none does nothing; onearm turns the key without holding the wheel; wrongway holds the wheel 4 degrees the
-    other way, onto the lock's wall, while the key is turned; acc stops the key at ACC; hold keeps the key pinched at ON.
-    pull is a check of the lock, not a demo: with the pin's cam drive off, a growing pull on the pin (prints where it lets go)."""
+    Failure checks (--mode): none does nothing; onearm turns the key without holding the wheel; careless turns the wheel off the bolt and
+    lets go of it before the key is turned; wrongway holds the wheel 4 degrees the other way, onto the lock's wall, while the key is turned;
+    acc stops the key at ACC; hold keeps the key pinched at ON.
+    pull is a check of the lock, not a demo: with the pin's cam drive off, a growing pull on the pin (prints where it lets go).
+    calibrate is the forcing mark's calibration, as in a real trial: no hands; the wheel jammed; a pull at 10 cm from the key's axis on a
+    lever along its head, in steps of 0.6 to 3.0 N m, each held 1.5 s (prints the key's angle at each)."""
     import demokit as d
     from yam_arena.constants import FINGER_OPEN
 
     env = ctx.emb._env
     l, r = ctx.left, ctx.right
     mode = ctx.mode
-    if mode not in ("full", "none", "onearm", "wrongway", "acc", "hold", "pull"):
+    if mode not in ("full", "none", "onearm", "careless", "wrongway", "acc", "hold", "pull", "calibrate"):
         raise ValueError(mode)
     for _ in range(4):
         yield
@@ -499,6 +526,20 @@ def demo_script(ctx):
                 if -st.joint("pin") > 0.005:
                     break
         m.push(env, "lock", (0.0, 0.0, 0.0), body="pin")
+        return
+    if mode == "calibrate":
+        lever = world((BOW_X, KEY_Y, KEY_Z + 0.10))  # 10 cm out along the head's long side, at 12 o'clock with the key at LOCK
+        pull_dir = ROT @ np.array([0.0, -1.0, 0.0])  # clockwise as the driver sees it
+        for tau in (0.6, 1.2, 1.8, 2.45, 3.0):
+            for k in range(30):
+                m.push(env, "lock", tuple((tau / 0.10) * pull_dir), at=tuple(lever), body="key")
+                yield
+            print(f"[calibrate] {tau:4.2f} N m at the key: key {ctx.deg('lock', 'key'):5.2f} deg, wheel {ctx.deg('column', 'wheel'):+.2f} deg, "
+                  f"cam torque {LOCKWORK.tau:.2f} N m, forced {TRIAL.forced}", flush=True)
+        m.push(env, "lock", (0.0, 0.0, 0.0), body="key")
+        for k in range(20):
+            yield
+        _report(ctx, env, "end: ")
         return
     if mode == "none":
         for k in range(80):
@@ -564,6 +605,10 @@ def demo_script(ctx):
         yield from l.arc(CENTRE, AXIS_TO_DRIVER, roll, t=1.5, label="turn the wheel")
         yield from hold_left(2.0, roll)
         _report(ctx, env, "wheel turned: ")
+        if mode == "careless":  # let go of the wheel, move the hand off it, then turn the key with the other
+            yield from l.open(t=0.5, label="let go of the rim")
+            yield from l.move(l.at() - 0.06 * z_g, t=1.0, label="the hand back off the rim")
+            take_left = False
 
     # -- the right hand on the key's head: from above, fingers either side of its 11 mm, the pads over most of the head and clear of the
     #    ignition's face; then about the key's axis, clockwise as the driver sees it
