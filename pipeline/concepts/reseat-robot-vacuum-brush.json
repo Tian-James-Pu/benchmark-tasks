@@ -1,0 +1,69 @@
+{
+  "title": "Restore a robot vacuum whose main brush was misseated after cleaning",
+  "category": "Impact on AI timelines",
+  "justification": "Direct service of an actual autonomous floor-cleaning robot; the drive must engage and the retaining cover must physically close before the robot can resume work.",
+  "fault": "The main rubber brush has its drive end resting proud of the keyed socket after a failed reinstall. The opposite bearing is in its open pocket. The free cover rests beside the upside-down powered-off robot.",
+  "instruction": "Restore the robot vacuum\u2019s main brush and cover so it is ready to clean.",
+  "objects": [
+    "Full-scale Roborock S7 chassis, 353 x 350 x 96.5 mm, approximately 4.7 kg, inverted and powered off",
+    "S7 rubber main roller with helical vanes, drive key and removable bearing end",
+    "Real removable cover: rear hooks and two spring catches at opposite edge; not a hinged door",
+    "SimReady mug and tape as irrelevant workbench objects"
+  ],
+  "skill": "Extract a canted roller, align its drive end into a recessed keyed socket, lower its bearing into its pocket, hook the separate cover under the chassis edge and engage its catches. Physical contacts must prevent a closed cover over a proud roller. Any safe one-handed alternative remains valid.",
+  "scoring": "Proposed 0.5 only for roller actually driven by socket and both bearing shoulders seated; 1.0 additionally cover hooks and both catches physically retained, released/still 1s. Falls or damage override all credit. Numeric tolerances to be set from source-reconstructed geometry before demo tuning.",
+  "nearest": [
+    {
+      "pr": 2169,
+      "state": "closed final",
+      "comparison": "Same broad brush-service job but rejected for bare fixture, bristleless cylinder, and software-only catch. Not held; current proposal must fix these central fidelity omissions, not merely change colors."
+    },
+    {
+      "pr": 2103,
+      "state": "closed final",
+      "comparison": "Only brush-door opening, rejected importance because task stops before maintenance. Current task restores roller drive and retained assembly."
+    },
+    {
+      "pr": 2033,
+      "state": "pending",
+      "comparison": "Lift vacuum off a trapped remote and press start; inspected full task.json. Distinct whole-unit obstacle removal with no brush servicing."
+    },
+    {
+      "pr": 1054,
+      "state": "revising",
+      "comparison": "Manual robot tool changer; tool seating plus cam locking. Different functional brush-bearing assembly but keyed insertion overlap remains a reviewer risk."
+    }
+  ],
+  "risks": [
+    "Main roller subpart dimensions are not in public user manual; must obtain sufficiently grounded part geometry before tuning.",
+    "No SimReady robot vacuum in catalogue: full source-reconstructed chassis and task-critical mechanism needed, explicitly disclosed, with SimReady distractors. Parent authorized grounded full-unit direction.",
+    "A simple loose-cylinder placement with pose-triggered software latch would repeat2169 and is prohibited.",
+    "No invented threaded hair wad or forced bimanual rule to manufacture difficulty.",
+    "Safe remove-and-reinstall remains valid; distinct skill is real recessed drive engagement plus free cover hooks/catches, not a pose mark."
+  ],
+  "primary_hardware_comparison": {
+    "source": "https://support.roborock.com/hc/en-us/article_attachments/900008254623",
+    "inspected": "Downloaded PDF and viewed pages27-28 (PDF pages25-26), showing brush, bearing, twist caps, and separate two-catch cover.",
+    "cover": "Official product photographs confirm four fixed rear hooks and two inward-sliding spring catches. Full free cover model, no permanent hinge.",
+    "scale": "Manufacturer overall size353x350x96.5 mm; subpart geometry pending product photographs or CAD.",
+    "no_accommodation": "No grip tabs, widened end socket, hidden fixed chassis fixture, or hand-count requirements. Chassis remains free with actual mass.",
+    "product_photos": [
+      "https://us.roborock.com/products/s7-main-brush",
+      "https://us.roborock.com/products/roborock-s7-s7-maxv-s7-max-ultra-q5-q7-q7-max-series-main-brush-cover"
+    ]
+  },
+  "strict_review": {
+    "importance": "Pass provisionally: direct functional robot servicing, unlike printer maintenance indirectly connected to robot parts.2169 had construct/clarity rejection, not importance.",
+    "construct": "Conditional: must ground the keyed drive, pocket and actual cover catch geometry; build only if supported.",
+    "novelty": "Conditional pending2033 file check; no accepted/pending brush install in fresh2411PR snapshot.2169 and2103 are final-closed.",
+    "shortcut": "Allow ordinary safe removal/reinstall. Do not claim interlock recovery if simply lowering an aligned cylinder earns full credit.",
+    "verdict": "Proceed to source geometry and contact prototype; no validated count yet."
+  },
+  "live_comparison_2033": {
+    "checked_at": "2026-11-17T03:35:21.431210+00:00",
+    "state": "OPEN, latest revision TK-UYHAKY waiting review",
+    "evidence": "Read actual PR diff including README, setup, scoring and demo. It lifts a 34cm vacuum off a trapped remote, extracts remote, sets chassis flat and presses start. No brush drive, brush removal/insertion or cover retention.",
+    "distinction": "Brush servicing requires physically engaging recessed keyed motor drive, seating bearing and retaining separate cover with hooks/catches; safe remove/reinstall preserves these skills. It is not trapped-object removal or start-button recovery.",
+    "remaining": "Full contact feasibility, dimensional provenance and final accepted/pending comparison remain required."
+  }
+}

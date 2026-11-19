@@ -1,0 +1,53 @@
+{
+  "title": "Restore a slipped Bowden tube on a robot hand",
+  "candidate": "SR-048 from task_candidates.pdf",
+  "category": "Impact on AI timelines",
+  "justification": "Repairs the sheath reaction path of a documented tendon-driven robotic end effector, using the Yeah Hand v1.3 design and its actual tube seats.",
+  "instruction": "Restore the finger\u2019s opening and closing motion.",
+  "fault": "Proposed: index-extension PTFE tube end displaced laterally from its source-defined seat while the intact tendon still passes through it. The actual loss of travel and absence of self-reseating must be demonstrated before treating this as a valid fault.",
+  "objects": [
+    "Full-scale left-side hand on its ISO robot flange in a buildable service mount",
+    "Actual printed skeleton, phalanges, antagonistic spools and cover geometry",
+    "PTFE tube OD3mm ID1.5mm per source BOM;0.75mm HERCULES tendon",
+    "Ordinary source-specified hand tools; no custom gripping tabs"
+  ],
+  "skill": "Support/slacken the tendon path and reseat the sheath end under constrained access, restoring reaction support through physical contact.",
+  "scoring": "Not implemented. Candidate outcome: correct sheath seating plus three reproducible full finger cycles, hands off. Must define externally measurable travel, retention and damage checks after physical feasibility is established.",
+  "nearest": [
+    {
+      "pr": 539,
+      "status": "accepted",
+      "difference_to_demonstrate": "Split cable-guide retrofit is cable management, not restoration of a sheath compression reaction path."
+    },
+    {
+      "pr": 2203,
+      "status": "revising",
+      "difference_to_demonstrate": "Timing-belt tension/motor-mount retention; new task must demonstrate displaced sheath load-path repair, not generic tension adjustment."
+    },
+    {
+      "pr": 802,
+      "status": "revising",
+      "difference_to_demonstrate": "Guidewire manipulation in enclosed sheath; here the sheath reaction support itself is repaired."
+    }
+  ],
+  "primary_sources": [
+    "https://github.com/opsobot/yeah-hand/releases/tag/v1.3",
+    "https://raw.githubusercontent.com/opsobot/yeah-hand/494859df54603ad9b80a65a947fb8123e0a3221f/hardware/BOM.md",
+    "https://github.com/opsobot/yeah-hand/blob/494859df54603ad9b80a65a947fb8123e0a3221f/docs/defensive-publication/technical-disclosure.md"
+  ],
+  "hardware_evidence": "pipeline/pdf-screening/sr048-bowden/",
+  "geometry_note": "4mm named Bowden mesh is a Boolean DIFFERENCE operand defining housing voids. Physical tubing remains BOM3mm. Index-extension end seats at CAD coordinates(31.7966,-9.9980,-59.1214) and(17.0069,-20.8767,-121.4789)mm; path control polygon66.8263mm. Nearby tendon passage cutter2.88mm. Do not equate cutter diameter to tube diameter.",
+  "risks": [
+    "Tube may self-seat or remain functional when displaced; demonstrate an actual recovery fault.",
+    "3mm tube above2.88mm passage leaves narrow shoulder; actual contact and compliance must be validated.",
+    "Sliding tendon and tube reactions must follow continuous mechanics, never a seated-state predicate.",
+    "Preserve full-size covers, motors, real access and fixing hardware.",
+    "Published tube stiffness/force not yet calibrated.",
+    "Read and fulfill hardware CERN-OHL-S-2.0 obligations before distributing derived CAD.",
+    "A finite-difference mechanics check does not count as simulation or task validation."
+  ],
+  "status": "engineering prototype only",
+  "claimed_at": "2026-11-17T08:18:00.237771+00:00",
+  "counts_as_validation": false,
+  "board_checked_at": "2026-11-17T08:18:00.237788+00:00"
+}

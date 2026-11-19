@@ -1,0 +1,109 @@
+{
+  "task": "tasks/relight-a-water-heater-pilot",
+  "audited_at": "2026-11-17T22:09:22.486650+00:00",
+  "mode": "read-only task and claim audit; writes confined to this audit folder",
+  "recommendation": "Advance owner/root coordination and Dream/media preparation after resolving the existing novelty hold. No established technical need for new physics sweeps. Not yet submission-ready because Dream/media and the textual model-variant clarification remain.",
+  "hold_classification": "Recorded claim hold is novelty overlap with2477. Audit found documentation/provenance limits and packaging gates, not a demonstrated broken feasibility/scorer gate.",
+  "source_sha256": {
+    "check_score.py": "3e78fe14e2fe40c20d16fe6986ccd22e25761597896060aa8d965798abcca4da",
+    "demokit.py": "2e6c9ff748ba5e51f7e91adc55f26e0331dbac30b3f1a708c378d45492f3d4be",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "104f6b7a5dfb8ddfe01356b74d7de0ddc8123cadac58480d35a4d03a7d44791d",
+    "task.py": "9fcff40d1d0a04dd109d9e84d19d629dfed7c8ac11ef479b8112e0301bbaba7f",
+    "README.md": "856b63588d943a3899b16f2deaa130e1ea4aab2bdeff24d2578043b39a0df9f2",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539"
+  },
+  "source_unchanged_during_audit": true,
+  "run_evidence": "run-evidence.json",
+  "verification": {
+    "full_score_terminal_runs": 6,
+    "full_score_current_task_hash_runs": 2,
+    "current_exact_folders": [
+      "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-103901-gpu2-333987",
+      "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104627-gpu2-416719"
+    ],
+    "negative_control_runs": 7,
+    "negative_control_scores": [
+      0.0,
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.25
+    ],
+    "current_check_score_passed": true,
+    "current_check_cases": 38,
+    "check_log": "check-score-output.txt",
+    "reviewed_visuals": [
+      "latest demo top-camera contact sheet",
+      "wrist-review.png sampled15/58/78 seconds from latest exact-hash run",
+      "sources/aosmith-page24.png"
+    ],
+    "visual_finding": "Wrist frames show direct knob hold and separate igniter contact, illuminated status lens during hold, then controls released and pointer turned. No visible teleport in reviewed frames. Full video not watched continuously; contact forces and hidden joint states not logged in these run records."
+  },
+  "provenance_limits": [
+    "Environment revision hashes task.py only, not imported helper bytes; current helper hashes frozen here but historical helper hashes not recorded.",
+    "Six terminal1.0 runs span four task.py hashes; only last two match current task.py. README last-four-published-code claim needs owner confirmation or narrower wording.",
+    "Seven negative-control logs identify mode and score; original redteam source variants are absent from current task folder. Cannot independently prove variants changed policy alone. Existing38 tests check logic using hand-built states, not runtime control provenance.",
+    "README CPU/closed-loop reference results not independently located in the inspected yam-eval task directory."
+  ],
+  "remaining_gates": [
+    {
+      "kind": "ownership/novelty",
+      "action": "Root coordinate with current owner and resolve#2477-family overlap; this audit does not transfer ownership or clear novelty."
+    },
+    {
+      "kind": "documentation",
+      "action": "Name the installed A.O. Smith control/label behavior as timing authority; do not describe WT8840B replacement as behaviorally identical without reconciliation of1-minute versus10-minute cooldown. Mark40-second warmup and60-second cooldown as chosen model approximations, alongside estimated forces and dimensions."
+    },
+    {
+      "kind": "evidence",
+      "action": "Base submission demo on latest exact-hash run; retain source/helpers manifest and narrow repeatability wording to verified provenance. Recover existing negative-control sources if available; no new sweep requested."
+    },
+    {
+      "kind": "required model/media",
+      "action": "Run Dream-1 through authorized owner/root workflow; record actual score; upload model video, demonstrated1.0 demo and screenshot; add media ID and replace pending scores."
+    },
+    {
+      "kind": "final packaging",
+      "action": "Recheck final code hash against selected demonstration and validate required task.json fields; keep one task per PR and root quota/blind-review checks."
+    }
+  ],
+  "technical_assessment": {
+    "hardware": "Control dimensions, spacing, force curves and thermal timings include disclosed estimates. Manufacturer procedure and6.35mm travel are supported. No resized gripper tabs or guided applicator found. These estimates remain fidelity limitations; exact measured calibration is not established.",
+    "mechanics": "Physical knob hinge, sprung axial plunger and igniter slider. Runtime joint locks implement positional interlocks; spring target changes implement igniter snap. No task-code robot-limit change, object teleport, or direct script scoring write found.",
+    "scoring": "Outcome tiers and5-second released HOT hold are numeric; unlit-gas violation persists through layout restoration. Existing tests covertiers, timing and reset. hands_clear uses sampled fingertip/reference points, an approximation to full mesh distance; not a demonstrated false success in reviewed demos.",
+    "process": "Combustion/thermopile modeled as explicit state machine.40-second warmup is not measured hardware response.10-minute circuitry wait supported for A.O. Smith label but should not be generalized to the cited trade replacement.",
+    "runtime": "All full demos terminate in success after1613 recorded actions (README1614 likely includes initial frame); only delta-limit guard modifications recorded, no denial or clamp event.",
+    "safety": "Real-trial document calls for filled/vented supervised appliance and independent gas controls; simulation does not establish combustion safety. No real appliance action performed."
+  },
+  "sources": [
+    {
+      "url": "https://www.aosmithatlowes.com/media/1688/signature-100-series-high-recovery-100341468.pdf",
+      "file": "sources/aosmith-100341468.pdf",
+      "pages": [
+        24,
+        34
+      ],
+      "finding": "Supports physical press at PILOT with about6.35mm travel, repeated ignition until status blink, and10-minute circuitry wait. The90-second instruction covers the complete lighting attempt, not solely cumulative unlit-gas time. Current task imposes the latter as its explicit safety metric.",
+      "sha256": "07c0f489cb4eef9635488a2b92bfd5d030210264cf863f74ab13d401b2176baa"
+    },
+    {
+      "url": "https://digitalassets.resideo.com/damroot/Original/10004/34-00013EF.pdf",
+      "file": "sources/resideo-34-00013EF.pdf",
+      "pages": [
+        1,
+        5,
+        6,
+        9
+      ],
+      "finding": "Supports replacement compatibility, held pilot valve and3-second status blink. Says allow1 minute cooling after pilot loss and approximate1 minute to flash; not exact support for the modeled40-second warmup or treating this replacement as identical to the A.O. Smith10-minute variant.",
+      "sha256": "1c3aacfaf26165576e290724d42e4568117a74585bc42ed05c0b91a6e5f7aa86"
+    }
+  ],
+  "task_or_claim_modified": false,
+  "physics_runs_launched": false,
+  "dream_runs_launched": false,
+  "git_or_submission_actions": false
+}

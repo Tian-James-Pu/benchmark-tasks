@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-19T12:15:23+00:00",
+  "decision": "clear",
+  "queries": [
+    "known_tasks.tsv refreshed this session (twice, the second after the Dream-1 run): pressure cooker, instant pot, float valve, silicone cap, valve cap, snap cap, grommet, push-on cap",
+    "live-state grep: lid, cooker, valve, cap, gasket, hold ... while, kitchen appliance, kettle, wash",
+    "gh pr view bodies and review comments of 2291, 1817, 2259; task.json of 2291 read from its PR head"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2291,
+      "state": "OPEN, revising (third revision after two Not accepted reviews on scoring)",
+      "read": "Body, task.json and all review comments read: close an inside-fitting stovetop pressure cooker lid, locking loop hooked under the body handle.",
+      "comparison": "Same appliance family only. Theirs is lid insertion and locking on a stovetop cooker; ours is refitting the float valve's silicone cap on an electric cooker's detached lid while holding the loose valve in from the other face. No shared mechanism or skill."
+    },
+    {
+      "pr": 1817,
+      "state": "CLOSED",
+      "read": "Body read: press a pressure pan's vent button, then lift the lid.",
+      "comparison": "Venting and lid removal, closed; unrelated skill."
+    },
+    {
+      "pr": 2259,
+      "state": "MERGED",
+      "read": "Body read: load a lancet into a pen lancing device, including snapping its cap back on.",
+      "comparison": "Shares a snap-on cap step, but on a held pen; ours is a 12 mm silicone cap pushed over a 5 mm valve end that is loose and must be held in from the opposite face of a fixed lid."
+    },
+    {
+      "pr": 143,
+      "state": "OPEN, revising",
+      "read": "Title read: hold a nail upright while another arm hammers it.",
+      "comparison": "Generic hold-while-other-arm-acts pattern; different objects, action and context."
+    },
+    {
+      "pr": 1990,
+      "state": "MERGED",
+      "read": "Title read: refit a gas burner head and cap.",
+      "comparison": "Kitchen refit after cleaning, but placing a burner cap by gravity on a head; no snap fit, no loose part to hold."
+    }
+  ],
+  "physical_skill": "Hold a loose 10 g float valve in its 6 mm hole by pressing its 10 mm flat top on the lid's top face with one gripper, while the other picks a 2 g, 12 mm silicone cap off the counter, turns its open end to face the lid, lines it up with the 5 mm valve end on the underside and pushes it about 1 N over the sprung end knob until its lip snaps into the groove, then both let go and withdraw.",
+  "valid_shortcuts": "GPU red team on this task.py (media/demo-redteam_*): do nothing 0; one arm only (cap pushed without holding the valve) 0, valve pushed out past 10 mm, latched; cap held on rather than released 0; cap pushed only part way 0 in the simulation (it drops off when released; 0.25 only if it stays on the end, still and hands clear). Scripted demo 1.0 in two fresh runs on the final source (06:44 and 06:49 local). Dream-1 0.0. A cap on the counter or elsewhere is 0; the valve fallen-out record is latched until reset.",
+  "distinct_from_nearest": "No accepted, pending or revising task refits a pressure cooker's float valve or its silicone cap, or any push-on cap onto a loose part held in from the opposite face. Nearest is 2291 (stovetop lid closing), the same appliance family with a different operation. Residual risks: importance (a small everyday appliance chore under Societal relatability) and the rigid sprung-knob abstraction of the silicone lip's stretch.",
+  "task_py_sha256": "91e44ece6affa13396d5f1c6f111fd18d2a74c2de36e3a8e650ab83518fdbf79",
+  "task_metadata_sha256": "d99dedb0d9ad12df36f28093ba65ead8556c0407e474de9273e3675e3ff974e5",
+  "note": "Hashes computed after the Dream-1 scores edit; they exclude scores and media by definition."
+}

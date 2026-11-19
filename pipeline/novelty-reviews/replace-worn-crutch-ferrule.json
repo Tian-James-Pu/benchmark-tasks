@@ -1,0 +1,154 @@
+{
+  "checked_at": "2026-11-19T04:43:48.277230+00:00",
+  "decision": "clear",
+  "candidate": "replace-worn-crutch-ferrule",
+  "physical_skill": "Extract an installed worn-through rubber foot without a fixture, manage a loose full-size crutch, align and push its22mm shaft into a matching dry rubber replacement to the sole stop, then handle the assembly without the foot falling off.",
+  "valid_shortcuts": [
+    "Bench reaction may provide insertion resistance; no spare grasp is required.",
+    "Straight push without twist is valid if it seats; manufacturer says slight twisting may help, not that it is mandatory.",
+    "One or two arms, any safe grasp ordering, native handgrip or shaft grasp, and ordinary non-destructive environmental support remain valid.",
+    "Recoverable drops can be repaired; do not create an arbitrary arm sequence or irreversible failure merely to enforce difficulty."
+  ],
+  "weakest_valid_route": [
+    "Remove worn foot while using any ordinary available bench or hand counter-support.",
+    "Regrasp and orient the native crutch; push its shaft into the spare already standing on its sole. The spare need not be picked up or held.",
+    "Lift so the foot is unsupported and verify that it remains seated; return assembly to the bench and release."
+  ],
+  "queries": [
+    "crutch|ferrule|rubber.*(sleeve|stopper|foot)|sleeve.*rubber|walking.*aid|walking.*stick|cane.*tip",
+    "Published benchmarkcatalogues and primaryRoboDojo tube/cup code, preserved in benchmark assessment"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 793,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/793",
+      "state": "pending; latest receipt2026-11-17T04:39:18Z",
+      "operation": "Fit a rubber stopper onto a fixed short glass tube while maintaining close protective support.",
+      "comparison": "Shared interference-fit push/twist primitive. Crutch additionally needs extraction of the installed worn foot and handling/reorientation of a free90cm assembly; #793 instead centres on protecting fragile glass through prescribed nearby support. Neither different material nor superior contact fidelity alone is novel. Its latest task/source uses a captured coaxial sliding/rotating fit joint after seating.",
+      "implication": "Material overlap, not an established exact duplicate."
+    },
+    {
+      "pr": 800,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/800",
+      "state": "accepted/merged",
+      "operation": "Identify and remove a worn gripper finger, fit a new one under a fork plate and place three screws.",
+      "comparison": "Worn-part recognition and replacement are already represented. Crutch lacks that task's screws/plate manipulation but adds an actual frictional extraction and interference-fit operation on an unfixed full-size aid.",
+      "implication": "Do not pitch visual wear recognition or swap sequence alone as new."
+    },
+    {
+      "pr": 662,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/662",
+      "state": "accepted/merged",
+      "operation": "Hold a release collet depressed while extracting pipe from a push-fit connector.",
+      "comparison": "Tube extraction is represented, but released collet locking differs from pulling a dry rubber sleeve off an aluminum tube. Crutch has no collet-release interlock and must also install the replacement.",
+      "implication": "Different mechanism; does not make generic pulling inherently novel."
+    },
+    {
+      "pr": 321,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/321",
+      "state": "final rejection",
+      "operation": "Replace a blade in a quick-release holder and verify retention.",
+      "comparison": "Rejected for weak real-world relevance despite replacement and retention check. Crutch has a concrete worn-foot hazard backed by manufacturer fitting guidance; the verification stage alone supplies no novelty.",
+      "implication": "Retention cannot rescue an otherwise generic repair claim."
+    },
+    {
+      "pr": 1998,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1998",
+      "state": "final rejection",
+      "operation": "Adjust forearm-crutch spring-button height.",
+      "comparison": "Same assistive object, different operation. Rejection was category relevance, not an exhaustive prohibition on crutch tasks. Current category must rest on the visible worn-through foot and slip hazard, not general familiarity or an occupation count.",
+      "implication": "Not a physical duplicate; category claim needs precise scope."
+    },
+    {
+      "pr": 2161,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2161",
+      "state": "final rejection",
+      "operation": "Adjust miniature fixed walking-stick stand-in using bayonet slots.",
+      "comparison": "Full-size free crutch and actual friction interface avoid the cited miniaturization/substituted-mechanism issue. Correct fidelity is necessary, not sufficient novelty.",
+      "implication": "Useful construct-validity precedent, not novelty clearance."
+    },
+    {
+      "pr": 2445,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2445",
+      "state": "pending",
+      "operation": "Replace worn squeegee rubber by threading a long floppy strip through its channel and fitting end clips.",
+      "comparison": "Shares replacing worn elastomer; defining manipulation is flexible-strip routing and clipping, not radial sleeve interference.",
+      "implication": "Different physical mechanism."
+    },
+    {
+      "pr": 2095,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2095",
+      "state": "final rejection",
+      "operation": "Match and place ground-glass stoppers in flasks.",
+      "comparison": "Shows that recognizing the right part plus ordinary placement may fail importance. Crutch requires removal and frictional seating rather than just a drop-in cone; force calibration remains an estimate.",
+      "implication": "Warns against relying on semantic matching or object label."
+    },
+    {
+      "pr": 2038,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2038",
+      "state": "final rejection as duplicate",
+      "operation": "Seat a swing-top stopper and close over-centre bail.",
+      "comparison": "Exact closure mechanism was already pending elsewhere. It is not the crutch mechanism.",
+      "implication": "Benchmark compares physical skill, not just labels or improved implementation."
+    }
+  ],
+  "new_nearest": {
+    "reviewed_at": "2026-11-18T07:06:42.522704+00:00",
+    "pr": 2597,
+    "url": "https://github.com/robocurve/benchmark-tasks/pull/2597",
+    "head_sha": "f170f63805d8d0a0c14681b0f8fb4739bf346e75",
+    "state_at_review": "OPEN",
+    "source_hashes": {
+      "task.json": "2381a224b70b78912a5eef2add1f23155e5e079d389de6251eb59951e0040946",
+      "README.md": "92b29616b8608803908c9e72a927bf5f271dc8e8ab9ad63d8af1135450ce84c3"
+    },
+    "read_scope": "Fulltask.json and README mechanism/scoring/physical validation sections; authored source files saved. No code-quality assessment of competitor.",
+    "competitor_operation": "Attach a loose garden hose male connector to a fixed tap by retracting sprung collar, aligning/inserting, releasing collar over locking pins, and passing10N pull. No worn-part diagnosis or removal/replacement from a freely handled aid.",
+    "shared_content": "Coaxial insertion, a retained connection and released assembly are real shared abstractions. Both permit ordinary support. Retention checks, extra observers and better physics are not novelty claims.",
+    "weakest_valid_crutch_route": "Inspect worn foot as needed, support the crutch while pulling off the dry fitted foot, stand replacement on bench and insert shaft straight, demonstrate own-weight retention, return full-size aid. No compulsory bimanual grasp, twist, spare pickup or special sequence restriction.",
+    "distinction": "Complete maintenance replacement of a worn load-bearing foot on a freely handled forearm crutch, versus connecting a hose to a fixed latched tap fitting. The semantic operation and mechanism both differ beyond color/layout. Crutch does not actuate a release sleeve or locking pins; competitor does not remove fitted hazardous part and replace it.",
+    "assessment": "Candidate-level meaningful distinction; residual generic insertion/retention overlap acknowledged. Not a final novelty clearance or submission approval; final package and contemporaneous board inventory still required."
+  },
+  "nearest793_live_status": {
+    "state": "OPEN",
+    "head_sha": "4e63b84cad47a6ae2f0f7b9145dfa12991664023",
+    "latest_receipt": "2026-11-17T04:39:15Z TK-GDJRVV",
+    "source_version_note": "Saved primarycode source displayURL uses the same currenthead; currentrevision receipt and authored explanation verified. No subsequentreview comment."
+  },
+  "distinct_from_nearest": "Complete worn load-interface replacement on a freely handled forearm crutch: remove the installed dry sleeve and seat its compatible replacement. The closest stopper task fixes a short glass tube and makes close protective support the defining requirement. The sprung-hosecoupler task retracts a collar and captures lockingpins on a fixedtap. Shared axial insertion/extraction/retention primitives remain; no claim of novelty from scaledimensions alone, strongerphysics, higherthresholds, arbitrarytwist/twohandsequence, or the mere label repair.",
+  "residual_risk": "Generic dry-sleeve interference fit is a real overlap; final reviewer may judge the whole operation insufficientlydistinct. No acceptance guarantee. Candidate-level distinction remains defensible after weakest-route analysis.",
+  "importance_basis": "NHS identifies worn/split ferrules as a safety maintenance item; Aidapt documents complete dryfoot replacement. Categoryclaim is recognized worn-foot slip hazard under a goal-onlyinstruction, not universalcrutchrelatability or500koccupation count. Nativeinspection proves opportunitytosee originalwornunderside; initialoverheadvisibility deviation is explicit.",
+  "benchmark_comparison": "pipeline/reviews/crutch-submit-novelty-20261117/benchmarks/assessment.json",
+  "board_access": "pipeline/pdf-screening/sr008-final-novelty-preparation/board-access.json",
+  "task_py_sha256": "da7a4a92d199358447a026cf5c80bb261af97c8872280c55ae603bba61776079",
+  "task_metadata_sha256": "3ae7a255b481f6697cf3ba486479b883ec9c18931d676c668d854413e55981e3",
+  "known_inventory_sha256": "c02d8631116681254178a2766d92bcb310e1cb0f6f075ff4e15627a0f3a3e4bf",
+  "final_package_review": "pipeline/pdf-screening/sr008-final-source-review/final-root-package-review.json",
+  "final_qualification_evidence": "pipeline/pdf-screening/sr008-graph-full-validation.json",
+  "remaining_steps": [
+    "genuine Dream trial",
+    "final media check and publication",
+    "intake receipt verification"
+  ],
+  "inventory_rechecked_at": "2026-11-19T04:43:48.277230+00:00",
+  "new_prs_since_prior_inventory": [
+    {
+      "pr": 2605,
+      "operation": "Broken thermometer cleanup"
+    },
+    {
+      "pr": 2606,
+      "operation": "Soft-serve swirl"
+    },
+    {
+      "pr": 2607,
+      "operation": "Separatory-funnel phase separation"
+    },
+    {
+      "pr": 2608,
+      "operation": "Keyhole-slot coat-rack hanging"
+    }
+  ],
+  "new_inventory_assessment": "Read new titles2605\u20132608 and repeated crutch/ferrule/dry-sleeve queries. No new comparator relevant to worn-foot replacement; existing closest793 and2597 analyses retained. This is inventory screening, not a claim of having audited unrelated new source code.",
+  "revision_1_assessment": "Revision after the 'Not accepted' (clarity) review: README and task.json reset_notes/setup only gain real-trial preparation, pull-off check and reset text; task.py unchanged (same hash as reviewed source). Refreshed inventory: 220 PRs after 2608; screened titles for foot/tip/cap/sleeve/push/rubber/walker/mobility. Nearest new: 2796 (push impalement caps onto rebar stubs: push-on only, no extraction of an installed worn part, fixed stubs), 2760 (push cannula tubing onto a flowmeter nipple), 2809 (folding walker set-up, no foot replacement). Crutch/ferrule queries return only 793, 1998, 2161 and this PR. No new duplicate of worn-foot replacement on a free full-size crutch."
+}

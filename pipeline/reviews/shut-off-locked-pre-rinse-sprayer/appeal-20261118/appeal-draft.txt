@@ -1,0 +1,13 @@
+Please request a human review of the importance decision for TK-83975C.
+
+Our wording “left locked on” may have made this sound like an unusual equipment failure. The submitted hardware uses the manufacturer's ordinary hold-down ring for continuous rinsing. Turning the sprayer off requires disengaging that control and allowing the spring-return trigger to close while controlling the suspended head.
+
+There is more specific evidence of occupational relevance than the general cleaning duties cited in our original context:
+
+- [EPA WaterSense](https://www.epa.gov/watersense/pre-rinse-spray-valves) reports that about one million U.S. food-service establishments use pre-rinse spray valves to rinse dishes. This supports widespread use of this particular equipment in commercial dishwashing.
+- [T&S's exact B-0107-J-SWV product page](https://www.tsbrass.com/products/parts-accessories/spray-valves/B-0107-J-SWV) lists the hold-down ring and industrial-kitchen application. Its [foodservice catalog, page 8](https://s3.us-east-2.amazonaws.com/mid-city.com/resources/T_S_B_0665_BSTR_Catalog.pdf) describes a hold-down ring for continuous use in the same pre-rinse product family.
+- [BLS](https://www.bls.gov/ooh/food-preparation-and-serving/food-preparation-workers.htm) reports 908,500 food-preparation-worker jobs in 2025 and includes cleaning equipment and dishes among their duties.
+
+These sources establish equipment prevalence and the intended control function; they do not directly count workers who disengage the ring, so we are not claiming they independently prove the 500,000-worker threshold. Could a human reviewer reconsider whether ending continuous rinsing with the manufacturer's normal control constitutes a regular operation within commercial dishwashing work?
+
+This request concerns the existing submitted task; no code or scope changes are proposed.

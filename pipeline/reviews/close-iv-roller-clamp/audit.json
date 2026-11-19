@@ -1,0 +1,16 @@
+{
+  "status": "held_do_not_submit",
+  "finding": "Open roller-clamp housing is welded to upstream/downstream tube ends. The demo pinches tubing, creating axial support that an open real clamp can slide past. A1.0 demo on this model is not valid construction evidence.",
+  "observed_improvements": [
+    "6g mass estimated from molded polypropylene volume replaces solver-inflated16g",
+    "Wheel reaches22mm narrowstop after robot-compliance compensation",
+    "Pure once-per-step3secondfullhold; tube stillness ignores irrelevant axial spin; clearance measured fromtubesurface"
+  ],
+  "next": "Use actual continuous tube/channel contact or a disclosed physically faithful axial sliding guide without artificial endstop support, then direct housing stabilization. Repeat demos and adversarial tests. No Dream spend.",
+  "source_reference": "https://www.bd.com/en-us/products-and-solutions/products/product-page.42493e",
+  "last_prototype_visual_review": {
+    "run": "demo-1116-213010-gpu0-290194",
+    "contact_sheet_inspected": true,
+    "finding": "Wheel reaches stop and hands withdraw, but direct visual inspection does not cure the artificial axial restraint of upstream tube welded to clamp frame. Remains held; no validated count."
+  }
+}

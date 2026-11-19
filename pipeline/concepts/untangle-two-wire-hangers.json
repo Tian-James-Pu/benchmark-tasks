@@ -1,0 +1,37 @@
+{
+  "title": "Separate two tangled wire clothes hangers",
+  "category": "Societal relatability",
+  "justification": "Separating hangers caught together is a familiar laundry recovery. The open hook must be unthreaded around another hanger without dragging it off its support; the distinction is constrained three-dimensional geometry, not labels or an instruction puzzle.",
+  "fault": "The blue hanger hook encircles the lower crossbar of a hanging white hanger, so a straight pull catches the hook and drags both.",
+  "instruction": "Separate the tangled hangers and hang the blue one on the empty peg.",
+  "objects": [
+    "Two full-size 40 cm bent steel-wire clothes hangers, 4 mm wire, open hooks",
+    "A fixed clothes-rack frame with two perpendicular pegs",
+    "Two SimReady laundry-area distractors"
+  ],
+  "skill": "Stabilize one hanger while lifting and translating the other through its open hook throat; place the recovered hanger independently on its peg.",
+  "scoring": "Draft: 0 if a hanger ever leaves the tabletop area or penetrates the other wire; 0.5 once separated with at least 3 cm wire clearance and both released; 1 for blue independently supported on target peg and white on original peg, settled and hands at least 3 cm clear for 3 seconds. All other outcomes 0. Final thresholds will follow validated geometry.",
+  "nearest": [
+    {
+      "pr": 1082,
+      "state": "rejected",
+      "reason": "Linked S-hooks failed occupation category, not a core stocking duty."
+    },
+    {
+      "pr": 1161,
+      "state": "rejected",
+      "reason": "Miniature bars omitted hanger hooks and garment manipulation; this task models full-size actual hooks."
+    }
+  ],
+  "risks": [
+    "Custom bent wire fallback because no SimReady clothes hanger is catalogued; every contact surface must follow visible wire.",
+    "Could be considered an occasional nuisance rather than broadly familiar everyday recovery; no occupational importance claim.",
+    "Initial interlock must be physically stable, not intersecting or solvable by a plain lift.",
+    "Full-size hangers may challenge YAM reach; offline IK and scene trials required."
+  ],
+  "review": {
+    "decision": "rejected prototype: no full-score contact demo after iterative grasp and approach tests; do not submit",
+    "novelty": "Fresh public index has no accepted/pending hanger disentangling task; checked latest rejection comments 1082 and 1161.",
+    "feasibility": "Physical interlock stable with20mm segment colliders, but YAM wire grasp and bimanual approach not reliable. Left-only corrective approach avoided disturbance but never achieved controlled separation; latest300-step trials both0.0."
+  }
+}

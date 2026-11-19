@@ -1,0 +1,20 @@
+{
+  "title": "Move a ceramic tile left standing on its edge into a lean-to rack, letting go only once it leans on both posts",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "unstable balance",
+    "gradual release",
+    "ceramic tile",
+    "lean-to rack"
+  ],
+  "instruction": "Put the tile in the rack, leaning back on both posts.",
+  "context": "Anything thin and flat stood on its edge (a tile, a picture frame, a cutting board) falls flat at the first knock. Stowing one means leaning it back on a support; carried there and let go while still upright, it is as unstable as before.",
+  "setup": "All distances are from the line joining the two arm bases (forward) and from the midline between them (left/right). A glazed ceramic wall tile (30 x 15 x 0.8 cm, 0.75 kg, off-white) stands unsupported on one 30 cm edge, upright, its long edge running left to right, centred on the midline 20 cm forward. A tile rack is fixed to the table: two wooden posts (3 x 3 cm, 10 cm tall), their centres 10 cm left and 10 cm right of the midline and their front faces 36 cm forward; and a dark wooden toe strip (26 cm long, 1 cm wide, 1 cm high) running left to right, centred on the midline, its back face 31.5 cm forward, leaving a 4.5 cm slot between strip and posts. Three distractors lie behind the rack, loose, and are not part of the task: a red ceramic mug (11.4 x 9 x 8 cm with handle, 0.30 kg) centred 48 cm forward and 24 cm left; a roll of clear tape (10 cm across, 5 cm high, 0.06 kg) lying flat, centred 49 cm forward and 24 cm right; and a Phillips screwdriver (18.8 cm long, 3.4 cm handle, 0.10 kg) lying left to right on the midline, 48 cm forward.",
+  "scoring": "Tilt is the angle between the tile's 15 cm side and vertical, measured every control step. 0 if at any point the tilt exceeds 45 degrees (the tile fell), whatever happens afterwards; only a reset of the scene clears this. Otherwise the tile leans when it is at rest (under 1 cm/s), tilted 5 to 45 degrees toward the posts, its back face within 5 mm of the top front edge of both posts, and the last 3 cm of every gripper finger at least 3 cm from it. 1.0 once it has leaned for 4 s without a break at a tilt of at most 25 degrees, its bottom edge on the table (within 3 mm) between the toe strip and the posts and its centre within 3 cm of the midline; the trial then ends. 0.5 if at the end it leans but short of that (for example its bottom edge in front of or on the toe strip, or leaning under 4 s). 0 otherwise, including a tile still standing upright anywhere, or one a gripper is touching or within 3 cm of. The distractors do not affect the score.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Stand the tile back on its edge at the start position; check with a square that it is upright and that it stands free when released.",
+  "fidelity": "Tile, posts and toe strip are rigid box primitives; the mug, tape roll and screwdriver are NVIDIA SimReady props with masses set at load. The tile is unbreakable: a tilt past 45 degrees counts as a fall. All surfaces have rubber-like friction (1.2 static), above glazed ceramic on wood, so the tile is easier to pinch and its foot would hold without the strip. The table is flat and still, so the untouched tile stands indefinitely. No force sensing.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-TVZEHH"
+}

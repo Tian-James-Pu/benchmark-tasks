@@ -1,0 +1,21 @@
+{
+  "title": "Put a washed desk fan back together: blade onto its shaft pin, reverse-threaded knob, front grille clipped on",
+  "category": "Societal relatability",
+  "keywords": [
+    "household appliance",
+    "desk fan",
+    "reassembly",
+    "keyed shaft",
+    "left-hand thread",
+    "snap clips",
+    "bimanual"
+  ],
+  "instruction": "Put the fan back together.",
+  "context": "Desk and table fans are in millions of homes, and their manuals tell owners to take off the grilles and blade, wash them with mild soap and water and put the fan back together once dry. Each part goes back one way: the blade's slot has to find the cross pin on a shaft that turns freely, the knob's reverse thread has to be started square and run down without the blade turning with it, and the front grille has to sit on the rear grille's rim before its four clips will close.",
+  "setup": "Robot frame: x forward from the arm bases (bases at x 0, y +-30.5 cm), y left; heights above the table. FAN (fixed): a 12 in oscillating desk fan, switched off and unplugged, lying on its back, face up: white plastic motor housing (12 cm across, front face 7 cm up) with its pillar and base lying behind it towards +x. Its 8 mm steel motor shaft points straight up at x 26, y 0 cm and turns freely; a 2 mm iron cross pin, 14 mm long, goes through it 9.2 cm up, lying along x; the shaft's end above it is threaded left-hand (1.5 mm pitch) from 11.85 to 12.8 cm. The white plastic rear grille is already on, held by its 4.8 cm mounting nut: 34.8 cm across, 24 wires, 3 rings, rim lip top 10.7 cm up. LOOSE PARTS: fan blade (light grey plastic, 75 g, three blades, 30.5 cm across; hub 4.8 cm across with a 3.0 cm boss, 3.4 cm tall overall, 8.8 mm bore, a cross slot 2.6 mm wide and 4 mm deep across the back of the hub), lying face up with its hub at x 20, y 29 cm, its blades pointing at 342, 102 and 222 deg from +x and its slot along 72 deg (the pin lies along 0 deg); blade knob (white plastic, 12 g, 3.6 cm across, 2.0 cm tall, knurled, blind bore with a left-hand thread), open end down at x 12, y -23 cm; front grille (white plastic, 160 g, 34.8 cm across, domed 4 cm, dark 6.8 cm centre badge with a 4 cm grip boss, a 1 cm locating skirt under its rim, four hinged grille clips 1.4 cm wide at 45, 135, 225 and 315 deg, each swung 75 deg open), face up on its skirt, centred at x 32, y -38 cm. DISTRACTORS (ignored by scoring): a kitchen sponge (green/yellow foam, 7.1 x 10.1 x 3.3 cm, 20 g) at x 53, y -17 cm and a red ceramic mug (11.4 x 9.0 x 8.0 cm with handle, 300 g) at x 49, y 26 cm.",
+  "scoring": "Blade on: hub back face within 1.5 mm of its seated height (8.9 cm; resting on the pin with the slot turned away it sits 4 mm higher), centre within 1 mm of the shaft axis, tilt under 3 deg. Knob down: open end within 0.6 mm of the top of the hub's boss (12.3 cm), centred within 1 mm, tilt under 3 deg. Grille on: rim within 1.5 mm of its seated height on the rear rim, centred within 2 mm, tilt under 2 deg. Clip shut: within 3 deg of fully shut. Score at the final step: 0 if the blade is not on; 0.25 blade on; 0.5 blade on and knob down; with the grille also on, 0.5 + 0.1 per shut clip (0.9 for four). 1.0 once all four clips are shut, every condition holds, the three parts are still (under 1 cm/s and 0.2 rad/s) and both grippers are clear (every fingertip more than 20 cm from the shaft axis or more than 3 cm above the front grille), all continuously for 2 s; it then stays 1.0.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Open the four clips and lift the front grille off; unscrew the knob clockwise (left-hand thread); lift the blade off and turn the shaft so the pin lies along x. Lay the parts out as in the setup, clips swung open. Nothing is consumed.",
+  "fidelity": "Rigid bodies (PhysX). Shaft, pin, hub slot, bore, threads, grille rims and clips all collide; the threads are SDF meshes, so the knob must be turned on. The shaft turns on a free bearing with small estimated drag. Simplified: no thread preload (screwed down = run down onto the hub); each clip's plastic snap is an over-centre spring switched at 40 deg. The fan body is fixed. Only the 12 in blade size is published; other sizes are estimates. Distractors are SimReady props.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

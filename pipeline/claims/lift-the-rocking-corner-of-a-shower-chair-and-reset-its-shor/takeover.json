@@ -1,0 +1,6 @@
+{
+  "reason": "User authorized takeover after Claude session limit; worker explicitly hit limit at2026-11-17T02:11:41Z; no remaining matching runner processes",
+  "prior_owner": "claude",
+  "worker": "a50c1f7b0d42ab9ed",
+  "time_utc": "2026-11-17T02:12:00Z"
+}

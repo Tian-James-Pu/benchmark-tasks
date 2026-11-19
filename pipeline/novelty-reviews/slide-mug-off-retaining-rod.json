@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-11-19T06:25:52.687789+00:00",
+  "decision": "clear",
+  "queries": [
+    "mug",
+    "cup",
+    "handle",
+    "rod",
+    "rail",
+    "ring on rod/pole/bar",
+    "hanger",
+    "curtain",
+    "bind/jam slide",
+    "towel bar",
+    "RoboARC rod/ring/handle"
+  ],
+  "nearest_prs": [
+    2573,
+    716,
+    883,
+    2433,
+    1610,
+    1161
+  ],
+  "physical_skill": "Free a mug whose closed handle is cocked (26 degrees) on a loose 12 mm rod lying in two open brackets: square the handle up about the rod and carry it along and off the rod's open end without the binding handle dragging the rod out of its far bracket, then push the rod back and let go. Both arms (one keeps the rod seated) is the natural route; a careful one-arm route is also valid.",
+  "valid_shortcuts": [
+    "One arm: square the mug, slide it off, set it down, then push the rod back with the same arm: 1.0 by design (safe alternative, not forbidden).",
+    "Not pushing the rod back: 0.5.",
+    "Dragging the cocked mug, lifting it straight up, pulling it toward the robot or shoving it: rod drags or lifts out, recorded harm, 0.",
+    "Holding the mug or rod at the end: 0 (fingertips within 3 cm).",
+    "Removing the blue mug or the rod entirely: rod leaves a bracket, harm, 0."
+  ],
+  "distinct_from_nearest": "Pending #2573 separates two nested stuck cups by pulling them apart along their axis; no rod, handle or loose bar. Accepted #716 wedges a spring tension rod between walls; here the rod is a passive loose bar and the skill is moving a ring along it without dislodging it. Rejected #883 (mug handles aimed at a pin) and #2433 (stabilise a board, mug upright) are placement/orientation tasks; revising #1610 glues a handle. Rejected #1161/#1167 hang garments/hangers on a rack. RoboARC rope-threading and rod-tool puzzles use a rod as a tool or thread rope through rings; none frees a cocked ring along a loose bar. No accepted/pending/revising task found with a mug or ring jammed on a loose bar. In-team: none of our folders uses a rod through handles; the closed #2398/#2400/#2401 are placement/stacking.",
+  "risks": [
+    "Importance (Societal relatability) is moderate: the exact loose-rod-through-handles fixture is not documented by a primary source; README states the limit.",
+    "Mug is YCB scan at 86% (7.1 cm small mug); possible miniaturisation objection.",
+    "Uniform high friction exaggerates binding; stated in fidelity."
+  ],
+  "task_py_sha256": "fb9dac35092908915b62e28a7beb3f9807a8c895910e187a2f6da79689bbeec3",
+  "task_metadata_sha256": "334057db0e301949c607f84693b21f57c621d51b4a9b2ecd95c65f8eceffbcaf",
+  "fresh_inventory_counts": {
+    "closed": 164,
+    "accepted": 281,
+    "rejected": 1920,
+    "revising": 178,
+    "pending": 300
+  }
+}

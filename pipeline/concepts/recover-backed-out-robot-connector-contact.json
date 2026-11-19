@@ -1,0 +1,158 @@
+{
+  "source_candidate": "SR-045",
+  "title": "Restore retention of a backed-out contact in a cleaning-robot harness",
+  "category": "Impact on AI timelines",
+  "instruction": "Restore the robot harness connection.",
+  "fault": "Primary crimped terminal4mm backed out in three-lead MX150 reconstruction, secondary lock open; neighboring contacts initially seated.",
+  "justification": "Molex explicitly lists MX150 for commercial cleaning-robot brush/vacuum-pump wiring. Contact retention repair is distinct from mating complete plugs.",
+  "objects": [
+    "Unmated Molex MX150 33472 series receptacle and compatible precrimped leads at real scale",
+    "Molex63813-1500 service tool",
+    "Small ordinary slotted screwdriver for captive TPA",
+    "Low-voltage continuity tester and matching connector",
+    "Two or three SimReady service-bench distractors"
+  ],
+  "primary_sources": [
+    {
+      "url": "https://www.molex.com/content/dam/molex/molex-dot-com/en_us/pdf/application-briefs/987652-9621.pdf",
+      "evidence": "MX150 robot brush/vacuum-pump wiring application"
+    },
+    {
+      "url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/000/000000/AS-33472-100-001.pdf",
+      "evidence": "D7:5mm captive TPA travel;2.4\u20133.5mm screwdriver at designated pry point;straight release-tool engagement"
+    },
+    {
+      "url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationtoolingspecificationpdf/638/63813/ATS-638131500-001.pdf",
+      "evidence": "Actual release-tool geometry and applicable contact families"
+    },
+    {
+      "url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/334/33472/334721202_sd.pdf?inline=",
+      "evidence": "33472 actual housing product drawing; exact variant selection pending"
+    },
+    {
+      "url": "https://www.corsa-technic.com/item_dwg/SD-33012-002_D.pdf",
+      "evidence": "Manufacturer drawing:20.45mm terminal length,9.95mm contact-box length,2.55mm width,2.80mm body height,0.30mm copper-alloy sheet; small polarization rib3.33mm total height.",
+      "local": "pipeline/pdf-screening/primary/mx150-terminal-drawing.pdf"
+    },
+    {
+      "url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/productspecificationpdf/334/33472/PS-33472-000-001.pdf",
+      "evidence": "F24,mechanical requirements:terminal retention>=90N;terminal insertion<=30N;2x2receptacle TPA insertion/extraction<=90N deviation. Bounds are not measured nominal forces. No calibrated force claims yet."
+    },
+    {
+      "url": "https://www.huataiwire.com/en/products/flry-b",
+      "evidence": "1.5mm2 FLRY-B:30x0.25mm strands,2.4mm maximum insulation OD. Supports scale but does not establish bending stiffness."
+    },
+    {
+      "url": "https://elkicable.com/elki/catalog/flryb.html",
+      "evidence": "Comparable1.5mm2 FLRY-B:2.4mm maxOD,16g/m approximate mass; prototype21.5g/m must be reconciled before final scene."
+    }
+  ],
+  "nearest": [
+    {
+      "pr": 268,
+      "state": "accepted",
+      "comparison": "Ferruled wire inserted into DIN-rail push-in terminal; no removal/reseating of keyed crimp contact or captive secondary assurance lock."
+    },
+    {
+      "pr": 2144,
+      "state": "revising",
+      "comparison": "Screw-terminal wire installation; reviewer requires loaded slot engagement and correct torque. This is a contact-retention repair, but must likewise avoid fake tool engagement."
+    }
+  ],
+  "valid_shortcuts": [
+    "If pushing the contact directly home restores real retention, accept it. Do not require unnecessary extraction.",
+    "Allow ordinary service-tool and plier routes if they fit real access without damage."
+  ],
+  "risks": [
+    "PDF initial fault cannot coexist with intact fully locked TPA unless retention is actually damaged; do not simulate impossible starting state.",
+    "No enlarged pin or added gripper handles.",
+    "Correct terminal/lance compliance and real retention force need physical validation.",
+    "Robot relevance is supported at product-family level; do not label a generic connector as a specific robot assembly.",
+    "Reduced internal lance and cavity geometry is reconstructed rather than dimensioned in the supplied simplified STEP; loads and retention must be measured before claiming fidelity.",
+    "Housing drawing G=2.75mm describes pre-stage protrusion; D7 service guide states5mm stroke. Exact selected-variant final recess must be checked, not equated with G.",
+    "90N locked retention must not be replaced with a weak latch. Manufacturer maximum insertion forces are specification bounds, not nominal measured forces. Current prototype has no calibrated secondary detents or seal resistance."
+  ],
+  "state": "Engineeringprototype only. Fullrobotpress failed at2400Hz via toolslip;480Hz loaded behavior not converged. Primary/top-left frontedgecontact flex pass, bottomaccess unresolved. Bench-supporteddriverreach diagnostic running; seal/material/damage fidelity remain open.",
+  "updated_at": "2026-11-17T16:34:13.530773+00:00",
+  "cad_measurements": {
+    "part": "33472-4001",
+    "source": "https://www.corsa-technic.com/item_3d/33472-4001_stp.zip",
+    "envelope_mm": [
+      20.78315062,
+      24.79587657,
+      37.00027106
+    ],
+    "note": "Manufacturer CAD measured internally only; not redistributed. Primitive envelope alone is not acceptable final geometry."
+  },
+  "reach_evidence": "connector-reach.json: acceptable offline IK for service and side hold at120mm above table with suitable wrist roll. No collision or simultaneous-contact validation yet.",
+  "scale_probe": "tasks/recover-backed-out-robot-connector-contact/probe_wire.py:2.4mm diameter rigid70mm coupon, real pad contact; cannot validate flexible wiring or complete recovery.",
+  "wire_scale_evidence": "pipeline/pdf-screening/sr045-wire-scale/evidence.json",
+  "source_corrections": {
+    "wire_grip": "AS-33472-100 D7 p25 specifies>=20mm from insulation crimp for receptacle;25mm for blade. Earlier30mm note was obsolete.",
+    "CAD": "Supplier STEP is a simplified solid envelope without terminal cavities or lance detail. Sections cannot establish internal contact geometry.",
+    "dimensions": "Housing33472-4001 is20.783x24.796x37mm overall; section5 drawing2x2 barrel A18.58mm. No resizing to robot."
+  },
+  "hardware_recheck_2026_11_17": {
+    "drawing": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/334/33472/334724001_sd.pdf?inline=",
+    "revision": "SD-33472-0001 C11, sheet5 of11 (combined PDF page8)",
+    "finding": "Current sheet retains G=2.75\u00b10.50 mm pre-stage protrusion for2x2. Enlarged Y-Y and Z-Z views are different section planes and do not establish a common front datum or flush final face. Do not infer2.75mm stroke by treating G as travel. Generic service/application guide explicitly says5mm; exact selected-variant interface remains to be reconciled.",
+    "other_dimensions": "Current2x2 max A18.75,D24.90,E37.65 mm; older C2 maxA18.58,D24.81. Existing measuredCAD fits current maxima.",
+    "next": "Resolve exact retainer stroke and detent geometry; test updated hardware before final package."
+  },
+  "mass_recheck": {
+    "checked_at": "2026-11-17T05:44:40.634569+00:00",
+    "housing_assembly_g": 8.18,
+    "housing_source": "https://www.molex.com/en-us/products/part-detail/334724001",
+    "terminal_g": 0.391,
+    "terminal_source": "https://www.molex.com/en-us/products/part-detail/330122001",
+    "terminal_note": "33012-2001 right reel and33012-3001 left reel payoff, not loose-vs-reel distinction. Both0.391g.",
+    "wire_mass_g_per_m": 16,
+    "wire_segment_30mm_g": 0.48,
+    "lead_root_mass_g": 0.871,
+    "required_changes": "Current prototypes use12g housing frame plus1.24g links,0.645g wire segments,1.05g root. Reconcile to sourced assembly/terminal/wire masses before final demos; verify COM and inertia. No running probe modified.",
+    "cavity_plug_g": 0.16,
+    "cavity_plug_source": "https://www.molex.com/en-us/products/part-detail/0343450001",
+    "housing_plus_3_plugs_g": 8.66,
+    "prepared_probe": "probe_connector_mass_idle.py and probe_connector_retention_mass_clearance.py use sourced masses; not yet run."
+  },
+  "wire_stiffness_basis": {
+    "model_spring_Nm_per_rad": 0.01,
+    "hinge_spacing_each_bending_axis_m": 0.06,
+    "effective_EI_Nm2": 0.0006,
+    "independent_copper_strands_reference_EI_Nm2": 0.0006327670750028271,
+    "note": "Analytical independent-strand estimate at nominal110GPa copper modulus, excluding PVC and strand slip. Not a measured wire stiffness or complete calibration."
+  },
+  "material_recheck": {
+    "url": "https://www.molex.com/en-us/products/part-detail/334724001",
+    "housing_resin": "SPS/Nylon",
+    "note": "Do not label housing as PBT based on the separate cavity plug material. Exact grade/modulus and reduced-lance stiffness are not calibrated."
+  },
+  "closing_access_gate": "Prototype TPA has two outer face strips. Check real four-hole frontplate and central webs against drawing/photo before selecting a press tool. Final face recess likely prevents full closure using broad rigid finger pads; do not silently add a pad or resize geometry.",
+  "latest_component_evidence": {
+    "reseat": "381-frame run left contact seated after wire release at -0.157 mm; TPA open",
+    "retention": "Corrected-mass fixture held 90 N at 2400 and 4800 Hz with 9.62 micrometre final axial difference; both use 1e-7 kg m^2 regularization",
+    "blocked": "25 N press stops TPA at 1.041 mm with contact still 3.995 mm backed out",
+    "press": "Current tool probe confirmed runtime shared pose feedback; central TPA web geometry remains a reduced approximation"
+  },
+  "reviewer_risk_recheck": {
+    "scope": "Before submission, justify exact bench specimen and relevance, not only connector family use in cleaning robots.",
+    "circuit_context": "Current component specimen has one service lead and three cavity plugs. It is not a demonstrated complete functioning motor harness. Do not claim restored electrical service from this component result.",
+    "required": "Either describe a legitimate single-contact assembly/service specimen with defensible importance, or source and model the representative populated harness and its actual access constraints. Do not add a nominal robot label to a generic fixture."
+  },
+  "latest_engineering_status": {
+    "updated_at": "2026-11-17T14:49:04.012735+00:00",
+    "robot_press": "Longer-lift robot run stopped after confirmed live cooked-tooth error; correct physics before further tuning.",
+    "populated_connector": "Three independent contacts, four lances, one cavity plug. Fixed seated samples retain10N and three low-load flex cycles; backed-out baseline withdraws2mm under<=0.3792N before physics-rate cutoff.",
+    "continuity": "Three flexes held metal contact at>=1.0499N for7201physics samples, but old tooth collider means this remains diagnostic. No resistance model or full task validation.",
+    "remaining_gates": [
+      "Full robot repair and release twice",
+      "Electrical path under flex",
+      "Wire,seal,TPA and damage fidelity",
+      "Observable scorer and adversarial checks",
+      "Fresh novelty review and final media/model"
+    ],
+    "validated": false,
+    "geometry_gate": "Live PhysX hull cooking distorted submillimetre locking teeth and pins.1000x coordinates with inverse0.001 child scale corrects cooked geometry; authored world vertices and mass/joint/material attributes preserved. Prior retention/reseat/press/flex results are historical controller evidence only until repeated with corrected colliders. Long74s robot run intentionally stopped at329frames."
+  },
+  "latest_evidence": "pipeline/pdf-screening/sr045-connector-contact/continuity-fidelity.json"
+}

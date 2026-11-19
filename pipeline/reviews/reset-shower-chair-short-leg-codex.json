@@ -1,0 +1,252 @@
+{
+  "task": "reset-shower-chair-short-leg",
+  "reviewer": "codex",
+  "mode": "authorized codex takeover and revision",
+  "as_of_utc": "2026-11-17T02:28:00Z",
+  "task_sha256": "5d88f114d4bd6ebe90d19ed87b6fe0ddd73c63d2a10dbbe4a30836ffc0aa9029",
+  "ready": true,
+  "confirmed_runs": {
+    "demo-1116-205924-gpu0-4073241": {
+      "score": 1.0,
+      "note": "Only one full-score full demo found; source later changed grip-rotation compatibility code."
+    },
+    "demo-1116-210414-gpu0-4146678": {
+      "variant": "nothing",
+      "score": 0.0
+    },
+    "demo-1116-210416-gpu1-4147224": {
+      "variant": "pressloaded",
+      "score": 0.0,
+      "note": "NOT a validated harm test: worker confirms button did not actuate, rerunning corrected variant."
+    },
+    "demo-1116-210418-gpu3-4148673": {
+      "variant": "liftonly",
+      "score": 0.0
+    }
+  },
+  "findings": [
+    {
+      "severity": "blocker",
+      "file": "task.py",
+      "lines": [
+        394,
+        416,
+        430,
+        431
+      ],
+      "problem": "score mutates _still; success calls score. Arena calls success then score per control step, doubling the stillness timer. Raw score reaches 1 at 0.50 s though docstring promises 1 s. success_hold_s=3 delays termination but does not fix raw task score at run limit.",
+      "evidence": "Read-only isolated module probe with correct 17-in settings, zero velocity and clear hands: 10 steps at 20 Hz -> _still=20, score=1.0; success first true step11. Arena inspect_embodiment.py361\u2013368 confirms call order.",
+      "fix": "Update history and timers once per physics/control step in m.on_step. Cache score/full state; score and success must be pure reads. Measure seconds using environment step_dt or count precisely20 updates. Regenerate variant copies after fixing."
+    },
+    {
+      "severity": "blocker",
+      "problem": "task.json and README.md absent at audit; no complete final scoring/instruction/setup/fidelity/sources and no reproduction instructions."
+    },
+    {
+      "severity": "blocker",
+      "problem": "Only one full demo at 1.0. Need two fresh full runs on frozen final source; hold and squeeze-lift variants pending; careless press must actually depress button and reproduce expected collapse before its zero counts as validation."
+    },
+    {
+      "severity": "major",
+      "file": "task.py",
+      "lines": [
+        413
+      ],
+      "problem": "Any 10 mm leg shortening or tilt above20 degrees is permanently called harm even on empty unoccupied chair. Intentional safe tilting or changing all legs to same lower height might satisfy the natural instruction but earn zero.",
+      "fix": "Either justify these as concrete task failures using real scenario and explicitly specify target seat height, or score actual dangerous loss of support rather than any geometric shortening/tilt. Avoid claiming an actual person was injured in this empty-chair scene."
+    },
+    {
+      "severity": "major",
+      "problem": "Instruction concept asks level and steady, while code requires exactly17 inches. All legs equally set to16 or18 could be level and steady but getzero.",
+      "fix": "Specify intended seat height in goal without giving recovery steps, or accept any permissible equal height consistent with user goal; test alternative safe routes."
+    },
+    {
+      "severity": "major",
+      "problem": "Chair is custom mechkit geometry, not a SimReady prop; only soap/sponge use SimReady. Violates strict local recognizable-object rule unless a permitted documented mechanism reconstruction exception is established."
+    },
+    {
+      "severity": "major",
+      "problem": "Setup/demo camera crops far seat and does not clearly reveal raised far foot. Near fault is subtle and soap distractor not clearly shown.",
+      "fix": "Choose camera that includes full chair/all feet/distractors and visibly establishes short leg/rocking fault; inspect actual scene not only score."
+    },
+    {
+      "severity": "minor",
+      "file": "task.py",
+      "lines": [
+        423
+      ],
+      "problem": "Foot support condition accepts any negative penetration because it only checks gap<=1 mm.",
+      "fix": "Bound negative penetration by a documented solver tolerance and verify direct table support, not a prop."
+    },
+    {
+      "severity": "minor",
+      "problem": "Temporary CHAIR_DEBUG logging and redteam copies remain. Remove debug and archive redteam evidence before submission per brief."
+    },
+    {
+      "severity": "major",
+      "problem": "No real manufacturer chair/adjustment hardware or reproducible spring specification is cited yet. The custom chair claims8N pushbutton force,1.9kg mass and specific COM/inertia without source. Related shower-seat review2240 expressly requires obtainable fixture/rebuildable mechanism and measurable force profile.",
+      "fix": "Provide real chair model reference and measurement/rebuild geometry; distinguish verified values from estimates in fidelity, and validate force-sensitive behavior."
+    }
+  ],
+  "reset_audit": {
+    "source": "mechkit.py788\u2013805,880\u2013900; task.py_reset_latches/_new_trial",
+    "result": "Hooks restore joint gains/forces before reset settle; reset callback clears _harm,_still,_tips and latch bookkeeping. Read-only pure reset probe passed. No live repeated-episode reset check performed; do not claim one."
+  },
+  "safety_review": "A real shower chair with one short leg has a plausible future-user fall hazard and the two-handed unload-before-button manipulation is meaningful. Current concept is Impact on jobs, relying on bathing aides. Safety category should describe implicit risk to the future sitter without pretending adjustment of an unoccupied chair is an observed personal injury. The category/importance case still needs evidence that this exact adjustment is core regular work or sufficiently meaningful safety recovery.",
+  "novelty_review": "Concept already identifies telescoping walking-stick and suitcase-handle mechanisms and pending wall-mounted shower seat. Load-bearing height adjustment is a plausible distinction but reviewer acceptance is uncertain. Need inspect exact related submissions, not only titles.",
+  "ownership": "Claude worker explicitly reached session limit at 2026-11-17T02:11:41Z; no remaining task process. Prior owner preserved in claim; task transferred to codex-takeover under user authorization.",
+  "related_review_evidence": [
+    {
+      "pr": 1998,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1998",
+      "state": "finally rejected",
+      "lesson": "Forearm-crutch spring-button height adjustment was rejected as neither sufficiently relatable nor core work for >500k workers. Shower-chair Jobs category cannot rely on aide headcount alone; exact recurring manipulation must be established."
+    },
+    {
+      "pr": 2161,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2161",
+      "state": "finally rejected",
+      "lesson": "Walking-stick device was rejected for miniature fixed bayonet substitute for actual friction-cam cane; shower-chair concept incorrectly describes this as same push-button mechanism. Correct nearest-task narrative."
+    },
+    {
+      "pr": 2107,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2107",
+      "state": "accepted",
+      "lesson": "Full-scale suitcase task already has one hand bracing body while other presses button and draws sprung-latched telescoping tubes. Shower-chair distinction must rest on unloading a load-bearing support and detecting/restoring rocking, not merely two hands and button slide."
+    },
+    {
+      "pr": 2240,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2240",
+      "state": "revising",
+      "lesson": "Wall shower seat required real obtainable hardware or reproducible keeper/spring drawings and measured lifting-force profile. Shower-chair mass/COM/button spring/latch parameters need equivalent grounding; they cannot be chosen only to work in simulation."
+    }
+  ],
+  "proposed_revision": {
+    "category": "Safety and alignment",
+    "instruction": "Prepare the shower chair for use.",
+    "context": "A bath seat with unequal or unlocked leg extensions can rock or collapse when a person sits. The short-leg fault is present in the initial layout; the instruction does not identify it or prescribe supporting the chair before adjusting it.",
+    "goal_boundary": "No prescribed target height: accept every common locked hole within the actual documented range. If a patient-specific target is required, put that height in the goal itself, without mentioning the fault or repair steps.",
+    "scoring_proposal": {
+      "full": "All four buttons physically out and latched; all four leg settings equal and within supported range; seat within1degree of level; each foot gap between-2mm solver tolerance and+1mm; chair remains on specified floor/work surface; linear speed<0.005m/s and angular speed<0.05rad/s; gripper samples>3cm clear; all these hold continuously3s.",
+      "partial": "0.5 when all four legs are physically latched at one common supported height but the chair is still held, moving, tilted, or not resting on all four feet. Otherwise0. No artificial quarter credit for making the wrong leg too long.",
+      "history": "Do not zero a run merely for intentionally tilting an unoccupied chair or shortening a leg. Permanent failures only for explicitly justified actual damage/out-of-bounds events; do not invent patient injury when no patient is present.",
+      "architecture": "Single on_step tracker update with dt accumulation; score()/success() are pure cached reads; reset alone clears timers/history. success_hold_s0 if tracker itself enforces3s."
+    },
+    "required_checks": [
+      "Do nothing remains0.",
+      "Lift only remains0.",
+      "Loaded button press actually depresses button and produces mechanical shortening; score reflects final state, no fabricated injury.",
+      "Holding corrected chair earns0.5.",
+      "One-handed squeeze+lift may legitimately succeed if physically possible; do not force its score0 merely to claim bimanual necessity.",
+      "Alternative equal-height state, e.g.all16in, must receivefull after release; pure scorer boundary check plus reachable physical alternate if practical.",
+      "Two freshfull demos at1 after finalgeometry/scoring/camera edits.",
+      "Reset after failed and successful episodes clears tracker and restores allbuttons/legjoints."
+    ],
+    "camera_fix": "Use a task-local station.rig wrapper installed at task import, before YamArenaEmbodiment constructs its rig, to replace top-camera pose while retaining lens. Camera stand/collider then follow the same pose through task_room. Publish fixed coordinates and show entirechair+distractors. Evaluate an oblique camera beside the nearcorner to expose the raised farfoot; no image editing or render-only scene change. Offline project bounds first, then verify contact sheet. Default calibrated camera demonstrably crops upperseat.",
+    "hardware_policy": "Current geometry is generic recognizable custommechanism, not a verified exact replica. Manufacturer guidance grounds mechanism and safety requirement but does not establish current COM/buttonforce/footprint. Need either match one sourced product/version or publish buildable physical replica drawings and measurement protocol; do not claim manufacturer certification or capacity.",
+    "sources": [
+      {
+        "url": "https://shop.drivemedical.com/us/en/c/deluxe-aluminum-shower-bench-without-back/p/RTL12203KDR/downloadPdf",
+        "kind": "manufacturer product sheet",
+        "verified": "Full-scale backless aluminum bench; seat19.25x11.5in; angled adjustablelegs with1in increments; weights list5lb/4.5lb byvariant.",
+        "limitation": "Current simulation50x30cm,1.9kg,46x34cmfootprint differs. Published variants have inconsistent height/capacity data: choose exactrevision rather than mix."
+      },
+      {
+        "url": "https://www.medline.com/media/catalog/Docs/MKT/MAN_G2-203FRX1_Trilingual_19W2439682.pdf",
+        "kind": "manufacturer manual for related foldingstool",
+        "verified": "Before use alllegs sameheight and touchingfloor simultaneously; allpushbuttons fullyprotrude and legslocked; warns serious userinjury for failure.",
+        "limitation": "Different folding product: supports safetyprinciple, not numericaldimensions of currentchair."
+      },
+      {
+        "url": "https://www.medline.com/media/catalog/Docs/MKT/MPL_MDS89740RWA%28H%29_Bath%20Bench_Manual.pdf",
+        "kind": "manufacturer bathbench manual",
+        "verified": "Pushbutton depress+slide extensions, identicalheight onallfourlegs, verify buttonsfullyprotrude. Assembly explicitly turnsseat upside-down.",
+        "limitation": "Supports accepting intentional safe inversion/tilt of emptychair; dimensions/springforces notverified."
+      }
+    ],
+    "unverified_parameters": [
+      "8N button force and5.5mm travel",
+      "tube25/22mmdiameters and actualsliding friction",
+      "10degree splay and46x34cmfootprint",
+      "1.9kg totalmass/COM/inertia",
+      "14\u201321in range for one specificmanufacturer revision"
+    ]
+  },
+  "revision_status": "Validated. Two fresh full demos, five meaningful redteams, CPU scorer regressions; all sheets inspected.",
+  "resolved_findings": [
+    "Scorer timer now updates once per step; score/success pure reads.",
+    "Goal-only Safety category and complete README/task.json written.",
+    "All common indexed heights accepted; safe intentional tilt no longer permanent harm.",
+    "Foot penetration bounded and tabletop bounds checked.",
+    "Manufacturer-scale mass 2.268 kg, dimensional reconstruction and estimated force/friction explicitly disclosed.",
+    "Task-local full-chair camera mount includes far-foot gap; same rig pose in model/demo.",
+    "Debug logging removed; meaningful CPU scorer boundary/reset regression passed."
+  ],
+  "revised_validation": [
+    {
+      "variant": "demo1",
+      "run": "/home/mzhang/yam-eval/reset-shower-chair-short-leg/demo-1116-211847-gpu2-146401",
+      "score": 1.0,
+      "steps": 362,
+      "wall_s": 95.59860176593065,
+      "sheet_inspected": true
+    },
+    {
+      "variant": "demo2",
+      "run": "/home/mzhang/yam-eval/reset-shower-chair-short-leg/demo-1116-212052-gpu3-173076",
+      "score": 1.0,
+      "steps": 362,
+      "wall_s": 159.27670119330287,
+      "sheet_inspected": true
+    },
+    {
+      "variant": "nothing",
+      "run": "/home/mzhang/yam-eval/reset-shower-chair-short-leg/demo-1116-212052-gpu0-173077",
+      "score": 0.0,
+      "steps": 61,
+      "wall_s": 41.589342568069696,
+      "sheet_inspected": true
+    },
+    {
+      "variant": "hold",
+      "run": "/home/mzhang/yam-eval/reset-shower-chair-short-leg/demo-1116-212154-gpu0-183784",
+      "score": 0.5,
+      "steps": 496,
+      "wall_s": 265.67024137452245,
+      "sheet_inspected": true
+    },
+    {
+      "variant": "liftonly",
+      "run": "/home/mzhang/yam-eval/reset-shower-chair-short-leg/demo-1116-212339-gpu3-208661",
+      "score": 0.0,
+      "steps": 282,
+      "wall_s": 200.07397404313087,
+      "sheet_inspected": true
+    },
+    {
+      "variant": "squeezelift",
+      "run": "/home/mzhang/yam-eval/reset-shower-chair-short-leg/demo-1116-212542-gpu1-207786",
+      "score": 1.0,
+      "steps": 235,
+      "wall_s": 99.80810695514083,
+      "sheet_inspected": true
+    },
+    {
+      "variant": "pressloaded",
+      "run": "/home/mzhang/yam-eval/reset-shower-chair-short-leg/demo-1116-213039-gpu3-294034",
+      "score": 0.0,
+      "steps": 236,
+      "wall_s": 57.34066956862807,
+      "sheet_inspected": true,
+      "mechanism_witness": "Physical button reached -5.5 mm, unlatched leg shortened -50.8 mm (two holes), then latched at14in; score0. Earlier loaded-press zero was a miss and does not count."
+    }
+  ],
+  "ready_scope": "Ready for root preflight and Dream; no child Dream or submission",
+  "remaining_limits": [
+    "Contact-based indexed latch is approximated with joint drives; no pin shear/failure.",
+    "Mass and dimensions manufacturer-scale, but geometry is a stated rebuildable reconstruction; spring/friction/inertia estimates disclosed.",
+    "Finger clearance samples24 distal finger points, not whole-arm distance.",
+    "No live multi-episode reset test; reset hooks plus CPU tracker reset tested.",
+    "One-arm squeeze/lift1.0 is valid, so no claim two arms strictly necessary."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "SR-023",
+  "title": "Recover an inward-dropped bicycle chain",
+  "category": "Societal relatability",
+  "instruction": "Get the bicycle ready to pedal.",
+  "justification": "A manufacturer-documented ordinary bicycle breakdown. The defining manipulation is recovering an intact articulated chain from the frame-side gap and restoring chain-driven motion, not joining a service link or placing a rigid loop.",
+  "fault": "Intact chain dropped inward off the smallest chainring into the original frame/chainring clearance; rear routing and chain continuity retained.",
+  "objects": "Proposed full-scale rear drivetrain on ordinary supports, drive-side up. Surly Cross-Check50cm reference frame geometry:425mm chainstay,66mm BB drop,68mm BB shell. Shimano-recommended RD-M310, FH-RM30-8, CS-HG40-8I11-30 and FC-M31142/32/22; retain front derailleur and all rings. KMC Z8.3 compatible8-speed chain,12.7mm pitch,2.38mm inner width,7.3mm pin length. Exact ring spacing, cage profile/pivot and local tube dimensions remain source gates.",
+  "skill": "Create and use chain slack, extract an intact chain from a narrow gap, engage actual roller/tooth contacts and restore transmission. Allow safe one-arm, exposed-span and pedal/crank regrasp routes; do not require a particular sequence.",
+  "scoring": "Proposed only:0.5 for released intact chain freed from the frame gap;1.0 for three actual crank revolutions transmitting through chain/tooth contacts and rear freehub, followed by released retention. Numeric geometry/load/release conditions and final protocol still to be implemented and checked. All current diagnostics score0.",
+  "nearest": [
+    {
+      "pr": 1882,
+      "status": "closed final rejection",
+      "difference": "Commercial chain joining with guided clip applicator; no chain-on-sprocket recovery. No applicator or chain-holding guide will be added."
+    },
+    {
+      "pr": 973,
+      "status": "closed final rejection",
+      "difference": "Rigid rectangular loop substituted for flexible V-belt and working drive; directly relevant warning. This task must have intact articulated links and actual load transmission."
+    },
+    {
+      "benchmark": "BEHAVIOR bicycle chain",
+      "difference": "Lubrication/cleaning, not mechanical reseating."
+    },
+    {
+      "benchmark": "RoboARC pinned106taskindex",
+      "difference": "Horseshoe/chain puzzles; no explicit chain-on-sprocket recovery located."
+    }
+  ],
+  "source_evidence": "pipeline/pdf-screening/sr023-bicycle-chain/screening.json",
+  "reach_evidence": "pipeline/pdf-screening/sr023-bicycle-chain/reach-preflight.json",
+  "reach_summary": "Exposed chain and rear cage landmarks reachable. Stock pedal with30degree wrist tilt reaches24/25 sampled positions; native crank-arm landmarks with30/60/90degree tilt reach25/25. Not collision or continuous-grasp proof. Preserve frame geometry and refine approach only.",
+  "risks": [
+    "Closed-loop pin-chain contact stability and physical lateral flex, not a rope or rigid loop proxy.",
+    "Actual frame/cage/ring interference and native gripper mesh clearance.",
+    "Passive rear freewheel and chain-driven output, not a pose-triggered engagement flag.",
+    "Source-supported plate/roller/tooth and cage dimensions and approximate spring/tension response.",
+    "No category or validity credit from artificially requiring bimanual operation."
+  ],
+  "status": "claimed for faithful mechanism prototype and clearance preflight",
+  "validated": false,
+  "created_at": "2026-11-17T21:17:01.912704+00:00"
+}

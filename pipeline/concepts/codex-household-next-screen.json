@@ -1,0 +1,178 @@
+{
+  "screened_utc": "2026-11-17T03:14:38.964291+00:00",
+  "owner": "codex",
+  "scope": "Five grounded household, childcare and retail recovery candidates; no claim means no build authorized by this screen alone.",
+  "known_index_refresh": "pipeline/refresh_known.sh completed:207 accepted,153 closed,134 pending,1700 rejected,217 revising;2411 total",
+  "method": "Read current PR comments as well as state; primary manuals before simulator work; allow all safe shortcuts and no miniature people or isolated substitute fixtures.",
+  "candidates": [
+    {
+      "title": "Recover a receipt printer with its autocutter stranded across the cover opening",
+      "category": "Impact on jobs",
+      "instruction": "Get the receipt printer ready for the next customer.",
+      "fault": "A visible paper jam leaves the cutter extended and mechanically prevents the roll cover opening.",
+      "mechanism": "Epson TM-T88V: remove sliding cutter cover, manually turn cutter reset knob, release roll cover, remove jammed flexible paper and close the real latch.",
+      "primary_sources": [
+        "https://files.support.epson.com/pdf/pos/bulk/tm-t88v_hwum_en_02.pdf"
+      ],
+      "primary_evidence": "Manufacturer manual p13 documents cover access and reset knob; never force paper out. The manual shows the actual access direction, unlike a generic box.",
+      "nearest_prs": [
+        {
+          "number": 2027,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2027",
+          "state": "final rejected",
+          "finding": "Even receipt roll replacement is an occasional cashier/counter-worker chore, not core occupation work or an everyday firsthand scenario. Rigid attached paper and unlatched mock printer also invalid."
+        },
+        {
+          "number": 1877,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/1877",
+          "state": "closed"
+        }
+      ],
+      "safest_shortcut": "Power cycle might restore cutter automatically; manual recovery only needed when mechanical jam persists. Do not force manual reset in a scenario where power cycling solves it.",
+      "critic": {
+        "importance": "FAIL: explicit #2027 occupation-frequency rejection applies more strongly to less frequent cutter recovery.",
+        "construct": "Requires physically blocking cutter and deformable paper, actual small recessed knob access. No oversized knob.",
+        "scoring": "Observe blade retracted, paper free, cover latched and feed path clear; no turncount gate.",
+        "feasibility": "Small knob and paper jam expensive to reproduce faithfully; no reason to spend GPU after importance fails."
+      },
+      "verdict": "reject before build"
+    },
+    {
+      "title": "Free fabric caught under a sewing-machine needle plate",
+      "category": "Societal relatability",
+      "instruction": "Remove the stuck fabric from the sewing machine.",
+      "fault": "Fabric is drawn through the needle plate and held by tangled lower thread.",
+      "mechanism": "Brother 888-J92 manufacturer troubleshooting: raise needle, remove foot/bobbin cover and cut tangled thread as needed; cloth and thread cause actual constraints.",
+      "primary_sources": [
+        "https://download.brother.com/welcome/doch102572/888j92_om01en.pdf",
+        "https://support.brother.com/g/b/faqend.aspx?c=us&faqid=faqh00100035_006&lang=en&prod=hf_se625eus"
+      ],
+      "primary_evidence": "Manufacturer manual has the exact caught-fabric procedure and prohibits forcing removal when it fails; web FAQ403, complete primary PDF accessible.",
+      "nearest_prs": [
+        {
+          "number": 1496,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/1496",
+          "state": "final rejected",
+          "finding": "Sewing operators/upholsterers/tailors/leather workers do not clearly reach500k US; specialist sewing procedure lacks broad firsthand familiarity."
+        },
+        {
+          "number": 2355,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2355",
+          "state": "pending",
+          "finding": "Free lining caught in zip; different hardware but related tension-and-fabric recovery."
+        }
+      ],
+      "safest_shortcut": "Cut accessible thread or remove needle/foot to remove cloth. These safe routes must be allowed; cannot demand a specific wheel/foot sequence.",
+      "critic": {
+        "importance": "FAIL under #1496; do not reclassify needle risk without an implicit credible human exposure.",
+        "construct": "Rigid cloth or grasp-triggered release would replace actual snag with a state machine.",
+        "scoring": "Practical fabric intactness and needle damage need validation, not mesh certificates.",
+        "feasibility": "Faithful thread-cloth-needle coupling not established."
+      },
+      "verdict": "reject before build"
+    },
+    {
+      "title": "Square and latch a feeding tray caught on only one booster-seat armrest",
+      "category": "Societal relatability",
+      "instruction": "Put the feeding tray back square on the booster seat.",
+      "fault": "One side is caught at an adjustment position; the other rests above its button.",
+      "mechanism": "Mattel Fisher-Price CMH59 Healthy Care booster uses armrest buttons and three tray positions; exact manufacturer pictures identify both catches and release motion.",
+      "primary_sources": [
+        "https://service.mattel.com/instruction_sheets/CMH59-SP.pdf",
+        "https://download.gracobaby.com/ProductInstructionManuals/ISPH016AC.pdf"
+      ],
+      "primary_evidence": "CMH59 p6 shows snap-on tray buttons. Both manufacturers explicitly say tray is not a child restraint. A complete ordinary-scale booster would be needed, not isolated widened rails.",
+      "nearest_prs": [
+        {
+          "number": 1802,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/1802",
+          "state": "pending revised intake TK-SUKJXC",
+          "finding": "Click booster tray has both catches locked at second notch. Earlier revisions required rounded real tray and matching demo; no difference in core physical skill."
+        },
+        {
+          "number": 861,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/861",
+          "state": "final rejected",
+          "finding": "Scaled doll/carrier changes real geometry; unvalidated mesh harness assay not practical."
+        }
+      ],
+      "safest_shortcut": "Fully remove tray and refit square. This is safe but is exactly the pending tray-latch skill; cannot require keeping one catch engaged.",
+      "critic": {
+        "importance": "FAIL novelty: recovery starting pose does not distinguish #1802.",
+        "construct": "Do not claim tray latch is fall restraint; manufacturer contradicts that. Preserve full-scale seat and actual button access.",
+        "scoring": "Both actual catches retained; permit any symmetric usable tray position unless user goal specifies one.",
+        "feasibility": "Plausible tabletop full booster but no build warranted because duplicate."
+      },
+      "verdict": "reject before build"
+    },
+    {
+      "title": "Release a loaded magnetic security-tag clutch at checkout",
+      "category": "Impact on jobs",
+      "instruction": "Remove the hard tag from this garment.",
+      "fault": "Pin is under tension so clutch remains wedged even on detacher; ease load then extract pin while magnetic release is maintained.",
+      "mechanism": "Sensormatic standard magnetic detacher guide specifies holding release bulb seated and pushing down then lifting clamp. Magnetic ball-clutch patents describe spring-biased pin capture.",
+      "primary_sources": [
+        "https://docs.johnsoncontrols.com/sensormatic/api/khub/documents/T3MX3rtW9fQkGBUWq5BcRA/content",
+        "https://patents.google.com/patent/US11505969B2/en"
+      ],
+      "primary_evidence": "Manufacturer guide identifies compatible standard tags, excludes UltraTag, and documents two-handed continuous detacher seating. Patent is mechanism evidence, not dimensions of any arbitrary tag.",
+      "nearest_prs": [
+        {
+          "number": 1888,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/1888",
+          "state": "revising TK-VMJ24A",
+          "finding": "Same core task. Repeated reviews demand clutch physically reengage when detacher leaves and disallow late pull/reseat scoring exploit."
+        }
+      ],
+      "safest_shortcut": "Push pin inward to unload then pull while tag remains seated. This is normal operation already covered by #1888, not distinct recovery.",
+      "critic": {
+        "importance": "FAIL exact near-duplicate of owned revising task.",
+        "construct": "No permanent magnetic-unlocked latch; restoring field must not retroactively validate pin travel.",
+        "scoring": "Actual pin retention and removal while clutch physically released.",
+        "feasibility": "Plausible but small ball-clutch geometry requires actual scale and force calibration."
+      },
+      "verdict": "reject before build"
+    },
+    {
+      "title": "Free a coin roll under a loaded till so a cash drawer latches",
+      "category": "Impact on jobs",
+      "instruction": "Close the cash drawer with the till and money inside.",
+      "fault": "Proposed coin roll props one till corner above the inner drawer rim.",
+      "mechanism": "APG documents inner-drawer removal to find obstructions and real spring latches; Vasario1313 has13x13inch footprint and removable till. No primary source verifies the proposed under-till coin-roll interference geometry.",
+      "primary_sources": [
+        "https://apgsolutions.com/support/faqs/operating-maintenance/",
+        "https://apgsolutions.com/wp-content/uploads/M%E2%80%9343%E2%80%93148-Rev-D-Vasario-1313.pdf"
+      ],
+      "primary_evidence": "APG recommends removing inner drawer and checking obstruction, rails and latch spring. It does not mandate partial tilt of a loaded till or prohibit unloading.",
+      "nearest_prs": [
+        {
+          "number": 2257,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2257",
+          "state": "pending TK-JXVV9E",
+          "finding": "Swap counted till into drawer, coins contained, close drawer. Removing till and replacing it is already owned."
+        },
+        {
+          "number": 2027,
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2027",
+          "state": "final rejected",
+          "finding": "Occasional till-adjacent maintenance not automatically core work just because cashiers are numerous."
+        }
+      ],
+      "safest_shortcut": "Lift entire till out, remove roll, refit and close. Emptying coins first is also safe. Both erase proposed under-load maneuver; no rule may ban them.",
+      "critic": {
+        "importance": "FAIL shortcut and novelty; most legitimate work reduces to #2257 plus simple obstacle removal.",
+        "construct": "Exact roll-under-till contact unverified; do not fabricate a retaining lip or restrict whole till removal.",
+        "scoring": "No invented spill threshold from tilt or slide; actual coin containment only.",
+        "feasibility": "Ordinary33cm drawer fits but primary interior dimensions and latch geometry missing."
+      },
+      "verdict": "reject before build"
+    }
+  ],
+  "result": {
+    "passed": 0,
+    "built": 0,
+    "gpu_trials": 0,
+    "ready_count_added": 0,
+    "decision": "None passes all importance, novelty and mechanism gates. No weak candidate built to meet quota."
+  }
+}

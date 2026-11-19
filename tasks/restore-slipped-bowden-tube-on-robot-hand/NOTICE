@@ -1,0 +1,35 @@
+Hardware reference: Yeah Hand v1.3
+Copyright (C) 2023-2026 Vittorio Lumare
+SPDX-License-Identifier: CERN-OHL-S-2.0
+Source location: https://github.com/opsobot/yeah-hand
+Release: https://github.com/opsobot/yeah-hand/releases/tag/v1.3
+Corresponding editable source: Yeah.Hand.-.Hierarchic.blend.zip at that release.
+Original licence: hardware/LICENSE.txt in the source repository.
+
+Modifications, 2026-11-17:
+The simulation loader converts the released skeleton STL from millimetres to
+metres, shares coincident vertices, and represents it as a fixed collision mesh.
+The diagnostics add rigid hollow coupons and a discrete compliant hollow tube
+using the published tube sizes. The compliant tube starts on a centerline
+measured from the editable CAD's evaluated index-extension clearance cutter.
+The loader partitions the released index finger and flexible inserts by mesh
+connectivity while preserving all original triangles and source coordinates.
+These are simulation adaptations, not manufacturer-validated repair procedures.
+New hardware-derived simulation source in this folder is CERN-OHL-S-2.0.
+The full licence is provided in LICENSE-HARDWARE.txt.
+
+mechkit.py is the repository's shared mechanism helper, copied from the version
+credited to tasks/heat-shrink-lug/mechkit.py. Its original provenance is retained.
+Local changes increase geometry output precision and reduce collision offsets
+for this small-scale diagnostic. It is an external simulation-tool component,
+not a claim to authorship of the hardware design.
+
+Use of the hardware reference's name is solely for source attribution and does
+not imply endorsement. No source CAD archive is embedded in this folder.
+
+Additional diagnostic adaptations, 2026-11-17:
+The initial route is optionally smoothed between the source endpoint guides.
+An eight-segment approximation and carrier-mass redistribution compare contact
+stability. Redistribution preserves locked-cell mass moments within serialized
+precision but changes internal hinge inertia; no exact dynamic equivalence or
+validated hardware behavior is claimed. No original CAD triangles are changed.

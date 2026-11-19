@@ -1,0 +1,111 @@
+{
+  "updated_at": "2026-11-17T04:31:15.703244+00:00",
+  "task_py_sha256": "18115a27b6da55041d737d1eb829547e53ea024a3516ae1a3ccc575083146f99",
+  "prototype_demo": {
+    "file": "probe_ring_settle.py",
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-224914-gpu1-1241506",
+    "score": 1.0,
+    "steps": 849,
+    "visually_reviewed": true,
+    "note": "Final source differs only by removal of gated diagnostic print. Two fresh final-source demos still required."
+  },
+  "observer_replay": {
+    "command": "source ~/IsaacLab-Arena/yam.env; python pipeline/check_sprayer_scorer.py tasks/shut-off-locked-pre-rinse-sprayer/task.py",
+    "result": "pass",
+    "coverage": [
+      "dwell boundaries",
+      "read-only score/success",
+      "held-state rejection",
+      "permanent spray violation after pose restoration",
+      "actual reset clears history",
+      "partial-only outside hanging area",
+      "on-state zero"
+    ],
+    "limitation": "Synthetic observer inputs; not a physics demonstration."
+  },
+  "ready": true,
+  "required_remaining": [],
+  "idle": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-225348-gpu0-1294887",
+    "score": 0.0,
+    "steps": 400,
+    "simulation_completed": true,
+    "video": "frames/20261117_035348_3b0da3d7/~f1~scene-0-e0~top_cam.mp4",
+    "visually_reviewed": true,
+    "note": "Wrapper terminated after completed simulator JSON; rendered retained frames separately. Ring stays on, spray visible, hands remain at start."
+  },
+  "interrupted_final_demo": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-225412-gpu1-1297005",
+    "wrapper_exit": 143,
+    "counted": false
+  },
+  "final_demo_1": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-225745-gpu1-1341058",
+    "score": 1.0,
+    "steps": 849,
+    "visually_reviewed": true,
+    "task_py_sha256": "18115a27b6da55041d737d1eb829547e53ea024a3516ae1a3ccc575083146f99"
+  },
+  "final_demo_2": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-230356-gpu1-1413916",
+    "score": 1.0,
+    "steps": 848,
+    "visually_reviewed": true,
+    "environment_revision": "18115a27b6da"
+  },
+  "squeeze_only": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-230418-gpu2-1420286",
+    "score": 0.0,
+    "steps": 900,
+    "visually_reviewed": true,
+    "environment_revision": "72877459dc7f"
+  },
+  "held_ring": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-230419-gpu0-1420773",
+    "score": 0.0,
+    "steps": 1000,
+    "visually_reviewed": true,
+    "environment_revision": "bf52b0b2a2ca"
+  },
+  "ring_only": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-230455-gpu3-1423704",
+    "score": 0.0,
+    "steps": 1150,
+    "visually_reviewed": true,
+    "environment_revision": "05d841807bd9"
+  },
+  "model": {
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/dream-1116-231429-gpu1-1533636",
+    "json": "adhoc_2ef8ac79.json",
+    "run_status": "success",
+    "score": 0.0,
+    "steps": 2400,
+    "frames": 2401,
+    "source_revision": "18115a27b6da",
+    "wrapper_exit": 143,
+    "note": "Full completed result saved before wrapper termination. All2401 frames recovered and rendered separately; no extra API call.",
+    "visually_reviewed": true,
+    "observation": "Valve remains flowing; model does not release the ring. API logs include expired-request retries; full2400-step result completed."
+  },
+  "final_media": {
+    "dream.mp4": {
+      "sha256": "d729c6d6ac88bd7ce00f07d922a99a14daffde53bc06c989d8c24530619a6055",
+      "bytes": 485628
+    },
+    "demo.mp4": {
+      "sha256": "f8dd5e64206aba06eb362fd0020b5e05ce50cf74b7d578f08491c1a6c93faba2",
+      "bytes": 720348
+    },
+    "setup.png": {
+      "sha256": "e2a816e82d4e5b3d0b34d9c2b83621bbcefc9b63a57272a6e46a0e49b0e65ffb",
+      "bytes": 184332
+    }
+  },
+  "submission": {
+    "pr": 2418,
+    "media": "M-SJ2RCR",
+    "intake": "TK-83975C",
+    "head": "176f6622e6ca9e01ab214d1dd91e8a712de9b7de",
+    "files_verified": "Exactly task.py,task.json,README.md,mechkit.py,simready.py under one task folder"
+  }
+}

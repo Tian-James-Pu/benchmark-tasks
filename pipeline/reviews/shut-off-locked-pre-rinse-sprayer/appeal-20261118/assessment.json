@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-18T03:09:32.301538+00:00",
+  "pr": 2418,
+  "state": "CLOSED",
+  "decision": "Not accepted: final",
+  "revision_allowed": false,
+  "appeal_deadline_utc": "2026-11-19T22:37:27Z",
+  "appeal_deadline_eastern": "2026-11-19 17:37:27 EST",
+  "recommendation": "A narrow clarification appeal is reasonable; no claim threshold conclusively proven.",
+  "strongest_new_evidence": "EPA current webpage reports about1million establishments use this equipment; manufacturer lists ordinary continuousflow holdring.",
+  "limitation": "Establishment count is not worker count; no direct survey establishes500000 regular users of exact ring shutdown.",
+  "draft_file": "pipeline/reviews/shut-off-locked-pre-rinse-sprayer/appeal-20261118/appeal-draft.txt",
+  "posted": true,
+  "task_or_branch_modified": false,
+  "avoid": [
+    "Do not push revision to finalclosedPR",
+    "Do not repackage same rejectedtask as a newPR",
+    "Do not claim all908500foodprepworkers use this ring",
+    "Do not cite manual for B0108latch as instructions for B0107free ring"
+  ],
+  "comment_url": "https://github.com/robocurve/benchmark-tasks/pull/2418#issuecomment-6967964367",
+  "comment_id": 6967964367,
+  "posted_at": "2026-11-18T03:17:46Z",
+  "verified_at": "2026-11-18T03:17:53.161807+00:00"
+}

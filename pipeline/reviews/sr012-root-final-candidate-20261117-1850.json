@@ -1,0 +1,28 @@
+{
+  "reviewed_at": "2026-11-17T18:53:03.919824+00:00",
+  "task": "clear-utensil-from-dishwasher-spray-arm",
+  "source_hashes": {
+    "task.py": "8f33138a7549f67402607f50d15d7ec8d626dbdbe47299a5a2f997e6f2375ef6",
+    "completion.py": "66ffa3556dfef8bba531e6dcd3d9b43d8772721698001a444ca0d853d5b6c193",
+    "simready.py": "f5f8c711608ea2c228cd91afefeb7f5ebc0ccf258daa68cfca4d2d2971ad2af1",
+    "mechkit.py": "eb769f376285d9f2d5c7a9ec1336569d9ebce7a7b64dc3ddff3ff728c649697d",
+    "closedloop.py": "9ad6a552665964076d0443de33f9364e5545f49a690851d403fe28c619a33df6",
+    "spatula_vertices.npy": "c600b2a12373ce2a2effeba7ae5ab29424b890ecaed973bef46cd90f1b2c7cd2"
+  },
+  "metadata_sha256": "4fe348dc5ab94d8e39feb39bd94fffb2b0cf9bd87d79f7a4865785e26993ed7a",
+  "status": "scorer/text review passed within current scope; fullvalidation still pending",
+  "findings": [
+    "Counter extrema use pinned actual1116meshvertices; conservativeOBB remains for finger clearance only. Rotation matrix usage consistent.",
+    "Numeric side/footprint/support/velocity/release/rack conditions match task.json.",
+    "Rotation witness resets immediately on invalid qualifyingstate; fullturn actualangle followed3s, SUCCESS_HOLD_S0 avoids doubledhold.",
+    "Partial0.5 accepts safely extracted utensil with rackremainingpulledout. No artificial bimanual requirement.",
+    "Final actual placement component footprint reported clear ofbase andflat; freshfullpairstillrequired.",
+    "Allreviewedsourcehashes match manifest; no root taskfolder edits."
+  ],
+  "remaining": [
+    "Two freshfull1.0demos and visualreview",
+    "Isolatedheld negative plusfinalidle/blocked controls evidence",
+    "Freshnovelty check/preflight/Dreammodel andfinalmedia metadata before submission"
+  ],
+  "counts_as_validation": false
+}

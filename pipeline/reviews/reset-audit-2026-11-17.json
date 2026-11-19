@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-17T05:19:54.113195+00:00",
+  "discovery": "mechkit ordinary Object resets only root; connector local helper now resets joints too.",
+  "pending_prs": {
+    "2418": "Explicit before_reset restores all sprayer articulated positions and velocities; no nonzero joint starts relied upon. No changes made.",
+    "2406": "All authored joint starts zero; first-trial demos unaffected by nonzero-start issue. Reset restores latch logic and touched actuator gains/targets; settling drives to zero. Repeat-episode full physical reset not separately tested in this audit. No changes made."
+  },
+  "action": "No evidence from this audit invalidates the recorded fresh-process submitted demos; preserve pending PRs while awaiting review."
+}

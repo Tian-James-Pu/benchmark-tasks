@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-11-19T21:01:42.783649+00:00",
+  "decision": "clear",
+  "queries": [
+    "pipeline/refresh_known.sh this session (301 accepted, 318 pending, 162 revising)",
+    "known_tasks.tsv grep (live and accepted): can opener|tin can|soup can|cut lid|recycl|pedal bin|utility knife|blade|sharp|crimp|food can|empty can; broader grep cans?|lid|bin|knife blade",
+    "gh pr view bodies read: 1851, 672, 2481, 566, 2045",
+    "After the Dream-1 run: pipeline/refresh_known.sh rerun and the same grep repeated; no new can-lid, recycling-can or can-opener task."
+  ],
+  "nearest_prs": [
+    {
+      "pr": 1851,
+      "state": "MERGED, accepted",
+      "read": "Body read: open a food can with a two-handle rotary opener; one hand keeps the handles squeezed while the other turns the key until the cut goes all the way round, then lays the opener down.",
+      "comparison": "Same object family (a food can and a hand opener) but the opposite end of the job and a different skill: theirs cuts the lid with a tool; ours starts after a cut that stopped short, with no opener in the scene, and is about folding the stiff, plastically bent hanging lid down into a light, tip-prone can held by the other hand before binning it. No cutting, no tool operation."
+    },
+    {
+      "pr": 672,
+      "state": "MERGED, accepted",
+      "read": "Body read: retract a utility knife's blade with the slider before stowing the knife in a toolbox tray; stowing it blade-out or touching the blade scores 0.",
+      "comparison": "Same safety pattern (make a sharp edge safe before putting the item away, unprompted ordering latched at 0), different object and mechanism: a slider on a knife vs. bending a hinged tinplate flap past vertical and into a can. Reviewers may see the shared 'neutralise the sharp edge first' framing; the manipulation and the real-world setting (household recycling, sorter hazard) differ."
+    },
+    {
+      "pr": 2481,
+      "state": "OPEN, pending",
+      "read": "Title and body read: throw an empty can into a pedal bin, the lid opened with the pedal only.",
+      "comparison": "Same end action (an empty can goes in a bin), different skill: theirs is operating a pedal-bin lid to drop a plain can in; ours has an open-top caddy (no bin mechanism) and the difficulty is the can's hanging cut lid, which must be folded in first. Nothing in 2481 involves the can's own lid or a sharp edge."
+    },
+    {
+      "pr": 566,
+      "state": "OPEN, pending",
+      "read": "Body read: put scrap paper in a recycling bin but leave a private letter.",
+      "comparison": "Shares only the recycling bin; a selection/privacy task, no can and no folding."
+    },
+    {
+      "pr": 2045,
+      "state": "MERGED, accepted",
+      "read": "Body read: crimp a board lid onto a foil take-out pan by folding its rim down all the way round.",
+      "comparison": "Also plastic folding of thin metal, but a rim crimped round a pan's perimeter vs. a hinged disc swung about a single tab into a can; different object, goal and hazard."
+    }
+  ],
+  "physical_skill": "Notice, without being told, that an empty 50 g steel soup can's cut lid still hangs from the rim on an uncut tab, standing 10 degrees past vertical with its jagged edge up; hold the can with one gripper and with the other push the lid back over from outside (pressing from above opens it further) and on down into the can against the tab's ~0.08 N m yield moment until its free edge is at least 2 cm below the seam, then put the can in an open-top caddy and let go.",
+  "valid_shortcuts": "Red team: nothing 0; naive bin with lid up 0 (latched Harm); one-arm fold without holding the can 0 (can tips, lid stays up); press from above 0 (lid opens, Harm); stop at flat 0 (Harm on entry); dip, retrieve, fix 0 (Harm stays latched); fold and leave on counter 0.5; hold in caddy 0.5. Tearing the lid off is impossible in simulation; in a real trial a loose torn-off lid scores 0 (not Folded). Using the optional spoon on the lid is allowed. Demo 1.0 twice on the final file. Dream-1: 0.0 (arms drawn back to the table's front edge, nothing touched).",
+  "distinct_from_nearest": "No accepted or live task folds a hanging can lid into its can before recycling. 1851 cuts a lid with an opener; 2481 drops a plain can through a pedal bin's lid; 672 retracts a knife blade. The task is distinct in object state (partially cut, plastically bent lid), skill (two-handed fold of a stiff flap into a light unstable container) and context (household recycling guidance from Calgary, Gresham, Logan; Metro and Rockhampton use cans as containers for small lids). Residual risks: a reviewer may group it with 672 as 'make the sharp thing safe first', and programmes that accept large lids loose (Metro, Rockhampton) make 'fold it in' one acceptable option rather than the only one; the README states this limit.",
+  "task_py_sha256": "3fb7866980e1410128553fa535aaccc521b2c9ba85e6bad00e4a47b7a18263c2",
+  "task_metadata_sha256": "084c7b6b19d0ee75a6c395f21e8309d108c62b6c1d569c1625a0265c1ef078ce",
+  "note": "Hashes exclude scores/media by definition; written after the Dream-1 scores edit."
+}

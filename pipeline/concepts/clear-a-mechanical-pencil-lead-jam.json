@@ -1,0 +1,58 @@
+{
+  "title": "Restore a mechanical pencil whose broken lead blocks the feed",
+  "category": "Societal relatability",
+  "instruction": "Make the mechanical pencil ready to write again.",
+  "justification": "Pentel provides exact PG1019 jam-clearing instructions; the manufacturer markets this current pencil for ordinary writing. Precise prevalence of jam-clearing is not measured.",
+  "fault": "Short broken graphite fragment in the guide/inner tip prevents native lead feed. Fault geometry must be demonstrated, not a software flag.",
+  "objects": [
+    "Full-size Pentel Graphgear1000 PG1019 reconstruction with retractable4mm sleeve, nominal0.9mm lead, original threaded cone/inner tip, three-jaw chuck, retainer and clip latch",
+    "Ordinary0.9mm clearing wire held in a commercial pin vise",
+    "Fresh matching lead and ordinary desk supports/distractors"
+  ],
+  "skill": "Selective small-part disassembly, clearing a physical passage and restoring the functioning feed/retention/retraction mechanism. Any harmless shortcut remains valid.",
+  "scoring": "Unimplemented pending full physical mechanism; no assembly-only proxy or scripted release.",
+  "nearest": [
+    30,
+    1845
+  ],
+  "risks": [
+    "Exact local dimensions and forces require disclosed source-informed reconstruction, not OEM calibration claims",
+    "Retainer compliance and actual fragment jam may be difficult to represent at native scale",
+    "Long physical thread disassembly/reassembly can exceed a default action budget",
+    "A successful pin push alone is not the whole recovery or a novel task"
+  ],
+  "sources": [
+    {
+      "url": "https://www.pentel.co.jp/support/mechanicalpencil/314/",
+      "supports": "Exact family includesPG1019. Outer cone unscrews first, then inner metal tip; blocked sleeve is cleared from its front with a matching lead. Chuck debris can be removed with fingers or matching lead. Refit both threaded parts and check feed with eraser cap installed.",
+      "does_not_support": "Exact thread pitch, hidden chuck dimensions, spring rates or fault frequency."
+    },
+    {
+      "url": "https://pentel.ca/faq",
+      "supports": "Same Graphgear family procedure; gauge-matched crafting wire is an expressly permitted alternative to a fresh lead."
+    },
+    {
+      "url": "https://pentel.ca/product/pg1019",
+      "supports": "Nominal0.9mm,4mm retractable sleeve, metal/rubber grip, ordinary writing as well as drafting."
+    },
+    {
+      "url": "https://www.pentel.co.jp/products/mechanicalpencil/graphgear1000/",
+      "supports": "Rear knock extends the writing end; opening the clip retracts it."
+    },
+    {
+      "url": "https://www.jwima.org/knowledge/types/mechanical-pencil/structure/",
+      "supports": "Industry explanation of ordinary chuck/ring, lead retainer, return spring and incremental lead feed. This supports general feed topology, not an OEMPG1019 drawing."
+    },
+    {
+      "url": "https://www.jwima.org/knowledge/types/mechanical-pencil/faq/",
+      "supports": "Broken short lead can jam guide pipe or three-way chuck; removal with replacement lead is routine troubleshooting. Excessive force can damage chuck; bent/crushed guide pipes require replacement."
+    },
+    {
+      "url": "https://www.starrett.com/products/precision-shop-tools/pin-vises-and-sets",
+      "supports": "Ordinary commercial pin vises hold small wire; full-length handle bore permits long stock. A0\u20131mm162A can hold the0.9mm clearing wire without a guided insertion fixture."
+    }
+  ],
+  "claimed_at": "2026-11-18T04:02:48.769123+00:00",
+  "status": "held: source-corrected feed core expelled free graphite through inferred housing/guide region; no healthy baseline",
+  "evidence": "pipeline/pdf-screening/sr064-pencil/source-feed-final/result.json"
+}

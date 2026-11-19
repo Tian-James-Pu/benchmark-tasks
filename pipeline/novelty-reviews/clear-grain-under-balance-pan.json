@@ -1,0 +1,103 @@
+{
+  "checked_at": "2026-11-17T22:20:24.426954+00:00",
+  "decision": "clear",
+  "queries": [
+    "balance|weigh|scale|pan|grain|calibrat",
+    "clean|debris|load path|sensor",
+    "RoboCasa WeighIngredients and ScalePortioning source",
+    "RoboCasa WipeTable and ClearCuttingBoard source",
+    "RoboDojo sweep_blocks source",
+    "LIBERO BDDL language inventory; BEHAVIOR named task catalog; SimplerEnv task table; DataCenterBench task descriptions"
+  ],
+  "nearest_prs": [
+    {
+      "number": 621,
+      "assessment": "Accepted dosing granules into a boat on a working analytical balance; tare and draft shield are part of measuring target mass. Current candidate repairs physical parasitic load path and proves zero-load-zero with unchanged tare. Generic weight placement is shared, not the repair mechanism."
+    },
+    {
+      "number": 570,
+      "assessment": "Open but latest comment is intake quota refusal, not received/pending-review confirmation. Weight choice to reach300g, not damaged load path."
+    },
+    {
+      "number": 1023,
+      "assessment": "Final rejected specialized deadweight gauge testing for importance; appeal invoking broad inspectors occupation denied. Do not infer broad occupational scale from a specialist calibration operation."
+    },
+    {
+      "number": 2392,
+      "assessment": "Final rejection: balance leveling after a move is occasional instrument setup, not core500k work or common wetlab procedure. Exact specialist instrument also lacked lowcost equivalent. Mechanical fault repair differs from twoaxis foot adjustment, but research importance still requires explicit argument; Other is no automatic pass."
+    },
+    {
+      "number": 1863,
+      "assessment": "Final rejection: specialist eccentricity calibration is not everyday societal relatability and repeated weight placement adds no new robotic difficulty; scorer did not record readings. Our distinguishing manipulation must remain actual parasitic-load-path repair with recorded force-derived response, not weight placement alone."
+    }
+  ],
+  "physical_skill": "Lift and reseat a freely supported thin pan cover while removing or repositioning an actual trapped grain that bridges the moving support to the fixed case; restore the force-transmission path without falsely loading the pan. Then use a released known load to establish that accurate response has returned.",
+  "valid_shortcuts": [
+    "Any physical relocation of the grain or reseating of the cover that restores accurate force-derived readings is valid, even without collecting or extracting the grain.",
+    "A one-arm solution is valid; simultaneous two-arm use is not required by the scorer.",
+    "Spatula and cup use is optional. Safely repositioning them is allowed.",
+    "Power or zero-button use is allowed but restarts the zero/load/zero witnesses; it cannot substitute for restored load response.",
+    "No mandatory cleaning sequence or debris destination; check-weight placement and functional checking alone are not claimed as new physical skills."
+  ],
+  "distinct_from_nearest": "Accepted PR621 and ordinary RoboCasa weighing tasks start with working scales; they do not recover a load-bearing pan cover from a parasitic contact bridge. PR2392 adjusts instrument leveling feet; PR1863 repeats weight placements for eccentricity testing. Those are different physical operations, although their importance rejections warn against framing this as common household work or a broad occupation. The current Other category isolates an affordable laboratory feedback-recovery operation, supported by the dependence of autonomous solid dosing on measured mass. Generic sweeping and load placement are shared with RoboDojo/RoboCasa; the mechanical cover/support recovery is the claimed distinction. No exact accepted or pending counterpart was found in the refreshed inventory. This is a reasoned novelty assessment, not an acceptance guarantee.",
+  "importance_risk": "The fault repair remains an occasional instrument-support chore; reviewers may judge its research relevance insufficient. Manufacturer maintenance supports removable pan cleaning but does not quantify this exact fault frequency. No500000-worker or measured-productivity claim.",
+  "benchmark_review": {
+    "RoboCasa": {
+      "inventory": "301 entries in composite_task_attributes.js; HTML shell alone omitted task names, so actual JS inventory and source were retrieved.",
+      "nearest": [
+        "WeighIngredients",
+        "ScalePortioning",
+        "WipeTable",
+        "ClearCuttingBoard"
+      ],
+      "assessment": "WeighIngredients places packagedfood on a scale and closes cabinet; scorer checks placement/uprightness/release. ScalePortioning moves meat through an ordinary scale with50timestep wait thenplate. WipeTable covers a countertop contact sweep. ClearCuttingBoard relocates ordinaryobjects. None of these retrieved sources models or repairs an under-pan parasitic load path. Weightplacement and tool sweeping are shared skills; functional verification alone is not claimed as novel.",
+      "sources": [
+        "https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/composite/measuring_ingredients/weigh_ingredients.py",
+        "https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/composite/portioning_meals/scale_portioning.py",
+        "https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/composite/sanitizing_surface/wipe_table.py"
+      ]
+    },
+    "RoboDojo": {
+      "inventory": "Official tree55taskPython paths includesbase/helpers/randomvariants.",
+      "nearest": "sweep_blocks",
+      "assessment": "Source requires brush/dustpan sweeping free blocks into receptacle and release. Our cover/support disassembly and parasitic contact recovery is absent. Generic sweeping is shared and not itself a novelty claim.",
+      "source": "https://github.com/RoboDojo-Benchmark/RoboDojo/blob/main/task/RoboDojo/tasks/sweep_blocks.py"
+    },
+    "LIBERO": {
+      "inventory": "130 local publishedBDDLtaskdefinitions with extractedlanguage andhashes",
+      "assessment": "Inventory contains household objectplacement/drawer/control operations; no weighingbalance repairinstruction match. BDDLscan scope does not assert independent physical-skill novelty."
+    },
+    "BEHAVIOR": {
+      "inventory": "1016namedtaskrows inofficialknowledgebase",
+      "assessment": "No balance/scale/weigh/calibration named task in scannedcatalog; broadcleaning tasks exist. A catalogscreen only, not inspection ofalltaskphysics.",
+      "source": "https://behavior.stanford.edu/knowledgebase/tasks/index.html"
+    },
+    "SimplerEnv": {
+      "inventory": "LocalofficialREADME tasktable reviewed",
+      "assessment": "GoogleRobot/WidowX picking,moving,drawer,stacking/placement tasks; no underpancontactrepair family represented in table.",
+      "source": "https://github.com/simpler-env/SimplerEnv"
+    },
+    "DataCenterBench": {
+      "inventory": "Official10retainedtaskdescriptions reviewed",
+      "assessment": "Control operations andconnection tasks, includingcover,key/button,plug/binding; no physicalweighing-instrument recovery.",
+      "source": "https://robocurve.org/datacenterbench/"
+    }
+  },
+  "evidence": [
+    "pipeline/pdf-screening/sr083-balance/nearest-pr-reviews-20261117/assessment.json",
+    "pipeline/pdf-screening/sr083-balance/popular-benchmarks-20261117/assessment.json",
+    "pipeline/pdf-screening/sr083-balance/category-other-rationale.json",
+    "pipeline/pdf-screening/sr083-balance/retail-feasibility-20261117.json",
+    "pipeline/pdf-screening/sr083-balance/primary-cleaning-reference.json",
+    "pipeline/pdf-screening/sr083-balance/root-canonical-full-v3-review.json",
+    "pipeline/pdf-screening/sr083-balance/root-canonical-false-zero-v2-review.json",
+    "pipeline/pdf-screening/sr083-balance/canonical-full-v2-result.json"
+  ],
+  "limitations": [
+    "Internal spring, clearance and masses are estimates; outer dimensions and removable cover are manufacturer-supported.",
+    "Real salt crushing, shell deformation and overload damage are omitted and disclosed.",
+    "Catalog screens are bounded; they do not prove universal absence of prior art."
+  ],
+  "task_py_sha256": "b1831d3d68198d70b686286d50e44fa01d50837e4406f369b61782b9dea694ec",
+  "task_metadata_sha256": "20f50ec7e3cd95e7f92289bdb3de656a582af353e71f2f5d51ba6b5e59a697b6"
+}

@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-17T19:18:26.905357+00:00",
+  "head": "741f6495313e6f66c68c797a2f7c6dc908054472",
+  "submitted_task_sha256": "b195efdfeb9f4ba5adb812fa22827b91fd8c8b9d5c481197e7fcc798f5af7090",
+  "local_equals_remote_head": true,
+  "runs": [
+    {
+      "run": "finalA",
+      "score": 1.0,
+      "steps": 389,
+      "wall_s": 88.45,
+      "video_sha256": "322e7d76e77b4ed5e9216e4904eb52525b96c1514b211eba96d07d7947e038b6"
+    },
+    {
+      "run": "finalB",
+      "score": 1.0,
+      "steps": 389,
+      "wall_s": 108.12,
+      "video_sha256": "322e7d76e77b4ed5e9216e4904eb52525b96c1514b211eba96d07d7947e038b6"
+    }
+  ],
+  "media_matches_both_recorded_demos": true,
+  "history_launch_timestamp": "2026-11-17T15:31:01.748Z",
+  "history_path": "/home/mzhang/.claude/projects/-home-mzhang-code-benchmark-tasks",
+  "source_reconstruction": "After recorded finalA/finalB launch, recovered history shows task.py publication changes at15:53. Title substitution does not occur in current task.py; remaining change is comment172 prism -> block. Reversing that comment produces an identical Python AST. Runtime source was not independently hashed at launch; this is history-linked reconstruction, not a contemporaneous full-package hash.",
+  "reconstructed_task_sha256": "c855be229819e76c3f23b205bac89606bed42724d2f3d4638e762e4a905bb89e",
+  "ast_identical": true,
+  "visual_review": "Reviewed finalA sheet: left hand relieves wheel load while right turns key; right withdraws while left remains on rim, consistent with allowed end state.",
+  "remaining": "2.45Nm correct-key forcing/damage rationale remains unsupported by incorrect-key regulatory test. Task stays uncounted and PR stays unchanged pending first review."
+}

@@ -1,0 +1,10 @@
+{
+  "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-223333-gpu2-1050230",
+  "process_exit_code": 143,
+  "completed": false,
+  "validated": false,
+  "last_observed_simulated_seconds": 17.5,
+  "finding": "Negative opening command grasps ring, raises it about19mm; trigger reaches -13.3degree off stop. Hands still in contact at termination; no full success recorded.",
+  "visual_review": "Partial six-frame sheet inspected: ring raised and stream disappears at last frame. No final release/settling evidence.",
+  "diagnostic": "After termination GPU2 remained100%utilized with11.8GB memory; other process load may explain slow run, but termination cause not proven. Prior process confirmed absent before retry."
+}

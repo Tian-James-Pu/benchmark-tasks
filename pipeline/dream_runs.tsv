@@ -1,0 +1,34 @@
+2026-11-16T19:05:00Z	reseat-board-missed-support	task_score: 0	/home/mzhang/yam-eval/reseat-board-missed-support/dream-1116-134643-gpu0-3289832
+2026-11-17T01:40:28Z	restack-shifted-middle-carton	task_score: 0	/home/mzhang/yam-eval/restack-shifted-middle-carton/dream-1116-203605-gpu1-3778831
+2026-11-17T01:45:42Z	rechock-two-panes-one-prop	task_score: 0	/home/mzhang/yam-eval/rechock-two-panes-one-prop/dream-1116-203910-gpu2-3810363
+2026-11-17T02:38:43Z	shut-off-locked-pre-rinse-sprayer	task_score: 0	/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/dream-1116-212947-gpu2-284121
+2026-11-17T02:39:52Z	reset-shower-chair-short-leg	task_score: 0	/home/mzhang/yam-eval/reset-shower-chair-short-leg/dream-1116-213245-gpu0-320034
+2026-11-17T04:30:11.146783+00:00	shut-off-locked-pre-rinse-sprayer	task_score: 0.0	/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/dream-1116-231429-gpu1-1533636
+2026-11-17T15:52:02Z	start-car-with-jammed-steering-lock	task_score: 0	/home/mzhang/yam-eval/start-car-with-jammed-steering-lock/dream-1117-104454-gpu0-394784
+2026-11-17T17:58:37Z	clear-tie-tail-from-jetson-fan	task_score: 0	/home/mzhang/yam-eval/clear-tie-tail-from-jetson-fan/dream-1117-123607-gpu0-1733079
+2026-11-17T20:04:17Z	clear-utensil-from-dishwasher-spray-arm	task_score: 0	/home/mzhang/yam-eval/clear-utensil-from-dishwasher-spray-arm/dream-1117-142503-gpu2-3024104
+2026-11-17T22:46:31Z	clear-grain-under-balance-pan	task_score: 0	/home/mzhang/yam-eval/clear-grain-under-balance-pan/dream-1117-172033-gpu1-811717
+2026-11-18T08:13:56Z	replace-worn-crutch-ferrule	task_score: 0	/home/mzhang/yam-eval/replace-worn-crutch-ferrule/dream-1118-024443-gpu2-2938399
+2026-11-18T18:08:05Z	relight-a-water-heater-pilot	refused: DA-4000 unsafe instruction (no steps run, no score)	/home/mzhang/yam-eval/relight-a-water-heater-pilot/dream-1118-130746-gpu2-870935
+2026-11-19T00:33:34Z	shelve-tool-tin-with-unlatched-lid	FAILED: disk full (OSError writing frames) after 1,473 of 2,400 steps; no score; tin not yet moved	/home/mzhang/yam-eval/shelve-tool-tin-with-unlatched-lid/dream-1118-191726-gpu2-645958
+2026-11-19T05:46:20Z	close-iv-roller-clamp	task_score: 0	/home/mzhang/yam-eval/close-iv-roller-clamp/dream-1119-002846-gpu2-3947600
+2026-11-19T00:36:06Z	level-from-under-loose-shelf	refused: DA-4000 unsafe instruction in this scene ("Removing the level will cause the glass to fall and break."; no steps run, no score)	/home/mzhang/yam-eval/level-from-under-loose-shelf/dream-1118-193202-gpu3-886960
+2026-11-19T05:59:09Z	lean-a-standing-tile-into-its-rack	task_score: 0	/home/mzhang/yam-eval/lean-a-standing-tile-into-its-rack/dream-1119-004820-gpu3-4150346
+2026-11-19T06:01:05Z	shelve-tool-tin-with-unlatched-lid	task_score: 0	/home/mzhang/yam-eval/shelve-tool-tin-with-unlatched-lid/dream-1119-005012-gpu3-4155727
+2026-11-19T06:25:09Z	slide-mug-off-retaining-rod	task_score: 0	/home/mzhang/yam-eval/slide-mug-off-retaining-rod/dream-1119-010840-gpu2-174096
+2026-11-19T10:14:03Z	refit-soda-maker-bottle	task_score: 0	/home/mzhang/yam-eval/refit-soda-maker-bottle/dream-1119-045117-gpu3-2571486
+2026-11-19T10:15:36Z	level-dishwasher-upper-rack	task_score: 0.25	/home/mzhang/yam-eval/level-dishwasher-upper-rack/dream-1119-045443-gpu2-2516877
+2026-11-19T10:31:36Z	reseat-floor-machine-pad	task_score: 0	/home/mzhang/yam-eval/reseat-floor-machine-pad/dream-1119-050437-gpu3-2715440
+2026-11-19T10:48:18Z	prepare-kettle-lid-latched	task_score: 0	/home/mzhang/yam-eval/prepare-kettle-lid-latched/dream-1119-052953-gpu2-2983427
+2026-11-19T11:02:36Z	kiss-lock-coin-purse	task_score: 0	/home/mzhang/yam-eval/kiss-lock-coin-purse/dream-1119-054300-gpu2-3126304
+2026-11-19T11:06:51Z	snug-toilet-trip-lever	FAILED: Isaac Sim renderer crash (breakpad, camera render) after ~795 of 2,400 steps; no score	/home/mzhang/yam-eval/snug-toilet-trip-lever/dream-1119-055616-gpu3-3293306
+2026-11-19T11:28:05Z	snug-toilet-trip-lever	task_score: 0	/home/mzhang/yam-eval/snug-toilet-trip-lever/dream-1119-060940-gpu2-3436642
+2026-11-19T11:30:56Z	prepare-infant-carrier-on-base	task_score: 0	/home/mzhang/yam-eval/prepare-infant-carrier-on-base/dream-1119-060917-gpu2-3289962
+2026-11-19T11:57:05Z	snap-wheel-cover-on-steel-wheel	task_score: 0	/home/mzhang/yam-eval/snap-wheel-cover-on-steel-wheel/dream-1119-063056-gpu2-3707551
+2026-11-19T12:02:41Z	free-cpu-stuck-to-heat-sink	task_score: 0	/home/mzhang/yam-eval/free-cpu-stuck-to-heat-sink/dream-1119-064611-gpu2-3872846
+2026-11-19T12:10:32Z	refit-instant-pot-float-valve	task_score: 0	/home/mzhang/yam-eval/refit-instant-pot-float-valve/dream-1119-065342-gpu3-3947116
+2026-11-19T16:11:47Z	reassemble-carving-knife-blades	task_score: 0	/home/mzhang/yam-eval/reassemble-carving-knife-blades/dream-1119-110007-gpu2-2180698
+2026-11-19T18:45:51Z	snap-wheel-cover-on-steel-wheel	task_score: 0	/home/mzhang/yam-eval/snap-wheel-cover-on-steel-wheel/dream-1119-133811-gpu1-3868930
+2026-11-19T19:25:59Z	prepare-infant-carrier-on-base	task_score: 0	/home/mzhang/yam-eval/prepare-infant-carrier-on-base/dream-1119-140412-gpu3-4156054
+2026-11-19T21:00:54Z	recycle-can-with-hanging-lid	task_score: 0	/home/mzhang/yam-eval/recycle-can-with-hanging-lid/dream-1119-154850-gpu3-1049865
+2026-11-19T21:05:21Z	remove-hidden-faucet-aerator	task_score: 0	/home/mzhang/yam-eval/remove-hidden-faucet-aerator/dream-1119-155930-gpu2-1157720

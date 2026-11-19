@@ -1,0 +1,2 @@
+stopped: K55 (K-Classic) manual requires pushing the pod holder up from underneath while holding its top; the run_trial demo plays straight-down grips only, so that step cannot be demonstrated faithfully, and a straightened paper clip (~1 mm wire) into the exit needle bore is not graspable/insertable in this sim without faking. No build, no trials.
+rechecked 2026-11-19: still stopped. Also no SimReady single-serve brewer or paper clip in pipeline/simready_catalog.txt, so the brewer and the tool would both be primitives standing in for recognisable objects.

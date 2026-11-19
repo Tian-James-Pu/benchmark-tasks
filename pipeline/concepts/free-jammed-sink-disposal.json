@@ -1,0 +1,59 @@
+{
+  "source_candidate": "SR-013",
+  "title": "Clear a metal spoon from a jammed sink disposal",
+  "category": "Societal relatability",
+  "instruction": "Clear the jam in the sink disposal.",
+  "justification": "Moen documents metal spoons wedged in the grind ring and a household troubleshooting procedure using ordinary retrieval pliers/tongs or the1037 top-entry wrench. The current build is only a pre-isolated mechanism diagnostic; no hidden electrical-hazard handling or powered-restoration claim. Exact-stage importance and easiest-route novelty remain review gates.",
+  "fault": "Full-size steel spoon contacts a freely rotating turntable, two passive swivel impellers and stationary grind ring. A native diagnostic must establish actual blocked rotation, stable initial contact and reversible release; no lock or jam flag.",
+  "objects": [
+    "Full-size Moen GXP50C-family disposal136mm wide\u00d7340mm high beneath GS181210B787\u00d7457mm sink,737\u00d7406\u00d7152.4mm bowl and92mm drain",
+    "Ordinary914.4mm counter and cabinet beside unchanged station table",
+    "Unscaled191mm NVIDIA steel spoon; mass35g is disclosed estimate",
+    "1037 folding jam wrench and ordinary retrieval pliers are source-supported options, not yet built",
+    "Native diagnostic starts power-disconnected and splash guard removed; complete-task end state and distractors not finalized"
+  ],
+  "skill": "Release an actual wedged foreign utensil without damaging the grinding mechanism; direct safe extraction is valid. Use a top-entry jam wrench only if the physical fault requires it.",
+  "scoring": "Not implemented. Current native probe always scores0 and applies a declared\u00b10.10Nm diagnostic ramp, not OEM stall/breakaway calibration. Eventual completion must measure captured obstruction and free physical turntable rotation, with hands/tools withdrawn; it must not imply powered readiness while disconnected.",
+  "nearest": [
+    {
+      "pr": 919,
+      "status": "CLOSED Not accepted: final",
+      "comparison": "Live review read: jam not physical (pusher never reaches loose block), E-stop not hazardous-energy isolation, best-score history bug. Disposal task must use true contact jam and disconnected supply."
+    },
+    {
+      "pr": 975,
+      "status": "CLOSED Not accepted: final",
+      "comparison": "Bottle was not physically pinched and magnet/interlock introduced artificial release. This task needs native contact evidence without event-triggered locking."
+    },
+    {
+      "pr": 2175,
+      "status": "CLOSED Not accepted: final",
+      "comparison": "Toy brick artificially stuck to gripper failed importance. Moen explicitly documents metal-spoon grind-ring jam, but source procedure alone does not prove exact-stage prevalence."
+    }
+  ],
+  "primary_sources": [
+    "https://solutions.moen.com/Article_Library/How_to_Unjam_a_Garbage_Disposal",
+    "https://assets.moen.com/shared/docs/product-specifications/gxp50csp.pdf",
+    "https://assets.moen.com/shared/docs/product-specifications/gs181210bsp.pdf"
+  ],
+  "primary_evidence": "Primary procedure explicitly names metal spoons, removing removable splash guard, retrieval with tongs/needle-nose pliers and top-entry1037 wrench against both swivel impellers, followed by two full revolutions. Primary cutaway supplies impeller/ring topology. Sink/disposal overall dimensions are published; internal dimensions,150mm grind-floor recess constrained by published108mm dishwasher-inlet and175mm discharge depths, friction and mass remain disclosed reconstruction estimates.",
+  "valid_shortcuts": [
+    "Manufacturer-approved wooden tool through throat must remain allowed if it safely frees the same obstruction.",
+    "Removing obstruction directly with pliers is valid if geometry permits; choose a real reproducible wedge, never a scripted ban.",
+    "Safely disconnecting complete appliance may be allowed; no arbitrary requirement to keep it installed unless actual fixed plumbing prevents casual removal."
+  ],
+  "risks": [
+    "Do not mount the underside drive on top or shrink the disposal to satisfy reach.",
+    "Do not claim the disposal is running normally while it remains unplugged; instruction asks jam clearance, not powered service.",
+    "A rigid generic cube labelled disposal would fail construct validity.",
+    "Fault must physically resist baseline drive and release by real contact without material destruction.",
+    "Need exact disposal model, internal geometry, normal mount, available wrench and YAM reach checks before demo tuning."
+  ],
+  "decision": "held after native contact diagnostic; need allowed full-size layout/camera visibility, distinct skill versus2520, healthy control and actual extraction/free-rotation proof; no validation",
+  "screened_at": "2026-11-17T04:08:56.145244+00:00",
+  "updated_at": "2026-11-18T05:43:48.866377+00:00",
+  "source_corrections": [
+    "The initially proposed75mm grind depth was rejected before native launch: it placed the turntable above the dishwasher inlet. Its direct-grip/access results are obsolete. The150mm reconstruction and140\u2013175mm CPU bracket preserve actual overall dimensions; depth is still an estimate.",
+    "Changing initial impeller pattern0/180 to\u221225/155deg rotates the initial turntable phase, not only the passive swivel about each pin; corrected before any native run."
+  ]
+}

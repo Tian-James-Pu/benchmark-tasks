@@ -1,0 +1,1046 @@
+[
+{
+"n": 1,
+"title": "Partially removed load-bearing support",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "A support block has been partly withdrawn while it still carries a panel or fixture.",
+"recovery": "One arm takes over the load while the other restores or replaces the support.",
+"verify": "Confirm that the support is properly seated and carries the load before gradually releasing the supporting arm and continuing."
+},
+{
+"n": 2,
+"title": "Tray imbalance during unloading",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "Removing an item shifts a loaded tray's center of mass toward the edge of its stand.",
+"recovery": "One arm stabilizes the tray while the other redistributes the remaining payload or changes the unloading sequence.",
+"verify": "Establish that the tray remains stable without active hand support before resuming unloading."
+},
+{
+"n": 3,
+"title": "Long object misses a landing support",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "A long board appears placed, but one end has missed its intended support.",
+"recovery": "Keep the unsupported end controlled while the other arm guides the board onto both supports.",
+"verify": "Check engagement at both ends and stability under a gradual release before letting go."
+},
+{
+"n": 4,
+"title": "Vise released before load takeover",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "A vise begins opening before the robot has securely supported the workpiece.",
+"recovery": "Establish a reliable supporting grasp, then re-clamp or complete a controlled removal.",
+"verify": "Confirm the intended load transfer before further opening the vise or releasing the workpiece."
+},
+{
+"n": 5,
+"title": "Unbraked wheeled base",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "A cart or rolling fixture moves when the robot applies manipulation forces because its brake is not engaged.",
+"recovery": "One arm stabilizes the base while the other engages the brake or installs an appropriate restraint.",
+"verify": "Use a bounded check to confirm that the base resists the expected task forces before continuing."
+},
+{
+"n": 6,
+"title": "Extended tray destabilizes its base",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "An extended drawer or tray creates a cantilever that begins tipping its supporting cabinet.",
+"recovery": "Stabilize the assembly and reduce the overturning load by retracting the tray, relocating its contents, or adding a valid support.",
+"verify": "Confirm that the base is stable in the configuration required for the next action."
+},
+{
+"n": 7,
+"title": "Tall object detached from its base",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "A tall object becomes partly disengaged from its mounting base and can topple.",
+"recovery": "One arm controls the upper body while the other reseats or secures the base connection.",
+"verify": "Check the connection and unsupported stability before releasing the upper body."
+},
+{
+"n": 8,
+"title": "Shifted middle layer in a stack",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "A middle object shifts, leaving the objects above it poorly supported.",
+"recovery": "Support or temporarily remove the upper load while the other arm restores the displaced layer.",
+"verify": "Confirm a stable support arrangement through the stack before rebuilding or continuing retrieval."
+},
+{
+"n": 9,
+"title": "Displaced counterweight",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "A counterweight moves out of position, making a balanced mechanism unstable.",
+"recovery": "Restrain the affected load while the other arm restores and secures the counterweight.",
+"verify": "Check the counterweight's retention and the mechanism's balance before removing the restraint."
+},
+{
+"n": 10,
+"title": "Support foot resting on debris",
+"sec": "A",
+"secname": "Support, balance, and load paths",
+"tags": [],
+"fault": "Debris under one foot makes a fixture appear seated while leaving it tilted or unstable.",
+"recovery": "Support or slightly lift the fixture with one arm while the other removes the debris.",
+"verify": "Confirm that the intended feet contact the surface and that the fixture does not rock before resuming work."
+},
+{
+"n": 11,
+"title": "Failed handover despite gripper closure",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "The receiving gripper closes without securely grasping the object.",
+"recovery": "The giving arm retains support while the receiving arm repositions and attempts a valid grasp.",
+"verify": "Demonstrate load transfer to the receiving arm before the giving arm releases."
+},
+{
+"n": 12,
+"title": "Accidental grasp of two objects",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "A grasp captures two objects when the task requires moving only one.",
+"recovery": "Support the unintended object with the other arm or a safe surface, then separate and regrasp the intended object.",
+"verify": "Confirm that only the intended object is carried and that the other object is safely supported."
+},
+{
+"n": 13,
+"title": "Grasping a movable lid instead of the body",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "A gripper takes hold of a lid or removable component that cannot safely support the whole object.",
+"recovery": "The other arm supports the main body while the robot changes to a load-bearing grasp.",
+"verify": "Confirm that the body is supported independently of the movable component before lifting or transporting it."
+},
+{
+"n": 14,
+"title": "Object slipping toward the fingertips",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "An object begins sliding outward within a grasp, reducing the remaining grip margin.",
+"recovery": "Use the other arm or a safe support to arrest the slip, then establish a more secure grasp.",
+"verify": "Check retention under the intended load and movement before continuing transport."
+},
+{
+"n": 15,
+"title": "Both hands rely on the same loose component",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "Both arms appear to support an assembly, but their grasps share one loose component and can fail together.",
+"recovery": "Move one arm to an independent load-bearing part while maintaining control with the other.",
+"verify": "Confirm that the assembly no longer depends on the loose component as its only support path."
+},
+{
+"n": 16,
+"title": "Gripper trapped by a rigid shipping ring",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "After grasping an object, the gripper cannot withdraw because a rigid packaging ring blocks its path.",
+"recovery": "Transfer support to the other arm or a fixture, then disengage the ring through a valid geometric path.",
+"verify": "Confirm that both the object and gripper are free of the ring before resuming movement."
+},
+{
+"n": 17,
+"title": "Opposing corrections create internal load",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [
+"Hard"
+],
+"fault": "Two arms holding the same object apply incompatible corrections, increasing internal force or torque.",
+"recovery": "Preserve support while reducing the conflicting commands and coordinating a compatible motion.",
+"verify": "Confirm that internal loads return to the specified safe range before proceeding."
+},
+{
+"n": 18,
+"title": "Foreign object blocks gripper closure",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "A small obstruction prevents full engagement with the intended object, even though the gripper reports a closed or stopped state.",
+"recovery": "Keep the payload supported while the other arm clears the obstruction and the grasp is repeated.",
+"verify": "Confirm a valid grasp and load transfer rather than relying on the closure command alone."
+},
+{
+"n": 19,
+"title": "Opening a clamp drags the workpiece",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "A geometric snag causes a workpiece to follow the opening clamp instead of remaining on its support.",
+"recovery": "Support the workpiece and disengage the snag without pulling it into nearby objects or out of its safe region.",
+"verify": "Confirm independent motion of the clamp and workpiece before continuing removal."
+},
+{
+"n": 20,
+"title": "Internal sliding weight changes the load",
+"sec": "B",
+"secname": "Grasping, handovers, and load transfer",
+"tags": [],
+"fault": "A weight inside the carried object shifts, changing its balance and the load distribution between the arms.",
+"recovery": "Stabilize or set down the object, then adjust the grasps or secure the moving weight where the design permits.",
+"verify": "Confirm that the revised support arrangement remains stable through the required movement."
+},
+{
+"n": 21,
+"title": "Closed toolbox with an unengaged latch",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A toolbox lid looks closed, but one latch has not engaged.",
+"recovery": "One arm controls the lid while the other removes any obstruction and secures the latch.",
+"verify": "Confirm actual mechanical retention before transporting the toolbox."
+},
+{
+"n": 22,
+"title": "Pin inserted beside the locking hole",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A locking pin appears inserted but misses the mating hole, leaving the mechanism unsecured.",
+"recovery": "Support the mechanism, align the parts, and reinsert the pin through the intended engagement path.",
+"verify": "Check engagement with both mating parts and restraint of the intended motion before releasing support."
+},
+{
+"n": 23,
+"title": "Locking pin trapped under shear load",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A pin cannot be safely removed because the supported assembly places a transverse load on it.",
+"recovery": "One arm unloads the joint while the other withdraws the pin in a controlled way.",
+"verify": "Confirm that the pin is unloaded before extraction and that the assembly remains supported afterward."
+},
+{
+"n": 24,
+"title": "Drawer jam with ambiguous cause",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A drawer will not move; possible causes include an engaged lock, rail misalignment, or a foreign object.",
+"recovery": "Use bounded diagnostic actions to identify the cause, then stabilize the cabinet while applying the corresponding repair.",
+"verify": "Confirm that the identified cause is resolved and that the drawer moves without excessive force."
+},
+{
+"n": 25,
+"title": "Dual rails bind after skewing",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A tray or drawer advances unevenly on two rails and becomes wedged.",
+"recovery": "Support the load, relieve the skew, and coordinate the arms to restore aligned motion.",
+"verify": "Confirm that both rails travel together without binding before continuing insertion or extraction."
+},
+{
+"n": 26,
+"title": "Partially withdrawn hinge pin",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A hinge pin slides partly out, reducing the support of a lid or panel.",
+"recovery": "One arm controls the panel while the other reseats and retains the pin.",
+"verify": "Check engagement across the hinge and controlled panel motion before releasing support."
+},
+{
+"n": 27,
+"title": "Locator resting on a hole rim",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A locating feature rests on the rim of its mating hole while a clamp closes, creating apparent fixation without proper seating.",
+"recovery": "Support the part, reopen the clamp, and align and seat the locator correctly.",
+"verify": "Confirm full seating before re-clamping and resuming the task."
+},
+{
+"n": 28,
+"title": "Repairing one of two safety restraints",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "One of two restraints is unreliable, leaving a single working restraint to hold the load.",
+"recovery": "Add a temporary support before repairing the faulty restraint, so the repair does not depend on an unprotected single support.",
+"verify": "Confirm that both intended restraints work before removing the temporary support."
+},
+{
+"n": 29,
+"title": "Displaced travel stop",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A stop block shifts, allowing a sliding or rotating mechanism to move beyond its intended range.",
+"recovery": "Restrain the moving element while the other arm restores and secures the stop.",
+"verify": "Check the permitted travel range with a controlled movement before normal operation resumes."
+},
+{
+"n": 30,
+"title": "Locking mechanism stuck between states",
+"sec": "C",
+"secname": "Latches, joints, and constrained mechanisms",
+"tags": [],
+"fault": "A bolt or locking slide stops in an intermediate position that is neither reliably locked nor fully released.",
+"recovery": "Support the affected assembly, remove the cause of the blockage, and move the mechanism into a defined state.",
+"verify": "Confirm the selected state mechanically before proceeding with an action that depends on it."
+},
+{
+"n": 31,
+"title": "Long rod's swept volume crosses a hazard",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "A recovery rotation would move the far end of a long rod into a protected object or region.",
+"recovery": "Coordinate both arms to change the rod's position, orientation, or grasp before completing the rotation.",
+"verify": "Check clearance for the entire object throughout the recovery path, not just at the grippers or endpoint."
+},
+{
+"n": 32,
+"title": "Retrieval drags a connected protected tray",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "The target object remains rigidly connected to a tray that should stay in place.",
+"recovery": "Stabilize the tray and identify and release the connection before extracting the target.",
+"verify": "Confirm that the target can move independently and that the tray remains undisturbed."
+},
+{
+"n": 33,
+"title": "Object caught beneath an overhang",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "A lifted object catches on an overhead lip or overhang.",
+"recovery": "Maintain support while lowering, translating, or rotating the object along a collision-free disengagement path.",
+"verify": "Confirm clearance before attempting a full lift or transfer."
+},
+{
+"n": 34,
+"title": "Rigid ring trapped on an open-ended shaft",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "A ring catches on a shaft, and a direct pull in the current direction cannot disengage it.",
+"recovery": "Stabilize the shaft assembly while guiding the ring along the valid path toward the open end.",
+"verify": "Confirm complete disengagement without disturbing the supported assembly."
+},
+{
+"n": 35,
+"title": "Near-end correction moves a lever's far end",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "Correcting one end of a long lever would send its opposite end into a hazard.",
+"recovery": "Use both arms to manage the lever's coupled motion and relocate or reorient it safely.",
+"verify": "Confirm clearance and support at both ends throughout the correction."
+},
+{
+"n": 36,
+"title": "Object fits through an opening but the gripper does not",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "A transfer stalls because the grasped object fits through an aperture but the attached gripper cannot pass.",
+"recovery": "Arrange a supported handover across the opening, releasing the first grasp only after the second is secure.",
+"verify": "Confirm clearance and load transfer before either arm withdraws."
+},
+{
+"n": 37,
+"title": "Bimanual load becomes skewed in a narrow corridor",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "An object carried by two arms becomes misaligned with a narrow passage and begins to bind.",
+"recovery": "Stop the conflicting motion, coordinate a retreat or realignment, and restore a feasible shared pose.",
+"verify": "Confirm corridor clearance for the object and both grippers before advancing."
+},
+{
+"n": 38,
+"title": "Assembly sequence would trap a gripper",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "Continuing an assembly step would enclose a gripper inside the completed structure.",
+"recovery": "Transfer support to the other arm or a fixture, withdraw the endangered gripper, and revise the assembly sequence.",
+"verify": "Confirm that all required grippers can exit before closing the structure."
+},
+{
+"n": 39,
+"title": "Temporary staging blocks the only safe exit",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "A temporarily placed object occupies the only safe extraction route for another supported object.",
+"recovery": "Maintain the active load while relocating the staged object or establishing an alternative support and route.",
+"verify": "Confirm that the complete extraction path is open before moving the load."
+},
+{
+"n": 40,
+"title": "Environment changes during an interruption",
+"sec": "D",
+"secname": "Geometry, access, and motion constraints",
+"tags": [],
+"fault": "An obstacle moves while the task is paused, making the previously valid return path unsafe.",
+"recovery": "Reobserve the workspace and coordinate a new route while preserving the object's support.",
+"verify": "Validate the route against the current scene before resuming motion."
+},
+{
+"n": 41,
+"title": "Turntable coasts after its motor stops",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [],
+"fault": "A turntable continues rotating after a stop command, although the drive is no longer powered.",
+"recovery": "Keep objects and grippers clear until rotation ceases, or use a permitted braking mechanism.",
+"verify": "Confirm physical rest and the required restraint before handling the payload."
+},
+{
+"n": 42,
+"title": "Failed lid support allows gravity-driven closure",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [],
+"fault": "A lid's support mechanism disengages and the lid begins closing toward the work area.",
+"recovery": "One arm controls the lid while the other restores the support or clears the area for controlled closure.",
+"verify": "Confirm reliable support or a safely closed state before resuming work."
+},
+{
+"n": 43,
+"title": "Cylinder on an incline depends on a temporary stop",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [],
+"fault": "A cylinder remains restrained only by a temporary stop that must be moved during recovery.",
+"recovery": "Establish an alternative restraint or supported grasp before repositioning the stop or cylinder.",
+"verify": "Confirm that the cylinder cannot roll into a hazard when the temporary restraint is removed."
+},
+{
+"n": 44,
+"title": "Panel near an unstable balance point",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [],
+"fault": "A panel is balanced near a position where a small disturbance could cause it to fall either way.",
+"recovery": "Control the panel with both arms and move it to a stable support or secured configuration.",
+"verify": "Confirm stability under gradual release before allowing unsupported rest."
+},
+{
+"n": 45,
+"title": "Spring clamp retains stored energy",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [
+"Hard"
+],
+"fault": "A spring-loaded clamp remains energized after a failed operation and could snap shut during repair.",
+"recovery": "Control the moving part while the other arm applies the designated restraint or releases the stored energy safely.",
+"verify": "Confirm a restrained or de-energized state before entering the closing region."
+},
+{
+"n": 46,
+"title": "Suspended rigid body is still swinging",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [
+"Hard"
+],
+"fault": "A suspended object continues oscillating after the initiating motion has stopped.",
+"recovery": "Wait for adequate settling or use an explicitly permitted controlled stabilization strategy while maintaining safe clearance.",
+"verify": "Confirm sufficiently low residual motion before grasping, transferring, or placing the object."
+},
+{
+"n": 47,
+"title": "Resetting one linkage end moves the other",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [
+"Hard"
+],
+"fault": "A local reset of a linked mechanism causes unexpected motion at its far end.",
+"recovery": "Control or restrain the coupled endpoint while the other arm resets the near end.",
+"verify": "Confirm the safe configuration of the whole linkage before releasing either constraint."
+},
+{
+"n": 48,
+"title": "Drive disabled without engaging the brake",
+"sec": "E",
+"secname": "Residual motion, gravity, and stored energy",
+"tags": [
+"Hard"
+],
+"fault": "A gravity-loaded slide can move after its drive is disabled because the brake remains disengaged.",
+"recovery": "Support the moving load and engage a validated brake or mechanical restraint.",
+"verify": "Confirm that the load remains held without drive power before removing hand support."
+},
+{
+"n": 49,
+"title": "Loose parts remain in a repaired track",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [],
+"fault": "The main component is restored, but loose parts remain in its travel path.",
+"recovery": "Hold the component in a safe position while the other arm clears the track.",
+"verify": "Inspect the full operating path and perform a bounded motion check before normal travel resumes."
+},
+{
+"n": 50,
+"title": "Debris remains inside a gripper",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [],
+"fault": "A previous failure leaves debris between the fingers or on a contact surface, compromising the next grasp.",
+"recovery": "Secure the current payload, open and clear the affected gripper, and reestablish the required grasp.",
+"verify": "Confirm clean contact and valid retention before another load transfer."
+},
+{
+"n": 51,
+"title": "Detachable tool component is missing",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [
+"Weak bimanual"
+],
+"fault": "A removable component is missing from a tool after recovery, leaving the tool incomplete or unsafe to use.",
+"recovery": "Locate and reinstall the component or obtain a complete permitted replacement.",
+"verify": "Check tool completeness and retention before use; do not treat the main tool body's presence as sufficient."
+},
+{
+"n": 52,
+"title": "Cleanup displaces debris into an adjacent workspace",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [
+"Weak bimanual"
+],
+"fault": "Clearing one work area moves an obstruction into another active or protected area.",
+"recovery": "Collect the debris and place it in a designated safe destination while preserving any ongoing support obligations.",
+"verify": "Confirm that both the original and neighboring workspaces meet their required conditions."
+},
+{
+"n": 53,
+"title": "Recovery spreads contact contamination",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [
+"Proxy"
+],
+"fault": "A recovery action transfers a declared contamination state between a gripper, object, or workspace surface.",
+"recovery": "Isolate affected items and follow the task's explicit cleaning or replacement procedure.",
+"verify": "Check the observable proxy state of every relevant contact surface before returning to clean handling."
+},
+{
+"n": 54,
+"title": "Collection bin has insufficient capacity",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [
+"Weak bimanual"
+],
+"fault": "The intended cleanup destination cannot safely accommodate the remaining debris or parts.",
+"recovery": "Keep the material supported while clearing capacity or selecting another permitted collection container.",
+"verify": "Confirm sufficient capacity and stable containment before depositing the material."
+},
+{
+"n": 55,
+"title": "Obstruction removal also removes a required spacer",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [],
+"fault": "A part treated as debris is also maintaining an essential gap or support condition.",
+"recovery": "Establish an alternative support and distinguish the required spacer from the true obstruction before removal.",
+"verify": "Confirm that the functional spacing or support remains valid after cleanup."
+},
+{
+"n": 56,
+"title": "Cleanup pushes an item into a hidden compartment",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [],
+"fault": "An item disappears beneath an openable layer or into a recess during cleanup, leaving the visible surface deceptively clear.",
+"recovery": "Secure the surrounding assembly, open the accessible compartment, and retrieve the displaced item.",
+"verify": "Check both the visible workspace and the accessible hidden region before restarting the mechanism."
+},
+{
+"n": 57,
+"title": "Shuffled parts lose identity or certification",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [
+"Proxy",
+"Weak bimanual"
+],
+"fault": "Recovery mixes parts whose identities or inspection states matter for subsequent assembly.",
+"recovery": "Use declared observable identifiers or repeat the permitted inspection to restore traceability.",
+"verify": "Confirm each selected part's identity and current certification state before assembly."
+},
+{
+"n": 58,
+"title": "Interrupted loading is repeated unnecessarily",
+"sec": "F",
+"secname": "Debris, cleanup, and material state",
+"tags": [
+"Weak bimanual"
+],
+"fault": "After an interruption, the robot repeats a completed loading step and risks exceeding the target quantity or load.",
+"recovery": "Reconcile the current contents with the task state and remove or avoid the duplicate addition.",
+"verify": "Confirm the actual quantity and allowed load before proceeding."
+},
+{
+"n": 59,
+"title": "Repeating rollback damages an already restored state",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [
+"Weak bimanual"
+],
+"fault": "A recovery step is executed again even though its intended reversal has already been completed.",
+"recovery": "Inspect the current state and apply only the remaining necessary corrections.",
+"verify": "Confirm that the target state is restored without undoing valid work or introducing another fault."
+},
+{
+"n": 60,
+"title": "Repair invalidates an earlier certification",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [
+"Proxy",
+"Weak bimanual"
+],
+"fault": "Replacing or adjusting a component makes a previous inspection result no longer applicable.",
+"recovery": "Repeat the specified inspection on the changed assembly.",
+"verify": "Confirm that certification applies to the current configuration rather than an earlier version of it."
+},
+{
+"n": 61,
+"title": "Replacement breaks a previously valid mating pair",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [],
+"fault": "A replacement part is individually valid but incompatible with its existing partner.",
+"recovery": "Keep the assembly supported while selecting a compatible pair or replacing the mating component as permitted.",
+"verify": "Check pair compatibility and proper engagement before completing the assembly."
+},
+{
+"n": 62,
+"title": "Symmetric-looking part is flipped during repair",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [],
+"fault": "A part's orientation changes during recovery, invalidating an earlier orientation judgment despite a similar appearance.",
+"recovery": "Inspect the available distinguishing features and reorient the part while maintaining support.",
+"verify": "Confirm the required functional orientation before insertion or locking."
+},
+{
+"n": 63,
+"title": "Diagnostic action changes the diagnosed state",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [],
+"fault": "A probe, test motion, or partial disassembly changes the mechanism, so the robot's pre-test state estimate is stale.",
+"recovery": "Update the diagnosis using the resulting observations and restore any constraints disturbed by the test.",
+"verify": "Confirm the post-test configuration before selecting and executing the repair."
+},
+{
+"n": 64,
+"title": "Occluded item is mistaken for a missing one",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [
+"Weak bimanual"
+],
+"fault": "An item temporarily hidden by a gripper or assembly is treated as absent, prompting an unnecessary replacement.",
+"recovery": "Restore visibility or use another permitted observation before adding any part.",
+"verify": "Confirm actual item presence and quantity, avoiding duplicate installation or loading."
+},
+{
+"n": 65,
+"title": "Repair invalidates stored coordinates or fixture assumptions",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [],
+"fault": "Moving or replacing a fixture makes previously stored approach poses or alignment assumptions incorrect.",
+"recovery": "Reobserve the fixture and update the task's geometric reference before resuming coordinated manipulation.",
+"verify": "Confirm current alignment and clearance before committing to the next contact or insertion."
+},
+{
+"n": 66,
+"title": "Repairing one fault masks a second fault",
+"sec": "G",
+"secname": "Recovery history, diagnosis, and invalidated assumptions",
+"tags": [],
+"fault": "A successful local repair makes the mechanism appear functional while another independent problem remains.",
+"recovery": "Reassess the remaining failure evidence and address all conditions required for safe operation.",
+"verify": "Check the complete task-relevant configuration rather than ending recovery after the first improvement."
+},
+{
+"n": 67,
+"title": "Recovery paths conflict in a shared corridor",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Each arm's local recovery path is feasible, but the two paths conflict in a narrow shared region.",
+"recovery": "Maintain payload support while sequencing or replanning the movements jointly.",
+"verify": "Confirm collision-free passage and continuous support for the coordinated recovery."
+},
+{
+"n": 68,
+"title": "One arm holds a self-closing lid while the other holds the wrong part",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Both arms are occupied, and neither can fetch the correct part without abandoning an active constraint.",
+"recovery": "Safely stage the incorrect part or install a temporary lid support to free an arm.",
+"verify": "Confirm that the lid remains controlled throughout retrieval and installation of the correct part."
+},
+{
+"n": 69,
+"title": "The only safe landing support is occupied",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "A carried object needs to be set down for recovery, but its only valid landing support holds another item.",
+"recovery": "Keep the active load supported while clearing the landing site or establishing a permitted alternative support.",
+"verify": "Confirm the destination's availability, capacity, and stability before placement."
+},
+{
+"n": 70,
+"title": "Two repairs require the same temporary support",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Two unstable components both need a single available support fixture during repair.",
+"recovery": "Order the repairs so one component reaches a self-supporting state before transferring the fixture to the other.",
+"verify": "Confirm independent stability before every transfer of the shared support."
+},
+{
+"n": 71,
+"title": "Two modules share a load-bearing bridge",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Repairing one module would remove a bridge that also supports the neighboring module.",
+"recovery": "Establish support for both affected loads before adjusting or removing the bridge.",
+"verify": "Confirm the load paths of both modules before releasing temporary supports."
+},
+{
+"n": 72,
+"title": "Only the occupied arm can reach the required tool",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "The free arm cannot access a recovery tool, while the arm maintaining a safety constraint can reach it.",
+"recovery": "Transfer the support obligation to the other arm or a fixture, then retrieve and use the tool.",
+"verify": "Confirm uninterrupted support during the role exchange and secure tool handling afterward."
+},
+{
+"n": 73,
+"title": "Three simultaneous constraints exceed two-hand capacity",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Recovery requires supporting a load, holding a mechanism open, and manipulating a fastener at the same time.",
+"recovery": "Use a permitted passive support to maintain one constraint while assigning the other two to the arms.",
+"verify": "Confirm that all constraints remain satisfied throughout the repair and support removal."
+},
+{
+"n": 74,
+"title": "Locally safe repairs conflict with each other",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Fixing one component changes a shared configuration in a way that makes another planned repair unsafe.",
+"recovery": "Evaluate the coupled configuration and choose a compatible repair order or intermediate state.",
+"verify": "Confirm that each completed repair preserves the preconditions and safety of the remaining work."
+},
+{
+"n": 75,
+"title": "Cyclic repair dependency",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Repair A requires a condition provided by repair B, while repair B requires a condition provided by repair A.",
+"recovery": "Introduce a permitted temporary support or restraint that breaks the dependency cycle.",
+"verify": "Confirm both permanent repairs before removing the temporary constraint."
+},
+{
+"n": 76,
+"title": "New task preempts an arm with an active safety obligation",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "A new instruction calls for an arm that is still supporting a load or holding a mechanism in a safe state.",
+"recovery": "Preserve the obligation until it can be transferred or eliminated, then execute the new work.",
+"verify": "Confirm that no required support or restraint was abandoned during the task transition."
+},
+{
+"n": 77,
+"title": "Temporary staging lies in a future swept volume",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "A staged object is safe at rest but occupies space needed by a later recovery or operating motion.",
+"recovery": "Move the staged object to a location compatible with the remaining sequence.",
+"verify": "Confirm clearance for subsequent motions before continuing, not just clearance in the current pose."
+},
+{
+"n": 78,
+"title": "Repair order blocks access to an unfinished repair",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "Closing or installing one component would prevent access to another component that still needs repair.",
+"recovery": "Preserve support while reordering or partially reversing the assembly to maintain access.",
+"verify": "Confirm that all required internal repairs are complete before sealing the access route."
+},
+{
+"n": 79,
+"title": "Temporary safety support left installed",
+"sec": "H",
+"secname": "Coordination, temporary supports, and repair order",
+"tags": [],
+"fault": "A temporary support successfully enables repair but remains in place where it obstructs normal operation.",
+"recovery": "Verify the permanent support, then remove and safely store the temporary fixture.",
+"verify": "Confirm both independent stability and unobstructed operating motion before resuming the task."
+},
+{
+"n": 80,
+"title": "A hand masks a nonfunctional latch",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [],
+"fault": "A lid appears secured during inspection because a hand is still holding it closed, not because the latch works.",
+"recovery": "Maintain a safe backup while progressively reducing the masking support and repairing the latch if needed.",
+"verify": "Demonstrate retention by the latch itself before transport or full release."
+},
+{
+"n": 81,
+"title": "No-load test passes but operating load fails",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [
+"Hard"
+],
+"fault": "A repaired connection works without load but cannot safely support the load required by the task.",
+"recovery": "Use a bounded, representative loading test with backup support; strengthen or repeat the repair if it fails.",
+"verify": "Confirm performance under the declared operating load before committing to unsupported use."
+},
+{
+"n": 82,
+"title": "Brief stillness conceals slow drift",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [],
+"fault": "A mechanism appears stable during a short observation but slowly slides or rotates toward an unsafe state.",
+"recovery": "Restore the restraint or support that prevents the drift.",
+"verify": "Observe over a task-defined interval sufficient to detect the relevant motion before declaring the repair complete."
+},
+{
+"n": 83,
+"title": "Verification target is occluded",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [],
+"fault": "The gripper or manipulated object blocks the view needed to confirm seating, locking, or clearance.",
+"recovery": "Preserve support while changing the viewpoint, grasp, or object configuration to expose the relevant evidence.",
+"verify": "Obtain a valid observation or permitted alternative check before proceeding."
+},
+{
+"n": 84,
+"title": "Individually valid subsystems fail when coupled",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [],
+"fault": "Two repaired subsystems pass separate checks but interfere, overload, or bind when operated together.",
+"recovery": "Identify the interaction and adjust the combined configuration while preserving each subsystem's safety.",
+"verify": "Perform a bounded integrated check before declaring the whole assembly ready."
+},
+{
+"n": 85,
+"title": "Movement after verification invalidates the result",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [],
+"fault": "Repositioning an object after a successful check changes its seating, support, or latch engagement.",
+"recovery": "Reestablish the affected condition and repeat the checks invalidated by the movement.",
+"verify": "Confirm the final configuration immediately relevant to the next task action."
+},
+{
+"n": 86,
+"title": "Testing the neighboring latch instead of the faulty one",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [
+"Weak bimanual"
+],
+"fault": "A verification action is applied to a working neighboring mechanism, producing a reassuring but irrelevant result.",
+"recovery": "Identify the intended test target using observable features and inspect the actual repaired mechanism.",
+"verify": "Confirm that the evidence corresponds to the specific component and failure under evaluation."
+},
+{
+"n": 87,
+"title": "Repeated attempts consume the remaining safety margin",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [],
+"fault": "Each failed adjustment shifts an object closer to an edge or another hazard.",
+"recovery": "Detect the accumulated displacement, restore a safe support position, and revise the recovery strategy.",
+"verify": "Confirm sufficient margin before another attempt and track it through the remaining recovery."
+},
+{
+"n": 88,
+"title": "Verification handle also releases the lock",
+"sec": "I",
+"secname": "Verification failures and misleading evidence",
+"tags": [],
+"fault": "Pulling a convenient handle to test retention also actuates the mechanism's release.",
+"recovery": "Keep the load controlled, restore the lock if necessary, and select a test that does not invalidate the property being checked.",
+"verify": "Confirm retention while the mechanism remains in its intended locked state."
+},
+{
+"n": 89,
+"title": "Controlled cancellation during bimanual carrying",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [],
+"fault": "A task is canceled while both arms carry an object that cannot safely be dropped or released in place.",
+"recovery": "Follow a controlled cancellation sequence to place or secure the object at a valid destination.",
+"verify": "Confirm stable support and safe arm withdrawal before reporting cancellation complete. This is a controlled stop, not an emergency-stop test."
+},
+{
+"n": 90,
+"title": "Controlled cancellation during partial insertion",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [],
+"fault": "A task is canceled while a part is partly inserted and may bind, fall, or load the surrounding assembly if abandoned.",
+"recovery": "Maintain support and either withdraw or complete a permitted stabilization step before stopping.",
+"verify": "Confirm a stable, defined final state with no unsupported part or trapped gripper."
+},
+{
+"n": 91,
+"title": "One actuator freezes while retaining the payload",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [
+"Hard"
+],
+"fault": "A joint or actuator stops moving during manipulation, but the current grasp still retains the load.",
+"recovery": "Use the remaining motion capability, other arm, or nearby support to stabilize the assembly without forcing the failed actuator.",
+"verify": "Confirm a sustainable supported state before releasing any available grasp or ending the task."
+},
+{
+"n": 92,
+"title": "Gripper stuck closed",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [
+"Hard"
+],
+"fault": "One gripper cannot open, preventing the planned release or handover.",
+"recovery": "Establish external support and use a task-defined disengagement or assistance path only if one is physically available; otherwise stabilize for handover to an operator.",
+"verify": "Confirm that the payload is supported and that recovery has not introduced damaging pulls or uncontrolled motion."
+},
+{
+"n": 93,
+"title": "Force sensing becomes unavailable",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [
+"Hard"
+],
+"fault": "A force signal needed by the original recovery strategy is lost or explicitly marked unreliable.",
+"recovery": "Maintain a safe state and use a validated alternative observation or support arrangement where the task permits it.",
+"verify": "Establish sufficient evidence for the next action; if it cannot be obtained, achieve the task's defined safe handover state."
+},
+{
+"n": 94,
+"title": "Key camera view is lost",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [
+"Hard"
+],
+"fault": "A camera view needed to monitor a load, contact, or lock becomes unavailable.",
+"recovery": "Preserve support while restoring visibility or moving to an alternative validated observation configuration.",
+"verify": "Reestablish the required evidence before continuing motions that depend on the missing view."
+},
+{
+"n": 95,
+"title": "Only one half of a bimanual command executes",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [
+"Hard"
+],
+"fault": "One arm completes a coordinated command while the other does not, producing an asymmetric intermediate state.",
+"recovery": "Detect the mismatch, maintain the load, and reconcile the arms' actual states before issuing another coordinated action.",
+"verify": "Confirm compatible poses, support, and forces before resuming synchronized motion."
+},
+{
+"n": 96,
+"title": "Homing is unsafe while attached to the payload",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [],
+"fault": "A reset procedure would send an arm toward its home pose while it is still mechanically connected to the object or fixture.",
+"recovery": "Support and safely disengage the attachment, or follow a validated constrained reset procedure.",
+"verify": "Confirm that homing will not drag, twist, or destabilize the attached assembly before executing it."
+},
+{
+"n": 97,
+"title": "Isolate a faulty module and continue independent work",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [],
+"fault": "One module becomes unusable, but part of the remaining task may still be safely completed elsewhere.",
+"recovery": "Stabilize and isolate the faulty module, then continue only work whose dependencies are unaffected.",
+"verify": "Confirm isolation and the actual independence of the remaining operations before resuming them."
+},
+{
+"n": 98,
+"title": "Global reset reactivates an isolated faulty branch",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [],
+"fault": "A general reset would undo a deliberate isolation and re-enable a mechanism that remains unsafe.",
+"recovery": "Preserve the isolation or use a selective reset that restores only the intended healthy components.",
+"verify": "Confirm that the faulty branch remains disabled before restarting any operation."
+},
+{
+"n": 99,
+"title": "Apparently independent tasks share a safety dependency",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [],
+"fault": "Two tasks appear separate but rely on the same support, base, or guard, so recovering one can endanger the other.",
+"recovery": "Identify the shared dependency and stabilize all affected work before modifying it.",
+"verify": "Check the safety conditions of every dependent task before allowing either to resume."
+},
+{
+"n": 100,
+"title": "Stabilize an unrepairable fault for operator handover",
+"sec": "J",
+"secname": "Interruption, degraded capability, and safe handover",
+"tags": [],
+"fault": "The robot lacks the capability or permitted action needed to complete the repair, but a stable intermediate state is reachable.",
+"recovery": "Secure the load, isolate the fault where possible, and provide a clear handover describing the remaining condition and support requirements.",
+"verify": "Confirm the defined safe handover state before ending autonomous action. Evaluate this separately from tasks that the robot is expected to finish autonomously."
+}
+]

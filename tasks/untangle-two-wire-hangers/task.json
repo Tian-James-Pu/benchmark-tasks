@@ -1,0 +1,18 @@
+{
+  "title": "Separate two tangled wire clothes hangers",
+  "category": "Societal relatability",
+  "keywords": [
+    "recovery",
+    "laundry",
+    "contact",
+    "bimanual"
+  ],
+  "instruction": "Separate the tangled hangers and hang the blue one on the empty peg.",
+  "context": "An empty hanger has caught its hook around another hanger during laundry handling. Removing it requires working the open hook around the other wire while keeping the supported hanger controlled.",
+  "setup": "PROTOTYPE: two 40 cm wide, 23.4 cm high, 4 mm diameter bent steel-wire hangers, 55 g each, blue and white. White hangs from the high peg of a fixed steel rack; blue is caught by its hook on the white crossbar. A ceramic mug (11.4 x 9 x 8 cm, 300 g) and tape roll (10 x 10 x 5 cm, 60 g) are distractors. Full numeric settled layout remains to be frozen after demo validation.",
+  "scoring": "PROTOTYPE: 0.5 when the hangers have more than 3 cm wire-surface clearance, are at rest and released. 1.0 requires both on their respective pegs, upright within 12 degrees, all wire at least 5 mm above the tabletop, hands more than 3 cm clear and both settled for 3 seconds. An object leaving the working area permanently gives 0. Full numeric scoring specification remains to be frozen after validation.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Restore both rigid hangers to the published interlocked layout. No consumables.",
+  "fidelity": "Full-size custom bent-wire structural geometry with matching segment contacts and rigid-body dynamics; no forced grasps or programmed unthreading. Wire bending and fracture are not modeled. Rack is fixed. Mug and tape are SimReady props. Friction is approximate.",
+  "scores": "Dream-1 run: pending; demo: not yet validated"
+}

@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-11-17T18:28:41.433115+00:00",
+  "scope": "Read-only independent scorer review during live developmentrun; not finalvalidation",
+  "source_sha256": {
+    "task.py": "6f699b087bd9022c71a890007b0be93524582e80ef41d8a3f00fd4ab5e39720a",
+    "completion.py": "dc88b871b0a7a00bc4aea3bfcc08b6f740b0f9dd47a0dbf38ca84d44c4e2b04f",
+    "probe_regrasp.py": "376365cc3bf730d0d0211c3d35aeb2329e94ec6b039afcbb90e9915f9967fde8"
+  },
+  "findings": [
+    {
+      "severity": "material_false_negative",
+      "topic": "Counter support uses empty conservativeOBBcorners",
+      "evidence": "Live step1400 actualspatulapose[.13611856,.34206089,.76160562,-.86827278,.45649028,.17894521,.07548155], rackhome/handsout/released/still pass; OBBloz.73927638 rejects support.",
+      "action": "Check authoredmeshvertices transformed withsame runtimepose. Ifsupported, useactualmesh extrema forphysicalsupportandfootprint while preserving numericaltolerances. KeepconservativeOBBhandclearance if desired. Noedit madebyroot."
+    },
+    {
+      "severity": "timing_documentation",
+      "topic": "Doublefullhold",
+      "evidence": "CompletionTracker requires3spassed state before score1; task.SUCCESS_HOLD_S=3 addsanother3s forinspectsuccess.",
+      "action": "SetSUCCESS_HOLD_S=0 whenfreezing or explicitlydocumentextra3s; no falsepositive, but currentruntimebudget mustincludeextra time."
+    }
+  ],
+  "other_checks": "Rotationwitness beginsafter1s home/releasedstate, resetswhenqualifyingconditionsfail; score readsobservedstate, notdemophase. Neighborcounterbounds and whole-rackfinger-envelope enforced. Freshmatchingpositive/negative runsneededafteranyscorerchange.",
+  "agent_notified": true,
+  "counts_as_validation": false
+}

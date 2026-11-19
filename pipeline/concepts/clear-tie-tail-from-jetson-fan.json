@@ -1,0 +1,77 @@
+{
+  "candidate": "SR-080",
+  "title": "Clear a cable-tie offcut from an AI controller cooling fan",
+  "category": "Impact on AI timelines",
+  "instruction": "Restore the controller cooling fan and put the removed debris in the parts tray.",
+  "justification": "The exact NVIDIA Jetson Nano 2GB developer kit is an AI/robotics computer, with a manufacturer-qualified Delta AFB0405MA-AFGE 5 V fan. A trapped offcut must be removed from real moving impeller geometry and rotation verified, rather than replacing a labelled box.",
+  "fault": "A free PA66 offcut physically stalls the source impeller through the source wire guard. Free and obstructed controls show about 4999 RPM versus an essentially fixed rotor angle.",
+  "objects": [
+    "NVIDIA Jetson Nano 2GB developer kit, original-scale 691-solid official STEP",
+    "Delta AFB0405MA-A frame and independent rotor, 40 x 40 x 10 mm, with AFGE four-wire connection to J7",
+    "Orion G40-2 manufacturer wire-guard STEP and 32 mm square mount pattern",
+    "Panduit SG100M-C PA66 tie offcut,80.2 x3.0 x1.0mm; manufacturer nominalsection; serrations/taper omitted",
+    "5V/3A XSD-0503000SUSD USB-C supply lead, simplified304 inline rocker with physical joint; no runtime object placement",
+    "Secured insulating board mount and 106 x 106 x 20 mm parts tray",
+    "Two original-scale SimReady service tools: long-nose pliers and PH1 screwdriver"
+  ],
+  "skill": "Extract a slender fragment physically caught between an operating impeller, frame and wire guard; contain debris and verify sustained recovery. The guard permits safe external extraction, so isolation is optional when fingers remain outside the rotor.",
+  "scoring": "Clearance 0.3; released and settled tray containment 0.6; continuous forward >4000 RPM for 10 seconds with contained released debris 1.0. Every tier is gated by mounted-component pose and no powered/coasting finger or tool access. Symmetric finger samples and source collision-mesh tool bounds are explicit simulation proxies.",
+  "nearest": [
+    {
+      "pr": 404,
+      "state": "final rejected",
+      "finding": "Gravity-held box fan substitutes were rejected for missing actual connectors/release hardware. This candidate uses complete board and separate frame/rotor CAD; power wiring/access still must be represented."
+    },
+    {
+      "pr": 2188,
+      "state": "final rejected",
+      "finding": "Fan snap-fit insertion failed importance and omitted chassis/wires. New candidate is obstruction recovery with physically blocked rotation, not insertion."
+    },
+    {
+      "pr": 2189,
+      "state": "revising",
+      "finding": "Table-fan assembly has visual-only keyed shaft and clips. Our rotor must physically contact the offcut; no state rule may remove or release the obstruction."
+    },
+    {
+      "pr": 1441,
+      "state": "accepted",
+      "finding": "Cuts a tightened cable tie from a cable bundle with insulation protection. New task removes an already loose fragment from a physically stalled fan and verifies functional recovery; no cutting involved."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://developer.nvidia.com/embedded/learn/jetson-nano-2gb-devkit-user-guide",
+      "supports": "AI/robotics role, 5 V 4-pin fan header and qualified Delta AFB0405MA-AFGE"
+    },
+    {
+      "url": "https://developer.nvidia.com/jetson-nano-2gb-developer-kit-3d-cad-step-model",
+      "supports": "Full developer-kit geometry; downloaded and tessellated 691 solids"
+    },
+    {
+      "url": "https://www.delta-fan.com/Download/3D/AFB0405MA-A.stp",
+      "supports": "40 mm frame and independent impeller solids; base fan variant has two wires, AFGE adds PWM/tach wiring"
+    },
+    {
+      "url": "https://media.digikey.com/pdf/Data%20Sheets/Delta%20PDFs/AFB0405MA-AFGE_Ds.pdf",
+      "supports": "Manufacturer NVIDIA-specific drawing, 14 g fan, 5 V, 5000 RPM, 0% PWM stops and 20% starts from rest; locked-rotor protection"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0213/7895/7412/files/110209838.pdf?v=1718861801",
+      "supports": "SG100M-C PA66,3.0mm width,1.0mm thickness,106mm originallength; manufacturer bulletin hosted by distributor Shopify mirror; manufacturer bulletin text"
+    }
+  ],
+  "risks": [
+    "Prior v2 and v3 full demos reached 1.0, but final v4 validation is still running after stricter tool/coast protection.",
+    "Motor torque and passive drag estimated; rigid PA66 omits bending/fracture.",
+    "Finger bounds use actual gripper pose with symmetric joint-7 kinematics; tools use conservative source collision bounds.",
+    "Free-drop tool fixtures did not demonstrate access; synthetic source-vertex tests verify the actual scoring logic but are not physical reach demonstrations.",
+    "Structural fracture is not simulated; fixed fastenings and pose gates constrain mounted parts."
+  ],
+  "status": "PR#2500 received as TK-SM6ETU; waiting for review, not yet accepted.",
+  "validated": true,
+  "updated_at": "2026-11-17T18:00:10.315214+00:00",
+  "in_team_comparison": "Our concurrent dishwasher candidate shares the broad recovery theme, but its defining manipulation is a full-size 300 mm spatula through a free wheeled rack and appliance opening, with basket retention/return and a low-torque full-turn clearance test. This fan task has a fixed 40 mm rotor assembly, a 3 x 1 mm offcut extracted through a 4.25 mm wire-guard gap, powered/coasting rotor-access constraints, and sustained 4000 RPM motor recovery. The contact clearances, movable assembly constraints and operational validation differ beyond object identity or category.",
+  "pr_url": "https://github.com/robocurve/benchmark-tasks/pull/2500",
+  "media": "M-HSF3VY",
+  "task_id": "TK-SM6ETU"
+}

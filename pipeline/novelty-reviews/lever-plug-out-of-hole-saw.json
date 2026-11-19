@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-19T19:11:31Z",
+  "decision": "hold_near_duplicate",
+  "queries": [
+    "hole saw",
+    "plug",
+    "pry",
+    "lever",
+    "screwdriver",
+    "saw",
+    "core",
+    "wedged/jammed/stuck"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 922,
+      "state": "accepted (TK-5VTWYW)",
+      "title": "Lever a paint tin's lid off with a screwdriver",
+      "why_close": "Same core skill: one arm picks up a flat screwdriver and levers an object out against a rim/ledge fulcrum, the other arm turns the workpiece between pries because one side only is reachable."
+    },
+    {
+      "pr": 2787,
+      "state": "pending",
+      "title": "Pry a nailed 1x4 off two joists with a flat bar, levering on each joist in turn",
+      "why_close": "Alternating pry points with a lever tool to free a held part evenly."
+    },
+    {
+      "pr": 2720,
+      "state": "pending",
+      "title": "Core a whole apple with a tube corer",
+      "why_close": "Removing a cut plug from a tube; different skill (cutting)."
+    }
+  ],
+  "physical_skill": "Lever a press-fit plug axially out of a slotted cup with a flat screwdriver on a ledge fulcrum, turning the cup half a turn between pries so pries alternate sides (one-sided pries wedge it).",
+  "valid_shortcuts": "None found that score >0 without prying; one-arm and no-turn routes score 0.0 and 0.25.",
+  "distinct_from_nearest": "Not clearly distinct. Differences from #922 (alternating sides to avoid wedging, choosing the low or high slot step) are refinements of the same screwdriver-lever-and-turn-between-pries skill on a different object; REVIEW_BAR says a different body alone does not establish a new skill, and CODEX.md's manual round already killed the hole-saw core concept. Not submitted; Dream-1 not spent.",
+  "task_py_sha256": "b3e093b8b02e16fd7cf94521cbb57608715fdce29154169bafdcd4299219ab8d",
+  "task_metadata_sha256": "287f268fe0dd1ae8bab9db55d0f00d9cb8a61f18074212b336573798660d3dd4"
+}

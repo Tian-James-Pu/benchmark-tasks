@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-19T11:45:45+00:00",
+  "decision": "clear",
+  "queries": [
+    "known_tasks.tsv refreshed this session: heat sink/heatsink, thermal paste, processor, cpu, lga, xeon, socket",
+    "paste, twist off, stuck, cooler, tray pocket, chip tray, anti-static, ESD (live states only)",
+    "gh pr view bodies and all review comments of 969, 2393, 132, 891, 2432"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 969,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Comments read this session: take a heat sink off a processor without pulling the processor out of its socket (twist-release putty). First review asked for paste reproducibility; final review rejected importance as specialist workstation repair under Impact on jobs and noted a weak-retention socket does not establish relevance to clamped server sockets.",
+      "comparison": "Closest concept: the step before ours. Final rejection, so no team holds it. Ours starts after the fault (processor already stuck to the heat sink, out of the socket), is framed as server/AI-hardware servicing with Dell and Lenovo server manual citations, and gives a paste, press-force and cure procedure plus a lift check for reset, which addresses its clarity objection. The skill differs: twisting a 50 g package on a loose heat sink by its edges, then a land-side-up placement into a tray pocket. Honest risk: a reviewer may see it as the same niche and repeat the importance objection."
+    },
+    {
+      "pr": 2393,
+      "state": "OPEN, pending (third revision awaiting review)",
+      "read": "Body and reviews read: install an AMD-style clip-on cooler on a processor without sliding it on the paste, then lock the clip and cam lever.",
+      "comparison": "Cooler installation and clip latching; ours is processor removal from a heat sink and tray placement. Shared object family only."
+    },
+    {
+      "pr": 891,
+      "state": "MERGED",
+      "read": "Title and decision read: install a processor, lift socket lever, open shield, seat on keys, shut both.",
+      "comparison": "Socket installation; no paste bond, no heat sink, no tray."
+    },
+    {
+      "pr": 132,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Reviews read: seat a heatsink straight down without sliding across paste; rejected as plain blocks.",
+      "comparison": "Opposite operation (seating), closed for good."
+    },
+    {
+      "pr": 2432,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Body and reviews read: wipe old paste off a desktop CPU's heat spreader.",
+      "comparison": "Cleaning, closed for good."
+    }
+  ],
+  "physical_skill": "Grip a 76 x 56.5 x 5.5 mm, 50 g processor by its long edges only, twist it at least 3 degrees each way on a loose 455 g heat sink against a 5 N paste hold without lifting an edge 1.5 mm (prying), then lift it clear and set it land side up within 4 mm and 6 degrees in an 81 x 61 mm tray pocket with 4 mm walls, and let go.",
+  "valid_shortcuts": "GPU red team on this exact task.py: doing nothing 0 (seal never broken); pulling straight up 0 (bond lifts the heat sink, edge lifts when it is set down: pried, latched). Scripted demo 1.0 twice (one arm: grip long edges, turn 8 deg each way, lift, place, release). Touching the land side and dropping are latched zeros; a processor placed land side down is a 180 deg tilt and does not seat.",
+  "distinct_from_nearest": "No accepted, pending or revising task removes a processor from a heat sink it is stuck to; the only similar idea (969, the socket-side variant) is final-rejected and unheld. Live processor tasks are socket installation (891, merged) and cooler installation (2393). Residual risks: importance (servicing niche, cf. 969's final review) and the paste abstraction as a 5 N force.",
+  "task_py_sha256": "c4edf8e32d706d6222ed7884227aa02129252a74ce71688f36d1d1225a78f52c",
+  "task_metadata_sha256": "f1b54250d291316f9d78cce86bd4732a74fbe11d2caa57eae0b2fc2b7d164d51",
+  "note": "Hashes exclude scores and media by definition, so they hold after the Dream-1 scores edit; recomputed after that edit before submission."
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Restore accurate weighing after debris catches under a balance pan",
+  "category": "Other",
+  "candidate": "SR-083",
+  "owner": "codex-pdf_hardware_build",
+  "state": "building; stronger primary occupation basis found, physical/scoring validation pending",
+  "justification": "Laboratory closed-loop powder dosing relies on trustworthy balance feedback. Primary robotic weighing studies establish this dependency; physical pan-load bypass invalidates the feedback even if zeroing hides the unloaded error. This narrow recovery test restores the physical response and verifies zero/knownload/zero. It does not claim602k workers regularlyperformthisprocedure or quantified productivitygains. See category-other-rationale.json and #996 explicitreviewinvitation.",
+  "fault": "An idealized 3 mm faceted salt grain was trapped when the 70 mm removable steel cover was reseated, physically bypassing part of the sensor load through the rim to the case. The modeled 2.5 mm gap does not permit spontaneous ingress of this grain.",
+  "instruction": "Restore accurate weighing and leave the check weight beside the balance.",
+  "objects": [
+    "Current A&D HT-120 precision balance, 136 x 150 x 57.5 mm, 70 mm pan, 570 g",
+    "100 g M1 verification mass, 22 x 39 mm",
+    "3 mm salt grain",
+    "two unscaled sourced bench props"
+  ],
+  "skill": "Lift an unmodified thin pan cover, remove obstructing debris, replace it on the floating sensor support, and verify empty/loaded/empty readings through real contact force.",
+  "scoring": "Implemented draft:0.5 after released2s zero and released2s100g with one tare offset;1.0 afterreleased2sreturnzero. Geometric pan/support/release checks. Grain extraction is not mandatory; reseating that truly restores function is a valid alternative. First integrated trial pending.",
+  "nearest": [
+    621,
+    2392,
+    2500
+  ],
+  "sources": [
+    "https://www.aandd.jp/products/manual/balances/ht-120.pdf",
+    "https://www.aandd.jp/products/weighing/scale/value_weighing/ht-120.html",
+    "https://www.mt.com/ph/en/home/products/Laboratory_Weighing_Solutions/precision-balances.html",
+    "https://www.kern-sohn.com/cosmoshop/default/pix/a/media/347-07/TD_347-07_en.pdf",
+    "https://www.bls.gov/ooh/Production/Quality-control-inspectors.htm",
+    "https://www.onetonline.org/link/summary/51-9061.00",
+    "https://doi.org/10.1039/D3DD00075C",
+    "https://doi.org/10.1039/D5DD00569H",
+    "https://arxiv.org/html/2606.31037v2"
+  ],
+  "risks": [
+    "Importance: instrument readiness may be viewed as supporting work despite routine cleanup guidance; #2392 precedent is material.",
+    "Exact HT-120 internal clearance, cell stiffness, mass split, keys and firmware filter are inferred.",
+    "Rigid grain does not crush; pan and sensor do not model fracture/overload damage.",
+    "Fault represents reseated-over-debris condition, not proven spontaneous ingress.",
+    "No complete scored repair or final media yet."
+  ],
+  "strict_review": "Physical contact fault is demonstrated with an actual 100 g weight, and pan removal is demonstrated. Complete repair remains unproven. Importance is the primary remaining nonphysical concern; do not publish solely because simulation succeeds.",
+  "valid_shortcut": "Old physical probe reseated pan about1mm away from grain and achieved~100g with grain remaining on case. Allowed for accurate-weighing instruction; not redefined as mandatory cleaning."
+}

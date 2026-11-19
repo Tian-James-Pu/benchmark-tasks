@@ -1,0 +1,16 @@
+{
+  "state": "contact_model_under_review",
+  "joint_stop_demo": {
+    "run": "demo-1116-215811-gpu1-622684",
+    "score": 1.0,
+    "steps": 441,
+    "sheet_inspected": true
+  },
+  "concern": "Hard pin of loaded ring may suppress physically valid cam/release alternatives. Testing ordinary self-collision and free-ring contact before validation.",
+  "self_collision_probe": {
+    "run": "demo-1116-215953-gpu1-642253",
+    "score": 1.0,
+    "sheet_inspected": true,
+    "interpretation": "INVALID TASK: ring falls through/away and valve turns itself off; not counted."
+  }
+}

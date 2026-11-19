@@ -1,0 +1,48 @@
+{
+  "title": "Remove a bolt whose backed-out head has trapped the ratchet against a bulkhead",
+  "category": "Impact on jobs",
+  "justification": "Candidate automotive-service manipulation: a fastener has been backed out without accounting for axial tool clearance. Occupation size and frequency of this exact recovery still require evidence; do not treat the category bar as established.",
+  "fault": "The socket remains engaged on a partly withdrawn bolt, with the ratchet head nearly touching a rigid bulkhead behind it. Further loosening reduces clearance and prevents straight tool withdrawal.",
+  "instruction": "Remove the mounting bolt and leave it with the socket and ratchet on the bench.",
+  "objects": [
+    "Full-scale mounting bracket with threaded bolt and nut or threaded boss",
+    "Rigid adjacent bulkhead that constrains axial tool clearance",
+    "Correctly sized socket with real engagement cavity",
+    "Reversible ratchet with direction selector and square drive",
+    "Two or three SimReady workshop distractors outside the tool path"
+  ],
+  "skill": "Recognize an axial-clearance dead end; reverse enough threaded travel to recover withdrawal space, disengage the drive, then complete removal using a physically feasible alternative grip. Tool geometry, thread pitch and clearances must support the entire sequence.",
+  "scoring": "Draft, not implemented: 0.5 for extracting and releasing an intact bolt outside its threaded boss; 1.0 additionally requires the ratchet and socket disengaged and all three parts resting on the bench with grippers at least 3 cm clear for 3 s. Any broken fixture, stripped thread or part leaving the bench gives 0. All other outcomes give 0. Numeric geometry and damage thresholds must be established from real hardware before building.",
+  "nearest": [
+    {
+      "pr": 890,
+      "state": "accepted",
+      "title": "Fasten a bracket bolt with a ratchet in confined access",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/890"
+    },
+    {
+      "pr": 1470,
+      "state": "rejected",
+      "title": "Undo a tight bolt with a ratchet that is set to tighten: check its direction lever, flip it, then swing it",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1470"
+    }
+  ],
+  "risks": [
+    "Strict-review objection: recovery direction may only change the starting layout of accepted PR 890; a fault label does not establish novelty.",
+    "A discrete selector puzzle plus ordinary ratcheting may fail the physical-difficulty bar.",
+    "No evidence yet that this exact recovery is core regular work rather than incidental tool management.",
+    "SimReady visual assets exist, but realistic hollow sockets, threaded travel, selector behavior and tool disengagement must be verified; a welded prop or proximity-triggered fake thread is insufficient.",
+    "A valid full-score route must remain possible after freeing the tool; cannot invent finger-loose torque or an extra tool to rescue a flawed scene."
+  ],
+  "review": {
+    "decision": "abandoned; do not build or submit",
+    "evidence": "Live PR 890 is accepted. Live PR 1470 was finally rejected as a duplicate: reversing a socket ratchet and flipping its lever did not establish a distinct core physical skill. Axial trapping adds geometry but the present concept does not establish sufficient separation. The live board redirected to sign-in; novelty evidence here comes from the refreshed public GitHub index and PR reviews, not an authenticated board inspection.",
+    "tests": {
+      "category": "unproven",
+      "physical_difficulty": "plausible, unvalidated",
+      "real_objects": "asset candidates found; mechanisms unvalidated",
+      "novelty": "fails conservative internal screening: no convincing distinction from accepted confined-access ratcheting"
+    },
+    "validation": "Concept review only. No task folder, simulator trials, demo scores, red-team scores, Dream run, upload or PR."
+  }
+}

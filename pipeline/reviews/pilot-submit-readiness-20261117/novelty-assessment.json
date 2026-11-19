@@ -1,0 +1,114 @@
+{
+  "checked_at": "2026-11-17T22:14:16.981690+00:00",
+  "decision": "unresolved_high_risk_not_clear",
+  "task_py_sha256": "9fcff40d1d0a04dd109d9e84d19d629dfed7c8ac11ef479b8112e0301bbaba7f",
+  "queries": [
+    "Fresh exact PR metadata and all discussion comments for2477,2041,2112,787,1414,2107,2014,1851,1917,1989",
+    "Local current pilot implementation and valid alternatives",
+    "Local claim/coordination instructions and prior takeover records"
+  ],
+  "scope": "Narrow family comparison requested by root, not a new exhaustive board or benchmark search",
+  "physical_skill": "Rotate fixed knob to PILOT, keep its axial plunger depressed to near its hard stop while producing an igniter snap40mm below, maintain hold until thermopile state permits release, then rotate released knob to HOT.",
+  "nearest_prs": [
+    {
+      "pr": 2477,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2477",
+      "state": "pending; latest comment receipt only",
+      "skill": "Direction finding and unloading a jammed steering-lock bolt while holding a rotating wheel within limited play.",
+      "comparison": "No reviewer decision yet. Its proposed direction finding and mid-travel hold do not transfer to the pilot, which presses to an axial stop."
+    },
+    {
+      "pr": 2041,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2041",
+      "state": "closed, final rejection",
+      "skill": "Hold an exit bar depressed while turning and removing a dogging key.",
+      "comparison": "Direct negative precedent: held spring-loaded control plus another control was already covered. Pilot improves orientation fidelity but that fixes construct validity, not novelty."
+    },
+    {
+      "pr": 2112,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2112",
+      "state": "closed, final rejection",
+      "skill": "Counterhold a lightweight wand while turning its detented spray-pattern ring.",
+      "comparison": "Detents and changed object do not add a distinct physical difficulty. Final HOT rotation adds little new separation."
+    },
+    {
+      "pr": 787,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/787",
+      "state": "closed, final rejection",
+      "skill": "Hold a spring-loaded key release while pulling a drawer.",
+      "comparison": "Replacing latch or panel motion did not establish a new ability. Goal-only pilot instruction avoids the instruction flaw but not the physical-family objection."
+    },
+    {
+      "pr": 2107,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2107",
+      "state": "accepted/merged",
+      "skill": "Depress an integral release while translating a twin-rail suitcase handle past an intermediate stop and relock both rails.",
+      "comparison": "Coupled button hold and moving handle with discrete locking opportunities. Pilot hold is stationary; thermal completion adds a process state, not moving-load coordination."
+    },
+    {
+      "pr": 2014,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2014",
+      "state": "accepted/merged",
+      "skill": "Maintain a three-position enabling switch in its middle band while hand-guiding a seven-joint arm, then release and teach.",
+      "comparison": "Stronger continuous force-window and moving-load control. Pilot can be pressed to its travel stop; no upper squeeze trip or guided articulated load."
+    },
+    {
+      "pr": 1851,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1851",
+      "state": "accepted/merged",
+      "skill": "Place opener on rim, keep handles squeezed, repeatedly regrasp and turn the key to advance around the can, then remove.",
+      "comparison": "Already covers sustained hold plus repeated second-hand work and a modeled process. Pilot clicks at one fixed target; no rim acquisition or changing tool progress."
+    },
+    {
+      "pr": 1917,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1917",
+      "state": "accepted/merged",
+      "skill": "Retract a spring-loaded tailstock, seat a loose shaft on one centre, align its other centre hole, then ease the centre into it.",
+      "comparison": "Held-control family plus millimetre seating and controlled release onto an independently held workpiece; absent from pilot."
+    },
+    {
+      "pr": 1989,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1989",
+      "state": "accepted/merged",
+      "skill": "Align and insert two headrest posts, then hold release and lower to the locking notch.",
+      "comparison": "Dual insertion and lock seating provide physical difficulty beyond the release-button hold. Pilot has no comparable insertion."
+    },
+    {
+      "pr": 1414,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1414",
+      "state": "latest revision pending; preceding review not accepted",
+      "skill": "Acquire and actuate a striker near an open burner while controlling gas from a separate tap.",
+      "comparison": "Closest combustion/process comparison. Latest13:31UTC review concerned missing visible supply and controlled-lowering penalty;21:54UTC revision receipt is not acceptance. It does not establish pilot novelty, nor a blanket prohibition of ignition tasks."
+    }
+  ],
+  "positive_distinctions": [
+    "Native upright face with controls only40mm apart creates converging-arm approach constraints; angled approach in actual demo avoids hand interference.",
+    "Axial spring hold must remain near full travel during second-control actuation, then transition to a rotary grasp.",
+    "Release is conditioned on process completion visible through a status LED, with a failed attempt preventing immediate full recovery.",
+    "Named water-heater relighting is a recognizable maintenance operation and procedure is manufacturer-backed."
+  ],
+  "why_insufficient_for_clear": [
+    "Close spacing and axial rather than squeeze loading are continuous geometry/force variations within the established held-control family; no evidence shows a new coordination capability beyond existing accepted tasks.",
+    "The modeled pilot ignites on the first valid spark. Continued clicking is optional;40repeated clicks are the demonstration strategy, not a required physical skill.",
+    "Warmup is a deterministic40-second accumulator. A single valid ignition followed by a static hold and elapsed-time wait is sufficient, as the open-loop demo establishes. LED observation is useful but not necessary for this fixed instance.",
+    "Final setpoint turn is a sequential familiar knob rotation. Interlocks and long duration do not by themselves add a new manipulation mechanism.",
+    "Spring forces and exact40mm spacing are estimates; they cannot be presented as a calibrated, uniquely demanding force-control benchmark.",
+    "Accepted can-opener process bookkeeping shows that using a process model is not inherently disqualifying; the problem is insufficient evidence of distinct physical work, not bookkeeping alone."
+  ],
+  "valid_shortcuts": [
+    "One valid spark while knob is depressed, then stop clicking and maintain hold until control latches.",
+    "Wait sufficiently long from ignition without visually tracking the LED in this deterministic instance.",
+    "Any safe division of arms; current README explicitly permits one gripper spanning both controls if it achieves their separate travels. This has not been physically demonstrated and should not be ruled out categorically.",
+    "Any safe approach orientation that reaches the existing controls; the demo angles are not scored requirements."
+  ],
+  "recommended_action": "Do not write a clear novelty stamp or submit merely because the current demo is reliable. A strategic hold may be reconsidered by owner/root as a consciously risky probe, but the refreshed evidence does not justify an independent clear decision. Prioritize a closer candidate with a distinct physical mechanism; do not manufacture novelty by moving controls, adding arbitrary timing rules, or banning valid shortcuts.",
+  "change_from_previous_audit": "Earlier audit found no fundamental technical blocker and recommended advancing coordination/media preparation conditionally on novelty. This fresh family review leaves that condition unresolved; technical readiness is not novelty clearance.",
+  "pr2477_latest": "Only receipt at2026-11-17T15:53:39Z, still open/pending.",
+  "pr1414_latest": "Revision received2026-11-17T21:54:37Z asTK-P7Y3PQ; latest actual review2026-11-17T13:31:36Z remains not accepted for physical supply cue and released-fall scoring.",
+  "source_snapshots": [
+    "novelty-primary-pr-snapshot.json",
+    "novelty-headrest-snapshot.json"
+  ],
+  "novelty_gate_file_created": false,
+  "task_or_claim_modified": false
+}

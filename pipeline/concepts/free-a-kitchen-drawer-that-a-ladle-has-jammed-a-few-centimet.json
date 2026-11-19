@@ -1,0 +1,28 @@
+{
+  "title": "Free a kitchen drawer that a ladle has jammed a few centimetres open, holding the ladle down through the gap while drawing the drawer out",
+  "category": "Societal relatability",
+  "justification": "Almost everyone has had a utensil drawer stop a few centimetres open because a ladle or whisk has tipped up and caught under the worktop; cooks and home care aides meet it in their work too. Pulling harder bends the utensil or breaks the drawer front. What works is easing the drawer back, reaching through the gap with a flat utensil to press the handle down, and drawing the drawer out while keeping it pressed. The jam cannot be seen from above and the gap is 2 cm high, so the work is done by feel, with two hands.",
+  "fault": "A ladle in the drawer lies across a spatula and tips 15 degrees up toward the front, because its bowl end is heavier. Its hooked handle end catches the back of the worktop's front rail, so the drawer opens only 2.5 cm. When released, the handle rises again.",
+  "instruction": "Open the utensil drawer all the way, keeping the utensils inside.",
+  "objects": "Kitchen base cabinet section, fixed, custom: a white melamine carcass 50 cm wide under a 3 cm laminate worktop (underside 16 cm above the bench, front edge at x 20, 2 cm overhang), with a 2 cm deep front rail beneath the worktop. The drawer runs on a mechkit prismatic joint (full-extension ball-bearing slide, 0 to 40 cm, light damping). Its box is 44 x 40 x 9 cm inside; its front is 50 x 13 x 1.8 cm with a stainless bar pull 7 cm up, leaving a 2 cm slot between the front's top edge and the worktop. Loose in the drawer (SimReady): kitchenware_ladle_a01 (0.17 kg), kitchenware_spatula_b01 (the fulcrum under the ladle), kitchenware_spoon_b01, kitchenware_fork_a01. Available on the worktop: kitchenware_spatula_c01 (a thin turner). Distractors on the worktop (SimReady): dishware_mug_a01 at x 34, y 18; food_produce_apple_a01 at x 32, y -20.",
+  "skill": "Blind, two-handed work through a narrow gap. One arm eases the drawer back to unload the wedge, and later draws it out by its pull. The other slides a flat turner in through the 2 cm slot, levers the ladle handle down against the drawer front's edge, and keeps it down while the drawer comes out past the rail. If the handle is released early it springs back up and jams again.",
+  "scoring": "From poses (real trial: a tape measure along the drawer side). Open: drawer 35 cm or more out, of 40. Contents: the ladle and the other three utensils all inside the drawer box. Score: 1.0 open with all contents inside; 0.4 drawer out 8 cm or more (past the jam) but not fully, with all contents inside; 0 otherwise, including any utensil flicked out of the drawer.",
+  "nearest": "'Safety and alignment: bimanual recovery from a clothing-obstructed drawer' (rejected). 'Take a drawer out of its slides by pressing two opposite-sense release levers while pulling' and 'Refit a loaded drawer on its roller slides' (both accepted). 'Push a peg home past a hidden obstruction without forcing it' (accepted). RoboCasa opens drawers but never jammed ones.",
+  "risks": "A reviewer may recall the rejected clothing-drawer task; what differs is the rigid ladle and the lever action. Pulling hard does nothing in simulation, but in reality it bends the ladle; no force is measured, so the scoring cannot penalise forcing, which fidelity must say. Inserting a flat tool horizontally through a 2 cm slot with a top-down gripper is tight, so check it offline. The top camera cannot see the jam, by design. The category is Societal relatability rather than jobs.",
+  "slug": "free-a-kitchen-drawer-that-a-ladle-has-jammed-a-few-centimet",
+  "revision_owner": "codex-takeover",
+  "strict_review": {
+    "decision": "Proceed to a contact-only feasibility prototype, not submission-ready.",
+    "importance": "Familiar household fault; free rigid ladle caught behind face-frame rail differs from intentionally installed exterior bar PR215 and paired slide-release tasks. No population/jobs claim needed.",
+    "nearest_rejection": "PR579 rejected spring-mounted rigid fabric proxy, explicit solution and privileged demo, not rigid utensil recovery itself. Actual free SimReady ladle/spoon preserve rigid contact mechanics; no hidden spring or attachment allowed.",
+    "physical_gate": "At reset, loose ladle must settle supported by drawer floor and loose spoon, handle elevated enough to physically contact real rail. Pull-only must jam from contact; an adaptive virtual joint stop is prohibited. If contact cannot jam reproducibly, park/revise instead of faking it.",
+    "goal_scoring": "Instruction explicitly retains utensils so ejection cannot meet goal. No requirement on repair technique. Full extension >=35 cm with all original utensils inside, released and stationary3s; partial >=8cm past jam with same containment.",
+    "geometry": "Full-size 40cm-deep drawer, 44cm internal width, normal timber panel thickness. Face-frame rail above drawer creates real opening; top and rail are rigid cabinet structure. Original spring-back wording means gravity moment only, no added spring.",
+    "risks": [
+      "Stable real free-body jam and tool access through narrow gap not demonstrated.",
+      "Slot must be sized from real settled mesh; no miniature utensils or broad proxy colliders.",
+      "Bimanual tool/handle choreography may collide with drawer front at full extension.",
+      "Force-induced utensil breakage not modeled; must disclose and not claim force safety."
+    ]
+  }
+}

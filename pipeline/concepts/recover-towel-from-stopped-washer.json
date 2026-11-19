@@ -1,0 +1,52 @@
+{
+  "title": "Recover a towel from a stopped washing machine",
+  "candidate": "SR-011",
+  "category": "Societal relatability",
+  "instruction": "Take the towel out of the stopped washer.",
+  "justification": "A documented household power-failure recovery requiring actual emergency drainage and mechanical release before ordinary laundry retrieval.",
+  "fault": "Original door lock remains engaged after a stopped wet cycle; visible cool water remains in the sump/drum. Appliance already unplugged.",
+  "objects": [
+    "Unmodified598\u00d7590\u00d7848mm75.7kg BoschWGG24402IL/01 on manufacturer-listed390mmWMZPW20W pedestal beside native table",
+    "Original00705651 release strip,00638259 RoldDKS67 lock,00627057 hook,00707751 drain plug and original emergency hose",
+    "Ordinary screwdriver, drain vessel and one cotton towel"
+  ],
+  "layout": {
+    "cabinet_center_x_m": -0.5,
+    "front_y_m": 0.72,
+    "facing": "world\u2212Y",
+    "pedestal_height_m": 0.39,
+    "door_outer_diameter_m": 0.491
+  },
+  "skill": "Control original capped drain outlet and catch finite water; physically engage narrow release strip with tool, release original latch, open door using original rim, and extract deformable towel.",
+  "scoring_plan": "Actual captured/spilled volume, mechanically free door and released towel outside washer; numerical tolerances after native assay. No credit for pose-only drain/lock flags.",
+  "nearest": [
+    737,
+    1007,
+    1718,
+    2421,
+    2520
+  ],
+  "novelty": "Conditional~0.22 estimate.1007 accepted already covers pan-before-plug;2421 pending covers hose outlet/drain/recap. Distinction must retain actual recessed mechanical emergency release and full-size appliance retrieval. Fresh final comparison remains required.",
+  "valid_shortcuts": [
+    "Cap removal while original clip supports hose if physically feasible",
+    "Direct filter drainage if original filter can be operated and water contained",
+    "Any native arm route; no forced two-arm sequence",
+    "Any sufficient door opening for actual towel retrieval; no arbitrary90degree target"
+  ],
+  "source_gate": "pipeline/pdf-screening/sr011-washer/mechanism-source-gate.json",
+  "reach_evidence": [
+    "pipeline/pdf-screening/sr011-washer/root-layout-audit.json",
+    "pipeline/pdf-screening/sr011-washer/door-attached-reach.json",
+    "pipeline/pdf-screening/sr011-washer/door-moving-clearance.json"
+  ],
+  "reach_result": "Native attached mid-rim path tilt45/yaw120 degrees opens0..35 degrees; table/cabinet shell and moving door/glass conservative envelope clear at50mm jaw opening. Actual finger grasp not proven.",
+  "risks": [
+    "Original small cap grasp and flexible hose sealing",
+    "Unpublished spring/friction values need disclosed reconstruction and native force checks",
+    "Exact internal release linkage reconstruction",
+    "Towel deformation, water flow/mass and visible realistic leakage",
+    "Original door grip and camera coverage at full scale"
+  ],
+  "state": "claimed; bounded full-scale contact prototype beginning; no simulation validation",
+  "created_at": "2026-11-18T01:37:46.917545+00:00"
+}

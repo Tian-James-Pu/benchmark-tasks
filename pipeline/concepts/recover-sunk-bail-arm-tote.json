@@ -1,0 +1,47 @@
+{
+  "title": "Restack a full bail-arm tote that has sunk into the full tote below because one bail was left down",
+  "category": "Impact on jobs",
+  "justification": "Two occupations stack and unstack full stack-nest totes all shift in distribution centres and store backrooms: stockers and order fillers (53-7065, about 2.8M) and hand laborers and freight, stock and material movers (53-7062, about 3.0M). Bail-arm containers stack on two swung-in wire bails and nest when the bails are swung out. A bail left out lets the next full tote drop into the one below and onto its stock. This is the everyday mis-seated-tote fault, and a stack like that cannot go on a dolly or a conveyor. Stacking totes is core, regular work in both occupations.",
+  "fault": "Lower tote: its near-end bail hangs down outside the near end wall (nest position); its far bail lies across the top (stack position). The full upper tote rests on the far bail at its far end. Its near end has dropped about 30 mm below the lower tote's rim onto the bags of crisps inside, so the upper tote is tilted about 6 deg.",
+  "instruction": "Make the two totes a proper stack, with nothing spilled.",
+  "objects": "Two grey polypropylene Euro stack-nest containers, 400 x 300 x 150 mm, 0.9 kg each, with 3 deg wall draft and 100 x 30 mm end handholds. Each has two 6 mm zinc-plated steel-wire bail arms (U shape, 75 mm legs, 290 mm crossbar, 0.09 kg) pivoting on the end walls 20 mm below the rim. Build each tote as a mechkit mechanism with a free frame (free_mass) and two gravity hinge links (0 to 175 deg; the stack position rests in rim notches at 0). The lower tote stands on the table with its long axis along x (x 0.12 to 0.52), centred on y 0; the upper tote sits above it. Contents: the lower tote holds 4 bags of crisps (SimReady food_processed_chips_a01-d01, 0.15 kg each, tops 25 mm below the rim). The upper tote holds 6 boxed foods lying flat (SimReady food_processed_boxedFood_a01-f01, 0.12 kg each); the upper tote totals about 1.6 kg. Distractors: retractable box cutter (handTool_knife_retractableBlade_a01), roll of clear tape (tape_clear_a01), handheld scanner (computer_scanner_barcode_b01).",
+  "skill": "One arm lifts the sunk near end of the 1.6 kg tote by its end handhold, about 90 mm, out of the partial nest. It must lift straight, or the tapered walls drag; the tote pivots on the far bail, so the hand carries about 0.8 kg. That arm holds the end up. The other arm pinches the hanging bail's crossbar and swings it 180 deg up over the rim into its stack notch, under the raised end. The first arm then lowers the tote onto the bail. Two arms are needed because the bail's arc passes exactly under the end that must be held up. Lifting the whole full tote off by one handhold would tip its contents.",
+  "scoring": "Scored from poses and the bail joints; on a real stack, use a photo and a ruler. Stacked: both bails within 8 deg of their stack notches; the upper tote resting on both bails, with all four bottom corners within 6 mm of the stacked height; tilt 2 deg or less; centre within 15 mm and yaw within 5 deg of the lower tote's. Released: fingertips 3 cm or more from both totes and all bails, everything still (under 1 cm/s and 2 deg/s) for 1 s. Whole-run harm latch H, set if: any product item is ever outside its tote's walls; the upper tote ever tilts past 30 deg or falls (any corner below the lower rim, outside the lower tote); or the lower tote moves more than 3 cm or tips more than 5 deg. Score 0 with H. 1.0: stacked, released, still. 0.4: the upper tote is off the stack and standing level (3 deg or less) on the table, both lower bails are in stack position, released and still (the load is made safe but the stack is not rebuilt). 0.2: at the end, the upper tote's bottom is 10 mm or more clear of the crisps everywhere, but it is not stacked. 0: anything else, including doing nothing.",
+  "nearest": "Rejected 'Add task: Put each empty tote on the tote behind it so it stacks on the full one and nests in the empty one' (choosing the orientation of an empty rotate-stack tote; no mechanism, no fault). Rejected 'Add fold-retail-basket-handle: Fold a retail hand basket's bow handle down flat' (folds the handle of an empty basket). Accepted 'Carry a stack of three boxes onto a shelf in one trip, squeezed between both arms' and 'Release a two-latch lid and lift it out with both hands' (two-arm lifts; nothing is swung under a held load). Our own draft 'Put a knocked-out prop back under a loaded shelf board' also restores a support under a load, but slides a loose prop in. Here the support is a hinge on the container itself, swung through an arc past the rim while a loaded, tapered tote is held up out of a partial nest.",
+  "risks": "Overlaps our team's support-under-load drafts (reseat-shelf-prop, remove-prop); reviewers may call it the same skill. Bail-arm containers are most common at 600 x 400; the 400 x 300 size exists, but its dimensions need checking. A free articulated tote whose hinge links carry another free 1.6 kg tote must be tested for solver stability; give the bails real mass and gravity. The near end, at x 0.12 and 0.25 to 0.40 m above the table, is near the arm's inner reach. At friction 1.2 the tapered nest binds, so set PP to about 0.4. The boxes may slide at 15 to 20 deg of tilt.",
+  "slug": "recover-sunk-bail-arm-tote",
+  "source_note": "Recovered stopped Claude concept; original proposal retained for critique, hardware and scoring below supersede assumptions before any build.",
+  "primary_hardware": {
+    "model": "IFCO CHBA3413",
+    "dimensions_mm": [
+      401,
+      302,
+      135
+    ],
+    "tare_kg": 0.836,
+    "rated_maximum_load_kg": 10,
+    "source": "https://www.ifco.com/product/bale-arm/",
+    "manufacturer_contact_comparison": "Bails are actual pivoted black round support bars running across each short end. Original wire6mm/75mm-leg dimensions not yet verified and must not become guessed gripper accommodations. Rim, stop ledges and underside feet must match product photo. No fixed lower tote or invisible support.",
+    "secondary_obtained_photo": "https://shop.mailboxproducts.co.uk/products/28-litre-supermarket-bale-arm-crate",
+    "photo_note": "Manufacturer/distributor photo confirms the same mechanism on600x400x167mm1.47kg model. Could use full-size model if SimReady matches; must not scale a600mm model to400 solely for reach."
+  },
+  "strict_review": {
+    "decision": "parked: importance risk confirmed by latest2400decision; no demo tuning or submission",
+    "category": "Core stock handling is supported by PR712 final review, which rejected reduced scale rather than occupation relevance. Need exact full-size commercial model.",
+    "novelty": "PR712 rejected ordinary rotate-stack/nest handling. Bail positioning under a sunk loaded tote adds real contact coordination, but generic support-restoration family overlap remains a serious risk.",
+    "construct": "All original numerical bail/handle details and harm gates are provisional. Avoid invisible safety gates. Removing upper tote safely, correcting bail and restacking must remain allowed. Mere lowering speed, lower tote translation, or tilt without a spill must not create invented harm.",
+    "scoring": "Only useful released safe partial state: upper tote standing on table with goods retained and lower bails corrected. Do not credit held tote or a scale still wrong.",
+    "next": "Inspect matching SimReady crate mesh and exact primary model; reject if bare proxy geometry or required force/clearance changes would replace skill.",
+    "new_evidence": {
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2400",
+      "date_utc": "2026-11-17",
+      "finding": "Parent reports final rejection: setting upper carton aside reduces fault to ordinary aligned stacking. Here safe complete unstack must also be allowed; folding an unloaded gravity bar plus restacking does not establish a distinct substantial ability. Cannot invent a prohibition on safe unstacking.",
+      "conclusion": "Prototype not countable. Physical bar folding may differ in geometry but does not currently overcome importance objection."
+    }
+  },
+  "prototype_evidence": {
+    "folder": "tasks/recover-sunk-bail-arm-tote",
+    "run": "~/yam-eval/recover-sunk-bail-arm-tote/demo-1116-220524-gpu2-714637",
+    "description": "Corrected outer-corner bar pivots produce stable folded-out lower bar at0radians and upper tote sunken about12degrees. Scorer remains0. No recovery demo or redteams completed."
+  }
+}

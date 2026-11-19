@@ -1,0 +1,56 @@
+{
+  "candidate": "SR-068",
+  "title": "Remove a broken key so the door cylinder works with its spare",
+  "category": "Societal relatability",
+  "instruction": "Clear this lock so the spare key can be used.",
+  "fault": "Correct key blade is broken flush with cylinder face while plug is turned; pins physically retain the blade until plug returns to withdrawal orientation.",
+  "justification": "Common household lock failure and restoration of ordinary key operation. Importance risk remains: reviewer1675 excluded specialist lock-picking; extraction is restoration, not bypass/picking.",
+  "objects": [
+    "Full-scale enclosed Schlage Classic geometry reconstruction, six pin stacks and keyway",
+    "Broken key blade and matching intact spare",
+    "Ordinary thin hooked key extractor and turning tool",
+    "Door-board mounting fixture and catch tray"
+  ],
+  "skill": "Return turned plug with broken key to withdrawal position; engage a key cut through narrow keyway and extract blade, then verify spare-key operation.",
+  "scoring": "Provisional: fragment physically clear and captured; matching spare key turns plug through open/closed states twice; final withdrawal and tool release. No pose-triggered coupling, fragment removal or lock bypass counts.",
+  "nearest": [
+    {
+      "pr": 1675,
+      "state": "finally rejected",
+      "decision": "Enlarged cut-away trainer exposed driver pins; specialist lock-picking below jobs threshold and not everyday.",
+      "distinct": "Enclosed actual-scale cylinder; no direct pin access; goal is extracted broken key plus spare-key function, not unauthorized bypass."
+    },
+    {
+      "pr": 843,
+      "state": "finally rejected",
+      "decision": "Oversized cylinders in square wells, block key and fixed plug omitted actual geometry and function.",
+      "distinct": "Source-scale physical key cuts, round pins and enclosed cylindrical bore, but extractor access and complete function remain unvalidated."
+    }
+  ],
+  "risks": [
+    "Importance is uncertain; extraction is less broadly firsthand than ordinary unlocking.",
+    "Keyway warding/plug dimensions must be measured or sourced, not invented large clearances.",
+    "Thin extractor and pin contact stability at actual scale.",
+    "Need physical retention at turned plug and release only through real pin geometry."
+  ],
+  "sources": [
+    {
+      "url": "https://www.southord.com/blogs/news/removing-a-broken-key-from-a-lock-a-complete-guide",
+      "evidence": "Manufacturer describes return of turned cylinder, hook engagement alongside blade and fragment extraction; published2026-09-15."
+    },
+    {
+      "url": "https://commercial.schlage.com/content/dam/allegion-us-2/web-files/schlage/technical-documents/Schlage_Everest_Full_Size_Cylinder_Service_Manual_108484.pdf",
+      "evidence": "Page14 key bitting specifications also apply to Classic; six spacing depths and pin lengths.",
+      "local": "pipeline/pdf-screening/primary/schlage-everest-full-size-service.pdf"
+    },
+    {
+      "url": "https://a-us.storyblok.com/f/1015476/x/a6fcf302db/dwn-key-blank-directory-full.pdf",
+      "evidence": "Manufacturer actual-size SC4 blank and profile, printed2-271/PDF273; independent profile extracted to evidence JSON, not substituted into live coupon."
+    }
+  ],
+  "owner": "codex /root/bowden_physics",
+  "updated_at": "2026-11-17T16:29:19.152084+00:00",
+  "counts_as_validation": false,
+  "status": "parked: source-supported extractor access and engagement unresolved",
+  "access_disposition": "pipeline/pdf-screening/sr068-key-extraction/access-disposition.json"
+}

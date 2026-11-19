@@ -1,0 +1,51 @@
+{
+  "title": "Restore a robot vacuum caster seized by wound fibres",
+  "candidate": "SR-005",
+  "category": "Impact on AI timelines",
+  "instruction": "Restore free movement of the robot vacuum caster.",
+  "justification": "Actual robot locomotion maintenance documented by manufacturer, with original full-size hardware.",
+  "fault": "Wrapped hair/fibre mat physically restricts wheel/axle rotation.",
+  "objects": [
+    "Powered-off340x340x94mm3.4kg Roomba i7 inverted on native bench",
+    "Original25.4g front caster module, rounded26x18mm wheel, removable axle and stem",
+    "Physical wound fibre mat and ordinary loose parts tray"
+  ],
+  "skill": "Service small original captive wheel/axle mechanism, clear compressed wound fibres and reinstall original parts while preserving free wheel/swivel motion.",
+  "scoring": "Not implemented; full score must require released reassembled original caster, all fibres outside bearing/axle region and measured physical free rotation. Initial diagnostic scores remain0.",
+  "nearest": [
+    {
+      "pr": 2169,
+      "state": "final rejected",
+      "difference": "Brush refit, rejected for bare block/roller fixture and nonphysical retainer. Must model actual whole unit, yoke/axle retention and hair drag."
+    },
+    {
+      "pr": 2103,
+      "state": "final rejected",
+      "difference": "i7brush-door opening alone rejected as hidden partial maintenance; caster task must finish recovery, not stop at removal."
+    },
+    {
+      "pr": 1262,
+      "state": "pending",
+      "difference": "Robot bin removal, hold-release dumping and reinsert; does not disassemble axle or clear wound obstruction."
+    },
+    {
+      "pr": 1561,
+      "state": "accepted",
+      "difference": "Circlip pliers retaining-ring installation on loose shaft; retention alone is already covered. Its loose support requirement rules out silently anchoring the vacuum."
+    },
+    {
+      "local": "tasks/reseat-robot-vacuum-brush",
+      "difference": "Root-owned Roborock keyed brush and hooked cover recovery. Caster distinction must be physical wound-fibre clearance plus free axle/swivel restoration, not change of vacuum part."
+    }
+  ],
+  "risks": [
+    "Hair-mat effective compliance/friction is not calibrated OEM data; native small-scale contact may be unstable.",
+    "Real yoke and stem retention compliance must be physically represented without inventing access or event locks.",
+    "Actual axle pushout and mat handling may be less accessible than wheel grip.",
+    "Source-backed geometrical reconstruction and full-unit recognizability need visual review."
+  ],
+  "source_gate": "pipeline/pdf-screening/sr005-caster/screening.json",
+  "state": "held after two bounded native gate failures; no full repair",
+  "acceptance_estimate": 0.2,
+  "evidence": "pipeline/pdf-screening/sr005-caster/contact-v2/result.json"
+}

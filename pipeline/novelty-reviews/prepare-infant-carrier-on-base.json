@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-19T19:26:21.272386+00:00",
+  "decision": "clear",
+  "queries": [
+    "pipeline/refresh_known.sh this session; known_tasks.tsv grep: car seat, carrier, infant, baby, child seat, isofix, booster, stroller, latch.*base",
+    "live (accepted/pending/revising) grep: infant, baby, car seat, carrier",
+    "gh pr view bodies of 2592, 1291, 861 read; 1291 review and appeal read",
+    "Revision (19 Nov, after the TK-EE45EG review): pipeline/refresh_known.sh rerun; known_tasks.tsv grep infant|car seat|carrier|baby|child seat|isofix|booster|latch.*base|click.?connect. New since the last check: 2899 (1U server drive carrier, unrelated); no new infant-carrier or car-seat-base task."
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2592,
+      "state": "OPEN, pending",
+      "read": "Body read: draw an infant carrier's cloth canopy forward to its stop over a doll while the other hand steadies the carrier on its rocker base.",
+      "comparison": "Same product family (a SnugRide-size carrier), different job: theirs is a cloth canopy pull on a free rocking carrier off any base; ours is the base lock, an unnamed half-latched fault the robot must notice and press home on the far corner, then leave the carrier hands-off. No shared mechanism or skill."
+    },
+    {
+      "pr": 1291,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Body, review and appeal read: tighten a child seat's lower-anchor strap while pressing it into the cushion; rejected for egregious simplification (block on a spring, artificial breakaway tab) and closed-loop demo on internal state.",
+      "comparison": "Different operation (installing the seat in the vehicle vs. docking the carrier on an installed base). Its rejection reasons are addressed here: full-size carrier to the published size and weight, real sprung-pawl locks cammed by a steel bar, and an open-loop demo that reads no simulator state."
+    },
+    {
+      "pr": 861,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Body read: buckle a doll into an infant car seat's harness.",
+      "comparison": "Harness webbing/buckle task; no base, no lock, no latch-state recovery."
+    },
+    {
+      "pr": 2516,
+      "state": "OPEN, pending",
+      "read": "Title read: get a hard pet carrier ready (top click, knobs, door hinges).",
+      "comparison": "Pet carrier assembly; unrelated mechanism and hazard."
+    }
+  ],
+  "physical_skill": "In a car's back seat (base rear-facing in the centre seat against the seat back, front seats and console beyond the head end), notice that the infant carrier is locked on the inboard side only (door-side bar end on its pawl's ramp, 14 mm high, rolled 2.4 degrees), reach in across the door-side seat and push the door-side foot-end corner down with about 20 N so the bar cams the sprung pawl back and it snaps over the bar, without tipping or lifting the 3.45 kg carrier off, then withdraw every fingertip more than 3 cm from its surface and leave it still to the end of the run.",
+  "valid_shortcuts": "Red team on this revision: do nothing 0; press and never let go 0.5; latch, let go for over 3 s, then press on it again to the end 0.5 (final-state scoring; the old latched scorer would have given 1.0). The inboard corner is out of reach (73.5 cm). Lifting the carrier off and setting it back locked is legitimate and still needs both sides latched, flat, still and untouched over the final 3 s. Demo 1.0 twice on the final file. Dream-1 this revision: 0.0 (arms drawn back to the door, never touched the carrier).",
+  "distinct_from_nearest": "No live or accepted task docks an infant carrier onto its base or checks a car-seat base lock. The only live carrier task (2592) is the canopy; the closed child-seat tasks (1291 strap install, 861 harness) are different operations, and 1291's simplification objection is met by real-scale geometry and real pawl locks. Residual risk: a reviewer may read it as one more 'press until it clicks' task, or judge the single-corner press easy. Revision changes the setting (vehicle bench, seat back, front seats, console, door pillars) and the scorer (final state only), not the skill, so the comparison with 2592, 1291 and 861 stands.",
+  "task_py_sha256": "49b52dbd962be6a9e1c7080da709810316b7c78b4cb5508c60e447825449b9d1",
+  "task_metadata_sha256": "f02b5b9c23ecb9e556f9eeb56d417b5f0dfa65988fdb8e3b31d7589627a2ee2e",
+  "note": "Hashes exclude scores/media by definition; written after the Dream-1 scores edit of the revision."
+}

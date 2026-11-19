@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-11-19T11:38:01+00:00",
+  "decision": "clear",
+  "queries": [
+    "toilet|trip lever|flush handle|flush",
+    "locknut|lock nut|left-hand|reverse thread",
+    "nut|hold .* while .* turn|counter-hold|handle (live PRs: accepted/pending/revising)",
+    "gh pr view 618, 1562, 1570, 1851, 2262, 2477, 2676, 2782, 2547 (bodies and latest review comments)"
+  ],
+  "nearest_prs": [
+    {
+      "number": 618,
+      "assessment": "Accepted: hold a nut flat behind a plate with one hand while the other drives a screw into it until snug. Shares the hold-one-part, turn-the-other bimanual pattern. Ours differs in what is held and why: the held part is a loose rotating assembly whose angle must be set (lifted 15 degrees to level) and kept while the nut's thread drag would swing it; the turned part is a hex nut on a horizontal axis just inside a 12 cm-deep tank wall; the thread is left-hand; and the turn must stop at a snug seat with an overtightening fail."
+    },
+    {
+      "number": 1851,
+      "assessment": "Accepted rotary can opener: one hand keeps handles squeezed while the other turns the key in regrasped part-turns. Same hold-and-turn family, different object, mechanism and goal (continuous cut vs a bounded seat with angle setting)."
+    },
+    {
+      "number": 1562,
+      "assessment": "Accepted compression joint with a spanner a set turn past snug. Shares the 'past snug but not too far' window; ours is a bare-gripper turn of a plastic locknut with a held counterpart, no spanner, no olive/pipe assembly."
+    },
+    {
+      "number": 2262,
+      "assessment": "Final reject: locknut with restricted wrench swing, rejected for occupational importance (not 500k core work). Warns that a generic locknut tightening needs a strong importance frame; ours is pitched as Societal relatability (common household toilet-handle fix) with Kohler and home-repair sources."
+    },
+    {
+      "number": 2782,
+      "assessment": "Final reject: raised toilet seat install judged specialist home-care, and a 50 N force not checkable. Ours is the common loose/drooping flush handle fix; real-trial scoring uses angle marks and video, no force reading."
+    },
+    {
+      "number": 2547,
+      "assessment": "Final reject: clearing a toilet rim jet judged hidden maintenance. Importance risk for ours: the locknut is inside the tank, though the symptom (a wobbly drooping handle) is visible and commonly fixed by householders."
+    },
+    {
+      "number": 2477,
+      "assessment": "Pending steering-lock: turn the wheel off the bolt and hold while the key turns. Hold-and-turn pattern, entirely different object and mechanism."
+    }
+  ],
+  "physical_skill": "Bimanual counter-hold: one gripper lifts a loose trip-lever handle 15 degrees to level and holds it against the drag of the thread while the other gripper, reaching down inside the open tank behind its front wall, turns a hex locknut counterclockwise (left-hand thread) a quarter turn to snug, stopping before 30 degrees past snug, then both release clear.",
+  "valid_shortcuts": [
+    "Any grip on the handle or escutcheon that holds the assembly level is valid; the scorer reads only angles and final fingertip clearance.",
+    "Any number of regrasps or turn increments on the nut is valid, as is turning the nut by pushing a flat rather than pinching.",
+    "Seating the nut with the handle crooked and then not being able to re-level scores 0.5 by design (the nut clamps the assembly).",
+    "One-arm turning was red-teamed: the nut's drag swings the loose handle instead of advancing the nut (0.0). Overtightening (34 degrees past snug) scores 0.0. Doing nothing scores 0.0.",
+    "Distractors are ignored; moving them is allowed."
+  ],
+  "distinct_from_nearest": "No accepted or pending task in the refreshed inventory involves a toilet flush handle, trip lever or its tank locknut; the only live toilet task (#1847) is a toilet-roll spindle. The nearest skill match (#618, hold a nut behind a plate while driving a screw) differs in that our held part is a free-rotating assembly whose angle must be actively set and maintained against thread drag, the nut is turned on a horizontal axis just inside a tank wall, the thread is left-hand, and the seat window (within 3 degrees of snug, fail beyond 30 degrees past) carries the manufacturer's do-not-overtighten warning. #1851 and #1562 share the hold-and-turn and past-snug window motifs only in general form. This is a reasoned novelty assessment, not an acceptance guarantee.",
+  "importance_risk": "Reviewers have closed toilet maintenance tasks as hidden or specialist (#2547 rim jet, #2782 raised seat) and generic locknut tightening for occupational scale (#2262). Our frame is Societal relatability: a loose, drooping flush handle is a common household fault with a standard DIY fix documented by Kohler and mainstream home-repair guides; the sources establish the operation, not a measured frequency.",
+  "task_py_sha256": "7bbe0be896e411a1fe7ca973f89879f86f693151084fa5019f8230f259fdfdf8",
+  "task_metadata_sha256": "d4559829f0fd31345544e9855dfc01abe31640138d93c847c639797aa0719206"
+}

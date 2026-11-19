@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-11-17T16:35:53.462948+00:00",
+  "stage": "construction source review; not validation",
+  "source": "tasks/clear-tie-tail-from-jetson-fan/task.py",
+  "counts_as_validation": false,
+  "findings": [
+    {
+      "severity": "scoring",
+      "finding": "contained() permits held-still debris inside tray; require released disposal using numeric finger/tool clearance and actual held-in-tray negative",
+      "agent_notified": true
+    },
+    {
+      "severity": "functional",
+      "finding": "abs(omega) allows reversed rotation; require positive manufacturer direction unless reverse flow explicitly valid",
+      "agent_notified": true
+    },
+    {
+      "severity": "safety",
+      "finding": "Rotor intrusion must remain invalid during coast-down after poweroff; agent identified and will add",
+      "agent_notified": true
+    }
+  ],
+  "scope": "No arbitrary board contact exclusion requested. Rigid fracture limitations must remain explicit; forceful press/sweep negative cannot prove damage simulation.",
+  "requirements": "Freeze final source, two fresh full demos, idle/held-debris/forceful-manipulation checks, source/novelty/media and model requirements. Submission authorized via wrappers if all pass and shared quota available.",
+  "updated_at": "2026-11-17T17:12:27.654092+00:00",
+  "preliminary_full_demo": {
+    "score": 1.0,
+    "frames": 293,
+    "sheet_independently_reviewed": true,
+    "visual": "Real strip extraction, transport and released disposal visible; rotor remains~4999RPM. Scorer revised afterward, so this is not finalvalidation."
+  },
+  "next_frozen_task_sha256": "172c89a34a2df8dad17314a274e30d92598cb3dbdfc5fb4cd297f4d642356fd0",
+  "source_followup": "Release now requires20mm capsule-to-finger-box/tool-bounds distance; positive rotation required; coast-down intrusion also invalid. Two fresh full demos and physical negatives in progress. Finger boxes derive from kit symmetric joint7 samples, not separately measured finger bodies.",
+  "final_v4_demo_a": {
+    "run": "demo-1117-115931-gpu0-1290830",
+    "task_sha256": "752e6df16f0cd07a2b1a95250c1ab2e3219520882412039e05f8c366e9897968",
+    "score": 1.0,
+    "frames": 293,
+    "sheet": "/home/mzhang/yam-eval/clear-tie-tail-from-jetson-fan/media/demo-sheet.png",
+    "sheet_sha256": "204c11c947ff97c2c8bd81855d7261f00264bd686fdfd1eb7384785599c17baf",
+    "sheet_independently_reviewed": true,
+    "visual": "Visible extraction from guarded fan, transport and released strip in blue tray. No obvious clipping or scene collapse in six frames. RPM and intrusion conditions need corresponding logs; still awaiting second run/negatives/model."
+  }
+}

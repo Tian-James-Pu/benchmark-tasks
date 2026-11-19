@@ -1,0 +1,857 @@
+{
+  "checked_at": "2026-11-17T19:39:48.431387+00:00",
+  "source_commit": null,
+  "count": 106,
+  "tasks": [
+    {
+      "task": "roboarc-blanket-flatten-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-01-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "dd650f6582af356939c92a52dda94f90983d1304",
+      "sha256": "bbdbbeda0395893ceb00c86443e0bf692685ab4aeabe5ff8153e7ee900180e4d"
+    },
+    {
+      "task": "roboarc-blanket-flatten-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-02-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "413d52105ea3db00daab70c527739d5885550e54",
+      "sha256": "fe9ef8b0deb8fc84e58bd0a17ef8446502b698694c1ff3fdc10ab45e64021b9a"
+    },
+    {
+      "task": "roboarc-blanket-flatten-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-03-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "413d52105ea3db00daab70c527739d5885550e54",
+      "sha256": "fe9ef8b0deb8fc84e58bd0a17ef8446502b698694c1ff3fdc10ab45e64021b9a"
+    },
+    {
+      "task": "roboarc-blanket-flatten-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-04-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "413d52105ea3db00daab70c527739d5885550e54",
+      "sha256": "fe9ef8b0deb8fc84e58bd0a17ef8446502b698694c1ff3fdc10ab45e64021b9a"
+    },
+    {
+      "task": "roboarc-blanket-flatten-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-05-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "413d52105ea3db00daab70c527739d5885550e54",
+      "sha256": "fe9ef8b0deb8fc84e58bd0a17ef8446502b698694c1ff3fdc10ab45e64021b9a"
+    },
+    {
+      "task": "roboarc-blanket-flatten-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-06-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "1c58f9bbe2af78e40d163b2b1b437cf9091d0373",
+      "sha256": "4890b33706ccb61432805d7d92357c3fe5e7a8042ca1270956fda27d1a95a0ef"
+    },
+    {
+      "task": "roboarc-blanket-flatten-07-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-07-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-07-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "b6e1b9743b53ac094d1bd7ea2617bac0f276ea1b",
+      "sha256": "220c70cd930bdbb44790d822e7965410c10cf86b314df5e41bb30f5997a47bf3"
+    },
+    {
+      "task": "roboarc-blanket-flatten-08-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-flatten-08-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-flatten-08-i01-standard.md",
+      "goal": "Unfold and spread the blanket flat on the table without overlaps or excessive stretching, then release it and withdraw.",
+      "git_blob_sha1": "fa85ac3f53ad76d5562a93b6fcc77623b883fed7",
+      "sha256": "0a08be3d024c4b3544e7df7db694dbac1a704abbf7ca118676676bcfd2ac6795"
+    },
+    {
+      "task": "roboarc-blanket-fold-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-fold-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-fold-01-i01-standard.md",
+      "goal": "Fold the blanket into the target shape on the table, then release it and withdraw. The blanket (600 mm x 480 mm) starts lying flat on the table. Fold it in half: turn the far half (the 240 mm of material along the far long edge) over onto the near half about the middle line parallel to the long edges, so that the far edge lies on the near edge and the far corners on the near corners. The folded stack is 600 mm x 240 mm, two layers, the far half upside down on top. The target images show the required final state: this is how the folded cloth must look and where it must lie; fold it like this. Near, far, left and right are as seen in the overhead camera cam_high (near = the lower side of its image).",
+      "git_blob_sha1": "e4b4ffe4f5f8232e2f18120a27cea4ef33acac9d",
+      "sha256": "90aec7a9404a2a73a624821450ff0edcc3bd264249f4f1aac7cbb5146536a0ff"
+    },
+    {
+      "task": "roboarc-blanket-fold-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-fold-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-fold-02-i01-standard.md",
+      "goal": "Fold the blanket into the target shape on the table, then release it and withdraw. The blanket (600 mm x 480 mm) starts lying flat on the table. Fold it in half: turn the far half (the 240 mm of material along the far long edge) over onto the near half about the middle line parallel to the long edges, so that the far edge lies on the near edge and the far corners on the near corners. The folded stack is 600 mm x 240 mm, two layers, the far half upside down on top. Then dog-ear the top layer: turn the top layer's near-left corner (the blanket's original far-left corner) over onto the top layer, the top layer alone, so that its corner point (12 mm in from both edges) lands 100 mm to the right and 100 mm farther than where it lay after the half fold; the crease runs at about 45 degrees across the corner. The target images show the required final state: this is how the folded cloth must look and where it must lie; fold it like this. Near, far, left and right are as seen in the overhead camera cam_high (near = the lower side of its image).",
+      "git_blob_sha1": "b865006312f5e2e033b92c14fc97451cfe99d304",
+      "sha256": "d1a19695554cde99c832ca864f04532e521c2940e14bebadf927e3466966da6a"
+    },
+    {
+      "task": "roboarc-blanket-fold-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-fold-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-fold-03-i01-standard.md",
+      "goal": "Fold the blanket into the target shape on the table, then release it and withdraw. The blanket (600 mm x 480 mm) starts folded over on itself. Fold it in half: turn the far half (the 240 mm of material along the far long edge) over onto the near half about the middle line parallel to the long edges, so that the far edge lies on the near edge and the far corners on the near corners. The folded stack is 600 mm x 240 mm, two layers, the far half upside down on top. The target images show the required final state: this is how the folded cloth must look and where it must lie; fold it like this. Near, far, left and right are as seen in the overhead camera cam_high (near = the lower side of its image).",
+      "git_blob_sha1": "f70f1ce07229886307b4af5a7c3f757a965fac2d",
+      "sha256": "412cc074b723ce1ce2a0cf33a38238b3c7a83129c0a8a435bcc586877801094e"
+    },
+    {
+      "task": "roboarc-blanket-fold-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-fold-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-fold-04-i01-standard.md",
+      "goal": "Fold the blanket into the target shape on the table, then release it and withdraw. The blanket (600 mm x 480 mm) starts folded over on itself. Fold it in half: turn the far half (the 240 mm of material along the far long edge) over onto the near half about the middle line parallel to the long edges, so that the far edge lies on the near edge and the far corners on the near corners. The folded stack is 600 mm x 240 mm, two layers, the far half upside down on top. Then dog-ear the top layer: turn the top layer's near-left corner (the blanket's original far-left corner) over onto the top layer, the top layer alone, so that its corner point (12 mm in from both edges) lands 100 mm to the right and 100 mm farther than where it lay after the half fold; the crease runs at about 45 degrees across the corner. The target images show the required final state: this is how the folded cloth must look and where it must lie; fold it like this. Near, far, left and right are as seen in the overhead camera cam_high (near = the lower side of its image).",
+      "git_blob_sha1": "32b8a302fd3b7e1e42ebad5c98135d458b01db6b",
+      "sha256": "e27c2d86ded11795f5c32d58d6a50344448a31ed93ce502e427ef19ff3e309c3"
+    },
+    {
+      "task": "roboarc-blanket-fold-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-blanket-fold-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-blanket-fold-05-i01-standard.md",
+      "goal": "Fold the blanket into the target shape on the table, then release it and withdraw. The blanket (600 mm x 480 mm) starts folded over on itself. Fold it in half: turn the far half (the 240 mm of material along the far long edge) over onto the near half about the middle line parallel to the long edges, so that the far edge lies on the near edge and the far corners on the near corners. The folded stack is 600 mm x 240 mm, two layers, the far half upside down on top. Then dog-ear the top layer: turn the top layer's near-left corner (the blanket's original far-left corner) over onto the top layer, the top layer alone, so that its corner point (12 mm in from both edges) lands 100 mm to the right and 100 mm farther than where it lay after the half fold; the crease runs at about 45 degrees across the corner. A fixed block (480 mm long, 40 mm deep, 60 mm high) stands on the table beyond the blanket's far side; it does not move, and the blanket must end on the table, not on the block. The target images show the required final state: this is how the folded cloth must look and where it must lie; fold it like this. Near, far, left and right are as seen in the overhead camera cam_high (near = the lower side of its image).",
+      "git_blob_sha1": "84e0f5db7efea1e4ca77ba9092291d0fddbae17e",
+      "sha256": "12fb117ff999ea91eb9ebd523a8e403eb139d6b1b7da3199c5d11dcf1a8a7d35"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-01-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support.",
+      "git_blob_sha1": "53eeb610b9f49ea5762fd644bfe4133050c920ec",
+      "sha256": "8c43387d13db715e68808ad7b758bd79763b0958e3bd16de782353e7dee1281a"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-02-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support.",
+      "git_blob_sha1": "c855395dc9f32509ccaf1316cb2747efe3081ed9",
+      "sha256": "d128bb990d1d3583ad348801cba861a51a68a1d1e8ff939806a7577bed08c1f9"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-03-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support.",
+      "git_blob_sha1": "db2f35c40b23e3ad40a8a3765e9d3d3a10802541",
+      "sha256": "11f84860392a3e3364ee79620beb20ad98ed1a71d9aaeda9d918af79f1e388c2"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-04-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support.",
+      "git_blob_sha1": "5caeefbd670d155f341b6acd850abc4362a163ca",
+      "sha256": "a013b587990963d27123224322b261c68e65c708e74783ba36bb1dc28474060b"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-05-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support.",
+      "git_blob_sha1": "2a551c2c084853735020b58386cf03d7f1014fe7",
+      "sha256": "095870b651a1fa78b6b51bf46bdb240a3a4b538c764683376ca8bb035a6d37ef"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-06-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support. Black rubber sleeves on the wire are insulated: the ring may rest on them. The final bend and the post at the finish are insulated as well.",
+      "git_blob_sha1": "a89cd6a0c745a9f0127939be7d436c6ef6d0091a",
+      "sha256": "e333188524f98675c4a806382e92c42a72b627f5dd0dd64923291ed7e7ef0795"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-07-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-07-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-07-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support. Black rubber sleeves on the wire are insulated: the ring may rest on them. The final bend and the post at the finish are insulated as well.",
+      "git_blob_sha1": "886bb452f75f4cffe7396f911f5303a03311415c",
+      "sha256": "e3cd5730a3f2229053829d94843e12b6cb94f5aa334b7fd093c7fc0bc21da959"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-08-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-08-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-08-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support. Black rubber sleeves on the wire are insulated: the ring may rest on them. The final bend and the post at the finish are insulated as well.",
+      "git_blob_sha1": "886bb452f75f4cffe7396f911f5303a03311415c",
+      "sha256": "e3cd5730a3f2229053829d94843e12b6cb94f5aa334b7fd093c7fc0bc21da959"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-09-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-09-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-09-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support. Black rubber sleeves on the wire are insulated: the ring may rest on them. The final bend and the post at the finish are insulated as well.",
+      "git_blob_sha1": "886bb452f75f4cffe7396f911f5303a03311415c",
+      "sha256": "e3cd5730a3f2229053829d94843e12b6cb94f5aa334b7fd093c7fc0bc21da959"
+    },
+    {
+      "task": "roboarc-buzz-wire-3d-10-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-buzz-wire-3d-10-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-buzz-wire-3d-10-i01-standard.md",
+      "goal": "Guide the metal loop along the entire wire from start to finish without touching the wire, then release the tool on the finish support. Black rubber sleeves on the wire are insulated: the ring may rest on them. The final bend and the post at the finish are insulated as well.",
+      "git_blob_sha1": "886bb452f75f4cffe7396f911f5303a03311415c",
+      "sha256": "e3cd5730a3f2229053829d94843e12b6cb94f5aa334b7fd093c7fc0bc21da959"
+    },
+    {
+      "task": "roboarc-cast-coil-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-01-i01-standard.md",
+      "goal": "Assemble the gold and silver pieces into a cube with flush outer faces, then release both on the table.",
+      "git_blob_sha1": "d1d81bfd0aed7e1a2496e4815fd6358fb6e1cf8a",
+      "sha256": "8324273e6be673a6f9e1feb92ee6dd8cd8b3aac263a872ddb0bf01a99af8f1f9"
+    },
+    {
+      "task": "roboarc-cast-coil-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-02-i01-standard.md",
+      "goal": "Assemble the gold and silver pieces into a cube with flush outer faces, then release both on the table.",
+      "git_blob_sha1": "a0522bb2f39357e4735e0e048e0e9d29ad86325d",
+      "sha256": "dea71c0a11aa8af4dfdbb6c8823e563268cad02a94e682edcaba3eb97a9f6f49"
+    },
+    {
+      "task": "roboarc-cast-coil-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-03-i01-standard.md",
+      "goal": "Assemble the gold and silver Cast Coil pieces into their matching interlocking configuration, then release both.",
+      "git_blob_sha1": "fd00a99feebd6505e93e4e2ba3040ca863313b3c",
+      "sha256": "ec85f5204086c3d7c0f231592c62ee326997d06f628f663af6c68fdf0b52b6f7"
+    },
+    {
+      "task": "roboarc-cast-coil-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-04-i01-standard.md",
+      "goal": "Assemble the gold and silver Cast Coil pieces into their matching interlocking configuration, then release both.",
+      "git_blob_sha1": "96d2e9e7b3c88979ff2d0ca87e4c7876425827ef",
+      "sha256": "ab78dedbc51f57c73bceadffb1855251b4fc5253b798e329dfd3cadd12d7fee7"
+    },
+    {
+      "task": "roboarc-cast-coil-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-05-i01-standard.md",
+      "goal": "Assemble the gold and silver Cast Coil pieces into their matching interlocking configuration, then release both.",
+      "git_blob_sha1": "b9563ac702548b524794ae37c3fdc01852d0c5c8",
+      "sha256": "a00cdcfb9fb5054c57395274da2bcb222fac9c4b8a04c36cbff398143246b114"
+    },
+    {
+      "task": "roboarc-cast-coil-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-06-i01-standard.md",
+      "goal": "Assemble the gold and silver Cast Coil pieces into their matching interlocking configuration, then release both.",
+      "git_blob_sha1": "5db9de3b08b7faeb7d23868bb94924ec8dd963d9",
+      "sha256": "b1ecb8384387aef923c439a62c8b43df3efdf9ce5f66b790d71bc42a45f01b27"
+    },
+    {
+      "task": "roboarc-cast-coil-07-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-07-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-07-i01-standard.md",
+      "goal": "Assemble the gold and silver Cast Coil pieces into their matching interlocking configuration, then release both.",
+      "git_blob_sha1": "87bfb855a0441365efb98c01f2ddd326bd2e099a",
+      "sha256": "dd4c55bf9fa5f76f0244ff133b8253e7419cacb8c97b3c5e88696506c448e58d"
+    },
+    {
+      "task": "roboarc-cast-coil-08-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-coil-08-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-coil-08-i01-standard.md",
+      "goal": "Assemble the gold and silver Cast Coil pieces into their matching interlocking configuration, then release both.",
+      "git_blob_sha1": "580db53f1fed248e90a0f15222c764dda5013122",
+      "sha256": "98e51d5d88cc7171b8254472c05f8ddf0ccdb8cb602dd210608062d8f56e3175"
+    },
+    {
+      "task": "roboarc-cast-keyhole-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-keyhole-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-keyhole-01-i01-standard.md",
+      "goal": "Separate and place the entire silver keyhole piece inside the green dashed goal region. Keep the gold piece on the puzzle/system side.",
+      "git_blob_sha1": "40efce4e686966f3b4ad29afa05b98d685d3c5ba",
+      "sha256": "744b6f11428ca468e5b0351d436b58d1013e944f161ec334d69d293a6eb17ff3"
+    },
+    {
+      "task": "roboarc-cast-keyhole-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-keyhole-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-keyhole-02-i01-standard.md",
+      "goal": "Separate and place the entire silver keyhole piece inside the green dashed goal region. Keep the gold piece on the puzzle/system side.",
+      "git_blob_sha1": "40efce4e686966f3b4ad29afa05b98d685d3c5ba",
+      "sha256": "744b6f11428ca468e5b0351d436b58d1013e944f161ec334d69d293a6eb17ff3"
+    },
+    {
+      "task": "roboarc-cast-keyhole-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-keyhole-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-keyhole-03-i01-standard.md",
+      "goal": "Separate and place the entire silver keyhole piece inside the green dashed goal region. Keep the gold piece on the puzzle/system side.",
+      "git_blob_sha1": "c3530292b9acf824199566d612fd0a2540a27406",
+      "sha256": "e70b290f09039fbf1da952fd23972171d9e4ca7c5fc9b7e387e13c6e34b7524f"
+    },
+    {
+      "task": "roboarc-cast-keyhole-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-keyhole-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-keyhole-04-i01-standard.md",
+      "goal": "Separate and place the entire silver keyhole piece inside the green dashed goal region. Keep the gold piece on the puzzle/system side.",
+      "git_blob_sha1": "c3f8c7b50e4af8be892550e7e7bf3cb7e4aff3f8",
+      "sha256": "ff581809bb4cc7b527a0c99820ad2efa1d05f199ddeeaa7e9a8813e04041002e"
+    },
+    {
+      "task": "roboarc-cast-keyhole-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-keyhole-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-keyhole-05-i01-standard.md",
+      "goal": "Separate and place the entire silver keyhole piece inside the green dashed goal region. Keep the gold piece on the puzzle/system side.",
+      "git_blob_sha1": "e45f067b955bc4fcf8b3ed047d72fb4e705bc0a9",
+      "sha256": "a64cd14e1e471b03bb0a3a8ccda2d614467695ab7e5c44e2cfb98e9b3b493642"
+    },
+    {
+      "task": "roboarc-cast-keyhole-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-cast-keyhole-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-cast-keyhole-06-i01-standard.md",
+      "goal": "Separate and place the entire silver keyhole piece inside the green dashed goal region. Keep the gold piece on the puzzle/system side.",
+      "git_blob_sha1": "418b5e18fca06a3d02366c3c0b1b3d255672afee",
+      "sha256": "895680f9ba28ffb7d5747a3722e120ee695710b185383ca1ff93a3ee2bd4125b"
+    },
+    {
+      "task": "roboarc-fiber-bundling-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-01-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "22437b0506d378fe072e8fa9bc98fc46f8c11335",
+      "sha256": "619b17629d2af9ffb75c81a9b2e7b8d1ecee2ed7b34e4d84fe1941bf2b5a2e96"
+    },
+    {
+      "task": "roboarc-fiber-bundling-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-02-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "45063afeea643f36227dc879c06173762d97d94b",
+      "sha256": "ff2cc462a4d9594cfa73c61f6b3f25c5fa30d1ff72eac34203988648b4e9da45"
+    },
+    {
+      "task": "roboarc-fiber-bundling-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-03-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "1b39a99fc0090d53e24ce916873a9a008c10355a",
+      "sha256": "2083cf8b2519afdf743afa6604c6d4972e7464a3b8a4bd2855b58407c86a7059"
+    },
+    {
+      "task": "roboarc-fiber-bundling-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-04-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "bfff397407ea24b77b0f50172d11d8824eed693a",
+      "sha256": "499fa414ea3db437986277a2274d67fc2073672562a2e67071c1ee297f8f714c"
+    },
+    {
+      "task": "roboarc-fiber-bundling-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-05-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "0153fae0e18b975f42eb3d59a0e9e0bd4f0be5df",
+      "sha256": "72333544926e5f63dc5c6655a6d51b96f4936a87f9b40fd9023dc3c05831bb4c"
+    },
+    {
+      "task": "roboarc-fiber-bundling-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-06-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "b93751f0705c946fb18efb6a6673bd11a47c16fc",
+      "sha256": "333f886f2840142b9cc06f329cb342392dfff2e248de0c3840cd82b2cb65cead"
+    },
+    {
+      "task": "roboarc-fiber-bundling-07-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-07-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-07-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "964c9e4183d4b9266d95f117d43c5d75c63443f8",
+      "sha256": "c56485dc61c63d39b60ce07d9d616ba5c61b20580aa502a3bc27c39d89ba6886"
+    },
+    {
+      "task": "roboarc-fiber-bundling-08-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-08-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-08-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "28d1009064e641d2bba12eb3931384d9b4b37289",
+      "sha256": "85c7e4065b2af5bc99fc7405f4d945bbea9901a056a2488179cdcaf393c25573"
+    },
+    {
+      "task": "roboarc-fiber-bundling-09-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-09-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-09-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "90395e1ea0faf7a4a10db9836da4873f91c9cd30",
+      "sha256": "0e672bef6d92962cc7433e6882d83430a4eebfbbb17fb3854f817cb1749312f3"
+    },
+    {
+      "task": "roboarc-fiber-bundling-10-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-fiber-bundling-10-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-fiber-bundling-10-i01-standard.md",
+      "goal": "Pass every fine fiber and the front sheath through the fixed copper ring; keep the rear terminal anchored.",
+      "git_blob_sha1": "19c301096f432c6bead43e37cff181c74e0eb870",
+      "sha256": "edeaa9badaf2f3988fa98394aa4fd82fa9f0414cfd984572a8a125165488ab96"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-01-i01-standard.md",
+      "goal": "Separate and place the whole hedgehog ball, including every spike inside the green dashed goal region. Keep all cage components on the puzzle/system side.",
+      "git_blob_sha1": "751c2ff563c4a6724eaeb2ffcc63b6e62aad3f72",
+      "sha256": "b37197a24c1d89a1cb33c8a19038c8165fd9d5a53827466f0be8ea616a96a7a6"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-02-i01-standard.md",
+      "goal": "Separate and place the whole hedgehog ball, including every spike inside the green dashed goal region. Keep all cage components on the puzzle/system side.",
+      "git_blob_sha1": "4e3763d60bbb3962467b109bc503d8d7a8616312",
+      "sha256": "9b43cecd7d998e3671cf2fb8861a65351d0d02070a591d236d076845d278a432"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-03-i01-standard.md",
+      "goal": "Separate and place the whole hedgehog ball, including every spike inside the green dashed goal region. Keep all cage components on the puzzle/system side.",
+      "git_blob_sha1": "5b080e1f01ffe58bfea3fe75ddc886632549a190",
+      "sha256": "b4d161de387701b96dd05603945017e8b89fe1747f2cacf621ac436ef1747baf"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-04-i01-standard.md",
+      "goal": "Separate and place the whole hedgehog ball, including every spike inside the green dashed goal region. Keep all cage components on the puzzle/system side.",
+      "git_blob_sha1": "0b07d08aa703d14e6740ca1f78248c4c5a60c52a",
+      "sha256": "25e4253cfc42019ce79def84061119bd4ec9021aeda5ba57feb25787fed40915"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-05-i01-standard.md",
+      "goal": "Separate and place the whole hedgehog ball, including every spike inside the green dashed goal region. Keep all cage components on the puzzle/system side.",
+      "git_blob_sha1": "b0424b67d813950da6d9101db873750dc5da9086",
+      "sha256": "d5ec76efce645f7cd4cdc53b1371bd37a5ef4eaaa05fe121b27ee02c001d5140"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-06-i01-standard.md",
+      "goal": "Separate and place the whole star, including every spike inside the green dashed goal region. Keep all cage components on the puzzle/system side. A thin rod with a box handle lies on the table; you may use it as a tool. It is a task piece: if it falls off the table (more than 100 mm below the tabletop), the episode ends in failure.",
+      "git_blob_sha1": "7bf2e1e60e0e7089797941f5d37ba49fee9d27f5",
+      "sha256": "808d76102dc75f3b91bb8415629ae6d4a26f4450b8f98a01afb6ed2f0a3cb86e"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-07-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-07-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-07-i01-standard.md",
+      "goal": "Separate and place the whole owl, including both wings, the tail, the legs and the beak inside the green dashed goal region. Keep the cage and its mount on the puzzle/system side. A thin rod with a box handle lies on the table; you may use it as a tool. It is a task piece: if it falls off the table (more than 100 mm below the tabletop), the episode ends in failure.",
+      "git_blob_sha1": "87545a264e7832a1856e3522426cc26e5e4965dd",
+      "sha256": "ffad344fb151267b758fcbbdcd1944c8a5c167ebbfd3b3cd88966bd45c4d6178"
+    },
+    {
+      "task": "roboarc-hedgehog-in-cage-08-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-hedgehog-in-cage-08-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-hedgehog-in-cage-08-i01-standard.md",
+      "goal": "Separate and place the whole hedgehog ball, including every spike inside the green dashed goal region. Keep all cage components on the puzzle/system side.",
+      "git_blob_sha1": "eed4ee371e7d88333af1e8d72f195b2d8c252ad8",
+      "sha256": "83b2b811917a9f3e1df30b3e46dfa0a65b7c54aaea610e2cc17d290535a6f117"
+    },
+    {
+      "task": "roboarc-horseshoe-ring-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-horseshoe-ring-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-horseshoe-ring-01-i01-standard.md",
+      "goal": "Separate and place the entire removable ring inside the green dashed goal region. Keep the horseshoes and chains on the puzzle/system side.",
+      "git_blob_sha1": "4ae2e148ecdb3b4ba00b276f3ebc156f9eb763e8",
+      "sha256": "193b241b34ecec3d776f58ae125ad56687235292e740f2bb95f22729c88f8957"
+    },
+    {
+      "task": "roboarc-horseshoe-ring-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-horseshoe-ring-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-horseshoe-ring-02-i01-standard.md",
+      "goal": "Separate and place the entire removable ring inside the green dashed goal region. Keep the horseshoes and chains on the puzzle/system side.",
+      "git_blob_sha1": "1a9299c61b0c7d11b6758f0bb8210fcc42267b1b",
+      "sha256": "2298f523625f2e73c2d95b44cbde575b5f0cb8a7a6ab655c3c7ec471031c7f91"
+    },
+    {
+      "task": "roboarc-horseshoe-ring-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-horseshoe-ring-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-horseshoe-ring-03-i01-standard.md",
+      "goal": "Separate and place the entire removable ring inside the green dashed goal region. Keep the horseshoes and chains on the puzzle/system side.",
+      "git_blob_sha1": "2f065ab708b2423accd4b71e330fdb8991b71b80",
+      "sha256": "f0898a021e01d8237680b0cf4d5f9d4f69b7889fca299d0847b7d4ddd14985d3"
+    },
+    {
+      "task": "roboarc-horseshoe-ring-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-horseshoe-ring-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-horseshoe-ring-04-i01-standard.md",
+      "goal": "Separate and place the entire removable ring inside the green dashed goal region. Keep the horseshoes and chains on the puzzle/system side.",
+      "git_blob_sha1": "7b5605e68036d58ae93ec4d8f90a10b12ce58b58",
+      "sha256": "e5130a83b82a4920aca6ba7c4e4619041280e8318cb5096f4f77b4f28096ec61"
+    },
+    {
+      "task": "roboarc-horseshoe-ring-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-horseshoe-ring-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-horseshoe-ring-05-i01-standard.md",
+      "goal": "Separate and place the entire removable ring inside the green dashed goal region. Keep the horseshoes and chains on the puzzle/system side.",
+      "git_blob_sha1": "671c4c752d66b1b7400471be7ee0aebde7d28e1b",
+      "sha256": "6b4977245cc7c9d5987a9926b1deff6f065dac9a66a253779bd0058e9be547d0"
+    },
+    {
+      "task": "roboarc-ikea-eket-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-eket-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-eket-i00-standard.md",
+      "goal": "Build the EKET cabinet frame: slide the two side panels into the top panel, then the back panel into its grooves, then the bottom panel onto the sides, and leave the cabinet standing on the table on its own.",
+      "git_blob_sha1": "1deb8574b4bc91a7fa808ab4c829489f11322094",
+      "sha256": "02a6470c3105670aa45e9490f0a55e2d3575c92d65743edbec5958e774e51018"
+    },
+    {
+      "task": "roboarc-ikea-gladom-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-gladom-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-gladom-i00-standard.md",
+      "goal": "Build the GLADOM tray table: cross frame B into frame A, drive the long screw and the bottom screw, place the ring and drive its two screws, and set the tray on the ring.",
+      "git_blob_sha1": "2fc382d105092f402da63dfb1af8d11ac659637e",
+      "sha256": "8da5336b06a9ab82ccc68bfd32f293ad37a1b91b402aaf3e9562840ee5961ec4"
+    },
+    {
+      "task": "roboarc-ikea-ikea365-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-ikea365-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-ikea365-i00-standard.md",
+      "goal": "Rebuild the IKEA 365+ serving stand: take the screw out of member A and park it, lay member B across member A, bring the screw back and screw it in through both members until it seats, turn the stand over, and place the bowl on it.",
+      "git_blob_sha1": "5e30d54ae0c3846ca1c758e835f0e69cc7865e5f",
+      "sha256": "3ca5e1b5121515c3080592ff476afec7657254f8ba403269d14994fc13f2a482"
+    },
+    {
+      "task": "roboarc-ikea-lack-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-lack-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-lack-i00-standard.md",
+      "goal": "Screw all four legs onto the four threaded studs of the tabletop.",
+      "git_blob_sha1": "7b96fac5f496ced7a599e6229edd9f21f76dfcff",
+      "sha256": "ae2ba6ad76f05ed8a6bcaa9557433a2cdf27943e6b95df064e8732eb8c60ab54"
+    },
+    {
+      "task": "roboarc-ikea-stegesund-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-stegesund-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-stegesund-i00-standard.md",
+      "goal": "Build the STEGESUND roll stand: press half B onto half A at the two leg crossings, push the shelf in from the foot end, drive the four bolts through the legs into the shelf's rail ends with the hex key, stand the frame up and drop the top rod into the two crotches.",
+      "git_blob_sha1": "253a1fab18242b65b7e2e0e6d2e72dea7f9905eb",
+      "sha256": "edf2e08fdae4aa12325777fe71b10ddffa0c7e28fcc4fe46236ca823dbed4fb7"
+    },
+    {
+      "task": "roboarc-ikea-svallet-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-svallet-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-svallet-i00-standard.md",
+      "goal": "Press the lamp shade's key down into the socket on top of the stand column until the spring jaw snaps over it, then screw the E12 bulb up into the shade's socket until it seats.",
+      "git_blob_sha1": "a75970f4dddbb73bb1d08ceb83f2ee61c20f7fa0",
+      "sha256": "fea679a4d1d75501be3cd041a0333d1071f5fa56b2b26b7ff6278a3b1de599cd"
+    },
+    {
+      "task": "roboarc-ikea-variera-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-variera-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-variera-i00-standard.md",
+      "goal": "Assemble the VARIERA shelf insert: place the two side frames, lower the shelf onto them, and drive the four screws through the shelf holes into the frames' receivers until they seat.",
+      "git_blob_sha1": "7b858a6dfb822d78d8d5c3d1e5878697f7193606",
+      "sha256": "9869435fc75c21861d4d7a33542310ccac969b26a3b0c91096b50b530306c247"
+    },
+    {
+      "task": "roboarc-ikea-vesken-i00-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-ikea-vesken-i00-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-ikea-vesken-i00-standard.md",
+      "goal": "Build the VESKEN shelf unit body: snap the four feet into the bottom tray from below, the four columns into the bottom tray, the second tray onto the columns, four columns and a tray for each of the two upper levels, and the four caps into the top tray.",
+      "git_blob_sha1": "33889090d98ef1da372903314225c975ff8b929d",
+      "sha256": "85e4b95c354d5f76b577f9d52ab3b674fc45270770191742ce3310aafe084b8e"
+    },
+    {
+      "task": "roboarc-interlocked-claws-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-01-i01-standard.md",
+      "goal": "Separate and place the entire brown claw piece inside the green dashed goal region. Keep the other claw piece on the puzzle/system side.",
+      "git_blob_sha1": "b4d35b9097189a4ac2cdd051749ade7ae755b4f3",
+      "sha256": "58902dc652c5683a89d0072fa3ff7300b1379cdaac5e60aceea5f3bdb3ebf19c"
+    },
+    {
+      "task": "roboarc-interlocked-claws-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-02-i01-standard.md",
+      "goal": "Separate and place the entire brown claw piece inside the green dashed goal region. Keep the other claw piece on the puzzle/system side.",
+      "git_blob_sha1": "f6f5d3eb74a954937c2deb41b5ed061e8ff1789c",
+      "sha256": "d74940e34b2efd10be03038cabd03b7610b2763e2636c30b79f17595fe49fb6c"
+    },
+    {
+      "task": "roboarc-interlocked-claws-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-03-i01-standard.md",
+      "goal": "Completely separate the two claw pieces and briefly hold both still.",
+      "git_blob_sha1": "a65341954bb06a55ce82b8c48f59e3e0e758278d",
+      "sha256": "60b9bea2a7016bea2492e02e60216680d730bb97f926882d9d677c3f44cc8750"
+    },
+    {
+      "task": "roboarc-interlocked-claws-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-04-i01-standard.md",
+      "goal": "Completely separate the two claw pieces and briefly hold both still.",
+      "git_blob_sha1": "33cd767abe12999f26599817bb4ec4ac7d7ef628",
+      "sha256": "d0c0c912121b7ebedee96680d8743556d4d130404616998249763c7bd9598295"
+    },
+    {
+      "task": "roboarc-interlocked-claws-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-05-i01-standard.md",
+      "goal": "Completely separate the two claw pieces and briefly hold both still.",
+      "git_blob_sha1": "485a1b553416ba1dd79db18f150a31a03e031a12",
+      "sha256": "20b611abc89b23d64506d30e17ba77ded37984a2316f66b6b6b2bc31cb84e997"
+    },
+    {
+      "task": "roboarc-interlocked-claws-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-06-i01-standard.md",
+      "goal": "Separate and place the entire brown claw piece inside the green dashed goal region. Keep the other claw piece on the puzzle/system side. In this design the brown claw piece is a key and the other piece is a teal lock.",
+      "git_blob_sha1": "50340e615436c7ac329723ba020c9971a4d77429",
+      "sha256": "80eba540082e95899cdce8d093e7e30cbbf1527fb1ef40eacac628ed75d9e859"
+    },
+    {
+      "task": "roboarc-interlocked-claws-07-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-07-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-07-i01-standard.md",
+      "goal": "Separate and place the entire brown claw piece inside the green dashed goal region. Keep the other claw piece on the puzzle/system side. In this design the brown claw piece is a key and the other piece is a teal lock.",
+      "git_blob_sha1": "a0ab119b03c9bef2850ffaa55b19791cc4575787",
+      "sha256": "4a7b3ed393663ac66965887db8856447040e5029546d241e419975defcc474a8"
+    },
+    {
+      "task": "roboarc-interlocked-claws-08-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-08-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-08-i01-standard.md",
+      "goal": "Separate and place the entire brown claw piece inside the green dashed goal region. Keep the other claw piece on the puzzle/system side. In this design the brown claw piece is a key and the other piece is a teal lock.",
+      "git_blob_sha1": "3b9f3cdc46721cdcbe0fb42cb029742f455f04e7",
+      "sha256": "8d23c35221cad6ee01dc77a576a380ba03a89a586b09da7140894376a5d5c6d3"
+    },
+    {
+      "task": "roboarc-interlocked-claws-09-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-09-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-09-i01-standard.md",
+      "goal": "Separate and place the entire brown claw piece inside the green dashed goal region. Keep the other claw piece on the puzzle/system side. In this design the brown claw piece is a key and the other piece is a teal lock.",
+      "git_blob_sha1": "be735556a4d89a60e4c422076c130ef5676d2c1f",
+      "sha256": "96022b044e95ccc0c963f75442bf84d3955285fdf79e77f28e0e37e728fb66a2"
+    },
+    {
+      "task": "roboarc-interlocked-claws-10-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-10-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-10-i01-standard.md",
+      "goal": "Separate and place the entire brown claw piece inside the green dashed goal region. Keep the other claw piece on the puzzle/system side. In this design the brown claw piece is a key and the other piece is a teal lock.",
+      "git_blob_sha1": "b72593460df493991d9c047ad4c69307d00c56df",
+      "sha256": "9e5c7994976f06e546d10567a3bbf9fad3b4610a94ab27fb3178ab57b618fcf5"
+    },
+    {
+      "task": "roboarc-interlocked-claws-11-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-11-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-11-i01-standard.md",
+      "goal": "Completely separate the C ring from the AB plate and briefly hold both still.",
+      "git_blob_sha1": "a9d4644e9681ae9fb0a62cb556cfc516d08f758c",
+      "sha256": "39d3947390c7542b7b3ebb73dfffa1b57a0bfe7c3dcdae33d633b2e0991fd8b0"
+    },
+    {
+      "task": "roboarc-interlocked-claws-12-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-interlocked-claws-12-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-interlocked-claws-12-i01-standard.md",
+      "goal": "Completely separate the two interlocked pieces and briefly hold both still.",
+      "git_blob_sha1": "cfc39b131d4993e80b405191c8bbaceea6303ae7",
+      "sha256": "be257b8e15ff6ec414f58368ae0cc403b24e96ba227df0a60c8ebce76364f665"
+    },
+    {
+      "task": "roboarc-knot-untying-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-knot-untying-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-knot-untying-01-i01-standard.md",
+      "goal": "Untie and spread the rope on the tabletop until its top-down projection has no crossings or overlaps, then release it.",
+      "git_blob_sha1": "92d00cc8934fd9f63215b5a4f48444b2734ef81a",
+      "sha256": "63a1f3f576ae3490296cb90064429f4b976885cab6862a9416f969e4c809dae4"
+    },
+    {
+      "task": "roboarc-knot-untying-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-knot-untying-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-knot-untying-02-i01-standard.md",
+      "goal": "Untie and spread the rope on the tabletop until its top-down projection has no crossings or overlaps, then release it.",
+      "git_blob_sha1": "19ef889e49e000097011c00dbee2391cbc83c9ad",
+      "sha256": "7477dd8044e692c1d33b24f998ce1eb33c404126fd0ebfc19cf5bc05fe99d341"
+    },
+    {
+      "task": "roboarc-knot-untying-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-knot-untying-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-knot-untying-03-i01-standard.md",
+      "goal": "Untie and spread the rope on the tabletop until its top-down projection has no crossings or overlaps, then release it.",
+      "git_blob_sha1": "d0b94571dff4bc4d3b766a847556bc15bedac733",
+      "sha256": "e55eb28cdd0079b28dedd464afdf24eabc9a5319e05525a1e4041b24afa5c4e8"
+    },
+    {
+      "task": "roboarc-knot-untying-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-knot-untying-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-knot-untying-04-i01-standard.md",
+      "goal": "Untie and spread the rope on the tabletop until its top-down projection has no crossings or overlaps, then release it.",
+      "git_blob_sha1": "ffcc0c04fa37c3a5df683dd0ddcb7833cb261124",
+      "sha256": "fdeae31868dcdf862fb114cf859a1e25b63911ba620d4f365af62f2b98e042a6"
+    },
+    {
+      "task": "roboarc-knot-untying-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-knot-untying-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-knot-untying-05-i01-standard.md",
+      "goal": "Untie and spread the rope on the tabletop until its top-down projection has no crossings or overlaps, then release it.",
+      "git_blob_sha1": "254238380843eaaef59e8fa8935d8ef0639d73d4",
+      "sha256": "4262ce57b5c19780fbcd279bddb0544ce4789bf5dffdd1efc520ce77e96892c1"
+    },
+    {
+      "task": "roboarc-knot-untying-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-knot-untying-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-knot-untying-06-i01-standard.md",
+      "goal": "Untie and spread the rope on the tabletop until its top-down projection has no crossings or overlaps, then release it. One end of every rope is clamped to the table under a staple and stays clamped.",
+      "git_blob_sha1": "de13713e5e45797796c2f81aef94f9615662fa16",
+      "sha256": "f25ce9b4e06f8416d80bcbeb2d29446c99f497ee76e3a6e15a25822700b4039a"
+    },
+    {
+      "task": "roboarc-knot-untying-09-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-knot-untying-09-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-knot-untying-09-i01-standard.md",
+      "goal": "Untie and spread the rope on the tabletop until its top-down projection has no crossings or overlaps, then release it. One end of every rope is clamped to the table under a staple and stays clamped. Lay the rope inside the green dashed goal region. The goal region is not drawn in the scene: the region images `/app/goal/region_cam_high.png` (from the overhead camera cam_high) and `/app/goal/region_cam_low.png` (from the low oblique camera cam_low) show the start scene with the region's dashed line drawn in.",
+      "git_blob_sha1": "31f959878d406fc22d27fe9ebc3055e3a76f908a",
+      "sha256": "309fff20f7304d2d3d4628854178847f07b9cace295d7c3168685c8df1d24a9f"
+    },
+    {
+      "task": "roboarc-lock-picking-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-lock-picking-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-lock-picking-01-i01-standard.md",
+      "goal": "Pick up the two-tab key from its rest. Insert the tabbed key through all two rotor plates and the final END plate, while respecting their slots and stops. The key's leading tab is longer than its second tab, which sits one plate spacing behind it.",
+      "git_blob_sha1": "1b10497769b11f365e2a4ee1b2e7e78b4424e448",
+      "sha256": "96df394ab2c377baf5da705696287ec9595d0e4538744fb4ceaafe4836f9f3ea"
+    },
+    {
+      "task": "roboarc-lock-picking-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-lock-picking-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-lock-picking-02-i01-standard.md",
+      "goal": "Pick up the two-tab key from its rest. Insert the tabbed key through all three rotor plates and the final END plate, while respecting their slots and stops. The key's leading tab is longer than its second tab, which sits one plate spacing behind it.",
+      "git_blob_sha1": "d9e7c2980bf995e5607689fe5c3d1efa35d0f3c6",
+      "sha256": "e070a7159a5c3114741ccbf5395575755374f2fb2bd21e1f6fe708217e215bdd"
+    },
+    {
+      "task": "roboarc-lock-picking-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-lock-picking-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-lock-picking-03-i01-standard.md",
+      "goal": "Pick up the two-tab key from its rest. Insert the tabbed key through all three rotor plates and the final END plate, while respecting their slots and stops. The key's leading tab is longer than its second tab, which sits one plate spacing behind it.",
+      "git_blob_sha1": "7149f7136e8664c436eee478872f4cf648298572",
+      "sha256": "796a792b4b848e1025797247a31cf0d3a9fffb52e8d221a9023aa7d468b0d801"
+    },
+    {
+      "task": "roboarc-lock-picking-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-lock-picking-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-lock-picking-04-i01-standard.md",
+      "goal": "Pick up the two-tab key from its rest. Insert the tabbed key through all three rotor plates and the final END plate, while respecting their slots and stops. The key's leading tab is longer than its second tab, which sits one plate spacing behind it.",
+      "git_blob_sha1": "18b70e65533de0c4b9923b8cbb3fed625adf4bfb",
+      "sha256": "4211fd97f8e3c5f1402f59729235d0525111c53063c19e6bec72a91046f9c0f5"
+    },
+    {
+      "task": "roboarc-lock-picking-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-lock-picking-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-lock-picking-05-i01-standard.md",
+      "goal": "Pick up the two-tab key from its rest. Insert the tabbed key through all four rotor plates and the final END plate, while respecting their slots and stops. The key's leading tab is longer than its second tab, which sits one plate spacing behind it.",
+      "git_blob_sha1": "171a8fb94c921644e55c117ebe275cd8ba3e9049",
+      "sha256": "b16ba32230cfa83287c2368f7404d6397b4eaffe60e9e862aa9a55fca722ccb4"
+    },
+    {
+      "task": "roboarc-orbits-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-orbits-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-orbits-01-i01-standard.md",
+      "goal": "Separate and place the entire cord and wooden handle together inside the green dashed goal region. Keep the fixed post, stopper ball and base on the puzzle/system side.",
+      "git_blob_sha1": "6a9cb4e195d380c4ec67998c5d86aca6c06d26a6",
+      "sha256": "fb4956ef774b228e910d0b58415f928ae4bd3d967625f3ce2e35d3d1f4e9d85c"
+    },
+    {
+      "task": "roboarc-rope-threading-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-01-i01-standard.md",
+      "goal": "Thread the rope through the cyan ring (R1) then green ring (R2), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "d234d99cd5b8cad59b1af1cd7bf2adfaae78b4f1",
+      "sha256": "5dc80d303e3bd728e04edb832cb8803dec6f8b2021dc76023053ac73917cad98"
+    },
+    {
+      "task": "roboarc-rope-threading-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-02-i01-standard.md",
+      "goal": "Thread the rope through the cyan ring (R1) then green ring (R2) then purple ring (R3), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "410d98bf082f26a050d2975223002f8fa9a0d091",
+      "sha256": "7c3df9930fb743a633a453d95b56f65dc497e16b9c1c9f4952fff4353e95a70a"
+    },
+    {
+      "task": "roboarc-rope-threading-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-03-i01-standard.md",
+      "goal": "Thread the rope through the cyan ring (R1) then green ring (R2) then purple ring (R3), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "bf8c265bdb4397116ad547ba5a60766eb3c1b353",
+      "sha256": "626f85bb58db6c82992476e6556b97dfa8eb368a086a3505dc04bf0e401a9d21"
+    },
+    {
+      "task": "roboarc-rope-threading-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-04-i01-standard.md",
+      "goal": "Thread the rope through the cyan grommet in the wall (G1) then green ring (A) then purple grommet in the wall (G2) then amber ring (B), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "df2c824c075bced331bb18190891aeb0c01c4e84",
+      "sha256": "47d6d547320cf805985f13283366225b39206cd11a6fcdd1dd9af2e20d1b5209"
+    },
+    {
+      "task": "roboarc-rope-threading-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-05-i01-standard.md",
+      "goal": "Thread the rope through the cyan grommet in the wall (G1) then green ring (A) then purple grommet in the wall (G2) then amber ring (V), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "9adcf09598b1e5977f5e8e7a86063b05a569d4bf",
+      "sha256": "908f16a6a9b97e56e57b3702dd4651a676eb30979b9b59c4aee82f01f13a15f6"
+    },
+    {
+      "task": "roboarc-rope-threading-06-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-06-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-06-i01-standard.md",
+      "goal": "Thread the rope through the cyan grommet in the wall (G1) then green ring (A) then purple grommet in the wall (G2) then amber ring (B) then red grommet in the wall (G3), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "c928e1b2a9e88a93e915e24e5016cd74d80bc74e",
+      "sha256": "ad984da372f5c44c437ad757e3ae69971a9de9ccc4aed29879241145b5d5f2ba"
+    },
+    {
+      "task": "roboarc-rope-threading-07-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-07-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-07-i01-standard.md",
+      "goal": "Thread the rope through the cyan grommet in the wall (G1) then green ring (A) then purple grommet in the wall (G2) then amber ring (T) then red grommet in the wall (G3), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "5e87031486cd5684e6f6581f40a9963b93809313",
+      "sha256": "cf6d2f3dd53b33dc06c090e889aea6c9f8349bd70f46a1a2af2764ddb806812a"
+    },
+    {
+      "task": "roboarc-rope-threading-08-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-rope-threading-08-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-rope-threading-08-i01-standard.md",
+      "goal": "Thread the rope through the cyan grommet in the wall (G1) then green ring (A) then purple grommet in the wall (G2) then amber ring (T) then red grommet in the wall (G3) then cyan ring (C), in that order along the rope from material start to material end.",
+      "git_blob_sha1": "cd3e2a0d4d58bc67ea1609bad12e3c584c9f842e",
+      "sha256": "1a16301117aba06c1708ee9da765f559bdf6850687cce1c4a0a683043baa8e44"
+    },
+    {
+      "task": "roboarc-slotted-post-ring-01-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-slotted-post-ring-01-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-slotted-post-ring-01-i01-standard.md",
+      "goal": "Separate and place the entire removable metal ring inside the green dashed goal region. Keep the post, cord, beads and end discs on the puzzle/system side.",
+      "git_blob_sha1": "b74db874fa57a869a15c39d20147d92718bba49a",
+      "sha256": "127e9f3efd689b229724220e116a6ae17a594337715860e0eae3641fb65244ed"
+    },
+    {
+      "task": "roboarc-slotted-post-ring-02-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-slotted-post-ring-02-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-slotted-post-ring-02-i01-standard.md",
+      "goal": "Separate and place the entire removable metal ring inside the green dashed goal region. Keep the post, cord, beads and end discs on the puzzle/system side.",
+      "git_blob_sha1": "3cf617870bfeb0320929b4bd4444cd723314153b",
+      "sha256": "0c3736d00699eb3ba6207e527a3a7354011e15c065b6ebf06e3b456b7b23e1f4"
+    },
+    {
+      "task": "roboarc-slotted-post-ring-03-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-slotted-post-ring-03-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-slotted-post-ring-03-i01-standard.md",
+      "goal": "Separate and place the entire removable metal ring inside the green dashed goal region. Keep the post, cord, beads and end discs on the puzzle/system side.",
+      "git_blob_sha1": "8c653ede74f0cf0768643259a7943abf3f772cf8",
+      "sha256": "fb7999a5a53601e671c53f158466d86f2f5f8f013b2b00d0207c69eba4dc3eee"
+    },
+    {
+      "task": "roboarc-slotted-post-ring-04-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-slotted-post-ring-04-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-slotted-post-ring-04-i01-standard.md",
+      "goal": "Separate and place the entire removable metal ring inside the green dashed goal region. Keep the post, cord, beads and end discs on the puzzle/system side.",
+      "git_blob_sha1": "9a6b2947bf9bf8964dda5e675798d656091c22f8",
+      "sha256": "8fee1f80a5efb326a0e1fb5e9ccda277bf7f59ebeeae79dc212344f568ff517a"
+    },
+    {
+      "task": "roboarc-slotted-post-ring-05-i01-standard",
+      "source_url": "https://github.com/mll-lab-nu/embodied-first-exam/blob/13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d/tasks/roboarc/roboarc-slotted-post-ring-05-i01-standard/instruction.md",
+      "local": "pipeline/benchmark-references/roboarc/roboarc-slotted-post-ring-05-i01-standard.md",
+      "goal": "Separate and place the entire removable metal ring inside the green dashed goal region. Keep the post, cord, beads and end discs on the puzzle/system side.",
+      "git_blob_sha1": "fb92fc047b8047ddac3937a3124314dc0cfed0bf",
+      "sha256": "bea46cd62de258f7c4ab4638f5907b053ac6d507ef802e1b074cf4863a758e54"
+    }
+  ],
+  "source_tree_sha": "13bdc8481166ae873eb5e1eebcc51b1a81ce4e2d",
+  "all_106_blob_hashes_verified": true
+}

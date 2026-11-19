@@ -1,0 +1,50 @@
+{
+  "candidate": "SR-012",
+  "title": "Clear a utensil obstructing a countertop dishwasher spray arm",
+  "category": "Societal relatability",
+  "instruction": "Restore free rotation of the dishwasher’s lower spray arm, leaving its rack fully inside and the loose wooden utensil on the counter.",
+  "fault": "An ordinary kitchen utensil has fallen through the rack and physically obstructs the lower spray arm. No fictional arm opening.",
+  "justification": "Household dishwasher loading and correcting items that obstruct a spray arm; manufacturer explicitly instructs free movement checks. Commercial countertop model is represented at its actual full size.",
+  "objects": [
+    "HAVA R01 430×430×460 mm countertop dishwasher; 340×350×320 mm cavity",
+    "Original tableware rack 13.3×13.7×7.5 inches",
+    "Actual lower spray arm geometry reconstructed from manufacturer photograph",
+    "Unscaled NVIDIA wooden spatula, ceramic cup and banana"
+  ],
+  "skill": "Extract a full-size wooden spatula lodged through a free wheeled dishwasher rack, place it on the side counter and return the basket without reintroducing obstruction.",
+  "scoring": "0 unless released recovery holds for 1 s: the spatula’s conservative bounding box is entirely on the side counter (all y ≥ 0.235 m or all y ≤ −0.235 m), within x [−0.14, 0.86] and y [−0.60, 0.60]. Lowest point is between tabletop −4 mm and tabletop +6 mm; highest ≤ tabletop +35 mm. Speed <10 mm/s and angular speed <0.15 rad/s. All 24 sampled finger points are ≥30 mm from the utensil and ≥20 mm outside case box x [0.31, 0.78], y [−0.235, 0.235], z [tabletop +0.04, tabletop +0.48]. Rack frame x [0.190, 0.531], |y| ≤8 mm, z = 0.8315 ±4 mm, tilt and yaw ≤3°, speed <10 mm/s, angular speed <0.10 rad/s. This earns 0.5. Full 1.0 also requires rack centre x = 0.525 ±5 mm, y = 0 ±5 mm and actual 360° arm rotation under the explicit external 1 mN m clearance test, followed by 3 s continuously valid state. The test starts after 1 s qualifying home/hands-out state, removes torque after the full turn, and invalidates its witness whenever qualifying conditions fail. No elapsed-time or demonstration-phase surrogate.",
+  "nearest": [
+    {
+      "pr": 851,
+      "state": "finally rejected",
+      "reason": "0.6-scale medical washer and employment importance; not an accepted or held claim",
+      "distinction": "Full-size domestic countertop model and existing physical obstruction, not four-item medical washer loading."
+    },
+    {
+      "pr": 2385,
+      "state": "pending",
+      "distinction": "Hanging a separate caddy by two hooks on dish-drying rack; no dishwasher arm, obstructing utensil or recovery."
+    }
+  ],
+  "risks": [
+    "General dishwasher loading overlaps common datasets; physical obstruction and clear real service goal must remain salient.",
+    "Internal dimensions beyond published envelope inferred from source photos and documented.",
+    "Reach inside full appliance roof and side walls must pass full collision checks.",
+    "No artificial arm holes or enlarged grasp surfaces."
+  ],
+  "sources": [
+    "https://havalab.com/products/r01-dishwasher",
+    "https://havalab.com/products/dish-rack-for-r01-dishwasher",
+    "https://havalab.com/products/lower-spray-arm-for-r01-dishwasher",
+    "https://havalab.com/cdn/shop/files/HAVA-R01-Countertop-Dishwasher-User-Manual.pdf?v=1747819440"
+  ],
+  "novelty_queries": [
+    "GitHub all states dishwasher",
+    "spray arm",
+    "dish rack",
+    "local known tasks"
+  ],
+  "board_direct_access": "403 on anonymous request; current official GitHub records consulted",
+  "checked_at": "2026-11-17T16:34:56.510210+00:00",
+  "counts_as_validation": false
+}

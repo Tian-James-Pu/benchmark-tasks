@@ -1,0 +1,11 @@
+{
+  "title": "Restore a robot vacuum whose main brush was misseated after cleaning",
+  "category": "Impact on AI timelines",
+  "instruction": "Restore the robot vacuum\u2019s main brush and cover so it is ready to clean.",
+  "setup": "CONTACT PROTOTYPE. Source reconstructed full-scale S7 robot and real brush mechanism, on a folded service towel.",
+  "scoring": "Prototype: always zero.",
+  "run_limit": "1800 steps (90 seconds at20Hz)",
+  "fidelity": "Source-reconstructed full-scale rigid shell, roller with rubber vane geometry, physical keyed socket, four cover hooks and spring slider catches. Powered off. Rubber and cloth compliance approximated as rigid.",
+  "scores": "Not validated.",
+  "media": ""
+}

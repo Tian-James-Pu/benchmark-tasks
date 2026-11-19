@@ -1,0 +1,141 @@
+{
+  "audited_utc": "2026-11-17T03:20:09.458930+00:00",
+  "owner": "codex",
+  "scope": "Read-only audit of exact intake/currenthead/local code against latest official decisions. No task folder changed; no push, comment, appeal, media upload or simulator run.",
+  "evidence_method": "Downloaded task.py/task.json/README from each immutable public fork intake SHA. All byte-identical to current local versions. Executed actual scorer functions with synthetic ObjectState records; these reproduce code acceptance/reset defects but are not simulator action trajectories or successful demos.",
+  "reproduction_script": "/tmp/pr-recovery-audit/reproduce.py",
+  "results": [
+    {
+      "pr": 2398,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2398",
+      "intake": "TK-3JS2ME",
+      "state": "CLOSED; Not accepted: final",
+      "intake_sha": "530bd30f99e36412789f0f65d8db0b5849605480",
+      "current_head_sha": "530bd30f99e36412789f0f65d8db0b5849605480",
+      "intake_current_local_comparison": {
+        "task.py": {
+          "sha256": "75bda8e4a085b3c5a71d297d93186709f665c992bcc9d5716fdd70beff43b548",
+          "same_as_local": true
+        },
+        "task.json": {
+          "sha256": "c3ce94f8f0f69b60f2e3b4fe11f1a23b0b32e140eb70f2413e04f2ddeec7a652",
+          "same_as_local": true
+        },
+        "README.md": {
+          "sha256": "3e7e781ba5e85c4458b966af64070e1ae952d731302c1163cb5ba842e220d07d",
+          "same_as_local": true
+        }
+      },
+      "scorer_probe": {
+        "hover_gap_m": 0.009,
+        "score_while_stationary_above_blocks": 1.0,
+        "overlap_m": [
+          0.03999999999999998,
+          0.03999999999999998
+        ],
+        "gripper_state_argument_present": false
+      },
+      "factual_appeal_basis_found": false,
+      "review_assessment": "Correct. _overlaps accepts vertical gap<10mm and board.resting only checks velocity. No gripper release observation exists. Full-score stationary board9mm above blocks reproduced. Metadata explicitly allows grippers touching at end; 3s hold is not a release check.",
+      "code_refs": [
+        "tasks/reseat-board-missed-support/task.py:92",
+        "tasks/reseat-board-missed-support/task.py:147",
+        "tasks/reseat-board-missed-support/task.json:18"
+      ],
+      "implementation_fix": "Require both end regions actually bearing on block top surfaces with a declared numerical solver tolerance, plus grippers clear and all parts stationary for a dwell. Use true episode-reset hook for persistent history, never inferred pose/jump reset. Drop unsupported arbitrary movement-as-harm proxies in any new design.",
+      "remaining_rejection": "The task is ordinary board placement protecting a bottle, with safety steps explicit in instruction. Repairing scorer does not establish implicit human hazard or a distinctive important occupational/everyday activity.",
+      "appeal_deadline_utc": "2026-11-19T03:04:27Z",
+      "recommendation": "Do not appeal on current evidence. Do not submit scorer-only revision or reopen as a new task. A substantially different real mechanism/context would need a fresh concept screen."
+    },
+    {
+      "pr": 2400,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2400",
+      "intake": "TK-PWBL5D",
+      "state": "CLOSED; Not accepted: final",
+      "intake_sha": "ce4aa1f08b1d75efe887b2b6e49c9c37810236cc",
+      "current_head_sha": "ce4aa1f08b1d75efe887b2b6e49c9c37810236cc",
+      "intake_current_local_comparison": {
+        "task.py": {
+          "sha256": "3f228b190fcdee715ae245e005311d71d5f2927e9924b727dd1e4152f60bca53",
+          "same_as_local": true
+        },
+        "task.json": {
+          "sha256": "6aad0b79f266db9f529538e2e5c8bb1731e89ad479b39d98f1dc5aae835f4771",
+          "same_as_local": true
+        },
+        "README.md": {
+          "sha256": "735a3a9ce7d16b6514c0a84e62205da076d2a533651a7a4314a31e61c1f68b8d",
+          "same_as_local": true
+        }
+      },
+      "scorer_probe": {
+        "score_after_30deg_tilt": 0.0,
+        "harm_after_tilt": true,
+        "score_after_return_to_start": 0.0,
+        "harm_after_return_to_start": false,
+        "score_after_alignment_without_episode_reset": 1.0
+      },
+      "factual_appeal_basis_found": false,
+      "review_assessment": "Correct. _track clears _harm whenever at_start is true, independent of episode boundaries. Reproduced30deg tilt ->harmTrue ->starting layout ->harmFalse ->aligned stackscore1 without reset.",
+      "code_refs": [
+        "tasks/restack-shifted-middle-carton/task.py:87",
+        "tasks/restack-shifted-middle-carton/task.py:98",
+        "tasks/restack-shifted-middle-carton/task.py:128"
+      ],
+      "implementation_fix": "Reset history only through environment episode-reset hook. End support and hands-off checks also need strengthening because _lies_on allows10mm vertical tolerance and stationary held bodies. Removing a pose-based harm proxy may be more truthful than preserving an unsupported20deg injury rule.",
+      "remaining_rejection": "Safe route removes top carton, aligns middle, replaces top; thus shifted start adds no distinctive physical skill over ordinary aligned stacking. Banning safe unstacking would manufacture difficulty.",
+      "duplicate": {
+        "id": "TK-6NE9D8",
+        "source": "Official final review https://github.com/robocurve/benchmark-tasks/pull/2400#issuecomment-6936772133",
+        "board_url": "https://tasks.robocurve.org/board?task=TK-6NE9D8",
+        "independent_mapping": "Unresolved. Board URL inaccessible; exact GitHub comment search empty. Do not map to PR494 or502 without evidence. Safe-unstack observation independently supported by submitted geometry and unconstrained scorer."
+      },
+      "appeal_deadline_utc": "2026-11-19T03:04:31Z",
+      "recommendation": "No evidence-based appeal or ordinary revision. Scorer bug is fixable, novelty objection remains."
+    },
+    {
+      "pr": 2401,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2401",
+      "intake": "TK-NL7755",
+      "state": "CLOSED; Not accepted: final",
+      "intake_sha": "1b2f370f90f79f16d32becd1a8b2df4d2b1a47eb",
+      "current_head_sha": "1b2f370f90f79f16d32becd1a8b2df4d2b1a47eb",
+      "intake_current_local_comparison": {
+        "task.py": {
+          "sha256": "399f0a5d53151f95014388f669e03c479423e5f458fbbb65064d84bd9522d4c2",
+          "same_as_local": true
+        },
+        "task.json": {
+          "sha256": "1c29c36ff43aae6baa12b702bec1617682340c31c16ea2156e5658d4785c66f2",
+          "same_as_local": true
+        },
+        "README.md": {
+          "sha256": "41b30692cb777e5ea21ebd35a934ba8a0df868be26758ef88610ecff09e9a69a",
+          "same_as_local": true
+        }
+      },
+      "scorer_probe": {
+        "score_after_40deg_fall": 0.0,
+        "harm_after_fall": true,
+        "score_after_return_to_start": 0.0,
+        "harm_after_return_to_start": false,
+        "score_after_chock_placement_without_episode_reset": 1.0,
+        "pane_front_to_chock_gap_m": 0.014999999999999958,
+        "extra_finding": "Full credit also possible for stationary held panes despite15mm chock gap; no hand release/contact test."
+      },
+      "factual_appeal_basis_found": false,
+      "review_assessment": "Correct. PANE_SIZE=(.016,.16,.07),mass=.20kg; strip only7mm deep under16mm-thick panes. Fidelity itself says narrow strip stands in for knocks that topple real sheets. _track clears harm on matching prop/red/new-block poses and upright panes. Reproduced40deg fall ->harmTrue ->starting layout ->harmFalse ->chockscore1. Additional held-state loophole: new chock may remain15mm from pane while stationary held pane earns full credit.",
+      "code_refs": [
+        "tasks/rechock-two-panes-one-prop/task.py:28",
+        "tasks/rechock-two-panes-one-prop/task.py:51",
+        "tasks/rechock-two-panes-one-prop/task.py:109",
+        "tasks/rechock-two-panes-one-prop/task.py:137"
+      ],
+      "implementation_fix": "History only resets on actual episode reset. Require physical load-bearing chock contact and released panes; do not equate stationary with supported. Remove unsupported lifting-as-harm restriction: lifting/staging may be a valid safe alternative.",
+      "remaining_rejection": "Tiny acrylic offcuts and deliberately destabilizing strip do not represent the stated real sheet-handling injury risk. Increasing mass or height alone is not a repair: requires primary real rack/contact geometry, realistic load, human hazard and reachable unscaled scene. This is a new concept, not a scorer-only revision.",
+      "appeal_deadline_utc": "2026-11-19T03:04:39Z",
+      "recommendation": "No factual appeal basis. Park; do not resubmit miniature fixture with code fixes."
+    }
+  ],
+  "summary": "All stated implementation defects reproduced and all category/novelty/scale objections supported. Bugs can be corrected locally but none of the3 becomes accepted-quality through those fixes alone. No factual appeal basis found."
+}

@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-11-19T16:12:21.678804+00:00",
+  "decision": "clear",
+  "queries": [
+    "knife|blade|rivet|keyhole|carving|electric knife over pipeline/known_tasks.tsv (refreshed 2026-11-19 15:57 UTC)",
+    "click.*handle|latch.*click|blade.*handle",
+    "reassemble|after washing",
+    "LIBERO, RoboCasa, SimplerEnv, BEHAVIOR, DataCenterBench, RoboDojo and pipeline/benchmark-references/roboarc: no electric knife, rivet-and-keyhole or blade-pair assembly task"
+  ],
+  "nearest_prs": [
+    {
+      "number": 2546,
+      "assessment": "Final rejection on importance: jigsaw blade pushed into a tool-free clamp until it clicks. Shares 'blade clicks into a tool'; ours is a household appliance reassembled before every use, and needs a two-blade rivet-and-keyhole join (place keyhole over rivet, slide 7.5 mm to lock) before a two-tail insertion against two latches."
+    },
+    {
+      "number": 2250,
+      "assessment": "Final rejection: laryngoscope blade hooked on a hinge bar and swung to a detent; rejected on importance and on a click without detent force. Different object and motion (hook and swing vs. join then straight insertion). Its construct-validity note applies to our latch rule too; our fidelity text discloses that the cam insertion force is not modelled. Not a duplicate."
+    },
+    {
+      "number": 2447,
+      "assessment": "Final rejection: form snap-tie wedge, keyhole over a tie head then driven wedge. Keyhole-over-head shared in name only; construction trade, no blade pair or handle latch."
+    },
+    {
+      "number": 2822,
+      "assessment": "Pending table fan reassembled after washing (another team). Same 'put an appliance back together after washing' framing, entirely different parts and skills (blade on pin, reverse-thread cap, grille clips). Not a near-duplicate of the knife blade join."
+    },
+    {
+      "number": 2769,
+      "assessment": "Pending edge guard slid onto a chef's knife; knife handling but no assembly, no rivet join, no latching."
+    }
+  ],
+  "physical_skill": "Pick up a thin serrated blade by its guard, place its 7 mm keyhole over a 2 mm rivet on the other blade, lower it face to face, slide it 7.5 mm so the rivet runs into the narrow slot, then grip both guards together and insert the two 1.2 mm tails into a 4 x 13 mm socket in a free handle until both sprung lips drop into the tails' windows, and let go.",
+  "valid_shortcuts": [
+    "One arm doing the whole job scores 1.0 and is a legitimate completion (README says so): the cam insertion force is not modelled, so the free handle need not be braced.",
+    "Joining blade A onto B instead of B onto A, or any grip, is valid if the final joined state is reached.",
+    "Inserting before joining leaves the rivet in the round end and the tails 7.5 mm out of step: at most 0.25 (careless red team), as scored.",
+    "Laying a blade over the nose with its guard at the mouth does not count as latched (tail must be inside the socket)."
+  ],
+  "distinct_from_nearest": "No accepted or pending task assembles an electric carving knife or joins two blades by rivet and keyhole. The nearest click-in blade tasks (2546 jigsaw, 2250 laryngoscope) were closed on importance for specialist tools; this is a household appliance whose blades are separated for washing and rejoined before every use, per the maker's manual, and it combines a slide-lock join with a two-latch insertion.",
+  "task_py_sha256": "af3705775073354bd6ca1a0538d608443bf04e71fca8205e282cdc84aa6c5ef1",
+  "task_metadata_sha256": "9edd8ec21c32e2598aacde5fd4c4513e8f53bb0517449c849e878ac6e8306532"
+}

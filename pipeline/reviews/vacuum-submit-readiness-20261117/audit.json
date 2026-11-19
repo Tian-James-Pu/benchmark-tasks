@@ -1,0 +1,152 @@
+{
+  "checked_at": "2026-11-17T22:26:31.943356+00:00",
+  "task": "tasks/reseat-robot-vacuum-brush",
+  "decision": "not_near_submission; hardware/contact prototype remains",
+  "strongest_next_action": "Keep current submission focus on balance/crutch. If vacuum receives the next existing-task work slot, first resolve the source-grounded cover catch/receiver geometry and drive-engagement acceptance definition. Do not merely append insertion waypoints to the lift: the untested latch mechanism and absent scorer are larger gates. No Dream or publication is justified yet.",
+  "short_path_assessment": "No demonstrated short path from38mm lift to full recovery. Extraction feasibility is established; insertion alignment, cover pickup/hooking/catches and retained release remain unbuilt/unvalidated. This is not evidence that the real repair is impossible.",
+  "evidence": {
+    "previous_review": "pipeline/reviews/reseat-robot-vacuum-brush-codex.json",
+    "claim_owner": "codex",
+    "claim_status": "building; narrowed35-degree grasp lifts roller; insertion and cover retention unvalidated",
+    "runs": [
+      {
+        "folder": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-222219-gpu2-916185",
+        "score": 0.0,
+        "task_revision": "46e04a44b876",
+        "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+        "actions": 61,
+        "termination": {
+          "reason": "policy_stop",
+          "detail": null,
+          "terminated": false,
+          "truncated": true
+        }
+      },
+      {
+        "folder": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-222627-gpu1-965741",
+        "score": 0.0,
+        "task_revision": "3cb79021af98",
+        "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+        "actions": 61,
+        "termination": {
+          "reason": "policy_stop",
+          "detail": null,
+          "terminated": false,
+          "truncated": true
+        }
+      },
+      {
+        "folder": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-223520-gpu1-1073904",
+        "score": 0.0,
+        "task_revision": "3cb79021af98",
+        "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+        "actions": 61,
+        "termination": {
+          "reason": "policy_stop",
+          "detail": null,
+          "terminated": false,
+          "truncated": true
+        }
+      },
+      {
+        "folder": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-224141-gpu1-1146962",
+        "score": 0.0,
+        "task_revision": "96b94cd20a5f",
+        "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-probe_pick_tilted",
+        "actions": 280,
+        "termination": {
+          "reason": "max_steps",
+          "detail": null,
+          "terminated": false,
+          "truncated": true
+        }
+      },
+      {
+        "folder": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-224618-gpu0-1203072",
+        "score": 0.0,
+        "task_revision": "092f9767b888",
+        "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-probe_pick_narrow",
+        "actions": 280,
+        "termination": {
+          "reason": "max_steps",
+          "detail": null,
+          "terminated": false,
+          "truncated": true
+        }
+      }
+    ],
+    "latest_lift": {
+      "folder": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-224618-gpu0-1203072",
+      "matches_current_probe_hash": true,
+      "source": "probe_pick_narrow.py",
+      "geometry_matches_current_task": true,
+      "initial_recorded_z_m": 0.8519906997680664,
+      "at_step200_z_m": 0.8904348015785217,
+      "lift_m": 0.03844410181045532,
+      "cover_unmoved": true,
+      "contact_sheet_reviewed": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/media/demo-probe_pick_narrow-sheet.png",
+      "limitation": "280action lift-only diagnostic, score deliberately0; no full assembly attempt or success. Six-frame sheet reviewed, not continuous video."
+    }
+  },
+  "concrete_blockers": [
+    {
+      "kind": "cover mechanics",
+      "source": "task.py:107",
+      "finding": "Comment claims a sloped tooth nose, but supplied XY outline is a rectangle extruded between constant z=-8 and-4mm. It has no inclined lead-in surface converting a downward cover push into inward Y-slider travel.",
+      "implication": "Automatic press-to-snap closure is not established by this geometry. Deliberately retracting catches may be a valid alternative, so this is not a proof of impossibility; actual hardware geometry and feasible release/closure route must be reconciled."
+    },
+    {
+      "kind": "catch clearance",
+      "source": "task.py:67 and110-111",
+      "finding": "Nominal tooth outer edge at|y|113mm retracts by4mm to109mm; receiver lip inner edge is also109mm at ideal assembly alignment.",
+      "implication": "Full catch retraction has zero nominal lateral gap, before numerical contact offsets. No finite-clearance insertion/release path has been audited. Do not widen it for the robot without hardware evidence."
+    },
+    {
+      "kind": "drive proof",
+      "source": "task.py:56-69",
+      "finding": "Female square socket is rigidly part of the free chassis. There is no motor-coupling joint or driven state, while concept proposes scoring that the roller is actually driven by the socket.",
+      "implication": "Current code can potentially demonstrate geometric key seating, not actual drive transmission. Define a physically observable powered-off engagement check or faithfully represent the drive before claiming functional coupling; a pose-triggered coupling would repeat the rejected simplification."
+    },
+    {
+      "kind": "provenance",
+      "source": "README.md hardware paragraph",
+      "finding": "Small-part dimensions, keyed socket fit and cover catch geometry remain photograph-based estimates awaiting review. Full-size outer chassis alone does not establish fidelity of task-critical interfaces.",
+      "implication": "This matters directly because#2169 was rejected for missing actual brush housing, drive engagement and retention."
+    },
+    {
+      "kind": "completion",
+      "source": "task.py:124-126",
+      "finding": "score always0, success alwaysFalse, canonical demo empty. Only extraction probe has manipulation.",
+      "implication": "No scoring, released-retention validation, shortcut controls, complete repeat demonstrations, model evaluation or media package exists."
+    }
+  ],
+  "novelty": {
+    "fresh_checked": [
+      2169,
+      2103,
+      2033,
+      1054
+    ],
+    "assessment": "Not currently the dominant blocker. Exact broad brush-refit precursor#2169 is final-closed, but its hardware critique directly applies to the remaining gaps. Pending#2033 is trapped-remote recovery/restart, a distinct operation. #2103 shows that door-opening alone is too little; complete functional brush restoration is necessary. #1054 remains pending after mechanism/fabrication revisions and reinforces that a reproducible physical lock is required.",
+    "clearance": "No new novelty stamp; this narrow audit cannot clear all accepted/pending tasks."
+  },
+  "minimal_remaining_work_sequence": [
+    "Resolve real cover nose/catch travel/receiver and keyed-drive acceptance using hardware evidence; do not alter access to manufacture a pass.",
+    "Complete contact-based roller insertion from the preserved successful grasp, allowing safe remove-and-reinstall shortcuts.",
+    "Manipulate separate cover through rear-hook insertion and actual catch retention, followed by released stability.",
+    "Implement observable numeric scorer for roller seating/engagement and all retaining features; reject proud roller, missing/one latch and externally held cover.",
+    "Complete final repeat demonstrations and model/media packaging under root review."
+  ],
+  "source_sha256": {
+    "probe_pick_narrow.py": "092f9767b888ffa2053f38ea8054a27edb8a54e3772d986330bad9bd62102870",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "probe_pick.py": "dc8e90a16ffb676924e69cc33ae940bc46db0bab849818336d0d256005a6c210",
+    "task.py": "3cb79021af9884a280cfdd376a6807f1c3c1320f4addaf0a51f48a7366748df8",
+    "probe_pick_tilted.py": "96b94cd20a5f51bdfa922b3862eeb91bafdab3681b7c3684276a628a6aa752e5",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539"
+  },
+  "task_or_claim_modified": false,
+  "simulation_runs_launched": false,
+  "prototype_counts_as_validation": false,
+  "live_task_runs_found": false
+}

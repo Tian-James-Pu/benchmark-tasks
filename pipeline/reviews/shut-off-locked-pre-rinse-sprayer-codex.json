@@ -1,0 +1,32 @@
+{
+  "state": "held_do_not_submit",
+  "review": "Read-only independent review by shower-chair builder plus root source/visual/scorer audit",
+  "findings": [
+    {
+      "severity": "resolved",
+      "detail": "Full score now requires60 consecutive control steps satisfying every final condition; rawscore/success are pure and agree."
+    },
+    {
+      "severity": "disclosed limitation",
+      "detail": "Exposure and release sample24 distal finger points; do not claim whole hand/arm coverage."
+    },
+    {
+      "severity": "disclosed approximation",
+      "detail": "Handle/ring engagement uses geometric position-dependent joint limits; hose two-link model, spring and friction are engineering estimates."
+    },
+    {
+      "severity": "blocking construct-validity",
+      "detail": "Manufacturer B-0107-J drawing shows pivot near nozzle, handle free end toward hose and plain hold-down ring. Prototype reverses lever/free-end orientation and adds14x19mm thumbtab, altering direction/contact access. Earlier audit lacked primary geometry comparison. Independent reviewer agrees this is material."
+    }
+  ],
+  "visual": "First final-source demo shows visible flow, contact-driven release, no stream at end and grippers clear. Idle and squeeze-only remain on.",
+  "next": "Rebuild an identified real valve with matching dimensions/access, then repeat final validation and model trial; or abandon.",
+  "hardware_source": "https://www.cooneybrothers.com/userfiles/ad/documents/T_S_B-0107-J_Line_Drawing.pdf",
+  "lesson": "Match actual defining mechanism/access before simulation. A high demo score cannot establish representative hardware.",
+  "dream": {
+    "score": 0.0,
+    "steps": 2400,
+    "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/dream-1116-212947-gpu2-284121",
+    "visually_reviewed": true
+  }
+}

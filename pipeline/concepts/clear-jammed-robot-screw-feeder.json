@@ -1,0 +1,74 @@
+{
+  "title": "Clear a jammed robot screw feeder",
+  "candidate": "SR-040 adapted to documented actual recovery",
+  "category": "Impact on AI timelines",
+  "justification": "Original Ohtake NSRI robotic assembly feeder with manufacturer-documented abnormal rail-screw recovery.",
+  "fault": "Abnormal headed screw obstructs the rail beneath the holding plate.",
+  "instruction": "Restore reliable screw presentation at the robotic feeder pickup.",
+  "objects": [
+    "123x181x145mm 3kg NSRI-30 screw feeder with original cover, rail, rotary escapement, holding plate and two attaching screws",
+    "Original compatible M3 headed screws",
+    "150mm Wiha42424 hex2 driver,50mmblade,18mmmaxOD17g"
+  ],
+  "skill": "Clear real trapped screw and restore holding-plate clearance and clamping, with actual feed function restored.",
+  "scoring": "Development diagnostic scores zero. Final score must require physical unobstructed feed/escaper function with original guide retained after release.",
+  "nearest": [
+    {
+      "pr": 864,
+      "state": "accepted",
+      "finding": "Read actual source/task text: hold spring pusher back and load cartons behind old stock. Feeder recovery must demonstrate actual captive jam removal and guide restoration; inventory order alone is not novel."
+    },
+    {
+      "pr": 691,
+      "state": "final rejected",
+      "finding": "Generic2stop chute dispensing failed jobs relevance. Use actual robotic hardware with real service mechanism, not blocks and stopping rule."
+    },
+    {
+      "pr": 312,
+      "state": "accepted",
+      "finding": "Ratchet cartridge reload with real pawl and rod; generic servicing label alone is insufficient. Proposed fine clearance restoration and jammed headed screw differ if truly physical."
+    }
+  ],
+  "risks": [
+    "Original plate and screw-tool access against full native gripper and intact case.",
+    "Real contact jam: no pose locks, success flags, forced disassembly, or arbitrary friction to trap the screw.",
+    "Native screw fastening and friction clamp retain plate after tool release.",
+    "Actual restored feed/escaper function, not a gate-open-only partial task.",
+    "Native full-scale torque/contact, source-backed spring/actuator estimates and disclosed assumptions.",
+    "Final comparison with popular benchmarks and live held tasks before promotion.",
+    "Plate subgeometry and fastener M3 size are disclosed photo reconstructions, not OEM detailed dimensions.",
+    "Thread clamp preload and vibration drive require defensible estimates and actual native contact; no pose-triggered locking."
+  ],
+  "valid_shortcuts": [
+    "Direct clearing with the supplied hex key or hand if it physically works.",
+    "Any one-arm or bench-supported route.",
+    "Backing out or removing original plate; no invented mandatory two-arm rule.",
+    "Harmless reorientation/stock removal if original hardware permits; final correct function still required."
+  ],
+  "sources": [
+    {
+      "url": "https://ohtake-root.co.jp/wp-content/uploads/2024/04/NSRI_en_20240411.pdf",
+      "local": "sources/ohtake-nsri-manual.pdf",
+      "pdf_pages": [
+        10,
+        27,
+        32
+      ],
+      "supports": "p9holding plate clearance0..1mm and two attaching screws; p26remove abnormal rail screw by moving bracket up then readjust; p31actual123x181x145mm3kg, level bench, supplied hex wrench. Manufacturer labels product robotic."
+    },
+    {
+      "url": "https://ohtake-root.co.jp/wp-content/uploads/2018/11/NSRI.dxf",
+      "local": "sources/NSRI.dxf",
+      "supports": "Read-only dimensional/access reference; no license to redistribute OEM CAD assumed."
+    },
+    {
+      "url": "https://www.neji-fujitec.co.jp/eng/catalog/img/pdf/sf_mk-3150v-3110v.pdf",
+      "local": "sources/fujitec-feeder-manual.pdf",
+      "supports": "Alternative real feeder:215x454x323mm17kg, documented screw gate/descent-hole jams and0.3..0.5mmhead clearance. More complex compressed-air escapement; not selected merely to avoid smaller real hardware."
+    }
+  ],
+  "strict_review": "Conditional buildworthiness about0.20 only if original jam, clamp, and restored operation are physical. Generic opening/pickup or stocked dispensing alone would fail. No final novelty clearance.",
+  "state": "held: faithful initial clamp unresolved",
+  "source_correction": "Manufacturer STEP/DXF provides2.6mmshaft4.5mmhead, original washer stack, fixed slotted outer bracket and moving threaded1.2mm L-plate. EarlierM3/front-facing model superseded.",
+  "evidence": "pipeline/pdf-screening/sr040-feeder/cad-service-v3/result.json"
+}

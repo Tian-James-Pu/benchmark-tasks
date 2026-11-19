@@ -1,0 +1,43 @@
+{
+  "title": "Shut off a dish-pit pre-rinse spray valve left locked on: steady the hanging head and slip its lock ring",
+  "category": "Impact on jobs",
+  "justification": "Food preparation workers (908500USjobs2025,BLS) regularly clean kitchen equipment and dishes. Commercial pre-rinse sprayers have spring-return triggers and plain hold-down rings. Recovering a valve left running is a real control manipulation, evaluated on the actual unloading/release mechanism; no claim that every worker uses this model or that two human hands are always necessary.",
+  "fault": "A full-size hose-suspended commercial pre-rinse valve is retained on by its plain free hold-down ring. No initial swing is imposed.",
+  "instruction": "The pre-rinse sprayer has been left on. Turn it off and leave it hanging over the sink.",
+  "objects": "Current source uses a 274 mm valve assembly, 51 mm OD / 38 mm ID / 6 mm thick free brass ring, curved trigger toward hose, 500 mm two-link hose, sink and three SimReady distractors. See current task.json for the complete dimensions, layout, masses and disclosed estimates. Earlier 150 mm head and 25 mm detented ring concept is obsolete.",
+  "skill": "Control the hose-suspended valve, unload its spring trigger and disengage the freely moving hold-down ring through physical contacts, then leave the valve off and released. Accept any successful safe arm strategy.",
+  "scoring": "Current source checks the off-stop angle, gripper clearance, nozzle speed and hanging position with a three-second consecutive full-success dwell. Only actual episode reset clears spray-exposure history. See task.json for exact numeric thresholds; former hose-extension/impact penalties are obsolete.",
+  "nearest": "Live review 2026-11-17: #1791 accepted bar glass rinser is axial cup pressing; #2112 garden wand is finally rejected as generic hold-and-turn dial; #1575 pressure-washer nozzle change is finally rejected for importance and missing pressure relief. No pre-rinse task found in refreshed 2412-PR index, but nearest functional mechanism comparisons must still pass before submission.",
+  "risks": "Potential importance overlap with generic hold-and-operate controls; occupational use needs exact support. Free-ring release feasibility remains unvalidated. Component contours, mass and spring load are engineering estimates. Do not add fixtures, gripping tabs or constraints to obtain a passing demo.",
+  "slug": "shut-off-a-dish-pit-pre-rinse-spray-valve-left-locked-on-ste",
+  "v1_review": "Held: reversed lever, undersized assembly and added ring tab contradict real pre-rinse hardware. All v1 trial evidence excluded from v2 validation.",
+  "hardware_revision": {
+    "model": "T&S B-0107-J with002987-40 grip,018200-40 swivel and000907-45 hold-down ring",
+    "sources": [
+      "https://www.cooneybrothers.com/userfiles/ad/documents/T_S_B-0107-J_Line_Drawing.pdf",
+      "https://www.webstaurantstore.com/documents/specsheets/510b0107jswv_specsheet.pdf",
+      "https://www.webstaurantstore.com/documents/specsheets/t_s_000907-45_spec_sheet.pdf",
+      "https://www.tsbrass.com/products/parts-accessories/spray-valves/B-0107-J-SWV"
+    ],
+    "specified_dimensions": "274mm complete length;38mm nozzle;231mm bare-valve lever-tip reach in B-0107-J drawing; ring51mmOD38mmID6mm thick, chrome-plated brass",
+    "estimated_dimensions": "Undimensioned curved trigger, handle pivot, grip and body offsets reconstructed from manufacturer drawing, not claimed exact CAD. Lever pivots near nozzle and extends toward hose. Ring must rise over upper free tip. No added tab. Published weight1.18kg includes unspecified packaging; conservative simulated assembled mass1.18kg pending better net mass source.",
+    "mechanism": "Hose pendulum and spring-return trigger. Separate free rigid circular ring with48convex arc colliders interacts physically with body and trigger. No ring slider, lock, pinned state, hand attachment, or scripted cam. Conservative1.18kg valve assembly follows published assembly shippingweight; actual net weight notverified, explicit approximation."
+  },
+  "strict_revision_review": {
+    "decision": "revise before viability test",
+    "importance": "Core commercial dishwashing manipulation can meet Impact on jobs via food-preparation workers if context accurately describes regular cleanup; do not assert all cooks use this exact accessory daily.",
+    "construct": "Manufacturer-scale geometry, plain free ring and ordinary contacts. No scripted detent, slider ring, hand attachment, rigid valve support or enlarged access.",
+    "safe_alternatives": "Any successful one-arm method should score equally. No arbitrary hose swing/impact fatal latch; only explicitly modeled spray exposure failure.",
+    "feasibility": "Full size is taller and heavier; lower hanging nozzle layout is allowed but verify workspace without shrinking controls.",
+    "remaining_risks": [
+      "Curved handle and grip dimensions are reconstructed drawing estimates.",
+      "48segment ring physically holds trigger in idle; coordinated support-before-squeeze demo being tested because real ring drops when unloaded.",
+      "Occupation activity and nearest sprayer-control tasks need fresh substantive comparison before submission."
+    ]
+  },
+  "latest_feasibility_finding": {
+    "checked_at": "2026-11-17T03:34:07.624807+00:00",
+    "finding": "Prior pinch experiment requested +0.015 m on a gripper whose opening range is [-0.04695,0] m. Runner clips this to closed, so it never attempted the stated open-edge grasp. Corrected experiment uses -0.015 m; two-arm IK and joint limits pass; simulator result pending.",
+    "probe": "probe_ring_grasp_open.py"
+  }
+}

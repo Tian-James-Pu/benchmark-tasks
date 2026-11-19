@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-11-17T22:22:48.255656+00:00",
+  "sources": {
+    "insert_tubes": {
+      "url": "https://raw.githubusercontent.com/RoboDojo-Benchmark/RoboDojo/main/task/RoboDojo/tasks/insert_tubes.py",
+      "sha256": "e42e5780d031b76aeb0212a2ccebd91773ff324f16946de44734a332d5fbf34b"
+    },
+    "cover_blocks": {
+      "url": "https://raw.githubusercontent.com/RoboDojo-Benchmark/RoboDojo/main/task/RoboDojo/tasks/cover_blocks.py",
+      "sha256": "307f788d0ec9800e0c867d3d14d9229e542e22c4bacc5c843c56f5e6183dacc4"
+    }
+  },
+  "findings": {
+    "RoboDojo": "insert_tubes inserts three free tubes into a supporting rack; source scores depth45mm, within-slot, uprightness and release. cover_blocks is cup covering/uncovering with a memorized order. Neither retrieved source includes removing an installed friction sleeve and replacing it on a free long aid. Insertion remains shared.",
+    "DataCenterBench": "Ten retained tasks are control and electrical connection operations. Plug/unplug share axial insertion/extraction, but no dry rubber foot replacement on a free assembly.",
+    "BEHAVIOR_catalog_matches": [
+      "lighting_fireplace-0",
+      "putting_wood_in_fireplace-0",
+      "repairs_to_furniture-0"
+    ],
+    "BEHAVIOR": "Scanned1016 named task rows, no crutch/ferrule replacement. repairs_to_furniture uses emery paper/incisions on a table (surface repair), not friction sleeve exchange. Catalog-only scope.",
+    "LIBERO": "130 published BDDL instructions screened, no sleeve-replacement instruction; household pick/place/control family.",
+    "RoboCasa": "301 named composite entries and official source tree screened. Food assembly and ordinary kitchen operations, no crutch or rubber sleeve replacement. Catalog/source-path screen, not all physics inspected.",
+    "SimplerEnv": "Published task table covers pick/move/drawer/stack/placement; no fitted sleeve replacement.",
+    "RoboARC": "106 indexed instruction sources span puzzles, rope/knot/fabric and IKEA assemblies. EKET is contact-guided panel assembly with latches; SVALLET is lamp shade snap-fit. These share assembly primitives, not extracting a worn dry sleeve from a free long aid and refitting it."
+  },
+  "scope": "Targeted primary source and catalog comparison, not exhaustive physics equivalence proof.",
+  "prior_catalog_evidence": "pipeline/pdf-screening/sr083-balance/popular-benchmarks-20261117/assessment.json",
+  "source_hashes": {
+    "behavior.txt": "263ceb05d5f4636b564264847e48dd54944d8b1f20be17168b0882e4e262b7e0",
+    "libero-tasks.json": "a02be11e03c59585d44608630d2be97c971872552819719e2fe6af198ca8cfb4",
+    "robocasa-tree.json": "35137ebf33ae0f31b898f1b1a225a0572a3e026ed8fa00e68c43d924f15fecc3",
+    "robodojo.txt": "210d42113932dd1ad63f8d015beae38aefb0f4319e63d12124326c0900989f74",
+    "datacenterbench.txt": "ab1c0c9db7783b685440c148b40fe85e310d353ff49204134119bf59e8438f75"
+  },
+  "decision": "Prepared comparisons only; final source and complete repair validation still pending"
+}

@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-11-19T05:48:46.765469+00:00",
+  "decision": "clear",
+  "queries": [
+    "lid|tin|toolbox|tool box|lidded|unlatched (all statuses)",
+    "carry|tote|both hands|two hands (live)",
+    "shelf|shelve with lid or contents",
+    "RoboCasa/LIBERO/BEHAVIOR pick-place of lidded containers (no loose-lid carry found in titles)",
+    "refresh 19 Nov: tin|lid|toolbox|lidded|carry|shelf|shelve|box|loose across PRs > 2400 (live)"
+  ],
+  "nearest_prs": [
+    {
+      "number": 1803,
+      "assessment": "Accepted (other team): shelve a carton of cans whose untaped bottom flaps open unless held from below. Same family (grip chosen so an unsecured closure stays shut while shelving) but different object and contact: support under the base vs pinch on the walls below a loose top lid. Highest duplicate risk; a reviewer may call ours a variant."
+    },
+    {
+      "number": 576,
+      "assessment": "Final rejected (other team): latch a toolbox before carrying it by its lid handle. Rejected as non-robotic noticing plus ordinary moves and not core job work. Ours has no latch to close; the difficulty is the grasp location. Same objection on importance may apply; pitched as Societal relatability instead of jobs."
+    },
+    {
+      "number": 42,
+      "assessment": "Accepted: release a two-latch lid and lift it out with both hands. Opening a lid, not carrying a box with its lid on."
+    },
+    {
+      "number": 494,
+      "assessment": "Accepted: carry a stack of three boxes onto a shelf squeezed between both arms. Bimanual carry, no loose lid."
+    },
+    {
+      "number": 2727,
+      "assessment": "Pending: put a toolbox down without blocking an extinguisher. Placement-location rule, different skill."
+    },
+    {
+      "number": 2264,
+      "assessment": "Revising: close a telescoping-lid box over its product. Closing, not carrying."
+    },
+    {
+      "number": 2793,
+      "assessment": "Pending (other team): lift an iPhone box's close-fitting lid off slowly. Removing a lid, not carrying a box with its lid kept on; different skill."
+    },
+    {
+      "number": 2449,
+      "assessment": "Pending: load lidded cups into a drink carrier upright. Placement of cups, lids are fixed; different skill."
+    }
+  ],
+  "physical_skill": "Grip a long 1.2 kg tin by its own walls in the 4.5 cm band below a loose, off-centre lift-off lid (with two arms, or one exactly at the middle), carry it level onto a shelf without the lid sliding off or the tin tilting past 30 degrees, set it flat and release clear.",
+  "valid_shortcuts": [
+    "One gripper exactly at the tin's middle can carry it (sags about 8 degrees) and score 1.0; this is a valid route, not penalised.",
+    "Sliding or pushing the tin is allowed if the lid stays on and the tin ends flat on the shelf; lifting is needed anyway because the shelf is 3 cm high.",
+    "Lifting the lid off and putting it back fails, as the instruction forbids taking the lid off."
+  ],
+  "distinct_from_nearest": "Unlike #1803 (support a flapped carton bottom from below), the closure here is a loose top lid and the forced choice is where on the walls to pinch, below the lid edge and near the ends for balance; unlike #576 there is no latch to work and the instruction does not mention the lid's state. Known risk: reviewers may judge it a variant of #1803 or ordinary carrying.",
+  "task_py_sha256": "0ee8d0b6ecc8dd35048dfa02eb859ec84796f52ff5b45e315afcefadd56a8560",
+  "task_metadata_sha256": "04c9554566e2a30684a94946d539b589d369c7339579c2c2de0d5c8c08d56421"
+}

@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-17T17:07:43.358833+00:00",
+  "pr": 2477,
+  "status": "pending_first_review_do_not_push",
+  "root_validated": false,
+  "findings": [
+    {
+      "severity": "material_source_support_gap",
+      "topic": "2.45 Nm permanent forced-key penalty",
+      "source": "https://unece.org/fileadmin/DAM/trans/main/wp29/wp29regs/r116e.pdf",
+      "section": "5.2.10",
+      "fact": "2.45 Nm is an anti-unauthorized-turning resistance requirement with a key other than the mating key. It does not establish damage onset or a safe operating limit for the correct inserted key.",
+      "current_claim": "README uses it as the forced-key threshold and suggests a real forced trial produces a bent/snapped key or torque-log observation.",
+      "action_if_revision_requested": "Use physically justified correct-key/lock damage threshold or explicitly defined measurable trial torque limit with rationale; do not claim regulatory incorrect-key resistance establishes damage onset. Revalidate affected negative routes and scoring.",
+      "scope": "Read-only audit; do not push while awaiting review."
+    },
+    {
+      "severity": "evidence_gap",
+      "topic": "Final demo source provenance",
+      "fact": "Two full 1.0 demo results exist, but exact runtime source at those runs has not yet been matched to submitted head; later task.py mtime alone does not prove a runtime change.",
+      "action": "Preserve linked reconstruction evidence; contemporaneous full-package hash was not recorded. Material torque rationale remains open.",
+      "status": "mitigated_by_recovered_launch_history_ast_equivalence_and_exact_media_match"
+    }
+  ],
+  "updated_at": "2026-11-17T19:18:26.905357+00:00",
+  "provenance_followup": "pipeline/reviews/steering-source-provenance-20261117/evidence.json"
+}

@@ -1,0 +1,6 @@
+{
+  "prior_owner": "claude",
+  "worker": "a23899c91a9a393fa",
+  "reason": "User and root authorize takeover after explicit Claude session limit at 2026-11-17T02:08:54Z; no task folder or matching mutation process remains.",
+  "time_utc": "2026-11-17T02:29:00.380913+00:00"
+}

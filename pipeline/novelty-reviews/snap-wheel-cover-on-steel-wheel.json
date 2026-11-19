@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-11-19T18:54:00.394237+00:00",
+  "decision": "clear",
+  "queries": [
+    "hubcap|wheel cover|wheel trim|trim ring",
+    "wheel",
+    "tyre|tire|valve",
+    "snap|clip-on|notch|cover on|keyed|rotate.*align",
+    "LIBERO, RoboCasa, SimplerEnv, BEHAVIOR, DataCenterBench, RoboDojo task inventories (pipeline/benchmark-references): no wheel cover or hubcap task",
+    "known_tasks.tsv refreshed 19 Nov: hubcap|wheel cover|wheel trim|tyre|tire|valve stem|snap.*cover|cover.*clip after PR 1764: only tyre-gauge tasks (1896 revising, 2133 accepted, 2621 pending) and our own 2883"
+  ],
+  "nearest_prs": [
+    {
+      "number": 1862,
+      "assessment": "Accepted sip lid snapped onto a full hot cup sector by sector. Shares the press-round snap fit, but has no rotational keying: any lid orientation works. Ours needs the 36 cm cover lifted and turned a quarter turn so its notch meets the stem before pressing, with the stem damaged by the careless route."
+    },
+    {
+      "number": 2514,
+      "assessment": "Final rejection: thermostatic radiator head aligned by a pointer and pushed onto an exposed collar, judged an already-covered snap fit without extra difficulty and not everyday. Main risk for ours. Ours differs: the orientation is forced by a physical obstacle (the valve stem blocks seating), the cover cannot be turned while resting on the rim (it slides off-centre and jams), so it must be lifted bimanually by two spokes, turned and set down, then seated at eight clips in pairs; and refitting hubcaps is a widespread driver and tyre-shop job."
+    },
+    {
+      "number": 2768,
+      "assessment": "Pending clip-on lamp shade over a bulb; vertical lift-over and press, no rotational alignment to a stem, different object and domain."
+    },
+    {
+      "number": 2865,
+      "assessment": "Final rejection: clip-on wheel balance weight on an abstract flange; a different operation (weight hammered onto a flange) and rejected on construct validity. Ours models a real 13x4.5J wheel section and a real-scale cover with a retaining clip ring."
+    },
+    {
+      "number": 1867,
+      "assessment": "Revising: e-stop button tab into panel-hole notch then locking ring. Keyed insertion, small part, panel domain; no large bimanual lift-turn and no multi-clip snap round a rim."
+    },
+    {
+      "number": 1603,
+      "assessment": "Final rejection: tyre match-mounting by dot to valve with toy rings. Valve-relative orientation shared in name only; ours is a real-geometry snap-fit cover."
+    },
+    {
+      "number": 2621,
+      "assessment": "Pending: check a car wheel's tyre pressure with a pencil gauge at its angled valve. Same installed wheel context and valve, different operation (a gauge pressed on a valve, no cover, no snap fit)."
+    },
+    {
+      "number": 2133,
+      "assessment": "Accepted: measure tread depth with a pen gauge. Tyre context only; a measurement, not an assembly."
+    }
+  ],
+  "physical_skill": "Pick a 36 cm, 0.45 kg wheel cover up off the ground by two spokes, stand it up to face an upright wheel on a car at real height (axle 27.2 cm up, under the wheel arch), turn it so its valve notch is over the valve stem at the top of the rim, push it on square until all eight sprung retaining clips hook behind the bead-seat lip, press the rim round, and let go.",
+  "valid_shortcuts": [
+    "Any grip, order or route that brings the notch over the stem and seats all eight clips without bending the stem more than 15 degrees is valid (turning before or after standing it up, regrasping, one arm if it can).",
+    "Pushing it on whole or pressing round clip by clip are both valid; pressing order is free.",
+    "Distractors may be moved; they are not scored."
+  ],
+  "distinct_from_nearest": "No accepted or pending task fits a wheel cover or hubcap. The revision keeps the same idea (reserved by our own revisable PR 2883) and adds the installed context the review asked for. Snap-fit lids (#1862) and pointer-aligned push-on heads (#2514, final rejected) share the press-on step, but here the alignment is forced physically by the valve stem, the cover is carried from the ground and fitted on a vertical face under the car's body, and seating takes eight clips round a 36 cm rim. The tyre-gauge tasks (#2621, #2133) share the wheel but not the operation. This is a reasoned assessment, not an acceptance guarantee.",
+  "importance_risk": "#2514's rejection shows reviewers may see align-and-snap as covered; the README argues the lift-turn and the stem hazard as the distinctive difficulty. Wheel covers are common on base-trim steel wheels, but no statistic on refit frequency is cited.",
+  "task_py_sha256": "97eb2ec7bf07f1a347c30d969ef25c1029411d36774a5b494e0b47f6ad8c874c",
+  "task_metadata_sha256": "0132d265921b05b15fb7d3fa0d2088a3710a1d72b031d3548437b5234f9a23f3"
+}

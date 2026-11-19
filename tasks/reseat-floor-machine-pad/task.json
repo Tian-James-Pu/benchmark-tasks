@@ -1,0 +1,20 @@
+{
+  "title": "Recentre a 17-inch floor pad lying off-centre on a floor machine's pad driver and click the centre lock home",
+  "category": "Impact on jobs",
+  "keywords": [
+    "floor machine",
+    "pad driver",
+    "centre lock",
+    "janitorial",
+    "snap fit"
+  ],
+  "instruction": "Centre the new pad on the pad driver and lock it on with the centre lock.",
+  "context": "Janitors and cleaners (about 2.17 million in the US, BLS May 2023) change the pads on rotary floor machines and burnishers as routine floor care. The manufacturer's procedure is to centre the pad on the driver and push the centre lock in until its spring clip clicks; a pad off-centre makes the machine vibrate and wears the pad, and the lock will not go through an off-centre pad's hole. Here the new pad has landed 5 cm off-centre, so it must first be slid concentric before the lock can be pressed home through its hole.",
+  "setup": "Positions are (x forward from the arm bases, y to the left) in cm; heights above the table. Pad driver, face up and fixed to the table, its axis at (28, -3): black plastic plate 40.6 cm across and 2.0 cm thick (grey grip face on top) on a steel clutch plate 12 cm across and 2.5 cm tall; its face is 4.5 cm up. Floor pad: red polyester nonwoven, 43.2 cm (17 in) across, 2.54 cm thick, 9.0 cm centre hole, 300 g, lying flat on the driver with its centre 5.0 cm off the driver's axis towards +y, at (28, 2). Centre lock: yellow moulded plastic with a steel wire spring clip, 60 g, flange 11 cm across and 1.2 cm thick on a stem 7.0 cm across and 3.7 cm long, captive on the driver's axis and raised: its stem's bottom 3.6 mm above the pad's top face. It moves 41 mm down to fully home (flange on the pad), against a spring of 150 N/m (about 6 N at home); the clip catches within 2.5 mm of fully home. Distractors (NVIDIA SimReady, loose, ignored by scoring): spray bottle (cleaning_windowSpray_a01, 11.8 x 4.0 x 28.3 cm, 600 g) standing at (64, 25); box of disposable gloves (box_glove_a01, 17.8 x 11.7 x 5.6 cm, 250 g) at (63, -24), turned 80 degrees; scrub brush (cleaning_brush_a01, 16.2 x 8.6 x 15.6 cm, 200 g) at (65, 0), turned 15 degrees. Both grippers start open at their ready poses.",
+  "scoring": "Centred: the pad's centre within 1.0 cm of the driver's axis, measured in the plane of the driver. Flat: the pad tilted no more than 3 degrees and its underside within 3 mm of the driver's face. Clicked: the centre lock pushed to within 2.5 mm of fully home, where its clip catches and holds it. Hands clear: every fingertip point of both grippers (each finger's tip and 3 cm up it, at its middle and both edges) at least 3 cm from the pad and from the centre lock. 1.0: clicked, centred, flat and hands clear, all held together for 2 s; scored 1.0 from then on. Otherwise, at the end: 0.5 if clicked, centred and flat; 0.25 if centred and flat but not clicked; 0 for anything else. Off the driver scores 0 for the rest of the trial unless full credit was already reached: at any time the pad's underside more than 1 cm below the driver's face or the pad tilted more than 15 degrees.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Release the centre lock (squeeze the wire clip) and lift it to its raised start; lay the pad back on the driver 5.0 cm off-centre towards +y, measured with a ruler from the driver's rim. Nothing is consumed.",
+  "fidelity": "Rigid bodies (PhysX). Pad driver, pad and centre lock are custom meshes and primitives at real size (no SimReady floor-machine parts exist); the pad is rigid, not a compressible nonwoven. The driver lies level and fixed, as if taken off the machine, not on a tipped-back machine. The centre lock is captive on a sprung slider instead of removable; its clip is code that latches it within 2.5 mm of home. Uniform high friction; no force sensing.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-ZNMK3F"
+}

@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-17T22:22:16.865797+00:00",
+  "sources": {
+    "insert_tubes": {
+      "url": "https://raw.githubusercontent.com/RoboDojo-Benchmark/RoboDojo/main/task/RoboDojo/tasks/insert_tubes.py",
+      "sha256": "e42e5780d031b76aeb0212a2ccebd91773ff324f16946de44734a332d5fbf34b"
+    },
+    "cover_blocks": {
+      "url": "https://raw.githubusercontent.com/RoboDojo-Benchmark/RoboDojo/main/task/RoboDojo/tasks/cover_blocks.py",
+      "sha256": "307f788d0ec9800e0c867d3d14d9229e542e22c4bacc5c843c56f5e6183dacc4"
+    }
+  },
+  "findings": {
+    "RoboDojo": "insert_tubes inserts three free tubes into a supporting rack; source scores depth45mm, within-slot, uprightness and release. cover_blocks is cup covering/uncovering with a memorized order. Neither retrieved source includes removing an installed friction sleeve and replacing it on a free long aid. Insertion remains shared.",
+    "DataCenterBench": "Ten retained tasks are control and electrical connection operations. Plug/unplug share axial insertion/extraction, but no dry rubber foot replacement on a free assembly.",
+    "BEHAVIOR_catalog_matches": [
+      "            const escapedQuery = query.replace(/[-\\/\\\\^$*+?.()|[\\]{}]/g, '\\\\$&');",
+      "            return text.replace(regex, '<span class=\"highlight\">$1</span>');",
+      "          wood_fireplace.n.01,",
+      "          wood_fireplace.n.01, ",
+      "lighting_fireplace-0",
+      "          wood_fireplace.n.01,",
+      "          cane_sugar.n.02, ",
+      "          candy_cane.n.01, ",
+      "          cane_sugar.n.02, ",
+      "          cane_sugar.n.02, ",
+      "          cane_sugar.n.02, ",
+      "          candy_cane.n.01, ",
+      "putting_wood_in_fireplace-0",
+      "          wood_fireplace.n.01,",
+      "repairs_to_furniture-0",
+      "          wood_fireplace.n.01, "
+    ]
+  },
+  "scope": "Targeted primary source and catalog comparison, not exhaustive physics equivalence proof."
+}

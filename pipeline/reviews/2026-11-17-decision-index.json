@@ -1,0 +1,222 @@
+[
+  {
+    "pr": 1921,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1921#issuecomment-6867813610",
+        "date": "2026-11-13T23:45:30Z",
+        "decision": "**Not accepted: final** (TK-N67533)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1921#issuecomment-6935389211",
+        "date": "2026-11-17T01:50:29Z",
+        "decision": "**Accepted** (TK-N67533). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 2036,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2036#issuecomment-6887670118",
+        "date": "2026-11-15T02:02:29Z",
+        "decision": "**Not accepted: final** (TK-S3YWV5)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2036#issuecomment-6933429279",
+        "date": "2026-11-17T00:12:27Z",
+        "decision": "**Accepted** (TK-S3YWV5). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 2126,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2126#issuecomment-6933280031",
+        "date": "2026-11-17T00:05:23Z",
+        "decision": "**Accepted** (TK-T6ZGSF). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 1784,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1784#issuecomment-6823359621",
+        "date": "2026-11-12T12:16:25Z",
+        "decision": "**Not accepted** (TK-QC64MC)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1784#issuecomment-6872669452",
+        "date": "2026-11-14T05:51:32Z",
+        "decision": "**Not accepted** (TK-L9HHG9)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1784#issuecomment-6872679692",
+        "date": "2026-11-14T05:52:26Z",
+        "decision": "**Not accepted** (TK-NZMY3K)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1784#issuecomment-6879492124",
+        "date": "2026-11-14T15:13:33Z",
+        "decision": "**Not accepted** (TK-6D7VVX)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1784#issuecomment-6933153551",
+        "date": "2026-11-16T23:59:29Z",
+        "decision": "**Accepted** (TK-8NDRZH). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 2122,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2122#issuecomment-6933112925",
+        "date": "2026-11-16T23:57:26Z",
+        "decision": "**Accepted** (TK-TUMETS). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 2116,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2116#issuecomment-6933093462",
+        "date": "2026-11-16T23:56:28Z",
+        "decision": "**Accepted** (TK-955LG8). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 2107,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2107#issuecomment-6932952637",
+        "date": "2026-11-16T23:49:29Z",
+        "decision": "**Accepted** (TK-28LP2A). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 1151,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1151#issuecomment-6820098680",
+        "date": "2026-11-12T09:39:25Z",
+        "decision": "**Not accepted** (TK-P223DN)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1151#issuecomment-6872995745",
+        "date": "2026-11-14T06:18:26Z",
+        "decision": "**Not accepted** (TK-44K54S)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/1151#issuecomment-6932910024",
+        "date": "2026-11-16T23:47:26Z",
+        "decision": "**Accepted** (TK-YHWYSG). Thank you! Merging this pull request."
+      }
+    ]
+  },
+  {
+    "pr": 2105,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2105#issuecomment-6898299265",
+        "date": "2026-11-15T17:19:37Z",
+        "decision": "**Not accepted** (TK-V7FV7G)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2105#issuecomment-6935351118",
+        "date": "2026-11-17T01:48:23Z",
+        "decision": "**Not accepted: final** (TK-ZL2WZQ)."
+      }
+    ]
+  },
+  {
+    "pr": 2042,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2042#issuecomment-6887690608",
+        "date": "2026-11-15T02:04:22Z",
+        "decision": "**Not accepted** (TK-X3BKEQ)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2042#issuecomment-6933533558",
+        "date": "2026-11-17T00:17:23Z",
+        "decision": "**Not accepted: final** (TK-PV2XW7)."
+      }
+    ]
+  },
+  {
+    "pr": 2127,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2127#issuecomment-6933492972",
+        "date": "2026-11-17T00:15:27Z",
+        "decision": "**Not accepted: final** (TK-P9ADJL)."
+      }
+    ]
+  },
+  {
+    "pr": 2383,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2383#issuecomment-6933174324",
+        "date": "2026-11-17T00:00:28Z",
+        "decision": "**Not accepted: final** (TK-LCFEZZ)."
+      }
+    ]
+  },
+  {
+    "pr": 2379,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2379#issuecomment-6933152656",
+        "date": "2026-11-16T23:59:26Z",
+        "decision": "**Not accepted: final** (TK-766M5D)."
+      }
+    ]
+  },
+  {
+    "pr": 2372,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2372#issuecomment-6933132767",
+        "date": "2026-11-16T23:58:28Z",
+        "decision": "**Not accepted: final** (TK-HEPNZ6)."
+      }
+    ]
+  },
+  {
+    "pr": 2099,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2099#issuecomment-6930001672",
+        "date": "2026-11-16T21:31:38Z",
+        "decision": "**Not accepted** (TK-EYPCAE)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2099#issuecomment-6933034718",
+        "date": "2026-11-16T23:53:37Z",
+        "decision": "**Not accepted: final** (TK-VTMM4U)."
+      }
+    ]
+  },
+  {
+    "pr": 2093,
+    "decisions": [
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2093#issuecomment-6892444561",
+        "date": "2026-11-15T09:38:23Z",
+        "decision": "**Not accepted: final** (TK-75DZ4E)."
+      },
+      {
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2093#issuecomment-6932889677",
+        "date": "2026-11-16T23:46:24Z",
+        "decision": "**Accepted** (TK-LMHRHE). Thank you! Merging this pull request."
+      }
+    ]
+  }
+]

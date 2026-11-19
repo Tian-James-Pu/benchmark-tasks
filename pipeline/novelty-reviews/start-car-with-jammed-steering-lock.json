@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-19T05:06:23.740207+00:00",
+  "decision": "clear",
+  "queries": [
+    "steering, ignition, car key, key turn, turn key",
+    "deadbolt, thumb-turn, dogging, multipoint, lock",
+    "hold while turning, spring-loaded, release while"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2172,
+      "state": "OPEN, Not accepted (revising, other team)",
+      "read": "Title, description and review: press a door shut against its weatherstrip while turning a deadbolt thumb-turn; sent back on scoring only (hidden bolt projection).",
+      "comparison": "Linear press on a door to unload a bolt. Here the load is the tyres' wind-up on a rotating wheel: the robot must find the one direction that gives (the other is a dead stop) and keep the wheel inside a few degrees of play while it springs back, a rotational hold-in-window, not a press."
+    },
+    {
+      "pr": 2041,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Review: occupation too small; holding a spring-loaded part while turning a key already covered; flat door unrealistic.",
+      "comparison": "Panic bar held down at a fixed stop. Here the wheel must be turned off a bolt in the right direction and held mid-travel; the category is Societal relatability (drivers), not a small occupation; the column is at its real rake."
+    },
+    {
+      "pr": 787,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Duplicate of a cabinet latch-release task; instruction revealed the insight.",
+      "comparison": "Our instruction is goal-only (Turn the key to ON); the jam and its fix are not stated."
+    },
+    {
+      "pr": 1851,
+      "state": "MERGED",
+      "read": "Can opener: one hand keeps the handles squeezed while the other turns the key.",
+      "comparison": "Squeeze-and-turn of one tool; no hidden fault, no direction finding, no load relief."
+    },
+    {
+      "pr": 2470,
+      "state": "OPEN, pending",
+      "read": "steering-hand-over-hand: steering a wheel hand over hand.",
+      "comparison": "Same object, different skill (steering); no lock, no key."
+    }
+  ],
+  "physical_skill": "Diagnose a jammed steering lock from a key that will not turn, turn the wheel off the bolt the one way it gives, hold it inside the collar's play against an 8 N m spring that pushes it back, and turn the key to ON with the other hand while holding; release the key in its detent.",
+  "valid_shortcuts": "None found (revision 1, GPU): one arm forcing the key (0, forced), careless release before the key (0, forced), wrong direction (0, forced), nothing (0), key left held (0), key at ACC (0.5 by design). Forcing is now judged from key and wheel angles (forcing mark 6.78 deg calibrated at 2.45 N m); it agreed with the torque log in every mode.",
+  "distinct_from_nearest": "Load relief by rotating a sprung wheel to a direction the robot must discover and holding it mid-play, on a car column at its real rake, versus pressing a door or bar to a stop. Residual risk: reviewers may still group it with hold-while-turning-a-key tasks (#2041 wording).",
+  "task_py_sha256": "a14f15f7e54165487285c913d9ad65fb61bed5cad7c98e756091f33d8bd967ba",
+  "task_metadata_sha256": "9f76c520b5d1d7747c8f410b8bf7bce6d91b0f7c5a9b5d216e344c82956f6205",
+  "revision_note": "Revision for review of 2026-11-18: scoring/real-trial measurement and build changes only; scene, instruction and skill unchanged; known_tasks refreshed, no new steering/ignition task besides #2470 (steering, different skill)."
+}

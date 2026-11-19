@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-19T10:58:27.372575+00:00",
+  "decision": "clear",
+  "queries": [
+    "pipeline/refresh_known.sh this session; known_tasks.tsv grep: kettle, steam, scald, boil",
+    "live (accepted/pending/revising) grep: lid, latch, click, snap",
+    "gh pr view bodies of 32, 2574, 2784 and body plus review of 1406 read"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 32,
+      "state": "MERGED",
+      "read": "Body read: put a lid into a light case's pocket, press its front edge until two spring latches click while the other arm steadies the tipping case.",
+      "comparison": "Shared: press a hinged/fitted lid's front until a spring catch clicks. Theirs is an assembly job on a labelled case whose instruction names the lid closing. Ours is an unnamed hazard: the instruction is only 'Prepare the kettle for use'; the robot must notice a lid resting proud on a real 1.7 L kettle's catch, press it with a controlled force without tipping a 2 kg full kettle off its fixed power base, and release fully."
+    },
+    {
+      "pr": 2574,
+      "state": "OPEN, pending",
+      "read": "Body read: push a popped jester back into a jack-in-the-box and shut the lid so its catch holds.",
+      "comparison": "Toy reset: compressing a spring figure is the difficulty; no hazard, no heavy free-standing container on a base."
+    },
+    {
+      "pr": 2784,
+      "state": "OPEN, revising",
+      "read": "Body read: seat both AirPods in their wells and push the magnetic lid shut.",
+      "comparison": "Small-part insertion is the difficulty; the lid is magnetic, no catch to press past, no tipping/scald hazard."
+    },
+    {
+      "pr": 1406,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Body and review read: fill a 0.39-scale kettle between MIN and MAX and shut the lid; rejected for miniaturization and capacity inconsistencies.",
+      "comparison": "Pouring/fill-level task at reduced scale. Ours is real scale (25 cm, 1.7 L, 2.0 kg with 1 L) and the skill is the lid latch recovery, not filling; the reviewer's scale objection does not apply."
+    }
+  ],
+  "physical_skill": "Notice that the kettle's hinged lid rests on its spring catch 5 degrees open, press its front edge down with about 12 N until it clicks within 0.4 degrees of shut, without tipping the free-standing 2 kg kettle more than 15 degrees or knocking it off its 17.6 cm power base, then withdraw every fingertip at least 3 cm.",
+  "valid_shortcuts": "Red team on this task.py: do nothing 0; hold on the lid after clicking 0.5; careless shove of the body then press 0 (tilt 85 degrees). Pressing the release button after latching returns the lid to its catch, scoring 0. Lifting the kettle off its base or opening and re-closing the lid are legitimate and still require a latched, seated, untouched final state for 3 s. Valid solution: press the lid's front down (demo 1.0 twice). Dream-1 this session: 0 (both arms moved forward and hovered beside the kettle but never pressed the lid).",
+  "distinct_from_nearest": "No live task involves an electric kettle or its lid latch; the only kettle task (1406) was a miniaturized fill task, closed. The nearest skill match is the accepted snap-fit case lid (32), but that task names the closing and is an assembly job; ours is a goal-only, unnamed scald hazard on a real-scale full kettle with a tip/displacement constraint. Residual risk: a reviewer may see it as one more 'press a lid until it clicks' task or judge the press too easy.",
+  "task_py_sha256": "0f6f6a1aacb0903d7e21b3726c2e05e458233d252129a22b7c6df270b7ef45e0",
+  "task_metadata_sha256": "b1896afb098ee973ccc0185e38cbbd49a034e103c42300bb14319ae617629681",
+  "note": "Hashes exclude scores/media by definition; rewritten after the Dream-1 scores edit."
+}

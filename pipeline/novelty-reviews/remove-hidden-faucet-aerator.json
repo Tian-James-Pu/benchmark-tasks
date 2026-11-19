@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-19T20:59:24.813964+00:00",
+  "decision": "clear",
+  "queries": [
+    "pipeline/refresh_known.sh this session (301 accepted, 318 pending, 161 revising)",
+    "known_tasks.tsv grep (live and accepted): aerator|faucet|tap |spout|limescale|descal|service key|unscrew|thread; broader: jar|counter|holding|hold the|loosen|seized|stuck|screen|sink|nozzle|shower",
+    "gh pr view bodies read: 2382, 1540, 1257, 230, 1857"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2382,
+      "state": "OPEN, pending",
+      "read": "Body read: diagnose a stiff faucet handle and replace its cartridge, set so hot stays on the left; old cartridge to a parts tray.",
+      "comparison": "Same fixture family (a faucet) but a different part, tool and skill: theirs swaps a valve cartridge under the handle and sets its rotational orientation; ours turns a recessed threaded aerator at the spout's end with a keyed service tool while the other hand reacts the torque on a loose faucet. No cartridge, no handle, no orientation puzzle."
+    },
+    {
+      "pr": 1540,
+      "state": "MERGED, accepted",
+      "read": "Body read: connect a sensor cable; the sensor turns in its loose bracket, so one hand holds it while the other turns the connector's coupling ring tight.",
+      "comparison": "Shares the counter-hold pattern (a loose mount turns unless held). Different object, setting and tool: a household faucet, a hidden aerator reachable only with a keyed service key, ratcheting strokes with the key pressed up into ribs, unscrewing out of the thread and back to flush. 1540 spells out the holding in its instruction; ours is goal-only."
+    },
+    {
+      "pr": 1257,
+      "state": "MERGED, accepted",
+      "read": "Body read: swap a drone propeller, holding the prop still by a blade while unscrewing and re-tightening its nut.",
+      "comparison": "Also hold-while-turning, explicitly instructed; a drone prop nut turned directly by the gripper. Ours is tool-keyed, recessed, overhead (key pressed upward into the spout) and unprompted."
+    },
+    {
+      "pr": 230,
+      "state": "MERGED, accepted",
+      "read": "Body read: hold a flashlight and unscrew its tail cap, then tip the battery out.",
+      "comparison": "Unscrewing a threaded cap by hand on a held body; no tool, no seized bond, no refit to a seated position, different object and purpose."
+    },
+    {
+      "pr": 1857,
+      "state": "OPEN, Not accepted",
+      "read": "Title read: reconnect a bathroom-sink pop-up stopper to its pivot rod.",
+      "comparison": "Same bathroom sink setting, unrelated part and skill (linkage under the basin)."
+    }
+  ],
+  "physical_skill": "Hold a loose faucet's spout with one gripper while the other presses a lugged service key up into a hidden aerator's ribs and turns it in repeated wrist strokes (lugs out, turn back, re-engage) to break a 0.2 N m scale bond the 0.1 N m loose mount cannot react, unscrew it out of its thread (drops 4 mm onto the key), screw it back to within 15 degrees of its seat without overtightening, and take the key and fingers away.",
+  "valid_shortcuts": "Red team: do nothing 0; one-arm (key only, spout not held) 0 (faucet turns past 5 degrees, latched); careless overtighten past seat 0 (latched). Turning the aerator by fingers is not possible (no part stands proud; ribs are 3 mm). Holding the key in place at the end gives at most 0.5 (key must be 3 cm away). Demo 1.0 twice (1,973 steps) on the final file.",
+  "distinct_from_nearest": "No accepted or live task turns a recessed threaded part with a keyed tool while the other hand reacts its torque. 2382 is the same fixture but a different part and skill; 1540 and 1257 share the hold-while-turning pattern but turn exposed parts directly and say so in the instruction. Ours adds tool use (a lugged key engaged from below), a seized bond, out-and-back threading to a flush seat, and an unprompted counter-hold forced by physics. Residual risk: a reviewer may group it with 1540/1257 as 'hold one part while turning another', and the torques are scaled-down estimates (README states this).",
+  "task_py_sha256": "e1412f8cfec35a47284915d10be7a22cfa336fc46115e5d5d42b0b7f9a46a31f",
+  "task_metadata_sha256": "cd70dcf595b32d960d291f32edd8d30dad19f642d5aff494ee95e9fb0f5e083d",
+  "note": "Hashes exclude scores/media by definition."
+}

@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-11-17T04:31:15.703244+00:00",
+  "decision": "clear",
+  "queries": [
+    "pre-rinse, spray valve, spray, garden hose, rinser, pressure washer",
+    "accepted/pending/revising: ring, trigger, squeeze, spring, pliers, latch",
+    "own team board/carton/pane/shower-chair tasks and valid shortcuts"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 1830,
+      "state": "MERGED",
+      "read": "Live decision plus task.json and README: spring tongs with guided pull-tab catch, squeezed shut then tab pulled, stored in tray.",
+      "comparison": "Closest coordination pattern. Pull-tab locks two hinged tong arms; no free retaining ring around a valve body, no hanging hose load and no flowing tool to control."
+    },
+    {
+      "pr": 1663,
+      "state": "MERGED",
+      "read": "Live reviews and README: unfold actual table leg and slide captive brace ring over knee.",
+      "comparison": "Brace alignment/captive sleeve locking differs from unloading and removing a free ring retaining a spring-return fluid valve."
+    },
+    {
+      "pr": 1766,
+      "state": "MERGED",
+      "read": "Live description and reviews: squeeze over-centre pliers past latch, then release.",
+      "comparison": "Single squeeze-to-lock operation does not involve simultaneous control of an independent loaded retainer."
+    },
+    {
+      "pr": 1791,
+      "state": "MERGED",
+      "read": "Live description and all review comments: press glass onto fixed rinser and drain.",
+      "comparison": "Axial cup pressing; no suspended valve or loaded ring release."
+    },
+    {
+      "pr": 2112,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Live description and review: held garden wand and detented rotating dial.",
+      "comparison": "Generic hold-and-turn rejected. This task requires unloading actual spring contact and extracting a free retaining ring; no pattern-selection puzzle or rotary dial."
+    },
+    {
+      "pr": 1575,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Live description and reviews: pressure-washer trigger lock and quick-coupler nozzle swap.",
+      "comparison": "No coupling exchange or depressurization task. Ordinary low-pressure rinse valve is shut by its own spring; no claimed high-pressure safety procedure."
+    }
+  ],
+  "physical_skill": "Capture a free hold-down ring before unloading its spring-loaded trigger, remove it past the lever end while controlling a hose-suspended valve, then release it off and let it settle. Demonstrated through ordinary contacts with no ring slider, attached grip or programmed latch.",
+  "valid_shortcuts": [
+    "Any successful one-arm manipulation is accepted; squeezing alone is tested but not forbidden.",
+    "Ring may be lifted, tilted or displaced by any valid contact route; neither exact trajectory nor squeezing order is scored.",
+    "The valve may be supported by ordinary sink surfaces during recovery; no artificial ban on staging. Flow must remain contained, and final hanging/release conditions apply.",
+    "Operating the wall supply is outside the specified arm workspace; the task concerns the running pre-rinse head, not identifying a remote control."
+  ],
+  "distinct_from_nearest": "Unlike the closest tongs pull-tab task, the retainer is an external free ring that must be caught as trigger loading is removed; it may fall/reengage and can tilt, while the heavier tool hangs from its ordinary hose. The fluid-control objective adds real containment/release constraints. Distinction rests on these contacts and support conditions, not the recovery label, colours or a mandatory two-hand rule.",
+  "remaining_review_risks": [
+    "Reviewers may still view squeeze-and-retainer operation as too similar to the accepted tongs task; this is a reasoned novelty assessment, not an acceptance guarantee.",
+    "Occupation profile proves cleaning duties and workforce size, not the percentage using this exact valve model. Manufacturer identifies industrial-kitchen use.",
+    "Undimensioned geometry, spring parameters, segmented hose and packaged product mass are disclosed approximations."
+  ],
+  "task_py_sha256": "18115a27b6da55041d737d1eb829547e53ea024a3516ae1a3ccc575083146f99",
+  "task_metadata_sha256": "27cf17bee0ab22a47db9634d357ee8f23f83e5bf67e591c22d4d41458bd4cc7d",
+  "final_refresh": "Refreshed full PR index through2417; rechecked live decisions on1830,1663,1766,1791,2112,1575. No newly listed task changes the skill comparison."
+}

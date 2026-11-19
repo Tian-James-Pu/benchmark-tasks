@@ -1,0 +1,7 @@
+{
+  "repo": "nvidia/USDCraft-10K",
+  "revision": "6fbffb56c443237ddae9f6c7a05b72263fd1469e",
+  "path": "rigid/medical_outdoor_garden_transport_sports/R486_crutch/02_forearm_crutch/physx/model.usdc",
+  "sha256": "6eecf0a33cdfa2c75e855d067146274e0bbdeacf591f9531a37ce230a2882ac9",
+  "license": "Apache-2.0"
+}

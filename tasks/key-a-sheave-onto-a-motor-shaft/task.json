@@ -1,0 +1,24 @@
+{
+  "title": "Key a V-belt sheave onto a motor shaft and tighten its set screw over the key with a hex key",
+  "category": "Impact on jobs",
+  "keywords": [
+    "maintenance and repair",
+    "millwright",
+    "belt drive",
+    "sheave",
+    "shaft key",
+    "set screw",
+    "hex key",
+    "bimanual",
+    "Browning AK30X5/8",
+    "NEMA 56"
+  ],
+  "instruction": "Mount the sheave on the motor shaft, all the way in against the shaft shoulder, and lock it there.",
+  "context": "Fitting a sheave to a motor shaft is routine belt-drive work for general maintenance and repair workers (1.62 million US jobs, BLS 2025) and industrial machinery mechanics (0.45 million). Browning's steps: install the shaft key, slide the sheave on, tighten the set screw over the key to 110-130 in-lb. A 3/16 in key in a seat 0.06 mm wider must go fully down, the keyway be turned onto it, and the set screw tightened with a hex key until it clamps the sheave.",
+  "setup": "Millimetres from the midpoint between the arm bases (x forward, y left), heights above the bench. A NEMA 56 motor (cast frame 168 across, 240 long behind the shoulder, base 170 x 140) is fixed with its 5/8 in (15.9) steel shaft along x at y 0, 88.9 up: shoulder at x 265, end at x 217; keyseat on top 4.83 wide, floor 13.1 above the shaft's bottom, 3.2 to 39.0 from the shoulder (ES 1.41 in). A Browning AK30X5/8 cast-iron sheave (OD 77.5, 5/8 in bore, keyway 3/16 x 3/32 in, 445 g) is on the shaft end, hub's inner end at x 219, keyway turned 30 deg toward -y; its 5/16-18 x 3/8 in cup point set screw (5/32 in socket) over the keyway stops 0.4 above the key when all is home. A 3/16 x 1-1/4 in steel key (5.7 g) lies along x on a wooden rest at (195, 135): a 40 x 40 x 12 block with a 3.5 wide, 13 high rib along x on top (25 to its top). A 5/32 in hex L-key (Eklind 16110, 64 x 21, 9 g) stands long arm down, short arm pointing 150 deg from +x, in a 7 mm hole 35 deep in a 40 mm wooden cube at (205, -150). Distractors (SimReady): cotton shop rag 260 x 233, 50 g at (470, 270); steel combination wrench 260 long, 250 g at (420, -240); ceramic mug 90 across, 80 high, 350 g at (620, -160).",
+  "scoring": "0.25: key fully down in the keyseat (centre within 0.4 mm of seated across and in height, whole length in the seat, within 1.5 deg of the shaft axis and its faces within 10 deg of level), no gripper within 1 cm of it unless the hub covers it. 0.5: also the hub within 0.5 mm of the shoulder, keyway within 2 deg of the keyseat. 0.75: also the set screw turned 5 deg or more past its cup point first meeting the key (a screw on the bare shaft or keyseat floor does not count). 1.0: also the screw 45 deg or more past contact, the L-key tip 15 mm or more out of the socket, both grippers and the L-key 3 cm or more from the sheave, and the sheave then moves under 0.3 mm and 0.3 deg for 1 s under a 20 N pull off the shaft and a 1 N m twist. Otherwise 0. Real check: torque wrench at 110-130 in-lb, depth and feeler gauges, spring scale.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Back the set screw out until its cup point is 0.4 mm above the key's top, pull the sheave back to the shaft end (hub 2 mm on), lift the key out, lay it back along its rest's rib, and stand the hex key back in its holder. Nothing is consumed; a cup point leaves a small mark on the key, so use a fresh key for each real trial.",
+  "fidelity": "No threads in PhysX: the screw advances 1/18 in per turn of the L-key's twist with its tip in the socket; tight is 45 deg past contact on the key against a token 0.2 N m (110-130 in-lb is beyond a YAM wrist). Once bearing, the clamp locks the sheave's joints; with the key seated under the lined-up keyway, the turn joint is held (a 6 g key squeezes in PhysX). Bore is a slide and turn joint; key in keyseat by contact. Round socket. Motor fixed and simplified.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

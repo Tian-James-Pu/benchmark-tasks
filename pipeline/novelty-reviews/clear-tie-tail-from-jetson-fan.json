@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-11-17T17:57:16.732937+00:00",
+  "decision": "clear",
+  "queries": [
+    "jetson",
+    "fan",
+    "shroud",
+    "rotor",
+    "impeller",
+    "cable tie",
+    "spray arm",
+    "in-team dishwasher recovery comparison"
+  ],
+  "nearest_prs": [
+    1441,
+    2188,
+    2189,
+    2055,
+    404,
+    1273
+  ],
+  "physical_skill": "Recover actual blade rotation by gripping and extracting a loose offcut through an original-scale wire guard, then release it into a tray and verify ten seconds of forward operation. Source CAD preserves frame, rotor, wire guard and controller surroundings. The impeller is initially stalled by mesh contact, not a scoring state or attachment.",
+  "valid_shortcuts": [
+    "A direct external guarded pull without switching off is valid when fingers and tools stay outside the rotor access boundary; the demonstrated route uses this.",
+    "Switching off and waiting for rest before internal service is valid; manual motion after rest does not count as motor coasting.",
+    "Either hand and either supplied tool may be used if the physical contact, release and safety conditions hold.",
+    "Holding the strip in the tray earns clearance only, not containment/full credit. Reverse rotation does not establish cooling operation. Fixed fasteners cannot be removed in this task; the model does not simulate fracture."
+  ],
+  "distinct_from_nearest": "Accepted #1441 severs a tightened cable tie with cutters around a supported cable bundle and checks insulation damage; this task extracts an already loose offcut from real rotating hardware and verifies recovered operation, with no cutting mechanism. Closed #2188 is fan installation by snap-fit and lacks chassis/wires; this uses actual controller, heatsink, guard and wired fan contacts, with no insertion latch. Revising #2189 reassembles a household fan with keyed shaft and clips; this retains the assembly and clears a physical jam. Revising #2055 installs a server shroud; no shroud/tab seating is involved here. Rejected #404 swaps fan modules; neither fan replacement nor hot-swap sequence is required. Pending #1273 unfolds a hand fan, an unrelated mechanism. Live comments for #1441/#2188/#2189/#2055 were reread before this review. Our concurrent dishwasher candidate shares the broad recovery theme, but its defining manipulation is a full-size 300 mm spatula through a free wheeled rack and appliance opening, with basket retention/return and a low-torque full-turn clearance test. This fan task has a fixed 40 mm rotor assembly, a 3 x 1 mm offcut extracted through a 4.25 mm wire-guard gap, powered/coasting rotor-access constraints, and sustained 4000 RPM motor recovery. The contact clearances, movable assembly constraints and operational validation differ beyond object identity or category.",
+  "risks": [
+    "Rigid offcut omits bending and fracture; limits are explicit, and no fracture-detection claim is made.",
+    "Conservative tool collision bounds intentionally reject powered access at the blade envelope; actual damaging tool entry was not demonstrated by free-drop diagnostics.",
+    "This is a source-scale open development controller on documented standoffs, not a claimed server or enclosed robot service chassis."
+  ],
+  "task_py_sha256": "752e6df16f0cd07a2b1a95250c1ab2e3219520882412039e05f8c366e9897968",
+  "task_metadata_sha256": "fb3c774902186e928f3535edcb882db37dd130027713f05606c374ff9866722d",
+  "in_team_comparison": "Our concurrent dishwasher candidate shares the broad recovery theme, but its defining manipulation is a full-size 300 mm spatula through a free wheeled rack and appliance opening, with basket retention/return and a low-torque full-turn clearance test. This fan task has a fixed 40 mm rotor assembly, a 3 x 1 mm offcut extracted through a 4.25 mm wire-guard gap, powered/coasting rotor-access constraints, and sustained 4000 RPM motor recovery. The contact clearances, movable assembly constraints and operational validation differ beyond object identity or category.",
+  "fresh_inventory_counts": {
+    "closed": 153,
+    "accepted": 207,
+    "rejected": 1705,
+    "revising": 156,
+    "pending": 276
+  },
+  "final_search_result": "Fresh official PR inventory: no new Jetson, cooling-fan jam, or wire-guard debris extraction claim. Existing fan/rotor matches retain the distinct skills documented here."
+}

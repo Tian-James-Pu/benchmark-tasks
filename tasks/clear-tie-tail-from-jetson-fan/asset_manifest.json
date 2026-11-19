@@ -1,0 +1,27 @@
+{
+  "geometry_cache": "~/.cache/jetson-fan-recovery",
+  "manufacturer_assets": {
+    "fan": {
+      "url": "https://www.delta-fan.com/Download/3D/AFB0405MA-A.stp",
+      "step_sha256": "96bad5dd58398d5623fb746325d9352f2b5796dfb5e282de9ac80b76a14d5144",
+      "solid_count": 2
+    },
+    "jetson": {
+      "url": "https://developer.nvidia.com/jetson-nano-2gb-developer-kit-3d-cad-step-model",
+      "step_sha256": "028de83a8af15d9e36c07ca844059447ff2eb455866a5de499a469cba12f6ac4",
+      "solid_count": 691
+    }
+  },
+  "wire_guard": {
+    "url": "https://orionfans.com/3d/G40-2.stp",
+    "sha256": "56601d8729be1fe59bfa610455569db1d94b18b177ad6e2fed3f2326db53fe07",
+    "solid_count": 4,
+    "tessellation_mm": 0.06,
+    "drawing": "https://orionfans.com/productFiles/datasheet/G40.pdf"
+  },
+  "derived_cache_sha256": {
+    "geometry.npz": "0c4fd23a9ef7cbe3ca2e5d8b7dc1e2031e269321e77211ceb5bb099d1ed4a683",
+    "guard.npz": "25dbc4311b559f239f6ea81e0b96a7b4cc0b09b77ff1c48b2b804b4d51ff1409"
+  },
+  "simready_revision": "9d4556bfe80868c1d27a7a7ba1c2774e63e8cedd"
+}

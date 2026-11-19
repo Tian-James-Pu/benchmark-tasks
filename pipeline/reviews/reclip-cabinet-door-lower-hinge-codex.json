@@ -1,0 +1,45 @@
+{
+  "task": "reclip-cabinet-door-lower-hinge",
+  "reviewer": "codex",
+  "state": "held after authorized inactive takeover: central hardware mismatch",
+  "findings": [
+    {
+      "severity": "blocking construct-validity risk",
+      "detail": "The lower hinge arm is parented to sag, not door; it remains at the cabinet-side authored position while the door swings. Its plate is visual only. The click rule checks only sag and arm displacement, with no swing/alignment or hook engagement condition. Thus it can conceptually reclip from a door configuration where the real door-mounted hinge is elsewhere. Need actual linkage/contact or clearly justified kinematics and adversarial validation before submission."
+    },
+    {
+      "severity": "validation gap",
+      "detail": "Add a red-team attempt that levels the door after closing it and presses the stationary lower arm; also press the arm with door far from its clip-on engagement angle. Full credit for such a physically impossible engagement would invalidate construction."
+    },
+    {
+      "severity": "incomplete packaging",
+      "detail": "README absent when inspected; task.json Dream score pending. Existing owner is running fresh demos/redteams, so audit did not change files or claims."
+    },
+    {
+      "severity": "precision",
+      "detail": "_full uses open_deg <=1 rather than abs(open_deg)<=1; joint-limit failure/penetration must not receive credit. Check links and all stated hands-off bounds in live output."
+    }
+  ],
+  "strengths": [
+    "Real-size cabinet and door, credible maintenance recovery",
+    "Scorer tracks full-score hold and different partial outcomes",
+    "Fidelity honestly discloses rule-based clip simplification"
+  ],
+  "action": "Do not submit or count; preserve existing code for rebuild. Screen stronger existing concept.",
+  "primary_hardware": {
+    "url": "https://d2.blum.com/services/BEC003/cme226128_ma_dok_bus_$sen-us_$aof_$v1.pdf",
+    "title": "Blum Clip mechanism reattachment and mounting plate installation/removal",
+    "comparison": "Pages1-2 show cup-to-arm linkage, underside mating mounting-plate features and rear spring release lever. Modeled plate is visual only and the loose arm is independent of door swing. Replacing only click tolerances cannot reproduce hook entry or retention. Manufacturer material does not establish the artificial4degree sag joint on the remaining upper hinge.",
+    "blocked": "Need actual lower-arm linkage and physical hook/plate/retaining catch, with truthful upper hinge compliance, before demo tuning."
+  },
+  "recovered_claude_redteams": {
+    "nothing": 0,
+    "press_only": 0,
+    "onearm_drag": 0,
+    "overlift": 0,
+    "close_only": 0,
+    "leave_open": 0.5,
+    "hold_end": 0.25,
+    "note": "Recovered logs only, not new validation and do not fix central construct issue."
+  }
+}

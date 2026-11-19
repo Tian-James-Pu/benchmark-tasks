@@ -1,0 +1,294 @@
+{
+  "goal": 50,
+  "validated_count": 5,
+  "note": "Only tasks passing current source, hardware, scoring, visual, demo, adversarial and model checks count. Held/prototype folders do not count.",
+  "tasks": [
+    {
+      "folder": "chock-leaning-panel-in-floor-channel",
+      "state": "held_do_not_submit",
+      "title": "Stand a fallen display panel back up in its floor channel and chock it before letting go",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "clear-offcuts-propped-board",
+      "state": "held_do_not_submit",
+      "title": "Clear scrap offcuts off a bench when one of them is propping up a freshly varnished batten",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "close-iv-roller-clamp",
+      "state": "held_construct_validity_welded_tube_support",
+      "title": null,
+      "readme_present": true,
+      "reported_scores": null,
+      "validated_for_goal": false,
+      "evidence_file": "pipeline/reviews/close-iv-roller-clamp/audit.json"
+    },
+    {
+      "folder": "control-a-creeping-sparkling-wine-cork",
+      "state": "parked_contact_model_unvalidated",
+      "title": null,
+      "readme_present": true,
+      "reported_scores": null,
+      "validated_for_goal": false
+    },
+    {
+      "folder": "cue-ball-held-by-chalk-on-return-track",
+      "state": "held_do_not_submit",
+      "title": "Take a cue ball and the chalk cube that is its only stop off a sloping, open-ended return track",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "free-riser-foot-from-pencil-under-open-jar",
+      "state": "held_do_not_submit",
+      "title": "Free a riser that is sitting on a pencil, without spilling the open jar on it",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "lean-a-standing-tile-into-its-rack",
+      "state": "held_do_not_submit",
+      "title": "Move a tile left standing on its edge into a lean-to rack, and let go only once it leans on the posts",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "level-from-under-loose-shelf",
+      "state": "held_do_not_submit",
+      "title": "Get a spirit level out from under a loose riser shelf without levering the shelf and the glass on it over",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "rechock-two-panes-one-prop",
+      "state": "rejected_final_do_not_resubmit",
+      "title": "Re-chock two panes standing in a rack when there is only one prop block to hold them",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: 0.0; demo: 1.0",
+      "validated_for_goal": false,
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2401",
+      "reviewed_at": "2026-11-17T03:04:39Z"
+    },
+    {
+      "folder": "reclip-cabinet-door-lower-hinge",
+      "state": "blocked_construct_validity_audit",
+      "title": "Re-clip a cabinet door that has dropped off its lower clip-on hinge, holding it square, then shut it",
+      "readme_present": false,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "recover-cocked-valve-spring-compressor",
+      "state": "parked_requires_realistic_engine_geometry_and_loads",
+      "title": null,
+      "readme_present": true,
+      "reported_scores": null,
+      "validated_for_goal": false
+    },
+    {
+      "folder": "remove-prop-from-under-shelf",
+      "state": "held_do_not_submit",
+      "title": "Take the temporary prop out from under a repaired shelf without dragging the shelf off its brackets",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "reseat-board-missed-support",
+      "state": "rejected_final_do_not_resubmit",
+      "title": "Reseat a board that missed one of its two supports, without knocking over the bottle beside it",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: 0.0; demo: 1.0",
+      "validated_for_goal": false,
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2398",
+      "reviewed_at": "2026-11-17T03:04:39Z"
+    },
+    {
+      "folder": "reseat-pedal-bin-bucket",
+      "state": "parked_hardware_mismatch_and_failed_demo",
+      "title": null,
+      "readme_present": true,
+      "reported_scores": null,
+      "validated_for_goal": false
+    },
+    {
+      "folder": "reseat-shelf-prop-under-load",
+      "state": "held_do_not_submit",
+      "title": "Put a knocked-out prop back under a loaded shelf board",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "reset-shower-chair-short-leg",
+      "state": "submitted_waiting_first_review",
+      "title": "Reset a shower chair with one short leg",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: 0.0; demo: 1.0",
+      "validated_for_goal": true,
+      "evidence_file": "pipeline/reviews/reset-shower-chair-short-leg-codex.json",
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2406",
+      "media": "M-HPCCAM",
+      "intake": "TK-C73B5N"
+    },
+    {
+      "folder": "restack-shifted-middle-carton",
+      "state": "rejected_final_do_not_resubmit",
+      "title": "Straighten a stack of three cartons whose middle carton has slid out from under the top one",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: 0.0; demo: 1.0",
+      "validated_for_goal": false,
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2400",
+      "reviewed_at": "2026-11-17T03:04:39Z"
+    },
+    {
+      "folder": "shelve-tool-tin-with-unlatched-lid",
+      "state": "held_do_not_submit",
+      "title": "Shelve a heavy tool tin whose lid is not latched, gripping the tin and not the lid",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "shut-off-locked-pre-rinse-sprayer",
+      "state": "rejected_final_do_not_resubmit",
+      "title": "Shut off a pre-rinse spray valve left locked on over a dish sink",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run:0.0; demo:1.0",
+      "validated_for_goal": false,
+      "evidence_file": "pipeline/validation/shut-off-locked-pre-rinse-sprayer/v3/evidence.json",
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2418",
+      "intake": "TK-83975C",
+      "media": "M-SJ2RCR",
+      "head": "176f6622e6ca9e01ab214d1dd91e8a712de9b7de",
+      "physical_validation_completed": true,
+      "reviewed_at": "2026-11-17T22:37:27Z",
+      "rejection_reason": "Importance: locked-on pre-rinse valve recovery not established as core regular work for500000 workers.",
+      "review_evidence": "pipeline/reviews/shut-off-locked-pre-rinse-sprayer/pr-2418-latest.json"
+    },
+    {
+      "folder": "slide-mug-off-retaining-rod",
+      "state": "held_do_not_submit",
+      "title": "Free a mug whose handle is cocked on a loose retaining rod, without dragging the rod out of its brackets",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: pending; demo: 1.0",
+      "validated_for_goal": false
+    },
+    {
+      "folder": "untangle-two-wire-hangers",
+      "state": "parked_failed_contact_feasibility",
+      "title": null,
+      "readme_present": true,
+      "reported_scores": null,
+      "validated_for_goal": false,
+      "evidence_file": "tasks/untangle-two-wire-hangers/VALIDATION.md"
+    },
+    {
+      "folder": "reseat-robot-vacuum-brush",
+      "state": "contact_prototype_unvalidated",
+      "validated_for_goal": false,
+      "readme_present": true,
+      "evidence_file": "pipeline/reviews/reseat-robot-vacuum-brush-codex.json"
+    },
+    {
+      "folder": "recover-backed-out-robot-connector-contact",
+      "source_candidate": "SR-045",
+      "state": "fullrobot_press_failed_physical_tool_slip_neighbor_probe_access_unresolved_driver_support_diagnostic_running",
+      "validated_for_goal": false,
+      "evidence_file": "pipeline/pdf-screening/sr045-connector-contact/evidence.json"
+    },
+    {
+      "folder": "restore-slipped-bowden-tube-on-robot-hand",
+      "source_candidate": "SR-048",
+      "state": "parked_material_and_coupled_hand_fidelity_gate_component_controls_archived",
+      "validated_for_goal": false,
+      "evidence_file": "pipeline/pdf-screening/sr048-bowden/physics-calibration-summary.json"
+    },
+    {
+      "folder": "start-car-with-jammed-steering-lock",
+      "state": "submitted_waiting_first_review",
+      "validated_for_goal": false,
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2477",
+      "intake": "TK-89FRWD",
+      "note": "Submitted by parallel team worker. Both final GPU demos recovered (1.0 at389steps), exact published media match, and history-linked comment-only source equivalence documented. Still uncounted: UNECE2.45Nm incorrect-key resistance does not establish correct-key damage onset. Pending first review: no push.",
+      "evidence_file": "pipeline/reviews/start-car-with-jammed-steering-lock-root-audit.json"
+    },
+    {
+      "folder": "clear-tie-tail-from-jetson-fan",
+      "state": "submitted_waiting_review",
+      "title": "Clear a cable-tie offcut from a Jetson controller fan",
+      "readme_present": true,
+      "reported_scores": "Dream-1 run: 0.0; demo: 1.0",
+      "validated_for_goal": true,
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2500",
+      "task_id": "TK-SM6ETU",
+      "evidence_file": "pipeline/pdf-screening/sr080-fan/final-submission-evidence.json",
+      "validation_basis": "Twofullindependentv4physicsdemos1.0; noncollidinglabel-onlyv5changebyte-equivalenceproof; corrected-scenev5demo1.0; idle/forceful0,held/handsnear.3; genuinev5Dream0; source/media/noveltypass. Rootviewedv4A,v5demo,v5Dreamandscoreraudit; agentviewedremainingcontrols."
+    },
+    {
+      "folder": "clear-utensil-from-dishwasher-spray-arm",
+      "source_candidate": "SR-012",
+      "state": "submitted_waiting_first_review",
+      "validated_for_goal": true,
+      "evidence_file": "pipeline/pdf-screening/sr012-dishwasher/final-submission-evidence.json",
+      "demo_scores": [
+        1.0,
+        1.0
+      ],
+      "model_run": "pipeline/pdf-screening/sr012-dishwasher/dream-final-run.json",
+      "reported_scores": "Dream-1 run: 0.0; demo: 1.0",
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2520",
+      "head": "141edf12a28b6c22f668a04858272d43c1370fd4",
+      "media": "M-NCAQDB",
+      "intake": "TK-E72LCU"
+    },
+    {
+      "folder": "clear-grain-under-balance-pan",
+      "state": "submitted_waiting_first_review",
+      "validated_for_goal": true,
+      "reported_scores": "Dream-1 run: 0.0; demo: 1.0",
+      "evidence_file": "pipeline/pdf-screening/sr083-balance/root-final-dream-review.json",
+      "title": "Restore accurate weighing with a trapped grain under the balance pan",
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2544",
+      "media": "M-APKAYD",
+      "head_sha": "b797350070bdc65fa0726de36361b906b5c4f9a7",
+      "validated_at": "2026-11-17T22:48:11.973843+00:00",
+      "intake": "TK-GHB9F4"
+    },
+    {
+      "folder": "replace-worn-crutch-ferrule",
+      "source_candidate": "SR-008",
+      "state": "submitted_waiting_first_review",
+      "validated_for_goal": true,
+      "demo_scores": [
+        1.0,
+        1.0
+      ],
+      "demo_steps": [
+        1627,
+        1627
+      ],
+      "evidence_file": "pipeline/pdf-screening/sr008-final-submission-evidence.json",
+      "final_package_review": "pipeline/pdf-screening/sr008-final-source-review/final-root-package-review.json",
+      "model_launch": "pipeline/pdf-screening/sr008-final-dream/launch.json",
+      "note": "Two full repairs and nine matching controls; final source/visual/contact/novelty checks; genuine Dream and published26-file package verified. Visibility and rigid-contact limitations documented. Pending review; no push.",
+      "reported_scores": "Dream-1:0.0/1680; two full demos1.0/1627 each",
+      "pr": "https://github.com/robocurve/benchmark-tasks/pull/2609",
+      "intake": "TK-EYFPAE",
+      "media": "M-BBRSUA",
+      "head_sha": "f8074a16c01a57f1f35b9f63e4b324c58f1baa3a",
+      "validated_at": "2026-11-18T08:16:22.382932+00:00"
+    }
+  ],
+  "last_checked_at": "2026-11-17T20:05:59.046145+00:00",
+  "updated_at": "2026-11-18T08:16:22.382932+00:00"
+}

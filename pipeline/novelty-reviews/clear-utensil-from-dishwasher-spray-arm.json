@@ -1,0 +1,86 @@
+{
+  "checked_at": "2026-11-19T04:45:28.479796+00:00",
+  "decision": "clear",
+  "queries": [
+    "dishwash|spray arm|utensil",
+    "jam|trap|obstruct|rack|enclos|extract",
+    "RoboCasa LoadDishwasher source and task catalog",
+    "BEHAVIOR dishwasher task catalog",
+    "RoboARC cast-keyhole, interlocked-claws and hedgehog-in-cage official instruction definitions"
+  ],
+  "nearest_prs": [
+    {
+      "number": 851,
+      "state": "CLOSED final rejection",
+      "skill": "Load four items in a 0.6-scale washer; ordinary loading plus rotation check."
+    },
+    {
+      "number": 1393,
+      "state": "CLOSED unmerged",
+      "skill": "Put dropped basket wheels back on rail; basket realignment, not utensil extraction."
+    },
+    {
+      "number": 1964,
+      "state": "CLOSED final rejection",
+      "skill": "Reinstall two-part filter; weak relatability precedent acknowledged."
+    },
+    {
+      "number": 2221,
+      "state": "CLOSED final rejection",
+      "skill": "Load two cups and close upper rack; duplicate of RoboCasa LoadDishwasher."
+    },
+    {
+      "number": 2385,
+      "state": "OPEN awaiting review",
+      "skill": "Hang loaded caddy over wire rail by two hooks; no trapped utensil or appliance cavity."
+    }
+  ],
+  "physical_skill": "Extract the actual unscaled tapered spatula through closely spaced rack wires inside a full-size countertop-appliance opening while managing an unconstrained wheeled basket; regrasp outside enclosure and restore free spray-arm rotation.",
+  "valid_shortcuts": [
+    "One-arm recovery is allowed; bimanual motion is not a scoring requirement.",
+    "Rack may be pulled farther out or lifted if safely returned; no software guide locks it to the case. This still requires unthreading the utensil from the wire cage.",
+    "Pushing the rack home with the unrecovered utensil was physically tested; initialized recorded endpoint stalls the arm at 35.47 degrees under the same 1mNm test.",
+    "Setting the basket aside is permitted; ordinary utensil loading is not sufficient to undo the starting wire engagement.",
+    "Any extraction sequence that leaves the utensil released on the counter and rack home can score; no prescribed hand sequence."
+  ],
+  "distinct_from_nearest": "RoboCasa LoadDishwasher and PR2221 are free-object placement followed by rack/door closure. This source starts with a real thin wooden handle threaded below the basket floor into the arm sweep. Clearance recovery, not changing dish arrangement, is the central manipulation. PR2385 is two-hook hanging on an exposed draining rack, not removal through a basket inside an enclosure. No pending/accepted counterpart was found in the refreshed board index; category acceptance still requires official review.",
+  "limitations": [
+    "Internal wire/arm/rail dimensions are inferred from manufacturer photographs and declared; not manufacturer CAD.",
+    "Full-size countertop form is documented; no claim to a floor-standing dishwasher.",
+    "Novelty clearance is a reasoned assessment, not a guarantee of acceptance."
+  ],
+  "evidence": [
+    "home-obstruction-result.json",
+    "sdf-return-fault-result.json",
+    "spatula-collision-audit.json",
+    "final1-result.json",
+    "idle-final-result.json",
+    "held-counter-isolated-result.json",
+    "final2-result.json",
+    "submission-quota-audit.json"
+  ],
+  "external_sources": [
+    "https://havalab.com/products/r01-dishwasher",
+    "https://havalab.com/products/dish-rack-for-r01-dishwasher",
+    "https://havalab.com/products/lower-spray-arm-for-r01-dishwasher",
+    "https://robocasa.ai/docs/build/html/tasks/composite_tasks.html",
+    "https://github.com/robocasa/robocasa/blob/main/robocasa/environments/kitchen/composite/loading_dishwasher/load_dishwasher.py",
+    "https://behavior.stanford.edu/knowledgebase/tasks/index.html",
+    "https://www.mieleusa.com/support/customer-assistance/dishwashing-1316/all/spray_arm_bottom-92734424715"
+  ],
+  "task_py_sha256": "8f33138a7549f67402607f50d15d7ec8d626dbdbe47299a5a2f997e6f2375ef6",
+  "task_metadata_sha256": "eabe4102d07f3cb3772da48f87d26fe79b538c3b915437da73862b814e632da9",
+  "additional_benchmark_review": {
+    "source_index": "pipeline/benchmark-references/roboarc/index.json",
+    "reviewed_families": [
+      "cast-keyhole01",
+      "interlocked-claws01",
+      "hedgehog-in-cage01"
+    ],
+    "assessment": "These test removal of interlocking puzzle pieces or a spiked ball from a cage. Clearance planning is a shared broad ability. This task requires recovery of an ordinary utensil from a free wheeled rack within a full-size appliance, followed by supported rack return; source mechanism and its valid alternatives were checked. Neither functional rotation testing nor a release requirement alone is claimed as the novelty. No exact task counterpart identified; broad skill overlap remains a review risk.",
+    "decision": "retain prior clear assessment; official importance decision remains pending"
+  },
+  "revision_notes": [
+    "2026-11-18 revision for PR 2520 review: refreshed known_tasks.tsv; grep dishwash|spray arm|utensil|spatula finds no new pending/accepted counterpart (nearest unchanged: 851, 1393, 1964, 2221 rejected/closed). Scene, instruction and scorer code unchanged; only real-trial preparation/measurement text added to task.json setup/scoring/reset_notes and README."
+  ]
+}

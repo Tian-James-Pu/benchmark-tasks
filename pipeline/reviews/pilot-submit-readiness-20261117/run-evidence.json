@@ -1,0 +1,258 @@
+[
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-094655-gpu1-3980079",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-094655-gpu1-3980079/adhoc_1f50788a.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-094655-gpu1-3980079/records/20261117_144656_de84b671/scene-0-e0/record.json",
+    "score": 1.0,
+    "terminal": {
+      "reason": "success",
+      "detail": null,
+      "terminated": true,
+      "truncated": false
+    },
+    "actions": 1613,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+    "task_sha256_prefix": "c872dec96908",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095641-gpu1-4082659",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095641-gpu1-4082659/adhoc_5b26ee01.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095641-gpu1-4082659/records/20261117_145641_0d36a70b/scene-0-e0/record.json",
+    "score": 1.0,
+    "terminal": {
+      "reason": "success",
+      "detail": null,
+      "terminated": true,
+      "truncated": false
+    },
+    "actions": 1613,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+    "task_sha256_prefix": "df1941871a4b",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095701-gpu2-4087488",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095701-gpu2-4087488/adhoc_693a3139.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095701-gpu2-4087488/records/20261117_145701_a94dd936/scene-0-e0/record.json",
+    "score": 0.0,
+    "terminal": {
+      "reason": "policy_stop",
+      "detail": null,
+      "terminated": false,
+      "truncated": true
+    },
+    "actions": 1261,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-redteam_none",
+    "task_sha256_prefix": "a910e522b70e",
+    "matches_current_task": false,
+    "guard_names": [],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095721-gpu3-4092314",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095721-gpu3-4092314/adhoc_b3c63369.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095721-gpu3-4092314/records/20261117_145721_9e8af40e/scene-0-e0/record.json",
+    "score": 0.25,
+    "terminal": {
+      "reason": "policy_stop",
+      "detail": null,
+      "terminated": false,
+      "truncated": true
+    },
+    "actions": 1078,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-redteam_early",
+    "task_sha256_prefix": "0d8d095a6d4a",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095741-gpu3-4096795",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095741-gpu3-4096795/adhoc_9a7981e4.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-095741-gpu3-4096795/records/20261117_145741_28584a07/scene-0-e0/record.json",
+    "score": 0.0,
+    "terminal": {
+      "reason": "policy_stop",
+      "detail": null,
+      "terminated": false,
+      "truncated": true
+    },
+    "actions": 730,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-redteam_onearm",
+    "task_sha256_prefix": "13957a52c081",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-100256-gpu0-4153427",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-100256-gpu0-4153427/adhoc_16946f3e.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-100256-gpu0-4153427/records/20261117_150257_a6dc7887/scene-0-e0/record.json",
+    "score": 1.0,
+    "terminal": {
+      "reason": "success",
+      "detail": null,
+      "terminated": true,
+      "truncated": false
+    },
+    "actions": 1613,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+    "task_sha256_prefix": "42aeeb3a94aa",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-101439-gpu1-76658",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-101439-gpu1-76658/adhoc_c4ac4eee.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-101439-gpu1-76658/records/20261117_151439_5eed0e60/scene-0-e0/record.json",
+    "score": 1.0,
+    "terminal": {
+      "reason": "success",
+      "detail": null,
+      "terminated": true,
+      "truncated": false
+    },
+    "actions": 1613,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+    "task_sha256_prefix": "42aeeb3a94aa",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-103901-gpu2-333987",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-103901-gpu2-333987/adhoc_28827ab7.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-103901-gpu2-333987/records/20261117_153901_8025a536/scene-0-e0/record.json",
+    "score": 1.0,
+    "terminal": {
+      "reason": "success",
+      "detail": null,
+      "terminated": true,
+      "truncated": false
+    },
+    "actions": 1613,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+    "task_sha256_prefix": "9fcff40d1d0a",
+    "matches_current_task": true,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104035-gpu0-349066",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104035-gpu0-349066/adhoc_cbdebc52.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104035-gpu0-349066/records/20261117_154035_07b03f1a/scene-0-e0/record.json",
+    "score": 0.0,
+    "terminal": {
+      "reason": "policy_stop",
+      "detail": null,
+      "terminated": false,
+      "truncated": true
+    },
+    "actions": 660,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-redteam_none",
+    "task_sha256_prefix": "bac1c2cd4130",
+    "matches_current_task": false,
+    "guard_names": [],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104055-gpu2-353809",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104055-gpu2-353809/adhoc_5d5ce182.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104055-gpu2-353809/records/20261117_154055_7412a691/scene-0-e0/record.json",
+    "score": 0.0,
+    "terminal": {
+      "reason": "policy_stop",
+      "detail": null,
+      "terminated": false,
+      "truncated": true
+    },
+    "actions": 1065,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-redteam_onearm",
+    "task_sha256_prefix": "ba06a7727613",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104115-gpu3-358835",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104115-gpu3-358835/adhoc_06f7ab44.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104115-gpu3-358835/records/20261117_154115_2b7d04c1/scene-0-e0/record.json",
+    "score": 0.0,
+    "terminal": {
+      "reason": "policy_stop",
+      "detail": null,
+      "terminated": false,
+      "truncated": true
+    },
+    "actions": 908,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-redteam_careless",
+    "task_sha256_prefix": "4121a657d7f6",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104135-gpu1-363595",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104135-gpu1-363595/adhoc_1f30f215.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104135-gpu1-363595/records/20261117_154135_e12d011f/scene-0-e0/record.json",
+    "score": 0.25,
+    "terminal": {
+      "reason": "policy_stop",
+      "detail": null,
+      "terminated": false,
+      "truncated": true
+    },
+    "actions": 2094,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-redteam_early",
+    "task_sha256_prefix": "73b533930d17",
+    "matches_current_task": false,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  },
+  {
+    "folder": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104627-gpu2-416719",
+    "eval_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104627-gpu2-416719/adhoc_860949b7.json",
+    "record_file": "/home/mzhang/yam-eval/relight-a-water-heater-pilot/demo-1117-104627-gpu2-416719/records/20261117_154627_01c137b0/scene-0-e0/record.json",
+    "score": 1.0,
+    "terminal": {
+      "reason": "success",
+      "detail": null,
+      "terminated": true,
+      "truncated": false
+    },
+    "actions": 1613,
+    "environment_id": "isaaclab-arena-0.3.1-yam-bimanual-station-calibrated-task-task",
+    "task_sha256_prefix": "9fcff40d1d0a",
+    "matches_current_task": true,
+    "guard_names": [
+      "delta-limit"
+    ],
+    "denials": 0
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-19T06:07:01.612520+00:00",
+  "decision": "clear",
+  "candidate": "lean-a-standing-tile-into-its-rack",
+  "physical_skill": "Two-handed carry of a free-standing 30x15x0.8 cm, 0.75 kg ceramic tile balanced on its long edge (falls past about 3 degrees of tilt), set down upright in a 4.5 cm slot behind a toe strip, then a controlled tip-back onto two posts with a loosened caging grip, releasing only once its weight is on the posts and moving the hands 3 cm clear.",
+  "valid_shortcuts": [
+    "One arm is allowed: a one-arm off-centre pinch scored 0.5 (leaning on both posts, short of the 1.0 placement); a one-arm route that meets every 1.0 condition would rightly score 1.0.",
+    "Tipping the tile back onto the posts without the toe strip slot (from in front of the strip) scores 0.5, not 1.0.",
+    "Grippers left around the leaning tile score 0 (hands-clear test, fingertips within 3 cm); pushing the standing tile's top makes it fall and scores 0; doing nothing scores 0.",
+    "A fall is latched and cleared only in the reset hook, so standing the tile back up after a fall cannot recover credit."
+  ],
+  "queries": [
+    "tile|lean|rack|sheet|glass pane|stand.*edge|on edge|propped|plate rack|dish rack",
+    "upright|topple|tipping|on its edge|picture|mirror|frame against|cutting board|balanced",
+    "own folders: chock-leaning-panel-in-floor-channel, rechock-two-panes-one-prop (#2401), reseat-board-missed-support (#2398)",
+    "refresh 19 Nov: PRs above 2560 grepped for upright|stand|lean|plate|frame|board|panel|sheet|pane|glass|mirror|tray|propped|against"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 1147,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1147",
+      "state": "closed",
+      "comparison": "Unracks panels from a leaning rack, standing each upright on a mat with a tilt limit; the skill is choosing and removing panels that lean on the target. Ours carries a free-standing tile into a rack and transfers it from balanced-upright to leaning; the reverse transfer with a release-timing difficulty."
+    },
+    {
+      "pr": 931,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/931",
+      "state": "accepted",
+      "comparison": "Glass pane lifted from a sash with suction lifters and laid flat on bearers; tool operation (lever lock) and flat placement. Ours has no tool and the difficulty is the unstable on-edge balance through the carry and the lean-back release."
+    },
+    {
+      "pr": 951,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/951",
+      "state": "accepted",
+      "comparison": "A tipped case leans on a locker door; opening the door while controlling the case. Shares controlling a leaning object, but the object, mechanism (door) and goal differ."
+    },
+    {
+      "pr": 1387,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1387",
+      "state": "accepted",
+      "comparison": "Tall canister leaned under a low shelf then stood up; inverse direction (lean then upright) and clearance-driven. Ours ends in a lean on supports and is about release under marginal stability."
+    },
+    {
+      "pr": 2401,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2401",
+      "state": "final rejection (ours)",
+      "comparison": "Small acrylic offcuts in a rack re-chocked with one prop block: support handover sequencing on a deliberately unstable strip. Ours is a real-scale tile with real mass, no built-in instability (a tile on its edge is naturally marginal), and the skill is carry and lean-back release, not chock handover."
+    },
+    {
+      "pr": 2446,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2446",
+      "state": "pending",
+      "comparison": "Press a leaning row of books upright and hold it while inserting a book; hold-one-while-working skill. Ours has no insertion and ends with the object deliberately leaning."
+    },
+    {
+      "pr": 2694,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2694",
+      "state": "revising",
+      "comparison": "Hang a framed picture on a wall hook by its wire, level, then let go: a hanging/hook-engagement skill on a vertical wall. Ours carries an edge-balanced tile into a floor slot and transfers it from upright to leaning on two posts; no hook, wire or levelling."
+    }
+  ],
+  "distinct_from_nearest": "No accepted or pending task on the refreshed board carries a sheet or tile that stands balanced on its edge into a lean rack and releases it only after it leans. Own held folder chock-leaning-panel-in-floor-channel (not submitted at check time) stands a fallen panel up in a channel and secures it with a chock: different end state and mechanism. Weakness noted: importance rests on everyday relatability of leaning flat objects, not an occupation or injury hazard. Refreshed 19 Nov: no new pending or accepted task with an edge-standing tile/sheet carried into a lean rack; own chock-leaning-panel-in-floor-channel has not been submitted.",
+  "task_py_sha256": "7fe03d9457e41078eac647dab7bc9f29f3118a697579a16d5b43e7ea036a8910",
+  "task_metadata_sha256": "0033d91c14ef3e3861af85e24f93900094663de537ee346f6adc2c4544ca4de4"
+}

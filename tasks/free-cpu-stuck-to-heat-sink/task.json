@@ -1,0 +1,21 @@
+{
+  "title": "Free a server processor stuck to its heat sink by old paste: twist the seal loose, then tray it contact side up",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "data centre",
+    "server CPU",
+    "heat sink",
+    "thermal paste",
+    "twist to release",
+    "handling by the edges"
+  ],
+  "instruction": "The processor came out of the socket stuck to the heat sink. Get it off the heat sink and into the empty tray pocket, contact side up.",
+  "context": "When a server's heat sink is lifted, old thermal paste often brings the processor with it. Dell's service manual says to twist or slide it off, never pry it off; Lenovo's says never to touch the contacts. Servicing AI servers means pulling and reseating processors routinely.",
+  "setup": "Cm from the midpoint between the arm bases (x forward, y left); heights above the table. 1U passive heat sink for LGA3647 (as Supermicro SNK-P0067PS), aluminium, 455 g, 10.8 x 7.8 x 2.55, lying upside down (24 fins 0.08 thick down on the table, 0.35 thick base on top), centre x 30, y -2, long side along y. Grey paste layer 6.8 x 5.2 on the base. Intel Xeon Scalable processor (LGA3647), 50 g, package 7.6 x 5.65, 0.55 thick: nickel-plated copper heat spreader (6.4 x 4.8) down on the paste, green substrate with 192 gold lands up; centred on the heat sink, long side along y, held by the paste. Processor tray, black conductive plastic, fixed to the table, centre x 21, y -17: 11 x 9 floor 0.3 thick; pocket 8.1 x 6.1 (long side along y) bounded by locating walls 0.4 high, 0.3 thick across both ends and along both long sides, except a 4.8 long finger cut-out in the middle of each long side. Distractors (ignored by scoring): Torx T30 screwdriver, 22.4 long, 80 g, at x 10, y 17, along x; ceramic mug, 11.4 x 9 x 8, 300 g, at x 46, y 18.",
+  "scoring": "From the video (top and side views, ruler, protractor). Seal broken: the processor turned at least 3 deg each way relative to the heat sink, or slid 5 mm across it. Harms, latched for the whole run: pried (any corner of the processor's underside more than 1.5 mm off the heat sink's base while the seal holds), contacts touched (a fingertip on the gold land side more than 8 mm in from the package edge; gripping the edges is allowed), dropped (processor falling faster than 0.5 m/s or tilted past 30 deg). Score: 0 with any harm before full credit, or seal not broken. 0.25: seal broken. 0.5: then lifted clear (underside 15 mm above the base, or its centre 7 cm from the heat sink's centre). 1.0: then in the pocket for 2 s: centre within 4 mm of the pocket centre along x and along y, long side within 6 deg of the pocket's (either end first), tilt under 2 deg, every underside corner within 1.5 mm of the pocket floor, moving under 1 cm/s, no fingertip within 3 cm. Contact side down is a 180 deg tilt: not seated.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Paste is consumed each trial. Wipe both faces with isopropyl alcohol, put a 4 mm dot (0.1 ml) of the same compound on the heat spreader, press the heat sink on with about 100 N for 30 s, wait 10 minutes, turn it fins down at its taped outline. Check: lifting the processor 1 cm by its long edges brings the heat sink up with it; otherwise re-paste. Mark a line across the processor's edge and the heat sink's base to read the turn or slide. The tray is taped down.",
+  "fidelity": "Real sizes and masses; heat sink, processor and tray are rigid primitives (no SimReady models exist); fins are drawn, collision is one block. Paste is not a fluid: a 5 N internal force holds the processor on the base until it has turned 3 deg each way or slid 5 mm; paste friction 0.3. Lifting an edge 1.5 mm while bonded counts as prying. The heat sink is loose; the tray is fixed. No force sensing, pin damage or ESD model.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-ZNKKZC"
+}

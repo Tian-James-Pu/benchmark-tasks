@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-11-17T03:39:11.332557+00:00",
+  "task_py_sha256": "3cb79021af9884a280cfdd376a6807f1c3c1320f4addaf0a51f48a7366748df8",
+  "ready": false,
+  "gravity_contact_probe": {
+    "directory": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-223520-gpu1-1073904",
+    "score": 0,
+    "steps": 62,
+    "visual_review": "Full-size inverted chassis, loose canted roller and separate cover visible; objects remain stable. Scoring intentionally disabled. No manipulation or assembly feasibility demonstrated."
+  },
+  "novelty": "Read pending PR2033 actual README/diff; trapped-remote removal and restart differs from brush drive/bearing/cover servicing. See concept for source comparison.",
+  "remaining": [
+    "Roller extraction/insertion through real contacts",
+    "Cover hooks and catch engagement/retention",
+    "Scorer and adversarial validation",
+    "Two final successful demos and model evaluation"
+  ],
+  "grasp_ik": {
+    "failed_top_down": "37 mm position error; not run in simulator",
+    "passed_35_degree_approach": {
+      "position_error_mm": 0.08130706267830878,
+      "orientation_error_deg": 0.01370033769302205,
+      "joint_limits": true,
+      "probe": "probe_pick_tilted.py"
+    },
+    "note": "Only arm plan changed; chassis, cover and roller geometry unchanged."
+  },
+  "roller_extraction_probe": {
+    "directory": "/home/mzhang/yam-eval/reseat-robot-vacuum-brush/demo-1116-224618-gpu0-1203072",
+    "steps": 281,
+    "score": 0,
+    "score_disabled": true,
+    "gripper_opening_m": -0.027,
+    "visual_review": "Six-frame sheet and world pose logs show roller lifted above its bay at10s; source scorer intentionally zero. Full insertion and cover retention are unproven.",
+    "roller_height_at10s_m": 0.8904348,
+    "starting_roller_height_m": 0.8519907
+  }
+}

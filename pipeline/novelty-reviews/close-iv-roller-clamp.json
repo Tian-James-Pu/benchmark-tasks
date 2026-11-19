@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-19T05:47:41.712255+00:00",
+  "decision": "clear",
+  "queries": [
+    "known_tasks.tsv refreshed this session: roller, clamp (excluding bar/C/hose/pipe/toggle/vise clamps), thumbwheel",
+    "IV, infusion, drip, cannula, giving set, administration set, saline",
+    "gh pr view bodies of 1096, 2031, 2131, 1966 grepped for roller/clamp"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2131,
+      "state": "OPEN, pending (revision TK-6EYMNA awaiting review; four earlier rounds Not accepted)",
+      "read": "Title, body and all review comments read this session: rest a manikin's cannulated forearm on a foam wedge, lifting it about the elbow and moving the looped IV line clear; voids on cannula-site force, cannula pull over 4.45 N, wrist bend or speed. Body does not mention a roller clamp.",
+      "comparison": "Shared context only: an IV line to a cannula on a forearm, with a pulled line as a harm condition. Its skill is lifting and placing a limb (patient handling); ours never touches the arm and is fine control of a 6 g clamp's wheel against 3 N while keeping the loose clamp from sliding along its line. Different object, different action, different success state (forearm on wedge vs wheel at its stop). The tug-the-line void is a common safety guard, not the task. Honest risk: a reviewer may group both as 'IV line care near a cannula'; the manipulated part and goal differ completely."
+    },
+    {
+      "pr": 1966,
+      "state": "MERGED",
+      "read": "Body read this session: load an IV set into an Alaris pump module, upper fitment into its recess, then the safety clamp pressed past sprung pins.",
+      "comparison": "Pump loading; its 'safety clamp' is a slide fitment pressed into a recess. No roller wheel is rolled, no loose clamp body on a gravity line."
+    },
+    {
+      "pr": 1013,
+      "state": "MERGED",
+      "read": "Title (known_tasks.tsv): scrub an IV connector's hub before attaching a flush syringe.",
+      "comparison": "Scrubbing and luer connection, not clamp operation."
+    },
+    {
+      "pr": 1096,
+      "state": "OPEN, Not accepted (other team revising)",
+      "read": "Body read this session: spike an IV bag, squeeze the drip chamber; no roller/clamp mention.",
+      "comparison": "Spiking and priming; no clamp operated."
+    },
+    {
+      "pr": 2031,
+      "state": "OPEN, Not accepted (other team revising)",
+      "read": "Body read this session: remove caps, seat spike, prime chamber to a liquid height; 'clamp' appears only as a word inside unrelated text.",
+      "comparison": "Spiking/priming; no roller wheel manipulation."
+    },
+    {
+      "pr": 2089,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Body: spike a saline bag with a giving set keeping the spike sterile.",
+      "comparison": "Spiking; no clamp."
+    },
+    {
+      "pr": 2760,
+      "state": "OPEN, pending",
+      "read": "Title: set up oxygen at 2 L/min, push cannula tubing onto a flowmeter nipple, turn its knob.",
+      "comparison": "Nasal-cannula oxygen; flowmeter knob, not an IV roller clamp."
+    },
+    {
+      "pr": 540,
+      "state": "CLOSED, rejected",
+      "read": "Title: clip an IV line to the mattress with a slack loop.",
+      "comparison": "Line routing, not closing a clamp."
+    }
+  ],
+  "physical_skill": "Roll a 12 mm wheel 22 mm against about 3 N of joint friction on a 6 g clamp lying loose on soft tubing, keeping the body from sliding along the line (by pressing it to the table through the wheel, or by holding its walls), without tugging the line to the cannula, then let go.",
+  "valid_shortcuts": "GPU red team on this exact task.py (sha unchanged since): nothing 0; pinch tubing upstream and push wheel 0; careless push 0; stopped part way 0.4; hand left on wheel 0; tug patient line 0 (latched); lift and carry 0; drag while pressed 0; light touch 0. Valid solutions: one-handed press-and-roll (demo 1.0 twice) or two-handed hold-and-roll. Dream-1 this session: 0 (hovered beside the clamp, never rolled the wheel).",
+  "distinct_from_nearest": "No known task (accepted, pending, revising) operates an IV roller clamp's wheel; IV tasks on the board are pump loading, hub scrubbing, spiking/priming and limb positioning (2131). 2131 is the nearest live pending PR and shares only the IV-line-to-cannula context and a line-pull void. Residual risks: reviewers may call clamp closing a minor step or judge difficulty insufficient.",
+  "task_py_sha256": "cdebd5188d51ae424b658beda1d446b5b56b033ad41befe15c439d9f26cb1ba8",
+  "task_metadata_sha256": "ac67b8e95edff9589466cfb2f9b5f6242748da164553be16789a770075b7fea9",
+  "note": "Hashes computed after the Dream-1 scores edit (scores/media excluded by definition). Importance sources re-verified this session (O*NET pages, BD priming tip sheet and pump-module FAQ PDFs, opentextbc via archive, ECRI blog)."
+}

@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-11-17T22:14:16.981690+00:00",
+  "current_owner_file": "pipeline/claims/relight-a-gas-water-heater-s-pilot-after-a-shutdown-hold-the/owner",
+  "current_owner": "claude",
+  "current_status": "held: built and validated; waiting for2477 review; Dream not run",
+  "documented_mechanism": {
+    "source": "pipeline/CODEX.md:92",
+    "description": "Atomic mkdir for new claims; owner identifies holder; one-line status coordinates progress and Claude tracker. CODEX.md forbids editing another owner task/claim. No general automatic transfer-on-idle rule found."
+  },
+  "existing_takeover_precedents": [
+    {
+      "path": "pipeline/claims/lift-the-rocking-corner-of-a-shower-chair-and-reset-its-shor/takeover.json",
+      "basis": "Explicit user takeover authorization, stopped Claude session-limit evidence and no matching runner."
+    },
+    {
+      "path": "pipeline/claims/free-a-kitchen-drawer-that-a-ladle-has-jammed-a-few-centimet/takeover.json",
+      "basis": "Explicit user/root authorization, worker session-limit timestamp and no remaining matching mutation process."
+    },
+    {
+      "path": "pipeline/claims/re-clip-a-cabinet-door-that-has-dropped-off-its-lower-clip-o/takeover.json",
+      "basis": "Explicit user/root authorization and stopped Claude session; preserves previous owner."
+    }
+  ],
+  "process_evidence": {
+    "pid": 2417529,
+    "user": "mzhang",
+    "command": "claude",
+    "cwd": "/home/mzhang/code/benchmark-tasks",
+    "lock": ".claude/scheduled_tasks.lock",
+    "lock_session_id": "c5e8a00a-04bc-4d39-bc84-61696031f06f",
+    "lock_pid_matches_live_process": true,
+    "matching_pilot_runner_found": false,
+    "limitation": "Live repository Claude process does not prove active pilot editing; lack of a pilot runner does not prove owner abandoned the claim."
+  },
+  "root_next_step": "Coordinate explicit ownership transfer or scoped edit permission through existing root/owner channel before mutations; preserve previous owner and record authorization/time/basis if takeover is actually authorized. No need to ask user again if root already has applicable takeover authorization and verifies it covers this active owner.",
+  "actions_taken": "Read only; no messages to external owner/service, task edits, claim edits, process signals, or novelty gate changes."
+}

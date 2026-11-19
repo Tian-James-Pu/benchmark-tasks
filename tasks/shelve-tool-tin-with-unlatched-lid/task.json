@@ -1,0 +1,20 @@
+{
+  "title": "Shelve a 1.2 kg steel tool tin whose lift-off lid only rests on top, without the lid coming off",
+  "category": "Societal relatability",
+  "keywords": [
+    "loose lid",
+    "grasp choice",
+    "lift-off lid",
+    "heavy object",
+    "two-arm carry"
+  ],
+  "instruction": "Put the tool tin on the shelf without taking its lid off.",
+  "context": "A lift-off lid that only rests on its box comes away with any grip on it, so the box has to be held by its own walls, under the lid's edge. A long, 1.2 kg tin held by one hand off its middle swings down and its lid slides off.",
+  "setup": "Distances are from the line joining the two arm bases ('in front' is away from the robot) and from the midline between them; heights are above the table top. Tool tin (loose): a red enamelled steel box 22 cm long (left to right), 6 cm front to back and 7 cm tall, 1.2 kg with its drill bits, modelled as one solid block. It stands square to the table with its centre on the midline, 18 cm in front of the bases. Lid (loose): a grey steel lift-off lid 22 cm long, 5.4 cm front to back and 2.5 cm deep, 0.08 kg, modelled as a solid block. It rests on top of the tin, centred front to back and pushed 1.5 cm to the robot's right, so 1.5 cm of the tin's red top shows at its left end and the lid overhangs the right end by 1.5 cm; nothing fastens it. Tin and lid together are 9.5 cm tall. Shelf (fixed): a brown wooden board 30 cm wide (left to right), 14 cm deep and 3 cm tall, centred on the midline 33 cm in front of the bases, so its near edge is 5 cm beyond the tin's far face. Three distractors lie loose on the table behind the shelf, at least 6 cm from it, and scoring ignores them: a red ceramic mug (9 cm across, 8 cm tall, 11.4 cm with its handle, 0.30 kg) centred 48 cm in front of the bases and 24 cm left of the midline, handle toward the robot; a roll of clear packing tape (10 cm across, 5 cm tall, 0.06 kg) lying flat, centred 49 cm in front and 24 cm right of the midline; a Phillips PH2 screwdriver (18.8 cm long, 3.4 cm across its handle, 0.10 kg) lying left to right 48 cm in front, centred on the midline, handle to the robot's right. Both grippers start open at the ready pose, clear of everything. One fixed layout, shown in the screenshot.",
+  "scoring": "Judged from the video with a ruler and a protractor. The lid is on the tin while the lid's centre is over the tin's top face and the lid's underside is within 1 cm of that face. Fail (score 0 for the whole trial, whatever happens afterwards): at any moment the lid is not on the tin (so lifting it off and putting it back fails too), or the tin tilts more than 30 degrees from level. Otherwise, at the end, with the tin and lid at rest, the lid on, and no part of either gripper within 2 cm of the tin or the lid: 1.0 if the tin's base lies on the shelf top (within 3 mm), wholly inside the shelf's edges, and the tin is level within 3 degrees; 0.5 if the tin's lowest point is on the shelf top (within 3 mm) with its centre over the shelf, but part of its base overhangs a shelf edge or it is tilted more than 3 degrees; 0 in every other case (tin on the table or the floor, still moving, still held or touched, resting on something other than the shelf top, or more than 3 mm above it). The distractors do not affect the score. The trial ends early at 1.0 once that state has held for 3 seconds.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Stand the tin at its start position and lay the lid on it 1.5 cm to the right of centre. Nothing is consumed.",
+  "fidelity": "Approximate. Tin and lid are rigid box primitives of the stated masses: the tin is solid, its drill bits are not modelled, so a tilt past 30 degrees stands in for a spill. The lid has no rim or catches and is held only by gravity and friction. All surfaces have rubber-like friction (1.2/1.0), above painted steel. No force sensing. The mug, tape and screwdriver are NVIDIA SimReady props. One gripper exactly at the tin's middle can also carry it (sagging about 8 degrees).",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-ZXWFQ5"
+}

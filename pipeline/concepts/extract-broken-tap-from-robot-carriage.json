@@ -1,0 +1,36 @@
+{
+  "title": "Extract a broken tap from a robot travel-axis carriage",
+  "candidate": "SR-052",
+  "category": "Impact on AI timelines",
+  "justification": "The AR4 travel-track assembly manual specifies tapping the actual aluminum robot carriage. Extracting a broken tap could salvage that component. This resolves the earlier generic-block objection but does not automatically establish acceptance.",
+  "instruction": "Clear the damaged mounting hole so this robot carriage can be assembled.",
+  "fault": "One single broken straight-fluted tap fragment remains in a specified carriage mounting hole. Select the exact tap, break location and initial thread condition from defensible geometry.",
+  "objects": "Actual 304.8 x 152.4 x 6.35 mm aluminum carriage with the documented hole layout; matching Walton extractor, tap wrench and thread gauge. Support method and grasp feasibility remain unproven.",
+  "skill": "Register the extractor fingers with the recessed flutes, support them by seating the holder against the fragment and the sleeve against the work, then transmit reverse torque and remove the fragment while preserving the thread.",
+  "scoring": "Draft only: partial credit after measurable fragment extraction; full credit after capture and physical gauge fit. Define observable conditions and valid alternatives before implementation.",
+  "nearest": [
+    {
+      "pr": 936,
+      "decision": "Final rejection of hand tapping on importance. Actual robot hardware is new evidence, not automatic category clearance."
+    },
+    {
+      "own_candidate": "SR051",
+      "comparison": "External purchase on a damaged screw head differs from fingers inside tap flutes; both still need real torque transmission and complete extraction."
+    }
+  ],
+  "risks": [
+    "Exact finger dimensions and native tool access remain unresolved.",
+    "Unsupported finger bending is central: rigid fingers must not make the holder and sleeve irrelevant.",
+    "No arbitrary breakaway threshold or event-triggered thread release.",
+    "Thread integrity and gauge fit must be physical.",
+    "Complete current-board and popular-benchmark novelty comparison is still required."
+  ],
+  "sources": [
+    "https://raw.githubusercontent.com/Annin-Robotics/downloads/main/2025/07/Manual-AR4-Travel-Track.pdf",
+    "https://www.waltontools.com/tap-extractors/",
+    "https://www.waltontools.com/downloads/Walton-Instructions-Tap-Extractors.pdf"
+  ],
+  "state": "Claimed; building bounded native grasp/engagement gate. No validated repair.",
+  "checked_at": "2026-11-18T00:11:53.250263+00:00",
+  "selected_tap": "Guhring302 EDP9003020080000 M8x1.25 THREE straight flutes, HSS-E-PM TiCN; manufacturer rates aluminum. Supersedes steel-optimized803."
+}

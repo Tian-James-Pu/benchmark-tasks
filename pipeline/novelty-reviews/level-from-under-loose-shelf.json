@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-11-19T00:21:32.894436+00:00",
+  "decision": "clear",
+  "queries": [
+    "from under|out from|underneath|beneath|overhang|riser|low shelf|catch (all statuses, known_tasks.tsv refreshed this session)",
+    "lever|level|shelf with glass or loaded board",
+    "own PRs by the team account (gh pr list --author) for board-on-blocks and under-shelf variants",
+    "LIBERO/RoboCasa/BEHAVIOR titles: no extraction of a long item from under a loose loaded overhang found"
+  ],
+  "nearest_prs": [
+    {
+      "number": 2593,
+      "assessment": "Pending (other team): lift a floor-hole cover, take out a wrench, put the cover back with cleats seated. The cover is meant to be lifted and replaced; ours must not be lifted at all and the skill is a low sideways draw under an overhang. Different objects and skill."
+    },
+    {
+      "number": 2766,
+      "assessment": "Pending: draw a passport up out of a recessed deal tray under ticket-window glass. A flat item slid under a fixed barrier; ours is a long rigid tool under a loose, loaded shelf that the careless lift levers up. Related family, different mechanism and failure."
+    },
+    {
+      "number": 2184,
+      "assessment": "Final rejected (other team): pull a cable from under stacked cases without dragging or tipping them; closed as not sufficiently relatable. Closest concept: ours carries the same importance risk, so it is pitched on loose cupboard risers with a cited product, but reviewers may judge it the same way."
+    },
+    {
+      "number": 1790,
+      "assessment": "Final rejected: slide a monitor out from under a desk shelf to fit a light bar; niche accessory setup. Different objects; importance objection noted."
+    },
+    {
+      "number": 1387,
+      "assessment": "Accepted: lean a tall canister in over a shelf fence under a low shelf. Placing into a constrained space, not extracting from under a loose loaded shelf."
+    },
+    {
+      "number": 182,
+      "assessment": "Accepted: fish a charger out from behind a box by its cord. Retrieval past an obstacle by a flexible cord; ours is a rigid bar whose hidden end catches under a loose overhang."
+    },
+    {
+      "number": 2398,
+      "assessment": "Ours, final rejected: reseat a board on two blocks beside a bottle. Same board-on-blocks objects but a different skill (placement). Not revisable and not resubmitted here; this task's scorer fixes the flags that review raised (support tolerance, history reset)."
+    }
+  ],
+  "physical_skill": "Grip a 30 cm, 0.35 kg level on its exposed part, keep it within 1.5 cm of the table while drawing it 13 cm sideways until its hidden end clears a loose board resting on two blocks (with a glass on it), only then raise it and set it flat on a mat, and let go.",
+  "valid_shortcuts": [
+    "One arm drawing the level out low earns 1.0; that is a valid route and is stated in the README.",
+    "Sliding the level along the table without lifting it at all is valid if the board and glass stay put.",
+    "Lifting the glass off first and putting it back within 1 cm earns 1.0 if the board never tilts past 5 degrees; it is a safe alternative and is not forbidden.",
+    "Lifting the level straight up (two arms or one) levers the board past 5 degrees: 0 (red-teamed).",
+    "Holding the level on the mat without releasing scores 0 (fingertip clearance check, red-teamed)."
+  ],
+  "distinct_from_nearest": "No accepted or pending task extracts a long rigid item from under a loose, loaded overhang where the failure is levering the overhang up. #2593 lifts its cover by design and #2766 draws a flat item from a fixed recess. Our own #2398 shares objects but was placement. Known risk: #2184's 'not sufficiently relatable' rejection of a similar pull-from-under concept, and the board-on-blocks riser being lower and simpler than a store-bought insert. Our held folder remove-prop-from-under-shelf is a near-variant (a prop out from under a shelf) and should not also be submitted.",
+  "task_py_sha256": "e15f8f8d6871f1a66829d45818d09509eed892ae5949675955910b14c48f8757",
+  "task_metadata_sha256": "f01e82d5912623b749fea161f6fae868b843944302b4cdff39f61dff4c0f1721"
+}

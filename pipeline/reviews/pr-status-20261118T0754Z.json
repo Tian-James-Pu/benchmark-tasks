@@ -1,0 +1,354 @@
+{
+  "checked_at": "2026-11-18T07:53:49.653246+00:00",
+  "prs": [
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnVejAA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "This pull request couldn\u2019t be submitted yet:\n\n- The fidelity note field is too long (maximum 500 characters).\n- Fill in the fidelity note field.\n\nOnce that\u2019s addressed, push a commit to this pull request (or close and reopen it) to try again.",
+          "createdAt": "2026-11-17T01:17:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2398#issuecomment-6934733568",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABnVftIA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-3JS2ME**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T01:18:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2398#issuecomment-6934752544",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABnVsNtQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "This task (TK-3JS2ME) is already waiting for review, so changes pushed now won\u2019t be reviewed. To change it, close this pull request (which withdraws it) and open a new one.",
+          "createdAt": "2026-11-17T01:28:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2398#issuecomment-6934957493",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABnXa6dQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-3JS2ME).\n\nFlags: Invented event\n\nImportance (not met): Replacing a misplaced board on loose blocks is ordinary placement, and avoiding a bottle accident does not establish safety relevance or a recognizable impactful task in another domain.\n\nConstruct validity (not met): A stationary board held just above both blocks can score fully without actually being supported by them.\n\nScoring (not met): The full-score conditions allow the grippers to hold the board while its underside is up to 1 cm above the supports.\n\nThis task does not establish a sufficiently important real-world ability: reseating a board on loose blocks is ordinary placement, and avoiding damage to the bottle is not a safety-and-alignment hazard. The full-score check also allows a stationary board to be held above the supports rather than actually resting on them.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-17T03:04:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2398#issuecomment-6936771189",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 2398,
+      "state": "CLOSED",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2398"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnV72yA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-PWBL5D**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T01:41:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2400#issuecomment-6935213768",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABnXa-JQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-PWBL5D).\n\nFlags: Duplicate of accepted task [TK-6NE9D8](https://tasks.robocurve.org/board?task=TK-6NE9D8) \u00b7 Scorer check: restoring the starting layout clears a previously recorded top-carton tilt violation.\n\nImportance (not met): Stockers and order fillers handle cartons, but setting the top carton aside leaves ordinary aligned stacking, already covered by an accepted task.\n\nThe task reduces to ordinary aligned stacking of three cartons: the top carton can be set aside before the middle carton is moved. The shifted starting layout does not introduce a distinct physical manipulation skill beyond carton stacking.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-17T03:04:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2400#issuecomment-6936772133",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 2400,
+      "state": "CLOSED",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2400"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnWNhCg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-NL7755**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T01:56:25Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2401#issuecomment-6935503114",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABnXbHSw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-NL7755).\n\nFlags: Miniaturization\n\nImportance (not met): The 7 cm-tall, 200 g acrylic offcuts and deliberately unstable strip do not represent a credible sheet-handling injury hazard or an obviously important task in another domain.\n\nConstruct validity (not met): Balancing tiny offcuts on an artificial narrow strip and exchanging wooden blocks does not reproduce the handling and support of real stored sheet material.\n\nScoring (not met): The scorer resets its recorded fall or lift when the initial block positions and upright pane orientations recur, allowing a failed trial to earn credit.\n\nThe task uses very small acrylic offcuts in a deliberately unstable rack, so it does not reproduce the physical handling or injury risk of real sheet storage. The scoring code can also clear a recorded fall or lift when the starting block positions and upright pane orientations recur.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-17T03:04:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2401#issuecomment-6936774475",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 2401,
+      "state": "CLOSED",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2401"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnXBn1g",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-C73B5N**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T02:41:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2406#issuecomment-6936356822",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [],
+      "mergedAt": null,
+      "number": 2406,
+      "state": "OPEN",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2406"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnY-R6Q",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-83975C**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T04:31:33Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2418#issuecomment-6938399209",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABnweEew",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-83975C).\n\nImportance (not met): Food preparation workers and dishwashers clean regularly, but recovering a locked-on pre-rinse valve is not established as a core operation for 500,000 workers.\n\nThe task does not establish sufficient job impact: cleaning equipment is common, but recovering a pre-rinse sprayer left locked on is not shown to be a core regular operation for at least 500,000 workers. The task also does not present a sufficiently recognizable everyday or other large-impact activity.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-17T22:37:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2418#issuecomment-6963037307",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABn1Kyzw",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "NONE",
+          "body": "Please request a human review of the importance decision for TK-83975C.\n\nOur wording \u201cleft locked on\u201d may have made this sound like an unusual equipment failure. The submitted hardware uses the manufacturer's ordinary hold-down ring for continuous rinsing. Turning the sprayer off requires disengaging that control and allowing the spring-return trigger to close while controlling the suspended head.\n\nThere is more specific evidence of occupational relevance than the general cleaning duties cited in our original context:\n\n- [EPA WaterSense](https://www.epa.gov/watersense/pre-rinse-spray-valves) reports that about one million U.S. food-service establishments use pre-rinse spray valves to rinse dishes. This supports widespread use of this particular equipment in commercial dishwashing.\n- [T&S's exact B-0107-J-SWV product page](https://www.tsbrass.com/products/parts-accessories/spray-valves/B-0107-J-SWV) lists the hold-down ring and industrial-kitchen application. Its [foodservice catalog, page 8](https://s3.us-east-2.amazonaws.com/mid-city.com/resources/T_S_B_0665_BSTR_Catalog.pdf) describes a hold-down ring for continuous use in the same pre-rinse product family.\n- [BLS](https://www.bls.gov/ooh/food-preparation-and-serving/food-preparation-workers.htm) reports 908,500 food-preparation-worker jobs in 2025 and includes cleaning equipment and dishes among their duties.\n\nThese sources establish equipment prevalence and the intended control function; they do not directly count workers who disengage the ring, so we are not claiming they independently prove the 500,000-worker threshold. Could a human reviewer reconsider whether ending continuous rinsing with the manufacturer's normal control constitutes a regular operation within commercial dishwashing work?\n\nThis request concerns the existing submitted task; no code or scope changes are proposed.\n",
+          "createdAt": "2026-11-18T03:17:46Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2418#issuecomment-6967964367",
+          "viewerDidAuthor": true
+        }
+      ],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 2418,
+      "state": "CLOSED",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2418"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnnFbRQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-89FRWD**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T15:53:39Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2477#issuecomment-6953196357",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [],
+      "mergedAt": null,
+      "number": 2477,
+      "state": "OPEN",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2477"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnqMhGA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-SM6ETU**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T18:00:04Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2500#issuecomment-6956458264",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [],
+      "mergedAt": null,
+      "number": 2500,
+      "state": "OPEN",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2500"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABntFETg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-E72LCU**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T20:05:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2520#issuecomment-6959481934",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [],
+      "mergedAt": null,
+      "number": 2520,
+      "state": "OPEN",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2520"
+    },
+    {
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABnwrUeg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-GHB9F4**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-17T22:48:10Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2544#issuecomment-6963254394",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [],
+      "mergedAt": null,
+      "number": 2544,
+      "state": "OPEN",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2544"
+    }
+  ]
+}

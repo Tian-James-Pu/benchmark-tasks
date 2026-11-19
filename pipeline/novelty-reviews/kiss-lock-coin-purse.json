@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-19T11:10:47.474243+00:00",
+  "decision": "clear",
+  "queries": [
+    "pipeline/refresh_known.sh this session; known_tasks.tsv grep: purse, kiss, clasp, wallet, coin, snap fit, clutch",
+    "known_tasks.tsv grep: pouch, glasses case, bag (live and rejected rows read)",
+    "gh pr view bodies of 32, 2268, 1592 and body plus final review of 839 read"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 32,
+      "state": "MERGED",
+      "read": "Body read: put a lid into a light case's pocket and press its front edge until two spring latches click while the other arm steadies the tipping case.",
+      "comparison": "Shared: press a closure past a spring catch while bracing a light container. Theirs is a rigid case lid pressed down onto latches; ours is a kiss-lock frame whose two halves must be squeezed toward each other (back half held, front half swung over) until the balls ride past each other, after loading coins through the mouth. Different mechanism and grasp (pinch-squeeze across the frame, not a downward press), plus coin pick-and-place."
+    },
+    {
+      "pr": 2268,
+      "state": "MERGED",
+      "read": "Body read: pinch five quarters off the table, turn each on edge and drop it through a piggy bank's slot.",
+      "comparison": "Shared: pinching flat coins off a table. Theirs is the coin re-orientation into a narrow slot; ours drops coins into an open mouth (easy part) and the difficulty is the clasp squeeze. No closure in theirs."
+    },
+    {
+      "pr": 1592,
+      "state": "MERGED",
+      "read": "Body read: pour mixed coins from a jar and sort them into two taped frames by sliding.",
+      "comparison": "Coin sorting by pushing on the table; no container closure. Unrelated skill."
+    },
+    {
+      "pr": 839,
+      "state": "CLOSED, Not accepted: final",
+      "read": "Body and review read: put a screwdriver into its fitted case and close the lid until the clasp catches; rejected on importance (single-tool case incidental to trades, not everyday).",
+      "comparison": "Ours is Societal relatability with an everyday object nearly everyone has handled (coin purse, glasses pouch kiss lock), not an incidental occupational chore; the reviewer's importance objection targeted the niche single-tool case."
+    }
+  ],
+  "physical_skill": "Pinch two thin 2-euro coins off the table and drop them into the open purse, then close an 8.5 cm kiss-lock frame by squeezing both halves at once (back half held, front half swung 51.7 degrees over) against a 0.25 N m detent until the balls pass and it snaps within 2 degrees of shut, without the 35 g free-standing purse giving way, then withdraw every fingertip at least 3 cm.",
+  "valid_shortcuts": "Red team on this task.py: do nothing 0.0; closing with one coin left out 0.25; both coins in and the front half shoved with one closed hand from the front only, nothing holding the back half, does not snap and scores 0.5. Holding the clasp shut without release scores 0.75 at most. Knocking a coin or the purse off the table zeroes the trial (latched). Valid solution: coins in, squeeze across the frame (demo 1.0 twice). Dream-1 this session: 0.0 (hovered near the coins, never grasped one or touched the purse).",
+  "distinct_from_nearest": "No accepted, pending or revising task involves a coin purse, kiss-lock frame or ball clasp. The nearest skill match is the accepted snap-fit case lid (32), but that is a downward press on a rigid lid; the kiss lock is a two-sided squeeze on a light free-standing purse with a sprung detent, preceded by loading coins. Residual risk: a reviewer may see it as one more 'close it until it clicks' task, or judge a coin purse low importance.",
+  "task_py_sha256": "d8911f34717a43013664d77ac7dcb531c4e32458c2c9e20297a9663ccdfbed48",
+  "task_metadata_sha256": "814f3e4ba7cbf4656f5665097ea128f17b7569965c178cb47448f877a4bca773",
+  "note": "Hashes exclude scores/media by definition; rewritten after the Dream-1 scores edit."
+}

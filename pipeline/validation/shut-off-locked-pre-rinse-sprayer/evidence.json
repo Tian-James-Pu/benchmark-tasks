@@ -1,0 +1,78 @@
+{
+  "task_source_sha256": "7716a27b44e8875e8eedbd9dc73aba0483754a70ad3331d5f7fd5ec27767600b",
+  "runs": [
+    {
+      "variant": "demo1",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-211907-gpu3-148268",
+      "score": 1.0,
+      "steps": 448,
+      "wall_seconds": 129.3,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "demo2",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-212137-gpu3-180111",
+      "score": 1.0,
+      "steps": 448,
+      "wall_seconds": 298.9,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "held",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-211909-gpu1-148543",
+      "score": 0.0,
+      "steps": 800,
+      "wall_seconds": 436.0,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "nothing",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-211910-gpu0-148829",
+      "score": 0.0,
+      "steps": 560,
+      "wall_seconds": 152.5,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "ringonly",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-212039-gpu2-168976",
+      "score": 0.0,
+      "steps": 670,
+      "wall_seconds": 307.0,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "squeezeonly",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-212041-gpu0-169347",
+      "score": 0.0,
+      "steps": 680,
+      "wall_seconds": 289.1,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "underspray",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-212042-gpu2-169829",
+      "score": 0.0,
+      "steps": 720,
+      "wall_seconds": 340.5,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "near",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-212309-gpu1-203144",
+      "score": 0.0,
+      "steps": 680,
+      "wall_seconds": 283.2,
+      "visually_reviewed": true
+    },
+    {
+      "variant": "partialpush",
+      "directory": "/home/mzhang/yam-eval/shut-off-locked-pre-rinse-sprayer/demo-1116-212310-gpu2-203531",
+      "score": 0.0,
+      "steps": 680,
+      "wall_seconds": 295.9,
+      "visually_reviewed": true
+    }
+  ],
+  "review": "independent source/visual audit passed; CPU pure score and hold boundary tests passed"
+}

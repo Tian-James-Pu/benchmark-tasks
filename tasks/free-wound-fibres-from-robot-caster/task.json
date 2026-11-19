@@ -1,0 +1,10 @@
+{
+  "title": "Restore a robot vacuum caster seized by wound fibres",
+  "category": "Impact on AI timelines",
+  "instruction": "Restore free movement of the robot vacuum caster.",
+  "setup": "Development contact gate: loose powered-off340x340x94mm3.4kg Roomba i7 inverted on native bench; reconstructed original25.4g removable caster,26x18mm wheel and3mm axle; physical deformable wound-fibre aggregate. Not a final validated scene.",
+  "scoring": "Development diagnostic only: every outcome scores0. No repaired-task success has been established.",
+  "run_limit": "180 control steps at20Hz for this contact gate.",
+  "fidelity": "Full-scale source-photo caster reconstruction, original-size wheel/axle and removable contact retainers. Elastic socket sectors and fork lips approximate unpublished compliance. FEM toroidal hair aggregate has uncalibrated effective material properties; fibre-level slip, fracture and damage are absent. These defining limitations remain acceptance gates.",
+  "scores": "Dream-1 run: pending; demo: unvalidated"
+}

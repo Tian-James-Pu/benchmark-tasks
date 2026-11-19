@@ -1,0 +1,33 @@
+{
+  "ready": false,
+  "state": "Contact-only feasibility and open-loop grasp work",
+  "claim": "free-a-kitchen-drawer-that-a-ladle-has-jammed-a-few-centimet",
+  "task": "free-ladle-jammed-drawer",
+  "physics_diagnostics": {
+    "empty_5N": {
+      "run": "demo-1116-214853-gpu1-507913",
+      "opening_m": 0.36
+    },
+    "ladle_spoon_5N": {
+      "run": "demo-1116-215102-gpu2-533983",
+      "opening_m": 0.0422776
+    },
+    "fork_only_5N": {
+      "run": "demo-1116-215102-gpu1-533982",
+      "opening_m": 0,
+      "action": "Removed fork: accidental side-wall jam"
+    }
+  },
+  "lessons": [
+    "Do not substitute an artificial spring or joint stop for the loose utensil contact.",
+    "Closed cabinet roof obstructs direct robot descent; endpoint IK alone is insufficient.",
+    "Grasping the turner hanging loop is unreliable; pinch solid handle lower to table.",
+    "Current geometry is a full-scale generic structural cabinet, not named commercial precision hardware."
+  ],
+  "required_remaining": [
+    "Physical full recovery demonstration",
+    "Pure once-per-step scorer plus reset hooks",
+    "Counterfactual pull-only, tool-only, held and empty-scene checks on final source",
+    "Final metadata, views, two fresh full-score demos"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+ "mode": "full",
+ "task_score": 1.0,
+ "success": true,
+ "termination": "success",
+ "steps": 389,
+ "seconds": 19.45,
+ "script_ended_at_step": null,
+ "size": [
+  640,
+  360
+ ],
+ "steps_per_s": 4.4,
+ "script_s": 3.2,
+ "sim_s": 84.06,
+ "wall_s": 88.45,
+ "slowest_30_steps_s": 9.84,
+ "blank_frames": 0,
+ "video": "/tmp/claude-1001/-home-mzhang-code-benchmark-tasks/c5e8a00a-04bc-4d39-bc84-61696031f06f/scratchpad/rv_car/runs/finalA/full/demo.mp4",
+ "ik_worst": {
+  "left": [
+   3.4,
+   1.6
+  ],
+  "right": [
+   0.1,
+   0.0
+  ]
+ },
+ "final_info": {
+  "success": true,
+  "score": 1.0
+ }
+}

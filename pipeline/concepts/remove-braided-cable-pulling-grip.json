@@ -1,0 +1,25 @@
+{
+  "title": "Remove a wire-mesh pulling grip from an installed cable",
+  "category": "Impact on jobs",
+  "justification": "Electrician cable installation uses temporary mesh grips; removal exploits axial compression of a self-tightening braid.",
+  "source_candidate": "SR-059",
+  "fault": "Installed pulling sock remains tightened around cable after pull. This may be ordinary tool removal rather than a failure; do not invent a faulty latch.",
+  "instruction": "Remove the temporary pulling grip and leave it beside the cable.",
+  "objects": "Klein KPS050SEN165.1mm overall; compatible12.7\u201314.3mm unenergized cable with accessible end; source-based wire braid, swivel and clip. Other props/layout not chosen.",
+  "skill": "Counterintuitive axial compression releases frictional braid contraction; preserve actual interwoven strands and cable contact.",
+  "scoring": "Not finalized. Require separated released grip and intact cable using geometric observations; no unsupported continuity or permanent failed-pull penalty.",
+  "nearest": [
+    "PR13 rejected cable untangling",
+    "RoboARC fiber-bundling/knot tasks: compare physical topology and valid shortcuts before build"
+  ],
+  "risks": [
+    "Photo establishes form but not exact braid carrier count, wire diameter, mesh length or bending stiffness. Published safe load is not a local jacket-damage threshold.",
+    "Closed mesh requires accessible cable end. Do not add an oversized connector the real grip cannot pass; cable and termination geometry must match a real installation.",
+    "Simulation must retain over-under wire contacts and U-shaped mouth returns. Crossing welds, no-self-collision chains, shape-driven diameters or scripted grip-release flags would not establish physical fidelity.",
+    "Ordinary cablekit defaults are inappropriate:2mm contact offset and5e-6kgm2 armature exceed strand scales. Use round contacts, actual inertia, explicit convergence and torque/energy evidence.",
+    "A robot may compress the braid against the cable when pinching it. Need geometry/reach then physical release attempt at exact source scale.",
+    "Current board search braid/pulling grip/finger trap found no match; complete skill-level comparison still needed."
+  ],
+  "strict_review": "Potentially distinct deformable contact skill with direct electrical-work relevance. Critical risk is a fake constrained-braid model or tiny inaccessible mouth; no submission or validation claim without physical component tests.",
+  "source_evidence": "pipeline/pdf-screening/sr059-braided-grip/screening.json"
+}

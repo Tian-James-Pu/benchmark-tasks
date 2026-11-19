@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-11-19T10:22:37.033679+00:00",
+  "decision": "clear",
+  "queries": [
+    "known_tasks.tsv refreshed this session (2,866 rows): soda, carbonat, sparkling, seltzer, snap-lock",
+    "bottle (live: accepted/pending/revising), water filter, pitcher, cartridge, jug, dispenser, cooler, hang, bayonet, twist-lock, cylinder, co2, tilted",
+    "snap, click, coffee maker, kettle, blender, carafe",
+    "gh pr view bodies of 2420, 2654, 1061 read",
+    "known_tasks.tsv re-refreshed after the Dream-1 run; soda/carbonat/sparkling/seltzer/snap-lock grep still shows no live match"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2420,
+      "state": "OPEN, revising (other team)",
+      "read": "Body read this session: put a water bottle into a side-entry bike cage under a small frame's top tube, pushing the cage's sprung front arm open until it seats.",
+      "comparison": "Shared: a bottle retained by a spring. Theirs is lateral insertion of a light bottle into a fixed cage that flexes open. Ours is a two-stage angled insertion of a 1 kg full bottle up a tilted, hinged holder's axis past sprung jaws, then a swing about the holder's hinge to latch, on a free-standing machine that tips if pushed wrongly; the bottle ends hanging by its neck. Different mechanism, motion and success state."
+    },
+    {
+      "pr": 2654,
+      "state": "OPEN, pending",
+      "read": "Title and body read: change a wall soap dispenser's refill, hold the empty one, push the release latch, click the new one in, latch the cover.",
+      "comparison": "Cartridge swap in a fixed wall dispenser with a cover latch; no angled-then-swing insertion of a heavy hanging bottle."
+    },
+    {
+      "pr": 1061,
+      "state": "MERGED",
+      "read": "Body read: hang a bottle on a drying peg.",
+      "comparison": "Placing a bottle mouth-down over a peg; no latch, spring or hinge."
+    },
+    {
+      "pr": 34,
+      "state": "MERGED",
+      "read": "Title: lock a bayonet cap into its socket.",
+      "comparison": "Push-and-twist bayonet; no hinged holder or heavy hanging load."
+    },
+    {
+      "pr": 2622,
+      "state": "OPEN, pending",
+      "read": "Title: fit an oxygen regulator onto a cylinder valve.",
+      "comparison": "Yoke/threaded regulator onto a gas cylinder; not a bottle into a snap-lock."
+    }
+  ],
+  "physical_skill": "Lift a 1.05 kg full bottle, tilt it to a forward-hanging holder's 15 degree axis, insert its neck through the lead-in and push it up the axis until the collar cams two 800 N/m jaws apart and drops onto them, then swing the bottle's bottom back about the holder's hinge to vertical so it latches, and let go, without tipping or sliding the free-standing 3 kg machine.",
+  "valid_shortcuts": "GPU/CPU red team on this task.py: do nothing 0; naive straight-up push 0 (machine tips past 5 degrees); early release before the swing 0.25; holding instead of releasing 0.5. The latch requires the collar in the jaws, so swinging the empty holder upright scores nothing; tipping, dropping or sliding the machine zeroes the trial. Valid solution: the manufacturer's neck-in-at-angle, push up and back (demo 1.0 twice). Dream-1 this session: 0 (right gripper came to the bottle's side but never grasped or lifted it).",
+  "distinct_from_nearest": "No known task (accepted, pending, revising, or rejected) involves a sparkling water maker or its Snap-Lock bottle holder. Nearest live work is the bike-cage bottle (2420), a sprung-arm lateral insert, and soap refill click-in (2654). Residual risks: a reviewer may see it as one more 'click a part in' task or question relatability outside SodaStream owners.",
+  "task_py_sha256": "6422cd92aa75dc09415f7d9ac8915f1739dd8a41aa8ba10abb3f4f28a960be9c",
+  "task_metadata_sha256": "9c80c8d4c09ea9970df6be4e6f563e447166d90c2ccc5174ae1cdc5727cab5b3",
+  "note": "Hashes computed after the Dream-1 scores edit (scores/media excluded by definition)."
+}

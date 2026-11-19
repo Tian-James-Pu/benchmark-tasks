@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-11-19T10:04:42.816815+00:00",
+  "decision": "clear",
+  "queries": [
+    "known_tasks.tsv refreshed this session (2,866 rows): floor machine, floor pad, pad driver, burnish, centre/center lock, scrubber, polisher: no hits in any state",
+    "live (accepted/pending/revising): pad, janitor, floor, mop, centre, concentric, snap, click",
+    "live: sand, disc, disk, turntable, record, spindle, hub, arbor, wheel",
+    "gh pr view bodies of 998, 2643, 1083, 871, 2342, 2861 read"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2342,
+      "state": "MERGED",
+      "read": "Body read: put a CD back in its jewel case, set its 15 mm hole within 1.9 mm of the hub and press it onto the sprung teeth, then shut the lid.",
+      "comparison": "Shared: centring a holed disc on a hub then a snap. Theirs lifts a 16 g disc by its edge onto a hub. Ours slides a 300 g, 43 cm pad that cannot be lifted by the gripper across a high-friction grip face to concentric, then presses a separate sprung centre lock 41 mm through its hole until its clip catches; different object, scale, occupation and two-part mechanism."
+    },
+    {
+      "pr": 871,
+      "state": "OPEN, revising (other team)",
+      "read": "Title and body (folder name only) read: mount a grinding wheel safely on a bench grinder.",
+      "comparison": "Wheel onto an arbor with flanges and a nut on a vertical spindle; a shop safety task, not janitorial floor-machine pad change; no sliding a flat pad to concentric on a horizontal driver."
+    },
+    {
+      "pr": 2643,
+      "state": "OPEN, pending",
+      "read": "Body read: wring a wet yacht mop in a cone bucket.",
+      "comparison": "Same occupation area (cleaning) but a twisting/pressing wringing skill; no pad, driver or lock."
+    },
+    {
+      "pr": 998,
+      "state": "OPEN, pending",
+      "read": "Title read: retain a housing in a rollover fixture, turn it over and lock it, fit a pad on its far face.",
+      "comparison": "A fixture rollover with a pad stuck on a housing face; no centring on a hub, no centre lock."
+    },
+    {
+      "pr": 2861,
+      "state": "OPEN, pending",
+      "read": "Body read: reinstall a microwave roller ring and glass tray on a keyed hub, run it.",
+      "comparison": "Placing tray on a coupler and running the motor; no off-centre recovery by sliding, no snap lock."
+    }
+  ],
+  "physical_skill": "Slide a 43 cm, 300 g rigid pad lying 5 cm off-centre across a high-friction driver face to within 1 cm of concentric (pushing at its rim, with the other hand or after release), then press a 60 g sprung centre lock 41 mm down against about 6 N through the pad's 9 cm hole until the clip catches, and take both hands at least 3 cm away.",
+  "valid_shortcuts": "Build-session runs on the final task.py (after 04:43): scripted demo 1.0 in three runs; do-nothing, careless (press the lock on the off-centre pad: the stem lands on the pad and cannot reach home) and other red-team variants scored 0 or 0.25 as the scoring text states. The 7.0 cm stem only passes the 9.0 cm hole within about 1 cm of centre, so the lock cannot be clicked without centring; knocking the pad off the driver zeroes the trial; holding on caps at 0.5. The one-arm route (slide, release, press) is a legitimate solution and is stated in the README.",
+  "distinct_from_nearest": "No known task in any state involves a floor machine, burnisher, pad driver or centre lock. Nearest live skill is the CD-on-hub (2342), which differs in scale, grasp (lift vs slide), mechanism (hub teeth vs separate sprung centre lock) and occupation. Residual risks: a reviewer may read it as another 'centre then click' task, or question that the driver is level and fixed rather than on a tipped-back machine (stated in fidelity).",
+  "task_py_sha256": "af9f9b317a70ed2a82539831d77c15abaf0020b9f769b283e57b3d184a71652f",
+  "task_metadata_sha256": "f0d67a07b31199daba75eb7b88ab4ac74efe5b6f815033dd7c546fba733be448",
+  "note": "Written before the Dream-1 result; metadata hash excludes scores/media by definition and is re-verified after the scores edit."
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Clear a jammed robot screw feeder",
+  "category": "Impact on AI timelines",
+  "instruction": "Restore reliable screw presentation at the robotic feeder pickup.",
+  "setup": "Development gate: full-scale loose NSRI feeder on native bench and actual-size loose precision hex driver. Original cabinet/working-platform envelope follows manufacturer drawing; small plate and screw details are disclosed photo reconstruction.",
+  "scoring": "0 throughout this development contact gate; no completed recovery is claimed.",
+  "run_limit": "300 control steps at20Hz for the development gate.",
+  "fidelity": "Source-sized NSRI case and Wiha driver; native rigid contact and freely rotating driver cap. Clamp/rail parts are temporarily fixed for pickup/access diagnosis only; no repair score. Final screw clamp, jam, and feeding dynamics remain unvalidated.",
+  "scores": "Model: not run; diagnostic demo:0.0"
+}

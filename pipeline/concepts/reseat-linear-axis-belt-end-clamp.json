@@ -1,0 +1,28 @@
+{
+  "title": "Correct a timing-belt end clamp on a handling axis",
+  "category": "Impact on AI timelines",
+  "justification": "Festo manufacturer-documented linear handling/assembly axis repair; a plate short of its stop loses pretension in operation. This is a maintenance contribution, not a quantified AI deployment bottleneck.",
+  "fault": "New belt installed with one end plate short of clamp stop; full final setup pending native contact proof.",
+  "instruction": "Correct the belt end clamp and finish restoring the linear axis.",
+  "objects": [
+    "Full-size Festo DGE25-300-ZR-RF reconstruction",
+    "New polychloroprene/Glascord toothed belt and original plates, pins and adjusting screws",
+    "Source-sized hex drivers; no gripping tabs or added fixture"
+  ],
+  "skill": "Physically align four teeth and belt end with the plate, seat against the body stop, retain under manufacturer preload and restore full axis travel.",
+  "scoring": "Not implemented: observable plate/belt seating and complete repair with actual load/frequency and free travel; all unsupported runtime gates remain required.",
+  "nearest": [
+    2203
+  ],
+  "risks": [
+    "No full native belt proven; previous chain family exposed contact/constraint instability",
+    "Dominant four-tooth profile and stop must be real collision geometry",
+    "Final novelty depends on weakest valid route; tension-only family overlaps2203",
+    "Thread engagement and actual gripper reaction loads required",
+    "No certification or exact real force calibration claimed"
+  ],
+  "source_evidence": "pipeline/pdf-screening/sr076-belt-clamp/source-access-followup.json",
+  "strict_review": "Do not submit an isolated clamp coupon or manufacturer label on generic tensioning. No prototype counts as task validation.",
+  "status": "held_native_elastic_belt_representation",
+  "native_evidence": "pipeline/pdf-screening/sr076-belt-clamp/native-span-v2/result.json"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "SR-051",
+  "title": "Remove a damaged robot-cover screw",
+  "category": "Impact on AI timelines",
+  "instruction": "Remove the damaged screw from the robot's cable cover.",
+  "justification": "A real Mitsubishi RH-2FRH robot service cover, original mounted orientation and M4x6 stainless button-head fastener. This is robot maintenance hardware, not a generic plate relabeled as AI equipment.",
+  "fault": "The 2.5 mm hex recess has been rounded to a 3.0 mm cylindrical recess, preserving the original exterior head and threads. Reset must specify this machining and installation procedure; no rust, adhesive or seizure is claimed.",
+  "objects": "Full-scale RH-2FRH2515 envelope on its ordinary bolted base; original cable cover and other three cover screws retained. Loose ENGINEER PZ-58 extraction pliers, original 160 mm length, 130 g mass, spring-loaded handles. Standard 2.5 mm key and replacement M4x6 gauge screw are final-task requirements, not yet implemented.",
+  "skill": "Establish and maintain external serrated-jaw engagement on a shallow rounded head while applying removal torque; permit external pliers, internal extractors and safe direct-grasp routes if they physically work. Neither a named tool nor two arms is mandatory.",
+  "scoring": "Current diagnostic always scores zero. Proposed complete task: removed screw outside the original threaded hole, cover intact, replacement gauge screw threads through original attachment. Rotation alone is not full recovery. Partial credit still requires a practical axial-backout measure.",
+  "nearest": [
+    {"pr":2343,"status":"final closed","difference":"Impact driver on seized automotive rotor screws. Here the fault is a rounded drive interface on actual robot hardware, without invented seizure, detached horizontal plate or rotation-only completion."},
+    {"pr":890,"status":"accepted","difference":"Socket engagement with intact hex head and confined ratcheting. External gripping of a shallow rounded head is a different contact problem, but generic screw turning remains shared."},
+    {"pr":1470,"status":"final closed","difference":"Reversed ratchet direction did not change the core skill; this task cannot rely on the recovery narrative or robot label alone."},
+    {"pr":369,"status":"final closed","difference":"Prepared screw puller turns a pre-engaged screw to extract a collar; tool engagement on a damaged fastener is absent. Its rejection warns that screw rotation alone is saturated."}
+  ],
+  "source_evidence": "pipeline/pdf-screening/sr051-damaged-screw/screening.json",
+  "risks": ["Native 50 N-per-finger grip may not transmit the actual 1.39–1.89 Nm installation-load scale through these short plier jaws.", "The maker specifies fixing torque, not a measured breakaway torque; the prototype must not silently equate the two as calibration.", "Serration microgeometry and friction are estimates; no artificial attachment or invented plastic cutting is allowed.", "Complete physical thread withdrawal and gauge-screw assay remain unimplemented.", "Robot envelope is dimensioned; cover placement and small noncritical details are photo estimates, disclosed and kept in the original orientation.", "No final novelty clearance or acceptance claim."],
+  "decision": "Build one bounded native grasp/contact gate; approximately 0.2 review prospect, conditional on physical engagement and full recovery, not final clearance.",
+  "validated": false
+}

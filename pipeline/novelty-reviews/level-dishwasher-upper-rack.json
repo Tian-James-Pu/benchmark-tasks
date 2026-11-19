@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-19T10:18:10.858610+00:00",
+  "decision": "clear",
+  "queries": [
+    "dishwash|rack height|rackmatic",
+    "height adjust|adjuster|level.*rack|lever.*latch|ratchet|notch|tilt",
+    "monitor.*height|paddle|height.*(lever|latch)",
+    "RoboCasa LoadDishwasher / open-close dishwasher rack tasks",
+    "BEHAVIOR dishwasher loading tasks"
+  ],
+  "nearest_prs": [
+    {
+      "number": 2220,
+      "state": "OPEN pending (another team)",
+      "skill": "Monitor stand: press an orange paddle to unlock height, lower monitor to the middle slot, let the paddle return, tilt the screen 10 degrees. Shares the press-release-while-moving-into-a-detent knack on a different product; no levelling of two coupled sides, no load of loose dishware, no docking."
+    },
+    {
+      "number": 1393,
+      "state": "CLOSED unmerged",
+      "skill": "Put a dishwasher rack's dropped wheels back on their rail and roll it home; rail re-seating, no height adjusters."
+    },
+    {
+      "number": 2520,
+      "state": "OPEN pending (ours)",
+      "skill": "Remove a spatula jammed through the rack into the spray arm's sweep; utensil extraction, rack height untouched."
+    },
+    {
+      "number": 2221,
+      "state": "CLOSED final rejection",
+      "skill": "Load two cups into the upper rack and close it; free-object loading (RoboCasa LoadDishwasher duplicate)."
+    },
+    {
+      "number": 1964,
+      "state": "CLOSED final rejection",
+      "skill": "Reinstall a dishwasher's two-part filter; filter twist-lock."
+    },
+    {
+      "number": 1221,
+      "state": "CLOSED final rejection",
+      "skill": "Move a misplaced pull pin on a miniature stockroom shelf; rejected for miniaturisation and weak importance; this task is full-size household."
+    }
+  ],
+  "physical_skill": "Notice that a loaded full-size upper rack sits two notches higher on one side, press that side's adjuster lever in while moving the side down (or lift the low side until it clicks), release so it latches level, then roll the rack 30 cm to its docked stop without spilling two tumblers and a mug, and let go.",
+  "valid_shortcuts": [
+    "Lifting the low side two notches (no lever needed, as on the real product) is an equally valid route to level and scores the same.",
+    "One arm is enough; the demo uses one arm. Bimanual motion is not required by the scorer.",
+    "Pushing a side down without pressing its lever does nothing (red-team no-lever: 0.0); pushing in uneven scores 0 (careless red-team).",
+    "Lowering only one notch then docking caps at 0.25 (red-team one-notch).",
+    "Holding the rack at the end fails the 3 cm hands-clear condition; spilling a dish zeros the trial."
+  ],
+  "distinct_from_nearest": "No accepted or pending task levels a dishwasher upper rack with its two-sided height adjusters. Nearest is #2220 (monitor height paddle), which shares only the generic press-a-release-while-moving-into-a-detent knack on an unrelated product; this task's difficulty is the coupled two-sided tilt that must be noticed unprompted (the instruction only says put the rack back ready to run), the latch worked under the loaded rack, and the docking afterwards. Dishwasher tasks on the board (1393 wheels, 2520 spatula, 2221 loading, 1964 filter) are different operations. Manufacturer manuals (Bosch SHX33, SHE53T52UC; Samsung support) document this exact fault and its fix.",
+  "limitations": [
+    "CODEX.md's 17 November manual round noted the top-rack adjustment can be a one-hand job on the real product; the task does not claim bimanual difficulty.",
+    "Shared knack with pending #2220 is a review risk, though product and setting differ.",
+    "Notch pitch 2.5 cm is an estimate; manuals give dish heights not travel.",
+    "Novelty clearance is a reasoned assessment, not a guarantee of acceptance."
+  ],
+  "external_sources": [
+    "https://www.manualslib.com/manual/19196/Bosch-Shx33ai.html?page=19",
+    "https://Manualslib.com/manual/2396464/Bosch-She53t52uc.html?page=17",
+    "https://www.samsung.com/uk/support/home-appliances/how-do-i-adjust-the-dishwasher-rack-height/"
+  ],
+  "task_py_sha256": "7eb3a36f1aaa15acbe73f1acdfd1090693fb8469a2dee3cf6a080b16ad739c9f",
+  "task_metadata_sha256": "7d1487f8cc711c930880f09d69ed4ab2b46a27058b83ca6366560b0dad0fd2aa"
+}

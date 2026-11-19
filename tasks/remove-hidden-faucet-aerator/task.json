@@ -1,0 +1,20 @@
+{
+  "title": "Unscrew a limescaled hidden aerator from a faucet spout with its key while holding the spout, then refit it flush",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "faucet",
+    "aerator",
+    "threaded",
+    "tool use",
+    "limescale"
+  ],
+  "instruction": "Take the aerator out of the faucet's spout with its key, then screw it back in flush.",
+  "context": "Hidden (cache) aerators sit inside the spout and turn only with their plastic service key; limescale seizes them, and they come out to clear the screen. Here the faucet's mounting nut has worked loose, so the faucet turns on the deck at half the torque the scale bond needs: turned one-handed, the key turns the whole faucet and the aerator stays put. The other hand has to hold the spout.",
+  "setup": "Station table (top 74.75 cm). Positions are (cm forward of the arms' base line, cm left (+) or right (-) of the midline). Vanity deck: solid-surface block, 18 x 56 x 8 cm high, fixed, x 31 to 49, y -24 to +32. Faucet: SimReady single-lever lavatory faucet (chrome-plated brass, 17.1 x 14.8 x 13.6 cm, 0.9 kg) on the deck, its axis at (33, +4), its spout pointing straight at the robot, held by a loose mounting nut. Aerator: hidden (cache) M16.5 x 1 aerator, black plastic, 16.6 mm across, 9 mm tall, 10 g, screwed in to its seat at the spout's end, with a white limescale ring and a white mark on its face; its axis at (23.5, +4), 9.5 cm from the faucet's; its face 5.05 cm above the deck (13.05 cm above the table). Four ribs stand 3 mm proud of its face (1.5 mm wide, 3 mm long, centred 6.5 mm out). Key: red acetal plastic service key, 25 g, 65 mm tall: a grip block 30 x 24 x 56 mm (a light grey grip strip on each 30 mm face), a disc 25 mm across and 6 mm thick on top of it, and on the disc four matching lugs (1.5 x 3 x 3 mm, centred 6.5 mm out) round a centring pin 9 mm across and 3 mm tall. It stands upright on the deck, lugs up, its axis at (33, -8.5), the block's 30 mm faces turned 30 degrees left of straight ahead. Distractors (SimReady, loose, ignored by the scorer): soap dispenser (7.5 x 7.0 x 18.2 cm, 350 g) on the deck at (44, -19); glass tumbler (8 x 8 x 8.5 cm, 250 g) on the deck at (43, +25); bar of soap (6.0 x 9.4 x 3.3 cm, 120 g) on the deck at (44.5, +15), turned 23 degrees. The basin under the spout is not modelled: the spout overhangs open space down to the table.",
+  "scoring": "0 if at any time the faucet turns 5 degrees or more on its deck, or the aerator is turned 15 degrees or more past its seat. Otherwise: 1.0 once the aerator, after having been unscrewed out of its thread (1.1 turns or more out, where it has dropped 4 mm), is screwed back to within 15 degrees of its seat, with the centre of the key's lug face and every fingertip at least 3 cm from the centre of the aerator's face, all held for 2 s; 0.5 if it has been unscrewed out of its thread; 0.25 if it has been turned at least 30 degrees out (the scale bond broken); 0 otherwise. Turns and angles are read from the mark on the aerator's face.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "The scale bond is used up once broken. Before each trial: set the faucet's mounting nut so a spring scale pulling sideways at the spout's end turns the faucet at about 100 g (0.1 N m), and turn it back square, spout at the robot; screw the aerator in to its seat with its key and a torque screwdriver set to 0.2 N m while holding the spout, mark pointing at the robot; stand the key back on its taped outline, lugs up.",
+  "fidelity": "Faucet: SimReady mesh, convex-hull colliders; lever and pop-up rod fixed. The thread is a scripted coupling (1 mm per turn, 1 turn engaged, fewer than a real one). Torques (bond 0.2, running 0.04, loose mount 0.1 N m) are low estimates, scaled to what the simulated wrist applies. No spout bore: the ribs stand below the spout. Key: custom part, taller than a real key so the gripper fits under the spout. Key friction 0.35, else uniform; no water.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

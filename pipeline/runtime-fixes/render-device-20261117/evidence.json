@@ -1,0 +1,24 @@
+{
+  "applied_at": "2026-11-17T18:41:48.126893+00:00",
+  "path": "/home/mzhang/yam-isaac-lab-arena/yam_arena/inspect_embodiment.py",
+  "before_sha256": "1b0cbbcdf98b7385e4d213e88bd59c296639bb7031c80e8d73efdce0eabcc4c6",
+  "after_sha256": "daad455b6533084e4222bbc7498534da69c2e857c5896dbae4cab58f53bbd444",
+  "change": "Pass multi_gpu=False to AppLauncher so local IsaacLab chooses renderer activeCudaGpus matching physics device. No physics, task, robot or camera settings changed. Existing loaded processes unaffected.",
+  "validation": {
+    "source": "tasks/recover-backed-out-robot-connector-contact/probe_render_device_block.py",
+    "pid": 2482060,
+    "result": "completed 20 actions/21 frames,task_score0 diagnostic",
+    "renderer_gpu": 1,
+    "physics_gpu": 1,
+    "sheet_reviewed": true,
+    "scope": "Opt-in diagnostic exercised same constructor setting before installed change; camera frames rendered normally. Throughput improvement not yet quantified."
+  },
+  "rollback": "Restore exact saved inspect_embodiment.before.py only if current after_sha256 still matches; preserve any subsequent edits.",
+  "ordinary_task_verification": {
+    "observed_at": "2026-11-17T18:53:03.919824+00:00",
+    "run": "/home/mzhang/yam-eval/clear-utensil-from-dishwasher-spray-arm/demo-1117-134430-gpu0-2546427",
+    "allocated_gpu": 0,
+    "vulkan_active_gpu": 0,
+    "source": "Ordinary placement task afterinstalledchange; no renderer diagnostic hook."
+  }
+}

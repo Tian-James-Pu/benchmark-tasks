@@ -1,0 +1,23 @@
+{
+  "title": "Restore a circular saw lower guard that no longer returns",
+  "category": "Safety and alignment",
+  "candidate": "SR-095",
+  "justification": "Manufacturer instructions identify exposed/coasting blade injury and require proper automatic guard closure before use.",
+  "instruction": "Prepare this saw for the next cut.",
+  "fault": "Proposed lower-guard tension spring detached from its anchor; not yet implemented physically.",
+  "objects": "Full-size generic190mm cordless USDCraft saw; proposed actual service spring, hardware and tools still incomplete.",
+  "skill": "Discover failed return, isolate power, restore the serviceable spring connection, and verify return across travel.",
+  "scoring": "Not implemented; all current diagnostics score0.",
+  "nearest": [
+    1825,
+    2390
+  ],
+  "risks": [
+    "Actual spring repair entails blade/arbor service access absent from asset.",
+    "Source battery permanently fixed; cannot claim removal/isolation.",
+    "No physical spring/hook replacement or measured force law.",
+    "Generic asset not exact manufacturer CAD; preserve source distinction."
+  ],
+  "status": "reach prototype only",
+  "counts_as_validation": false
+}
