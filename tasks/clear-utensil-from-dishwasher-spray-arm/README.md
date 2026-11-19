@@ -8,6 +8,39 @@ R01 countertop model, not a miniature floor-standing dishwasher.
 Two independent scripted recoveries scored 1.0, each within 1,399 actions.
 Dream-1 scored 0.0 after its full 1,800-action budget; the utensil remained lodged.
 
+## Response to review
+
+The previous review raised two points. Both are answered in full; the
+simulated scene, instruction and scorer code are unchanged, so the demo,
+model run and media remain valid for this revision.
+
+1. **Note: how to reproduce the settled spatula position with an available
+   wooden utensil in real trials.** Added "Real-trial procedure > Equipment"
+   (a stock 290–310 mm flat wooden spatula with stated width, thickness and
+   mass ranges, reused across trials) and "Preparing the fault": numbered
+   steps that place the spatula by hand to the settled pose measured in the
+   simulator (rack withdrawal 92 mm outside the case, which floor cell the
+   handle passes through, handle-end position relative to the arm hub and
+   height above the cavity floor, 16° slope, blade-tip height and offset),
+   with tolerances, the tools to check each one, and a fault check (the arm
+   must stop against the handle when nudged) before each trial. The same
+   steps are the reset. `task.json` `setup` and `reset_notes` now give these
+   numbers.
+2. **Scoring: the 1 mN m spray-arm test lacked a practical real-world
+   measurement.** Supplemented it with an observable full-rotation check using
+   a chopstick, masking-tape marks, a ruler and phone video ("Measuring the
+   end state", step 5): the arm is nudged lightly through one full
+   counterclockwise turn back to a tape mark, and passes only if it touches
+   nothing but the chopstick and the rack stays within 5 mm of its home mark.
+   Any contact or stall fails, and the evaluator never forces the arm. Every
+   other scoring condition now has a real-world measurement step with its
+   threshold. "How the real check corresponds to the simulated test" explains
+   why both are the same binary sweep-clearance test: 1 mN m is 6.5 mN at the
+   arm tip, ten times the modelled hinge friction but about a hundred times
+   too weak to move the spatula, so neither check measures effort. The
+   `task.json` `scoring` field now states the real equivalent. The simulated
+   thresholds and `task.py`/`completion.py` are unchanged.
+
 ## Reproduce and score
 
 Use the YAM Arena environment with its two parallel-gripper arms. From the
@@ -113,6 +146,135 @@ water-flow model or robot action. Full credit requires the actual hinge angle
 to traverse a whole revolution; elapsed time and partial oscillations do not
 substitute for rotation. The normal initial fault remains blocked under the
 same light test in the separate physical control.
+
+## Real-trial procedure
+
+Everything below uses ordinary tools: a steel tape measure or 300 mm steel
+ruler, masking tape and a marker, a smartphone (level/inclinometer app, timer
+and video at 30 frames per second or more), and one bamboo chopstick about
+240–270 mm long and 6–7 mm thick at its thick end. No torque gauge is needed.
+
+### Equipment
+
+- **Appliance:** a HAVA R01 countertop dishwasher (commercially sold, see
+  Sources), on a level counter with at least 300 mm of free counter on the
+  side where the utensil is to be put down. Unplugged and with the water
+  supply disconnected: the trial is mechanical only.
+- **Utensil:** any ordinary flat wooden spatula (turner) of beech, bamboo or
+  similar hardwood, 290–310 mm long, blade 50–60 mm wide and 5–8 mm thick,
+  handle tapering to roughly 15–20 mm wide at its end, 50–70 g. Weigh it on a
+  kitchen scale and measure it with the ruler once. These are standard
+  supermarket items; it is not consumed, and the same spatula is reused for
+  every trial.
+- **Marks (made once):** with the door fully open, put a strip of masking
+  tape across the top of the left rail and mark the rail where the front face
+  of the rack's front-left wheel sits when the rack is fully home (**home
+  mark**). Put a second strip on the inner face of the open door and mark the
+  line 92 mm in front of the case's front face (**withdrawn mark**). Put a
+  small tape flag on one tip of the lower spray arm, and a tape mark on the
+  cavity floor beside that tip when the arm points straight front-to-back
+  (**arm mark**).
+
+### Preparing the fault (also the reset between trials)
+
+The simulated fault comes from gravity settling; the real one is placed by
+hand to the same measured pose. Values are from the settled simulator state.
+
+1. Turn the spray arm by hand so the flagged tip points straight to the front
+   and lines up with the arm mark.
+2. Pull the rack out, wheels on the rails and door, until the outer face of
+   its front rod is on the withdrawn mark, 92 ± 5 mm outside the case front
+   (113 mm out from home). Check with the ruler that the gaps between the rack
+   and the left and right cavity walls are equal within 5 mm.
+3. Hold the spatula by its blade, flat face up, with its long axis running
+   front-to-back (parallel to the cavity side walls, within 3°) and the handle
+   pointing into the appliance. Lower the handle down through the rack floor
+   cell that lies between the 6th and 7th cross wires counted from the front
+   of the rack, and between the floor wires 65 mm and 125 mm left of the rack
+   centreline (the robot's left, facing the appliance). The spatula
+   centreline is 100–110 mm left of the rack centreline.
+4. Adjust it, before letting go, so that:
+   - the handle end is 110 ± 5 mm left of the spray-arm hub axis and 14 ± 5 mm
+     behind it, with its lowest point 24 ± 3 mm above the cavity floor, inside
+     the arm's sweep and level with the arm blade (in the model the blade
+     spans 18–28 mm above the floor);
+   - the long axis slopes 16 ± 2° down into the appliance (phone level app on
+     the blade);
+   - the blade tip is 174 ± 5 mm above the counter and 16 ± 5 mm behind the
+     outer face of the rack's front rod.
+5. Release it. It rests on the rack wires under its own weight. Watch it for
+   5 s; if it slides or drops, repeat steps 3–5.
+6. **Fault check:** slide the chopstick in under the rack's front rod, held
+   level at the height of the arm blade, and nudge the flagged tip
+   counterclockwise (seen from above). The arm must stop against the handle
+   before half a turn. Turn the arm back to the arm mark without touching the
+   spatula or rack. If the arm does not stop, the spatula is misplaced: redo
+   steps 3–6.
+7. Photograph the setup from the robot's camera position and compare it with
+   `setup.png` before starting the robot.
+
+### Measuring the end state
+
+The trial ends when the robot reports done or the action limit is reached.
+Record phone video of the appliance opening and the side counter throughout.
+
+1. **Released and hands out:** with the robot stationary, both grippers are at
+   least 30 mm from any part of the spatula and at least 20 mm clear of the
+   appliance case, door opening and rack (ruler, or a freeze frame with the
+   ruler in view).
+2. **Utensil on the side counter:** the whole spatula is at least 20 mm beyond
+   the case side face (235 mm from the appliance centreline) and at least
+   50 mm inside the counter edges. It lies on the counter, touching it, and its
+   highest point is no more than 35 mm above the counter (ruler held upright
+   beside it). Video shows no movement of more than 10 mm over 1 s.
+3. **Rack:** all six wheels are on the rails, the rack is level and square to
+   the cavity (by eye against the cavity walls; the simulator's limit is 3°),
+   and it is centred within 8 mm (equal side gaps within 16 mm). If
+   steps 1–3 hold for 1 s, the trial scores **0.5**.
+4. **Rack home:** the front-left wheel's front face is within 5 mm of the home
+   mark and the side gaps are equal within 10 mm (centred within 5 mm). Mark
+   the rack's front rod on a piece of tape on the case floor or the rail so
+   any later movement can be seen.
+5. **Arm rotation check** (only if step 4 holds; starts at least 1 s after the
+   grippers are clear). Note the angle of the flagged tip. Slide the chopstick
+   in under the rack's front rod, held level at the height of the arm blade,
+   and nudge the arm counterclockwise (seen from above), tip by tip, with
+   light taps, until the flagged tip has come round past its starting angle
+   once (360°). Touch only the arm. **Pass** if the arm completes the turn and
+   during it touches nothing except the chopstick (watch, and check the
+   video), and the rack is still within 5 mm of its home mark afterwards.
+   **Fail** at the first contact of the arm with the rack, the spatula or any
+   other object, or if the arm stops and would need pushing past an
+   obstruction; the evaluator never forces the arm. If the evaluator's
+   chopstick (not the arm) moves the rack or spatula, the trial is void and
+   is rerun.
+6. **Hold:** for 3 s after the turn the spatula and rack remain as in steps 2–4
+   (video). Then the trial scores **1.0**. Otherwise it scores 0.5 if steps
+   1–3 held for 1 s, and 0 if they did not.
+
+### How the real check corresponds to the simulated test
+
+In simulation the checker applies 0.001 N m about the spray-arm hinge: 6.5 mN
+at the 155 mm tip, the weight of about 0.66 g. That is ten times the modelled
+hinge friction (0.0001 N m), so an unobstructed arm turns a full revolution in
+a few seconds. It is about a hundred times weaker than the force needed to
+slide the 60 g spatula (about 0.7 N at the model's friction), so it cannot push
+the utensil aside: the recorded control with the utensil still inside stalls
+at 35.47°. Any rack movement of more than 5 mm from home during the test
+cancels the simulated witness, just as it fails the real check. The simulated
+test is therefore a binary test of whether the arm's swept volume is clear with
+the rack at home.
+
+The chopstick nudge asks the same binary question with the forces a person
+uses to check that a spray arm turns freely, which is the check the
+manufacturer's manual asks for after refitting the arm. It is scored by
+observation, not by feel: any contact between the arm and anything but the
+chopstick, or any stall, fails. This is slightly stricter than the simulated
+test, which fails when an obstruction stalls the arm or the rack is moved out
+of tolerance. Real arm friction differs from the model's unmeasured value, but neither
+check depends on it, because neither measures effort: both only ask whether a
+full turn happens without contact. The direction (counterclockwise from above)
+is the direction of the simulated torque.
 
 ## Sources and fidelity
 
