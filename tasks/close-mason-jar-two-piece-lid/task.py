@@ -5,25 +5,28 @@ compound) has already been set centred on the rim. The robot must lift the screw
 glass thread and turn it down until the band's flange clamps the disc on the rim, then let go.
 
 Model (declared in code, all collision geometry is real contact, nothing is triggered by proximity):
-- Jar ("jar", free, 0.75 kg filled): glass body as a convex hull of its lathe profile, the neck as a cylinder, and the glass thread as a
-  continuous right-hand helix: 1.25 turns at 4.23 mm pitch (6 per inch), built from 30 convex segments of its trapezoid section.
+- Jar ("jar", free articulation, 0.75 kg filled): glass body as a convex hull of its lathe profile, the neck as a cylinder, and the glass
+  thread as a continuous right-hand helix: 1.25 turns at 4.23 mm pitch (6 per inch), built from 30 convex segments of its trapezoid section.
+  The rim's top 4 mm (the sealing surface, link "seal") slides down along the jar's axis against a 6 N/mm spring: the closure's give
+  (the compound compressing, the lid and the band's flange flexing), lumped, so that a band can be turned on past first contact.
 - Band ("band", free, 11 g): a flange (24 annular segments), a skirt (24 segments) and its rolled internal thread, a helix of the same
-  pitch (21 segments, 0.875 turn). Both threads run out to their roots over 29 degrees at each end. The band's thread rides under the glass thread, so turning the band clockwise (seen from above)
-  draws it down; it stops when the flange clamps the disc on the rim.
-- Disc ("disc", free, 6 g): a 68.6 mm flat lid resting on the rim. It is loose: a band brought down tilted or off-centre lands on its
+  pitch (21 segments, 0.875 turn). Both threads run out to their roots over 29 degrees at each end. The band's thread rides under the glass
+  thread, so turning the band clockwise (seen from above) draws it down until the flange meets the disc; turning on loads the give.
+- Disc ("disc", free, 6 g): a 67.2 mm flat lid resting on the rim. It is loose: a band brought down tilted or off-centre lands on its
   edge and cocks it or pushes it off.
-- Not modelled: tightening torque (fingertip-tight versus cranked down cannot be told apart: there is no force rule), the sealing
-  compound's give, the band's knurl. Uniform rubber-like friction on the arms' pads.
+- Not modelled: torque or force (none is scored), the band's knurl. Uniform rubber-like friction on the arms' pads.
 
-Scoring (end state, read by the tracker every control step; `score()` returns it):
+Scoring (end state, read by the tracker every control step; `score()` returns it). Turn = how far the band has been turned clockwise past
+the angle at which it first touched the lid (the angle between the witness marks of a real trial), negative if short of it:
 - 0.0 if the jar has ever tipped more than 25 degrees, or the disc has ever left the rim (centre more than 12 mm off the jar's axis,
   or its underside more than 5 mm below the rim); cleared only at a reset.
-- 1.0: band seated (its top within 1.0 mm of its seated height above the rim), square (within 2 degrees of the jar's axis) and centred
-  (within 2 mm), disc flat (within 2 degrees) and centred (within 2.5 mm), jar upright (within 5 degrees) and standing on the counter
-  (within 3 mm), everything still, and every fingertip point at least 3 cm from jar and band, held for 1 s.
-- 0.5: band square and centred as above, top within 2.0 mm of seated (most of the way down), disc not cocked (within 5 degrees).
-- 0.25: band threaded on: square within 4 degrees, centred within 3 mm, top within 2.5 mm of seated. (Resting on top of the glass
-  thread unthreaded, the band's top stands at least one pitch less its 45 degrees of spare thread, 3.7 mm, above its seated height.)
+- 1.0 (fingertip-tight): turn 0 to 120 degrees, band square (within 2 degrees of the jar's axis) and centred (within 2 mm), disc flat
+  (within 2 degrees) and centred (within 2.5 mm), jar upright (within 5 degrees) and standing on the counter (within 3 mm), everything
+  still, and every fingertip point at least 3 cm from jar and band, held for 1 s.
+- 0.5: band square and centred as above, disc within 5 degrees of flat, turn at least -90 degrees: over-tight (past 120 degrees), up to
+  a quarter turn short of contact, or fingertip-tight without the rest of 1.0.
+- 0.25: band threaded on: square within 4 degrees, centred within 3 mm, top within 2.5 mm of its first-contact height. (Resting on top of
+  the glass thread unthreaded, the band's top stands at least one pitch less its 45 degrees of spare thread, 3.7 mm, up.)
 - 0.0 otherwise (the band still on the counter, or sitting on the jar unthreaded or cross-threaded).
 The partial levels need no hands clear (they are progress), full credit does.
 
@@ -143,8 +146,7 @@ def _jar():
     pts = [(R_CREST - 0.0004) * np.array([math.cos(a), math.sin(a), 0.0]) + np.array([0, 0, jar_thread_z(a)]) for a in np.linspace(a_lo, 0.0, 60)]
     parts.append(("thread", m.tube(pts, 0.0008, sides=8), "glass_edge"))
     cols.append(m.col_hull("body_c", m.lathe(_BODY_PROFILE + [(0.0, 0.1075)], 32)))
-    cols.append(m.col_cylinder("neck_c", R_ROOT, H_RIM - 0.1065, (0.0, 0.0, (H_RIM + 0.1065) / 2)))
-    cols.append(m.col_cylinder("rim_c", R_RIM, 0.004, (0.0, 0.0, H_RIM - 0.002)))
+    cols.append(m.col_cylinder("neck_c", R_ROOT, H_RIM - H_SEAL - 0.1065, (0.0, 0.0, (H_RIM - H_SEAL + 0.1065) / 2)))
     n = int(round(TURNS_JAR * N_PER_TURN))
     step = (0.0 - a_lo) / n
     for k in range(n):
@@ -154,8 +156,17 @@ def _jar():
     return parts, cols
 
 
+# The closure's give. A real band can be turned on past first contact because the lid's sealing compound compresses and the band's
+# flange and the lid flex (a quarter turn is 1.06 mm of axial travel at 6 per inch). That give is lumped into one sprung sealing
+# surface: the rim's top 4 mm slides down along the jar's axis against a spring. Turning a band 60 degrees past first contact loads
+# it 0.7 mm; 180 degrees, 2.1 mm.
+H_SEAL = 0.004  # the sprung top of the rim
+K_SEAL = 6000.0  # N/m
+SEAL = m.slider("seal", "Z", -0.004, 0.0, (), (m.col_cylinder("seal_c", R_RIM, H_SEAL, (0.0, 0.0, H_RIM - H_SEAL / 2)),), mass=0.01, spring=K_SEAL,
+                damping=15.0, friction=0.0, effort=200.0)
 _jp, _jc = _jar()
-JAR = m.free("jar", (JAR_XY[0], JAR_XY[1], TOP), _jp, _jc, LOOKS, mass=0.75, friction=(0.5, 0.4), com=(0.0, 0.0, 0.052))
+JAR = m.mechanism("jar", (JAR_XY[0], JAR_XY[1], TOP), [SEAL], LOOKS, frame_parts=_jp, frame_colliders=_jc, friction=(0.5, 0.4), solver_iters=64,
+                  free_mass=0.75, frame_inertia=(0.0013, 0.0013, 0.0006))
 
 
 # -- disc (the flat lid) -----------------------------------------------------------------------------------------------------------------
@@ -216,6 +227,18 @@ def _tilt_between(r_a, r_b) -> float:
     return float(np.degrees(np.arccos(np.clip(float(r_a[:, 2] @ r_b[:, 2]), -1.0, 1.0))))
 
 
+YAW_CONTACT = -32.0  # the band's turn about the jar's axis (deg, anticlockwise from above) when its flange first touched the lid: -30.5 to -32.9 in three runs
+RISE_CONTACT = 0.0  # and its rise then
+
+
+def turn_past_contact(yaw: float, rise: float) -> float:
+    """How far (deg) the band has been turned clockwise past the angle at which it first touched the lid; negative: short of it.
+    The witness marks give it modulo a turn; the rise (4.23 mm a turn) says which turn."""
+    by_rise = -(rise - RISE_CONTACT) / PITCH * 360.0
+    by_mark = YAW_CONTACT - yaw
+    return float(by_mark + 360.0 * round((by_rise - by_mark) / 360.0))
+
+
 def measure(jar, band, disc, tips=None) -> dict:
     """Everything the score reads, in the jar's frame."""
     rj = jar.rotation()
@@ -224,16 +247,18 @@ def measure(jar, band, disc, tips=None) -> dict:
     out = {
         "jar_tilt": jar.tilt_deg(),
         "jar_floor": float(jar.pos[2] - TOP),
-        "band_rise": float(b[2] - H_SEAT),  # the band's top above its seated height
+        "band_rise": float(b[2] - H_SEAT),  # the band's top above its height at first contact (flange on the unloaded disc on the rim)
         "band_off": float(math.hypot(b[0], b[1])),
         "band_tilt": _tilt_between(rj, band.rotation()),
         "band_yaw": float(np.degrees(math.atan2(*(rj.T @ band.rotation())[[1, 0], 0]))),
+        "seal": float(-jar.joints.get("seal_joint", 0.0)),  # the closure's give taken up (logged, not scored)
         "disc_off": float(math.hypot(dsc[0], dsc[1])),
         "disc_drop": float(H_RIM - dsc[2]),  # the disc's underside below the rim
         "disc_tilt": _tilt_between(rj, disc.rotation()),
         "v": (float(np.linalg.norm(jar.lin_vel)), float(np.linalg.norm(band.lin_vel)), float(np.linalg.norm(disc.lin_vel)),
               float(np.linalg.norm(jar.ang_vel)), float(np.linalg.norm(band.ang_vel)), float(np.linalg.norm(disc.ang_vel))),
     }
+    out["turn"] = turn_past_contact(out["band_yaw"], out["band_rise"])
     if tips is not None:
         q = jar.to_local(tips)
         dr = np.maximum(np.hypot(q[:, 0], q[:, 1]) - R_SK_OUT, 0.0)
@@ -242,12 +267,15 @@ def measure(jar, band, disc, tips=None) -> dict:
     return out
 
 
+TURN_MIN, TURN_MAX = 0.0, 120.0  # fingertip-tight: from first contact (Ball) through a quarter turn more (NDSU, Clemson), plus 30 degrees
+
+
 def level(c: dict) -> float:
     """The progress level of a state (no hands rule, no harm)."""
     sq = c["band_tilt"] <= 2.0 and c["band_off"] <= 0.002
-    if sq and c["band_rise"] <= 0.001 and c["disc_tilt"] <= 2.0 and c["disc_off"] <= 0.0025 and c["jar_tilt"] <= 5.0 and c["jar_floor"] <= 0.003:
+    if sq and TURN_MIN <= c["turn"] <= TURN_MAX and c["disc_tilt"] <= 2.0 and c["disc_off"] <= 0.0025 and c["jar_tilt"] <= 5.0 and c["jar_floor"] <= 0.003:
         return 1.0
-    if sq and c["band_rise"] <= 0.002 and c["disc_tilt"] <= 5.0:
+    if sq and c["turn"] >= -90.0 and c["disc_tilt"] <= 5.0:  # over-tight (past 120 degrees), or within a quarter turn of contact
         return 0.5
     if c["band_tilt"] <= 4.0 and c["band_off"] <= 0.003 and c["band_rise"] <= 0.0025:
         return 0.25
@@ -322,7 +350,7 @@ def _report(ctx, label=""):
     c = TRIAL.last
     if not c:
         return
-    print(f"[jar] t {ctx.t:5.1f} {label} band rise {c['band_rise'] * 1000:+6.2f} mm yaw {c['band_yaw']:+6.1f} off {c['band_off'] * 1000:4.1f} tilt {c['band_tilt']:4.1f} | "
+    print(f"[jar] t {ctx.t:5.1f} {label} band rise {c['band_rise'] * 1000:+6.2f} mm yaw {c['band_yaw']:+6.1f} off {c['band_off'] * 1000:4.1f} tilt {c['band_tilt']:4.1f} turn {c['turn']:+6.1f} seal {c['seal'] * 1000:4.2f} | "
           f"disc off {c['disc_off'] * 1000:4.1f} tilt {c['disc_tilt']:4.1f} drop {c['disc_drop'] * 1000:+5.1f} | jar tilt {c['jar_tilt']:4.1f} "
           f"floor {c['jar_floor'] * 1000:+5.1f} | hands {c.get('hand_gap', 0) * 1000:5.0f} mm still {c['still']} {np.round(c['v'], 3).tolist()} | score {TRIAL.score:.2f} full {TRIAL.full}",
           flush=True)
@@ -341,7 +369,7 @@ def demo_script(ctx):
 
     l, r = ctx.left, ctx.right
     mode = ctx.mode
-    if mode not in ("full", "none", "onearm", "careless", "placed"):
+    if mode not in ("full", "none", "onearm", "careless", "placed", "overtight", "contact", "short"):
         raise ValueError(mode)
     for _ in range(3):
         yield
@@ -399,26 +427,48 @@ def demo_script(ctx):
         x = rj.T @ rb[:, 0]
         return math.degrees(math.atan2(x[1], x[0]))
 
+    def rise_now():
+        """The band's top above where its flange first meets the lid (the lid's and band's thicknesses on the rim): what a person sees
+        and feels as the band coming down onto the lid."""
+        return band_height() - H_SEAT
+
     h_start = band_height()
+    target = {"overtight": 200.0, "contact": 0.0, "short": -60.0}.get(mode, 60.0)  # degrees past first contact to stop at
     snug = mode == "placed"
     tries = 0
-    for k in range(0 if snug else 8):
-        # a stroke of up to 150 degrees in 30-degree pieces. Fingertip-tight: once the band has come well down the thread (3 mm) and then
-        # stops turning with the hand for two pieces running (resistance: the flange is on the lid), stop. If it stops turning before it
-        # has come down (its thread butting on the glass thread's start), back it off 60 degrees, ease the hand up 1 mm and go again, as
-        # a person does. Reads only the band's and jar's poses.
-        flat = stuck = 0
+    past = None  # degrees turned since the band first met the lid, once it has
+    for k in range(0 if snug else 10):
+        # a stroke of up to 150 degrees in pieces of up to 30. Turn until the flange meets the lid (the band stops coming down), then
+        # on by `target` (60 degrees: fingertip-tight, between Ball's "just until resistance" and the extension guides' quarter turn),
+        # counted from the band's own turn. If the band stops turning before it has come down (its thread butting on the glass
+        # thread's start), back it off 60 degrees, ease the hand up 1 mm and go again, as a person does. Reads only poses.
+        stuck = slip = 0
         wrist = 0.0  # the hand's turn in this stroke, degrees
         for piece in range(5):
+            if past is not None:
+                left = target - past
+            elif mode == "short":
+                left = rise_now() / PITCH * 360.0 + target  # degrees to go until the band is |target| short of contact
+            else:
+                left = 30.0
+            if left <= 2.0:
+                snug = True
+                break
+            dturn = min(30.0, left + 3.0)  # a little over: the band lags the hand
             y0 = band_yaw()
-            yield from r.turn(-30.0, t=0.6, label=f"stroke {k + 1}")
-            wrist -= 30.0
-            turned = abs((band_yaw() - y0 + 180.0) % 360.0 - 180.0)
+            yield from r.turn(-dturn, t=max(0.3, dturn / 50.0), label=f"stroke {k + 1}")
+            wrist -= dturn
+            turned = (y0 - band_yaw() + 180.0) % 360.0 - 180.0  # clockwise
             down = h_start - band_height()
-            flat = flat + 1 if (turned < 6.0 and down > 0.003) else 0
-            stuck = stuck + 1 if (turned < 6.0 and down <= 0.003) else 0
-            print(f"[piece] stroke {k + 1}.{piece + 1}: band turned {turned:5.1f} deg, down {down * 1000:+.2f} mm in all", flush=True)
-            if flat >= 2:
+            if past is not None:
+                past += turned
+            elif rise_now() <= 0.0:  # the flange is on the lid
+                past = -rise_now() / PITCH * 360.0
+            stuck = stuck + 1 if (abs(turned) < 6.0 and down <= 0.003) else 0
+            slip = slip + 1 if (past is not None and abs(turned) < 3.0) else 0
+            print(f"[piece] stroke {k + 1}.{piece + 1}: band turned {turned:5.1f} deg, down {down * 1000:+.2f} mm, rise {rise_now() * 1000:+.2f} mm, "
+                  f"past contact {past if past is not None else float('nan'):6.1f}", flush=True)
+            if slip >= 2:  # the band will not turn further with the hand
                 snug = True
                 break
             if stuck >= 2 and tries < 3:
