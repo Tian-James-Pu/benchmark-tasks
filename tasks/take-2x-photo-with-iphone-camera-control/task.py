@@ -1,7 +1,8 @@
 """Take a photo at 2x zoom with an iPhone 16's Camera Control.
 
 An Apple iPhone 16 (147.6 x 71.6 x 7.80 mm, 170 g: Apple's tech specs and its accessory dimensional drawing) stands in
-landscape in a desk phone stand, its screen towards the arms and its rear cameras towards a slice of cake on the table.
+landscape in a desk phone stand, its screen towards the arms and its rear cameras towards an artificial apple (a dry,
+reusable foam food model) on the table.
 The Camera app is open at 1x, and Zoom is the setting the Camera Control last adjusted, so (Apple's iPhone User Guide)
 a light press on the Camera Control shows the zoom overlay, sliding a finger along the control zooms, and a click
 (a full press) takes the photo. In landscape, the Camera Control is on the top edge: a 17.1 mm sapphire strip whose
@@ -22,8 +23,13 @@ Model (declared in code):
   the finger leaves the control; the zoom stays.
 - The screen shows the viewfinder, the zoom overlay (a bar with a marker that is yellow at 2x), the zoom chip (1x,
   2x or other), a white flash at each photo, and the last photo's thumbnail.
-- A click takes a photo at the zoom then. It is sharp if the phone moved slower than SHARP_V and turned slower than
-  SHARP_W at that step, and clear if no fingertip point was within LENS_CLEAR of a rear lens's centre.
+- A click takes a photo at the zoom then. It is clear if no fingertip point was within LENS_CLEAR of a rear lens's centre.
+- Only the Camera Control takes photos and zooms. The screen has no touch effect (no shutter button, no zoom chip, no
+  pinch), and touching it voids photo credit: a fingertip point within SCREEN_NEAR in front of the screen's glass, at
+  any time in the trial, scores 0. That mirrors the real trial, where a phone's touchscreen does respond to conductive
+  pads, so screen contact seen in the screen-side video gives no photo credit (README).
+- Seated: the four corners of the screen face each within SEATED of their settled start (real: the lower corners on
+  their tape marks, the back against the back rest). Knocked out: any of them ever more than KNOCKED from it.
 
     inspect-robots run ... -E task=tasks/take-2x-photo-with-iphone-camera-control/task.py (README)
 """
@@ -68,9 +74,11 @@ SNAP = 0.15  # log2 units: the detent at 1x and 2x (2x reads from 1.80x to 2.22x
 LZ_MIN, LZ_MAX = -1.0, math.log2(10.0)  # 0.5x to 10x
 OVERLAY_IDLE_STEPS = 40  # 2 s without a touch closes the overlay
 LIFT_STEPS = 3  # the touch controller's debounce: a contact lost for less than 0.15 s is the same touch
-SHARP_V, SHARP_W = 0.02, math.radians(10.0)  # m/s and rad/s at the click
 LENS_CLEAR = 0.015
+SCREEN_NEAR = 0.010  # a fingertip point this close in front of the screen's glass, inside its outline, is a screen touch
+SEATED, KNOCKED = 0.005, 0.02  # m: the screen-face corners' displacement from their settled start
 # the two rear cameras: 13.62 and 31.34 mm from the top end, about 11.8 mm in from the Camera Control's edge (drawing, detail D)
+CORNERS = np.array([[-PH_T / 2, sy * PH_L / 2, sz * PH_W / 2] for sy in (-1, 1) for sz in (-1, 1)])  # the screen face's corners
 LENSES = np.array([[PH_T / 2, Y_TOPEND - 0.01362, PH_W / 2 - 0.0118], [PH_T / 2, Y_TOPEND - 0.03134, PH_W / 2 - 0.0118]])
 
 # -- where the phone stands ----------------------------------------------------------------------------------------------
@@ -201,14 +209,15 @@ _sp, _sc = _stand()
 STAND = m.fixed("stand", (PX, PY, TOP), _sp, _sc, LOOKS, friction=(1.2, 1.0))
 
 # -- the subject and the distractors (SimReady) -----------------------------------------------------------------------------
-CAKE = SimReady("cake", pos=(0.56, 0.06, TOP), size=(0.086, 0.104, 0.070), mass=0.10, package="food_prepared_cake_a01",
-                usd="sm_food_prepared_cake_a01_01.usd", yaw=0.4)
+# The photo's subject: an artificial (foam) Red Delicious apple, about 7.8 x 8.1 x 9.5 cm, 40 g: dry and reusable.
+APPLE = SimReady("apple", pos=(0.56, 0.06, TOP + 0.001), size=(0.078, 0.081, 0.095), mass=0.04, package="food_produce_apple_redDelicous_a01",
+                 usd="sm_food_produce_apple_redDelicous_a01_01.usd", yaw=0.4, angular_damping=5.0, convex=True)
 MUG = SimReady("mug", pos=(0.24, 0.24, TOP), size=(0.114, 0.090, 0.080), mass=0.30, package="dishware_mug_a01", usd="sm_dishware_mug_a01_01.usda",
                yaw=2.2)
 GLASSES = SimReady("sunglasses", pos=(0.50, -0.24, TOP), size=(0.145, 0.174, 0.057), mass=0.03, package="accessory_eyeglasses_a01",
                    usd="sm_accessory_eyeglasses_a01_01.usd", yaw=1.2)
 
-OBJECTS = [PHONE, STAND, CAKE, MUG, GLASSES]
+OBJECTS = [PHONE, STAND, APPLE, MUG, GLASSES]
 
 
 # -- the phone's software: the Camera Control and the Camera app ---------------------------------------------------------
@@ -243,7 +252,8 @@ def _path(prim: str) -> str:
 
 class Phone:
     """The Camera Control's light press, slide and click, the zoom, the photos taken, and the screen. Also the score:
-    `harm` (the phone knocked out of its place in the stand) is recorded across steps and cleared only in `reset`."""
+    `harm` (the phone knocked out of its place in the stand) and `screen_touched` are recorded across steps and cleared
+    only in `reset`."""
 
     def __init__(self):
         self.reset()
@@ -259,6 +269,7 @@ class Phone:
         self.flash = 0
         self.start = None  # the settled phone's pose, read at the first control step
         self.harm = False
+        self.screen_touched = False
         self.hold = 0
         self.full = False
         self.score = 0.0
@@ -311,34 +322,42 @@ class Phone:
                 if self.idle >= OVERLAY_IDLE_STEPS:
                     self.overlay = False
 
+        # the screen has no touch effect; a fingertip on it voids photo credit (recorded for the whole trial)
+        on_glass = ((local[:, 0] <= -PH_T / 2 + 0.001) & (local[:, 0] >= -PH_T / 2 - SCREEN_NEAR) & (np.abs(local[:, 1]) <= PH_L / 2 - 0.001)
+                    & (np.abs(local[:, 2]) <= PH_W / 2 - 0.001))
+        if on_glass.any():
+            self.screen_touched = True
+
         # the click takes a photo at the zoom the dial shows
         if self.armed and depth >= CLICK_D:
             self.armed = False
-            v, w = float(np.linalg.norm(s.lin_vel)), float(np.linalg.norm(s.ang_vel))
             lens_gap = float(min(np.linalg.norm(local[:, None, :] - LENSES[None], axis=2).min(), 1.0))
-            self.photos.append({"zoom": shown_zoom(self.lz), "sharp": v < SHARP_V and w < SHARP_W, "clear": lens_gap > LENS_CLEAR, "v": v, "w": w,
-                                "lens_gap": lens_gap})
+            self.photos.append({"zoom": shown_zoom(self.lz), "clear": lens_gap > LENS_CLEAR, "lens_gap": lens_gap})
             self.flash = 4
         elif depth < REARM_D:
             self.armed = True
         if self.flash:
             self.flash -= 1
 
-        # the phone knocked out of its place in the stand: more than 2 cm or 10 degrees from its settled start, before full credit
-        moved = float(np.linalg.norm(pos - self.start[0]))
+        # the phone knocked out of its place in the stand: a screen-face corner more than 2 cm from its settled start, before full credit
+        corners_now = pos + CORNERS @ R.T
+        corners_start = self.start[0] + CORNERS @ self.start[1].T
+        moved = float(np.linalg.norm(corners_now - corners_start, axis=1).max())
         turned = _rot_angle_deg(R, self.start[1])
-        if (moved > 0.02 or turned > 10.0) and not self.full:
+        if moved > KNOCKED and not self.full:
             self.harm = True
 
         # the score
         last = self.photos[-1] if self.photos else None
-        good = last is not None and last["sharp"] and last["clear"]
+        good = last is not None and last["clear"]
         clear = float(_box_gap(local).min()) >= 0.03
-        in_stand = moved <= 0.005 and turned <= 3.0 and float(np.linalg.norm(s.lin_vel)) < 0.01 and float(np.linalg.norm(s.ang_vel)) < 0.05
-        ok = good and last["zoom"] == 2.0 and clear and in_stand and not self.harm
+        in_stand = moved <= SEATED and float(np.linalg.norm(s.lin_vel)) < 0.01 and float(np.linalg.norm(s.ang_vel)) < math.radians(3.0)
+        ok = good and last["zoom"] == 2.0 and clear and in_stand and not self.harm and not self.screen_touched
         self.hold = self.hold + 1 if ok else 0
         self.full = self.full or self.hold >= HOLD_STEPS
-        if self.full:
+        if self.screen_touched:
+            self.score = 0.0
+        elif self.full:
             self.score = 1.0
         elif self.harm or not good:
             self.score = 0.0
@@ -350,7 +369,7 @@ class Phone:
             self.score = 0.25
         self.last = {"depth_mm": depth * 1000, "touch": touch, "where_mm": None if where is None else where * 1000, "overlay": self.overlay,
                      "zoom": shown_zoom(self.lz), "photos": len(self.photos), "moved_mm": moved * 1000, "turned_deg": turned, "clear": clear,
-                     "harm": self.harm, "score": self.score}
+                     "harm": self.harm, "screen": self.screen_touched, "score": self.score}
         self._show()
 
 
@@ -360,7 +379,7 @@ m.on_reset(PHONE_SW.reset)
 
 
 def success(objects) -> bool:
-    return bool(PHONE_SW.full)
+    return bool(PHONE_SW.full and not PHONE_SW.screen_touched)
 
 
 def score(objects) -> float:
