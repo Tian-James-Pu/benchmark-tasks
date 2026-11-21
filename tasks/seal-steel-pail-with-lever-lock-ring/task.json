@@ -1,0 +1,20 @@
+{
+  "title": "Close the lever-lock ring on a filled 5-gallon steel pail, cover held down on its gasket as the lever goes over centre",
+  "category": "Impact on jobs",
+  "keywords": [
+    "packaging",
+    "lever-lock ring",
+    "open-head pail",
+    "over-centre toggle",
+    "bimanual"
+  ],
+  "instruction": "Close the lever-lock ring to lock the lid on the pail.",
+  "context": "Hand packers (O*NET 53-7064, 555,500 US workers; task: \"Seal containers or materials, using glues, fasteners, nails, and hand tools\") close filled open-head pails. The maker's instructions for this lid (Uline IS-21135) say to press the cover down while the lever is pushed clockwise until it collapses onto the ring: the cover rides 6.5 mm high on its gasket, and a ring closed over it unpressed draws tight on top of the pail's bead, not under it, so the lid is not locked.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left; azimuth 0 = far side (+x), 90 = left; origins on the bench (74.75 cm up). Task objects: Uline S-20030 5-gallon open-head steel pail, 28-gauge steel, 29.8 dia at its rolled top bead, 27.3 dia at the base, 34.0 tall, wire bail with plastic grip hanging down the far side, filled: 20.0 in all, axis at (36, 0). Four blue tape strips 2.5 wide x 3 tall on its side just under the bead, at azimuths 0, 90, 180, 270 (far, left, near, right). Cover of the Uline S-21135 lever-lock lid: steel, 30.5 dia over its curl, rubber gasket, 0.65, set on the pail centred, loose, its curl top 6.5 mm above its seated height (it sinks 0.5 mm under the ring). Lever-lock ring of the same lid: steel C-channel band, 30.9 outside dia, channel 1.15 tall, 0.31, slipped over the cover, its top web resting on the cover's curl; lever 7.5 long hinged on the band at azimuth 252, standing open 120 degrees (sticking out to the right); closed clockwise it lies along the band with its tip at azimuth 225 (front right). Distractors, ignored by scoring (SimReady): clear packing tape roll 10 dia x 5, 0.06, at (66, 22); retractable utility knife 16 x 6.1 x 2.6, 0.12, at (66, -6) yaw 80 degrees; thin blue marker 10.9 x 0.8, 0.01, at (12, 2) yaw 69 degrees; pair of light-duty gloves 24.7 x 23.1 x 1.6, 0.06, at (64, 40) yaw -20 degrees.",
+  "scoring": "Ring height = height of the ring's top edge above the pail's base at each tape mark; reference = its height on this pail sealed correctly by hand (345.9 mm in the simulator). 0 if the pail ever tilts over 10 degrees. Otherwise, at the end: 0 unless the pail is within 5 degrees of upright, the ring is on the rim (centre within 8 mm of the pail's axis, underside 0 to 15 mm above the bead's top), the lever lies within 10 degrees of the band (tip within 13 mm of it), and every fingertip is at least 3 cm from the pail's top (the zone within 17 cm of its axis, from 2 cm below the bead's top to 3.5 cm above it). Then 0.25 if the ring stands over 2 mm above its reference at 2 or more marks (closed on top of the bead); 0.5 at exactly 1 mark; 0.75 at none; 1.0 at none with ring and pail still (ring under 1 cm/s and 0.1 rad/s, pail under 1 cm/s) for 1 s without a break.",
+  "run_limit": "1,200 steps (1 minute at 20 Hz)",
+  "reset_notes": "Lift the lever open, take the ring off, lift the cover and set it back on loose and centred, slip the ring back on with its lever opened to 120 degrees at its tape mark (about 2 minutes). Contents are bagged sand, not liquid. Replace the cover if its reference height drifts more than 0.5 mm (gasket set).",
+  "fidelity": "Pail, cover and ring are custom meshes at Uline's published full size (no rescale; SimReady has no pail). The cover rides its gasket on a vertical slide (it can't tilt or shift); gasket 3 N/mm, 6.5 mm free: estimates. The ring is a free rigid band whose four lip segments slide in as the lever closes; toggle and lip lock are joint drives switched by the lever's angle. Lever resistance, about 9 N at its end, is an estimate, likely lighter than real. Distractors are SimReady props.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-KF68SU"
+}
