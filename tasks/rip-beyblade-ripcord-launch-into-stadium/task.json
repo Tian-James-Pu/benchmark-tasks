@@ -1,0 +1,22 @@
+{
+  "title": "Launch a Beyblade: stand the loaded ripcord launcher up over the stadium, hold it level and rip the cord out fast",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "toy",
+    "spinning top",
+    "ripcord",
+    "launcher",
+    "dynamic",
+    "child care"
+  ],
+  "instruction": "Launch the Beyblade so it spins in the stadium for 10 seconds.",
+  "context": "Every Beyblade battle starts this way, and young children who cannot yet do it hand the loaded launcher to a parent. The top locks under the launcher; ripping the toothed cord out through it spins the top through a gear and drops it off. It takes two hands doing different things: one turns the launcher upright and holds it still and level a few centimetres over the stadium's centre while the other rips the cord straight out in a quarter of a second. Pulled slowly, the top is let go spinning too slowly to stay up; pulled off its axis, the cord binds and drags the launcher.",
+  "setup": "Positions are (x forward from the arm bases, y to the left) in cm; heights are above the table. Beystadium (Hasbro Beyblade Burst; rigid blue plastic, fixed): 39.4 cm across, rim 7.5 cm tall, inner wall at radius 18.5 cm, dish rising from 1.2 cm at its centre to 5.2 cm at radius 17 cm (a parabola), centred at (30, 0). Launcher (Hasbro Beyblade Burst Supergrip Launcher, B9510; white and blue ABS, 70 g): a 6.0 x 6.6 x 2.6 cm head with the prong ring under it and a 2.4 x 3.0 x 7.0 cm grip standing on the head, flush with the head's flat side. It lies on that flat side, its axis pointing straight away from the robot (grip end away), head centre at (17.3, 27), 3.05 cm up. Top (Beyblade Burst top: layer, zinc-alloy forge disc and a ball-ended tip of 3 mm radius; 4.9 cm across, 3.75 cm tall, 40 g), locked onto the launcher's prongs, its tip towards the robot at x 12.2. Ripcord (Hasbro 9-inch ripcord; nylon, 8 g): a toothed strip 1.2 cm wide and 18.4 cm long, pushed fully in through the head's slot (2.5 cm of strip between the head and the handle, 9.3 cm of tail out of the far side towards +y), and a red handle 2.0 x 4.5 x 3.0 cm centred at (17.3, 19), 3.05 cm up, on the stadium side. Pulling the cord turns the prongs one turn per 18.2 mm; the last tooth leaves the gear after 10.6 cm of pull and the top drops off. Distractors (NVIDIA SimReady, loose): a child's plastic cup (dishware_plastic_cup_a01, 6.4 cm across, 10 cm tall, 30 g) at (52, 32); an apple (food_produce_apple_b01, 7 cm, 180 g) at (56, -25); a notebook (misc_notebook_a01, 22.9 x 17 x 1 cm, 120 g) at (36, -43), turned 9 degrees. Both grippers start open at their ready poses.",
+  "scoring": "Spin time runs from the release (the cord's last tooth leaving the gear, when the top drops off) until the first moment the top is not spinning on its tip inside the stadium or a gripper comes near it. Spinning on its tip inside the stadium: the top's centre within 16.05 cm of the stadium's centre (wholly inside the 18.5 cm inner wall), its axis within 30 degrees of vertical, and turning at 30 rad/s (290 rpm) or more. Near: any fingertip point (each finger's tip and 3 cm up it) within 5 cm of the top's centre. 1.0: spin time reaches 10 s; scored 1.0 from then on. 0.5: spin time 5 to 10 s. 0.25: 2 to 5 s. 0: under 2 s, or the top never released. A ring-out scores 0 for the whole trial unless 1.0 was already reached: after the release, the top's centre more than 20.7 cm from the stadium's centre (it left the stadium) or more than 1 cm below the table top. Possible scores: 0, 0.25, 0.5, 1.0.",
+  "run_limit": "1,200 steps (60 s at 20 Hz)",
+  "reset_notes": "Push the ripcord fully back in, teeth towards the gear (it clicks); lock the top back onto the prongs; lay the launcher on its tape marks on its flat side. Nothing is consumed. Before each trial check the top's tip for wear and that the stadium floor is clean and dry.",
+  "fidelity": "PhysX rigid bodies at 240 Hz. Stadium, launcher, cord and top are meshes and boxes (SimReady has none); the stadium is fixed and its three pockets are left out. The gear is code: cord speed sets the prongs' spin (one-way), and the cord carries the prongs' and top's inertia as joint armature. The top is held to the prongs by code until the last tooth passes the gear, then is free. Air drag is a spin-only torque. Sizes, masses, gear ratio and the stadium's profile are estimates.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-XTWANV"
+}
