@@ -1,0 +1,20 @@
+{
+  "left": {
+    "worst_position_mm": 0.09393197311317873,
+    "worst_rotation_deg": 0.01640932273377203,
+    "limits": true,
+    "failed_steps": 0,
+    "failed_labels": {},
+    "worst20": [],
+    "seconds": 373.0
+  },
+  "right": {
+    "worst_position_mm": 0.07364892268315165,
+    "worst_rotation_deg": 0.014705781826276389,
+    "limits": true,
+    "failed_steps": 0,
+    "failed_labels": {},
+    "worst20": [],
+    "seconds": 154.4
+  }
+}

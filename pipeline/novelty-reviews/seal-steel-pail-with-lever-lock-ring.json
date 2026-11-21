@@ -1,0 +1,54 @@
+{
+ "checked_at": "2026-11-21T23:38:23.727073+00:00",
+ "decision": "clear",
+ "queries": [
+  "pail|drum|bucket|lever.?lock|closing ring|lock ring|locking ring|open.?head|gasket|bung|paint can|paint tin|over.?centre|over.?center|toggle|band clamp|lid (all PR titles, known_tasks.tsv refreshed 2026-11-21T23:38Z)",
+  "every PR title numbered above 3522 for pail|drum|bucket|lever|ring|lid|cover|seal|gasket|toggle|clamp|pack",
+  "paint can|paint tin|paint pail|5-gallon|open-head|bail (all PR titles)",
+  "grep -il lever.?lock|closing ring|open.?head pail|steel pail tasks/*/task.json",
+  "LIBERO, RoboCasa, BEHAVIOR, SimplerEnv lid/close-container tasks (pot lids, jar lids, container doors)"
+ ],
+ "nearest_prs": [
+  {
+   "number": 922,
+   "assessment": "Accepted: lever a paint tin's lid off with a screwdriver. Opening a press-fit lid with a tool; different operation and object."
+  },
+  {
+   "number": 2038,
+   "assessment": "Rejected: swing-top bottle, wire bail snapped over centre. Small one-hand over-centre bail; no band round a rim, no cover to hold down."
+  },
+  {
+   "number": 2659,
+   "assessment": "Rejected: gusset clamped with toggle clamps on a fixture. Fixture clamps, not a pail closure."
+  },
+  {
+   "number": 2762,
+   "assessment": "Rejected: enclosure lid over-center latch. A single latch catch, not a contracting band whose lip must pass under a bead."
+  },
+  {
+   "number": 2914,
+   "assessment": "Rejected: lever-lock chain handcuffs on training forms. Shares only the words 'lever-lock'."
+  },
+  {
+   "number": 2916,
+   "assessment": "Pending revision (TK-YS8M33) of #2337: close a paint can's press-fit lid with rubber-mallet strikes round eight rim sectors, one hand steadying the can. Different closure and skill (impact seating of a plug lid with a tool); no band, lever, gasket hold-down or bead. Its agent review also said paint-can closing is a side chore for painters, which is why our importance case rests on hand packers closing filled shipping pails, not on painting."
+  },
+  {
+   "number": 3048,
+   "assessment": "Pending: commode pail drawn out from under its seat. Shares only the word 'pail'; no closure."
+  },
+  {
+   "number": 3434,
+   "assessment": "Pending: seat a housing on fixture datum stops and lock two toggle clamps. Fixture toggle clamps on a bench, not a free ring round a gasketed pail cover."
+  },
+  {
+   "number": 3530,
+   "assessment": "Final 21 Nov: hold an infusion pump up on an IV pole while the other hand screws its pole clamp tight ('already-covered ability'). Shares the two-hand split; here the held part is a cover pressed 3-6 mm against a gasket spring (a narrow window under load) and the other hand drives an over-centre band toggle through 120 degrees, not a screw. Recorded as the main importance risk, not a duplicate."
+  }
+ ],
+ "physical_skill": "Two hands in different roles: one holds a loose gasketed cover down about 3-6 mm on a 20 kg pail while the other pushes a 7.5 cm lever 120 degrees clockwise round its pivot on a free ring, against the band's pull, until it goes over centre; the ring's lip only passes under the pail's bead while the cover is held down.",
+ "valid_shortcuts": "Tested in sim: one arm closing the lever without pressing (0.25), closing first then pressing (0.25), pressing then releasing then closing (0.25), one arm bearing down on the lever while pushing it (0.25), leaving a hand on the cover (0.0), doing nothing (0.0). Pressing down on the ring itself instead of the cover is a valid variant of the maker's instruction.",
+ "distinct_from_nearest": "No board PR closes a lever-lock ring or any band clamp on a pail or drum. Nearest over-centre tasks (#2038 bottle bail, #2762 enclosure latch, #2659/#3434 toggle clamps) are single catches or fixture clamps without a second hand holding a gasketed cover; #922 opens a paint tin and #2916 seats a paint-can plug lid with a mallet; #3530 holds a device while screwing a clamp, the closest two-hand pattern, but with no gasket window or over-centre band.",
+ "task_py_sha256": "0c9c44d6ff1e9afda6eb586eab5064fb71291e097e46da423b550a9ac4e6f3cb",
+ "task_metadata_sha256": "6cb0960c413e0c342aea23a3140719c2f614241509cbef77c44c46b2765ac30e"
+}

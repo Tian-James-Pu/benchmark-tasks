@@ -1,0 +1,47 @@
+{
+ "checked_at": "2026-11-21T06:35:00Z",
+ "decision": "held",
+ "queries": [
+  "clapperboard",
+  "clapper",
+  "slate a take",
+  "clap",
+  "film slate",
+  "sync",
+  "strike shut",
+  "snap shut",
+  "hold steady while",
+  "hold still while",
+  "camera"
+ ],
+ "nearest_prs": [
+  {
+   "pr": 3276,
+   "state": "revising (Not accepted 2026-11-20T22:03:33Z, no revision; hold lapses 2026-11-22T22:03:33Z)",
+   "overlap": "The same idea (slate a take with a clapperboard). Its only unmet point was the real-trial timing check at 60 fps; this build counts frames at 240 fps in both simulator and real trial."
+  },
+  {
+   "pr": 1019,
+   "state": "accepted (TK-PK8X7K)",
+   "overlap": "Snap a chalk line: one hand holds a line taut, the other plucks it. Dynamic two-handed snap, but a released taut line scored by its mark, not a struck hinged stick timed at 240 fps with the held part's stillness and camera framing scored."
+  },
+  {
+   "pr": 717,
+   "state": "accepted (TK-JRVAY3)",
+   "overlap": "Grate cheese holding the grater steady: one hand steadies, the other makes repeated slow strokes. No single fast strike, no timing, no framing."
+  },
+  {
+   "pr": 143,
+   "state": "revising (TK-88C465)",
+   "overlap": "Hold a nail upright while another robot arm hammers it: holding still against a strike, but the striker is another robot and nothing is framed or timed."
+  }
+ ],
+ "physical_skill": "Stand a light acrylic clapperboard up from a 40 deg lean and hold it square to a phone camera and still with one hand, while the other opens the friction-held hinged clapstick and strikes it shut in one fast stroke (10 deg to shut within 12 frames at 240 fps) without jolting the board (face centre within a 1 cm range around the clap), with no bounce and the board kept in picture for 1 s.",
+ "valid_shortcuts": [
+  "Either arm may hold or strike; any grip on the board or stick is allowed; the board may stand on the table or be held in the air.",
+  "Snapping the stick shut while still pinching it is allowed and scores full credit if it is fast and the board stays still (in our run the arm's swing dragged the board 13 mm: 0.5).",
+  "Clapping on the leaning board with one arm scores 0 (face 39 deg off the lens); standing the board up and letting go makes it fall back (0); closing the stick at an ordinary pace scores 0.25; doing nothing scores 0.",
+  "Only the first clap is judged, matching the instruction's 'once'; a bounce or second clap within 1 s caps the score at 0.75."
+ ],
+ "distinct_from_nearest": "No accepted or pending task on the board slates a take or times a strike on a hinged part. The chalk line (TK-PK8X7K) and grater (TK-JRVAY3) tasks use one hand to hold and the other to act, but neither scores the speed of a single strike at a frame rate nor keeps a held object framed and square to a camera. This is not the saturated hold-one-control-while-working-another family: the held object is a loose board whose pose is scored, and the scored skill is the fast strike. PR #3276 is the same idea; its hold lapses at 2026-11-22T22:03:33Z and this is an independent build that meets its review."
+}

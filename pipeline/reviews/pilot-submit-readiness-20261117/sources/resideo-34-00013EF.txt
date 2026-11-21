@@ -1,0 +1,1349 @@
+WT8840 & WT8860 Trade
+Water Heater Controls
+
+                                                                INSTALLATION INSTRUCTIONS
+APPLICATION                                              Mounting: Mounting in upright position only.
+
+                                                         Control Input:
+The WT88xx Water Heater Control is designed for use      Voltage Minimum: 350 mV dc, open circuit.
+in Standing Pilot applications using an immersion well   Voltage Maximum: 850 mV dc, open circuit.
+for water temperature sensing. All models of WT88xx
+controls include an integrated NTC temperature           Capacity: See Table 2.
+sensor.
+                                                         Regulation Range:
+The WT88xx controls are powered from a thermopile          Natural Gas:
+heated by the standing pilot flame. CS88xx pilot            Minimum: 30,000 Btuh.
+assemblies are designed for use with this control.          Maximum: 85,000 Btuh.
+
+The immersion well for sensing water temperature         Ambient Temperature Range: 32 to 150 °F (0 to 66 °C)
+has matched NTC thermistor sensors. These sensors
+provide the fail-safe mechanism through which the        Operating Range: 32 to 150 °F (0 to 66 °C)*
+WT88xx controls can provide both accurate water          *Valve will operate at 0°F (-18°C) but valve
+temperature control as well as water temperature            characteristics can not be guaranteed until
+limit (Temperature Cut-Out [TCO]) function.                 ambient temperature reaches 32°F (0°C).
+
+                                                         Storage Range: -40 to 150 °F (-40 to 66 °C)
+SPECIFICATIONS                                           Humidity: 95% non-condensing at 104 °F (40 °C)
+
+IMPORTANT                                                Approvals:
+   WT88xx controls provide direct replacement only.      This device is certified by Canadian Standards
+                                                           Association (CSA) to the following standards:
+Pressure Regulator: The outlet pressure regulator          ANSI Z21.20
+  setting is shown on the product label.                   ANSI Z21.23
+                                                           ANSI Z21.78
+Inlet Pressure Range:                                      ANSI Z21.87
+   See appliance rating plate for inlet pressure range     CAN/CSA-C22.2 No. 199-M89
+      recommendation.                                      CAN1-6.6-M78
+   0.5 PSI (14.0 in. w.c.) maximum inlet pressure          CSA 4.6
+      allowed for proper operation.                        CSA 6.20
+Body Pattern: 90 degrees with 1/2 in. inlet and          Accessory Parts: Pilot Assembly CS88xx
+  1/2 in. inverted flare outlet.
+
+
+
+
+                                                                                            34-00013EF-05
+WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+                                                   Table 1.
+                                               Resideo part                       OEM
+                                               number for                     replacement
+                Aftermarket SKU                 OEM part       OEM Part No    partnumbers      OEM
+               WT8840A1000                     WV8840A1000    222-47463-01A                  Bradford
+                                                                              415-52907-01
+    For 1" insulation tank, 4" WC setting      WV8840A1001    222-47463-01E                   White
+
+               WT8840A1500                     WV8840A1050    222-47463-02A                  Bradford
+                                                                              415-52907-02
+    For 2" insulation tank, 4" WC setting      WV8840A1051    222-47463-02E                   White
+
+               WT8860A1000                     WV8860A1009                                   Bradford
+                                                              222-48863-01    415-52915-01
+ For 2" insulation tank, 5" WC setting - ULN   WV8860A1010                                    White
+                                               WV8840B1042     316910-000
+               WT8840B1000                                                    100112336 &
+                                               WV8840B1109     316910-000                    A.O.Smith
+    For 1" insulation tank, 5" WC setting                                     9007884005
+                                               WV8840B1110     321166-000
+                                               WV8840B1059     316910-001
+               WT8840B1500                                                    100112337 &
+                                               WV8840B1117     316910-001                    A.O.Smith
+    For 2" insulation tank, 5" WC setting                                     9007885005
+                                               WV8840B1118     321166-001
+               WT8860B1000                     WV8860B1309     100073010 &    100093970 &
+                                                                                             A.O.Smith
+ For 2" insulation tank, 5" WC setting - ULN   WV8860B1310     318618-000     9007631005
+               WT8840C1000
+                                               WV8840C1406      AP16910E       SP20832E       Rheem
+   For 1.5" insulation tank, 4" WC setting
+               WT8840C1500
+                                               WV8840C1605      AP16910B       SP20832B       Rheem
+    For 2" insulation tank, 4" WC setting
+
+
+
+
+34-00013EF—05                                         2
+                                                                WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+
+PLANNING THE INSTALLATION
+                                                                should be provided by the appliance manufacturer.
+      WARNING                                                   Verify proper air circulation is maintained when the
+                                                                appliance is installed.
+       Fire or Explosion Hazard.
+       Can cause severe injury, death or property
+       damage.                                                  Flow Capacity & Pressure Drop
+       Follow these warnings exactly:
+         1.Plan the installation as outlined below.             Fig. 1 shows the typical flow (kBTU/hr) vs pressure
+         2.Plan for frequent maintenance as                     drop (in. w.c.) curve for natural gas and LP gas. Actual
+            described in the Maintenance section.               pressure drop depends on the internal configuration
+         3.Review the following conditions that can             of the valve. Table 2 shows the pressure drop at
+            apply to your specific installation and take        various flows for the control.
+            the precautionary steps provided.
+                                                                                            WT8840 CAPACITY DATA
+Frequent Cycling                                                               100
+
+
+This control is designed for use on appliances that                            90
+
+typically cycle three to five times a day. In year-round                       80
+applications with greater cycling rates of 10,000
+cycles annually, the control can wear out more quickly.                        70
+
+Perform a monthly checkout.                                                    60
+
+
+                                                                          FLOW 50
+Water or Steam Cleaning                                                 (KBTU/HR)
+                                                                               40
+If a control gets submerged in water, replace it. If the
+appliance is likely to be cleaned with water or steam,                         30
+
+protect (cover) the control and wiring from water or
+                                                                               20
+steam flow. Mount the control high enough above the
+bottom of the cabinet so it does not get wet during                            10
+normal cleaning procedures.
+                                                                                0
+                                                                                 0.8      0.9        1.0    1.1     1.2          1.3
+                                                                                                PRESSURE DROP (IN WC)
+High Humidity or Dripping Water                                                                                            M36122
+
+
+Dripping water can cause the control to fail. Never              Fig. 1. Typical capacity curve for WT88xx family of
+install an appliance where water can drip on the                            water heater control systems.
+control. In addition, high ambient humidity can cause
+the control to corrode and fail. If the appliance is in a
+humid atmosphere, make sure air circulation around
+the control is adequate to prevent condensation. Also,                 Table 2. Gas capacity conversion for WT88xx
+regularly check out the system.                                                         controls.
+                                                                                                                  Pressure Drop
+Corrosive Chemicals                                                Gas Type            Flow (kBTU/hr)                (in. w.c.)
+Corrosive chemicals can attack the control, eventually                                          30                        1.43
+causing a failure. If chemicals are used for routine                     NG                     50                        1.47
+cleaning, avoid contact with the control. Where                                                 75                        1.54
+chemicals are suspended in air, as in some industrial                                           30                        0.91
+or agricultural applications, protect the control with a                 LP                     50                        0.94
+cover.                                                                                          75                        0.97
+
+Dust or Grease Accumulation
+Heavy accumulations of dust or grease can cause the
+control to malfunction. Where dust or grease can be a
+                                                                INSTALLATION
+problem, provide covers for the control to limit
+contamination.                                                  When Installing This Product…
+                                                                  1.    Read these instructions carefully. Failure to
+Heat                                                                    follow them could damage the product or cause
+Excessively high temperature can damage the control.                    a hazardous condition.
+Make sure the maximum ambient temperature at the                  2.    Check the ratings given in the instructions and
+control does not exceed the rating of the control. If the               on the product to make sure the product is
+appliance operates at very high temperatures, use                       suitable for your application.
+insulation, shielding, and air circulation, as necessary,         3.    Installer must be a trained, experienced service
+to protect the control. Proper insulation or shielding                  technician.
+                                                                  4.    After installation is complete, check out product
+                                                                        operation as provided in these instructions.
+
+
+
+
+                                                            3                                                           34-00013EF—05
+WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+                                                                  1.       Use a new, properly reamed pipe free from chips.
+        WARNING                                                            If tubing is used, make sure the ends are square,
+                                                                           deburred and clean. All tubing bends must be
+        Fire or Explosion Hazard.
+        Can cause severe injury, death or property                         smooth and without deformation.
+        damage.                                                   2.       Ensure that gas supply is turned off.
+        Follow these warnings exactly:                            3.       Run pipe or tubing to the water heater control. If
+          1.To avoid dangerous accumulation of fuel                        tubing is used, obtain a tube-to-pipe coupling to
+             gas, turn off gas supply at the appliance                     connect the tubing to the control.
+             service valve before starting installation           4.       Install a sediment trap in the supply line to the
+             and perform the Gas Leak Test after                           water heater control. See Fig. 3.
+             completion of installation.
+          2. Always install a sediment trap in gas                                        PIPED
+                                                                                   DROP
+             supply line to prevent contamination of                                      GAS
+                                                                  HORIZONTAL              SUPPLY
+             ignition system control.
+          3.Follow the appliance manufacturer
+             instructions if available; otherwise, use
+             these instructions as a guide.
+
+
+        WARNING                                                        3 IN.
+                                                                       (76 MM)
+        Scalding Hazard.                                               MINIMUM
+        Can cause burns, severe injury or death.
+        Always use a direct replacement sensor
+        assembly when replacing a temperature                                       DROP TUBING
+        sensor.                                                        HORIZONTAL          GAS
+                                                                                           SUPPLY
+
+Location                                                                       1
+
+
+The WT88xx controls are mounted on the outside of
+the water heater tank. See Fig. 2.
+                                                                  RISER
+                                                                       3 IN.
+                                                                       (76 MM)
+                                   MOUNTING                            MINIMUM
+
+
+
+
+                                   WELL ASSEMBLY                            WARNING
+                                   ACCESS TO TANK                           EXPLOSION HAZARD.
+                                                                            FAILURE TO FOLLOW PRECAUTIONS CAN
+                                                                            RESULT IN A GAS-FILLED WORK AREA.
+                                                                            SHUT OFF THE MAIN GAS SUPPLY BEFORE REMOVING END CAP.
+                                                                            TEST FOR GAS LEAKAGE WHEN INSTALLATION IS COMPLETE.
+
+                                                                       1    ALL BENDS IN METALLIC TUBING SHOULD BE SMOOTH.
+                                                                                                                          M29522B
+
+                   WT8840
+                                                                  Fig. 3. Install a sediment trap in the supply line.
+                                                    M36123B
+
+
+
+      Fig. 2. Mounting the WT88xx controls on the
+                   water heater tank.                                      WARNING
+                                                                            Explosion Hazard.
+                                                                            Can cause severe injury, death or property
+Install Control to Water Tank                                               damage.
+                                                                            Check for gas leaks with soap and water
+ 1.    To install the water heater control to the water                     solution any time work is done on a gas system.
+       tank, drain the tank first, and then screw the
+       assembly into the spud until the bracket is                5.       Apply a moderate amount of good quality pipe
+       square. Use a maximum torque of 31 ft.-lbs. plus                    compound, leave two end threads bare. Do not
+       one turn.                                                           use pipe dope on the outlet. See Fig. 4
+ 2.    Follow steps in the Connect Gas Supply section.            6.       Remove the seals over the water heater control
+IMPORTANT                                                                  inlet and outlet.
+      These water heater system controls are                      7.       Connect the pipe to the water heater control inlet
+      shipped with protection for the inlet and outlet                     and outlet. Use a wrench on the square end of
+      tappings. Do not remove the protection until                         the water heater control. Maximum torque on
+      you are ready to connect the piping.                                 the inlet is 40 ft-lbs.; maximum torque on the
+                                                                           outlet is 30 ft-lbs.
+                                                                  8.       Position compression fitting in pilot outlet and
+Connect Gas Supply                                                         engage threads. See Fig. 5 for controls and
+                                                                           connections. Turn until finger tight, then tighten
+All piping must comply with local codes and
+                                                                           one more turn with a wrench. Do not overtighten.
+ordinances or with the National Fuel Gas Code (ANSI
+Z223.1 NFPA No. 54), whichever applies. Tubing
+installation must comply with approved standards
+and practices.
+
+34-00013EF—05                                                 4
+                                                                        WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+                                                                                  b.Use only ANSI-approved compounds.
+  TWO              IGNITION
+  IMPERFECT        SYSTEM
+  THREADS          CONTROL                                              Wiring
+                                                                        Follow the wiring instructions furnished by the
+                   PIPE                                                 appliance manufacturer, if available, or use the
+                                                                        general instructions provided below. When these
+                                                                        instructions differ from the appliance manufacturer,
+THREAD PIPE THE AMOUNT           APPLY A MODERATE AMOUNT OF
+SHOWN IN TABLE 2 FOR INSERTION   PIPE COMPOUND ONLY TO PIPE             follow the appliance manufacturer instructions. Make
+INTO IGNITION SYSTEM CONTROL     (LEAVE TWO END THREADS BARE).          sure wiring insulation does not get cut by sharp edges.
+                                                         M29771B
+
+                                                                        NOTE: All wiring must comply with applicable
+Fig. 4. Use a moderate amount of pipe compound.                               electrical codes and ordinances.
+         Table 3. NPT pipe thread length (in.).                         Connect control circuit to the water heater control
+Pipe      Thread Pipe         Maximum Depth Pipe can                    using the connections shown in Fig. 5.
+Size      This Amount         be inserted into Control
+ 1/2              3/4                       1/2                         Fill Tank
+                                                                        Refer to the appliance manufacturer’s instructions to
+                                                                        fill the tank with water.
+
+                                                                        Pilot Gas and Lighting Procedure
+                                                                          1.   Start by turning the device knob to Pilot, push
+                                                            LED                the knob in, and hold in position. (The pilot valve
+APPLY WRENCH                                                                   opens and allows gas to flow into the pilot
+HERE WHEN
+CONNECTING
+                                                                               burner.)
+SUPPLY LINE                                                               2.   Depress the piezo igniter to light the pilot flame
+                                                                               and hold the knob in until the status indicator
+                                                                               starts to blink. When the LED flashes, the knob
+                                                                               may be released, indicating pilot now being held
+                                                                               by electronics.
+
+  TEMPERATURE
+                                                                               NOTE: LED should blink once every three
+  SETPOINT KNOB                                   THERMOPILE                         seconds. If not, check the error codes in
+ULN CONNECTOR.                                    CONNECTOR                          Table 4.
+NOT USED ON                                              OUTLET
+STANDARD                                                 PRESSURE         3.   The burner will come on if water temperature is
+ATMOSPHERIC                                              TAP
+MODELS                                                                         significantly below the temperature setpoint and
+                                                                               the LED will begin to strobe every three seconds.
+
+                                                                        NOTE: If pilot goes out, allow one minute for thermo-
+                                                                              pile to cool before re-lighting pilot.
+
+                                                                        Turn on Main Burner
+                                                                        Follow the instructions provided by the manufacturer
+                                                                        or turn up the temperature at the setpoint knob.
+
+
+                                                                               WARNING
+                                                                                Scalding Hazard.
+                                                                                Can cause burns, severe injury or death.
+                                                                                Never move the setpoint knob past the Hot
+                                                                                setting unless extremely hot water is desired.
+                                                                                Always check water temperature at the faucet
+                                                         M38019                 and readjust until comfortably warm to the
+                                                                                touch. Consider the ages and health of all who
+ Fig. 5. Water heater controls and connections for                              will come in contact with heated water.
+   illustration purposes. Please check appliance
+      owner’s manual for accurate connections.
+                                                                        Perform Gas Leak Test
+
+       CAUTION
+       Contamination Hazard.                                                   WARNING
+        Can cause equipment malfunction.                                        Fire or Explosion Hazard.
+        Do not use thread tape sealants to seal the gas                         Can cause severe injury, death or property
+        supply to the control.                                                  damage.
+          a.Use a pipe dope compound to seal the                                Check for gas leaks with soap and water
+            connection.                                                         solution any time work is done on a gas system.
+
+
+
+                                                                    5                                                34-00013EF—05
+WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+                                                                 2.   With burner operating, check the water heater
+      CAUTION
+      Water Damage Hazard.
+                                                                      control flow rate using the meter clocking
+                                                                      method or check pressure using a manometer
+       Can damage electrical components in the                        (pressure gauge) connected to the outlet
+       WT88xx control.                                                pressure tap on the water heater control. See
+       Do not spray soap and water solution on the                    Fig. 5.
+       WT88xx control housing. Do not use an
+       excessive amount of soap and water to perform
+       the gas leak test.                                       MAINTENANCE
+Gas Leak Test
+ 1.   Paint pipe connections upstream of the water                    WARNING
+      heater control with a rich soap and water                        Fire or Explosion Hazard. Can cause severe
+      solution. Bubbles indicate a gas leak.                           injury, death or property damage.
+ 2.   If a leak is detected, tighten the pipe connection.              Do not attempt to take apart or clean the gas
+ 3.   Stand clear of the burner while lighting to prevent              valve inside the WT88xx control. Improper
+      injury caused from hidden leaks that could cause                 cleaning or reassembly can cause gas leakage.
+      flashback in the appliance burner compartment.
+ 4.   With the burner in operation, paint the pipe              The maintenance program should include regular
+      joints (including adapters) and the control inlet         checkout of the control as outlined in the Startup and
+      and outlet with a rich soap and water solution.           Checkout section, and the control system as described
+ 5.   If another leak is detected, tighten the adapter          in the appliance manufacturer literature.
+      screw, joints, and pipe connections.
+ 6.   Replace the part(s) if a leak cannot be stopped.          Maintenance frequency must be determined individually
+                                                                for each application. Some considerations are:
+                                                                  1. Cycling frequency. Appliances that may cycle
+Check the gas input and burner                                         10,000 times annually should be checked
+flow rate                                                              monthly.
+                                                                  2. Intermittent use. Appliances that are used
+                                                                       seasonally should be checked before shutdown
+      WARNING                                                          and again before the next use.
+                                                                  3. Consequence of unexpected shutdown. Where
+       Fire or Explosion Hazard.
+       Can cause severe injury, death or property                      the cost of an unexpected shutdown would be
+       damage.                                                         high, the system should be checked more often.
+       Follow these warnings exactly:                             4. Dusty, wet or corrosive environment. Since these
+       1. Do not exceed input rating stamped on                        environments can cause the control to
+          appliance nameplate or manufacturer                          deteriorate more rapidly, the system should be
+          recommended burner orifice pressure for                      checked more often.
+          size of orifice(s) used. Follow instructions of       The system should be replaced if:
+          appliance manufacturer.                                  •It does not perform properly on checkout or
+       2. IF CHECKING GAS INPUT BY CLOCKING                           troubleshooting.
+          GAS METER: Make certain there is no gas                  • The control is likely to have operated for more
+          flow through the meter other than to the                    than 150,000 cycles.
+          appliance being checked. Other appliances                • The control is wet or looks as if it has been wet.
+          must remain off with the pilots extinguished
+          (or that consumption must be deducted
+          from the meter reading). Convert flow rate to         TROUBLESHOOTING
+          Btuh as described in form number 70-2602,
+          Gas Controls Handbook, and compare to
+          Btuh input rating on appliance nameplate.             Troubleshooting With Status
+       3. IF CHECKING GAS INPUT WITH                            Indicator Assistance
+          MANOMETER: Make sure the manual gas
+          shutoff switch is in the OFF position before           1.   Pilot burner must be lit. If not, push and hold
+          removing outlet pressure tap plug to connect                Pilot knob and light pilot with piezo. Error code
+          the manometer (pressure gauge). Also, move                  will be displayed when thermopile heats up.
+          the manual gas shutoff switch to the OFF                    Error code can be recognized by counting the
+          position when removing the manometer                        number of flashes of the status indicator after a
+          (pressure gauge) and replacing the plug.                    three second pause. One single flash (with set
+          Repeat Gas Leak Test at plug with main                      point knob in PILOT position) indicates that the
+          burner operating.                                           control is in normal operation.
+                                                                 2.   Observe status indicator on control; check and
+                                                                      repair the system as noted in Table 4 on page 7.
+Procedure to check the gas input                                      Flash codes are displayed with a three-second
+and burner flow rate                                                  delay between cycles. A continuous solid light
+                                                                      indicates system shutdown when knob is turned
+ 1.   Check the full rate manifold pressure listed on                 from a temperature setting to OFF position.
+      the appliance nameplate. Water heater control                   When the solid light is present, the pilot and
+      full rate outlet pressure should match this rating.             main valve will not hold. When the status
+                                                                      indicator goes out, the user can restart the
+                                                                      system. (Approximate shutdown time is one
+                                                                      minute.)
+
+
+34-00013EF—05                                               6
+                                                                 WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+    3.   After status indicator analysis and appliance                  in the tank to turn on the main burner. The
+         repair is complete, turn device knob to OFF, wait              Status indicator light will strobe every three
+         until the indicator goes out, then perform                     seconds when there is a call for heat.
+         lighting procedure.                                       5.   In the event of multiple failure codes, the next
+    4.   Status indicator light should be in normal mode                failure code follows the previous failure code by
+         (1 flash) with the knob in the PILOT position.                 approximately three seconds with higher flash
+         Turn the device knob past the water temperature                count first.
+
+                              Table 4. Troubleshooting with status light visual indication.
+                LED Error
+                 Code**          Number of LED Flashes*            Detected Failure          Recommended Action
+Normal     1 flash every                                         Not an error;          You can now turn the knob to a
+operation. 3 seconds                                             indicates the          desired setpoint temperature.
+No action                                                        electronics is holding LED will continue to flash 1
+required.                                                        the Pilot Valve open time every 3 seconds while in
+                                                                 and the Main Valve     Idle mode (no call for heat).
+                                                                 closed.
+               Strobe every                                      Not an error;           None.
+               3 seconds                                         indicates call for heat
+                                                                 during normal
+                                                                 operation, Main valve
+                                                                 open.
+Action         2 flashes                                         Low thermopile          Check thermopile and its
+required.                                                        voltage; main valve     connections. Check pilot flame.
+                                                                 not turned ON.
+               4 flashes                                         Temperature cut-out Check the valves and the water
+                                                                 limit reached.      temperature sensor. Reduce
+                                                                                     the water temperature setpoint.
+                                                                                     Thoroughly check out main
+                                                                                     valve operation and water
+                                                                                     temperature control before
+                                                                                     walking away.
+               5 flashes                                         Water temperature       Check water temperature
+                                                                 sensor failure.         sensor and its connection for
+                                                                                         open circuits, shorts, or
+                                                                                         differences in resistance
+                                                                                         between the two sensor
+                                                                                         elements.
+               6 flashes                                         Combustion              Replace burner.
+               (WT8860A, B                                       chamber high            (Check door temperature
+               only)                                             temperature limit       sensor and its connection for
+                                                                 reached.                open circuits or shorts.)
+                                                                 (Door temperature
+                                                                 sensor failure.)
+               7 flashes                                         Electronics Failure     Replace control module.
+               8 flashes                                         This is just a warning; Check valves.
+                                                                 The control does not
+                                                                 see power decaying
+                                                                 with the knob in the
+                                                                 OFF position.
+               9 flashes                                         Door temperature        Check door temperature sensor
+               (WT8860A, B                                       sensor failure.         and its connection for open
+               only)                                                                     circuits or shorts.
+               10 flashes                                        Abnormal              Clean all combustion air
+               (WT8860A, B                                       combustion chamber intakes to the appliance. Clean
+               only)                                             temperature profile the burner. Remove all
+                                                                 during heating cycle. obstacles that may restrict air
+                                                                                       flow to the burner.
+               Solid ON                                          Not an error—           None; wait until LED turns off if
+                                                                 indicates that the      you want to restart the system.
+                                                                 control is in OFF
+                                                                 mode.
+*
+    LED Error Codes are flashed once per second, with a three-second pause between repeating the error code.
+**Maximum two different errors can be displayed simultaneously if more than one error has been detected.
+
+
+
+
+                                                             7                                               34-00013EF—05
+WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+
+Troubleshooting Without Status Indicator Assistance
+Follow diagram in Fig. 6.
+
+
+                         TROUBLESHOOTING GUIDE WITHOUT STATUS LIGHT
+
+                        TURN DEVICE KNOB FROM OFF TO                CHECK:
+                        PILOT, PRESS DOWN KNOB AND HOLD,            • INLET PRESSURE
+                        LIGHT PILOT BY DEPRESSING PIEZO    NO
+                                                                    • MAKE SURE AIR IS BLED OUT OF SYSTEM
+                        IGNITION BUTTON, PILOT SHOULD               • PIEZO SPARKING TO THERMOPILE
+                        LIGHT.                                      • CLOGGED PILOT ORIFICE
+                        – WATER TEMPERATURE IS BELOW                • GAS LEAK IN PILOT TUBING CONNECTIONS
+                          THE CUT-OUT LIMIT
+
+                                        YES
+
+                                                                    CHECK:
+                        STATUS LIGHT SHOULD FLASH AFTER             • WIRING OF THERMOPILE LEADS
+                        1 MINUTE, LED WILL FLASH NORMAL    NO       • FLAME COVERAGE OF THERMOPILE
+                        SINGLE BLINK, RELEASE THE DEVICE              – THERMOPILE OUTPUT IS TOO LOW-RUN
+                        KNOB, PILOT SHOULD REMAIN LIT               • THERMOPILE OUTPUT CHECK
+
+                                        YES
+
+
+
+
+                        TURN DEVICE KNOB TO DESIRED
+                                                                    CHECK:
+                        TEMPERATURE SETTING, BURNER WILL   NO       • EXCESSIVE INLET PRESSURE
+                        TURN ON ONLY IN ACTIVE CALL FOR
+                                                                    • TANK TEMPERATURE IS AT OR CLOSE TO
+                        HEAT (WATER TEMPERATURE IS LESS
+                                                                      SET POINT
+                        THAN TEMPERATURE SETTING MINUS
+                        DIFFERENTIAL); LED WILL STROBE
+                        EVERY 3 SECONDS DURING A CALL
+                        FOR HEAT.
+
+                                        YES
+
+
+
+                        SYSTEM OK
+                                                                                                                M29431D
+
+
+                                    Fig. 6. Troubleshooting without status light.
+
+Thermopile Output Check
+ 1.   Turn device knob to OFF.
+ 2.   Disconnect thermopile leads.                                                               THERMOPILE OUTPUT WITH TIME
+ 3.   Turn device knob to PILOT, hold down knob to                                 900
+      light pilot burner. Hold the knob down for five or                           800
+      more minutes.
+                                                                                   700
+ 4.   After five minutes, check thermopile output by
+                                                                     OUTPUT (mV)
+
+
+
+
+                                                                                   600
+      connecting the voltmeter to the positive red lead                                                         NORMAL RANGE
+                                                                                   500
+      and negative white lead.
+ 5.   Output should be at least 350 mV. (See Fig. 7.)                              400
+      Connect the 3.6 ohm resistor between the two                                 300
+      thermopile leads, the voltage should be at or                                200
+                                                                                                            OUTPUT TOO LOW
+      higher than one half of the open circuit voltage.                            100
+ 6.   The terminal housing prevents miswiring of                                     0
+      positive and negative leadwires.                                                   0   1     2   3    4      5      6    7   8   9   10
+ 7.   Flame must envelop thermopile at Hot Junction                                                        TIME (MINUTES)              M22535D
+      (3/8 in. below tip).
+ 8.   Keep heat away from cold junction (brass sleeve                                            Fig. 7. Thermopile output.
+      of the thermopile) for maximum output.
+
+
+
+
+34-00013EF—05                                                   8
+                                                              WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+
+INSTRUCTIONS TO THE                                           STOP: READ THE WARNINGS
+HOMEOWNER                                                     ABOVE.
+                                                              If the appliance does not turn on when the setpoint
+                                                              knob is set several degrees above the previous
+      WARNING                                                 temperature, follow these instructions:
+      Fire or Explosion Hazard.
+      Can cause severe injury, death or property                1.   Set the temperature setpoint knob to OFF.
+      damage.                                                   2.   Turn off the main gas valve to the appliance.
+      1. IF YOU SMELL GAS:                                      3.   Wait five minutes to clear out any unburned gas.
+         •Turn off the gas supply at the appliance                   If you then smell gas, STOP! Follow step 1 in the
+            service valve.                                           warning above. If you DO NOT smell gas,
+         •Do not light any appliances in the house.                  continue with the next step.
+         •Do not touch electrical switches or use the           4.   Turn on the gas supply to the appliance.
+            phone. Leave the building and use a                 5.   Restart the appliance by performing lighting
+            neighbor’s phone to call your gas supplier.              procedure.
+         •If you cannot reach your gas supplier, call           6.   Set the setpoint knob to the desired setting.
+            the fire department.                                7.   If the appliance does not turn on, turn off the gas
+      2. The water heater control must be replaced in                supply to the appliance and contact a qualified
+         event of any physical damage, tampering,                    service technician for assistance.
+         bent terminals, missing or broken parts,
+         stripped threads or evidence of exposure to          NOTE: If the pilot goes out, allow one minute for
+         heat.                                                      thermopile to cool before re-lighting pilot.
+
+
+      WARNING                                                 TURNING OFF THE
+      Scalding Hazard.
+      Can cause burns, severe injury or death.
+                                                              APPLIANCE
+      Never move temperature setpoint knob past
+      the HOT setting without checking water                  Complete Shutdown
+      temperature at the faucet, and readjusting
+      until comfortably warm to the touch. Consider             1.   Turn device knob to OFF. Turn off the gas supply
+      the ages and health of all who will come into                  to the appliance. Appliance will completely shut
+      contact with heated water.                                     off.
+                                                                2.   Follow the procedure in the Instructions to the
+IMPORTANT                                                            Homeowner section above to resume normal
+      Follow the operating instructions provided by                  operation.
+      the manufacturer of your water tank appliance.
+      The information in this form describes a
+      typical water heater control application, but
+      the specific controls used and the procedures
+      outlined by the manufacturer of your
+      appliance can differ, requiring special
+      instructions.
+
+
+
+
+                                                          9                                                34-00013EF—05
+WT8840 & WT8860 TRADE WATER HEATER CONTROLS
+
+
+
+
+                         Resideo Inc., 1985 Douglas Drive North,
+                         Golden Valley, MN 55422
+www.resideo.com          34-00013EF—05 M.S. Rev. 08-19 | Printed in United States
+This product is manufactured by Resideo Technologies, Inc., Golden Valley, MN, 1-800-468-1502
+©2019 Resideo Technologies, Inc. All rights reserved.
+Modules de commande des
+chauffe-eaux WT8840 et
+WT8860
+                                                                          NOTICE D'INSTALLATION
+APPLICATION                                               Configuration du corps : 90° avec entrée de 1/2 po
+                                                            et sortie conique inversée de 1/2 po.
+Le module de commande du chauffe-eau WT88xx est           Montage : À la verticale uniquement.
+conçu pour être utilisé dans les applications de
+veilleuse permanente qui utilisent un puits               Entrée de régulateur :
+d’immersion pour la détection de la température de        Tension minimum : 350 mV c.c., circuit ouvert.
+l’eau. Tous les modèles des module de commande            Tension maximum : 850 mV c.c., circuit ouvert.
+WT88xx comprennent un capteur de température CTN
+intégré.                                                  Capacité : Voir le Tableau 1.
+
+Les module de commande WT88xx sont alimentés à            Plage de régulation :
+partir d’un thermopile chauffé par la flamme de la           Gaz naturel :
+veilleuse permanente. Les ensembles de pilotes                Minimum : 30 000 Btuh.
+CS88xx sont conçus pour être utilisés avec ce module          Maximum : 85 000 Btuh.
+de commande.
+                                                          Plage de température ambiante : 0 à 66 °C
+Le puits d’immersion pour la détection de la                 (32 à 150 °F)
+température de l’eau est assorti de capteurs de
+thermistance CTN. Ces capteurs fournissent le             Plage de température de fonctionnement :
+mécanisme de sécurité par lequel les commandes               0 à 66 °C (32 à 150 °F)*
+WT88xx peuvent fournir un contrôle précis de la           *La vanne fonctionne à -18 °C (0 °F) mais ses
+température de l’eau ainsi que la fonction de                caractéristiques ne peuvent pas être garanties tant
+limitation de la température de l’eau (limiteur de           que la température ambiante n'a pas atteint 0 °C
+température).                                                (32 °F).
+
+                                                          Plage de stockage : -40 à 66 °C (-40 à 150 °F)
+CARACTÉRISTIQUES                                          Humidité : 95 % sans condensation à 40 °C (104 °F)
+IMPORTANT                                                 Homologations :
+   Les modules de commande WT88xx ne                      Cet appareil est certifié par l'Association canadienne
+       fournissent que des remplacements directs.           de normalisation (CSA) pour les normes suivantes :
+                                                            ANSI Z21.20
+Régulateur de pression : Le réglage du régulateur de        ANSI Z21.23
+  pression de sortie est indiqué sur l'étiquette du         ANSI Z21.78
+  produit.                                                  ANSI Z21.87
+Plage de pression d'admission :                             CAN/CSA-C22.2 N° 199-M89
+   Voir la plaque signalétique de l'appareil pour la        CAN1-6.6-M78
+      plage de pression d'admission recommandée.            CSA 4.6
+   Pression d'entrée maximale de 0,5 PSI (14,0 po c.e.)     CSA 6.20
+      autorisée pour un fonctionnement correct.           Accessoires :
+                                                          Veilleuse CS88xx
+MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+                                                Tableau 1.
+                                                                               Numéros de
+                                               Numéro de                          pièce de
+                                             pièce Resideo                     rechange du
+                                             pour pièce du    Nº de pièce du     fabricant
+                                                fabricant       fabricant        d’origine
+     Numéro des pièces de rechange          d’origine (OEM). d’origine (OEM)       (OEM)        OEM
+              WT8840A1000                   WV8840A1000      222-47463-01A
+                                                                                              Bradford
+      Pour réservoir, isolation de 1 po,                                       415-52907-01
+                                            WV8840A1001      222-47463-01E                     White
+           colonne d’eau de 4 po
+              WT8840A1500                   WV8840A1050      222-47463-02A
+                                                                                              Bradford
+      Pour réservoir, isolation de 2 po,                                       415-52907-02
+                                            WV8840A1051      222-47463-02E                     White
+           colonne d’eau de 4 po
+              WT8860A1000                   WV8860A1009
+                                                                                              Bradford
+      Pour réservoir, isolation de 2 po,                     222-48863-01      415-52915-01
+                                            WV8860A1010                                        White
+       colonne d’eau de 5 po – ULN
+
+              WT8840B1000                   WV8840B1042       316910-000
+                                                                               100112336 &
+      Pour réservoir, isolation de 1 po,    WV8840B1109       316910-000                      A.O.Smith
+                                                                               9007884005
+           colonne d’eau de 5 po            WV8840B1110       321166-000
+
+              WT8840B1500                   WV8840B1059       316910-001
+                                                                               100112337 &
+      Pour réservoir, isolation de 2 po,    WV8840B1117       316910-001                      A.O.Smith
+                                                                               9007885005
+           colonne d’eau de 5 po            WV8840B1118       321166-001
+              WT8860B1000                   WV8860B1309
+                                                              100073010 &      100093970 &
+      Pour réservoir, isolation de 2 po,                                                      A.O.Smith
+                                            WV8860B1310       318618-000       9007631005
+       colonne d’eau de 5 po – ULN
+              WT8840C1000
+     Pour réservoir, isolation de 1,5 po,   WV8840C1406        AP16910E         SP20832E       Rheem
+           colonne d’eau de 4 po
+              WT8840C1500
+      Pour réservoir, isolation de 2 po,    WV8840C1605        AP16910B         SP20832B       Rheem
+           colonne d’eau de 4 po
+
+
+
+
+34-00013EF—05                                       2
+                                              MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+
+PRÉPARATION DE L’INSTALLATION
+                                                                    protection adéquate doivent être fournies par le
+       AVERTISSEMENT                                                fabricant de l'appareil. Vérifier qu’une circulation d'air
+                                                                    adéquate est maintenue lorsque l'appareil est installé.
+        Risque d’incendie ou d’explosion.
+        Peut causer des dégâts et des blessures
+        graves, voire mortelles.                                    Capacité de débit et chute de
+        Respecter ces avertissements avec précision :
+          1.Planifier l’installation tel que décrit ci-
+                                                                    pression
+            dessous.                                                La Fig. 1 montre la courbe de débit (kBTU/h) par
+          2.Prévoir un entretien fréquent, tel que décrit           rapport à la chute de pression (po c.e.) typique pour le
+            dans la section Entretien.                              gaz naturel et le GPL. La chute de pression réelle
+          3.Consulter les conditions suivantes pouvant              dépend de la configuration interne de la vanne. Le
+            s’appliquer à l’installation spécifique et              Tableau 2 indique la chute de pression à différents
+            suivre les précautions recommandées.                    débits du régulateur.
+
+Mises en marche et arrêts fréquents
+                                                                                              DONNÉES DE CAPACITÉ WT8840
+Ce régulateur est destiné à des appareils dont les cycles                           100
+ont lieu de trois à cinq fois par jour. Pour les applications
+sur l’année entière avec des cadences supérieures à                                 90
+
+10 000 cycles par an, le régulateur peut s’user plus
+                                                                                    80
+rapidement. Effectuer une vérification mensuelle.
+                                                                                    70
+
+Nettoyage à l’eau ou à la vapeur                                                    60
+
+Si le régulateur se mouille, le remplacer. Si l’appareil
+                                                                             DÉBIT 50
+est susceptible d’être lavé à l’eau ou à la vapeur,                        (KBTU/H)
+protéger (couvrir) le régulateur et le câblage de l’eau                             40
+
+ou de la vapeur. Monter le régulateur suffisamment
+                                                                                    30
+haut au-dessus de l’armoire pour qu’il ne soit pas
+mouillé lors des procédures de nettoyage normales.                                  20
+
+
+                                                                                    10
+Forte humidité ou dégouttement
+                                                                                     0
+Des dégouttements peuvent causer la panne du                                          0.8     0.9        1.0   1.1       1.2          1.3
+
+régulateur. Ne jamais installer un appareil où de l’eau peut                                   CHUTE DE PRESSION (PO C.E.)
+                                                                                                                                MF36122
+s’égoutter sur le régulateur. Par ailleurs, une haute
+humidité ambiante peut causer la corrosion et la panne du            Fig. 1. Courbe de capacité typique pour la famille
+régulateur. Si l’appareil se trouve dans une atmosphère              WT88xx de systèmes de commande de chauffe-
+humide, s'assurer que la circulation d'air autour du                                       eaux.
+régulateur est suffisante pour éviter la condensation.
+Vérifier également le système régulièrement.                        Tableau 2. Conversion de la capacité de gaz pour les
+                                                                             modules de commande WT88xx.
+Produits chimiques corrosifs                                                                                             Chute de
+Des produits chimiques corrosifs peuvent attaquer le                 Type de gaz            Débit (kBTU/h)           pression (po c.e.)
+régulateur, pouvant causer une panne. Si des produits                                               30                         1.43
+chimiques sont utilisés pour le nettoyage de routine,                     Gaz nat                   50                         1.47
+éviter le contact avec le régulateur. Lorsque des                                                   75                         1.54
+produits chimiques sont en suspension dans l'air,
+comme dans certaines applications industrielles ou                                                  30                         0.91
+agricoles, protéger le régulateur.                                         GPL                      50                         0.94
+                                                                                                    75                         0.97
+Accumulation de poussière ou de
+graisse                                                             INSTALLATION
+Des accumulations importantes de poussière ou de
+graisse peuvent causer le dysfonctionnement du                      Lors de l’installation de ce produit
+régulateur. Lorsque de la poussière ou de la graisse                 1.    Lire attentivement ces instructions. Le non-
+peuvent causer problème, couvrir le régulateur pour                        respect des instructions peut endommager le
+limiter la contamination.                                                  produit ou provoquer une situation dangereuse.
+                                                                     2.    Vérifier les caractéristiques nominales indiquées
+Chauffage                                                                  dans les instructions et sur le produit pour
+Des températures excessivement élevées peuvent                             s’assurer que le produit correspond bien à
+endommager le régulateur. S’assurer que la                                 l’application prévue.
+température ambiante maximum autour du régulateur                    3.    L’installateur doit être un technicien
+ne dépasse pas les conditions de température de                            expérimenté ayant reçu la formation adéquate.
+fonctionnement du régulateur. Si l‘appareil fonctionne à             4.    Une fois l’installation terminée, vérifier que le
+de très hautes températures, utiliser un isolant, une                      produit fonctionne comme indiqué dans ces
+protection et assurer une circulation d'air adéquate                       instructions.
+pour protéger le régulateur. Une isolation ou une
+
+                                                                3                                                              34-00013EF—05
+MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+
+                                                                     Connexion de l'arrivée de gaz
+       AVERTISSEMENT                                                 Toute la tuyauterie doit être conforme aux codes et
+       Risque d’incendie ou d’explosion.                             réglementations locaux ou au code national relatif au
+       Peut causer des dégâts et des blessures                       gaz combustible (ANSI Z223.1, NFPA n° 54),
+       graves, voire mortelles.                                      conformément à la législation locale en vigueur.
+       Respecter ces avertissements avec précision :                 L’installation des tubes doit être conforme aux normes
+         1. Pour éviter une accumulation dangereuse                  et aux pratiques approuvées.
+            de gaz combustible, couper l’alimentation                  1. Utiliser un tuyau neuf, correctement alésé et
+            en gaz au niveau de la vanne de service de                     exempt d’écailles. Si des tubes sont utilisés, veiller
+            l’appareil avant de commencer                                  à ce que les extrémités soient carrées, ébavurées et
+            l’installation et effectuer le test de fuite de                propres. Tous les coudes des tubes doivent être
+            gaz une fois l’installation terminée.                          lisses et ne pas présenter de déformations.
+         2. Toujours installer un collecteur de                        2. S’assurer que l’alimentation en gaz est coupée.
+            sédiments dans le tuyau d’alimentation de                  3. Acheminer le tuyau ou le tube vers le régulateur
+            gaz pour éviter la contamination du                            du chauffe-eau. Si un tube est utilisé, obtenir un
+            système d’allumage.                                            coupleur tube-tuyau pour connecter le tube au
+         3. Suivre les instructions du fabricant de                        régulateur.
+            l’appareil le cas échéant, ou bien lire ces                4. Installer un collecteur de sédiments dans la
+            instructions pour s’en servir de guide.                        conduite d’alimentation vers le régulateur du
+                                                                           chauffe-eau. Voir la Fig. 3.
+
+       AVERTISSEMENT                                                       COLONNE     ALIMENTATION
+                                                                           DESCENDANTE EN GAZ
+       Risque d’ébouillantement.
+       Peut causer des brûlures et des blessures                       HORIZONTAL
+                                                                                          (TUYAU)
+       graves, voire mortelles.
+       Toujours utiliser un capteur à remplacement
+       direct pour remplacer le capteur de température.
+
+Emplacement
+                                                                           3 PO
+Les modules de commande WT88xx sont montés à                               (76 MM)
+                                                                           MINIMUM
+l’extérieur du réservoir du chauffe-eau. Voir la Fig. 2.
+                                                                                COLONNE
+                                                                                DESCENDANTE
+                                                                                              ALIMENTATION
+                                     MONTAGE                               HORIZONTAL         EN GAZ
+                                                                                              (TUBE
+                                                                                   1
+
+                                     ACCÈS DU PUITS
+                                     AU RÉSERVOIR
+
+                                                                     COLONNE
+                                                                     MONTANTE
+                                                                           3 PO
+                                                                           (76 MM)
+                                                                           MINIMUM
+
+
+                   WT8840
+
+                                                      MF36123B                  AVERTISSEMENT
+                                                                                RISQUE D’EXPLOSION. LE NON-RESPECT DES PRÉCAUTIONS
+                                                                                SUIVANTES PEUT CAUSER L'INFILTRATION DE GAZ DANS LA ZONE
+Fig. 2. Montage des modules de commande WT88xx                                  DE TRAVAIL. COUPER L'ARRIVÉE DE GAZ PRINCIPALE AVANT DE
+          sur le réservoir du chauffe-eau.                                      RETIRER LE CAPUCHON D’EXTRÉMITÉ. EFFECTUER UN TEST
+
+                                                                           1    TOUS LES COUDES DES TUBES MÉTALLIQUES DOIVENT ÊTRE LISSES.
+
+Installation du régulateur sur le                                                                                                    MF29522B
+
+
+
+réservoir d’eau                                                       Fig. 3. Installation d’un piège à sédiments dans la
+ 1.   Pour installer le module de commande du chauffe-                                canalisation d’arrivée.
+      eau sur le réservoir d’eau, vider d’abord le réservoir,
+      puis visser l’ensemble dans le raccord jusqu’à ce
+      que le support soit carré. Utiliser un couple                             AVERTISSEMENT
+      maximum de 31 pi-lb plus un tour supplémentaire.                          Risque d’explosion.
+ 2.   Suivre les étapes indiquées dans la section                               Peut causer des dégâts et des blessures
+      Connexion de l'arrivée de gaz.                                            graves, voire mortelles.
+IMPORTANT                                                                       Vérifier l’absence de fuites de gaz avec une
+     Ces régulateurs de chauffe-eau sont expédiés                               solution savonneuse à chaque fois qu’un
+     avec des dispositifs de protection sur les prises                          travail est effectué sur le système de gaz.
+     d’entrée et de sortie. Ne retirer les protections
+     qu'au moment de brancher la tuyauterie.                          5.       Appliquer une quantité modérée de pâte à joints
+                                                                               de bonne qualité, en laissant deux filets nus à
+                                                                               l’extrémité. Ne pas utiliser de pâte à joint sur les
+                                                                               filetages sur la sortie. Voir la Fig. 4
+                                                                      6.       Retirer les joints placés sur l’entrée et la sortie du
+                                                                               module de commande du chauffe-eau.
+
+34-00013EF—05                                                    4
+                                                        MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+ 7.     Connecter le tuyau à l’entrée et à la sortie du
+        régulateur du chauffe-eau. Utiliser une clé sur
+        l’extrémité carrée du régulateur du chauffe-eau.
+                                                                                    MISE EN GARDE
+        Le couple maximum est 40 pi-lb sur l'entrée et                               Risque de contamination.
+        30 pi-lb sur la sortie.                                                      Peut causer un dysfonctionnement de
+ 8.     Positionner le raccord de compression sur la                                 l’équipement.
+        sortie veilleuse et engager les filetages. Voir la                           Ne pas utiliser de ruban d’étanchéité pour
+        Fig. 5. pour les éléments de commande et les                                 filetages sur l’alimentation en gaz du
+        connexions. Serrer à la main, puis serrer d'un                               régulateur.
+        tour de plus à l'aide d'une clé. Ne pas trop serrer.                            a.Utiliser de la pâte à joint pour étanchéifier
+                                                                                          le raccord.
+ DEUX                      RÉGULATEUR                                                   b.Utiliser uniquement des produits
+ FILETAGES                 DE SYSTÈME                                                     approuvés ANSI.
+ IMPARFAITS                D’ALLUMAGE
+
+
+                                                                              Câblage
+                           TUYAU
+                                                                              Suivre les instructions de câblage fournies par le
+                                                                              fabricant de l’appareil, si disponibles, ou utiliser les
+FILETER LE TUYAU COMME INDIQUÉ          APPLIQUER UNE QUANTITÉ MODÉRÉE        instructions générales ci-dessous. Si ces instructions
+DANS LE TABLEAU 2 POUR L'INSERTION      DE PÂTE À JOINTS SUR LE TUYAU
+DANS LE RÉGULATEUR DU SYSTÈME           UNIQUEMENT (LAISSER DEUX              diffèrent de celles du fabricant de l'appareil, suivre
+D’ALLUMAGE                              FILETAGES NUS).                       celles du fabricant. S'assurer que les bords tranchants
+                                                                MF29771
+                                                                              ne coupent pas l'isolant des câbles.
+   Fig. 4. Utiliser une quantité modérée de pâte à
+                         joints.                                              REMARQUE : Tout le câblage doit être conforme aux
+                                                                                         codes et aux règlementations
+Tableau 3. Longueur de filetage de tuyau NPT (po).                                       électriques locaux.
+                           Fileter de     Profondeur maximale                 Brancher le circuit de commande au régulateur du
+Dimension                    cette         d’insertion du tuyau               chauffe-eau en respectant les connexions illustrées
+ du tuyau                  longueur         dans le régulateur                sur la Fig. 5.
+      1/2                     3/4                     1/2
+                                                                              Remplissage du réservoir
+                                                                              Consulter les instructions du fabricant de l'appareil
+                                                                              pour remplir le réservoir d'eau.
+
+
+                                                                DEL
+                                                                              Gaz de veilleuse et procédure
+   APPLIQUER LA
+   CLÉ ICI LORS DE                                                            d'allumage
+   LA CONNEXION
+   DE LA LIGNE                                                                 1.   Commencer par tourner le bouton de l’appareil
+   D’ALIMENTATION
+                                                                                    sur Pilot (veilleuse), appuyez sur le bouton et
+                                                                                    maintenez-le en position. (La vanne de la
+                                                                                    veilleuse s'ouvre et permet au gaz de s'écouler
+                                                                                    dans la veilleuse.)
+       BOUTON DE                                                               2.   Appuyer sur l’allumeur piézoélectrique pour
+       POINT DE CONSIGNE
+       DE TEMPÉRATURE                                   CONNECTEUR
+                                                                                    allumer la flamme de la veilleuse et maintenir le
+      CONNECTEUR ULN.                                   THERMOPILE                  bouton enfoncé jusqu’à ce que l’indicateur d’état
+      NON UTILISÉ SUR
+      LES MODÈLES
+                                                             PRISE DE               commence à clignoter. Lorsque le voyant DEL
+                                                             PRESSION
+      ATMOSPHÉRIQUES                                         DE SORTIE              clignote, le bouton peut être relâché, ce qui
+      STANDARD
+                                                                                    indique que la veilleuse est maintenant
+                                                                                    maintenue par des appareils électroniques.
+
+                                                                                    REMARQUE : Le voyant doit clignoter une fois
+                                                                                        toutes les trois secondes. Si ce n'est pas le
+                                                                                        cas, vérifier les codes d'erreur dans le
+                                                                                        Tableau 4.
+
+                                                                               3.   Le brûleur s’allume si la température de l’eau est
+                                                                                    sensiblement inférieure au point de consigne de
+                                                                                    la température et que le voyant DEL commence
+                                                                                    à clignoter toutes les trois secondes.
+
+                                                                              REMARQUE : Si la veilleuse s’éteint, attendre une
+                                                                                         minute que le thermopile refroidisse
+                                                                                         avant de réallumer la veilleuse.
+                                                             MF38019
+
+                                                                              Allumage du brûleur principal
+Fig. 5. Commandes du chauffe-eau et raccords à des
+      fins d’illustration. Consulter le manuel du                             Suivre les instructions fournies par le fabricant ou
+      propriétaire de l’appareil pour obtenir des                             augmenter la température au niveau du bouton du
+                 raccordements précis.                                        point de consigne.
+
+
+
+
+                                                                          5                                               34-00013EF—05
+MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+
+                                                                Contrôler l'arrivée de gaz et le
+       AVERTISSEMENT                                            débit du brûleur
+       Risque d’ébouillantement.
+       Peut causer des brûlures et des blessures
+       graves, voire mortelles.
+       Ne jamais mettre le bouton du point de                          AVERTISSEMENT
+       consigne au-delà du réglage Chaud (Hot) à                       Risque d’incendie ou d’explosion.
+       moins qu’une eau extrêmement chaude ne soit                     Peut causer des dégâts et des blessures
+       souhaitée. Toujours vérifier la température de                  graves, voire mortelles.
+       l'eau au robinet et la régler pour qu'elle soit                 Respecter ces avertissements à la lettre :
+       confortable au toucher. Considérer l'âge et la                  1. Ne pas dépasser la valeur nominale de
+       santé de tous ceux qui entreront en contact                        l’entrée estampillée sur la plaque
+       avec l'eau chaude.                                                 signalétique de l’appareil ou la pression de
+                                                                          l’orifice du brûleur recommandée par le
+Test de fuite de gaz                                                      fabricant pour la taille du ou des orifices
+                                                                          utilisés. Suivre les instructions du fabricant
+                                                                          de l’appareil.
+                                                                       2. POUR UNE VÉRIFICATION DE L’ENTRÉE DE
+       AVERTISSEMENT                                                      GAZ EN CHRONOMÉTRANT LE COMPTEUR
+       Risque d’incendie ou d’explosion.                                  À GAZ : S’assurer qu’il n’y a pas de débit de
+       Peut causer des dégâts et des blessures                            gaz par le compteur autre que celui de
+       graves, voire mortelles.                                           l’appareil en cours de vérification. Les autres
+       Vérifier l’absence de fuites de gaz avec une                       appareils et veilleuses doivent être éteints
+       solution savonneuse à chaque fois qu’un                            (ou déduire leur consommation du relevé du
+       travail est effectué sur le système à gaz.                         compteur). Convertir le débit en Btuh
+                                                                          comme décrit dans le formulaire 70-2602,
+                                                                          Manuel des régulateurs à gaz, et comparer la
+      MISE EN GARDE                                                       valeur d’entrée nominale en Btuh à la plaque
+                                                                          signalétique de l’appareil.
+       Risque de dégât d’eau.                                          3. POUR UNE VÉRIFICATION DE L'ENTRÉE DE
+       Peut endommager les composants                                     GAZ AVEC UN MANOMÈTRE :
+       électriques du module de commande                                  S'assurer que l'interrupteur manuel de
+       WT88xx.                                                            coupure du gaz est en position OFF (Arrêt)
+       Ne pas vaporiser de solution composée d'eau                        avant de retirer le bouchon de la prise de
+       et de savon sur le boîtier de la commande                          pression de sortie pour connecter le
+       WT88xx. Ne pas utiliser une quantité excessive                     manomètre (jauge de pression). Mettre
+       de solution savonneuse pour effectuer le test                      également l'interrupteur manuel de coupure
+       de fuite de gaz.                                                   du gaz en position OFF (Arrêt) lors du retrait
+                                                                          du manomètre (jauge de pression) et lors du
+Test de fuite de gaz                                                      remplacement du bouchon. Recommencer
+ 1.   Badigeonner les raccords des canalisations en                       le test de fuite de gaz au niveau du bouchon
+      amont du régulateur du chauffe-eau avec une                         pendant que le brûleur principal est en
+      solution savonneuse épaisse. Des bulles                             marche.
+      indiquent une fuite de gaz.
+ 2.   Si une fuite est détectée, serrer les raccords de
+      tuyauterie.
+                                                                Procédure de contrôle l'arrivée
+ 3.   S’éloigner du brûleur lors de l’allumage pour             de gaz et du débit du brûleur
+      éviter les blessures causées par des fuites
+                                                                 1.   Vérifier la pression à plein débit du collecteur
+      cachées qui pourraient causer un retour de
+                                                                      indiquée sur la plaque signalétique de l’appareil.
+      flamme dans le vestibule du brûleur de l'appareil.
+                                                                      La pression de sortie plein débit du régulateur
+ 4.   Avec le brûleur allumé, badigeonner les joints du
+                                                                      du chauffe-eau doit correspondre à cette valeur.
+      tuyau (y compris les adaptateurs) et l’entrée et la
+                                                                 2.   Avec le brûleur principal en fonctionnement,
+      sortie du régulateur avec une solution
+                                                                      vérifier le débit du module de commande du
+      savonneuse épaisse.
+                                                                      chauffe-eau à l’aide du compteur à gaz ou
+ 5.   Si une autre fuite est détectée, serrer les vis des
+                                                                      vérifiez la pression à l'aide d’un manomètre
+      adaptateurs, les joints et les raccords des
+                                                                      (jauge de pression) connecté à la prise de
+      tuyaux.
+                                                                      pression de sortie du module de commande du
+ 6.   Remplacer la ou les pièces si la fuite ne peut pas
+                                                                      chauffe-eau. Voir la Fig. 5.
+      être réparée.
+
+
+
+
+34-00013EF—05                                               6
+                                           MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+
+ENTRETIEN                                                        DÉPANNAGE
+                                                                 Dépannage à l'aide du voyant
+       AVERTISSEMENT                                             d'état
+       Risque d’incendie ou d’explosion. Peut causer
+       des dégâts et des blessures graves, voire                 1.   La veilleuse doit être allumée. Si ce n'est pas le
+       mortelles.                                                     cas, enfoncer le bouton de la veilleuse sans le
+       Ne pas tenter de démonter ou de nettoyer la                    relâcher et l'allumer avec le piézo. Un code
+       vanne à gaz à l’intérieur du module de                         d'erreur s'affiche lorsque la thermopile chauffe.
+       commande WT88xx. Un nettoyage ou un                            Le code d'erreur peut être reconnu en comptant
+       remontage inadéquat peuvent causer des                         le nombre de clignotements du voyant d'état
+       fuites de gaz.                                                 après une pause de trois secondes. Un seul
+                                                                      clignotement (avec bouton de point de consigne
+Le programme d’entretien doit inclure une vérification                en position PILOT (veilleuse)) indique que le
+régulière du régulateur telle qu’indiquée dans la                     régulateur est en mode de fonctionnement
+section Mise en service et vérification, et du système                normal.
+de régulation telle que décrite dans la documentation            2.   Observer le voyant d'état sur le régulateur;
+du fabricant de l'appareil.                                           vérifier et réparer le système comme indiqué
+                                                                      dans le Tableau 4 à la page 8. Les codes de
+La fréquence de l’entretien doit être déterminée pour                 clignotement sont affichés avec un délai de trois
+chaque application sur une base individuelle. Voici                   secondes entre les cycles. Un voyant fixe continu
+quelques considérations à prendre en compte :                         indique l'arrêt du système quand le bouton est
+ 1. Fréquence des cycles. Les appareils dont les                      tourné à partir de la position Arrêt (OFF).
+       cycles peuvent avoir lieu 10 000 fois par an                   Lorsque le voyant est fixe, la veilleuse et le
+       doivent être vérifiés mensuellement.                           brûleur principal ne restent pas activés. Lorsque
+ 2. Utilisation intermittente. Les appareils utilisés                 le voyant d'état s'éteint, l'utilisateur peut
+       de manière saisonnière doivent être vérifiés                   redémarrer le système. (Le temps d'arrêt
+       avant l’arrêt et après la mise en service suivante.            approximatif est une minute.)
+ 3. Conséquence d’une coupure imprévue. Lorsque                  3.   Après l'analyse du voyant d'état et la réparation
+       le coût d’une coupure imprévue est élevé, le                   de l'appareil, tourner le bouton de l'appareil sur
+       système doit être vérifié plus souvent.                        Arrêt, attendre que le voyant s'éteigne, puis
+ 4. Environnements poussiéreux, mouillés ou                           réaliser la procédure d'allumage.
+       corrosifs. Ces environnements pouvant causer              4.   Le témoin lumineux d’état doit être en mode
+       une détérioration plus rapide du régulateur, le                normal (1 clignotement) avec le bouton dans la
+       système doit être vérifié plus souvent.                        position PILOT (veilleuse). Tourner le bouton de
+Le système doit être remplacé dans les cas suivants :                 l’appareil au-delà de la température de l’eau
+   •Il ne fonctionne pas correctement lors de la                      dans le réservoir pour allumer le brûleur
+      vérification ou du dépannage.                                   principal. Le témoin lumineux d’état clignote
+   •Le régulateur a probablement fonctionné sur plus                  toutes les trois secondes en cas d’appel de
+      de 150 000 cycles.                                              chaleur.
+   •Le régulateur est mouillé ou semble avoir été                5.   Lorsque plusieurs codes d'erreur sont présents,
+      mouillé.                                                        le code d'erreur suivant suit le code d'erreur
+                                                                      précédent dans un délai de trois secondes
+                                                                      environ, le clignotement le plus élevé ayant lieu
+                                                                      en premier.
+
+
+
+
+                                                             7                                             34-00013EF—05
+MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+
+                                     Tableau 4. Dépannage avec le voyant d'état.
+              Code
+           d’erreur du
+             voyant           Nombre de clignotements
+              DEL**              du voyant DEL*               Erreur détectée                   Action recommandée
+Fonc-      1 clignotement                               Pas une erreur; indique que Il est maintenant possible de tourner le bouton
+tionnement toutes les 3                                 le circuit électronique        au point de température de consigne souhaité.
+normal.    secondes                                     maintient la veilleuse en      Le voyant continue de clignoter 1 fois toutes les
+Aucune                                                  position ouverte et le brûleur 3 secondes en mode de veille (pas d'appel de
+action                                                  principal en position fermée. chauffage).
+requise.   Clignotement                                 Pas une erreur; indique un Aucune.
+           toutes les 3                                 appel de chauffage pendant
+           secondes                                     le fonctionnement normal,
+                                                        brûleur principal ouvert.
+Action     2 clignotements                              Faible tension de la           Vérifier la thermopile et ses connexions. Vérifier
+requise.                                                thermopile; le brûleur         la flamme de la veilleuse.
+                                                        principal n'est pas activé.
+           4 clignotements                              Limite de coupure de           Contrôler les vannes et le capteur de
+                                                        température atteinte.          température de l'eau. Réduire le point de
+                                                                                       consigne de température de l'eau. Vérifier
+                                                                                       soigneusement le fonctionnement du brûleur
+                                                                                       principal et du régulateur de température de
+                                                                                       l'eau avant de partir.
+           5 clignotements                              Défaillance du capteur de      Vérifier le capteur de température de l'eau et sa
+                                                        température de l'eau.          connexion pour détecter tout circuit ouvert,
+                                                                                       court-circuit ou écart de résistance entre les
+                                                                                       deux éléments du capteur.
+           6 clignotements                              Limite supérieure de         Remplacer le brûleur. (Vérifier le capteur de
+           (WT8860A, B                                  température de la chambre température de la porte et sa connexion pour les
+           seulement)                                   de combustion atteinte.      circuits ouverts ou les courts-circuits.)
+                                                        (Défaillance du détecteur de
+                                                        température de la porte.)
+           7 clignotements                              Défaillance électronique       Remplacer le module du régulateur.
+           8 clignotements                              Ce n'est qu'un                Contrôler les vannes.
+                                                        avertissement; le contrôle ne
+                                                        voit pas la réduction de
+                                                        puissance lorsque le bouton
+                                                        est sur Arrêt.
+           9 clignotements                              Défaillance du détecteur de Vérifier le capteur de température de la porte et
+           (WT8860A, B                                  température de la porte.    sa connexion pour les circuits ouverts ou les
+           seulement)
+                                                                                    courts-circuits.
+           10 clignotements                             Profil de température de la    Nettoyer toutes les entrées d’air de combustion
+           (WT8860A, B                                  chambre de combustion          de l’appareil. Nettoyer le brûleur. Retirer tous les
+           seulement)
+                                                        anormal pendant le cycle de    obstacles qui pourraient restreindre le débit
+                                                        chauffage.                     d’air vers le brûleur.
+           Voyant allumé                                Pas une erreur; indique que Aucune; attendre que le voyant s'éteigne pour
+           fixe                                         le régulateur est sur Arrêt. redémarrer le système.
+*
+  Les codes d'erreur du voyant DEL clignotent une fois par seconde, avec une pause de trois secondes entre les
+  répétitions du code d'erreur.
+**Deux codes d'erreur différents peuvent s'afficher simultanément si plus d'une erreur a été détectée.
+
+
+
+
+34-00013EF—05                                             8
+                                                   MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+
+Dépannage sans l'aide du voyant d'état
+Suivre le schéma de la Fig. 6.
+
+
+                                 GUIDE DE DÉPANNAGE SANS VOYANT D'ÉTAT
+
+                         TOURNER LE BOUTON DE L'APPAREIL                      VÉRIFIER :
+                         D'ARRÊT À VEILLEUSE, LE MAINTENIR          NON       • PRESSION D’ENTRÉE
+                         ENFONCÉ ET ALLUMER LA VEILLEUSE EN                   • S’ASSURER QUE L’AIR EST PURGÉ DU
+                         APPUYANT SUR LE BOUTON PIÉZO                           SYSTÈME
+                         D'ALLUMAGE. LA VEILLEUSE DOIT S'ALLUMER.             • ÉTINCELLE PIÉZO VERS THERMOPILE
+                         – LA TEMPÉRATURE DE L'EAU EST                        • ORIFICE DE VEILLEUSE BOUCHÉ
+                            INFÉRIEURE À LA LIMITE DE COUPURE                 • FUITE DE GAZ DANS LES RACCORDS DE
+                                                                                TUBE DE LA VEILLEUSE
+                                             OUI
+
+
+                        LE VOYANT D'ÉTAT DOIT CLIGNOTER APRÈS                 VÉRIFIER :
+                        1 MINUTE, LE VOYANT DEL CLIGNOTE UNE  NON             • CÂBLAGE DES FILS DE LA THERMOPILE
+                        FOIS POUR UN FONCTIONNEMENT NORMAL,                   • COUVERTURE DE FLAMME DE LA THERMOPILE
+                        RELÂCHER LE BOUTON DE L'APPAREIL, LA                    – SORTIE THERMOPILE TROP BASSE-
+                        VEILLEUSE DOIT RESTER ALLUMÉE                         • VÉRIFIER SORTIE DE THERMOPILE
+
+                                             OUI
+
+
+                        TOURNER LE BOUTON DE L’APPAREIL À
+                        LA TEMPÉRATURE SOUHAITÉE, LE                          VÉRIFIER :
+                                                                    NON
+                        BRÛLEUR S’ALLUME SEULEMENT EN                         • PRESSION D’ENTRÉE EXCESSIVE
+                        MODE D'APPEL DE CHALEUR ACTIF                         • TEMPÉRATURE DU RÉSERVOIR ÉGALE OU
+                        (LA TEMPÉRATURE DE L’EAU EST                            PROCHE DU POINT DE CONSIGNE
+                        INFÉRIEURE AU RÉGLAGE DE LA
+                        TEMPÉRATURE MOINS LE
+                        DIFFÉRENTIEL); LE VOYANT DEL
+                        CLIGNOTERA TOUTES LES 3 SECONDES
+                        LORS D’UN APPEL DE CHALEUR.
+
+                                             OUI
+
+
+                         SYSTÈME OK
+                                                                                                                          MF29431D
+
+
+                                            Fig. 6. Dépannage sans voyant d'état.
+
+Vérification de la sortie de la thermopile
+ 1.   Mettre le bouton de l’appareil sur Arrêt.
+ 2.   Débrancher les fils de la thermopile.                                                                 SORTIE THERMOPILE EN DURÉE
+ 3.   Mettre le bouton de l'appareil sur Veilleuse,                                           900
+      enfoncer le bouton pour allumer la veilleuse.
+                                                                                              800
+      Maintenir le bouton enfoncé pendant cinq
+                                                                                              700
+      minutes ou plus.
+                                                                                              600
+                                                                                SORTIE (mV)
+
+
+
+
+ 4.   Après cinq minutes, vérifier la sortie de la                                                                        PLAGE NORMALE
+      thermopile en reliant le voltmètre au fil positif                                       500
+
+      rouge et au fil négatif blanc.                                                          400
+ 5.   La sortie doit être d'au moins 350 mV. (Voir la                                         300
+      Fig. 7.) Brancher la résistance de 3,6 ohms entre                                       200
+                                                                                                                       SORTIE TROP BASSE
+      les deux fils de la thermopile. La tension doit être                                    100
+      égale ou supérieure à la moitié de la tension en                                          0
+      circuit ouvert.                                                                               0   1    2   3    4       5      6    7   8    9   10
+ 6.   Le bornier empêche un mauvais raccordement                                                                     TEMPS (MINUTES)               MF22535
+      des fils positifs et négatifs.
+ 7.   La flamme doit envelopper la thermopile au                                                        Fig. 7. Sortie de thermopile.
+      niveau de la jonction chaude (3/8 po sous
+      l'extrémité).
+ 8.   Éloigner toute chaleur de la jonction froide
+      (manchon en laiton de la thermopile) pour une
+      capacité de sortie maximale.
+
+
+
+
+                                                                          9                                                                   34-00013EF—05
+MODULES DE COMMANDE DES CHAUFFE-EAUX WT8840 ET WT8860
+
+
+INSTRUCTIONS AU                                                                    STOP! LIRE LES
+PROPRIÉTAIRE DE LA                                                                 AVERTISSEMENTS CI-
+RÉSIDENCE                                                                          DESSUS.
+                                                                                   Si l'appareil ne se met pas en marche quand le bouton
+         AVERTISSEMENT                                                             du point de consigne est réglé à plusieurs degrés au-
+                                                                                   dessus de la température précédente, suivre ces
+          Risque d’incendie ou d’explosion.                                        instructions :
+          Peut causer des dégâts et des blessures
+          graves, voire mortelles.                                                   1.     Régler le bouton de température de point de
+          1. SI UNE ODEUR DE GAZ EST DÉTECTÉE :                                             consigne sur Arrêt (OFF).
+             •Couper l’alimentation en gaz au niveau du                              2.     Fermer le robinet de gaz principal vers
+                robinet d’alimentation de l’appareil.                                       l'appareil.
+             •N’allumer aucun appareil dans la maison.                               3.     Attendre cinq minutes pour dégager tout gaz
+             •Ne pas toucher d’interrupteurs électriques                                    non brûlé. Si une odeur de gaz est détectée,
+                ni utiliser le téléphone. Quitter le bâtiment                               S'ARRÊTER! Suivre l’étape 1 de l’avertissement
+                et utiliser un téléphone voisin pour                                        ci-dessus. Si AUCUNE odeur de gaz n’est
+                appeler la compagnie de gaz.                                                détectée, passer à l’étape suivante.
+             •Si la compagnie de gaz ne peut pas être                                4.     Rétablir l'alimentation en gaz vers l'appareil.
+                contactée, appeler les pompiers.                                     5.     Redémarrer l'appareil en réalisant la procédure
+          2. Remplacer le régulateur du chauffe-eau en                                      d'allumage.
+             cas de dommages physiques, de                                           6.     Tourner le bouton du point de consigne au
+             modification, de bornes courbées, de pièces                                    réglage désiré.
+             cassées ou manquantes, de filetages                                     7.     Si l’appareil ne s'allume pas, couper l’arrivée de
+             dénudés ou en cas d'évidence d'exposition à                                    gaz vers l’appareil et contacter un technicien
+             la chaleur.                                                                    d'entretien qualifié pour obtenir de l'aide.
+
+                                                                                   REMARQUE : Si la veilleuse s’éteint, attendre une
+         AVERTISSEMENT                                                                        minute que le thermopile refroidisse
+                                                                                              avant de réallumer la veilleuse.
+          Risque d’ébouillantement.
+          Peut causer des brûlures et des blessures
+          graves, voire mortelles.
+          Ne jamais mettre le bouton de réglage du
+                                                                                   EXTINCTION DE
+          point de consigne de température au-delà du                              L’APPAREIL
+          réglage HOT (Chaud) sans vérifier la
+          température de l'eau au robinet pour qu'elle
+          soit confortable au toucher. Considérer l'âge et                         Arrêt complet
+          la santé de tous ceux qui entreront en contact
+                                                                                     1.     Mettre le bouton de l’appareil sur Arrêt. Couper
+          avec l'eau chaude.
+                                                                                            l'alimentation en gaz vers l'appareil. L’appareil
+                                                                                            est complètement éteint.
+IMPORTANT
+                                                                                     2.     Suivre la procédure dans la section Instructions
+      Suivre les instructions de fonctionnement
+                                                                                            au propriétaire ci-dessus pour reprendre le
+      fournies par le fabricant du chauffe-eau. Les
+                                                                                            fonctionnement normal.
+      informations fournies dans ce document
+      décrivent une application typique, mais les
+      régulateurs spécifiques utilisés et les
+      procédures décrites dans les instructions du
+      fabricant de l'appareil peuvent différer,
+      nécessitant des instructions spéciales.
+
+
+
+
+                          Resideo Inc., 1985 Douglas Drive North,
+                          Golden Valley, MN 55422
+www.resideo.com           34-00013EF—05 M.S. Rev. 08-19 | Imprimé aux États-Unis
+Ce produit est fabriqué par Resideo Technologies, Inc., Golden Valley, MN, 1-800-468-1502
+©2019 Resideo Technologies, Inc. Tous droits réservés.
+

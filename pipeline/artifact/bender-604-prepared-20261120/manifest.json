@@ -1,0 +1,94 @@
+{
+  "checked_at": "2026-11-20T16:11:34.268383+00:00",
+  "task": "bend-45-offset-on-hand-tube-bender",
+  "scope": "Verified native videos and draft publication source. Documentation corrected after the trial. No ownership clearance or submission.",
+  "source_sha256": {
+    "README.md": "027f938cfd5d20748ec596515eb9a2362ca5170fb2b05549c775faeba99f1144",
+    "check_scorer.py": "be9e3916adf18bbea5b42657108b9817642719dfeedb58fd9392632317c2c94f",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "985b0f8205dec2baa71b4affbb07ece621c5a302e99ba3d0ebfbbc05793d4a28",
+    "task.py": "a9cb4bad3ea0f1c4366e983d9a3d38cf3e6b765e253c8ddda2ffd2ad5e00cf37"
+  },
+  "demo_score": 1.0,
+  "demo_controls": 1144,
+  "demo_receipts": [
+    "/home/mzhang/yam-eval/bend-45-offset-on-hand-tube-bender/demo-1120-095053-gpu1-487110/trial-media.json",
+    "/home/mzhang/yam-eval/bend-45-offset-on-hand-tube-bender/demo-1120-100513-gpu0-639151/trial-media.json"
+  ],
+  "counts_as_fully_qualified": false,
+  "remaining": [
+    "PR #2123 is held by its author until at least November 21 00:28:27 UTC.",
+    "Fresh live ownership and novelty checks, followed by board media upload if clear."
+  ],
+  "native_held_control": {
+    "state": "success",
+    "score": 0.0,
+    "controls": 1240,
+    "final_bends_deg_at_mm": [
+      [
+        -45.7,
+        148.3
+      ],
+      [
+        45.3,
+        220.6
+      ]
+    ],
+    "final_hand_distance_m": 0.016,
+    "native_report": "pipeline/isolated-trials/bender-604-controls-20261120/hold/adhoc_f0caea76.json",
+    "native_report_sha256": "5f3323318fce38188b98e71ed9c4f40038f071b477c8b502c094f352c96e7197",
+    "policy_source_sha256": "071a73cfedf3dff92cfc8c814d096a54b37e478fae186444c5014bcb2243aa78",
+    "scope": "Same scene and scoring source prefix. Only the scripted left-arm release was replaced by a lever hold."
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "da5952aeb18bcf8336da6d4e8fbb8d88e0889d506b391e925d476d71baf16aab",
+      "bytes": 1122973
+    },
+    "dream.mp4": {
+      "sha256": "36b8cea08d224dd131d026bab3bc43a9b84e3bb66b5b18e4161a1488b2cb77e8",
+      "bytes": 654785
+    },
+    "setup.png": {
+      "sha256": "006c13d432bf3c3a5b979714e46ff6c70be2ed744fe6b5cb49c821ba03d49e0b",
+      "bytes": 157793
+    }
+  },
+  "model_score": 0.0,
+  "model_controls": 2400,
+  "model_runtime_report": "/home/mzhang/yam-eval/codex-bender-604-prepared-20261120/dream-1120-110159-gpu2-1266101/adhoc_dafde57e.json",
+  "model_receipt": "/home/mzhang/yam-eval/codex-bender-604-prepared-20261120/dream-1120-110159-gpu2-1266101/trial-media.json",
+  "media_visual_review": "Setup image and both contact sheets show no visible team identifiers.",
+  "metadata_sha256_excluding_scores_and_media": "be803e376b85fb450f527ac6f383787055f575495ef955421fc7e7f2bd0c0c1f",
+  "recorded_runtime_source_sha256": {
+    "check_scorer.py": "be9e3916adf18bbea5b42657108b9817642719dfeedb58fd9392632317c2c94f",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.py": "eed4b9bde78da40156f091ec40ff3b28704ca3888d813ebbc8bd697eb9963513"
+  },
+  "documentation_only_source_delta": "Corrected the model number, tube dimensions and arc length in the module docstring and a comment. The AST without that docstring is identical. The installed Dream policy receives the same instruction and does not receive this module docstring.",
+  "native_off_marks_control": {
+    "receipt": "/home/mzhang/yam-eval/bend-45-offset-on-hand-tube-bender/demo-1120-101814-gpu0-750778/trial-media.json",
+    "report": "/home/mzhang/yam-eval/bend-45-offset-on-hand-tube-bender/demo-1120-101814-gpu0-750778/adhoc_e46deda9.json",
+    "report_sha256": "f427cc9273248776690c19de28d742fe47e702d9ceceecd64b824cab864fcaba",
+    "score": 0.5,
+    "controls": 1139,
+    "ordered_bends_deg_and_mm": [
+      [
+        -45.7,
+        193.0
+      ],
+      [
+        45.2,
+        245.7
+      ]
+    ],
+    "errors_in_bend_order_mm": [
+      43.0,
+      25.0
+    ],
+    "design_limit": "Angles are close to target but the bend separation also changes. The packaged CPU cases isolate mark error with a fixed offset."
+  },
+  "documentation_checked_at": "2026-11-20T17:13:50.955743+00:00"
+}

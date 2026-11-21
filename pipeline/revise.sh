@@ -11,7 +11,6 @@ TASK=${1:?task folder}; WHAT=${2:?one-line summary of the revision}
 DIR=$REPO/tasks/$TASK
 exec 9>"$REPO/pipeline/submission.lock"
 flock 9
-# Board rule update: only new tasks consume the 20-per-24-hour quota.
 # Keep the publication lock and review/preflight checks for revisions.
 PR=$(gh pr list --repo robocurve/benchmark-tasks --author Tian-James-Pu --head "$TASK" --state all --json number --jq '.[].number')
 [[ $PR =~ ^[0-9]+$ ]] || { echo "revise: expected exactly one existing PR" >&2; exit 1; }

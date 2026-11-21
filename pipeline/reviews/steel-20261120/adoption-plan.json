@@ -1,0 +1,109 @@
+{
+  "checked_at": "2026-11-20T03:46:35.152176+00:00",
+  "user_request": "Examine https://steel.skild.ai/ and identify useful tasks/mechanisms to borrow for acceptance-focused Robocurve submissions.",
+  "catalog": "pipeline/reviews/steel-20261120/example-catalog.json",
+  "examples_count": 81,
+  "code_pin": "a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a",
+  "source_manifest": "pipeline/reviews/steel-20261120/source-manifest.json",
+  "priority_basis": "Root triage prioritizes reuse that addresses actual rejection mechanisms and can be adapted without replacing the shared runtime. This differs from ranking theoretical solver capabilities.",
+  "adoption_priorities": [
+    {
+      "priority": 1,
+      "examples": [
+        "nut_bolt_sdf",
+        "nut_bolt_hydro"
+      ],
+      "borrow": "Contact geometry and SDF convergence tests for real free-part thread engagement.",
+      "acceptance_value": "Addresses failures caused by captive parts or angle-triggered fake fastening.",
+      "next_step": "Retain reusable original-size contact geometry and native SDF authoring pattern. Select a genuinely novel useful task before more simulation. Establish robot grasp, free approach/reengagement and hardware-grounded load requirements; do not rescale M20 evidence to smaller fasteners.",
+      "limits": "Existing example is passive nut motion with mu0.01 and no robot; it is neither a tightening-force calibration nor novel assembly task. Do not transplant its friction estimate as hardware data.",
+      "source": "https://steel.skild.ai/examples/nut_bolt_sdf/",
+      "completed_step": "R2 native contact coupon: 3-turn advance 2.4978 and reverse 2.5016 mm/revolution; free removal and released retention passed. First recontact turn 2.1451 mm/revolution failed \u00b110% criterion. Later settled fit is exploratory only."
+    },
+    {
+      "priority": 2,
+      "examples": [
+        "contacts_rj45_plug"
+      ],
+      "borrow": "Contact-driven deflecting spring latch, release geometry and pull-back retention checks.",
+      "acceptance_value": "Can improve real connector/clip mechanisms without a positional success snap.",
+      "next_step": "Port only a source-matched useful mechanism to current runtime; validate actual gripper access, spring force and free connector alignment.",
+      "limits": "Example uses gizmo/spring driving, zero-friction connector contacts, unconditional gravity cancellation on plug/latch, and a world-to-plug joint with locked rotation. It demonstrates contact latching under these constraints, not free robot alignment or completion. Plain Ethernet insertion is already a crowded benchmark skill.",
+      "source": "https://steel.skild.ai/examples/contacts_rj45_plug/",
+      "code_evidence": {
+        "gravity_cancellation": "examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug/example.py:93",
+        "rotation_lock": "examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug/example.py:295",
+        "spring_latch": "examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug/example.py:310"
+      }
+    },
+    {
+      "priority": 3,
+      "examples": [
+        "load_friction",
+        "torsion",
+        "loop_parallel_gripper"
+      ],
+      "borrow": "Small load-dependent-friction, pinch-torsion and linkage diagnostics.",
+      "acceptance_value": "Expose fake holding/bracing claims before a full build; potentially useful for contour-gauge frame handling and its later real clamp.",
+      "next_step": "Test declared physical material/geometry across load and slip controls, preserving actual actuator limits.",
+      "limits": "Newton coefficient values are not PhysX forces; source parameters need interpretation and hardware support.",
+      "source": "https://steel.skild.ai/examples/load_friction/"
+    },
+    {
+      "priority": 4,
+      "examples": [
+        "franka_cable_ik_pick_place",
+        "franka_shirt_fold_stack"
+      ],
+      "borrow": "Two-way rigid/deformable coupling patterns and deformable material geometry.",
+      "acceptance_value": "Potentially enables faithful cable/cloth interactions where rigid proxies fail.",
+      "next_step": "Separate research track only after a novel task is sourced; fixed materials and actual contact-based grasp/release before adaptation.",
+      "limits": "Higher integration cost. Shirt example changes friction by script phase; nondeterministic grasps and Franka capability do not establish YAM performance. A solver migration would need separate compatibility work and is not required for immediate source reuse.",
+      "source": "https://steel.skild.ai/examples/franka_cable_ik_pick_place/"
+    }
+  ],
+  "new_task_leads": [
+    {
+      "name": "Ordinary spinning-top launch",
+      "status": "no-go after feasibility screen; do not build without new importance and launch evidence",
+      "blockers": [
+        "Real unpowered launch mechanism",
+        "YAM angular speed/contact feasibility",
+        "Importance beyond physics puzzle"
+      ],
+      "source": "https://steel.skild.ai/examples/spinning_top/",
+      "evidence": "pipeline/reviews/steel-20261120/top-feasibility/gate.json"
+    }
+  ],
+  "no_direct_submissions": [
+    "Jenga: currentaccepted2522",
+    "Toytrain: currentpending2849",
+    "Cardhouse: importance rejection2862",
+    "Fastener sweeping: duplicate precedent2633",
+    "Clothesfolding: existingBEHAVIOR family"
+  ],
+  "compatibility": {
+    "existing_runtime": "IsaacLab17.0.2 / IsaacSim6.1.0.0 / Warp1.16.0; read-only package inspection",
+    "steel_dependency": "skild-ai/newton f6fc82a8b06d036e1e6d02a61d77a2d300476e8d",
+    "sdf_path": "Native PhysX SDF512/subgrid6 contact was executed with original-size Factory M20 meshes in isolated coupons, preserving shared runtime. Stable three-turn advance and reverse matched 2.5 mm pitch; no solver migration.",
+    "primary_documentation": "https://docs.omniverse.nvidia.com/kit/docs/omni_physics/latest/dev_guide/rigid_bodies_articulations/collision.html",
+    "shared_environment_changes": false
+  },
+  "license": "Pinned Apache-2.0 project sources downloaded with LICENSE/NOTICE. Individual robot/mesh assets keep separate terms; examples/THIRD_PARTY.md identifies Factory nut/bolt BSD-3-Clause. Preserve matching component notices for any actual reuse.",
+  "actions_completed": [
+    "Structured81-examplecatalog",
+    "Pinned27source/preset/licensefiles",
+    "Four relevant visualposters inspected",
+    "Liveboard duplicate/rejectioncross-checks",
+    "SharedCODEXhandoff updated",
+    "Executed two isolated original-size native PhysX thread coupons with licenses and source hashes retained."
+  ],
+  "limitations": "STEEL Newton examples were not executed wholesale. Their licensed original-size thread geometry was ported and tested in native PhysX. The diagnostic uses declared compliant COM wrenches, not a robot grasp. First recontact turn failed predeclared lead tolerance; no complete task or fastening-force validation.",
+  "additional_task_screen": {
+    "evidence": "pipeline/reviews/steel-20261120/dynamic-games/screen.json",
+    "air_hockey": "No new-task clearance: established Robot Air Hockey Challenge overlaps core dynamic striker/puck/goal skill. Steel mallet is wrist-mounted.",
+    "beer_pong": "No new-task clearance: Fancy Gym BeerPong overlaps throw/release/cup capture; physical grip and mandatory bounce alone do not yet establish meaningful novelty."
+  },
+  "physics_reuse_evidence": "pipeline/reviews/steel-20261120/thread-contact-r2-result.json",
+  "human_readable_recommendations": "pipeline/reviews/steel-20261120/borrowing-recommendations.md"
+}

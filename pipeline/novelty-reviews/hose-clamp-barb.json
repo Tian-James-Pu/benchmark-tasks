@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-11-21T06:23:20Z",
+  "task": "tasks/hose-clamp-barb",
+  "decision": "do_not_submit_duplicate",
+  "competitor": {
+    "pr": 1892,
+    "state": "merged",
+    "author": "eainx",
+    "title": "Add hose-clamp-barb task",
+    "url": "https://github.com/robocurve/benchmark-tasks/pull/1892"
+  },
+  "evidence": [
+    "Live gh pr search for worm-drive clamp, barbed pump outlet and hose clamp on barb returned exact merged PR #1892.",
+    "pipeline/known_tasks.tsv marks PR #1892 accepted."
+  ],
+  "notes": "The local candidate has its own demo and media, but the task concept is the exact operation already accepted. Do not create another PR."
+}

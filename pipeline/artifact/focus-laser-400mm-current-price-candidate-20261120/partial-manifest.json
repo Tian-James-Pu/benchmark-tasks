@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-20T16:32:03.225908+00:00",
+  "validated_for_goal": false,
+  "native_instrumented_demo": "pipeline/isolated-trials/focus-alhp1-regrip-20261120/controls/trace/adhoc_17ef5fb3.json",
+  "native_score": 1.0,
+  "controls": 913,
+  "source_sha256": {
+    "README.md": "bee504bb67de780a33273b4fc83172648b4e4a52070f7d52038f2982ae21b034",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "042028396e03aca8b49096dfbee83f51335f2fdfb3b03b6b0ad6c4f7e88720d0",
+    "task.py": "ec8bd4b49a51ba3641a91b794741fdc0245377709e4f83b8cb474467d5445b11"
+  },
+  "outstanding": [
+    "Exact-source Dream-1 model and full scoring controls",
+    "Fresh ownership/novelty when PR #2885 can lapse"
+  ],
+  "media": {
+    "demo.mp4": {
+      "sha256": "1ff4f329c48c408813ba008bf6780a47e07523fa765e6e7a68ad1ffd621780a2",
+      "bytes": 2804290
+    },
+    "setup.png": {
+      "sha256": "8531433bf171c97c66cec93579c180beae33a1b4902e24064de13d9784cbec22",
+      "bytes": 164486
+    }
+  },
+  "high_resolution_demo": {
+    "score": 1.0,
+    "controls": 913,
+    "receipt": "/home/mzhang/yam-eval/codex-focus-alhp1-prepared-20261120/demo-1120-112728-gpu3-1533829/trial-media.json",
+    "encoding": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 360,
+      "r_frame_rate": "20/1",
+      "nb_frames": "914"
+    },
+    "two_native_source_views": [
+      {
+        "file": "/home/mzhang/yam-eval/codex-focus-alhp1-prepared-20261120/demo-1120-112728-gpu3-1533829/frames/20261120_162728_373a53e8/~f1~scene-0-e0~right_cam.mp4",
+        "sha256": "1d278df53f8da5b931ba9a8651c17ed8acf2a7eeb86488535bbf57794f8868a2"
+      },
+      {
+        "file": "/home/mzhang/yam-eval/codex-focus-alhp1-prepared-20261120/demo-1120-112728-gpu3-1533829/frames/20261120_162728_373a53e8/~f1~scene-0-e0~top_cam.mp4",
+        "sha256": "c2990f2583152478f5f4f9e10d653b79070c510e3d4f73cb07dfe149abc77ea0"
+      }
+    ]
+  }
+}

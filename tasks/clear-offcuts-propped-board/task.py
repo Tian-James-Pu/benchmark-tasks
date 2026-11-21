@@ -1,4 +1,4 @@
-"""On the station table: a freshly varnished pine batten (36 x 4 x 2 cm) lies across the table, its left end on a
+"""On the station table: a finished pine batten (36 x 4 x 2 cm) lies across the table, its left end on a
 pine bearer (14 x 4 x 4 cm) and its right end on a dark plywood offcut (14 x 4 x 5 cm) that someone used as a
 prop, so the board slopes slightly. The second pine bearer lies unused on the table beyond the board's right
 end. A second, smaller dark plywood offcut lies loose at the front left, and an open scrap bin stands at the
@@ -8,6 +8,7 @@ and a screwdriver lie behind the board as distractors.
 
 import pathlib
 import sys
+from itertools import product
 
 import numpy as np
 
@@ -70,25 +71,36 @@ SCREWDRIVER = SimReady(
 )
 OBJECTS = [BEARER, SPARE, PROP, LOOSE, BOARD, *BIN, MUG, TAPE, SCREWDRIVER]
 
-SUCCESS_HOLD_S = 3.0  # long enough for the grippers to let go and move away before the trial ends
+SUCCESS_HOLD_S = 0.0  # the task scorer counts its own continuous 3 s dwell
+SUCCESS_HOLD_STEPS = 60  # 3 s at the task's 20 Hz control rate
 SEAT_Z = TOP + BEARER_SIZE[2] + BOARD_SIZE[2] / 2  # the board's centre height when it lies on two bearers
-TOUCH_Z = TOP + 0.015  # any part of the board lower than this has reached the bench
+CONTACT_Z = TOP + 0.001  # allow 1 mm for contact-solver tolerance when detecting bench contact
 CLEAR = 0.02  # "released": no point on either gripper's fingers is closer to the board than this
 _harm = False
 _tips = None  # points on both grippers' fingers at the latest step
+_success_hold_steps = 0
+_full_awarded = False
 
 
 @on_reset
 def _new_trial(environment=None):
     """The harm record is cleared only by a reset of the scene, never by anything that happens in a trial."""
-    global _harm, _tips
-    _harm, _tips = False, None
+    global _harm, _tips, _success_hold_steps, _full_awarded
+    _harm, _tips, _success_hold_steps, _full_awarded = False, None, 0, False
 
 
 @on_step
 def _see_grippers(environment):
-    global _tips
+    global _tips, _success_hold_steps, _full_awarded
     _tips = fingertips(environment)
+    from yam_arena.scene import object_states
+
+    objects = object_states(environment, ("board", "left_bearer", "spare_bearer", "prop_offcut", "loose_offcut"))
+    _track(objects)
+    full_state = not _harm and all(_in_bin(name, objects[name]) for name in ("prop_offcut", "loose_offcut")) and _board_on_bearers(objects)
+    _success_hold_steps = _success_hold_steps + 1 if full_state else 0
+    if _success_hold_steps >= SUCCESS_HOLD_STEPS:
+        _full_awarded = True
 
 
 def _rotate(quat_xyzw, v):
@@ -103,58 +115,81 @@ def _tilt_deg(obj):
 
 
 def _track(objects):
-    """Remember, for the whole trial, whether any part of the board came down to the bench."""
+    """Remember whether any part of the board contacted the bench during the trial."""
     global _harm
-    _harm = bool(_harm or objects["board"].low[2] < TOUCH_Z)
+    _harm = bool(_harm or objects["board"].low[2] <= CONTACT_Z)
 
 
-def _released(board):
-    """No fingertip point within CLEAR of the board's surface."""
+def _released(obj, size=BOARD_SIZE, clear=CLEAR):
+    """No fingertip point within `clear` of the box's surface."""
     if _tips is None:
         return False
-    x, y, z, w = board.quat_xyzw
-    local = np.array([_rotate((-x, -y, -z, w), p - board.pos) for p in _tips])
-    gap = np.linalg.norm(np.maximum(np.abs(local) - np.array(BOARD_SIZE) / 2, 0.0), axis=1)
-    return bool(gap.min() > CLEAR)
+    x, y, z, w = obj.quat_xyzw
+    local = np.array([_rotate((-x, -y, -z, w), p - obj.pos) for p in _tips])
+    gap = np.linalg.norm(np.maximum(np.abs(local) - np.array(size) / 2, 0.0), axis=1)
+    return bool(gap.min() > clear)
 
 
-def _in_bin(obj):
+OFFCUT_SIZE = {"prop_offcut": PROP_SIZE, "loose_offcut": LOOSE_SIZE}
+OFFCUT_CLEAR = 0.01  # an offcut counts as lying in the bin only once no fingertip point is within 1 cm of it
+
+
+def _in_bin(name, obj):
     inside = abs(obj.pos[0] - BIN_X) < BIN_INX / 2 and abs(obj.pos[1] - BIN_Y) < BIN_IN / 2
-    return bool(inside and obj.pos[2] < TOP + 0.07 and obj.resting())
+    return bool(inside and obj.pos[2] < TOP + 0.07 and obj.resting() and _released(obj, OFFCUT_SIZE[name], OFFCUT_CLEAR))
 
 
 def _board_on_bearers(objects):
-    """The board at rest, let go of, level within 3 degrees, its underside 4 cm (+-0.5 cm) above the bench, with
-    both pine bearers lying flat under it, one each side of its middle and at least 15 cm apart."""
+    """Verify the released board is physically supported by two flat, crosswise bearers."""
     board = objects["board"]
     if not (board.resting() and _released(board) and _tilt_deg(board) < 3.0 and abs(board.pos[2] - SEAT_Z) < 0.005):
         return False
+    board_x = _rotate(board.quat_xyzw, np.array([1.0, 0.0, 0.0]))
+    board_y = _rotate(board.quat_xyzw, np.array([0.0, 1.0, 0.0]))
     ys = []
     for name in ("left_bearer", "spare_bearer"):
         b = objects[name]
-        flat = abs(b.pos[2] - (TOP + BEARER_SIZE[2] / 2)) < 0.005 and b.resting()
-        under = abs(b.pos[0] - board.pos[0]) < 0.05 and board.low[1] < b.pos[1] < board.high[1]
-        if not (flat and under):
+        bx = _rotate(b.quat_xyzw, np.array([1.0, 0.0, 0.0]))
+        bz = _rotate(b.quat_xyzw, np.array([0.0, 0.0, 1.0]))
+        flat = abs(b.pos[2] - (TOP + BEARER_SIZE[2] / 2)) < 0.005 and abs(bz[2]) >= np.cos(np.radians(3.0))
+        crosswise = abs(float(np.dot(bx, board_x))) >= np.cos(np.radians(5.0))
+        released = _released(b, BEARER_SIZE)
+
+        # Project the bearer's actual oriented footprint onto the board's width and length axes.
+        corners = [
+            b.pos + _rotate(b.quat_xyzw, np.array([sx * BEARER_SIZE[0] / 2, sy * BEARER_SIZE[1] / 2, sz * BEARER_SIZE[2] / 2]))
+            for sx, sy, sz in product((-1.0, 1.0), repeat=3)
+        ]
+        relative = np.asarray(corners) - board.pos
+        x_projection = relative @ board_x
+        y_projection = relative @ board_y
+        overlap_x = max(0.0, min(BOARD_SIZE[0] / 2, float(x_projection.max())) - max(-BOARD_SIZE[0] / 2, float(x_projection.min())))
+        overlap_y = max(0.0, min(BOARD_SIZE[1] / 2, float(y_projection.max())) - max(-BOARD_SIZE[1] / 2, float(y_projection.min())))
+        overlaps = overlap_x >= 0.03 and overlap_y >= 0.03
+        contact_gap = (board.pos[2] - BOARD_SIZE[2] / 2) - (b.pos[2] + BEARER_SIZE[2] / 2)
+        contacts_board = abs(contact_gap) <= 0.002
+
+        if not (b.resting() and flat and crosswise and released and overlaps and contacts_board):
             return False
         ys.append(float(b.pos[1]))
     return bool(max(ys) - min(ys) >= 0.15 and min(ys) < board.pos[1] < max(ys))
 
 
 def score(objects):
-    """0 if any part of the board ever came within 1.5 cm of the bench. Otherwise 0.25 for each dark offcut
-    lying at rest in the bin, and 1.0 when both are in the bin and the board is at rest, let go of, level within
-    3 degrees, on the two pine bearers."""
+    """Latch 0 on bench contact; award 1 only after all full-score conditions hold for 3 s."""
     _track(objects)
     if _harm:
         return 0.0
-    n = sum(_in_bin(objects[name]) for name in ("prop_offcut", "loose_offcut"))
-    if n == 2 and _board_on_bearers(objects):
+    n = sum(_in_bin(name, objects[name]) for name in ("prop_offcut", "loose_offcut"))
+    if _full_awarded:
         return 1.0
+    if n == 2 and _board_on_bearers(objects):
+        return 0.75
     return float(0.25 * n)
 
 
 def success(objects):
-    return bool(score(objects) == 1.0)
+    return bool(_full_awarded)
 
 
 TRAVEL = TOP + 0.16

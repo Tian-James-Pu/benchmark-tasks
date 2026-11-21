@@ -10,6 +10,7 @@
 # The instruction comes from tasks/<task-folder>/task.json, or $INSTRUCTION when there is none yet.
 # Output: ~/yam-eval/<task-folder>/<policy>-<time>/ (log, frames, videos) and, in
 # ~/yam-eval/<task-folder>/media/, <policy>.mp4 (H.264, top camera) and setup.png (first top-camera frame).
+# Each run also retains its exact submission media and a trial-media.json provenance receipt.
 # Authorized physical GPUs are listed in pipeline/gpu-allow (default "2 3"). GPUs 0 and 1 belong to
 # labmates and are used only while the user has temporarily allowed them in that file.
 # Trials take a slot on an authorized GPU (GPU_SLOTS per card, default 3).
@@ -63,7 +64,8 @@ export CUDA_VISIBLE_DEVICES="$GPU_UUID"
 
 OUT=$HOME/yam-eval/$TASK/$MODE-$(date +%m%d-%H%M%S)-gpu$GPU-$$
 MEDIA=$HOME/yam-eval/$TASK/media
-mkdir -p "$OUT" "$MEDIA"
+mkdir -p "$OUT/submission-media" "$MEDIA"
+python "$REPO/pipeline/record_trial_media.py" capture "$DIR" "$OUT" "$FILE" "$INSTRUCTION"
 echo "run_trial: $TASK $MODE on GPU $GPU, up to $STEPS steps -> $OUT"
 cd "$REPO"
 set +e
@@ -75,15 +77,15 @@ inspect-robots run --embodiment yam_arena --policy "$POLICY" \
 RC=$?
 set -e
 grep -E "^run status|^outcome|^error|task_score" "$OUT/run.log" || true
-LOG=$(ls "$OUT"/*.json 2>/dev/null | grep -v live | head -1 || true)
+LOG=$(find "$OUT" -maxdepth 1 -name 'adhoc_*.json' ! -name '*.live.json' -print -quit)
 if [[ $RC -ne 0 || -z $LOG ]] || grep -q "^run status: error" "$OUT/run.log"; then
   echo "run_trial: FAILED (see $OUT/run.log)"; exit 1
 fi
 inspect-robots video "$LOG" >/dev/null 2>&1
 TOP=$(find "$OUT/frames" -name '*top_cam.mp4' | head -1)
 NAME=$MODE; [[ $FILE == task.py ]] || NAME=$MODE-${FILE%.py}
-ffmpeg -y -loglevel error -i "$TOP" -c:v libx264 -pix_fmt yuv420p -movflags +faststart "$MEDIA/$NAME.mp4"
-python - "$OUT" "$MEDIA/setup.png" "$NAME" <<'PY'
+ffmpeg -y -loglevel error -i "$TOP" -c:v libx264 -pix_fmt yuv420p -movflags +faststart "$OUT/submission-media/$NAME.mp4"
+python - "$OUT" "$OUT/submission-media/setup.png" "$NAME" <<'PY'
 import glob, sys
 import numpy as np
 from PIL import Image
@@ -96,9 +98,11 @@ if mode == "demo":  # the screenshot comes from the higher-resolution demo run
 idx = [round(i * (len(frames) - 1) / 5) for i in range(6)]
 tiles = [np.load(frames[i]) for i in idx]
 Image.fromarray(np.concatenate([np.concatenate(tiles[:3], 1), np.concatenate(tiles[3:], 1)], 0)).save(png.replace("setup.png", f"{mode}-sheet.png"))
-print("run_trial: contact sheet", png.replace("setup.png", f"{mode}-sheet.png"))
 PY
+python "$REPO/pipeline/record_trial_media.py" finish "$DIR" "$OUT" "$LOG" "$NAME" "$MEDIA"
+echo "run_trial: contact sheet $MEDIA/$NAME-sheet.png"
 echo "run_trial: video $MEDIA/$NAME.mp4"
+echo "run_trial: media provenance $OUT/trial-media.json"
 # The raw frames (hundreds of MB per run) have served their purpose: keep the videos and the log.
 find "$OUT/frames" -name '*.npy' -delete
 # Dream-1 credits are limited: keep a ledger of every Dream run.

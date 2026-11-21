@@ -1,0 +1,34 @@
+{
+  "task": "move-cookies-to-cooling-rack-with-turner",
+  "source_sha256": {
+    "README.md": "1fb6b9690d6bbd6078504343233a37690e088596d3bd2b71c971bfa158da619a",
+    "cookie_replica.scad": "cc060720d56c6797ec6f72e25ce101f2b7293ce239fbec44fa197c2a89838696",
+    "demokit.py": "2e6c9ff748ba5e51f7e91adc55f26e0331dbac30b3f1a708c378d45492f3d4be",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "a4d52a8ca75010da8635c0d3931a2f38f345c020f1423965f45756c44d5071f5",
+    "task.py": "4e5943b8524d28e73868291c5a7eeee0f860ed9dd605634f1aa50964efcd2156"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "7d133a401ef6c01f625654ce3f0976fae073824fd25812c11efa56ef7243e3f2"
+    },
+    "dream.mp4": {
+      "sha256": "14eb977ba7e30f6660a338a3a04f5cad7d4393062b1ca3880a7a852958cd5e21"
+    },
+    "setup.png": {
+      "sha256": "c3f86e81344105e0f0d6a31a91f1deff844fb9fee17ed3dffdaebcdbcbb68e33"
+    }
+  },
+  "documentation_only_delta": "README.md and task.json scoring/fidelity documentation updated; task.py unchanged and trial videos remain matched to that exact task.py.",
+  "reviewer_audit_followup": {
+    "at": "2026-11-20T22:14:24.375805+00:00",
+    "changes": [
+      "aligned real scoring prose with exact scorer thresholds, finite-table rest and blade-relative drop exception",
+      "removed premature hold-lapsed statement and prior-team review history",
+      "recast breakage as disclosed operational proxy",
+      "removed unsupported flexible-blade equivalence claim"
+    ],
+    "task_py_unchanged": true
+  }
+}

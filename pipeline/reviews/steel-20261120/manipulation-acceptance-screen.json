@@ -1,0 +1,175 @@
+{
+  "checked_at": "2026-11-20T03:01:34.432091+00:00",
+  "source_repository": "https://github.com/skild-ai/steel",
+  "source_commit": "a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a",
+  "scope": "Read-only manipulation-example screen, live nearest PR status, and common benchmark overlap. Source snapshots only; no builds, claims or submissions.",
+  "conclusion": "Borrow contact models, constraints, diagnostic scenes and validation patterns. No direct example copy is recommended for submission. Two toy directions are conditional research candidates; three entries are reusable mechanisms only. None is ready.",
+  "ranked": [
+    {
+      "rank": 1,
+      "direction": "Contact-faithful rigid/deformable coupling",
+      "kind": "reusable mechanism, research only",
+      "examples": [
+        "franka_cloth_block",
+        "franka_shirt_fold_stack",
+        "franka_cable_ik_pick_place"
+      ],
+      "source": "https://github.com/skild-ai/steel/blob/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/09_coupling/franka_shirt_fold_stack/example.py",
+      "borrow": "Two-way coupling between rigid fingers/objects and deformable material; measured settling and repeated outcome checks. Potential to investigate currently impossible material interactions rather than substituting rigid proxies.",
+      "critical_findings": [
+        "cloth_block cloth is pinned along two edges; it is not a free cloth-sling carry demonstration.",
+        "shirt_fold_stack changes finger friction from script phase and commanded pinch state (lines507\u2013509); material switching must not be copied as a physical-world claim.",
+        "Its own header says cloth grasps are nondeterministic; a gallery video is not two validated task demos."
+      ],
+      "novelty": "Do not submit T-shirt folding: directly overlaps BEHAVIOR folding and published YAM folding. Cloth sling cake2298 was final rejected as insufficiently relatable/simple.",
+      "gate": "Show a real material law, constant physical material parameters and physical contact grasp/release at commercial dimensions before making any new task claim."
+    },
+    {
+      "rank": 2,
+      "direction": "Load-sensitive friction and realistic pinch torsion",
+      "kind": "reusable mechanism, not a task",
+      "examples": [
+        "load_friction",
+        "torsion",
+        "joint springs/drives tutorials"
+      ],
+      "source": "https://github.com/skild-ai/steel/blob/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/00_basics/load_friction/example.py",
+      "borrow": "Small isolated force-displacement diagnostics for loaded hinges, contact torsion and actuator force limits; suitable for testing whether relieving load genuinely changes release difficulty.",
+      "novelty": "Adding this physics to an ordinary held-while-turning task is not enough for novelty. Do not rename objects to invent tasks.",
+      "gate": "Calibrate to hardware curves and make same failure/success routes work with native physics; compare present PhysX model without assuming Steel parameters transfer."
+    },
+    {
+      "rank": 3,
+      "direction": "Launch an ordinary free-spinning top through contact and release it upright",
+      "kind": "conditional ordinary-task direction; feasibility and importance unproven",
+      "examples": [
+        "spinning_top"
+      ],
+      "source": "https://github.com/skild-ai/steel/blob/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/01_basic_contacts/spinning_top/example.py",
+      "borrow": "Free-body gyroscopic persistence, tip/floor friction and release observation.",
+      "critical_findings": [
+        "Exported scene explicitly uses ur10+rotary_chuck and extra driven coordinates. It is not a two-finger YAM spin demo.",
+        "Must identify a real, obtainable finger top or pull-cord top and preserve its actual stem/cord mechanism; no powered-chuck substitution for claimed hand launch."
+      ],
+      "novelty": "Fresh searches found no exact spinning-top PR. Nearby2722 Twister spinner is pending: fixed-axis flick versus freely balanced gyro is a genuine physical distinction, but it is only a candidate distinction.",
+      "acceptance_risk": "Board2862 card-house puzzle final rejected for lacking real-world impact; recreational precedent is mixed. Do not present top as cleared simply because it looks impressive.",
+      "gate": "Real dimensions, YAM attainable angular speed, no post-release motor force, observable numeric persistence and safe ordinary play relevance. Stop if only motorized launch works or importance remains a generic physics puzzle."
+    },
+    {
+      "rank": 4,
+      "direction": "Closed-loop linkage manipulation, illustrated by Hoberman sphere",
+      "kind": "reusable constraint mechanism; toy task is low-priority research",
+      "examples": [
+        "loop_hoberman_sphere",
+        "loop_parallel_gripper",
+        "linkages"
+      ],
+      "source": "https://github.com/skild-ai/steel/blob/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/05_looped_linkages/loop_hoberman_sphere/example.py",
+      "borrow": "Graph construction of real closed loops, loop-closure error checks, and comparison to exact kinematics.",
+      "critical_findings": [
+        "Hoberman has120 bars,240 hinges,91 independent loops.",
+        "Source explicitly sets zero gravity/no contact and an internal hub drive.",
+        "Source says ground variant omitted because the hub drive cannot open it against gravity/floor friction."
+      ],
+      "novelty": "Fresh Hoberman/expanding-sphere searches found no exact task. Expanding a commercial toy with external hand contacts could differ from existing hinge folding, but the present example proves no such capability.",
+      "gate": "Commercial dimensions and connector topology; normal gravity and floor contacts; all internal hub drives removed; both external grasps reach and remain contact-based; real importance beyond a linkage demo. Kill if geometry/forces require toy rescaling or hidden drives."
+    },
+    {
+      "rank": 5,
+      "direction": "Mesh/SDF contact for physically engaged threads and thin curved fixtures",
+      "kind": "reusable physics implementation only",
+      "examples": [
+        "nut_bolt_sdf",
+        "nut_bolt_hydro",
+        "franka_plate_rack"
+      ],
+      "source": "https://github.com/skild-ai/steel/blob/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/nut_bolt_sdf/example.py",
+      "borrow": "SDF collision cooking/cache, mesh-to-contact checks and contact-driven engagement instead of writing poses or prescribing insertion.",
+      "critical_findings": [
+        "Nut/bolt source loads assets/factory/mesh/factory_nut_bolt from IsaacGym Factory; ordinary nut-on-bolt is already a standard benchmark family.",
+        "Solver/contact improvements do not make the same assembly operation a novel task."
+      ],
+      "gate": "Choose an independently important distinct real operation first. Verify mesh dimensions, license and contact convergence; keep all valid alternative execution routes."
+    }
+  ],
+  "direct_copy_exclusions": [
+    {
+      "examples": [
+        "jenga"
+      ],
+      "nearest_pr": 2522,
+      "live_status": "MERGED; accepted TK-UVHG8Y2026-11-19T19:28:24Z",
+      "reason": "Direct matching push-and-stack game."
+    },
+    {
+      "examples": [
+        "toy_train"
+      ],
+      "nearest_pr": 2849,
+      "live_status": "OPEN pending TK-QXHD5L",
+      "reason": "Already claimed wooden coupled train pushed round bend; changing engine/wagon assets is superficial."
+    },
+    {
+      "examples": [
+        "card_house",
+        "mjorg_house_of_cards"
+      ],
+      "nearest_pr": 2862,
+      "live_status": "CLOSED final importance rejection",
+      "reason": "Stacking puzzle without demonstrated impact; more cards is not a substantive answer."
+    },
+    {
+      "examples": [
+        "bolt_sweep"
+      ],
+      "nearest_pr": 2633,
+      "live_status": "CLOSED final duplicate rejection",
+      "reason": "Review explicitly identifies dexhand Sweep Dustpan overlap. More debris or nuts instead of crumbs is not novelty."
+    },
+    {
+      "examples": [
+        "franka_cloth_block"
+      ],
+      "nearest_pr": 2298,
+      "live_status": "CLOSED final importance rejection",
+      "reason": "Do not rename pinned-cloth demo as cake sling carry; actual sling candidate already rejected."
+    },
+    {
+      "examples": [
+        "drawer_fork",
+        "toaster",
+        "franka_shirt_fold_stack"
+      ],
+      "reason": "Common drawer/pick-place, kitchen appliance and laundry-folding operations already represented in LIBERO/RoboCasa/BEHAVIOR; extra props or changed colors do not distinguish skills."
+    }
+  ],
+  "primary_common_benchmark_sources": [
+    "https://github.com/Lifelong-Robot-Learning/LIBERO",
+    "https://robocasa.ai/docs/build/html/tasks/composite_tasks.html",
+    "https://behavior.stanford.edu/knowledgebase/tasks/index.html"
+  ],
+  "live_review_links": [
+    "https://github.com/robocurve/benchmark-tasks/pull/2522",
+    "https://github.com/robocurve/benchmark-tasks/pull/2849",
+    "https://github.com/robocurve/benchmark-tasks/pull/2862",
+    "https://github.com/robocurve/benchmark-tasks/pull/2633",
+    "https://github.com/robocurve/benchmark-tasks/pull/2298",
+    "https://github.com/robocurve/benchmark-tasks/pull/2722"
+  ],
+  "integration_and_license": "Steel examples run in Newton, currently pinned to skild-ai/newton. They are not drop-in IsaacLab task files. Root/example Apache-2.0 does not supersede optional mesh/media licenses; preserve component notices and inspect examples/THIRD_PARTY.md. Existing YAM/Inspect compatibility must be demonstrated before adopting another solver.",
+  "source_snapshot_sha256": {
+    "bolt_sweep.py": "5753a327d91709467e43a242186dc5bdaeda52382d460496081a62662543fd5a",
+    "franka_shirt_fold_stack.py": "5018dfeccee22dc1138a190a20c846e99b402822f4daa142d154257891819271",
+    "spinning_scene.json": "dd04a40febf346ea71fe61b1c001f1b48290d41c61456fabcef2bed2545f58f6",
+    "train_scene.json": "b196f0143aa0caa39f626a9ea6d1541dc5e8265f414c60a177005b802cbe725c",
+    "THIRD_PARTY.md": "f728ca88c1d350574900a140dea3aedca1046a6f5e275308fd79b5c0e0e7687e",
+    "exported_scene.py": "c49d5993ad1aedade77fa1d675b04e65606fcac93df10fef74ae13d873d1448d",
+    "loop_hoberman_sphere.py": "e0ba7f9bbcebf87a9b80608ea4a74ec917f17db5d8958e3db5865ff85cbf8a8b",
+    "nut_bolt_sdf.py": "f142e22099b2e4dace0d8a74f50c8a5f71dc6119b4d18d80b9297c89dab4a953",
+    "load_friction.py": "e846b91c0fa027aaac597dfeb8ae32c04cfcc3834042969a9149fc733b09a444",
+    "franka_cloth_block.py": "a2182d05bc6d94e1d5c4ef681120d81e4bf4b272335683fb4df908691e1331c9",
+    "spinning_top.py": "2caccba89b0bc229204c38cb125e71996a9d89e61c789994c8b467b7fbc9080f",
+    "toy_train.py": "d4d9fc1561a9446a312ce7470b0fe779560f7d26bc5c9a9da98d80e8f1fda08e"
+  },
+  "recommended_action": "Use mechanism examples to answer specific physical blockers in an acceptance-worthy task. Do not pause validated existing tasks for wholesale solver migration; no immediate new submission is supported by this screen."
+}

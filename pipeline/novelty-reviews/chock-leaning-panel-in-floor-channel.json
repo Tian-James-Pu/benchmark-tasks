@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-20T17:47:51.753157+00:00",
+  "decision": "clear",
+  "queries": [
+    "chock",
+    "wedge",
+    "panel",
+    "slab",
+    "lean",
+    "topple",
+    "fallen",
+    "upright",
+    "before releasing",
+    "hold while"
+  ],
+  "nearest_prs": [
+    2446,
+    46,
+    1324,
+    310,
+    1147,
+    2401,
+    951
+  ],
+  "physical_skill": "Swing a toppled 18 x 16 cm panel upright about its bottom edge on a floor rib with one gripper and keep it there while the other gripper carries a loose chock into the 5.8 cm gap between panel and channel wall; release only once the chock holds the panel.",
+  "valid_shortcuts": [
+    "Either arm may hold or chock; any grasp of the panel is allowed if its bottom edge stays in the channel (lifted no more than 5 cm, within 2 cm along the channel).",
+    "Placing the chock in the channel first and pushing the panel up against it is valid if the panel never falls after being stood up.",
+    "Standing the panel and letting go to fetch the chock lets it fall back (past 20 degrees after being within 6) and scores 0; holding instead of releasing scores 0 (fingers must be 2 cm clear)."
+  ],
+  "distinct_from_nearest": "Pending #2446 (another team) presses a leaning run of books upright and holds it while sliding a book into a 0.7 cm gap: same hold-then-insert shape but a different object set (a shelf of books vs a single panel in a floor channel with a loose chock) and the inserted object is the item being shelved, not a restraint. Accepted #46 locks a fallen see-saw platform with a lock before loading, a pinned mechanism rather than a free chock. Rejected #1324 levers a block and chocks it, #310 'leaning panel stabilization' and #1147 'free a panel from a leaning rack' are rejected; #2401 is our own rejected two-pane variant. Accepted #951 opens a locker with a leaning case. None has the same objects and same skill.",
+  "risks": [
+    "Belongs to the saturated hold-one-thing-while-working-another family; reviewers may treat it as a variant.",
+    "Miniaturization: 0.45 kg bench-top panel on a deliberate pivot rib resembles the rejected #2401 objection; disclosed in context, fidelity and README limits.",
+    "Importance sources concern heavy stone slabs, not small panels."
+  ],
+  "task_py_sha256": "65e06f1b12d2efa3c2cd7ed51f83db0e242463aad1c3dd5cdbab3f8136f2b7c2",
+  "task_metadata_sha256": "8edd0fd4325d7e87053a8d8055e01f9230a73c820c5b574c3d233fc2ff71345f"
+}

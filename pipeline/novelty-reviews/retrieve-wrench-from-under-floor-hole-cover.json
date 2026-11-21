@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-11-21T06:17:51Z",
+  "decision": "do_not_submit_duplicate",
+  "queries": [
+    "pipeline/refresh_known.sh this session",
+    "known_tasks.tsv grep (all states): hole|cover|opening|manhole|hatch|wrench|trip|fall; and floor.*(hole|opening|cover)|hole cover|manhole|guard.*(hole|opening)",
+    "gh pr view 2593 --comments (TK-CLYQG5: Received 2026-11-18T05:35:10Z, Not accepted 2026-11-19T01:37:33Z, 1 commit, no revision)",
+    "gh pr view bodies/reviews read: 2593, 1780, 589",
+    "Fresh gh pr view2593 current state and all comments, saved in wrench-cover/pr-2593-current.json"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2593,
+      "state": "OPEN, Not accepted (revising), hold lapses 2026-11-21T01:37:33Z",
+      "read": "Original TK-CLYQG5: get a wrench out from under a floor-hole cover and put it away; review failed only Scoring (tote check accepted a wrench held above the tote floor) and asked for a test; no importance or construct objection.",
+      "comparison": "Same idea, currently reserved by original PR2593. An independent implementation does not waive ownership. No revision receipt follows last review in current snapshot; original hold remains active until2026-11-21T01:37:33Z and may renew."
+    },
+    {
+      "pr": 1780,
+      "state": "CLOSED, Not accepted: final (TK-BG66C8)",
+      "read": "Floor-opening cover: 160 mm tabletop opening, lightweight plate, loose pins; instruction spelled out the safety response.",
+      "comparison": "Differs: here the cover's return is unstated (the instruction names only the wrench), the opening is a full-size 200 mm hole with a 1.05 kg 3/4 in plywood cover seated by cleats; the scorer requires cleats in the opening and the plate flat. Residual risk: no screws, as #1780's construct criticism noted (the README says so in Fidelity)."
+    },
+    {
+      "pr": 589,
+      "state": "CLOSED, Not accepted: final (TK-7AHCHJ)",
+      "read": "Lift two 7 cm raised-floor tiles and stand a cone in each hole; closed for miniaturization.",
+      "comparison": "Different: guarding miniature openings as the stated goal vs restoring a full-size cover after an unrelated retrieval job."
+    }
+  ],
+  "physical_skill": "Retrieve wrench and restore the seated cover. Existing demo uses two hands; sequential set-aside handling is allowed, and a failed fixed one-arm policy does not prove physical bimanual necessity.",
+  "valid_shortcuts": "Simulator red team on the final scorer: nothing 0; careless (cover left aside, wrench in basket) 0.25; offset return (cleat on deck) 0.25; hold wrench 25 mm above basket floor 0.5; hold wrench on basket floor without release 0.75; wrench laid on the deck, cover back 0.5; reach through the hand slot 0; one arm alone 0 (re-grip missed the cover). Demo 1.0 on three runs. CPU tests (20) cover upside-down cover, cover on a cleat, held wrench above floor.",
+  "distinct_from_nearest": "Not distinct from live original PR2593. Do not submit while reserved. After expiry, refresh all competing claims and latest receipts; elapsed time alone is not clearance.",
+  "task_py_sha256": "7cdb4dfacc47a833ecd7939225dc4ac276c8cdda5b12e53b32d4c84eb4249ec6",
+  "task_metadata_sha256": "423edbf4a424a5f1c9cf8c4f46354e6f4268cbe91f822e7df27f0ce4b07b968c",
+  "note": "Decision remains held. Fidelity text corrected; source code, scores, instruction and model observation unchanged.",
+  "fresh_competitor_audit": {
+    "checked_at": "2026-11-21T06:17:51Z",
+    "original_pr": {
+      "number": 2593,
+      "state": "OPEN",
+      "author": "smartdude2007",
+      "last_comment": "TK-CLYQG5 not accepted; scoring only; 2026-11-19T01:37:33Z",
+      "hold_lapsed_at": "2026-11-21T01:37:33Z",
+      "revision_receipt_after_review": false
+    },
+    "direct_duplicate_pending": {
+      "number": 3318,
+      "title": "Fetch a level from a covered floor opening",
+      "receipt": "TK-JMBCTA",
+      "state": "OPEN",
+      "received_at": "2026-11-21T01:30:51Z"
+    },
+    "duplicate_decisions": [
+      {
+        "number": 3320,
+        "receipt": "TK-SYD3BJ",
+        "state": "rejected_final",
+        "reviewed_at": "2026-11-21T03:25:35Z",
+        "finding": "Same physical safety skill: retrieve tool from beneath floor-hole cover and replace cover; changing tool did not establish novelty. Also flagged wrench off table as retrieved and missing HOLE stencil."
+      },
+      {
+        "number": 3322,
+        "receipt": "TK-BJCQZY",
+        "state": "rejected_final",
+        "reviewed_at": "2026-11-21T03:26:25Z",
+        "finding": "Duplicate of TK-JMBCTA and TK-SYD3BJ; earlier tasks already cover tool retrieval from under a cleated floor-hole cover and reseating it."
+      }
+    ],
+    "decision": "Do not submit or revise as an independent task while the earlier claim remains pending. Even after it resolves, the reviewer explicitly found this exact physical skill non-novel across tool substitutions. Local scorer shares the wrench-off-table exploit flagged in #3320; only fix that if doing authorized maintenance to an existing owned task, not to bypass the novelty decision."
+  }
+}

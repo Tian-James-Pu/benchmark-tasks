@@ -1,0 +1,129 @@
+#usda 1.0
+(
+    defaultPrim = "Vise"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Vise" (
+    prepend apiSchemas = ["PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
+    prepend references = @/home/mzhang/.cache/simready/nvidia/simready-assets/9d4556bfe80868c1d27a7a7ba1c2774e63e8cedd/equipment_bench_vise_a01/simready_usd/sm_equipment_bench_vise_a01_01.usd@</RootNode>
+)
+{
+    bool physxArticulation:enabledSelfCollisions = 0
+
+    over "Geometry"
+    {
+        over "body_01_obj_00" (
+            prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+            instanceable = false
+        )
+        {
+            float physxContactReport:threshold = 0
+            bool physxRigidBody:disableGravity = 0
+        }
+
+        over "stationaryJaw_01_obj_00" (
+            prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+            instanceable = false
+        )
+        {
+            float physxContactReport:threshold = 0
+            bool physxRigidBody:disableGravity = 0
+        }
+
+        over "slidingJaw_01_obj_00" (
+            prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+            instanceable = false
+        )
+        {
+            float physxContactReport:threshold = 0
+            bool physxRigidBody:disableGravity = 0
+        }
+
+        over "screw_01_obj_00" (
+            prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI"]
+            instanceable = false
+        )
+        {
+            float physxContactReport:threshold = 0
+            bool physxRigidBody:disableGravity = 0
+        }
+
+        over "handle_01_obj_00" (
+            prepend apiSchemas = ["PhysxRigidBodyAPI", "PhysxContactReportAPI", "PhysicsMassAPI"]
+            instanceable = false
+        )
+        {
+            point3f physics:centerOfMass = (8.070917e-7, -0.000018278994, 2.5878006e-7)
+            float3 physics:diagonalInertia = (0.0000024908788, 0.0006663201, 0.00066632073)
+            float physics:mass = 0.15822038
+            quatf physics:principalAxes = (-0.5504749, -0.44382033, 0.44381973, 0.550477)
+            float physxContactReport:threshold = 0
+            bool physxRigidBody:disableGravity = 0
+            double3 xformOp:translate = (0.1958426684, 0.00006331994023198607, 0.08340057731)
+        }
+    }
+
+    over "Joints"
+    {
+        def PhysicsFixedJoint "bench_mount"
+        {
+            rel physics:body1 = </Vise/Geometry/body_01_obj_00>
+            point3f physics:localPos0 = (0.00002677138, 0.0000017392449, 0.00006631855)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+        }
+
+        over PhysicsFixedJoint "joint_stationaryJaw_01_joint_00"
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:stiffness = 0
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            rel physics:body0 = </Vise/Geometry/body_01_obj_00>
+            rel physics:body1 = </Vise/Geometry/stationaryJaw_01_obj_00>
+        }
+
+        over "joint_screw_01_joint_00"
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:stiffness = 0
+            float drive:angular:physics:targetPosition = 0
+            float drive:angular:physics:targetVelocity = 0
+            rel physics:body0 = </Vise/Geometry/slidingJaw_01_obj_00>
+            rel physics:body1 = </Vise/Geometry/screw_01_obj_00>
+            float physics:lowerLimit = -5389.506
+            float physics:upperLimit = 6631.4937
+        }
+
+        over "joint_handle_01_joint_00"
+        {
+            float drive:linear:physics:damping = 0
+            float drive:linear:physics:stiffness = 0
+            float drive:linear:physics:targetPosition = 0
+            float drive:linear:physics:targetVelocity = 0
+            rel physics:body0 = </Vise/Geometry/screw_01_obj_00>
+            rel physics:body1 = </Vise/Geometry/handle_01_obj_00>
+            point3f physics:localPos0 = (0.099803194, -0.00029643843, -0.000006683171)
+            float physics:lowerLimit = -0.080602325
+            float physics:upperLimit = 0.08065168
+        }
+
+        over "joint_slidingJaw_01_joint_00" (
+            prepend apiSchemas = ["PhysxMimicJointAPI:rotX"]
+        )
+        {
+            float drive:linear:physics:damping = 0
+            float drive:linear:physics:stiffness = 0
+            float drive:linear:physics:targetPosition = 0
+            float drive:linear:physics:targetVelocity = 0
+            rel physics:body0 = </Vise/Geometry/stationaryJaw_01_obj_00>
+            rel physics:body1 = </Vise/Geometry/slidingJaw_01_obj_00>
+            float physxMimicJoint:rotX:gearing = -0.000008333333
+            float physxMimicJoint:rotX:offset = 0
+            rel physxMimicJoint:rotX:referenceJoint = </Vise/Joints/joint_screw_01_joint_00>
+            token physxMimicJoint:rotX:referenceJointAxis = "rotX"
+        }
+    }
+}
+

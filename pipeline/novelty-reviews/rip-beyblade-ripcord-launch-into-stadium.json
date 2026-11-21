@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-21T20:29:08Z",
+  "decision": "clear",
+  "queries": [
+    "beyblade, spinning top, ripcord, rip cord, gyro, humming top, dreidel, yo-yo, launcher, launch (known_tasks.tsv, all states, refreshed 2026-11-21)",
+    "pull-cord, pull-string, string, whip, toy, spin, wind-up, pull-back, flick, prize wheel (accepted, pending, revising)",
+    "rejected/closed spinner tasks read for precedent: #2722 Twister spinner (final: feasibility with available hardware), #2051 salad spinner, #68 rigged spinner",
+    "re-check after Dream-1 (2026-11-21 ~20:30 UTC): known_tasks.tsv refreshed; beyblade|spinning top|ripcord|humming top|gyro|launcher|pull-cord: no new task; PRs #3400-#3527 scanned for toy/launch/spin/cord/child: nothing near; #3166 and #3395 still pending"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 3166,
+      "state": "OPEN, Received TK-S37FV6, other team",
+      "read": "Body read: one hand stands a tin humming top on its point, pumps its screw plunger in free-count strokes, lets go; spin time scored.",
+      "comparison": "Same outcome measure (free top spins 10 s) but a different skill: ours never touches the top; one hand lifts and turns a free launcher upright and holds it level over a target while the other rips a cord in one 0.25 s stroke; speed and axis of a single rip decide release spin, not repeated pumping."
+    },
+    {
+      "pr": 3395,
+      "state": "OPEN, Received TK-EGECAK, other team",
+      "read": "task.json read: Zyliss pull-cord salad spinner on the counter; one hand presses the lid down while the other pulls and rewinds the cord repeatedly to 300 rpm, then docks the handle.",
+      "comparison": "Closest mechanism (hold with one hand, pull a cord with the other). Ours: the launcher is free and held in the air over a target (not pressed on a counter), one non-repeatable rip, and the spun body is released and must land on its tip and balance by its own spin; kitchen appliance vs toy context."
+    },
+    {
+      "pr": 2746,
+      "state": "MERGED, TK-3YGQXN",
+      "read": "Title and acceptance: press a pull-back car down, drag it back to wind it, let go through a gate.",
+      "comparison": "Single-hand windup on the floor; no held launcher, no second hand, no free spinning body that must stay upright."
+    },
+    {
+      "pr": 2817,
+      "state": "OPEN, revision TK-C8AK5S of TK-626KKS, other team",
+      "read": "Title: pinball plunger launch then flipper shot.",
+      "comparison": "Plunger fixed in a machine; ours a free hand-held launcher held level over a target against the yank."
+    },
+    {
+      "pr": 3080,
+      "state": "OPEN, revision TK-E5H7Q2 of TK-EPGLAJ, other team",
+      "read": "Title: flick a prize wheel to coast a full turn onto JACKPOT.",
+      "comparison": "Fixed wheel coasting on its axle; ours a free body that must stay on its tip."
+    },
+    {
+      "pr": 2722,
+      "state": "CLOSED, Not accepted: final, other team",
+      "read": "Body and decision read: hold Twister card, flick arrow two turns; closed with 'Feasibility appears limited with available hardware'.",
+      "comparison": "Different object and skill; precedent that a reviewer may question whether a fast strike is feasible on the real arms. Our rip is 17 cm in about 0.25 s; residual feasibility risk noted."
+    }
+  ],
+  "physical_skill": "Pick the loaded launcher up off its flat side, turn it upright and hold it still and level a few centimetres over the stadium's centre with one gripper, while the other gripper takes the ripcord handle and rips the toothed strip straight out along its slot in about a quarter second, so the top is released spinning near 300 rad/s with little tilt or sideways speed, then keep both grippers clear while it spins on its tip for 10 s.",
+  "valid_shortcuts": "None that score, per the README red-team runs: do nothing 0 (never released); one arm ripping the cord from the launcher lying on the table 0 (launcher dragged, cord out 2 mm); slow 1.5 s pull 0 (released at 59 rad/s, falls in 0.3 s); 45-degree angled pull 0 (cord binds after 5.3 cm, never released). Touching or catching the top ends spin time (5 cm fingertip rule); a ring-out zeroes the trial before 1.0.",
+  "distinct_from_nearest": "The only spinning-top task on the board (#3166) spins the top by pumping a plunger with the top in hand; the only pull-cord task (#3395) pumps a counter-mounted appliance. Here a free launcher must be held level in the air over a target by one hand while the other makes a single fast, on-axis rip whose speed becomes a released free body's stability. Residual risks: reviewers may see the outcome as covered by #3166 or the hold-and-pull as covered by #3395, and may question real-arm rip speed (#2722 precedent).",
+  "task_py_sha256": "96762a4971efb4526d3ac413ae9c377ddfd329e855c35880ee75027af9d80304",
+  "task_metadata_sha256": "159c3dc1ecb3b553fbefde4e2b1804309bf0dcd70e78cb462fd3d6db9743dc2c"
+}

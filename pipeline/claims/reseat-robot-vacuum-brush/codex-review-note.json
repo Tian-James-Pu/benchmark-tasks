@@ -1,0 +1,7 @@
+{
+  "checked_at": "2026-11-20T05:06:20.915214+00:00",
+  "latest_competitor_state": "PR2555 CLOSED Not accepted: final at2026-11-19T01:30:34Z",
+  "finding": "Old pending ownership rationale is stale. Final importance rejection is directly adverse to same roller-refitting operation; do not revive merely because hold ended.",
+  "evidence": "pipeline/reviews/resume-20261120/pr-2555-current.json",
+  "action": "Preserve prototype, no new task or submission; reassess only on meaningful operation-level distinction."
+}

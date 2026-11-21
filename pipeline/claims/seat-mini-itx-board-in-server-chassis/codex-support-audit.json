@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-20T17:14:25.307527+00:00",
+  "finding": "pipeline/isolated-trials/mini-itx-current-support-audit-20261120/outcome.json",
+  "owner": "Existing claimant remains authoritative",
+  "contact_fix_probe": "pipeline/isolated-trials/mini-itx-current-support-fix-20261120",
+  "status": "Patch passed exact native full demo and the native shim comparison. The current demo grips components contrary to matched hardware guidance. The edge-only manipulation and model run remain outstanding. The patch is isolated for owner review.",
+  "native_shim_controls": {
+    "shim_baseline": {
+      "report": "pipeline/isolated-trials/mini-itx-current-support-fix-20261120/shim_baseline/adhoc_f8a95520.json",
+      "score": 1.0,
+      "controls": 20
+    },
+    "shim_fixed": {
+      "report": "pipeline/isolated-trials/mini-itx-current-support-fix-20261120/shim_fixed/adhoc_1bccb5c7.json",
+      "score": 0.25,
+      "controls": 60
+    }
+  },
+  "contact_gate_replay": "pipeline/isolated-trials/mini-itx-current-support-audit-20261120/contact-gate-replay.json",
+  "patched_native_full": {
+    "checked_at": "2026-11-20T17:16:00.876198+00:00",
+    "report": "pipeline/isolated-trials/mini-itx-current-support-fix-20261120/task-retry/adhoc_ef17c6ff.json",
+    "status": "success",
+    "task_score": 1.0,
+    "controls": 400,
+    "task_sha256": "ce2123807550de5614937ba5c13426e1c7be8a4ae06fc641a6a4c32b6be5e0e2",
+    "same_component_grasp_as_current_demo": true,
+    "native_negative_cases": {
+      "unpatched_shim": 1.0,
+      "patched_shim": 0.25
+    }
+  },
+  "edge_pickup_retry": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe-r6/outcome.json",
+  "passive_edge_tool_geometry_and_load": "pipeline/isolated-trials/mini-itx-native-support-20261120/edge-tool-geometry/design-and-load-evidence.json",
+  "combined_edge_tool_trial": "pipeline/isolated-trials/mini-itx-native-support-20261120/edge-tool-geometry/combined-transfer-evidence.json"
+}

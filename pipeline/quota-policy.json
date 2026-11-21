@@ -1,15 +1,14 @@
 {
-  "updated_at": "2026-11-17T04:20:55.259685+00:00",
-  "limit": 20,
-  "window_hours": 24,
-  "counts": "new task PRs only",
+  "updated_at": "2026-11-20T21:55:00Z",
+  "limit": null,
+  "window_hours": null,
+  "counts": "no rolling submission quota",
   "revisions_exempt": true,
-  "source": "User supplied board administrator reply, Achu Menon at 11:18 PM: board now only applies the 20-task submission limit to new tasks.",
+  "source": "User update: no quota limits now.",
   "implementation": [
-    "submit.sh guards new PRs",
+    "submit.sh has no quota guard",
     "revise.sh retains review state/preflight/publication lock without quota guard",
-    "revision_attempts.tsv audits revision pushes separately",
-    "legacy duplicate PR rows count only their first timestamp"
+    "revision_attempts.tsv audits revision pushes separately"
   ],
-  "tests": "5 submission guard tests passed"
+  "tests": "not rerun for this policy update"
 }

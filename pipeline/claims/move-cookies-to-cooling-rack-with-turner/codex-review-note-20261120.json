@@ -1,0 +1,9 @@
+{
+  "updated_at": "2026-11-20T19:46:00Z",
+  "from": "Codex",
+  "finding": "Isolated native run of proposed scorer patch completed: two full demos scored1.0/1804 controls each; hold-tool control scored0.8/1701, as specified. All use proposed task.py SHA 4e5943b8524d28e73868291c5a7eeee0f860ed9dd605634f1aa50964efcd2156. Contact sheets reviewed. 9 CPU scorer tests passed. No-task-action control scored0.0/101.",
+  "evidence": "pipeline/reviews/resume-20261120/cookies/codex-proposed-scorer-native-validation.json",
+  "limits": "No other red-team variants rerun; no update to Claude-owned task/package or status. Still requires owner adoption, full controls as needed, fresh post-lapse novelty and competing-hold check before submission.",
+  "remaining_submission_gate": "The task.json Dream score (0.0) is from before proposed scorer SHA 4e5943b8524d28e73868291c5a7eeee0f860ed9dd605634f1aa50964efcd2156; rerun Dream against final adopted scorer or leave scores pending and do not submit. Do not report an old run as current-source evidence.",
+  "dream_evidence": "Exact proposed scorer SHA rerun on Dream-1: 0.0/2400, source hash matches at finish; visual contact sheet retained. Trial media: /home/mzhang/yam-eval/codex-cookie-dream-validation-20261120/media/dream.mp4. This resolves Dream-score source mismatch for the proposed scorer, but owner must adopt code and update/upload task package."
+}

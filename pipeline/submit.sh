@@ -4,6 +4,8 @@
 #   pipeline/submit.sh <task-folder>            check everything, upload media, open the PR
 #   pipeline/submit.sh <task-folder> --check    only run the checks
 #   pipeline/submit.sh <task-folder> --preflight  source checks before spending Dream credits
+#   pipeline/submit.sh <task-folder> --package <staged-dir> [--check]
+#       Submit the manifest-bound source and media from an isolated validation package.
 #
 # Needs: ROBOCURVE_TEAM and ROBOCURVE_TOKEN in the environment or in ~/.robocurve/credentials (KEY=value lines,
 # chmod 600); gh logged in as the team's registered account; media from pipeline/run_trial.sh in
@@ -17,11 +19,11 @@ set -euo pipefail
 
 REPO=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 TASK=${1:?task folder name under tasks/}
-CHECK_ONLY=false; [[ ${2:-} == --check ]] && CHECK_ONLY=true
+shift
+CHECK_ONLY=false
 REVISION_CHECK=false
-if [[ ${2:-} == --revision-check ]]; then REVISION_CHECK=true; CHECK_ONLY=true; fi
 PREFLIGHT=false
-if [[ ${2:-} == --preflight ]]; then PREFLIGHT=true; CHECK_ONLY=true; fi
+PACKAGE=
 DIR=$REPO/tasks/$TASK
 MEDIA=$HOME/yam-eval/$TASK/media
 ACCOUNT=Tian-James-Pu
@@ -29,12 +31,40 @@ UPSTREAM=robocurve/benchmark-tasks
 LEDGER=$REPO/pipeline/submitted.tsv
 fail() { echo "submit: $*" >&2; exit 1; }
 
+[[ $TASK =~ ^[a-zA-Z0-9_][a-zA-Z0-9_-]*$ ]] || fail "invalid task folder name"
+while (($#)); do
+  case $1 in
+    --check) CHECK_ONLY=true ;;
+    --revision-check) REVISION_CHECK=true; CHECK_ONLY=true ;;
+    --preflight) PREFLIGHT=true; CHECK_ONLY=true ;;
+    --package) PACKAGE=${2:?--package needs a staged directory}; shift ;;
+    *) fail "unknown option: $1" ;;
+  esac
+  shift
+done
+WT=
+SNAPSHOT=
+cleanup() {
+  if [[ -n $WT ]]; then
+    git -C "$REPO" worktree remove --force "$WT" >/dev/null 2>&1 || rmdir "$WT" 2>/dev/null || true
+  fi
+  if [[ -n $SNAPSHOT ]]; then rm -rf "$SNAPSHOT"; fi
+}
+trap cleanup EXIT
+
 # Serialize uploads and PR creation across all builders sharing this checkout.
 # Hold the lock until the successful submission is recorded in the shared ledger.
 if ! $CHECK_ONLY; then
   exec 9>"$REPO/pipeline/submission.lock"
   flock 9
-  python3 "$REPO/pipeline/check_submission_quota.py" "$LEDGER"
+fi
+
+if [[ -n $PACKAGE ]]; then
+  $REVISION_CHECK && fail "--package is for new tasks"
+  SNAPSHOT=$(mktemp -d "${TMPDIR:-/tmp}/submit-package-XXXXXX")
+  python3 "$REPO/pipeline/stage_submission_package.py" "$PACKAGE" "$TASK" "$SNAPSHOT"
+  DIR=$SNAPSHOT/tasks/$TASK
+  MEDIA=$SNAPSHOT/media
 fi
 
 [[ -f $DIR/task.json && -f $DIR/README.md && -f $DIR/task.py ]] || fail "$DIR needs task.json, README.md and task.py"
@@ -74,8 +104,17 @@ if $PREFLIGHT; then
   echo "submit: $TASK passes source preflight (simulation evidence, final scores and media still required)"
   exit 0
 fi
-for f in dream.mp4 demo.mp4 setup.png; do [[ -s $MEDIA/$f ]] || fail "missing $MEDIA/$f (run pipeline/run_trial.sh)"; done
-for f in dream.mp4 demo.mp4; do
+# Known exact competing ideas need a live hold check at final check/submission.
+# This is a veto, not novelty clearance. Existing-PR revisions keep their own gate.
+if ! $REVISION_CHECK; then
+  python3 "$REPO/pipeline/check_competing_holds.py" "$TASK" || exit 1
+fi
+# A model run that produced no recording (Dream-1 refused or errored before acting) uploads without --video,
+# with the exact error text in task.json's no_model_video_reason, as tools/upload_media.py documents.
+REFUSED=$(python3 -c 'import json,sys; print(1 if json.load(open(sys.argv[1])).get("no_model_video_reason") else "")' "$DIR/task.json")
+VIDEOS="dream.mp4 demo.mp4"; [[ -n $REFUSED ]] && VIDEOS="demo.mp4"
+for f in $VIDEOS setup.png; do [[ -s $MEDIA/$f ]] || fail "missing $MEDIA/$f (run pipeline/run_trial.sh)"; done
+for f in $VIDEOS; do
   [[ $(stat -c %s "$MEDIA/$f") -le 52428800 ]] || fail "$f is over 50 MB"
   ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of csv=p=0 "$MEDIA/$f" 2>/dev/null | grep -q h264 \
     || [[ ! -x $(command -v ffprobe) ]] || fail "$f is not H.264"
@@ -94,15 +133,18 @@ if [[ -z ${ROBOCURVE_TOKEN:-} && -f $HOME/.robocurve/credentials ]]; then
   set -a; . "$HOME/.robocurve/credentials"; set +a
 fi
 [[ -n ${ROBOCURVE_TEAM:-} && -n ${ROBOCURVE_TOKEN:-} ]] || fail "set ROBOCURVE_TEAM and ROBOCURVE_TOKEN (or ~/.robocurve/credentials)"
-if ! python3 -c 'import json,sys; sys.exit(0 if json.load(open(sys.argv[1])).get("media") else 1)' "$DIR/task.json"; then
-  python3 "$REPO/tools/upload_media.py" "$DIR" --video "$MEDIA/dream.mp4" --demo "$MEDIA/demo.mp4" --screenshot "$MEDIA/setup.png"
+if [[ -n $PACKAGE ]] || ! python3 -c 'import json,sys; sys.exit(0 if json.load(open(sys.argv[1])).get("media") else 1)' "$DIR/task.json"; then
+  if [[ -n $REFUSED ]]; then
+    python3 "$REPO/tools/upload_media.py" "$DIR" --demo "$MEDIA/demo.mp4" --screenshot "$MEDIA/setup.png"
+  else
+    python3 "$REPO/tools/upload_media.py" "$DIR" --video "$MEDIA/dream.mp4" --demo "$MEDIA/demo.mp4" --screenshot "$MEDIA/setup.png"
+  fi
 fi
 
 TITLE=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["title"])' "$DIR/task.json")
 WT=$(mktemp -d "${TMPDIR:-/tmp}/submit-$TASK-XXXX")
 git -C "$REPO" fetch -q upstream main
 git -C "$REPO" worktree add -q -B "$TASK" "$WT" upstream/main
-trap 'git -C "$REPO" worktree remove --force "$WT" >/dev/null 2>&1 || true' EXIT
 BODY_FILE="$WT/.task-pr-body.txt"
 python3 "$REPO/pipeline/render_pr_body.py" "$DIR" "$BODY_FILE"
 mkdir -p "$WT/tasks"

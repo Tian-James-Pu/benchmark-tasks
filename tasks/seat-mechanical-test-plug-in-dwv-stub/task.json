@@ -1,0 +1,19 @@
+{
+  "title": "Plug a 3 in PVC drain stub-up with a wing-nut test plug, holding the plug still while the nut runs down",
+  "category": "Impact on jobs",
+  "keywords": [
+    "plumbing",
+    "test plug",
+    "bimanual",
+    "hold and turn",
+    "rough-in test"
+  ],
+  "instruction": "Plug this drain pipe for the pressure test.",
+  "context": "Plumbers and pipefitters (O*NET 47-2152, 510,600 US jobs in 2025) 'fill pipes or plumbing fixtures with water or air and observe pressure gauges to detect and locate leaks'; before every rough-in DWV test each open stub is tightly plugged (IPC 312.2), often with a mechanical plug like this. Its wing nut drags a loose plug round in the pipe, so the plug must be held still and seated square while about three turns expand the rubber.",
+  "setup": "On the table (the subfloor's support): 3/4 in plywood subfloor 60 x 84 x 1.8 cm, x 10 to 70 cm, y -42 to 42 cm. 3 in Sch 40 PVC DWV stub-up (OD 8.89 cm, bore 7.79 cm), centre x 30, y 0 cm, its end face 4.5 cm above the plywood. 2x4 stud wall (spruce, 3.8 x 8.9 cm): bottom plate 80 cm long with its face at x 59.2 cm (stub centre 30.5 cm, 12 in, from the finished wall), studs 42 cm tall at y -20.3 and +20.3 cm, a cross block 30 cm up. Test plug, Cherne 270237 3 in End-of-Pipe Gripper (Oatey), about 0.18 kg: yellow glass-reinforced ABS upper plate with an 8.4 cm lip 0.6 cm thick over a 7.4 cm body and eight radial ribs 0.4 cm tall on its top, black natural-rubber O-ring 7.55 cm OD, 7.4 cm lower plate, galvanised 3/8-16 carriage bolt, zinc wing nut (hub 1.9 cm, wings 5.1 cm span, 2.8 cm tall), 6.3 cm long overall; standing upright on its lower plate at x 21, y -15 cm, wings along 135 degrees, nut finger-snug, bolt end 8.0 mm below the nut's top. Loose distractors on the plywood: 10 in groove-joint pliers (steel, 24.6 x 6.5 x 1.4 cm, 0.28 kg) at x 47, y -30 cm, yaw 70 degrees; retractable utility knife (16 x 6.1 x 2.6 cm, 0.12 kg) at x 48, y 27 cm, yaw 23 degrees; thin blue marker (10.9 cm, 0.01 kg) at x 42, y 17 cm, yaw 69 degrees. x forward from the arms' bases, y left, from their midpoint.",
+  "scoring": "Read every control step. 1.0: the plug's body (its O-ring plane) is inside the stub-up (within 10 mm of the pipe's axis and more than 5 mm below its end); the bolt end has risen at least 4.2 mm from its finger-snug start (about 2.6 turns of the wing nut); at all 12 points under the lip 40 mm from the plug's axis the lip is no more than 1.5 mm above the pipe's end face (and no more than 1.5 mm into it, a solver tolerance), and the plug tilts 2 degrees or less; over the last 1 s no point of the lip has moved 1 mm and the nut has turned less than 1 degree; every fingertip point is more than 3 cm from the plug (a cylinder of the lip's 42 mm radius over the plug's full length); all of this continuously for 3 s. 0.5: the body is inside the stub-up and the bolt end has risen at least 4.2 mm, but the 1.0 conditions are not met. 0.25: the body is inside the stub-up and the bolt end has risen less than 4.2 mm. 0: anything else, including the plug left out of the pipe.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Back the wing nut off to finger-snug with the O-ring relaxed (bolt end 8.0 mm below the nut's top, checked with a depth gauge) and stand the plug on its tape mark, wings along the mark. Nothing is consumed.",
+  "fidelity": "Full-size 3 in Sch 40 stub; plug rebuilt at the listed 2.5 in length, other plug sizes estimated. Rigid parts; the O-ring is four sprung quarter-rings pushed out by code as the nut turns (0.6 mm per mm of 3/8-16 draw-up); the thread is a torque-limited clutch whose limit rises with draw-up from 0.2 to about 1.1 N m (estimated), so a loose plug turns with the nut. No water, pressure or leakage. Friction 0.6 on plug and pipe. Wall and subfloor are primitives; distractors are SimReady.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

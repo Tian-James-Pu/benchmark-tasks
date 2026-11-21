@@ -1,0 +1,24 @@
+{
+  "title": "Close a Lovejoy L100 jaw coupling: seat the new spider in the motor hub, turn the loose hub into mesh and set the gap",
+  "category": "Impact on jobs",
+  "keywords": [
+    "jaw coupling",
+    "Lovejoy L100",
+    "elastomer spider",
+    "shaft coupling",
+    "drive maintenance",
+    "millwright",
+    "industrial machinery mechanic",
+    "phase found by contact",
+    "bimanual"
+  ],
+  "instruction": "Close the jaw coupling between the motor and the driven shaft with the new spider, with the hub faces 18 mm apart.",
+  "context": "Industrial machinery mechanics, machinery maintenance workers and millwrights (547,300 US jobs, BLS 2025) replace worn parts and reassemble drives; a jaw coupling's spider wears and is renewed. Lovejoy's steps: insert the spider into one hub, bring the hubs to gap G, tighten. Six legs go between three jaws, then the loose hub's three jaws must find the spider's free gaps by contact while its shaft turns freely.",
+  "setup": "Millimetres from the midpoint between the arm bases (x forward, y left), heights above the bench. Brake motor, NEMA 56 (5/8 in shaft, axis 88.9 up along x at y 0; cast frame 168 across, end shield at x 352, brake housing to x 687), fixed. On its shaft, flush with the shaft end: a Lovejoy L100 x 5/8 in hub (sintered iron, OD 64.5, length through bore 35.1, three jaws 16.5 long toward -x, one straight up, 700 g), its face at x 300. Driven shaft: steel 5/8 in, 15.9 across, from x 262.5 to x 70, in two UCP202-10 cast-iron pillow blocks (centre height 30.2, base 127 long) at x 150 and 100 on a steel riser 58.7 high (110 x 150); it turns freely and cannot slide. The second L100 hub (700 g) sits on its key, face at x 222 (78 from the motor hub's face), turned 30 deg so its jaws face three spider-leg positions; it slides along the shaft. Spider: Lovejoy L099/100 open-centre NBR, black, 64.5 across six legs 10.9 thick, 15.5 wide, 26.2 centre hole, 27 g, standing in a wooden cradle at (215, 175) (slot 17 wide along x, 100 long, floor 4 thick, walls 18 high), faces square to x, two legs level. Distractors (SimReady): cotton shop rag 260 x 233, 50 g at (480, 280); steel combination wrench 260 long, 250 g at (200, -200); multi-purpose oil can 52 x 104 x 272, 450 g at (600, -240).",
+  "scoring": "End state, with a rule, feeler gauge and photo. 0.25: the spider between the motor hub's jaws (its far face within 5 mm of that hub's face, centre within 1.5 mm of the axis, within 3 deg of square, legs within 5 deg of their slots) and every fingertip 3 cm or more from it unless the loose hub is in mesh. 0.5: also in mesh: the loose hub's jaw tips 5 mm or more past the spider's near face. 0.75: also the hub faces 17.0 to 19.0 mm apart. 1.0: also every fingertip 3 cm or more from both hubs, and for 3 s the loose hub moves under 0.3 mm and 0.5 deg and the spider under 5 mm/s. Otherwise 0, including hubs closed without the spider.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Pull the loose hub back until its face is 78 mm from the motor hub's face (a pencil mark on the shaft) and turn the shaft until the hub's index mark is 30 deg from the mesh mark. Take the spider out and stand it in its cradle, two legs level. Nothing is consumed; renew the spider if a leg is nicked.",
+  "fidelity": "Full size; hubs and spider are rigid convex pieces from catalogue dimensions; leg thickness read from the catalogue, jaw length (16.5 mm), jaw inner radius, 0.5 mm leg-jaw clearance and 1 mm tip chamfers are estimates. The NBR spider does not deform. Bore on shaft and key are joints (joint friction 0.3 on the slide, 0.02 on the shaft). Motor brake held: its shaft is fixed. No set screw tightening. Motor, pillow blocks and riser are primitives; distractors SimReady.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-329ZYV"
+}

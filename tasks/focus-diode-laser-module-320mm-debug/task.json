@@ -1,0 +1,22 @@
+{
+  "title": "Focus a diode laser before cutting robot parts: lower its sliding module onto its built-in focus stick and clamp it",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "diode laser engraver",
+    "laser focus",
+    "focus stick",
+    "thumbscrew clamp",
+    "sliding carriage",
+    "bimanual",
+    "robot building",
+    "plywood"
+  ],
+  "instruction": "Focus the laser module on the plywood sheet with its focus stick, and leave the engraver ready to cut.",
+  "context": "Laser-cut robot arms such as the MeArm are cut from 3 mm sheet on desktop diode lasers, and an open-frame diode laser is focused by hand before each sheet: the module's built-in stick is flipped down, the module slid down its carriage until the stick touches the work, the carriage's thumbscrew tightened and the stick put back. Loosened, the module slides freely and makers warn not to let it fall, so one hand carries it while the other works the screw and the stick.",
+  "setup": "Positions in cm: x forward from the arm bases' line, y to the robot's left, heights above the table. Fixed: an AlgoLaser DIY KIT MK3 8W-type open-frame engraver, unplugged: 2 cm aluminium profile frame, outer x 10 to 80, y -31 to +31 (front/back rails 2 cm tall, side rails 4 cm); gantry beam 4 x 4 cm along y at x 36 to 40, 10 to 14 cm up. AlgoLaser honeycomb platform, 32 x 32 cm working grid; assembled body 37 x 37 x 2.4 cm (aluminium frame, steel honeycomb), centred at (37, 5), hence x 18.5 to 55.5 and y -13.5 to +23.5; the working grid spans x 21 to 53 and y -11 to +21. Loose: basswood plywood 20 x 30 x 0.3 cm, 90 g, at x 27 to 47, y -10 to +20. Laser module (aluminium body 5 x 5 x 9 cm over a 2.5 cm orange acrylic shield, 0.6 kg est.) on a vertical slide on the carriage plate, axis at (32, 5), shield edge 4.75 cm up, clamped. Thumbscrew on the carriage beside it: knurled steel head 1.2 cm dia, 2 cm long, axis along x at y -0.5, 8.5 cm up, seated; clamps the slide until loosened 45 deg. Focus stick on the module's front face: steel strip 0.3 x 0.6 cm, rounded end, 4 cm pivot to tip, pivot knob 1.2 cm dia, 3 cm above the shield edge, 1 cm in from the face's -y edge; stowed pointing up; turned half a turn over the face it hangs with its tip 1 cm below the shield edge, here 1.2 cm above the sheet. Distractors (SimReady, loose): digital caliper (24 cm, 120 g) on the bench centred at (70.8, 13) and turned 90 degrees; ceramic mug (9 cm dia, 300 g) on the bench at (72.9, -15). Grippers open at the ready pose.",
+  "scoring": "e = height of the hanging stick's tip above the sheet (real: caliper depth rod from the shield edge to the sheet, minus the stick's 10 mm reach). Clamped: thumbscrew within 45 deg of its seated mark (real: also a 10 N downward pull on the module moves it under 0.2 mm). Stowed: stick within 15 deg of upright. Released: every fingertip 3 cm or more from the module (with stick and knob) and the thumbscrew; module still (under 0.5 mm per 50 ms) and sheet under 1 cm/s. Latched 0 for the trial: the module comes down more than 1.5 mm in one 50 ms step (over 3 cm/s, a drop), or a sheet corner moves more than 3 mm. Otherwise: 1.0 if |e| <= 0.5 mm, clamped, stowed and released, held 2 s; 0.75 if |e| <= 0.5 mm, clamped and released, not stowed (or not yet held 2 s); 0.5 if 0.5 < |e| <= 2.0 mm, clamped and released; 0.25 if |e| <= 0.5 mm, released but not clamped; 0 otherwise.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Nothing is consumed; the laser never fires and stays unplugged. Hold the module, loosen the thumbscrew, set the hanging stick on a 12 mm drill shank lying on the sheet, tighten, remove the shank, stow the stick; put the sheet back on its tape marks. About 2 minutes.",
+  "fidelity": "Rigid bodies; frame, gantry, honeycomb fixed. Slide: prismatic joint, 8 N s/m damping (est.); clamp rule in task.py holds it with a stiff drive while the thumbscrew is within 45 deg of seated, else free. Thumbscrew and stick: hinges with 0.05 and 0.03 N m friction (est.), no thread. Module, stick and knob sizes and module mass estimated from maker photos. Primitives for the machine (no SimReady model); props are SimReady.",
+  "scores": "Dream-1 run: 0.0 (2,400 steps); scripted demo: 1.0 (913 steps)."
+}

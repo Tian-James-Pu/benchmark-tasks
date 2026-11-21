@@ -1,0 +1,145 @@
+{
+  "checked_at_utc": "2026-11-21T06:00:51Z",
+  "task": "clear-offcuts-propped-board",
+  "title": "Swap the scrap prop for a bearer under a pine batten before clearing the offcuts",
+  "scope": "Qualification and submission record; acceptance remains pending.",
+  "final_task_sources_sha256": {
+    "task.py": "5f1ffb4e1e735967bb1c08a6dd267eb0f6022583eccb8893c040bd42e4ac3755",
+    "task.json": "95c0ff2d26fb228e564741585f686aac98e0e7f2ee21bd67217ec73fd94ce9e7",
+    "README.md": "3ad38a784440fc755acef367b4332fb5ef83ec6a01f5d8af8786d10c697f89d0",
+    "mechkit.py": "aa7bb7364cd2e6915d37ad5a7664e1136b5ff381b62f71e744e03fb593d3b35a",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe"
+  },
+  "final_revision_runs": [
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/demo-1121-003815-gpu3-1694351",
+      "score": 0.75,
+      "status": "completed",
+      "task_py_sha256": "5f1ffb4e1e735967bb1c08a6dd267eb0f6022583eccb8893c040bd42e4ac3755",
+      "source_matches_final": true,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/demo.mp4",
+        "submission-media/demo-sheet.png",
+        "submission-media/setup.png"
+      ],
+      "note": "1,000-step cutoff; verifies full credit is withheld before the 60-step dwell."
+    },
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/demo-1121-004056-gpu3-1725780",
+      "score": 1.0,
+      "status": "completed",
+      "task_py_sha256": "5f1ffb4e1e735967bb1c08a6dd267eb0f6022583eccb8893c040bd42e4ac3755",
+      "source_matches_final": true,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/demo.mp4",
+        "submission-media/demo-sheet.png",
+        "submission-media/setup.png"
+      ],
+      "note": "Full revised-scene demo; 1,018 steps."
+    },
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/demo-1121-004447-gpu2-1774025",
+      "score": 1.0,
+      "status": "completed",
+      "task_py_sha256": "5f1ffb4e1e735967bb1c08a6dd267eb0f6022583eccb8893c040bd42e4ac3755",
+      "source_matches_final": true,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/demo.mp4",
+        "submission-media/demo-sheet.png",
+        "submission-media/setup.png"
+      ],
+      "note": "Second full revised-scene demo; 1,018 steps."
+    }
+  ],
+  "same_scene_instruction_prior_runs": [
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/dream-1121-002904-gpu0-1580029",
+      "score": 0.0,
+      "status": "completed_before_dwell_fix",
+      "task_py_sha256": "336869941902c513ebadbbba8b0cd34e16745c1f35489c6864d70d77b705654d",
+      "source_matches_final": false,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/dream.mp4",
+        "submission-media/dream-sheet.png"
+      ],
+      "note": "Scene and instruction match final; visual task geometry unchanged; task.py differs only by local full-state dwell accounting and scorer award."
+    },
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/demo-1121-002201-gpu0-1488925",
+      "score": 0.0,
+      "status": "completed_before_dwell_fix",
+      "task_py_sha256": "336869941902c513ebadbbba8b0cd34e16745c1f35489c6864d70d77b705654d",
+      "source_matches_final": false,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/demo-redteam_nothing.mp4",
+        "submission-media/demo-redteam_nothing-sheet.png"
+      ],
+      "note": "No-action red-team control; final dwell logic cannot create a full-state pass."
+    },
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/demo-1121-002303-gpu0-1504138",
+      "score": 0.0,
+      "status": "completed_before_dwell_fix",
+      "task_py_sha256": "336869941902c513ebadbbba8b0cd34e16745c1f35489c6864d70d77b705654d",
+      "source_matches_final": false,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/demo-redteam_onearm.mp4",
+        "submission-media/demo-redteam_onearm-sheet.png"
+      ],
+      "note": "One-arm-only red-team control; final dwell logic cannot create a full-state pass."
+    },
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/demo-1121-002442-gpu0-1521021",
+      "score": 0.25,
+      "status": "completed_before_dwell_fix",
+      "task_py_sha256": "336869941902c513ebadbbba8b0cd34e16745c1f35489c6864d70d77b705654d",
+      "source_matches_final": false,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/demo-redteam_careless.mp4",
+        "submission-media/demo-redteam_careless-sheet.png"
+      ],
+      "note": "Careless-order control; final dwell logic cannot create a full-state pass."
+    },
+    {
+      "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/demo-1121-002600-gpu0-1544218",
+      "score": 0.5,
+      "status": "completed_before_dwell_fix",
+      "task_py_sha256": "336869941902c513ebadbbba8b0cd34e16745c1f35489c6864d70d77b705654d",
+      "source_matches_final": false,
+      "instruction_sha256": "237a67653f185c3e3e92654c6c35df475c8ad39e54f6df5280eda539f60e06cc",
+      "media_files": [
+        "submission-media/demo-redteam_hold.mp4",
+        "submission-media/demo-redteam_hold-sheet.png"
+      ],
+      "note": "Hold-without-release control; final dwell logic cannot create a full-state pass."
+    }
+  ],
+  "final_dream_retry": {
+    "directory": "/home/mzhang/yam-eval/clear-offcuts-propped-board/dream-1121-005043-gpu1-1852278",
+    "status": "stopped after repeated Dream API expired responses; no score returned",
+    "evidence": "run.log contains repeated \"Dream: expired; asking again\"; GPU allowance restored to 0 1 2 3."
+  },
+  "scorer_controls": [
+    "Bench contact permanently scores 0 with 1 mm solver tolerance; no 15 mm proxy or damage claim.",
+    "Full score checks both released bearers flat and crosswise within 5 degrees, at least 3 cm projected overlap on both board axes, <=2 mm vertical gap, straddled midpoint, >=15 cm spacing.",
+    "60 consecutive full-state control steps required for 1.0; preliminary full-state score is 0.75."
+  ],
+  "novelty_review": "pipeline/novelty-reviews/clear-offcuts-propped-board.json",
+  "submission": {
+    "pr": "https://github.com/robocurve/benchmark-tasks/pull/3358",
+    "state": "OPEN, waiting for review",
+    "receipt": "TK-94HRFH",
+    "media": "M-MQKENT",
+    "submitted_at_utc": "2026-11-21T05:59:24Z"
+  },
+  "validated_count_after_entry": 11,
+  "goal": 50,
+  "accepted_count": 1
+}

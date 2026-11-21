@@ -1,0 +1,38 @@
+{
+  "title": "Copy an installed casing contour and transfer the gauge flat to a board",
+  "slug": "copy-casing-contour-with-gauge",
+  "owner": "codex /root/review_dishwasher",
+  "phase": "parked_after_failed_end_frame_grasp",
+  "claimed_at_utc": "2026-11-20T03:02:21.570523+00:00",
+  "source": "https://shop.wolfcraft.com/en-it/products/p_6949_contourgauge",
+  "product": "Wolfcraft6949000",
+  "dimensions_mm": [
+    105,
+    180,
+    20
+  ],
+  "pins": 91,
+  "capture_mm": [
+    130,
+    30
+  ],
+  "assumptions": [
+    "End-cap and shell geometry reconstructed from manufacturer photo, not measured.",
+    "Mass, internal guide clearance and pin resistance estimates.",
+    "Actual91-pin bank at native approximate1.43mm pitch; no pin relatching or pose writes.",
+    "Lock omitted in first coupon, explicit gap.",
+    "Coupon proves contact/grasp feasibility only; installed casing, scoring and full task out of scope.",
+    "Rectangular7mm pin section with3mm floor clearance is diagnostic only; final traced-edge tips must match manufacturer support datum."
+  ],
+  "original_hold": {
+    "pr": 2416,
+    "last_review": "2026-11-17T22:36:25Z",
+    "expired": "2026-11-19T22:36:25Z",
+    "latest_checked_no_received": true
+  },
+  "gate": "pipeline/reviews/resume-20261120/contour-gauge-coupon-gate.json",
+  "coupon_outcome": "pipeline/reviews/resume-20261120/contour-gauge-coupon-r2/outcome.json",
+  "next_gate": "Source-faithful pin section and concrete native ordinary grasp/lock operation required before further coupon",
+  "full_task": false,
+  "alternatives": "unproven; not a task-impossibility claim"
+}

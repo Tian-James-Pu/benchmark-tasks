@@ -19,6 +19,7 @@ from yam_arena.demo import Waypoint
 from yam_arena.task_file import TABLE_TOP, Box
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from mechkit import fingertips, on_reset, on_step  # noqa: E402
 from simready import SimReady  # noqa: E402
 
 SCENE = "station"
@@ -68,7 +69,23 @@ OBJECTS = [LEFT, RIGHT, MAT, PROP, SHELF, TIN, MUG, TAPE, SCREWDRIVER]
 
 SUCCESS_HOLD_S = 3.0  # long enough for the grippers to let go and move away before the trial ends
 END_START = {"left": np.array([X, SHELF_SIZE[1] / 2]), "right": np.array([X, -SHELF_SIZE[1] / 2])}
-_harm = False
+SUPPORT_TOL = 0.003  # "lying on": a centre or face within 3 mm of the height it has when resting on its support
+CLEAR = 0.02  # "let go": no point on either gripper's fingers within 2 cm of the shelf, the tin or the prop
+_harm = False  # the tin fell, the shelf dropped, or the prop was knocked over under the shelf, at any step
+_tips = None  # points on both grippers' fingers at the latest step
+
+
+@on_reset
+def _new_trial(environment=None):
+    """The record of harm is cleared only by a reset of the scene, never by anything that happens in a trial."""
+    global _harm, _tips
+    _harm, _tips = False, None
+
+
+@on_step
+def _see_grippers(environment):
+    global _tips
+    _tips = fingertips(environment)
 
 
 def _rotate(quat_xyzw, v):
@@ -93,16 +110,16 @@ def _ends(shelf):
 
 def _seated(objects):
     """The shelf lies on both brackets: each end reaches at least 1 cm onto its bracket and is within 3 cm of the
-    bracket's centre line front to back, the shelf's underside is within 4 mm of the brackets' tops, and one end
-    is no more than 4 mm higher than the other."""
+    bracket's centre line front to back, the shelf's underside is within 3 mm of the brackets' tops, and one end
+    is no more than 3 mm higher than the other."""
     shelf = objects["shelf"]
     ends = _ends(shelf)
     left, right = objects["left_bracket"], objects["right_bracket"]
     reach_left = min(ends["left"][1], left.high[1]) - max(ends["right"][1], left.low[1])
     reach_right = min(ends["left"][1], right.high[1]) - max(ends["right"][1], right.low[1])
     in_line = abs(ends["left"][0] - X) < 0.03 and abs(ends["right"][0] - X) < 0.03
-    level = abs(ends["left"][2] - ends["right"][2]) <= 0.004
-    down = abs(shelf.pos[2] - SEAT_Z) <= 0.004
+    level = abs(ends["left"][2] - ends["right"][2]) <= SUPPORT_TOL
+    down = abs(shelf.pos[2] - SEAT_Z) <= SUPPORT_TOL
     return bool(reach_left >= 0.01 and reach_right >= 0.01 and in_line and level and down)
 
 
@@ -114,7 +131,7 @@ def _shelf_shift(objects):
 def _tin_ok(objects):
     """The tin stands upright on the shelf."""
     tin, shelf = objects["tin"], objects["shelf"]
-    on_shelf = abs(tin.pos[2] - (shelf.pos[2] + SHELF_SIZE[2] / 2 + TIN_H / 2)) < 0.01
+    on_shelf = abs(tin.pos[2] - (shelf.pos[2] + SHELF_SIZE[2] / 2 + TIN_H / 2)) <= SUPPORT_TOL
     return bool(_tilt_deg(tin) < 10 and on_shelf)
 
 
@@ -127,7 +144,7 @@ def _prop_under_shelf(objects):
 def _prop_on_mat(objects):
     prop, mat = objects["prop"], objects["mat"]
     over = all(mat.low[i] <= prop.pos[i] <= mat.high[i] for i in (0, 1))
-    return bool(over and prop.low[2] < mat.high[2] + 0.006)
+    return bool(over and prop.low[2] <= mat.high[2] + SUPPORT_TOL)
 
 
 def _track(objects):
@@ -135,32 +152,40 @@ def _track(objects):
     knocked over while still under the shelf."""
     global _harm
     prop, shelf, tin = objects["prop"], objects["shelf"], objects["tin"]
-    at_start = (
-        float(np.linalg.norm(prop.pos[:2] - np.array(PROP_XY))) < 0.005
-        and _prop_under_shelf(objects)
-        and _shelf_shift(objects) < 0.005
-        and _tilt_deg(shelf) > 1.0
-        and _tilt_deg(tin) < 5
-    )
-    if at_start:
-        _harm = False
     tin_fell = _tilt_deg(tin) > 30 or tin.pos[2] < BRACKET_TOP
     shelf_fell = shelf.low[2] < BRACKET_TOP - 0.03
     prop_knocked = _tilt_deg(prop) > 30 and _prop_under_shelf(objects)
     _harm = bool(_harm or tin_fell or shelf_fell or prop_knocked)
 
 
+def _box_gap(obj, size):
+    """The smallest distance (m) from any fingertip point to the object's box, or 0 before the first step."""
+    if _tips is None:
+        return 0.0
+    x, y, z, w = obj.quat_xyzw
+    local = np.array([_rotate((-x, -y, -z, w), p - obj.pos) for p in _tips])
+    return float(np.linalg.norm(np.maximum(np.abs(local) - np.array(size) / 2, 0.0), axis=1).min())
+
+
+def _hands_off(objects):
+    return bool(
+        _box_gap(objects["shelf"], SHELF_SIZE) > CLEAR
+        and _box_gap(objects["prop"], PROP_SIZE) > CLEAR
+        and _box_gap(objects["tin"], (TIN_D, TIN_D, TIN_H)) > CLEAR
+    )
+
+
 def score(objects):
     """0 if the tin ever tipped past 30 degrees or left the shelf, any part of the shelf ever dropped more than
     3 cm below the brackets' tops, or the prop ever tipped past 30 degrees while any part of it was under the shelf.
-    Otherwise, with everything at rest, the shelf lying on both brackets, the tin
-    upright on it and no part of the prop under the shelf: 1.0 if the prop is on the mat and neither end of the
+    Otherwise, with everything at rest, no gripper finger within 2 cm of the shelf, the tin or the prop, the shelf
+    lying on both brackets, the tin upright on it and no part of the prop under the shelf: 1.0 if the prop is on the mat and neither end of the
     shelf is more than 2 cm from where it started, else 0.5. Anything else 0."""
     _track(objects)
     if _harm:
         return 0.0
     still = all(objects[n].resting() for n in ("prop", "shelf", "tin"))
-    if not (still and _seated(objects) and _tin_ok(objects)) or _prop_under_shelf(objects):
+    if not (still and _hands_off(objects) and _seated(objects) and _tin_ok(objects)) or _prop_under_shelf(objects):
         return 0.0
     return 1.0 if _prop_on_mat(objects) and _shelf_shift(objects) <= 0.02 else 0.5
 

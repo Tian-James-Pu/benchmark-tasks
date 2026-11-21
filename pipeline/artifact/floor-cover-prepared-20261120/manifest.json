@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-11-20T16:59:03.724773+00:00",
+  "task": "retrieve-wrench-from-under-floor-hole-cover",
+  "source_sha256": {
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "45470ae21c39e041389d8c2010ac24a82382db38afa52a4dcfb2d173e629b421",
+    "task.py": "7cdb4dfacc47a833ecd7939225dc4ac276c8cdda5b12e53b32d4c84eb4249ec6",
+    "README.md": "055df065127ff4f4c1dec6a9f44b527e883b65b111fbf2429da73c3cbc420fa8",
+    "BUILD.md": "bf6b53785542febf99366fcb2fded1eaff42ce76c0fc67788576800d72d4b5da",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "tests/test_scoring.py": "a3cc98d546e88187bde66b14a8d8b503a97b256a7c9767249d6bfb33c82724fc"
+  },
+  "media": {
+    "demo.mp4": {
+      "bytes": 788033,
+      "sha256": "4ad727502ed5dc9a0524d90b8e97a4ce3c214657e35d2bb280c4ff4eb963d308",
+      "probe": {
+        "codec_name": "h264",
+        "width": 640,
+        "height": 360,
+        "nb_frames": "625"
+      }
+    },
+    "dream.mp4": {
+      "bytes": 775635,
+      "sha256": "8b1fcdff9c2f0883bdc084cd04066c61b8e834e49a4e6e28e29801dc73fe9e29",
+      "probe": {
+        "codec_name": "h264",
+        "width": 320,
+        "height": 176,
+        "nb_frames": "1801"
+      }
+    },
+    "setup.png": {
+      "bytes": 172620,
+      "sha256": "42f66c9127ca5933d7c493859a51f6f75e337f202d48c950b7ec97bbd1400599"
+    }
+  },
+  "scores": {
+    "demo": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "actions": [
+      624,
+      624,
+      624
+    ],
+    "Dream_1": 0.0,
+    "Dream_actions": 1800
+  },
+  "source_and_media_provenance": "pipeline/reviews/resume-20261120/wrench-cover/final-packet-held.json",
+  "existing_board_media_id": "M-BPBQER",
+  "validated_for_goal": false,
+  "remaining": [
+    "Competing ownership clearance and fresh full-board reclaim review",
+    "Physical load/accidental-displacement evidence for the exact slotted cover; design drawings do not constitute those measurements"
+  ]
+}

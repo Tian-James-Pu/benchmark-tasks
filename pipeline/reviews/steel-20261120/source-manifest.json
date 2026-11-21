@@ -1,0 +1,168 @@
+{
+  "repository": "https://github.com/skild-ai/steel",
+  "commit": "a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/README.md",
+      "sha256": "8e8809a24be138f83e76301d93f8388b7f713ff489a7fea062e56758e298db34",
+      "size": 5533
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "size": 11358
+    },
+    {
+      "path": "NOTICE",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/NOTICE",
+      "sha256": "45eaa6ddb9f1675f73471ab5c5c072caf79d4f44f6876681de46a4ce9902b494",
+      "size": 1660
+    },
+    {
+      "path": "examples/README.md",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/README.md",
+      "sha256": "d7e6404f02e27f2b82f5b551571733803a6a9e2890298a840e11d093f07afd75",
+      "size": 18012
+    },
+    {
+      "path": "examples/THIRD_PARTY.md",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/THIRD_PARTY.md",
+      "sha256": "f728ca88c1d350574900a140dea3aedca1046a6f5e275308fd79b5c0e0e7687e",
+      "size": 17783
+    },
+    {
+      "path": "examples/NOTICE",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/NOTICE",
+      "sha256": "ae685aed27a7e8d78e32f4764f680ae582e21af79432ca94fbe58ffb88b4d65e",
+      "size": 2281
+    },
+    {
+      "path": "examples/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/pyproject.toml",
+      "sha256": "b45cd18dac88619a22d524ddc188c022c4f1b4845524f049b9b92a0a2119f3c2",
+      "size": 1314
+    },
+    {
+      "path": "examples/shelf/02_many_contacts/bolt_sweep/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/02_many_contacts/bolt_sweep/example.py",
+      "sha256": "5753a327d91709467e43a242186dc5bdaeda52382d460496081a62662543fd5a",
+      "size": 2540
+    },
+    {
+      "path": "examples/shelf/02_many_contacts/bolt_sweep/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/02_many_contacts/bolt_sweep/presets.toml",
+      "sha256": "3b89e907f184be2276f7edf26ba278f62f65ab367dc3e96ca1d1d54d79033216",
+      "size": 873
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug/example.py",
+      "sha256": "55f30bd2095417d42a789ef42d8ec1ae3528c878dd7b31839046bcb595645841",
+      "size": 23818
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug/presets.toml",
+      "sha256": "35a5369dd45ba362997898001a5280f7d7fd610e53896a67677f68f3d93f6de8",
+      "size": 1895
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/franka_plate_rack/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/franka_plate_rack/example.py",
+      "sha256": "45fdb48a8d171f3331b8bb35d3339fc10c7f1023838696f41881ea8f9c98b8a2",
+      "size": 2987
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/franka_plate_rack/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/franka_plate_rack/presets.toml",
+      "sha256": "6cb25d86aa34bec13fcdd1bbc51fe701ac512a3c4473234aaa6b8bcde118eccb",
+      "size": 991
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/nut_bolt_hydro/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/nut_bolt_hydro/example.py",
+      "sha256": "6381d76088e18145ce684b49fe765f74e7401b582495ff7ed80937a27f83631a",
+      "size": 21086
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/nut_bolt_hydro/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/nut_bolt_hydro/presets.toml",
+      "sha256": "6235791cc8ecd1f02ffa6561b2cb781764b765453d54de9b3fee6f2f002eaa5b",
+      "size": 2428
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/nut_bolt_sdf/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/nut_bolt_sdf/example.py",
+      "sha256": "f142e22099b2e4dace0d8a74f50c8a5f71dc6119b4d18d80b9297c89dab4a953",
+      "size": 15367
+    },
+    {
+      "path": "examples/shelf/03_mesh_sdf_contacts/nut_bolt_sdf/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/03_mesh_sdf_contacts/nut_bolt_sdf/presets.toml",
+      "sha256": "7ce6e169d3246d4a174dc676da7a08eaf352a4275d381472101a60f83103fa99",
+      "size": 2434
+    },
+    {
+      "path": "examples/shelf/04_mimic_joints/basic_mimic_joint/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/04_mimic_joints/basic_mimic_joint/example.py",
+      "sha256": "a929e09c8e800153781a9fbd6a51369d40211345e6cc411beaed99abab6a59cb",
+      "size": 11446
+    },
+    {
+      "path": "examples/shelf/04_mimic_joints/basic_mimic_joint/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/04_mimic_joints/basic_mimic_joint/presets.toml",
+      "sha256": "e621b2567241b779a26a48f4e1b5aced827204221f3b25825850820d1b302fcf",
+      "size": 2252
+    },
+    {
+      "path": "examples/shelf/05_looped_linkages/loop_parallel_gripper/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/05_looped_linkages/loop_parallel_gripper/example.py",
+      "sha256": "e901a6e55b28e22ff9fdc92bd82324521e0e550b96259110e9060c9b59e4a046",
+      "size": 1293
+    },
+    {
+      "path": "examples/shelf/05_looped_linkages/loop_parallel_gripper/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/05_looped_linkages/loop_parallel_gripper/presets.toml",
+      "sha256": "540cb6fcbd3ce0ebb112dc1cfab457dbbeb17ea77db21f8d3a5efa4b6f866c51",
+      "size": 1481
+    },
+    {
+      "path": "examples/shelf/08_thin_shells_and_rods/franka_cable_ik_pick_place/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/08_thin_shells_and_rods/franka_cable_ik_pick_place/example.py",
+      "sha256": "a6d6283e31ec1dcafa858e89b18d953884d55a2741924470c4fb6aef8fed0be7",
+      "size": 24903
+    },
+    {
+      "path": "examples/shelf/08_thin_shells_and_rods/franka_cable_ik_pick_place/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/08_thin_shells_and_rods/franka_cable_ik_pick_place/presets.toml",
+      "sha256": "dc24c409587fda01a2e50f8cd2da7d38c11e904d2857c42be60d2c257527d24a",
+      "size": 2378
+    },
+    {
+      "path": "examples/shelf/09_coupling/franka_shirt_fold_stack/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/09_coupling/franka_shirt_fold_stack/example.py",
+      "sha256": "5018dfeccee22dc1138a190a20c846e99b402822f4daa142d154257891819271",
+      "size": 31041
+    },
+    {
+      "path": "examples/shelf/09_coupling/franka_shirt_fold_stack/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/09_coupling/franka_shirt_fold_stack/presets.toml",
+      "sha256": "03bede71129543b493638a23459eac1ddfa43a31572cbd4c21f5252391f432ce",
+      "size": 3067
+    },
+    {
+      "path": "examples/shelf/09_coupling/proxy_joint_gripper/example.py",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/09_coupling/proxy_joint_gripper/example.py",
+      "sha256": "fecccfb60e1a48531c0f037529c3ff899baa095df61ac6441e9fa5e80d9b63ad",
+      "size": 16050
+    },
+    {
+      "path": "examples/shelf/09_coupling/proxy_joint_gripper/presets.toml",
+      "url": "https://raw.githubusercontent.com/skild-ai/steel/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/09_coupling/proxy_joint_gripper/presets.toml",
+      "sha256": "cb60891dac480a19f8ed757b837c0c21e0ac677408773dfcdc0747ca35fe2dac",
+      "size": 2483
+    }
+  ]
+}

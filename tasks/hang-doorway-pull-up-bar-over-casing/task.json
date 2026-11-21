@@ -1,0 +1,21 @@
+{
+  "title": "Mount a doorway pull-up bar: hook it over the far-side casing, then swing it down until its pads bear on the near trim",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "home fitness",
+    "doorway",
+    "leverage",
+    "hook",
+    "trim",
+    "pull-up bar"
+  ],
+  "instruction": "Mount the pull-up bar in the doorway.",
+  "context": "Screw-free doorway pull-up bars (about $30) are a common piece of home exercise equipment, often put up and taken down for each session, and they hold only by leverage: the hooks have to sit over the trim on the far side of the doorway and the pads against the trim on this side, or the bar drops when someone hangs on it.",
+  "setup": "World frame: x forward from the arm bases (y=0 between them), y left, z up; heights above the table top (74.75 cm). Doorway mock-up (rigid, fixed): a 2x4 stud-wall section 11.5 cm thick (faces at x=48.5 and 60.0 cm) and 130 cm long (y -65 to 65), standing on the table and cut 16 cm above the opening; it frames an 81.0 cm-wide opening (y -40.5 to 40.5) with 1.9 cm pine jambs as deep as the wall, a 1.0 x 3.2 cm door stop under the head jamb, and painted 1.5 x 6.4 cm casing on both faces (near face at x=47.0 cm, far face at x=61.5 cm), set back 0.3 cm from the jamb edges; the head jamb's underside is 30.0 cm above the table, so the head casings' top edges are at 36.7 cm. Only this top 30 cm of a standard 81 x 203 cm interior doorway is modelled. Pull-up bar (loose, rigid, 2.15 kg, black 25.4 mm steel tube, foam grips and pads): 93 x 33 x 29.5 cm overall; two inverted-L hooks 3 cm wide (feet 3.8 cm long reaching back over the far casing's 1.5 cm top edge, legs 18.2 cm tall) at y=+-33 cm; side rails from the hooks under the head jamb; a pad bar 88 cm long carrying two foam pads 5 cm across and 4 cm deep at y=+-44 cm; a grip bar 93 cm long with 3.2 cm foam grips. It starts lying on the table on its grip bar and pads, tilted 12.1 degrees from its mounted attitude (grip-bar end up), hooks pointing into the doorway: grip bar axis at x=27.0 cm, 1.6 cm up; pad faces at x=42.0 cm; hook legs' outer top corners at x=63.6 cm, 22.3 cm up, the hook feet directly under the far casing's bottom edge. Distractors (SimReady, loose, ignored by scoring): a 0.5 L plastic water bottle (6.8 x 6.8 x 24.5 cm, 0.52 kg) standing at (12, -52) cm, and a folded microfibre towel (20.5 x 21.2 x 3.4 cm, 0.06 kg) at (16, 53) cm, yaw 0.3 rad.",
+  "scoring": "Read every step at 20 Hz. 0 for the whole trial if the bar ever falls (moving down faster than 1.0 m/s, about a 5 cm free fall). Otherwise a hook rests on the far casing when its inner corner (foot underside meets leg) is within -2 to +5 mm of the casing's top edge in height and -2 to +10 mm of the casing's outer face, and its foot reaches at least 5 mm back over the casing's top; a pad bears when its face is within 3 mm of the near casing's face, its centre on a side leg of the casing. 1.0: both hooks rest on the far casing, both pads bear, the grip bar is level within 2 degrees end to end, the bar is still (under 1 cm/s and 0.05 rad/s) and every gripper fingertip point is at least 5 cm from the bar, all continuously for 3 s. Otherwise, at the end: 0.75 if both hooks rest, both pads bear and the grip bar is level within 2 degrees; 0.5 if both hooks rest; 0 if one hook or neither rests.",
+  "run_limit": "1,800 steps (90 s at 20 Hz)",
+  "reset_notes": "Lift the bar off the doorway and lay it back on its grip bar and pads at the taped start marks, hooks under the head jamb; stand the bottle and lay the towel on their marks. Nothing is consumed.",
+  "fidelity": "Rigid contact only: the doorway mock-up (top 30 cm of an 81 cm opening: jambs, stop, 15 mm casing) is fixed boxes; the bar is one rigid body of tubes and boxes at the Iron Gym bar's full size and weight (2.15 kg, not lightened), its hooks simplified to square-section L shapes and its foam rigid. Uniform friction. No person hangs on the bar; seating is judged from the end pose only. Bottle and towel are SimReady props.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

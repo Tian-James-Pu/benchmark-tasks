@@ -1,0 +1,62 @@
+{
+  "hockey": [],
+  "pong": [
+    {
+      "number": 2833,
+      "state": "closed",
+      "title": "Add paddle-bounce-ping-pong: bounce a ping-pong ball on a paddle ten times in a row",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2833"
+    },
+    {
+      "number": 2631,
+      "state": "closed",
+      "title": "Ping-pong keep-ups: 10 bounces in a row on the bat",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2631"
+    },
+    {
+      "number": 2788,
+      "state": "closed",
+      "title": "Find the two flat tennis balls among four by their bounce: flat ones into the grey bin, good ones into the blue box",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2788"
+    }
+  ],
+  "\"ball\" \"cup\"": [],
+  "\"puck\"": [
+    {
+      "number": 551,
+      "state": "closed",
+      "title": "Add memory puck task",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/551"
+    },
+    {
+      "number": 2780,
+      "state": "open",
+      "title": "Steam a pitcher of milk for a latte with a commercial espresso machine's steam wand",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2780"
+    },
+    {
+      "number": 2725,
+      "state": "closed",
+      "title": "Feed three workpieces one at a time through two conveyor gates",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2725"
+    },
+    {
+      "number": 1493,
+      "state": "closed",
+      "title": "Check a Kohler KT725 lawn tractor engine's oil with its dipstick, wiping and re-reading it, and mark the level",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1493"
+    },
+    {
+      "number": 1482,
+      "state": "merged",
+      "title": "Add Knock a spent espresso puck out of the portafilter into the knock box task",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/1482"
+    },
+    {
+      "number": 2158,
+      "state": "merged",
+      "title": "Open a hanging locker padlock by its dial: right past two turns, left one turn past, right to the third, then pull",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2158"
+    }
+  ]
+}

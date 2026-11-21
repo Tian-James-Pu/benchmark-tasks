@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-11-20T13:54:29.155835+00:00",
+  "scope": "Current-scorer native Dream-1 and full-score demo plus reproducible PETG replica documentation. Assets staged locally; no submission or upload.",
+  "task_source": "pipeline/artifact/cookie-submission-prepared-20261120/tasks/move-cookies-to-cooling-rack-with-turner",
+  "media_folder": "pipeline/artifact/cookie-submission-prepared-20261120/media",
+  "model_runtime_report": "/home/mzhang/yam-eval/codex-cookie-current-dream-20261120/dream-1120-084635-gpu0-3983919/adhoc_912048ec.json",
+  "model_controls": 2400,
+  "model_score": 0.0,
+  "demo_score": 1.0,
+  "demo_controls": 1804,
+  "media": {
+    "dream.mp4": {
+      "source": "/home/mzhang/yam-eval/codex-cookie-current-dream-20261120/media/dream.mp4",
+      "sha256": "757efdaae490b727250d20df561897f4db6b33157efc44f74cbf15cdcaadd245",
+      "bytes": 921713,
+      "codec_name": "h264",
+      "width": 320,
+      "height": 176,
+      "nb_frames": "2401"
+    },
+    "demo.mp4": {
+      "source": "/home/mzhang/yam-eval/codex-cookie-scorer-fix-20261120/media/demo.mp4",
+      "sha256": "7e43e3831754221387144b3685de4f7b0360f4fac278972d99d10bae34cdb16a",
+      "bytes": 629965,
+      "codec_name": "h264",
+      "width": 320,
+      "height": 176,
+      "nb_frames": "1805"
+    },
+    "setup.png": {
+      "source": "/home/mzhang/yam-eval/codex-cookie-scorer-fix-20261120/media/setup.png",
+      "sha256": "b07447842401e78c00d6514a9ad0e89a02bee90c8a4e0318c7a26b389eaad968",
+      "bytes": 53748,
+      "codec_name": "png",
+      "width": 320,
+      "height": 176
+    }
+  },
+  "source_sha256": {
+    "task.py": "4e5943b8524d28e73868291c5a7eeee0f860ed9dd605634f1aa50964efcd2156",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "demokit.py": "2e6c9ff748ba5e51f7e91adc55f26e0331dbac30b3f1a708c378d45492f3d4be",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "cookie_replica.scad": "cc060720d56c6797ec6f72e25ce101f2b7293ce239fbec44fa197c2a89838696",
+    "README.md": "3a95531157443aeed13f7f950d5e4656727f598f4d62a59c6d8c966aaf28332a",
+    "task.json": "da11d7ee9fc01d91b57e50a0f7e94f5dbeea6028d2627f37005797569498c761"
+  },
+  "metadata_sha256_excluding_scores_and_media": "f9bc950bcd56242712037bf6a3410be53560d1e0f26233e6a8021f766be2309e",
+  "current_model_sheet_visual_review": "Six sampled frames show the same pan, rack, turner and four cookies at start. No visible team names or logos in the sampled frames.",
+  "replica_spec_check": "pipeline/reviews/resume-20261120/cookies/replica-specification-check.json",
+  "gates_open": [
+    "Live ownership recheck after competing PR #2311 hold scheduled to lapse at 2026-11-20T23:09:27Z",
+    "Fresh matching novelty review and board media upload at clearance"
+  ],
+  "board_media_id": null,
+  "new_pr": null,
+  "counts_as_fully_qualified": false
+}

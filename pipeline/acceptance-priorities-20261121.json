@@ -1,0 +1,97 @@
+{
+  "checked_at_utc": "2026-11-21T00:54:15Z",
+  "scope": "Live status of our open PRs, held-idea windows, and the next PDF candidates. Internal coordination snapshot; no publication.",
+  "quota_policy": "No rolling submission quota per user update. One task per PR, review/ownership holds, and validation rules remain active.",
+  "team_acceptance": {
+    "merged_count": 1,
+    "merged": [
+      {
+        "pr": 2406,
+        "title": "Prepare a shower chair left with one leg too short",
+        "merged_at": "2026-11-19T02:00:32Z",
+        "url": "https://github.com/robocurve/benchmark-tasks/pull/2406"
+      }
+    ],
+    "open_pr_count": 9,
+    "open_prs": [
+      {"rank": 1, "pr": 2951, "folder": "recycle-can-with-hanging-lid", "state": "open_after_feasibility_revision", "last_activity": "2026-11-20T01:26:23Z", "current_action": "Wait for review; no push while pending."},
+      {"rank": 2, "pr": 2609, "folder": "replace-worn-crutch-ferrule", "state": "open_after_revision_waiting_review", "last_activity": "2026-11-19T04:44:19Z", "current_action": "Wait for review; no push while pending."},
+      {"rank": 3, "pr": 2520, "folder": "clear-utensil-from-dishwasher-spray-arm", "state": "open_after_revision_waiting_review", "last_activity": "2026-11-19T04:45:58Z", "current_action": "Wait for review; no push while pending."},
+      {"rank": 4, "pr": 2879, "folder": "prepare-infant-carrier-on-base", "state": "open_after_revision_waiting_review", "last_activity": "2026-11-19T19:26:54Z", "current_action": "Wait for review; no push while pending."},
+      {"rank": 5, "pr": 2477, "folder": "start-car-with-jammed-steering-lock", "state": "open_after_revision_waiting_review", "last_activity": "2026-11-19T05:06:53Z", "current_action": "Wait for review; no push while pending."},
+      {"rank": 6, "pr": 2883, "folder": "snap-wheel-cover-on-steel-wheel", "state": "open_after_revision_waiting_review", "last_activity": "2026-11-19T18:54:32Z", "current_action": "Wait for review; no push while pending."},
+      {"rank": 7, "pr": 2839, "folder": "close-iv-roller-clamp", "state": "open_first_review", "last_activity": "2026-11-19T05:48:21Z", "current_action": "Wait for review; clinical construct-validity risk remains."},
+      {"rank": 8, "pr": 2884, "folder": "free-cpu-stuck-to-heat-sink", "state": "open_first_review", "last_activity": "2026-11-19T12:07:30Z", "current_action": "Wait for review; hardware/model mismatch risks remain."},
+      {"rank": 9, "pr": 2872, "folder": "refit-soda-maker-bottle", "state": "open_first_review", "last_activity": "2026-11-19T10:23:06Z", "current_action": "Wait for review; importance and machine-displacement scoring risks remain."}
+    ],
+    "review_freshness": "No new reviewer decisions/comments were present at the 2026-11-21T00:54:15Z live check; all nine remain open."
+  },
+  "focused_pr_audit": {
+    "pr": 2951,
+    "checked_head": "8f4cee5dbd61a0404fa2675e3d4706deb52781d1",
+    "reviewer_request": "Specify protection for shared gripper pads from the sharp lid/rim, preserve the lid-folding action, and describe a repeatable protected setup.",
+    "published_response": [
+      "Named PIP G-Tek KEV 09-K1300 A4 Kevlar glove finger sleeves, with fitting, pretrial inspection and replacement schedule; PIP's official literature lists model 09-K1300 at A4.",
+      "Deburrs cut edges and ring while leaving the uncut hinge tab untouched; the stated scripted fold is unchanged.",
+      "Provides a batch/reset protocol and a per-finger surface-gap table; the closed-finger back contacts a deburred lid edge for under 3 seconds, while pads remain pressed together or on the can label."
+    ],
+    "assessment": "The text directly addresses all three requested items, and the revision received intake TK-NHN859 and is waiting for review. No additional push is indicated while pending. Remaining evidence limit: sleeve fit and cut performance are specified and sourced, but the submission does not report a physical cut-load trial of the sleeve/can interaction.",
+    "sources": [
+      "https://github.com/robocurve/benchmark-tasks/pull/2951",
+      "https://us.pipglobal.com/archive/literature/PIP-GTek-KEV-Cut-Protection-Dec-2016.pdf"
+    ]
+  },
+  "additional_revision_audits": [
+    {
+      "pr": 2520,
+      "head": "fd4c5e3472800d49779ca88e66050cfae6623a7d",
+      "status": "Revision receipt TK-DNK9QG; waiting for review.",
+      "review_response": "Adds repeatable real spatula starting-position/reset procedure and ordinary-tool full-rotation check with a chopstick, marks/ruler and phone video; maps simulated clearance test to observable physical clearance.",
+      "remaining_risk": "The instruction 'light taps' is not force-calibrated; the README frames the physical measurement as clearance, not a 1 mN·m effort threshold. No new change advised while pending."
+    },
+    {
+      "pr": 2879,
+      "head": "e01b5f488ab7f6800635b9c12b0ec7fd23010aec",
+      "status": "Revision receipt TK-7BHUHG; waiting for review.",
+      "review_response": "Adds named Graco carrier/base and vehicle cabin/seat constraints, final three-second ready-state scoring that resets on violation, and product-specific setup/reset checks.",
+      "remaining_risk": "One-sided-latch fault is conditional on the physical sample; the README includes a safe skip condition if it will not remain half-latched under carrier weight. No new change advised while pending."
+    },
+    {
+      "pr": 2883,
+      "head": "c7120a306a82455156e21db166e06548e3924e3b",
+      "status": "Revision receipt TK-QV6JNG; waiting for review.",
+      "review_response": "Adds a tire-equipped, installed-position wheel with surrounding bodywork, full-score demo, and per-clip geometry checks beyond height/spring alone.",
+      "remaining_risk": "The review's real seating-force note remains unverified: simulation peak is about 110 N while real cover insertion force and exact cover are unmeasured. A docstring says 1.5 mm while active scorer/task spec use 1 mm. No push while pending."
+    },
+    {
+      "pr": 2609,
+      "head": "13655c34584a393262e25c8d3882a16f0b0a0350",
+      "status": "Revision receipt TK-F2TUKF; waiting for review.",
+      "review_response": "Adds preparation of a 12 mm worn foot, 4 mm shaft projection checks, pull-off test and reset/retirement rules.",
+      "remaining_risk": "The 2.5–3.5 N worn-foot resistance target is a model selection measured by protocol, not yet grounded in empirical samples/population data. No push while pending."
+    },
+    {
+      "pr": 2477,
+      "head": "69ad98b1bb2c4267aac84e70596e18ced75c5249",
+      "status": "Revision receipt TK-J5D6LK; waiting for review.",
+      "review_response": "Adds a dimensioned build/adjustment procedure, two example donor-column families with qualification checks, and a visual torque proxy using a 100 mm lever and luggage scale with repeatability criteria.",
+      "remaining_risk": "No concrete donor column by year/trim/part number was physically tested; the named Corolla/Civic ranges or any assembly passing checks leave acquisition/fit uncertain. 8 N·m preload and 0.5 N·m-degree values remain disclosed estimates, not measured car data. No push while pending."
+    }
+  ],
+  "idea_holds": [
+    {"pr": 2593, "task": "Get a wrench out from under a floor-hole cover and put it away", "hold_expires_utc": "2026-11-21T01:37:33Z", "status": "Not accepted; scorer permits holding wrench above tote floor; needs scorer fix and test; local work is Claude-owned and physical cover evidence unresolved."},
+    {"pr": 2594, "task": "Stack scrap lumber on a pallet when one offcut has a nail sticking out of it", "hold_expires_utc": "2026-11-21T01:38:24Z", "status": "Not accepted; nail placement and gripper protection flagged; DENAIL label missing in rendered scene; local work is Claude-owned and novelty review stale."},
+    {"pr": 2484, "task": "Close a jaw coupling: spider into the fixed hub, loose hub turned to mesh and slid to its line", "hold_expires_utc": "2026-11-21T07:08:24Z", "status": "Not accepted; demo needs more detail; local work is Claude-owned."}
+  ],
+  "new_task_readiness": {
+    "validation_ledger": "10/50; do not increment for held or prototype-only packages.",
+    "pdf_fully_validated_candidates": 0,
+    "metadata_screen": "31 untracked local packages had media IDs and non-pending scores; all mapped to existing PRs or active holds. No unsubmitted ready package found.",
+    "best_new_pdf_leads_conditional_on_gates": [
+      {"candidate": "SR-045", "task": "Recover a backed-out crimp contact in a robot connector", "gate": "Tiny-scale access, connector variant/TPA geometry, tool stability, and stable backed-out/reseat full-run evidence."},
+      {"candidate": "SR-048", "task": "Restore a Bowden cable whose housing has slipped from a robot hand", "gate": "Measure matched tube/seat force and retention, calibrate contact/material response, then validate the complete hand/tendon load path."},
+      {"candidate": "SR-013", "task": "Free a disposal impeller from below the sink", "gate": "Current full-scale placement shows the basin but not the drain/spoon in robot view; reach, physical extraction and healthy-control evidence remain absent."}
+    ],
+    "submission_action": "None at this snapshot. Do not submit held, Claude-owned, duplicate, or unvalidated tasks."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "report": "pipeline/reviews/resume-20261120/lumber/qualification.json",
+  "applied_patch": "pipeline/reviews/resume-20261120/lumber/proposed-fixes/adoption.json",
+  "validation": "pipeline/reviews/resume-20261120/lumber/proposed-fixes/native-validation.json",
+  "hold_expires_utc": "2026-11-21T01:38:24Z",
+  "message": "Root fixes and final validation complete: two current-source demos1.0/503, idle0/260, held0.7/602, fresh Dream0/1600. Official media upload M-UGTRA7; scores and README updated. Owner/status preserved. Do not submit before exact2594 hold lapses and fresh ownership/novelty checks pass.",
+  "documentation_followup": "README now specifies full pallet cut list and fasteners; current hash e6777c43344655f2b03219d8ea53d06a339836b4611493fbfba0c9bf924f67aa",
+  "novelty": "Written review is HELD, not clearance. Exact2594 hold remains active.",
+  "active_final_trials": [],
+  "final_validation": "pipeline/reviews/resume-20261120/lumber/final-validation-held.json",
+  "media": "M-UGTRA7"
+}

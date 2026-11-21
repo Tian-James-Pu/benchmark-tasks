@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-11-20T16:23:24.884222+00:00",
+  "native_report": "/home/mzhang/yam-eval/codex-focus-available-platform-20261120/demo-1120-104220-gpu2-1062466/adhoc_8ed18faa.json",
+  "demo_controls": 769,
+  "demo_score": 1.0,
+  "source_sha256": {
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "c659a61525cfbfc76fb25dba120ce82a0812b21a769eab45af3ee01fb885db7c",
+    "task.py": "9f4ef489f907388872346edf404161bd74b9f00e978ca47e88a944d44362d4fd",
+    "README.md": "9ed7371e8a7662acb1bf65f3d75e80a9ee5910c140154b18f4cb7b15d038718f",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "59d467cb11a2ed520e7728e20ac7d0174c2f759d9cb31057447b6dc22c360fd8",
+      "codec_name": "h264",
+      "width": 640,
+      "height": 360,
+      "nb_frames": "770"
+    },
+    "setup.png": {
+      "sha256": "a6548d20802cec3475b0c5520976310a782e6f54830f4696b04d9cff3a84cd6e"
+    },
+    "dream.mp4": {
+      "sha256": "7a9e87e547145259d47592acc7382bdbfb00910cef404a4d47d393587f8a0c27",
+      "codec_name": "h264",
+      "width": 320,
+      "height": 176,
+      "nb_frames": "2401"
+    }
+  },
+  "same_runtime_dependencies_before_and_after": true,
+  "receipt_inventory_delta": [
+    "controls/nothing/adhoc_c8f45f04.json",
+    "controls/nothing/records/20261120_154233_aa81e336/scene-0-e0/record.json",
+    "controls/unlocked/adhoc_3ae47c32.live.json"
+  ],
+  "remaining": [
+    "Resolve physical ALHP2.0 outer footprint or qualify ALHP1.0 with final native evidence",
+    "Competing hold, live novelty review and board media upload"
+  ],
+  "fully_qualified": false,
+  "native_controls": {
+    "nothing": {
+      "entrypoint_sha256": "9fae272f7061be5a595a605f9511d5c50804610781d7b11e45922213b9dee35a",
+      "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/controls/nothing/adhoc_c8f45f04.json",
+      "score": 0.0,
+      "controls": 61
+    },
+    "unlocked": {
+      "entrypoint_sha256": "ce0422fa962e1c3610718ebb64efc3f6d515afb1d3de3e2953b96e8cb52da2b4",
+      "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/controls/unlocked/adhoc_c3cbe1a3.json",
+      "score": 0.25,
+      "controls": 642
+    },
+    "nostow": {
+      "entrypoint_sha256": "81358f10bbbcd9da82949b9a3e2592b4a9dcd44a3d964f16fa09483ce9a33a8e",
+      "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/controls/nostow/adhoc_727c80e4.json",
+      "score": 0.75,
+      "controls": 642
+    },
+    "onearm": {
+      "entrypoint_sha256": "502e2c5742c9414de274d00e1171b949497de52501a1063d2c94b57f9f53477c",
+      "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/additional-controls/onearm/adhoc_ab403058.json",
+      "score": 0.0,
+      "controls": 825
+    },
+    "careless": {
+      "entrypoint_sha256": "57ca8fa5d8480db12f110a75697dbcb43add2c96f0e0f6a0235c3ccac7155c42",
+      "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/additional-controls/careless/adhoc_4e942b38.json",
+      "score": 0.0,
+      "controls": 825
+    }
+  },
+  "footprint_status": "Both outer dimensions 365 x 365 x 20 mm and 370 x 370 x 24 mm completed at 1.0/769 using the same 320 mm usable area. These are sensitivity scenarios. Exact ALHP2.0 exterior and surface height remain unmeasured.",
+  "manufacturer_focus_setup": "https://algolaser.com/products/laser-engraved-fridge-magnets",
+  "model_result": {
+    "score": 0.0,
+    "controls": 2400,
+    "receipt": "/home/mzhang/yam-eval/codex-focus-320-prepared-20261120/dream-1120-111301-gpu2-1387921/trial-media.json",
+    "note": "Postprocessing was terminated. The verified H.264 video was regenerated offline from all 2,401 original contiguous top-camera frames with no new model calls. Contact sheet inspected."
+  }
+}

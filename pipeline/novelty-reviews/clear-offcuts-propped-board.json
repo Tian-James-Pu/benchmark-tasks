@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-21T05:59:03Z",
+  "decision": "clear",
+  "task_py_sha256": "5f1ffb4e1e735967bb1c08a6dd267eb0f6022583eccb8893c040bd42e4ac3755",
+  "task_metadata_sha256": "7c19cc12ddf0daf4d414beae58452508d6d2bfe3afd3e62f2e12e3485c6e960f",
+  "queries": [
+    "wood offcut support replacement",
+    "scrap prop under batten",
+    "load transfer during cleanup",
+    "bearer support swap",
+    "offcut sorting with nail",
+    "remove prop under slab"
+  ],
+  "nearest_prs": [
+    {
+      "number": 3319,
+      "state": "open pending first review",
+      "title": "Clear saw offcuts onto the scrap stack when one has a nail point sticking up through it",
+      "difference": "Sorts clean and nailed saw offcuts into stack/tote; this task exchanges a live support under a batten and clears two plain offcuts."
+    },
+    {
+      "number": 2594,
+      "state": "open revisable; no revision receipt after 2026-11-19 review, 48-hour hold expired",
+      "title": "Stack scrap lumber on a pallet when one offcut has a nail sticking out of it",
+      "difference": "Pallet stacking and nail segregation; no load-transfer or support replacement."
+    },
+    {
+      "number": 1735,
+      "state": "closed final rejected",
+      "title": "Find by touch and take out the one prop under a slab that carries nothing",
+      "difference": "Unloaded miniature rescue-shoring removal; this scene transfers a real-size-for-bench batten load to a replacement bearer, requires ongoing support and cleans a carpentry work area."
+    },
+    {
+      "number": 2398,
+      "state": "closed final rejected",
+      "title": "Reseat a board that missed one of its two supports, without knocking over the bottle beside it",
+      "difference": "Ordinary placement of a board above loose blocks was the review concern; this task instead preserves an existing load path while replacing a load-bearing scrap prop, then clears the work area."
+    }
+  ],
+  "physical_skill": "Maintain a batten support path while a scrap prop is removed and a proper bearer is positioned, then clear the offcuts. No particular hand order is required.",
+  "valid_shortcuts": [
+    "Holding the batten and sliding the replacement bearer in before removing the prop is valid if the batten never contacts the bench.",
+    "Sliding the replacement bearer under the supported batten before removing the prop is also valid if it achieves the same measured support condition."
+  ],
+  "distinct_from_nearest": "The pending offcut PR is about nail hazard sorting; the rejected prop task is unloaded and does not restore support; the rejected board task is static placement. This task requires a continuing load transfer, actual bearer contact within 2 mm, and work-area cleanup.",
+  "review_limits": [
+    "Importance is supported by carpenter employment and OSHA cleanup duties; the frequency of this exact prop scenario is not claimed.",
+    "Final approval remains with reviewers."
+  ]
+}

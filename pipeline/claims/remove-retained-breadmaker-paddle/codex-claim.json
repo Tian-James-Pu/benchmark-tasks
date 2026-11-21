@@ -1,0 +1,14 @@
+{
+  "owner": "codex /root/review_crutch",
+  "created_at": "2026-11-20T10:24:32.077989+00:00",
+  "status": "Nominal free-body gauge retention couponpassed; robotcoupling andfulltaskunqualified",
+  "candidate": "SR015 Yedi GV029 retained kneading paddle",
+  "artifact": "pipeline/isolated-trials/sr015-yedi-engagement-20261120",
+  "submission_ready": false,
+  "updated_at": "2026-11-20T11:19:10.879528+00:00",
+  "component_evidence": "pipeline/isolated-trials/sr015-yedi-engagement-20261120/r2/result.json",
+  "full_task_qualified": false,
+  "remaining": "Root-owned robotgrasp/access/insertion and completeoutcomevalidation; verify pressure resistance undernativegrasp constraints withoutdiagnosticgauge.",
+  "active_artifact": "pipeline/isolated-trials/sr015-foam-damped-20261120",
+  "retention_evidence": "pipeline/isolated-trials/sr015-foam-damped-20261120/result.json"
+}

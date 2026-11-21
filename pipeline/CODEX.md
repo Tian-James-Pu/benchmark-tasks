@@ -1,4 +1,106 @@
-# Handoff for a Codex agent: keep building Safe Recovery tasks
+# Handoff for a Codex agent: build tasks and optimize acceptance
+
+## Current acceptance priorities, 20 November 2026 UTC
+
+User-added source: [Steel examples](https://steel.skild.ai/examples/). Read
+`pipeline/reviews/steel-20261120/manipulation-acceptance-screen.json` before
+borrowing. Pinned source files and notices are under that directory's `source/`.
+Useful leads are real thread/latch contacts, rigid/deformable coupling and
+load-dependent-friction diagnostics. Jenga and toy-train copies are already held;
+sweeping and card-house analogues have rejection precedents. Some gallery scenes
+use internal drives, zero gravity or phase-dependent friction, so a video alone
+does not establish faithful robot-task feasibility. Newton examples require
+adaptation to our IsaacLab/YAM runtime; do not replace the shared environment.
+
+Native reuse now has executed evidence: `pipeline/reviews/steel-20261120/thread-contact-r2-result.json`. Original-size M20 meshes achieved three turns in each direction at approximately 2.50 mm/revolution, free removal and final unassisted retention in PhysX. The first recontact turn missed the predeclared pitch tolerance; strict overall gate remains failed. This is a diagnostic with declared compliant forces, not robot manipulation, calibrated fastening or a qualified task. No further tuning run is authorized by the current bounded coupon plan.
+
+Recent acceptance evidence is in
+`pipeline/reviews/resume-20261120/recent-accepted/acceptance-calibration.json`.
+In #1135, source-derived cutting resistance and a doubled-resistance demo were
+accepted without the author's own hardware measurement. #2574 and #2306 use
+disclosed estimated springs and material approximations; #2417 supplies a custom
+printable sampler. Preserve the defining work and reproducibility, but do not
+impose a blanket requirement for OEM CAD, measurements of every parameter, or a
+commercially identical custom fixture. Exact reviewer requests still govern.
+
+All 100 PDF entries now have screening evidence; this is not validation. The
+remaining 24 entries were covered in
+`pipeline/reviews/resume-20261120/pdf-remaining-coverage.json`, and the catalog
+was reconciled. SR024 zipper repair and SR043 caster-trapped tubing are
+conditional leads. Legacy numeric claim 43 belongs to an incline-cylinder task,
+according to the original Claude history. Preserve that claim and keep the
+numeric namespaces separate.
+The full-size STZ01 trolley now passes bounded native-arm CPU access; see `pipeline/reviews/resume-20261120/sr043-caster-gate/gate.md`. Wheel/tube mechanics, flow and physical grasp remain unvalidated. Ordinary parking must remain valid if it safely releases the tube.
+The tube follow-up now includes a verified zero-drive gravity release and a controlled contact-margin comparison. R5 holds external floor penetration below50µm, but six elements invert before steady loading/rolling. Native self-contact is active. See `pipeline/isolated-trials/sr043-contact-margin-r5-20261120/comparison.md`; no occlusion/flow or full-task validity is established. SR024 zipper CPU geometry also failed compatible tooth registration; primary dimensions/force data are retained in `pipeline/isolated-trials/sr024-zipper-geometry-20261120/gate.json`. Both remain research leads, not qualified submissions.
+
+Lumber fix and final source/media validation are complete: `pipeline/reviews/resume-20261120/lumber/final-validation-held.json`. Two demos1.0/503, idle0/260, held0.7/602 and fresh Dream0/1600 passed the stated checks; official media ID M-UGTRA7 is in task.json. Current task.py SHA65bc999ce4a24b18. README includes custom-pallet construction and accurate provenance. Owner/status preserved. No PR: competitor2594 holds the idea until21November01:38:24UTC absent another receipt. The ledger stays10/50 because held tasks do not count.
+
+Hair braiding is a separate promising non-safety lead: reviewer2296 explicitly suggested hair on a mannequin, and its hold expired absent later receipt. Fresh GH search found no reclaimer; board access returned403. Primary grouped-hair research supports an aggregate-section model; per-fiber simulation is not required. See `pipeline/reviews/resume-20261120/hair-braiding/aggregate-model-challenge.json`. One native contact coupon is queued in `pipeline/isolated-trials/hair-aggregate-coupon-20261120`; no task claim, complete braid or qualification yet.
+
+Read `pipeline/acceptance-priorities-20261120.json` for the all-PR audit and current
+ranked queue. This supersedes old status snapshots below, not current claims or live
+GitHub decisions. The user explicitly wants maximum accepted tasks across all
+categories; safety and recovery are optional. Multiple Claude sessions are active;
+respect their task ownership and avoid duplicate builds.
+
+At the audit: 27 submitted, 1 accepted (#2406), 6 revised and pending, 3 awaiting
+first review, 17 final rejections. Stronger pending cases are #2951, #2609, #2520
+and #2879. None currently needs a revision push. #2883 still lacks the requested
+real insertion-force measurement; preparation is in
+`pipeline/reviews/resume-20261120/wheel-cover-force-preparation.md`.
+Monitor existing #2500/#2544 appeals; #2418's appeal was denied by a human.
+
+Independent simulation qualification is now **10/50**, separate from 1 accepted task.
+CPU #2884 completes the retained simulation evidence audit: two current-source demos1.0/431, two exact recovered controls0/600, matching Dream0/2400. See `pipeline/reviews/resume-20261120/cpu/qualification.json`. Missing carrier, mismatched hardware procedure and uncalibrated paste model remain serious acceptance concerns. This count does not mean ten tasks are accepted or that new builds are ready to submit.
+IV-clamp #2839 is also qualified for simulation evidence: four current-source demos1.0/260, nine recovered controls (partial0.4, all others0), and current Dream0/2400. `pipeline/reviews/resume-20261120/iv-clamp/qualification.json` preserves its unresolved non-rolling wheel, absent tube compression and force/slack proxy limitations. No clinical validity or acceptance is implied.
+Wheel-cover #2883 now has independently recovered current-revision full demos (1.0/942 twice), three fresh recorded controls (all zero), and verified current Dream0/2400. See `pipeline/reviews/resume-20261120/wheel-cover/qualification.json`. Its requested real insertion-force evidence and exact compatible hardware pair remain unresolved; pending revision was not changed.
+Steering #2477 passed two current-package demos (1.0 at 397 steps), four recorded
+controls (all 0), and exact replay of 2,400 retained Dream actions (0 under the
+revised scorer). Replay is not fresh model inference. Physical calibration risks
+remain. Soda-maker #2872 also passed two fresh demos and four recorded controls,
+with its existing current-source Dream run verified. See
+`pipeline/codex-validation-ledger.json` for task-specific limits.
+
+Historical quota note (superseded): three new-task slots were available (17/20) at the time of that audit. The user has since removed the rolling quota; no quota check is needed. The fresh live queue check found important blockers that stale claim text does not show:
+
+- Grinder guard has already been reclaimed by **pending #2781**, revision
+  TK-QP4EX8 received November 19 at 02:48:49 UTC. Do not submit our duplicate.
+- Keyed sheave now has an exact-operation importance rejection precedent, #2909.
+  Its local model also substitutes 0.2 N m for the specified 110–130 in-lb torque;
+  real tightening capability and importance need resolving before more tuning.
+- Floor-hole cover is held by #2593 until **2026-11-21T01:37:33Z**.
+- Nailed lumber is held by #2594 until **2026-11-21T01:38:24Z**.
+- Preschool chair is held by #2610 until **2026-11-21T01:40:24Z**.
+
+Fresh original-PR and all-board hold/reclaim checks remain mandatory after those
+deadlines. Evidence: `pipeline/reviews/resume-20261120/queue-novelty/`. Preserve
+Claude-owned work; submit validated, unheld candidates immediately.
+
+`pipeline/submit.sh` calls `check_competing_holds.py` for every task listed in
+`pipeline/competing-holds.json` (20 task entries as of this handoff). The live
+check fails closed on ambiguous or unavailable status; revisions and local
+validation remain available. Guard tests cover the hold logic and submission
+paths. Expiration does not automatically clear novelty or validate a task.
+
+The November 20 floor-cover audit is in
+`pipeline/reviews/resume-20261120/wrench-cover/qualification.json`: three
+full-score demos, traceable controls and a completed model run are verified.
+Acceptance readiness still needs exact cover load/displacement evidence and
+reproducible plywood/fastener specifications, in addition to the competing hold.
+Cleats are supported by Construction Safety Council guidance; custom site-built
+parts and the expressly stated shallow trip hazard are not automatically invalid.
+
+The contour-gauge claim is parked after two bounded native grasp probes. The
+corrected rounded end-frame pinch squeezed the frame sideways and never lifted
+it. This does not rule out every real-product grasp. Read
+`pipeline/reviews/resume-20261120/contour-gauge-coupon-r2/outcome.json` before any
+more work; source-faithful pin sections and the clamp remain unbuilt.
+
+The central lesson from the final rejections is to preserve the defining physical
+work: making removable parts captive, dropping insertion resistance, or reducing
+thread engagement can invalidate the task even when disclosed. Source the actual
+operation and hardware before tuning. Full closed-PR evidence is in
+`pipeline/reviews/closed-pr-audit-20261120/assessment.json`.
 
 ## Mandatory GPU restriction (user instruction, 17 November 2026)
 
@@ -124,6 +226,10 @@ The simulator is installed on this machine: `source ~/IsaacLab-Arena/yam.env`. R
 videos, the screenshot and a contact sheet under `~/yam-eval/<task>/media/`. Look at the contact sheet after every
 run. Demo mode stops at 900 steps unless you pass a step count (`pipeline/run_trial.sh <task> demo 1400`).
 
+New runs also retain their exact files under the run directory's `submission-media/`. The adjacent
+`trial-media.json` links those files to the native score and records source hashes at the start and finish.
+Use that saved copy when verifying a demo or model video after another run has refreshed the shared media names.
+
 Validate before calling it done: the scripted demo scores 1.0 in two fresh runs; every red-team variant (do nothing,
 one arm, the careless route, holding instead of releasing) scores what the scoring text says; the scoring text
 matches the code; `fidelity` is at most 500 characters; nothing in the folder names a person, team, institution or
@@ -148,16 +254,22 @@ Dream-1 score is normal.
     pipeline/submit.sh <task> --check    # all the checks, no side effects
     pipeline/submit.sh <task>            # uploads media, opens the PR
 
+For a validated isolated package, append `--package <directory>` to either command.
+The directory contains `manifest.json`, `tasks/<task>/` and `media/`. The command
+verifies a private copy of the manifest's source and media hashes before running
+the usual checks. Upload writes the new media ID to that copy.
+
 It refuses missing or over-long fields, pending scores, leftovers, identifying text, `pipeline/` references, missing
 media and an existing PR. It commits as `robo-alex <mz8690@princeton.edu>` from a temporary worktree of upstream
 `main`, so the shared checkout is never switched, and adds no AI attribution. The Robocurve token is in
 `~/.robocurve/credentials`. Within a few minutes the program's bot comments on the PR: either "Received as TK-…" or
 what to fix before intake (for example a field over its limit); fix and push with `pipeline/revise.sh`.
 
-Submit as soon as a task is ready. At most 20 new tasks in any 24 hours, ours and Claude's together
-(`pipeline/submitted.tsv`).
-The submission script now holds a shared lock through upload, PR creation and ledger append, and refuses a
-21st new task in the rolling 24-hour window. Revisions to existing PRs are exempt. Do not bypass it with a separate submission path.
+Submit as soon as a task is ready. The user reports that the board has removed
+the rolling submission quota. `submit.sh` still holds a shared lock through
+upload, PR creation and ledger append so concurrent sessions do not race on
+branches or the submission ledger. Do not submit ideas under another team's
+active hold.
 
 ## 6. Follow up on reviews
 
@@ -188,9 +300,9 @@ Before preflight/Dream and submission, refresh `pipeline/known_tasks.tsv`, read 
 
 ## Submission safeguards, 17 November 2026
 
-Current user target is **50 validated tasks**, with the unchanged team-wide **20 new tasks per rolling 24 hours** ceiling. Validation may continue while quota is full. Both `submit.sh` and `revise.sh` hold the shared submission lock through publishing and ledger updates. Per the board update supplied by the user at 23:18, revisions are exempt from the new-task quota. `check_submission_quota.py` refuses malformed/future ledger timestamps. Reconcile external team submissions before publishing; this local counter cannot discover submissions made outside the shared process.
+Current user target is **50 validated tasks**. The user reports the board has removed the rolling submission quota. Both `submit.sh` and `revise.sh` hold the shared submission lock through publishing and ledger updates. Reconcile external team submissions before publishing; the local ledger is a record, not a quota gate.
 
-`revise.sh` checks the latest official PR decision, refuses pending/final/closed PRs, runs `submit.sh --revision-check` without swallowing errors, and uploads corrected media before committing. Revision attempts are audited separately in `pipeline/revision_attempts.tsv` and never consume slots. The quota checker deduplicates historical revision rows by PR, using its earliest recorded submission. Five regression tests in `pipeline/test_submission_guards.py` cover quota boundaries, review eligibility and failed-preflight publication prevention.
+`revise.sh` checks the latest official PR decision, refuses pending/final/closed PRs, runs `submit.sh --revision-check` without swallowing errors, and uploads corrected media before committing. Revision attempts are audited separately in `pipeline/revision_attempts.tsv`.
 
 ## Candidate source priority, 17 November 2026
 

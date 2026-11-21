@@ -1,0 +1,10 @@
+{
+  "evidence": "pipeline/reviews/resume-20261120/jaw-coupling/independent-native-audit-0722.json",
+  "owner": "claude",
+  "actionable": [
+    "The native runner summaries do not bind a source hash or variant filename. Match the owner's run manifests and preserve the exact source before treating a score as the canonical demo or a specific control.",
+    "README still states 988 controls, 49.4 s and 988 saved frames. The newest successful records report 1027, 1027 and 1031 controls with the same seed. State runtime and frame count for the chosen artifact and bind it to exact commands and source; same seed is repeatability on the fixed layout.",
+    "Task metadata still lacks a media ID and calls Dream-1 pending. Enumerate each submitted video and its scored run.",
+    "The competitor may still revise. Do not open a new PR while this active hold applies. Refresh the PR and board after the hold boundary."
+  ]
+}

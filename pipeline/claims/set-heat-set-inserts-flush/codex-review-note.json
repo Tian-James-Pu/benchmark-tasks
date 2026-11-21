@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-11-20T04:18:36.580517+00:00",
+  "reviewer": "codex /root/review_crutch",
+  "scope": "Coordination note only: owner and status preserved; task edits/ongoing jobs untouched.",
+  "decision": "Submission held by exact competing idea; validation work may proceed under owner.",
+  "competing_pr": 2509,
+  "latest_review_utc": "2026-11-19T07:19:27Z",
+  "hold_until_utc": "2026-11-21T07:19:27Z",
+  "official_evidence": "/home/mzhang/code/benchmark-tasks/pipeline/reviews/resume-20261120/ready-queue-screen/pr-2509.json",
+  "feedback": "**Not accepted** (TK-GM9TQL).\n\nTypically, to seat a heat-set insert flat, a flat piece of metal is laid on top to seat the last little bit while it's still hot.",
+  "missing_evidence": [
+    "Complete native iron pickup/engagement, sequential heating/insertion, flat-block finish/cool and safe holder return; completed initial run0/1355, current run active at snapshot.",
+    "Bind PETG print, bore4.0mm, insert5.7x4.6mm, iron temperature and consumable reset to reproducible setup. Source-estimated softened flow/creep law is permitted if disclosed and tested for qualitative robustness.",
+    "Confirm scoring requires flat finished cold retained inserts and avoids target-state snaps; test cold push, iron-only, block-only, overheating/unsafe hand contact as relevant.",
+    "Explicitly distinguish final1212 target-depth bushing duplicate ruling using the actual hot finishing/creep correction work, not only renaming object.",
+    "Freeze final package; two full-score native demos with source hashes.",
+    "Required none/one-arm/careless/hold controls with expected scores and recorded media, plus task-specific negative controls.",
+    "Write task.json andREADME, source-calibration/reset details and all numeric score conditions; both absent in all four at snapshot.",
+    "Dream once on final package, or explicit exhausted-credit exception without fabricated model score/video.",
+    "Fresh all-board/official-comments ownership review at intended submission, then standard preflight/media/quota checks under shared submission lock. Review receipt can reopen hold; expiry alone never grants permanent clearance."
+  ],
+  "observed_full_score_completed_runs": 0,
+  "owner_status_sha256_before": {
+    "owner": "98038b25280788a45a2f06c209513024c99adee81c6416b691b4b5872db7e027",
+    "status": "e318f563214848f26d8bed2f0219c3aa82773db9d31a3d7f8fd5422852f36419"
+  },
+  "owner_status_unchanged_during_write": true
+}

@@ -1,0 +1,10 @@
+{
+  "updated_at": "2026-11-20T20:05:00Z",
+  "from": "Codex",
+  "finding": "The claim says ready after two demos/red-team, but the live task.json still has scores=\"Dream-1 run: pending; demo: 1.0\" and no media ID. Under AGENTS.md and pipeline/submit.sh, this package cannot be submitted until the required Dream-1 run and current media upload/preflight are complete. The recorded hold-lapse deadline does not remove this gate.",
+  "action": "Preserve Claude ownership; run exact final source/model qualification, update scores, upload media, and do fresh novelty/hold checks at release. No folder edits made.",
+  "dream_audit": "Exact-source Dream-1 run completed in isolated copy: 0.0/2400 on task.py SHA 1f32b949243d9d6158d07c7e717242f797d32729d3cb7c0bef3eab8747728bbf. Evidence: pipeline/reviews/resume-20261120/mini-itx/codex-dream-audit.json. Update task.json and upload current media before submission; hold still applies.",
+  "audit": "Exact-current-source package now has four 1.0 demos, Dream-1 0.0/2400, redteam none0/careless0/one-arm0/forward0.25/hold0.5, and 11/11 offline scorer checks. Two additional native demos and Dream were run by Codex in isolated copies on physical GPU2; original task untouched. Evidence: pipeline/reviews/resume-20261120/mini-itx/codex-task-qualification-audit.json.",
+  "novelty": "PR #2747 requests essentially the same server-board seating operation and still holds the idea until 2026-11-21T02:00:34Z absent a new receipt; #2029 is a similar open PR whose review hold appears expired. Do a fresh all-board check after #2747 expiry before any submission.",
+  "submission_gate": "Task is simulation/source/scorer qualified but not submission-ready: task.json still says Dream pending and media is absent. Update manifest and upload media after owner adoption and hold release."
+}

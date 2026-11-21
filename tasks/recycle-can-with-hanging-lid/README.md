@@ -102,16 +102,82 @@ Swing-A-Way 407, an open-top kitchen recycling caddy of about 18 x 24 x 22 cm on
 a bottle of dish soap and a plastic fork.
 
 - **Preparing a can:** empty and rinse it, then cut the lid with the opener and stop about 1 cm before the cut
-  closes, leaving a tab on the side away from the robot. Bend the lid up to 100 degrees from flat (10 degrees past
+  closes, leaving a tab on the side away from the robot, and deburr the cut edges with a file ("Real-trial rig
+  protection" below). Bend the lid up to 100 degrees from flat (10 degrees past
   vertical, checked with a protractor held against the can). Wear cut-resistant gloves when preparing and resetting.
 - **Measuring the tab's yield moment** (the simulation's 0.08 N m is an estimate): hook a 0 to 5 N spring scale on
   the lid's free edge, 6.5 cm from the tab, pull at right angles to the lid, and read the force at which the lid
   starts to turn and keeps turning. Moment = force x 0.065 m. Repeat on five cans and report the mean.
-- **Reset:** a folded lid can be bent back out with pliers once or twice; replace the can when the tab cracks or
-  tears. A torn-off lid that ends up loose in the caddy scores 0 (it is not Folded), as does any can that enters the
-  caddy before its lid is folded.
-- **Safety:** the robot handles only a light empty can and a spoon; the sharp edges are a hazard to the people who
-  prepare and reset the trial, which is why gloves are needed.
+- **Reset:** see "Repeatable reset" below. A torn-off lid that ends up loose in the caddy scores 0 (it is not
+  Folded), as does any can that enters the caddy before its lid is folded.
+- **Safety:** the robot handles only a light empty can and a spoon; its fingers are sleeved and the can's cut edges
+  are deburred (below). People preparing and resetting cans wear cut-resistant gloves.
+
+### Real-trial rig protection
+
+Two measures together, so that neither the robot's gripper pads nor anything else on the shared robot meets a
+fresh, burred cut edge, while the task the robot sees and does stays the same.
+
+**1. Cut-resistant sleeves on every finger.** All four gripper fingers (both arms) wear a finger stall cut from an
+ANSI/ISEA 105 cut level A4 Kevlar knit glove: PIP G-Tek KEV 09-K1300 (100% Kevlar seamless knit shell, latex crinkle
+coating on the palm and fingertips, sizes S to 2XL; https://www.fullsource.com/pip-09-k1300/). Use size 2XL.
+
+- *Fitting:* cut a finger off the glove 6 cm from its tip, turn the cut end in by 5 mm, slide it over the robot
+  finger so that it covers the pad, the back, both sides and the tip end of the last 5 cm of the finger (the demo's
+  only contact with the lid is within 3.5 cm of the tip), coated side on the pad, and hold its open end with two
+  turns of electrical tape on the finger's back. Close the gripper fully once: the two sleeved pads must meet
+  without bunching. The latex coating keeps the pads' grip on the can's paper label.
+- *Check before each trial:* look over each sleeve under a bright light, mainly the backs and the tip ends, and pull
+  it straight. Replace a sleeve at once if any yarn is cut, pulled out or shiny-flattened, or if the tape has slipped.
+- *Replace* all four sleeves every 20 trials in any case (one glove pair supplies eight sleeves, enough for 40
+  trials). The pads themselves never touch metal while sleeved.
+
+**2. Deburred cut edges on every can.** After cutting (and before bending the lid up), run a smooth-cut 6 inch
+mill file lightly along the lid's cut edge, both faces, and round the cut ring just inside the can's seam, three or
+four strokes each, then wipe a cotton ball along both edges: if it snags any fibre, file that spot again. This only
+takes off the burrs and slivers the cutting wheel leaves; it does not round or polish the edge, so the lid keeps its
+ragged, bright cut look on camera. We chose filing over cut-resistant edge tape because tape adds thickness, a
+different colour and a peelable edge right where the robot pushes, and it can stiffen or snag the lid; the file
+changes none of the lid's size (65 mm), mass (well under 0.1 g removed) or shape. **The lid still bends and folds
+exactly as before** because all the bending happens at the uncut 1 cm tab on the far side, which is never filed:
+the tab's yield moment, the 100 degree start angle and the way the lid holds any angle it is pushed to are
+unchanged. A filed edge is still a sharp-cornered steel edge, so the hazard the task is about is real for the
+camera, the scorer and the robot, but it no longer slices a sleeve under the 1 to 2 N the fold needs.
+
+**A tool route needs no finger contact at all.** The tablespoon on the counter is a valid tool: the robot may
+push the lid over and down with the spoon's bowl or handle while the other hand steadies the can, and scoring does
+not penalise it (or the order of steps). Grasping the can body with the other hand keeps those pads on the label,
+5 cm below the seam.
+
+**Where the demo touches.** We measured, at every step of the scripted demo in simulation, the gap between a
+dense grid of points over each finger's surface and the lid's cut edge and the can's cut ring:
+
+| Contact | Closest approach |
+|---|---|
+| Left fingers' pads | none: the fingers are closed throughout, pads pressed together |
+| Left fingers, back of one finger, lid standing (lid 100 to 74 degrees, 2.7 s) | rests across the lid's free edge, 2 to 3.5 cm from the fingertip (gap 0 to 1 mm) |
+| Left fingers, rest of the fold (lid below 74 degrees, into the can) | only the finger's back corner on the lid's flat face: 2.2 mm from the cut edge at 70 degrees, 8 mm or more from 45 degrees on |
+| Left fingers to the can's cut ring | 7.7 mm or more |
+| Right fingers' pads to the can's cut ring | 6.3 mm or more |
+| Right fingers' pads to the folded lid's edge | 2 mm or more, with the can's steel wall between them |
+
+So the only edge contact is the sleeved back of a closed finger bearing on a deburred edge for under 3 s at the
+fold's 1 to 2 N; the pads meet only each other and the can's label.
+
+### Repeatable reset
+
+- *Can batch:* prepare cans in batches of ten (empty, rinse, cut, file, check), wearing cut-resistant gloves. Each
+  can serves at most three trials (the lid bent back out twice), so ten cans cover 30 trials.
+- *Recreating the hanging lid:* mark the seam with a marker where the opener's cutting wheel first bites. Turn the
+  opener until the wheel is 1 cm before the mark, then release it; check with a ruler that the uncut length is 0.8
+  to 1.2 cm. Turn the can so the tab is on the side away from the robot (+y), file the edges (above), then bend the
+  lid up by hand to 100 degrees from flat, checked with a protractor held against the can top.
+- *Reusing a can after a trial:* take it out of the caddy, pull the lid back up with flat-nosed pliers by its edge
+  (never by the tab) to 100 degrees, checked with the protractor. Then inspect: replace the can if the tab shows a
+  crack or a tear, if the lid has a kink or crease away from the tab, if the can body is dented, or after its third
+  trial. Wipe the edges with a cotton ball again; refile a snag.
+- *Before each trial:* sleeves checked (above), can at (28, 4) with the label panel to the robot and lid at 100
+  degrees, spoon and distractors at their positions, caddy empty.
 
 ## Validation
 
@@ -135,6 +201,26 @@ there for the whole run; neither gripper reached the can, its lid or the caddy, 
 
 Every contact sheet was checked: the lid swings over and into the can under the left fingers, the right hand holds
 the can throughout, and nothing touches the distractors.
+
+## Response to review
+
+> "Please specify how the real trial protects the robot's gripper pads from the can's cut lid and rim, such as a
+> cut-resistant pad cover or a reliably pad-safe tool procedure. Preserve the lid-folding action and explain how the
+> protected setup can be run repeatedly."
+
+- **Pad protection:** every finger of both grippers wears an ANSI/ISEA 105 A4 Kevlar finger sleeve (a stall from a
+  named, purchasable glove), fitted and checked before every trial and replaced after 20 trials or at the first cut
+  yarn; and every can's cut lid edge and cut ring are deburred with a fine file. README: "Real-trial rig
+  protection"; `task.json`: setup and reset_notes.
+- **Pad-safe tool procedure:** the spoon in the scene is a valid, unpenalised route that needs no finger on the lid.
+  The demo itself folds with closed fingers, so its pads never touch the lid or the rim; we measured the demo's
+  closest approach of every finger surface to the cut edge and cut ring (table in "Where the demo touches").
+- **The lid-folding action is unchanged:** the fold bends only the uncut tab, which is not filed, so the lid's
+  start angle, stiffness and permanent set are as before. No change to the scene, the instruction, the scoring, the
+  scripted demo or the videos.
+- **Repeated running:** batches of ten prepared cans, at most three trials per can, a measured way to stop the
+  opener 1 cm short, a protractor to restore the 100 degree start, and a written inspection for the tab, the lid,
+  the edges and the sleeves. README: "Repeatable reset"; `task.json`: reset_notes.
 
 ## Fidelity
 

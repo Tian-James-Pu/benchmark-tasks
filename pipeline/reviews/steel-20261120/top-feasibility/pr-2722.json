@@ -1,0 +1,25 @@
+{
+  "body": "The robot spins a family-game spinner the way people do at the start of every turn: the spinner from a current Hasbro Twister game (item 98831; a round white card 250 mm across and about 90 g, with a black plastic arrow 185 mm long on a free rivet at its centre, sizes estimated from product photos) lies loose on the table. One hand must hold the light card down, outside the arrow's sweep, while the other gives the arrow one quick strike near its end and gets out of the way before it comes round again. The rivet's friction is fixed from a person's flick in the maker's retail video (the arrow slows at about 4.5 rad/s\u00b2, an estimate from video): a slow push only walks the arrow round, so the strike has to be fast. Full credit needs at least two full turns from the single strike, coasting to rest untouched, with the card's centre within 2 cm of its start. Two full turns from one strike with the card moved 2 to 5 cm (or touched again before it stopped) scores 0.75, one to two turns 0.5, under one turn or several pushes 0.25; pushing the arrow round in contact for more than a quarter turn, moving the card over 5 cm, or doing nothing scores 0.\n\n- task.json: instruction, setup (product, sizes, positions), scoring with its order of precedence, run limit, reset and fidelity notes\n- README.md: how each scoring condition is read, run and score commands, every body, joint and mass, the scripted demonstration, sources and estimates\n- spin_twister_spinner_with_one_flick.py: scene, scorer and scripted demonstration\n- spinner_kit.py: the spinner (card, rivet and arrow with its friction)\n- yam_parts.py, yam_joints.py: kit modules, copied unchanged\n- test_spin_twister_spinner_with_one_flick.py: CPU checks of the scorer on the start, the goal and partial and shortcut layouts\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)",
+  "comments": [
+    {
+      "id": "IC_kwDOVgdJU88AAAABoKK_xw",
+      "author": {
+        "login": "achyutha11"
+      },
+      "authorAssociation": "COLLABORATOR",
+      "body": "Received as **TK-U742PA**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+      "createdAt": "2026-11-18T20:00:40Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2722#issuecomment-6989987783",
+      "viewerDidAuthor": false
+    }
+  ],
+  "headRefOid": "0b10add5dbb146e4d2c1b72a3e75ceb24ef14a82",
+  "mergedAt": null,
+  "number": 2722,
+  "state": "OPEN",
+  "title": "Spin a Twister spinner with one flick: hold the light card still and send the arrow round at least two full turns"
+}

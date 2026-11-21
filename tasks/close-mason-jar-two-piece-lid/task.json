@@ -1,0 +1,20 @@
+{
+  "title": "Screw a canning band onto a filled pint Mason jar over its loose flat lid, started square, turned fingertip-tight",
+  "category": "Societal relatability",
+  "keywords": [
+    "home canning",
+    "screw thread",
+    "two-piece lid",
+    "regrasp",
+    "kitchen"
+  ],
+  "instruction": "Screw the band on over the lid, fingertip-tight, ready for the canner.",
+  "context": "Closing a two-piece canning lid is the step home-canning guides (NDSU Extension, Clemson HGIC) spell out: lid centred, band fingertip-tight (just to resistance, or a quarter turn past it), so air can vent and the jar seals; a band cranked down hard traps air and buckles the lid. The band is a 74 mm ring that must start square on a continuous glass thread over a loose 6 g disc and be turned about one and a quarter turns, regripping every 150 degrees or so; started tilted, it cross-threads and cocks or knocks off the lid.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left; origins on the counter (74.75 cm up). Task objects: Ball regular-mouth pint jar, glass, 7.94 dia x 12.7 to the rim, thread 6.99 dia (6 per inch, 1.25 turns), filled with jam to 1.3 cm headspace, 0.75, at (30, -4). Flat lid: tinplate disc 6.72 dia x 0.15 with sealing compound, 0.006, resting on the rim within 0.04 of centred. Screw band: tinplate ring 7.36 outside dia x 1.35 tall, flange opening 5.8, 0.011, standing flange up on the counter at (22, -21). Distractors, ignored by scoring (SimReady): two cucumbers 5.2x17x4.8, 0.15 each, at (52, 7) yaw 1.45 rad and (53, -3) yaw 1.75 rad; ceramic mixing bowl 16.3 dia x 5.5, 0.35, at (50, 25); cotton dish cloth 26x23.3x2.1, 0.05, at (47, -25) yaw 0.3 rad.",
+  "scoring": "0 if the jar ever tips more than 25 degrees or the disc ever leaves the rim (centre over 12 mm off the jar's axis, or underside over 5 mm below the rim). Turn = how far the band has been turned clockwise (seen from above) past the angle at which it first touched the lid: the angle from the first-contact mark on the jar's shoulder to the band's witness mark, negative if short of it (which turn is told by the band's height, 4.23 mm a turn). 1.0 (fingertip-tight): turn 0 to 120 degrees, band within 2 degrees of the jar's axis and centred within 2 mm, disc flat within 2 degrees and centred within 2.5 mm, jar within 5 degrees of upright and within 3 mm of the counter, nothing moving, every fingertip at least 3 cm from jar and band, all held 1 s. 0.5: band within 2 degrees and 2 mm of centred, disc within 5 degrees of flat, turn at least -90 degrees: over-tight (over 120 degrees), up to a quarter turn short, or fingertip-tight without the rest of 1.0. 0.25: band within 4 degrees and 3 mm of centred, top at most 2.5 mm above its first-contact height (threaded on; an unthreaded band rests at least 3.7 mm up). 0 otherwise.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Unscrew and stand the band back on its tape mark; recentre the same disc on the rim. Replace the disc if it fell off or the band was turned more than 120 degrees past contact (compound crushed), and redo the first-contact mark for the new disc. No heat: the jar is filled cold for trials.",
+  "fidelity": "Jar, disc and band are custom rigid meshes at the Ball pint's published size (SimReady has no canning jar). Glass and band threads are real helical contact geometry, 6 per inch; turn count and section are estimates. The closure's give (compound, lid and flange flex) is one sprung rim surface, 6 N/mm, an estimate, not measured; tightness is scored by angle past first contact, no force rule. Distractors are SimReady props.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-9KSRBA"
+}

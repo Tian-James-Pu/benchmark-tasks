@@ -1,0 +1,20 @@
+{
+  "title": "Bend a 45 degree offset in 1/4 in soft copper tube on a RIDGID 604 lever bender, both bends centred on their marks",
+  "category": "Impact on jobs",
+  "keywords": [
+    "tube bending",
+    "offset",
+    "lever bender",
+    "reverse bend",
+    "bimanual",
+    "plastic deformation"
+  ],
+  "instruction": "Bend a 45 degree offset in the copper tube, with its two bends centred on the black marks.",
+  "context": "Bending tube is a listed task of HVACR mechanics (O*NET 49-9021.01: \"measure, cut, thread, or bend pipe or tubing\"; 425,200 US jobs in 2024) and plumbers and pipefitters (47-2152.00, using pipe benders; 504,500). An offset steps a line round an obstacle. The two bends must be opposite: between them the tube is slid to the second mark and turned half a turn, or it becomes a U. Bends cannot be undone.",
+  "setup": "Positions in cm: x forward from the arm bases, y left, heights above the bench. A RIDGID 604 lever tube bender (1/4 in tube, 5/8 in = 1.59 cm bend radius, 0.76 kg; steel, red handles, black cushion grips 2.8 cm across) is held level by its vise clamp block in a 3 in bench vise (jaws 9.9 cm high), form's axis at (31, 0). The form handle runs along -y to 36 cm out (grip centred at 29.5); the carriage handle runs along +y, swung 15 degrees back from the form's 0 line, rollers off the tube. The carriage has a black 0 line and a yellow 45 line 6.2 mm past it; the tube latch is shut over the tube. Tube: 1/4 in OD x 0.030 in wall soft (annealed) copper, ASTM B280, 36 cm, straight in the groove on the form's far side, centre 13.4 cm above the bench, end E2 on the form handle's side; black marks 15.0 cm (B) and 22.07 cm (A) from E2. Mark A starts 2.5 cm short of the 45 line. Distractors, ignored by scoring: steel speed square (29 x 22 cm, 0.15 kg) at (62, -2), combination pliers (19 cm, 0.32 kg) at (56, 30), slotted screwdriver (22 cm, 0.12 kg) at (58, -28).",
+  "scoring": "Read on the tube where it lies in the bender, once the tube and lever have been still for 1 s with both grippers 3 cm or more from the tube and both handles; before that, 0. A bend's angle is read with a protractor; its middle is halfway along its curve (ruler). 1.0: exactly two bends, in opposite directions, each 42 to 48 degrees, the straight ends parallel within 4 degrees, each bend's middle within 5 mm of its mark (B nearer E2), and the offset between the straight ends' centre lines 50.5 +/- 4 mm. 0.75: two opposite bends, each 38 to 52 degrees, ends parallel within 8 degrees, each middle within 12 mm of its mark. 0.5: two opposite bends, each 38 to 52 degrees, ends parallel within 8 degrees. 0.25: exactly one bend, 42 to 48 degrees, its middle within 5 mm of a mark. 0 otherwise, including two bends the same way, three or more bends, or ever: a bend past 55 degrees, a bend made with the tube turned more than 15 degrees out of its marked plane, or a bend reaching more than 4 cm beyond the marks.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "A bent tube is consumed: each trial takes a new 36 cm length cut from the coil, straightened along a straightedge and marked all round at 15.0 and 22.07 cm from one end. Swing the carriage handle 15 degrees back, lay the tube in the groove under the latch with mark A 2.5 cm short of the carriage's 45 line, and check against the screenshot.",
+  "fidelity": "Bending is a model: a 4 mm-link tube on hinges in its marks' plane wraps onto the form as the lever turns while the rollers are down, which locks its slide and turn; the lever meets the tube's plastic moment (2.5 N m, estimated) through a stop that follows the set angle, 1 degree springback. Handle lengths estimated. Tube links 3 g each; no ovality. The vise is a 5.5 in model drawn at 0.55 scale. Shapes are primitives.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

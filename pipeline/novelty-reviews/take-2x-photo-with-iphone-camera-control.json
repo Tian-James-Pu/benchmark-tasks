@@ -1,0 +1,55 @@
+{
+ "checked_at": "2026-11-21T13:38:38Z",
+ "decision": "clear",
+ "queries": [
+  "phone",
+  "camera",
+  "photo",
+  "iphone",
+  "zoom",
+  "shutter",
+  "smartphone",
+  "selfie",
+  "button press",
+  "volume",
+  "pressure",
+  "slide button"
+ ],
+ "nearest_prs": [
+  {
+   "number": 2524,
+   "relationship": "Accepted phone-screenshot task: two side buttons pressed together. No graded force, no slide along a button, no zoom."
+  },
+  {
+   "number": 2534,
+   "relationship": "Accepted pinch-zoom on a loose tablet touchscreen: two-finger touchscreen gesture. Here zoom is a slide along a pressure-sensing side button with a force ceiling, then a click on the same button."
+  },
+  {
+   "number": 3362,
+   "relationship": "Pending iPhone 12 panorama (TK-ENQ3JJ): lift the phone from its stand, tap the on-screen shutter and rotate the phone about its camera. Here the phone stays in its stand; the skill is light press / sub-click slide / click on one 17 mm button. Same everyday domain (phone photography), different physical skill."
+  },
+  {
+   "number": 3058,
+   "relationship": "Pending single-use film camera (TK-GBVYNR): thumbwheel frame advance with repeated strokes, then a shutter press on a film camera. Different device and mechanism; no force-graded slide or zoom."
+  },
+  {
+   "number": 3282,
+   "relationship": "Revising instant photo (TK-N289RM): pull a print out of an instant camera's rollers and lay it face down. Different skill (print extraction)."
+  },
+  {
+   "number": 2182,
+   "relationship": "Accepted SIM-tray eject pin: tool insertion into a phone pinhole; unrelated skill."
+  },
+  {
+   "number": 1815,
+   "relationship": "Accepted car phone-holder mounting: placing a phone into a holder; no button operation."
+  }
+ ],
+ "physical_skill": "On a phone standing in a stand, lightly press the 17 mm Camera Control (about 0.5 N, below the 2 N click) to open the zoom dial, slide the fingertip about 6 mm along the control toward the cameras without reaching the click force, then click to take the photo at 2x, and withdraw the hand without disturbing the phone or covering the lenses.",
+ "valid_shortcuts": "Either gripper or finger may be used, and the other hand may steady the phone. Retakes are allowed; only the latest photo counts. Pressing straight down without a slide yields a 1x photo (0.25); sliding too hard clicks early (1x, 0.25). Clicking at the wrong zoom inside 1.5x-3x gives 0.5. Touching the screen at any time scores 0 (revision: the screen has no touch effect and a touch voids photo credit; red-teamed). Knocking a screen-face corner more than 2 cm from its start or covering a lens zeroes the score. There is no way to change the zoom other than sliding on the cap.",
+ "distinct_from_nearest": "No board task operates a force-sensing camera button with a light-press / slide / click sequence. Nearest phone tasks press two buttons (2524), pinch a touchscreen (2534), or rotate a lifted phone for a panorama (3362); camera tasks advance film (3058) or extract instant prints (3282). The defining physical work here is force regulation within a narrow band on a small button while sliding along it, which none of these test.",
+ "task_py_sha256": "5af43d5f497c76cdb7a494c58feba77f2bdc5d4a4317923d5a9a95866cc0a6f1",
+ "task_metadata_sha256": "e9d677cb5e3b8f283245a297abe78ecbd5a042da9e579f0862abe48d4e4d7a37",
+ "board_refreshed_at": "2026-11-21T13:26:07Z",
+ "revision_note": "Revision after the 2026-11-21 Not accepted review: screen-touch voiding, end-state seating check replaces velocity-at-click, foam apple subject. No new board task found for Camera Control, iPhone zoom or shutter."
+}

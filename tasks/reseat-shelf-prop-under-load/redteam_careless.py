@@ -1,0 +1,213 @@
+"""On the station table: a pine shelf plank (36 x 6 x 2 cm) runs left to right, 8 cm above the table. Its left
+end lies on a fixed steel stand; its right end is held up by a loose timber prop (14 x 4 x 8 cm) standing under
+it. A 170 g tin of tuna stands on the plank. The prop has been knocked towards the robot: only 1.5 cm of it is
+still under the plank's 6 cm width, the other 12.5 cm sticks out in front. The prop is loaded, so it does not
+slide under the plank when pushed: the plank goes with it.
+"""
+
+import pathlib
+import sys
+
+import numpy as np
+
+from yam_arena.constants import FINGER_CLOSED, FINGER_OPEN
+from yam_arena.demo import Waypoint
+from yam_arena.task_file import TABLE_TOP, Box
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import mechkit as m  # noqa: E402  importing it hooks yam_arena (step/reset hooks, fingertips)
+from simready import SimReady  # noqa: E402
+
+SCENE = "station"
+TOP = TABLE_TOP[SCENE]
+
+X = 0.30  # the plank's centre line
+H = 0.08  # height of the stand and of the prop
+PLANK_SIZE = (0.06, 0.36, 0.02)
+PLANK_Y = 0.06
+STAND_SIZE = (0.10, 0.05, H)
+STAND_Y = 0.215
+PROP_SIZE = (0.14, 0.04, H)
+PROP_Y = -0.095
+START_OVERLAP = 0.015  # of the prop under the plank's width at the start
+PROP_X = X - PLANK_SIZE[0] / 2 + START_OVERLAP - PROP_SIZE[0] / 2
+TIN_D, TIN_H, TIN_Y = 0.086, 0.034, 0.14
+SEAT_Z = TOP + H + PLANK_SIZE[2] / 2  # the plank's centre height when it lies on the stand and the prop
+TIN_STAND = PLANK_SIZE[2] / 2  # the tin's base above the plank's centre when it stands on the plank
+
+STAND = Box("stand", pos=(X, STAND_Y, TOP + H / 2), size=STAND_SIZE, color=(0.45, 0.47, 0.50))
+PROP = Box("prop", pos=(PROP_X, PROP_Y, TOP + H / 2), size=PROP_SIZE, mass=0.20, color=(0.55, 0.40, 0.25))
+PLANK = Box("plank", pos=(X, PLANK_Y, SEAT_Z + 0.001), size=PLANK_SIZE, mass=0.25, color=(0.85, 0.70, 0.45))
+# A tin of tuna, a SimReady prop, wider than the plank: it overhangs 1.3 cm front and back. pos is the centre of
+# its base, 2 mm clear of the plank.
+TIN = SimReady(
+    "tin", pos=(X, TIN_Y, SEAT_Z + TIN_STAND + 0.002), size=(TIN_D, TIN_D, TIN_H),
+    mass=0.17, convex=True, package="food_can_tunaFish_a01", usd="sm_food_can_tunaFish_a01_01.usda",
+)
+# Distractors behind the shelf, which scoring ignores. pos is each one's origin, on the table top.
+MUG = SimReady(
+    "mug", pos=(0.48, 0.24, TOP), size=(0.114, 0.09, 0.08), mass=0.30, yaw=np.pi,
+    package="dishware_mug_a01", usd="sm_dishware_mug_a01_01.usda",
+)
+TAPE = SimReady(
+    "tape_roll", pos=(0.49, -0.22, TOP), size=(0.10, 0.10, 0.05), mass=0.06,
+    package="tape_clear_a01", usd="sm_tape_clear_a01_01.usd",
+)
+SCREWDRIVER = SimReady(
+    "screwdriver", pos=(0.47, 0.0, TOP), size=(0.188, 0.034, 0.032), mass=0.10, yaw=np.pi / 2, convex=True,
+    package="handTool_screwdriver_phillips_ph2_a01", usd="sm_handTool_screwdriver_phillips_ph2_a01_01.usd",
+)
+OBJECTS = [STAND, PROP, PLANK, TIN, MUG, TAPE, SCREWDRIVER]
+
+HOLD_S = 3.0  # the 1.0 state must hold this long with every fingertip clear
+CONTROL_HZ = 20
+HOLD_STEPS = int(HOLD_S * CONTROL_HZ)
+SUCCESS_HOLD_S = 0.0  # the tracker below counts its own hold
+FULL_OVERLAP, PART_OVERLAP = 0.055, 0.03  # of the prop under the plank's 6 cm width
+FULL_SHIFT, PART_SHIFT = 0.01, 0.03  # how far the plank's centre may end up from where it started
+DROP = 0.03  # the plank's lowest point this far below its supported height counts as dropped
+SEATED = 0.003  # the plank's and the prop's centres within 3 mm of their supported heights
+CLEAR = 0.03  # every fingertip point at least 3 cm outside the plank and the prop
+
+
+def _rotate(quat_xyzw, v):
+    x, y, z, w = quat_xyzw
+    u = np.array([x, y, z])
+    return v + 2 * np.cross(u, np.cross(u, v) + w * np.asarray(v, dtype=float))
+
+
+def _tilt_deg(obj):
+    up = _rotate(obj.quat_xyzw, np.array([0.0, 0.0, 1.0]))
+    return float(np.degrees(np.arccos(np.clip(up[2], -1.0, 1.0))))
+
+
+def _overlap(objects):
+    """How much of the prop lies under the plank (m), measured across the plank's width and along its length."""
+    prop, plank = objects["prop"], objects["plank"]
+    rel = prop.pos - plank.pos
+    out = []
+    for axis, plank_len, prop_len in ((0, PLANK_SIZE[0], PROP_SIZE[0]), (1, PLANK_SIZE[1], PROP_SIZE[1])):
+        unit = np.zeros(3)
+        unit[axis] = 1.0
+        c = float(np.dot(rel, _rotate(plank.quat_xyzw, unit)))
+        out.append(max(0.0, min(plank_len / 2, c + prop_len / 2) - max(-plank_len / 2, c - prop_len / 2)))
+    return out
+
+
+def _plank_shift(objects):
+    return float(np.linalg.norm(objects["plank"].pos[:2] - np.array([X, PLANK_Y])))
+
+
+def _tin_on_plank(objects):
+    """The tin's centre is over the plank and its base no more than 2 cm below where it is when it stands on it."""
+    tin, plank = objects["tin"], objects["plank"]
+    inside = np.all(tin.pos[:2] > plank.low[:2]) and np.all(tin.pos[:2] < plank.high[:2])
+    return bool(inside and tin.pos[2] > plank.pos[2] + TIN_STAND - 0.02)
+
+
+def _hand_gap(obj, size, tips):
+    """The smallest distance from any fingertip point to a box-shaped object (m)."""
+    axes = np.array([_rotate(obj.quat_xyzw, e) for e in np.eye(3)])  # rows: the box's x, y, z in the world
+    local = (np.asarray(tips, dtype=float) - obj.pos) @ axes.T
+    outside = np.maximum(np.abs(local) - np.array(size) / 2, 0.0)
+    return float(np.min(np.linalg.norm(outside, axis=1)))
+
+
+def _assess(objects, tips):
+    """This step's state: (harm, standing, under, shift). Harm: the plank's lowest point is more than 3 cm below
+    the tops of the supports, or the tin is tipped past 30 degrees or off the plank. Standing: plank level and
+    still within 3 mm of its supported height, prop upright and still on the table within 3 mm of its standing
+    height and under the plank's length, tin upright and still, and every fingertip at least 3 cm from the plank
+    and the prop."""
+    prop, plank, tin = objects["prop"], objects["plank"], objects["tin"]
+    harm = plank.low[2] < TOP + H - DROP or _tilt_deg(tin) > 30 or not _tin_on_plank(objects)
+    under, along = _overlap(objects)
+    clear = min(_hand_gap(plank, PLANK_SIZE, tips), _hand_gap(prop, PROP_SIZE, tips)) >= CLEAR
+    standing = bool(
+        _tilt_deg(plank) < 2
+        and abs(plank.pos[2] - SEAT_Z) < SEATED
+        and plank.resting()
+        and _tilt_deg(prop) < 3
+        and abs(prop.pos[2] - (TOP + H / 2)) < SEATED
+        and prop.resting()
+        and along >= 0.035
+        and _tilt_deg(tin) < 5
+        and tin.resting()
+        and clear
+    )
+    return bool(harm), standing, under, _plank_shift(objects)
+
+
+class Trial:
+    """The trial's record. A drop or a spill is latched for the rest of the trial; only a reset clears it."""
+
+    def __init__(self):
+        self.reset()
+
+    def reset(self, env=None):  # the ONLY place the recorded harm is cleared
+        self.harm, self.hold, self.full, self.score = False, 0, False, 0.0
+
+    def step(self, env):
+        from yam_arena.scene import object_states  # simulator-only import
+
+        objects = object_states(env, ("prop", "plank", "tin"))
+        harm, standing, under, shift = _assess(objects, m.fingertips(env))
+        self.harm = self.harm or harm
+        full = standing and under >= FULL_OVERLAP and shift <= FULL_SHIFT
+        self.hold = self.hold + 1 if full and not self.harm else 0
+        self.full = bool(self.full or (self.hold >= HOLD_STEPS and not self.harm))
+        if self.harm:
+            self.score = 0.0
+        elif self.full:
+            self.score = 1.0
+        elif standing and under >= PART_OVERLAP and shift <= PART_SHIFT:
+            self.score = 0.5
+        else:
+            self.score = 0.0
+
+
+TRIAL = Trial()
+m.on_step(TRIAL.step)
+m.on_reset(TRIAL.reset)
+
+
+def score(objects):
+    """0 if the plank ever dropped 3 cm or the tin ever tipped past 30 degrees or left the plank. Otherwise 1.0
+    once the shelf has stood for 3 s with at least 5.5 cm of the plank's 6 cm width over the prop, the plank within
+    1 cm of where it started and every fingertip at least 3 cm from the plank and the prop; 0.5 if at the end it
+    stands with at least 3 cm over the prop and the plank within 3 cm; else 0."""
+    return float(TRIAL.score)
+
+
+def success(objects):
+    return bool(TRIAL.full)
+
+
+HOLD_Y = 0.03  # where the left gripper takes the plank, between the tin and the prop
+HOLD_YAW = -np.pi / 2  # fingers close along x, across the plank's width
+HOLD_LIFT = 0.02
+# Measured in the simulator: as the fingers close they pull the gripped part about 1.5 cm towards one finger,
+# so each grip is aimed that much to the other side to leave the plank and the prop where they are.
+HOLD_DX, PROP_DY = 0.016, 0.012
+PROP_GRIP_X = PROP_X - PROP_SIZE[0] / 2 + 0.015  # near the prop's front end, clear of the plank
+RETREAT_X = 0.20  # the left gripper backs off towards the robot, well in front of the plank
+PROP_TRAVEL = 0.055  # leaves the prop under the whole width of the plank and the gripper clear of it
+
+
+def demo():
+    travel = TOP + 0.20
+    gz = TOP + 0.055
+    g0 = (PROP_GRIP_X, PROP_Y + PROP_DY, gz)
+    out = (PROP_GRIP_X - 0.03, PROP_Y + PROP_DY, gz + 0.01)
+    g1 = (PROP_GRIP_X + PROP_TRAVEL, PROP_Y + PROP_DY, gz)
+    right = [
+        Waypoint(2.0, (PROP_GRIP_X, PROP_Y + PROP_DY, travel), FINGER_OPEN, "above the prop"),
+        Waypoint(1.5, g0, FINGER_OPEN, "descend"),
+        Waypoint(1.0, g0, FINGER_CLOSED, "grip the prop"),
+        Waypoint(1.0, out, FINGER_CLOSED, "pull it clear"),
+        Waypoint(2.0, (g1[0], g1[1], gz + 0.01), FINGER_CLOSED, "put it back under"),
+        Waypoint(0.5, g1, FINGER_CLOSED, "set down"),
+        Waypoint(1.0, g1, FINGER_OPEN, "let go"),
+        Waypoint(1.5, (g1[0], g1[1], travel), FINGER_OPEN, "retreat"),
+    ]
+    return {"left": [Waypoint(11.0, (0.25, 0.25, TOP + 0.2), FINGER_OPEN, "idle")], "right": right}

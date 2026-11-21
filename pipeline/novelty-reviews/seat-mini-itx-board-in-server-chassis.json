@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-11-20T20:44:38.991529+00:00",
+  "decision": "clear",
+  "queries": [
+    "motherboard installation",
+    "Mini-ITX board",
+    "server chassis",
+    "standoffs",
+    "rear I/O shield",
+    "data-center server board",
+    "computer assembly",
+    "CPU cooler installation"
+  ],
+  "nearest_prs": [
+    {
+      "number": 2029,
+      "relationship": "Exact operation on a Mini-ITX board and four standoffs; last revisable rejection 2026-11-16T21:17:32Z, with no later receipt/commit observed at this check. Prior issues included generic test bench, nonstandard mounting pattern and sub-mm face-offset scoring; current task adopts a named server board and chassis, standard hole pattern, practical all-four engagement scoring."
+    },
+    {
+      "number": 2747,
+      "relationship": "Exact server-board mounting idea; last revisable rejection 2026-11-19T02:00:34Z. Its 48-hour hold through 2026-11-21T02:00:34Z is separately vetoed by the live ownership guard. Current implementation uses a full 1U chassis, rear-I/O opening and real standoff pattern, adds engagement tests, an exact-source Dream run and full demo."
+    },
+    {
+      "number": 1349,
+      "relationship": "Final rejection of a Mini-ITX standoff installation task for half-scale board, loose unthreaded cylinders and no real support. The present task uses full-size board geometry and a named server chassis; it requires insertion through rear-I/O cutouts and physical support on four standoffs. This remains the closest final rejection and a material novelty/importance risk."
+    },
+    {
+      "number": 2393,
+      "relationship": "Accepted CPU cooler installation; top-down placement on a socket with a thermal-paste rule, not horizontal board translation through a rear-I/O shield to four case standoffs."
+    },
+    {
+      "number": 2836,
+      "relationship": "Pending server-fan assembly fit on guide pins and cam levers; different component, locating mechanism and assembly sequence."
+    },
+    {
+      "number": 2055,
+      "relationship": "Revising rack-server air-shroud installation; tabs tuck under a fan cage, unlike a full motherboard fitted to case standoffs."
+    },
+    {
+      "number": 2367,
+      "relationship": "Revising 1U security-bezel insertion and latch; different component and latch task."
+    }
+  ],
+  "physical_skill": "Bimanually control a 0.50 kg Mini-ITX server board while lifting from ESD foam, clearing a 1U chassis wall, passing the rear I/O shield through the chassis opening, aligning four standard mounting holes over brass standoffs, releasing only once the board is supported, and retreating hands.",
+  "valid_shortcuts": "The demonstration uses two arms, but score is determined by final support, no drop, stillness and gripper clearance. A different order of approach or small alignment correction is valid if all four holes are engaged and the board is supported. Merely placing the board over the standoffs, resting on the shield lip, or holding it in place does not earn full credit.",
+  "distinct_from_nearest": "The accepted cooler task is a different component and vertical placement. The closest final rejection (#1349) was a half-scale pattern-placement task with nonfunctional loose standoffs; the present operation uses a named full-size server board, realistic 1U chassis/rear-I/O constraints, standoff support and hands-off final-state scoring. #2029 and #2747 are exact idea claims; their latest holds must expire and be rechecked independently before submission.",
+  "task_py_sha256": "1f32b949243d9d6158d07c7e717242f797d32729d3cb7c0bef3eab8747728bbf",
+  "task_metadata_sha256": "ed6bc93f69a1474b55878a7d73fc6c6613f1ce972ae0171cd4e60d2cdeaad221"
+}

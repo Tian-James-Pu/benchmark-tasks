@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-11-21T01:30:18Z",
+  "scope": "Independent audit of the prepared jaw-coupling candidate's response to the review comment on PR #2484.",
+  "ownership": {
+    "candidate_owner": "claude",
+    "competing_pr": 2484,
+    "competing_pr_author": "parthtr9",
+    "competing_pr_state": "OPEN",
+    "latest_decision_at": "2026-11-19T07:08:24Z",
+    "review_text": "The demo should show more detail",
+    "hold_until": "2026-11-21T07:08:24Z",
+    "action": "Do not submit before the hold expires. Refresh board and PR state at the boundary."
+  },
+  "candidate": {
+    "folder": "close-jaw-coupling-spider-and-hub",
+    "package": "pipeline/artifact/jaw-coupling-prepared-20261120",
+    "media_id": "M-329ZYV",
+    "demo": {
+      "path": "/home/mzhang/yam-eval/close-jaw-coupling-spider-and-hub/media/demo_detail.mp4",
+      "sha256": "4cd6681e31af40c715a4296d8779413491c951bf1537a1d9b83094434fb8c86f",
+      "codec": "h264",
+      "dimensions": "1920x360",
+      "frames": 1028,
+      "duration_seconds": 51.4,
+      "layout": "three equal horizontal panels: overview, left wrist, right wrist"
+    },
+    "simulation_evidence": "Prepared package historical Dream-1 score: 0.0; a fresh isolated side-camera Dream-1 run scored 0.0 at 2,400 actions. Fresh side-camera scripted demo scored 1.0 at 1,027 actions."
+  },
+  "isolated_camera_trial": {
+    "task_copy": "pipeline/isolated-trials/jaw-camera-test-20261121",
+    "camera_pose_m": {
+      "position": [
+        0.3,
+        -0.65,
+        0.98
+      ],
+      "target": [
+        0.3,
+        0.0,
+        0.85
+      ]
+    },
+    "camera_scope": "Task-specific station top camera only; object geometry, scoring and demo actions unchanged.",
+    "demo": {
+      "score": 1.0,
+      "actions": 1027,
+      "video": "pipeline/reviews/resume-20261121/jaw-coupling/side-camera-demo.mp4",
+      "video_sha256": "3e03e5e659b41a5a5408fe21731f8f1e2eb9c56b0e5b264994db97840a2d9a6d",
+      "codec": "h264",
+      "dimensions": "640x360",
+      "frames": 1028,
+      "duration_seconds": 51.4,
+      "bytes": 808612
+    },
+    "visual_review": "Full-resolution output frames at 12, 24, 35, 46 and 50 seconds show the hubs, spider, shaft and grippers during the contact sequence in one 640x360 view.",
+    "dream1": {
+      "status": "completed",
+      "score": 0.0,
+      "actions": 2400,
+      "frames": 2401,
+      "simulated_seconds": 120.0,
+      "completed_at": "2026-11-21T01:24:09.817239Z",
+      "mean_inference_latency_seconds": 0.580034136362745,
+      "video": "pipeline/reviews/resume-20261121/jaw-coupling/dream-side-camera.mp4",
+      "video_sha256": "a61c5cb76d4f5448ce524f3b754091d6a6408a9c6f83147106573517cf26e212",
+      "codec": "h264",
+      "dimensions": "320x176",
+      "duration_seconds": 120.05,
+      "bytes": 346961,
+      "run_record": "/tmp/jaw-camera-dream-test-run/adhoc_7b1d715a.json"
+    },
+    "task_source_sha256_at_run": "c4f11077fa958ece9045c1349b93fefdc1062831564c2752be86bd28a359744b",
+    "task_source_sha256_current": "479277b41c81bee9bd6b8cfba1769d9e3488180e6d48b2075ecb35aa17b2d523",
+    "source_difference_note": "Only the isolated-trial comment spelling was corrected after the run; camera values and executable statements are unchanged."
+  },
+  "finding": {
+    "status": "current_prepared_video_weak; isolated_side_camera_demo_validated",
+    "evidence": [
+      "At a 640-pixel player width, the 1920-pixel-wide triptych renders each view at about 213x120 pixels.",
+      "Inspected overview and wrist-camera frames at 12, 17, 24, 35 and 46 seconds. The overview shows the full scene but the coupling is small and often occluded by the arms. Several wrist views show the motor body, pillow block, gripper or bench with little of the spider/hub interaction in frame.",
+      "A temporary 640x360 proof-of-concept with a wrist camera filling the frame and the overview inset still left the coupling obscured by the robot housing during portions of the hub assembly. Simply changing the panel layout is not enough; a useful camera angle or task orientation needs to show the contact interface during the operation.",
+      "The revised README describes the steps in detail, but the review asked the demo to show more detail. Prose alone does not address the visual evidence gap."
+    ],
+    "recommended_fix": "Use the successful task-scoped side camera from the isolated trial as the primary demo view; it keeps the contact interface readable at the task-board's normal 640x360 size. If adopted, refresh the media ID and source/media manifest, and report the fresh Dream-1 score against this camera view.",
+    "other_gates": [
+      "The novelty review must be refreshed after the competing hold expires and must match the staged task metadata and scorer source.",
+      "Do not count the task toward the 50-task validation goal while the exact idea is held."
+    ]
+  },
+  "prepared_submission_package": {
+    "path": "pipeline/artifact/jaw-coupling-sidecamera-candidate-20261121",
+    "manifest_sha256": "fe7070638cc1b77adb50d43aebc260a1f0ee00c4a40f991ceb49015015b57fe2",
+    "status": "staged with side-camera source, matching score videos and matching setup screenshot; source/media manifest verifies; staged package and identity checks passed.",
+    "remaining_before_submission": [
+      "PR #2484 hold expires at 2026-11-21T07:08:24Z; refresh live PR/board state before any claim.",
+      "Upload the new demo, Dream video and screenshot to get a fresh media ID; current task.json still contains the previous media ID.",
+      "Refresh the novelty review against the exact new task.py and task.json after the hold; then rerun final submission gates."
+    ],
+    "blind_review_text": "Removed direct reference to PR #2484 and its review comment from the submission README.",
+    "fresh_task_score": "Dream-1 0.0/2400; scripted demo 1.0/1027."
+  }
+}

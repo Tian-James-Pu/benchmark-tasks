@@ -1,0 +1,40 @@
+{
+  "body": "Add jenga-push-and-stack: play one turn of Jenga by the printed Hasbro rules.\n\nA freshly built Jenga Classic tower (54 blocks, 18 levels) stands on the table. The robot must take a block from below the top level, using one hand at a time, and stack it on top crosswise to the top level, with the tower still standing 5 s later. Block thicknesses vary per seed (+-0.3 mm), so some blocks are pinched by the load above and others are loose; nothing visible tells them apart.\n\nInstruction: \"Play one turn of Jenga: using one hand at a time, take a block out from below the top level and stack it on top, crosswise to the top level, without knocking the tower over.\"\n\nCategory: Societal relatability.\n\nScoring: 0 if the tower falls or both grippers touch the tower at once. Otherwise, for the taken block: 1.0 stacked crosswise on top, released, still 5 s later; 0.6 out of the tower; 0.3 slid out half its length; 0.1 slid 5 mm. Capped at 0.1 if any other block ever moved 1 cm, or is 5 mm out of place at the end.\n\nRun limit: 3,000 steps (150 s at 20 Hz).\n\nScores: Dream-1 run 0.0; scripted demo 1.0 on seeds 0, 4 and 10.\n",
+  "comments": [
+    {
+      "id": "IC_kwDOVgdJU88AAAABntWKpA",
+      "author": {
+        "login": "achyutha11"
+      },
+      "authorAssociation": "COLLABORATOR",
+      "body": "Received as **TK-UVHG8Y**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+      "createdAt": "2026-11-17T20:16:59Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2522#issuecomment-6959762084",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOVgdJU88AAAABomrj2w",
+      "author": {
+        "login": "achyutha11"
+      },
+      "authorAssociation": "COLLABORATOR",
+      "body": "**Accepted** (TK-UVHG8Y). Thank you! Merging this pull request.",
+      "createdAt": "2026-11-19T19:28:24Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2522#issuecomment-7019881435",
+      "viewerDidAuthor": false
+    }
+  ],
+  "headRefOid": "1f109d9362cbb26be9c5f04a2eb832634b758e18",
+  "mergedAt": "2026-11-19T19:28:27Z",
+  "number": 2522,
+  "state": "MERGED",
+  "title": "Add jenga-push-and-stack task"
+}

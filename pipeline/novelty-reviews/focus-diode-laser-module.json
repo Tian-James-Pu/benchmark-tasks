@@ -1,0 +1,36 @@
+{
+ "checked_at": "2026-11-21T15:54:39Z",
+ "decision": "clear",
+ "queries": [
+  "laser focus",
+  "laser engraver",
+  "focal",
+  "height gauge",
+  "laser cutter"
+ ],
+ "nearest_prs": [
+  {
+   "pr": 2885,
+   "state": "Open, last official Not accepted review at 2026-11-19T16:34:23Z; idea hold through 2026-11-21T16:34:23Z absent renewal; PR head unchanged at 83ab0b63fd563fbca782b759179466e2bb158226.",
+   "finding": "Same focus-stick, gravity-slide and clamp sequence. Latest review requests a complete affordable real fixture."
+  },
+  {
+   "pr": 346,
+   "state": "pending",
+   "finding": "Centres a slide and sharpens a microscope image with coarse/fine stage screws. Monitor provides optical feedback; no mechanical gauge contact, free slide lowering or clamping."
+  },
+  {
+   "pr": 3160,
+   "state": "closed final",
+   "finding": "Height gauge zero and measurement. The selected machine setup instead uses the physical stop to set a constrained actuator height, maintains the setting by clamping and clears the stop for the next operation."
+  }
+ ],
+ "physical_skill": "Support a free vertical carriage, use the installed focus gauge against the workpiece and fix the resulting height with the normal clamp. Stow the gauge so the mechanism can move after the task.",
+ "valid_shortcuts": [
+  "Any release and regrip order that preserves the sheet and avoids module drop.",
+  "Any number of knob regrips; two were demonstrated on the larger bed."
+ ],
+ "distinct_from_nearest": "PR #346 shares the purpose of focusing, but asks for optical alignment with threaded drives. The primary conflicting task is PR #2885 and has an active hold.",
+ "task_py_sha256": "d0d1db029fe14b2e175bde4cc70e6f5daec0ca56d922458006ee0deeab766387",
+ "task_metadata_sha256": "c95b967b5264ce5c4daaac1ee51ae2c2777a903f90a679de2ea2c55a1600ed1c"
+}

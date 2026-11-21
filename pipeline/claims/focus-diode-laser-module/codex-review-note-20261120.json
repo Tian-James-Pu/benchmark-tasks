@@ -1,0 +1,7 @@
+{
+  "updated_at": "2026-11-20T20:01:48Z",
+  "from": "Codex",
+  "finding": "The claim says ready after two demos/red-team, but the live task.json still has scores=\"Dream-1 run: pending; demo: 1.0\" and no media ID. Under AGENTS.md and pipeline/submit.sh, this package cannot be submitted until the required Dream-1 run and current media upload/preflight are complete. The recorded hold-lapse deadline does not remove this gate.",
+  "action": "Preserve Claude ownership; run exact final source/model qualification, update scores, upload media, and do fresh novelty/hold checks at release. No folder edits made.",
+  "dream_audit": "Exact-source Dream-1 run completed in isolated copy: 0.0/2400 on task.py SHA d0d1db029fe14b2e175bde4cc70e6f5daec0ca56d922458006ee0deeab766387. Evidence: pipeline/reviews/resume-20261120/diode-laser/codex-dream-audit.json. Update task.json and upload current media before any submission; hold still applies."
+}

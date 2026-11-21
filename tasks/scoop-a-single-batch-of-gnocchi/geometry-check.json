@@ -1,0 +1,10 @@
+{
+  "floor_m": 0.7605000000000001,
+  "water_m": 0.8005000000000001,
+  "rim_m": 0.8205,
+  "minimum_tool_clearance_mm": 11.063051148106018,
+  "water_litres": 1.8095573684677209,
+  "pan_mass_kg": 2.9095573684677207,
+  "initial_food_volume_l": 0.10133521263419236,
+  "displaced_freeboard_mm": 17.75999999999991
+}

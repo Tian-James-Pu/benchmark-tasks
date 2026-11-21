@@ -1,0 +1,54 @@
+{
+ "checked_at": "2026-11-21T18:37:55Z",
+ "decision": "clear",
+ "queries": [
+  "known_tasks.tsv title grep: swing|pendul|toddler|playground|pram|stroller|cradle|bassinet|pump|rock",
+  "known_tasks.tsv title grep: child|kid|resonan|momentum|in phase|hammock|seesaw|carousel|timing|rhythm",
+  "gh search prs (titles and bodies): swing",
+  "gh search prs: pendulum",
+  "gh search prs: toddler",
+  "gh search prs: playground; push-swing; swinging",
+  "pipeline/claims: swing|pendul|toddler (only this claim and an unrelated toddler knob-cover claim)"
+ ],
+ "nearest_prs": [
+  {
+   "pr": 2190,
+   "state": "accepted (TK-LGTDUX)",
+   "finding": "Rock a full-size pram through ten smooth forward-and-back cycles on the floor, judged on travel, drift, yaw, speed and acceleration. The robot drives a wheeled cart continuously while holding its handle; there is no free pendulum, no discrete energy-adding pushes timed to a turning point and no return-path strike hazard."
+  },
+  {
+   "pr": 2778,
+   "state": "Not accepted: final (TK-3PQSED)",
+   "finding": "Catch and damp a light single-axis hinged fixture under a moving trolley via grip tabs. Opposite energy direction (removing swing), light test fixture, rejected on importance/construct validity. Our task adds energy to a real-scale 17 kg loaded toddler swing without grasping."
+  },
+  {
+   "pr": 859,
+   "state": "Not accepted: final (TK-Y3Z9U9)",
+   "finding": "Damp a 0.5 kg tabletop hanging load through its trolley; rejected for miniaturization. Our swing is at full playground scale (208 cm pivot, 17.2 kg, 2.13 s period), consistent with the CPSC pivot-height range."
+  },
+  {
+   "pr": 1746,
+   "state": "Not accepted: final (TK-ZCZR7E)",
+   "finding": "Release a desk pendulum and press a brake on the counted third swing; rejected as a memory test. Our task has no counting; the difficulty is physical timing and following a moving 17 kg seat."
+  },
+  {
+   "pr": 949,
+   "state": "Not accepted: final (TK-TTKT28)",
+   "finding": "Regulate a pendulum period by moving its bob; never pushes a swinging body."
+  },
+  {
+   "pr": 3147,
+   "state": "Not accepted: final (TK-4JA4BZ); also #868 closed",
+   "finding": "Set and start a wind-up metronome; rejected on relatability. Pushing a toddler on a swing is an everyday parenting job with a cited CPSC basis."
+  }
+ ],
+ "physical_skill": "Pump a heavy free pendulum (a loaded full-bucket toddler swing) from rest to a 25 degree arc with discrete pushes that land only after each rear turning point, following the seat outward, while moving the waiting hand position back each swing as the arc grows and keeping hands clear of the returning seat; then leave it to make one untouched free swing of at least 25 degrees.",
+ "valid_shortcuts": [
+  "Any number and size of pushes, one-handed or two-handed, at any height on the seat or chains, provided every touch happens while the push point moves away at 5 cm/s or more (or the seat hangs still) and closes at no more than 0.6 m/s.",
+  "Pushing from rest more than once is allowed only while the seat hangs still within 2 degrees and below 5 cm/s.",
+  "Parking anywhere at least 5 cm from the swing during the scored free swing; reaching 25 degrees in fewer pushes than the demo."
+ ],
+ "distinct_from_nearest": "No accepted, pending or revising PR pushes a swing or pumps a pendulum. The accepted pram task (#2190) is continuous handle-held rocking of a wheeled cart with smoothness scoring; this task is discrete phase-timed pushes on a free full-scale pendulum with a strike rule for meeting the returning seat. Rejected pendulum tasks (#949, #1746, #3147, #868) were memory/regulation or niche-relatability tasks; rejected damping tasks (#859, #2778) remove energy from light or miniature fixtures. This task is full-scale, everyday (CPSC: full-bucket seats for under-4s with adult assistance) and its defining work, adding energy in phase to a 17 kg seat, is preserved by the scorer.",
+ "task_py_sha256": "170e4e1ec0b15438633f5ed8377cd2efe17356f1742619145831e6c65e8fe87c",
+ "task_metadata_sha256": "cc022a9f383af76aa59c3859a7f59fafe3088429be1a05748e501d81383d9855"
+}

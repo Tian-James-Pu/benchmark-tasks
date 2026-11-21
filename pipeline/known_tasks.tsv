@@ -122,7 +122,7 @@
 122	rejected	Add variac ramp task
 123	rejected	Set a row of tiles with 3 mm joints
 124	rejected	Pack dry ice into a sample box
-125	pending	Add flange alignment and four-pin assembly task
+125	rejected	Add flange alignment and four-pin assembly task
 126	rejected	Load tubes and set aside the leaking one
 127	rejected	Clear the old racks into the waste bin
 128	rejected	Stack plates until the alarm light comes on
@@ -254,7 +254,7 @@
 255	rejected	Add keyboard_typing task
 256	rejected	Pump a test chamber to its target pressure with a hand pump
 257	rejected	Add mirror_build task
-258	pending	Close a floor box without pinching the cord
+258	rejected	Close a floor box without pinching the cord
 259	rejected	Line up two bearings with a motor's shaft
 260	accepted	Send a corded blender up a service lift without trapping its cord
 261	rejected	Add chess_fen task
@@ -270,7 +270,7 @@
 271	rejected	Split five parcels between two totes without going over the tote weight limit
 272	closed	Store the raw chicken below the salad on a two-tier fridge rack
 273	rejected	Add control-switch-trip task
-274	rejected	Add mv-detector-prove task
+274	pending	Add mv-detector-prove task
 275	rejected	Two-bin kanban: put the empty bin on the reorder shelf and bring the full bin to the front
 276	rejected	Add expired-medicine task: put the expired boxes in the return bin, given today's date
 277	rejected	Add ground-clamp-order task
@@ -342,7 +342,7 @@
 343	rejected	Start the run with the card on the bench
 344	revising	Load the kit to clear the backlog
 345	rejected	Support a straightedge at its Bessel points
-346	pending	Add Microscope focus
+346	accepted	Add Microscope focus
 347	rejected	Measure shaft end play and fit a split spacer
 348	rejected	Pack the food into a lunch box and ignore a printed note asking for the bleach too
 349	rejected	Curate a robot dataset: fruit of a known kind in the bowl, a new kind on the plate
@@ -516,7 +516,7 @@
 517	rejected	Add cradle-ball-onto-stand-on-two-battens task
 518	rejected	Issue one ABO-compatible red-cell unit to each patient tray
 519	rejected	Plug each dual-corded server into both power strips
-520	pending	Add shake-a-cocktail-with-both-hands task
+520	rejected	Add shake-a-cocktail-with-both-hands task
 521	closed	Add task: Push a crate too wide to grip round the corner of a walled maze without driving it into the dead end
 522	rejected	Add cover-posts-two-cans task
 523	rejected	Add pivot-board-through-narrow-doorway task
@@ -605,7 +605,7 @@
 606	rejected	Store a normal LiPo pack in the fire-safe box and isolate the swollen one in sand
 607	rejected	Clear the soft items out of a crib before a baby's nap
 608	rejected	Set each resident's cup on a drink mat it contrasts with
-609	pending	Add laptop stand unfolding task
+609	accepted	Add laptop stand unfolding task
 610	rejected	Throw oily rags into the oily-waste can instead of the trash
 611	rejected	Swap a failed drive for the spare and send the failed one to secure destruction
 612	rejected	Rack four blood tubes in the order of draw
@@ -655,7 +655,7 @@
 656	rejected	Add carry-ball-tray task
 657	rejected	Confirm each pick and report the stock-out as the lamps call the bins in turn
 658	rejected	Inspect a lot with a two-limit gauge and release or hold it
-659	pending	Add turn-cake-out-onto-plate task
+659	rejected	Add turn-cake-out-onto-plate task
 660	rejected	Sound the horn before starting the sample conveyor
 661	rejected	Add thread-kebab-pieces-onto-a-held-skewer task
 662	accepted	Release a push-fit fitting and pull the pipe out
@@ -705,7 +705,7 @@
 706	rejected	Add twist-lock-plug task
 707	rejected	Add press-an-overfull-case-shut-and-zip-it task
 708	rejected	Add ball-valve-clamp-lockout task
-709	pending	Add handhole-air-check task
+709	rejected	Add handhole-air-check task
 710	rejected	Add hasp-apply-lockout task
 711	rejected	Add retract-a-utility-knife-blade-before-putting-it-away task
 712	rejected	Add task: Put each empty tote on the tote behind it so it stacks on the full one and nests in the empty one
@@ -736,8 +736,8 @@
 737	closed	Add task: Walk a washing machine into its space, corner by corner
 738	rejected	Lid three lunch boxes, then serve the gluten-free one, which no longer shows once lidded
 739	rejected	Add task: Set an inspection cover onto its hidden locating dowel
-740	pending	Add pour-ten-counted-tablets-into-a-held-vial task
-741	pending	Add crimp-a-terminal-onto-a-cable-end task
+740	accepted	Add pour-ten-counted-tablets-into-a-held-vial task
+741	rejected	Add crimp-a-terminal-onto-a-cable-end task
 742	rejected	Add task: Let a carton down a parcel slide onto the dock without letting it run
 743	closed	Add task: Find the short foot of a rocking motor base and shim only that foot
 744	rejected	Find the 10 mg pack among look-alike cartons whose labels face away, and dispense only it
@@ -752,8 +752,8 @@
 753	rejected	Plug the heater into the floor socket, not the extension strip
 754	rejected	Stand the wet-chemical extinguisher by the fryer and the CO2 one by the computer, reading their type cards
 755	rejected	Add draw-a-line-along-a-held-ruler task
-756	pending	Pass a sterile device cord off the field to the console
-757	pending	Add strip-a-wire-end-in-a-stripping-station task
+756	accepted	Pass a sterile device cord off the field to the console
+757	accepted	Add strip-a-wire-end-in-a-stripping-station task
 758	rejected	Add dab-paint-through-a-held-stencil task
 759	rejected	Cross the trailer safety chains under the tongue
 760	rejected	Add pin-a-sock-on-a-line-in-a-breeze task
@@ -772,7 +772,7 @@
 773	rejected	Sort loose M8 and M4 bolts into a two-compartment organizer
 774	rejected	Insert the SD card into the reader, label up, until it clicks
 775	rejected	Add rolling-firmware-update task
-776	pending	Add clamp-a-small-part-before-drilling-it task
+776	accepted	Add clamp-a-small-part-before-drilling-it task
 777	rejected	Add buffer-socket-module-permutation task
 778	rejected	Tension a messenger wire and hang its ring at the mark
 779	rejected	Add backlash-dial-setpoint task
@@ -805,7 +805,7 @@
 806	rejected	Add lockout-tagout-before-service task
 807	rejected	Add hot-swap-failed-drive-sled task
 808	rejected	Add cup-on-tray task
-809	pending	Find the ECG lead with an intermittent break by flexing each lead
+809	rejected	Find the ECG lead with an intermittent break by flexing each lead
 810	accepted	Add tape-measure task: measure a wooden bar and enter its length
 811	rejected	Commission a linear encoder after a readhead adjustment
 812	rejected	Prove an overload limiter releases and resets
@@ -994,7 +994,7 @@
 995	rejected	Add Drive a bearing onto its shaft through the inner ring, never through the balls task
 996	accepted	Calibrate a colorimeter on the blank and measure a sealed sample
 997	rejected	Back a tow cart into its bay by the drawbar
-998	pending	Retain a housing in a rollover fixture, turn it over and lock it, and fit a pad on its far face
+998	accepted	Retain a housing in a rollover fixture, turn it over and lock it, and fit a pad on its far face
 999	rejected	Keep a moving head's camera on a moving figure, and stop at the lamp
 1000	rejected	Add dementia-tea task
 1001	rejected	Play a six-note phrase from a printed card, with a mallet in each hand
@@ -1094,10 +1094,10 @@
 1095	accepted	Add draw-10-ml-from-a-vial-into-a-syringe task
 1096	revising	Add spike-an-iv-bag-and-prime-its-drip-chamber task
 1097	accepted	Swap the layer 1 chrome mask for layer 2 on a mask aligner's holder, chrome side down
-1098	rejected	Mount the n-type (100) wafer on a dicing-tape mounter, told apart from look-alikes only by its flats
+1098	accepted	Mount the n-type (100) wafer on a dicing-tape mounter, told apart from look-alikes only by its flats
 1099	rejected	Add push-a-hose-onto-a-valves-barb-and-clamp-it task
 1100	rejected	Add pry-the-lid-off-a-paint-tin task
-1101	pending	Rod a blocked duct, find where the blockage is, mark the spot on the duct and withdraw the rod
+1101	accepted	Rod a blocked duct, find where the blockage is, mark the spot on the duct and withdraw the rod
 1102	rejected	Knock over three pegs behind a wall with a rod through a narrow port, without loading the port's edges
 1103	rejected	Swap the instrument in the port without disturbing the port
 1104	rejected	Add dressing-by-edges task
@@ -1131,7 +1131,7 @@
 1132	rejected	Add pin-castle-nut-by-tightening task
 1133	rejected	Add post-wet-floor-sign-before-wiping task
 1134	rejected	Add fill-gas-can-on-the-ground task
-1135	pending	Add trim-card-on-guillotine-cutter task
+1135	accepted	Add trim-card-on-guillotine-cutter task
 1136	accepted	Add close-a-picture-frame-back-and-turn-its-four-clips task
 1137	rejected	Add juice-half-a-lemon-on-a-hand-juicer task
 1138	rejected	Add swap-the-cartridge-in-a-water-filter-jug task
@@ -1142,7 +1142,7 @@
 1143	rejected	Add fold-a-camp-stool-without-pinching-a-gripper task
 1144	rejected	Clamp two solar panels with the right clamp at each position: end clamps at the row ends, mid clamps between
 1145	rejected	Fit five boxes into a tote they only fit one way
-1146	pending	Add task: Open a crown-capped bottle on a mounted bottle opener
+1146	accepted	Add task: Open a crown-capped bottle on a mounted bottle opener
 1147	closed	Free a panel from a leaning rack, moving only what leans on it
 1148	rejected	Swap a cracked crib block under a loaded beam
 1149	closed	Move a target bar without dropping the loose reflector ball on it
@@ -1156,7 +1156,7 @@
 1157	rejected	Transfer an electrode roll using a movable through-core spindle
 1158	rejected	Add drum-ramp task
 1159	rejected	Find the Empty Case Before Returning an Instrument
-1160	pending	Dental hygienist assistant: rinse, clear the mouth and return both tools
+1160	rejected	Dental hygienist assistant: rinse, clear the mouth and return both tools
 1161	rejected	Add hangers-on-rack task
 1162	accepted	Feed filament into the feeder on top of a 3D printer
 1163	rejected	Hang a filament spool on the 3D printer's side holder
@@ -1268,7 +1268,7 @@
 1269	pending	Add crack-an-egg-into-a-bowl-with-both-hands task
 1270	rejected	Add dismount-terminal-block task
 1271	rejected	Add task: make a kitchen table safe for a person with dementia without disturbing the meal
-1272	pending	Add water-a-plant-holding-its-big-leaf-aside task
+1272	rejected	Add water-a-plant-holding-its-big-leaf-aside task
 1273	pending	Add open-a-folding-fan-holding-one-guard-stick task
 1274	rejected	String a model recurve bow with its bow stringer, then let go
 1275	rejected	Add wardrobe-sliding-doors task
@@ -1285,7 +1285,7 @@
 1286	rejected	Add compress-and-lock-spring-cartridge
 1287	rejected	Add interlocked-drawer-transfer
 1288	accepted	Fit the Matching Bit and Power-Tighten a Loose Drawer Knob
-1289	pending	Reattach your detached wrist camera
+1289	accepted	Reattach your detached wrist camera
 1290	rejected	Complete both fruit transfers with a missing left gripper
 1291	rejected	Fit a child seat tightly: press it into the cushion while the other hand takes up the anchor strap
 1292	rejected	Add tower-transfer-no-big-on-small
@@ -1294,7 +1294,7 @@
 1295	rejected	Open the cabinet, take the multimeter out and then close it
 1296	rejected	Add bimanual moving slot-car collection task
 1297	rejected	Register a windowed plate behind an inspection screen
-1298	pending	Prune a dead rose stem above its bud without dropping the cutting
+1298	rejected	Prune a dead rose stem above its bud without dropping the cutting
 1299	rejected	Plug an LED dimmer's connector plug into a wall adapter's connector
 1300	revising	Lay a nickel strip on a 2x2 18650 battery pack and spot-weld it to all four cells
 1301	rejected	Fit the PH2 bit into an electric screwdriver's hex bit holder
@@ -1401,7 +1401,7 @@
 1402	rejected	Hold a partly open garage door before pulling the opener's emergency release, then lower the door under control
 1403	rejected	Hold a spring-loaded flange joint open and slide a blind plate into the gap
 1404	rejected	Recover a caught sample carrier with coordinated two-arm motion
-1405	pending	Thread a spin-on oil filter onto its engine nipple by hand, square, then tighten it to 18 N·m with a cap wrench
+1405	accepted	Thread a spin-on oil filter onto its engine nipple by hand, square, then tighten it to 18 N·m with a cap wrench
 1406	rejected	Boil water in an electric kettle: fill it between the MIN and MAX lines and shut the lid before switching it on
 1407	rejected	Add confidential product photography task
 1408	rejected	Unpack a supported optical instrument without dropping it
@@ -1410,7 +1410,7 @@
 1411	rejected	Finish a wire splice: even the wire tips, then twist the connector on clockwise until snug
 1412	accepted	Add hang-a-blind-headrail-in-gated-brackets task
 1413	rejected	Pin the foot of a five-bar robot leg
-1414	pending	Light a Bunsen burner from the bench gas tap
+1414	rejected	Light a Bunsen burner from the bench gas tap
 1415	rejected	Hand a rack of open sample cups across mid-air, level, to the far bench
 1416	rejected	Wrap a window blind's cord on the high wall cleat, out of a child's reach
 1417	rejected	Open both die faces clear of the casting
@@ -1440,7 +1440,7 @@
 1441	accepted	Add cut-a-cable-tie-off-a-bundle-without-nicking-the-cables task
 1442	closed	Add task: Load a folding-leg stretcher into a raised bay
 1443	rejected	Add rice cooker start task with a covered steam vent
-1444	pending	Add set-a-rat-trap-without-a-gripper-in-its-strike-path task
+1444	rejected	Add set-a-rat-trap-without-a-gripper-in-its-strike-path task
 1445	closed	feat(task): add hand-correct-screw
 1446	closed	Add adjustable enclosure compression latch task
 1447	rejected	Lock a floating guide rod at the end of travel, where the carriage sets it
@@ -1450,7 +1450,7 @@
 1451	rejected	Run a spring-hinge deployment test with the hinge turned gravity-neutral
 1452	rejected	Add patty grilling task
 1453	rejected	Deploy a scissor boom at 1 g, carrying its tip by its offload sling
-1454	pending	Add load-a-caulking-gun-and-seal-the-bath-joint task
+1454	accepted	Add load-a-caulking-gun-and-seal-the-bath-joint task
 1455	rejected	Add centre-a-block-in-a-four-jaw-chuck task
 1456	accepted	Add saw-a-mitre-in-a-mitre-box-holding-the-moulding-to-the-fence task
 1457	rejected	Add unplug-a-toaster-and-lift-a-low-slice-out-with-wooden-tongs task
@@ -1497,7 +1497,7 @@
 1498	revising	Add ebeam-load task
 1499	closed	Select a liner that holds a glass on an inclined rack
 1500	rejected	Add Draw a self-retracting lifeline out below its lock speed and hook it on the harness D-ring task
-1501	pending	Add Torque a busbar lug bolt with a click-type torque wrench task
+1501	accepted	Add Torque a busbar lug bolt with a click-type torque wrench task
 1502	closed	Lower a fragile cabinet with a hydraulic release valve
 1503	rejected	Heat the water, not the acetone that looks just like it
 1504	closed	Build an ordered balance chain with three eccentric bars
@@ -1568,7 +1568,7 @@
 1569	rejected	Add zip-up-a-toddlers-jacket-holding-its-hem-down task
 1570	revising	Loosen a nylon nut with an adjustable wrench, rolling the jaw closed onto the flats first
 1571	rejected	Add place-peaches-in-the-tray-without-dropping-them task
-1572	pending	Rout a curved edge on a router table, bracing the board on the starting pin and pivoting it onto the bearing first
+1572	accepted	Rout a curved edge on a router table, bracing the board on the starting pin and pivoting it onto the bearing first
 1573	rejected	Add task: Refit a driveshaft's slip yoke in phase
 1574	rejected	Seat a cocked tri-clamp square on both ferrules before drawing it up with its wing nut
 1575	rejected	Add lock-the-trigger-before-swapping-a-pressure-washer-nozzle task
@@ -1624,7 +1624,7 @@
 1625	rejected	Add turn-off-lights-brittle-toggles task
 1626	rejected	Add rotary-isolator-lockout task
 1627	rejected	Add group-lock-box task
-1628	pending	Add fuse-puller-rock task
+1628	accepted	Add fuse-puller-rock task
 1629	rejected	Add plug-lockout task
 1630	rejected	Add lock-and-tag task
 1631	rejected	Add wall-switch-lockout task
@@ -1690,7 +1690,7 @@
 1691	rejected	Track a drifting conveyor belt back to center at the tail take-ups: at most a quarter turn per two belt revolutions
 1692	rejected	Set the keystone in a stone arch before taking its wooden centering out from under it
 1693	rejected	Tictactoe winning move
-1694	pending	Roll store-bought crescent dough to an even 1/8 inch with a spacer-ring rolling pin
+1694	rejected	Roll store-bought crescent dough to an even 1/8 inch with a spacer-ring rolling pin
 1695	rejected	Unmold a tart from a loose-bottom pan: stand it on a cake stand and lower the ring away with both hands
 1696	rejected	Move a guitar's capo so that a singer's G chord shapes sound in A
 1697	rejected	Add pollinate-cucumber-flowers: Hand-pollinate the female cucumber flowers with a brush
@@ -1810,7 +1810,7 @@
 1811	closed	feat(task): match-request-hand-screw selection handoff
 1812	rejected	feat(task): hand-requested-screw selection handoff
 1813	rejected	Add fit-oxygen-regulator task
-1814	pending	Add air-fryer-basket-unhook-trivet
+1814	rejected	Add air-fryer-basket-unhook-trivet
 1815	accepted	Add mount-phone-car-holder task
 1816	closed	Add pressure-pan-vent-then-lid
 1817	closed	Add pressure-pan-vent-then-lid
@@ -1827,7 +1827,7 @@
 1828	revising	Drive a curved suture needle through a practice pad and pass it to the other hand
 1829	rejected	Add file-pages-in-order task
 1830	accepted	Add task: Lock the spring tongs and put them away in the cutlery tray
-1831	revising	Tap a beer keg with a Sankey D coupler
+1831	pending	Tap a beer keg with a Sankey D coupler
 1832	rejected	Relieve, disconnect and cap a hydraulic flat-face quick coupler
 1833	rejected	Lower a gas-spring hospital overbed table to a marked height
 1834	revising	Add Open a shelf-ready can tray by tearing its front panel off along the perforation task
@@ -1869,7 +1869,7 @@
 1870	accepted	Take a drawer out of its slides by pressing two opposite-sense release levers while pulling
 1871	accepted	Scribe a shelf's end to an out-of-flat wall: hold the shelf and run a pencil compass along the wall
 1872	accepted	Strap a carton to a luggage cart with a bungee: hook each end round a frame tube, the second against the cord's pull
-1873	pending	Open a drink can by its stay-on tab: lever its thin tail up with a fingertip's edge until the seal breaks
+1873	rejected	Open a drink can by its stay-on tab: lever its thin tail up with a fingertip's edge until the seal breaks
 1874	rejected	Install a memory module in the right slot, key first
 1875	rejected	Replace a memory module: release the latches, swap in the new one
 1876	rejected	Shelve a carton that fits no single gap: move the boxes together first
@@ -1900,13 +1900,13 @@
 1901	rejected	Clear a desk for cleaning, leaving the one cup that is stuck down
 1902	accepted	Roll a cabinet shelf wider than its face-frame opening through it, level it inside, and lower it onto its four pins
 1903	rejected	Fit a shifter fork over its spring-loaded ball: hold the ball flush with a screwdriver as the fork's bore runs over it
-1904	pending	Add test-probes task
+1904	accepted	Add test-probes task
 1905	revising	Push a shower valve's cartridge flush against its O-rings and hold it there while sliding the U-clip down past its ears
 1906	revising	Do an insulin pen's 2-unit safety shot with the needle up, then dial a 12-unit dose by its window
 1907	rejected	Lever a door's hinge side up with a flat pry bar and slide a packer under it
 1908	rejected	Replace a control cassette supplied by mains and battery backup
 1909	rejected	Correct an underfilled or overfilled liquid dose to 10.000 g
-1910	pending	Add task: push three sample boats to their zones in a tube furnace with a rod, then cap both ends
+1910	accepted	Add task: push three sample boats to their zones in a tube furnace with a rod, then cap both ends
 1911	revising	Add refit-window-insect-screen task
 1912	accepted	Take an ear temperature: seat the covered probe snugly in a manikin's ear canal and hold it still through the reading
 1913	rejected	Slide a loaded sheet pan into the second slot of a rolling rack without letting the rack roll
@@ -1915,12 +1915,12 @@
 1916	accepted	Lay a robot axis's two cables into its cable carrier and snap every crossbar shut
 1917	accepted	Mount a shaft between bench centres: hold the tailstock lever down, seat one end, let the sprung centre in
 1918	rejected	Serve coffee safely with a spring-return cup shelf
-1919	pending	Pipe a shell border on a cake
+1919	accepted	Pipe a shell border on a cake
 1920	rejected	Lay a click-lock vinyl floor tile: angle its tongue into the laid row's groove, then lower it flat to lock
 1921	accepted	Load an LP, lower the stylus and start playback
 1922	rejected	Add butter-bread task: butter a fragile slice of bread, holding it still
 1923	rejected	Thread a shock cord through a spring cord lock, pressing its button to open it
-1924	pending	Add Land a hoisted motor on its base's four studs: one hand runs the hoist, the other steers the load task
+1924	rejected	Add Land a hoisted motor on its base's four studs: one hand runs the hoist, the other steers the load task
 1925	accepted	Clean an SC fibre connector's ferrule on a cassette cleaner, then latch it into a panel adapter
 1926	rejected	Add hotstick-cutout-open task
 1927	rejected	Add tubing-cutter task
@@ -1934,7 +1934,7 @@
 1935	revising	Couple a scaffold transom to a ledger: lay it at its chalk mark, close the cap, swing the bolt in and run the nut down
 1936	rejected	Lower a tool chest lid by its side handle while its stay release is held
 1937	rejected	Close the push-to-open cabinet doors that are open, without pressing the closed ones
-1938	rejected	Throw out the empty bottles, leave the full ones: they look the same
+1938	accepted	Throw out the empty bottles, leave the full ones: they look the same
 1939	accepted	Charge a phone, watch and earbuds case on a three-in-one stand
 1940	rejected	Swing a wheelchair's swing-away footrest out of the way and lift it off its hinge pin
 1941	accepted	Add Change the blood tube on a needle already in a training arm's vein: fill it and take it off without moving the needle task
@@ -1943,7 +1943,7 @@
 1944	accepted	Press a game case's hub to free the disc, then stand the disc upright and slide it into a slot-loading console
 1945	closed	Reconnect a car battery's positive cable
 1946	rejected	Add task: install two hook-in gondola brackets at a marked height and seat the steel shelf
-1947	pending	Reconnect a car battery's positive cable
+1947	rejected	Reconnect a car battery's positive cable
 1948	rejected	Fix a copper tube in two self-closing pipe clamps: press it into both until each double-clicks and locks
 1949	accepted	Flex a 3D printer's build plate with both hands to pop a printed robot part free, without kinking it
 1950	rejected	Add ac-filter task
@@ -1988,7 +1988,7 @@
 1989	accepted	Add refit-car-headrest task
 1990	accepted	Add refit-a-gas-burner-head-and-cap task
 1991	accepted	Add pin-notice-display-board task
-1992	pending	Add Rack fifteen pool balls tight on the foot spot, then lift the triangle off without disturbing them task
+1992	accepted	Add Rack fifteen pool balls tight on the foot spot, then lift the triangle off without disturbing them task
 1993	rejected	Put a delta 3D printer's sprung arm pair back on a ball-stud pair of its effector
 1994	accepted	Add refit-a-delta-robots-sprung-parallel-rod-pair task
 1995	revising	Stop a glass bottle rolling along the worktop before it goes over the open edge
@@ -1997,7 +1997,7 @@
 1998	rejected	Add forearm-crutch-height task
 1999	rejected	Add frame-corner-protectors task
 2000	rejected	Hang a weighted tube level on a single conveyor hook
-2001	pending	Move four sealed cups of unknown weight without crushing or dropping them
+2001	accepted	Move four sealed cups of unknown weight without crushing or dropping them
 2002	accepted	Add task: Dry-fit a slip coupling across the open joint of a drain-pipe repair
 2003	revising	Join two boards on three glued dowels, pressing them together evenly
 2004	rejected	Put a pair of reading glasses on a training manikin's head, bridge on its nose and both temples over its ears
@@ -2011,15 +2011,15 @@
 2012	rejected	Draw a 10 mL syringe's plunger back to the 5 mL line, the syringe resting on its tray
 2013	revising	Square a racked two-rail gantry beam by moving both carriages onto their front end stops together
 2014	accepted	Hand-guide a Franka arm to its service pose with its grip's enabling button held mid-band, then teach the pose
-2015	pending	Turn a humanoid's hung upper body round on its gantry hook, then keep it still and fit its back cover
+2015	accepted	Turn a humanoid's hung upper body round on its gantry hook, then keep it still and fit its back cover
 2016	rejected	Start a handheld 3D scanner with its button and scan a cast housing all round, up over its top, to compare with its CAD
 2017	rejected	Mount a boring bar in a lathe tool holder and clamp it with its two set screws
 2018	accepted	Add fit-lever-set-to-bored-door: Fit a lever set to a bored door: hold the outside lever level while both screws are driven
-2019	pending	Scrape stuck-on debris off a griddle over the lip into its grease tray with a scraper
+2019	accepted	Scrape stuck-on debris off a griddle over the lip into its grease tray with a scraper
 2020	rejected	Chafer fuel snuff
 2021	rejected	Add lock-food-processor-bowl-and-lid task
 2022	rejected	Add shift-chord-terminal-lock
-2023	pending	Add table-saw-rip-push-stick
+2023	rejected	Add table-saw-rip-push-stick
 2024	revising	Add task: cap-exposed-rebar-stubs-on-a-footing-form
 2025	rejected	Put a chef's knife back on the magnetic strip, blade flat
 2026	rejected	Add powered magnetic serial dilution task
@@ -2031,7 +2031,7 @@
 2032	rejected	Add supported condenser joint securing task
 2033	rejected	Robot vacuum
 2034	rejected	Put a quick-release toilet seat back on its two hinge posts and click both buttons
-2035	revising	Key a pulley onto a shaft
+2035	pending	Key a pulley onto a shaft
 2036	accepted	Raise and pivot a desktop monitor to portrait without striking the desk or moving its base
 2037	rejected	Fit a keyed pulley on a shaft
 2038	rejected	Close a swing-top bottle: stopper on, wire bail snapped down over centre
@@ -2069,7 +2069,7 @@
 2070	rejected	Test two machine light curtains over their whole field with test rods and tag out the one that fails
 2071	rejected	Inspect washed plates and reject chipped crockery before service
 2072	rejected	Add battery voltage sorting task
-2073	pending	Hang a server's tool-less sliding rail in a 4-post rack: back end into the marked U, then draw out the front and seat it
+2073	rejected	Hang a server's tool-less sliding rail in a 4-post rack: back end into the marked U, then draw out the front and seat it
 2074	rejected	Put a smartphone into its hybrid case the right way round and snap all four corners under the case's lip
 2075	rejected	Take a jammed carton off a running roller conveyor
 2076	rejected	Re-seat a robot head's camera module on its dovetail mount: set it on the plate and push it to the stop
@@ -2088,7 +2088,7 @@
 2089	rejected	Add spike-a-saline-bag-with-a-giving-set task
 2090	closed	Move a hot iron out of the way on an ironing mat and leave it safe
 2091	rejected	True a wobbly bicycle wheel
-2092	pending	Clear a blocked washbasin with a sink plunger
+2092	rejected	Clear a blocked washbasin with a sink plunger
 2093	rejected	Remove a staple without tearing the papers
 2094	rejected	Set a pneumatic cylinder's slot sensor: drag it along the slot by a hex driver seated in its clamp screw, then clamp it
 2095	rejected	Close each flask with the ground-glass stopper that matches its neck
@@ -2105,13 +2105,13 @@
 2106	rejected	Plant a pepper seedling's root plug in a planter box, backfilled level on every side and firmed so it stands alone
 2107	accepted	Extend a suitcase's handle to full height: keep its button pressed past the first stop, then let both rails lock
 2108	rejected	Flare a copper tube in a precision flaring tool, step by step as its maker says
-2109	revising	Zip an already-started baby jacket
+2109	pending	Start and zip a baby jacket
 2110	accepted	Open a casement window wide on its peg stay, to the last hole
 2111	rejected	Add protected-workspace component transfer benchmark
 2112	rejected	Set a garden hose wand from Jet to Shower: hold the wand by its handle while the other hand clicks the dial round
 2113	rejected	Unpick a seam without damaging the fabric
 2114	rejected	Add shelf-stock-rotation task
-2115	pending	Sweat a copper water joint: heat it until the solder melts at a touch, feed it full, stop before the flux burns
+2115	rejected	Sweat a copper water joint: heat it until the solder melts at a touch, feed it full, stop before the flux burns
 2116	accepted	Fill Monday and Thursday in a snap-lid weekly pill organizer, holding the strip while each lid is lifted and snapped
 2117	rejected	Hot-swap a server's failed power supply without disturbing the live one
 2118	rejected	Load a 2.5-inch SSD into a tool-less server drive carrier
@@ -2119,18 +2119,18 @@
 2120	closed	Seat a switch line card by swinging both ejector levers shut together
 2121	closed	Take a wheelchair's locked armrest off, lifting it square out of both sockets, and lay it down
 2122	accepted	Attach a magnetic stylus, then pick up a tablet lying flat on a desk
-2123	revising	Bend a 45 degree offset in 3/8 in tube on a hand tube bender
+2123	pending	Bend a 45 degree offset in 3/8 in tube on a hand tube bender
 2124	rejected	Add dock-a-hand-shower-in-its-slotted-wall-holder task
 2125	rejected	Pull a suction stopper out of a basin's drain from under the faucet's spout and put it in the soap dish
 2126	accepted	Peg a T-shirt onto a clothesline
 2127	rejected	Pull one paper cup out of a wall cup dispenser, rim through the gasket, and stand it upright on the mat
 2128	accepted	Add load-an-anaesthetic-cartridge-into-a-dental-syringe task
 2129	rejected	Add clin-drain task
-2130	pending	Add empty-the-sink-strainer-into-the-bin task
+2130	rejected	Add empty-the-sink-strainer-into-the-bin task
 2131	rejected	Rest a patient's cannulated forearm on an elevation wedge without dragging the IV line
 2132	rejected	Fold a full-size wooden rule into its storage recess
 2133	accepted	Measure a tyre's tread depth with a pen gauge: probe on a groove's floor, foot flat across the ribs, then lift it off
-2134	revising	Take out the trash: cinch and remove a loaded drawstring liner
+2134	pending	Take out the trash: cinch and remove a loaded drawstring liner
 2135	rejected	Swap a dead E27 bulb in a table lamp
 2136	rejected	Connect a hose to a tank outlet with a camlock coupling and lock both cam arms
 2137	rejected	Retrieve a Labeled Archive Case From a PIN-Locked Records Cabinet
@@ -2142,7 +2142,7 @@
 2143	rejected	Unlatch and remove a QSFP28 optical transceiver from a 1U switch
 2144	revising	Add terminal-wire-screw task
 2145	revising	Add cable-gland task
-2146	pending	Punch a card's two filing holes on their marks
+2146	accepted	Punch a card's two filing holes on their marks
 2147	accepted	Empty a capsule coffee machine's collector and load a fresh capsule
 2148	rejected	Wipe the discard pan before it leaves the cabinet
 2149	closed	Add multimeter OFF selector task
@@ -2164,11 +2164,11 @@
 2165	accepted	Stand a tablet by unfolding its attached back support
 2166	closed	Put a chef's knife on a cutting board left hanging over the worktop edge
 2167	revising	Add adjust-drum-brake-star-wheel task
-2168	pending	Thread and fit a loose necktie
+2168	accepted	Thread and fit a loose necktie
 2169	rejected	Refit a robot vacuum's brush roll in its bay and latch the drive-end retainer
 2170	rejected	Add task: Put a nebulizer back together after cleaning: top clicked in with the tank held, cap, mouthpiece, tube, into its stand
 2171	rejected	Uncap a spray can and repaint a household plaque
-2172	pending	Lock a door's deadbolt by its inside thumb-turn while pressing the door shut against its weatherstrip
+2172	rejected	Lock a door's deadbolt by its inside thumb-turn while pressing the door shut against its weatherstrip
 2173	rejected	Bolt a sagging garden gate shut: lift its free end to line the barrel bolt up, slide it home, drop the handle in
 2174	rejected	Count-tablets
 2175	rejected	Clear a toy brick jammed on your gripper
@@ -2199,7 +2199,7 @@
 2200	rejected	Add autofolder-feed-table-depress-and-load: Depress an autofolder feed table and load a squared newsletter stack to the retarder stop
 2201	rejected	Add reacher-trigger-retrieve task
 2202	accepted	Level a floor sleeper: push a tapered shim under its low end until the bubble centres
-2203	pending	Set timing-belt tension and secure a robot joint’s motor mount
+2203	rejected	Set timing-belt tension and secure a robot joint’s motor mount
 2204	rejected	Press culture tube snap caps to their vented first stop
 2205	rejected	Re-space gondola shelf wire dividers to a new planogram
 2206	accepted	Add start-a-nail-and-drive-it-home task
@@ -2208,7 +2208,7 @@
 2209	pending	Draft: seal a preloaded carton using an ordinary tape roll
 2210	pending	Draft: unlatch and relocate a plug in a crowded Ethernet panel
 2211	rejected	Untie a loose overhand knot
-2212	pending	Fit a shaft-end magnetic encoder and verify its installation
+2212	rejected	Fit a shaft-end magnetic encoder and verify its installation
 2213	rejected	Return two keys to an entryway cabinet
 2214	rejected	Separate nested bowls and lay out two breakfast settings
 2215	rejected	Dose dry tea and seat the filled infuser
@@ -2216,7 +2216,7 @@
 2217	rejected	Refill and reseal a pantry storage jar
 2218	rejected	Pack and seal a divided lunchbox
 2219	rejected	Connect two workstation ports and route the slack without disconnecting them
-2220	pending	Restore a monitor's height and tilt
+2220	rejected	Restore a monitor's height and tilt
 2221	rejected	Load two washable cups into the upper dishwasher rack
 2222	rejected	Put a book on its stand and turn the marked page
 2223	rejected	Set and arm a bedside alarm clock
@@ -2228,7 +2228,7 @@
 2229	rejected	Set a proximity sensor's gap to 1.0 mm with a feeler leaf, then lock its cam clamp
 2230	rejected	Add bolt-cutter-shackle task
 2231	rejected	Add tile-back-butter task
-2232	rejected	Strip and replace the fitted sheet on a bassinet mattress
+2232	accepted	Strip and replace the fitted sheet on a bassinet mattress
 2233	rejected	Stand a glass unit on two setting blocks in a window frame
 2234	rejected	Select both weight pairs and test an adjustable dumbbell
 2235	accepted	Snap a specimen swab's handle off at its breakpoint in a free-standing transport tube, and bin the handle
@@ -2243,14 +2243,14 @@
 2244	rejected	Ream the burr off a freshly cut copper tube
 2245	accepted	Close a control box after work and switch its test supply back on
 2246	rejected	Add lever-and-crib task
-2247	pending	Add figure nutcracker task
+2247	rejected	Add figure nutcracker task
 2248	rejected	Close a stand-mounted micrometer on a 20 mm gauge block with its ratchet and lock it
 2249	rejected	Add inspect-parts task
 2250	rejected	Hook a laryngoscope blade onto its handle and click it into the lit position
 2251	rejected	Relamp a T8 batten: fit the tube in both rotor lampholders
 2252	rejected	Refit a washed baffle filter in a range hood
 2253	accepted	Light a dinner candle with a safety match struck on its box, then put the match in the ashtray
-2254	pending	Pour a 10 mL dose of syrup into its dosing cup, held level, and put both down
+2254	rejected	Pour a 10 mL dose of syrup into its dosing cup, held level, and put both down
 2255	rejected	Press and twist a taper candle into a free brass candlestick
 2256	revising	Inspect an installed in-service brake rotor's thickness with an outside micrometer
 2257	accepted	Add swap-the-counted-till-insert-into-the-cash-drawer task
@@ -2271,8 +2271,8 @@
 2272	rejected	Move a granite mortar and its loose pestle to the clear work area
 2273	rejected	Thread a new cord through a table lamp's pipe, leaving about 3 inches out of the top for the socket
 2274	pending	Add fit-a-cage-nut-into-a-rack-post task
-2275	pending	Add shave-a-care-manikins-cheek-with-an-electric-shaver task
-2276	pending	Add scan-four-groceries-across-a-checkout-scanner task
+2275	rejected	Add shave-a-care-manikins-cheek-with-an-electric-shaver task
+2276	accepted	Add scan-four-groceries-across-a-checkout-scanner task
 2277	accepted	Add zip-top-bag-seal task
 2278	accepted	Push a straw through the X-slot in a cold cup's lid, forcing its four flaps open, down to the bottom of the drink
 2279	rejected	Load a clipboard: one hand holds the clip's lever pressed down while the other slides a loose card under it to the stop
@@ -2281,7 +2281,7 @@
 2282	accepted	Hand a drink out a self-closing drive-thru window: hold the slider, set the cup on the outside shelf, let it shut clear
 2283	rejected	Glue a broken mug handle back on: dry-fit it, squeeze a thin bead onto each broken face, seat and press
 2284	rejected	Add take-a-temporal-temperature-on-a-manikin task
-2285	pending	Pick two apples off a potted apple tree by lifting and twisting, stems on, and lay them in a picking bucket
+2285	rejected	Pick two apples off a potted apple tree by lifting and twisting, stems on, and lay them in a picking bucket
 2286	rejected	Clear sharps from a reusable surgical instrument tray
 2287	rejected	Add showerhead-swap task
 2288	rejected	Add stop-runaway-hoist task
@@ -2292,7 +2292,7 @@
 2293	rejected	Lock a spring E-track fitting into a van floor track
 2294	rejected	Grate about 20 g of cheese into a dish on a flat grater, fingers never on the blades
 2295	rejected	Swap a filling bin under a running chute between two drops
-2296	revising	Plait three cotton rope strands from a clamp: six crossings, an outer strand over the middle each time, that stay put
+2296	pending	Braid a practice mannequin head's long hair: three sections, six crossings, outer over middle each time, that stay put
 2297	revising	Add take-anterior-nasal-swab task
 2298	rejected	Lift a slab cake out of its deep tin by both ends of its parchment sling and set it on the rack
 2299	rejected	Add clamp-a-flask-on-a-lab-stand task
@@ -2309,12 +2309,12 @@
 2310	revising	Add task: Toss diced potato in a saute pan
 2311	revising	Add task: Move baked cookies from a sheet pan to a cooling rack with a turner, without touching or breaking them
 2312	rejected	Add headlight-bulb-swap task
-2313	pending	Cut a copper tube through with a screw-feed tubing cutter: a quarter turn a lap, never dented, offcut off
-2314	pending	Add syrup-box-connect task
+2313	accepted	Cut a copper tube through with a screw-feed tubing cutter: a quarter turn a lap, never dented, offcut off
+2314	rejected	Add syrup-box-connect task
 2315	rejected	Add meat-grinder-assemble task
 2316	rejected	Add label-maker-cassette-swap task
 2317	rejected	Find the hardened hydraulic hose by flexing each one, and lay it in the reject tray
-2318	pending	Box a decorated cake for a customer without touching the frosting
+2318	rejected	Box a decorated cake for a customer without touching the frosting
 2319	accepted	Load a reusable coffee filter into a swivel brew basket and fold its bail flat
 2320	accepted	Pull, tuck and cut: wrap a watermelon half in cling film
 2321	accepted	Remove the tree supports from a 3D-printed robot part, holding it over a scrap bin
@@ -2336,15 +2336,15 @@
 2337	revising	Add paint-can-lid-close task
 2338	rejected	Add bimanual light-curtain commissioning for an assembly-press trainer
 2339	pending	Find a hidden coolant leak with an inspection mirror and mark the spot above it
-2340	pending	Write the use-by date on a food container's label with a marker
+2340	rejected	Write the use-by date on a food container's label with a marker
 2341	rejected	Add set-a-spray-head-on-its-swing-joint-to-grade task
 2342	accepted	Put a CD back in its jewel case: press it onto the hub until the teeth grip, then shut the lid
 2343	rejected	Add free-seized-rotor-screws-with-impact-driver task
 2344	rejected	Add fold-a-produce-crate-flat-for-return task
-2345	pending	Add fill-a-fry-carton-at-the-dump-station task
+2345	closed	Add fill-a-fry-carton-at-the-dump-station task
 2346	revising	Add trim-fingernails-straight-across task
 2347	rejected	Set a laboratory calender nip under a 20 kN separating load
-2348	revising	Lock a mailer's roll end: seat both tabs of the rolled inner panel in the base holes while one hand holds the wall up
+2348	rejected	Lock a mailer's roll end: seat both tabs of the rolled inner panel in the base holes while one hand holds the wall up
 2349	rejected	Lock a free-rolling utility cart in place: press both locking casters' brake tabs fully down so it no longer rolls
 2350	rejected	Add ims-cassette-load-and-latch task
 2351	rejected	Add the graphics card replacement task
@@ -2370,26 +2370,26 @@
 2371	rejected	Add lathe chuck setup task
 2372	rejected	Take a wheelchair's locked armrest off, lifting it square out of both sockets, and lay it down
 2373	revising	Seat a switch line card by swinging both ejector levers shut together
-2374	pending	Tilt a window's lower sash back into its frame, holding both tilt latches in until it latches
+2374	rejected	Tilt a window's lower sash back into its frame, holding both tilt latches in until it latches
 2375	rejected	Turn a revolving countertop display round and restock its two empty back pockets
 2376	accepted	Pick up litter with a reacher-grabber and drop it in the bin
 2377	rejected	Split a scored tablet in a pill cutter and put one half in each of two medicine cups
-2378	pending	Trim a dog's black claws with a guillotine clipper, a cut at a time, stopping each when the dot before its quick shows
+2378	rejected	Trim a dog's black claws with a guillotine clipper, a cut at a time, stopping each when the dot before its quick shows
 2379	rejected	Add task: Level a builder's automatic level on its three foot screws
 2380	rejected	Give a measured dose with a medicine spoon
-2381	revising	Put a pea-sized dab of toothpaste on a child's toothbrush, squeezing 0.15 to 0.35 g from a kids' tube
-2382	pending	Add task: Replace a faucet's cartridge so hot stays on the left
+2381	rejected	Put a pea-sized dab of toothpaste on a child's toothbrush, squeezing 0.15 to 0.35 g from a kids' tube
+2382	accepted	Add task: Replace a faucet's cartridge so hot stays on the left
 2383	rejected	Add task: Refit and lock a table saw's riving knife after dado work
 2384	rejected	Pack six eggs point-down from an egg flat into a half-dozen carton and close its lid
 2385	rejected	Hang a dish-rack cutlery caddy on the rack's side rail by its two hooks
 2386	rejected	Hang up a desk phone: set the handset back so each end sits in its own cradle cup
-2387	pending	Add task: Fold an open button-lock pocket knife shut without a gripper ever in the blade's path
+2387	rejected	Add task: Fold an open button-lock pocket knife shut without a gripper ever in the blade's path
 2388	rejected	Add task: Set an impulse sprinkler's two trip collars so it waters only the quarter between two flags
 2389	rejected	Bump-test a four-gas monitor with its calibration cap and regulator before a confined-space entry
 2390	rejected	Tighten a circular saw's blade bolt a quarter turn past hand-tight, holding the spindle lock in
 2391	rejected	Draw a continuous laboratory film with a fixed-gap applicator, then lift it clear
 2392	rejected	Level an analytical balance on its two front thumb-wheel feet until the bubble is centred
-2393	pending	Add CPU cooler installation task with a thermal paste rule
+2393	accepted	Add CPU cooler installation task with a thermal paste rule
 2394	rejected	Tighten four spring thumb nuts on a 1U server CPU cold plate to seat it flat
 2395	accepted	Add task: Dispense one serving of cereal from a twist-knob dispenser into a bowl
 2396	accepted	Add task: Aim a spring-balanced desk lamp so its beam lands on a dot in an open notebook
@@ -2401,7 +2401,7 @@
 2402	rejected	Return a drained houseplant to its saucer on the window sill, beside another plant
 2403	accepted	Draw a splinter out of a fingertip with tweezers
 2404	rejected	Give an epinephrine auto-injector trainer into a training pad, release straight off, click, hold 3 s, back on the tray
-2405	revising	Fold an outlet's three stiff copper wires back into its wall box and seat the outlet
+2405	pending	Fold an outlet's three stiff copper wires back into its wall box, seat the outlet and drive its two mounting screws
 2406	accepted	Prepare a shower chair left with one leg too short
 2407	rejected	Add cabinet_hinge task
 2408	rejected	Add server_bezel task
@@ -2411,14 +2411,14 @@
 2412	accepted	Slide a quarter sheet pan onto a toaster oven's lower rails, level and all the way in
 2413	rejected	Hang a hooked strainer across a bowl: hook on the right rim, handle on the left
 2414	rejected	Hang a planter by its ring on a wall bracket's hook, clear of the table, and let go
-2415	revising	Add tote-lids-interlock: close an attached-lid tote's two lapped lids together
+2415	pending	Add tote-lids-interlock: close an attached-lid tote's two lapped lids together
 2416	revising	Add contour-gauge-casing-profile task
 2417	accepted	Collect granules with a sleeve-and-notched-rod sampler
 2418	rejected	Shut off a pre-rinse spray valve left locked on over a dish sink
 2419	rejected	Add task: Pull a pocket radio's telescopic antenna out to full length and stand it upright, leaving the 190 g radio standing
 2420	revising	Add task: Put a water bottle into a side-entry cage under a small mountain bike's top tube, past its sprung front arm
-2421	revising	Empty a urinary drainage bag into a graduate, spout never touching it, then close the valve and clip the tube back
-2422	pending	Run a glucose meter's control check, seating a 0.4 mm strip and touching only its tip to a drop of control
+2421	pending	Empty a urinary drainage bag into a graduate, spout never touching it, then close the valve and clip the tube back
+2422	accepted	Run a glucose meter's control check, seating a 0.4 mm strip and touching only its tip to a drop of control
 2423	rejected	Seal a pipe penetration with a can of expanding spray foam
 2424	rejected	Glue and align a wooden frame corner
 2425	rejected	Add tensioned door security chain release task
@@ -2426,97 +2426,97 @@
 2427	rejected	Add task: Separate ceramic finishing media from steel washers with a hand sieve
 2428	revising	Add price-label-gun-mark-boxes task
 2429	rejected	Add reseat-coffee-maker-water-reservoir task
-2430	pending	Add replace-damaged-brick task
+2430	rejected	Add replace-damaged-brick task
 2431	rejected	Twist-unlock a new lotion bottle's pump and turn its spout to you, with no squirt
 2432	rejected	Clean old thermal paste off a desktop CPU's heat spreader with an alcohol wipe
 2433	rejected	Stabilize a wobbling cutting board while keeping a mug upright
 2434	rejected	Remove the leftover price-label adhesive from a returned pan's base with a 91% IPA wipe
 2435	rejected	Add tote-bail-stack task
 2436	rejected	Add tripped breaker reset task
-2437	pending	Add task: Skim the fat off stock without wasting the broth
-2438	pending	Lay a full wine bottle into a wine rack cubby the gripper cannot follow it into, and push it home
+2437	rejected	Add task: Skim the fat off stock without wasting the broth
+2438	rejected	Lay a full wine bottle into a wine rack cubby the gripper cannot follow it into, and push it home
 2439	rejected	Add wind-rope-over-hook-post task
-2440	pending	Seat a 100 mm wafer on a mask aligner's chuck: flat on two pins, rim on the third, then slide it in
-2441	revising	Turn a loose Asimov humanoid leg over on the table, then seat its knee side plate flush in the pocket
-2442	pending	Collapse an empty carton flat on the stack of knocked-down cartons it lies on
+2440	rejected	Seat a 100 mm wafer on a mask aligner's chuck: flat on two pins, rim on the third, then slide it in
+2441	pending	Turn a loose Asimov humanoid leg over on the table, then seat its knee side plate flush in the pocket
+2442	rejected	Collapse an empty carton flat on the stack of knocked-down cartons it lies on
 2443	rejected	Swap a hand blender's shaft for the whisk: both release buttons in, whisk clicked on
-2444	pending	Add task: Whisk a premeasured scoop of thickener into a resident's 200 mL drink without lumps
+2444	rejected	Add task: Whisk a premeasured scoop of thickener into a resident's 200 mL drink without lumps
 2445	rejected	Replace the worn rubber in a window squeegee channel: slide it out, thread the new one through and clip both ends
-2446	pending	Press a leaning run of books upright and hold it while the other hand slides a book into the 0.7 cm gap
+2446	rejected	Press a leaning run of books upright and hold it while the other hand slides a book into the 0.7 cm gap
 2447	rejected	Wedge a wall form's two snap ties tight: keyhole over the tie's head, then drive the wedge down until the slack is gone
 2448	rejected	Add spiral-hook-card task
 2449	rejected	Load four filled, lidded cups into a drink carrier, each upright in its own pocket
 2450	rejected	Add task: Empty a bedpan into a measuring graduate without spilling
 2451	rejected	Add task: Calibrate a dial stem thermometer to 32 °F in ice water
-2452	pending	Add power-bank charging safety task
-2453	revising	Add task: Take a stick-on wall hook off without lifting the paint
-2454	pending	Pay by card: enter the PIN on a shop's PIN pad with the other hand cupped over the keys
+2452	rejected	Add power-bank charging safety task
+2453	pending	Add task: Take a stick-on wall hook off without lifting the paint
+2454	rejected	Pay by card: enter the PIN on a shop's PIN pad with the other hand cupped over the keys
 2455	rejected	Peel a garlic clove with a silicone rolling peeler
 2456	rejected	Stretch and secure fabric in an embroidery hoop
-2457	pending	Add link-two-gpus-with-the-nvlink-bridge-that-fits-their-slot-spacing task
-2458	pending	Add catch-a-spider-under-a-glass task
+2457	accepted	Add link-two-gpus-with-the-nvlink-bridge-that-fits-their-slot-spacing task
+2458	rejected	Add catch-a-spider-under-a-glass task
 2459	rejected	Curl gift ribbon
 2460	rejected	Crush a peeled garlic clove in a two-handle garlic press
-2461	pending	Sort kiwis by squeezing them gently: the ripe ones into the bowl, the hard ones into the paper bag
+2461	rejected	Sort kiwis by squeezing them gently: the ripe ones into the bowl, the hard ones into the paper bag
 2462	rejected	Put an e-bike's frame battery back on: its contacts blind into the lower holder first, then swing it in until it clicks
 2463	accepted	Add magnetic stirring-bar retention during laboratory decanting
 2464	rejected	Give a child manikin one puff of an inhaler through a spacer: shake, fit, seal the mouthpiece in its mouth, press once, hold for its breaths
-2465	pending	Grind a mounted chip package's cross-section flat on a turning abrasive disc, down to the line scribed round the mount
+2465	rejected	Grind a mounted chip package's cross-section flat on a turning abrasive disc, down to the line scribed round the mount
 2466	rejected	Add vacuum cup and restrictor assembly through a mounting plate
 2467	rejected	Give a child manikin 5 ml of liquid medicine with an oral syringe: tip in the cheek, small squirts
 2468	rejected	Add robot foot tread wrapping and retaining-bar assembly task
 2469	revising	Add task: Rinse a molar inside a true-size mouth while the other hand's saliva ejector catches the water
-2470	pending	Add steering-hand-over-hand task
-2471	pending	Turn a pizza in place on an oven deck and return its peel to the rack
+2470	rejected	Add steering-hand-over-hand task
+2471	rejected	Turn a pizza in place on an oven deck and return its peel to the rack
 2472	rejected	Add hearing-protector fitting on an adult headform
-2473	pending	Add bp-cuff-apply task
-2474	revising	Secure your loose wrist-camera cable
+2473	rejected	Add bp-cuff-apply task
+2474	pending	Secure your loose wrist-camera cable
 2475	rejected	Add lock-stand-mixer-bowl-by-hidden-bumps task
 2476	rejected	Add burger patty grilling task
-2477	pending	Free a jammed steering lock: turn the wheel off the bolt and hold it there while the key turns to ON
+2477	rejected	Free a jammed steering lock: turn the wheel off the bolt and hold it there while the key turns to ON
 2478	pending	Add used suction liner disposal task
-2479	revising	Add fuel-nozzle-capless task
-2480	revising	Add burette-titration task
-2481	pending	Throw an empty can into a pedal bin, the lid opened with the pedal only
+2479	pending	Add fuel-nozzle-capless task
+2480	pending	Add burette-titration task
+2481	rejected	Throw an empty can into a pedal bin, the lid opened with the pedal only
 2482	rejected	Hang the cleaned swing buckets back on a centrifuge rotor: every place filled, each bucket on both pegs and free to swing
-2483	pending	Lock a rotary microtome's handwheel and cover its knife edge before taking the tissue block out
-2484	revising	Close a jaw coupling: spider into the fixed hub, loose hub turned to mesh and slid to its line
+2483	revising	Lock a rotary microtome's handwheel and cover its knife edge before taking the tissue block out
+2484	pending	Close a jaw coupling: spider into the fixed hub, loose hub turned to mesh and slid to its line
 2485	rejected	Restore a defeated guard interlock: take the spare key out of the door switch and shut the guard
 2486	rejected	Add blood-pressure-cuff-on-an-arm task
 2487	rejected	Add task: Hang an eyelet curtain on its rod
 2488	rejected	Put a centre-pinch lens cap back on a DSLR's kit lens and stand the camera down
-2489	revising	Add hang-mower-grass-bag-under-sprung-flap task
+2489	pending	Add hang-mower-grass-bag-under-sprung-flap task
 2490	rejected	Set an open petal steamer basket into a narrower saucepan on its feet, every leaf inside, handle pushed down for the lid
 2491	accepted	Stand two capped bottles of growth media in the autoclave pan for the liquid cycle
 2492	accepted	Change an engine air filter with the airbox cover held up on its duct, then clip shut
 2493	accepted	Open a child-proofed drawer: pull to the catch, press the latch down, slide it open
-2494	revising	Add sterile-peel-pouch task
+2494	pending	Add sterile-peel-pouch task
 2495	rejected	Lay a fabric repair patch flat over a hole
 2496	rejected	Inspect and sort damaged and intact fabric
 2497	rejected	Retrieve a matching fabric swatch from a sewing bin
 2498	rejected	Retrieve the exact stock bottle for a prescription
-2499	pending	Add task: take a hot iron off a finished shirt and set it down to cool somewhere safe
+2499	rejected	Add task: take a hot iron off a finished shirt and set it down to cool somewhere safe
 2500	rejected	Clear a cable-tie offcut from a Jetson controller fan
-2501	pending	Install a plug-on breaker in a load center: load end hooked on the rail, jaw pressed fully onto the bus stab
+2501	rejected	Install a plug-on breaker in a load center: load end hooked on the rail, jaw pressed fully onto the bus stab
 2502	accepted	Add saddle-quick-release task
 2503	rejected	Add clamp-two-precast-gels-into-an-sds-page-electrode-assembly task
 2504	rejected	Add move-a-ball-nut-from-its-shipping-arbor-onto-a-ball-screw task
 2505	rejected	Add set-a-featherboard-to-hold-a-board-against-the-rip-fence task
-2506	revising	Fingerstick a trainer hand: twist the lancet's tab off, steady the hand, fire square on the fingertip, discard in sharps
+2506	pending	Fingerstick a trainer hand: twist the lancet's tab off, hold the ring finger still, fire square, discard in sharps
 2507	accepted	Add wiper-blade-jhook task
 2508	rejected	Strip a kale leaf from its stalk
-2509	revising	Add heat-set-inserts task
-2510	pending	Remove an avocado stone
+2509	pending	Add heat-set-inserts task
+2510	rejected	Remove an avocado stone
 2511	accepted	Get a plugged-in hair dryer out of a filled sink
 2512	revising	Aim a real H4 headlamp's two adjuster screws until the beam cutoff lands on target
 2513	rejected	Add drip-emitter-punch task
 2514	rejected	Fit a thermostatic head onto a radiator valve: scale pointer at the top, pushed straight on until it snaps home
 2515	rejected	Set up a folded highway warning triangle: turn it across its base, raise both hinged arms and snap them at the apex
-2516	pending	Get a hard pet carrier ready: slide the top to its click, lock both knobs, fit the door and close its four hinges
+2516	rejected	Get a hard pet carrier ready: slide the top to its click, lock both knobs, fit the door and close its four hinges
 2517	rejected	Fit a split wall plate round a plumbed-in copper stub-out: spread it past the valve, let it spring shut, push it flat
 2518	closed	Add drill pointing task
 2519	rejected	Add multimeter OFF selector task
-2520	pending	Recover a wooden spatula obstructing a dishwasher spray arm
+2520	rejected	Recover a wooden spatula obstructing a dishwasher spray arm
 2521	rejected	Put a centrifugal juicer together: cover seated over the filter basket, wire safety locking arm closed in its grooves
 2522	accepted	Add jenga-push-and-stack task
 2523	accepted	A wine glass broke in a bread basket: bin all the bread with the glass, not just the pieces in sight
@@ -2527,18 +2527,18 @@
 2528	rejected	Cut a cigar cap cleanly
 2529	rejected	Tap a loose sixtel keg with a Sankey D coupler, steadying the keg by its chime
 2530	revising	Cut a 210 mm line in paper with real scissors, then put the offcut in a tray
-2531	pending	Take a used scalpel blade off its handle in a blade remover before the handle goes back for reprocessing
-2532	revising	Add labyrinth-two-knobs task
+2531	accepted	Take a used scalpel blade off its handle in a blade remover before the handle goes back for reprocessing
+2532	pending	Add labyrinth-two-knobs task
 2533	pending	Add wedge-blood-smear task
 2534	accepted	Pinch-zoom a street map on a loose tablet until the whole red walking route fits on the screen
 2535	rejected	Add dounce-homogenise task
-2536	revising	Ticket a shirt through its care label only: lift the label clear, push a tagging gun's needle through it alone, fire
+2536	pending	Ticket a shirt through its care label only: lift the label clear, push a tagging gun's needle through it alone, fire
 2537	rejected	Rebuild a check valve: seat the poppet, spring and gasket in orientation, close it, verify one-way flow
 2538	rejected	Put a mouse trap away that was left set: spring it with a tool first, then stow it
 2539	rejected	Add price-labeler task
 2540	rejected	Add screwdriver task: drive a cap screw into a threaded insert with a screwdriver, two arms
-2541	pending	Apply a water-transfer temporary tattoo
-2542	pending	Put away a hair straightener that is still on and hot: switch off, unplug, leave it on its mat
+2541	rejected	Apply a water-transfer temporary tattoo
+2542	accepted	Put away a hair straightener that is still on and hot: switch off, unplug, leave it on its mat
 2543	rejected	Mount an LED head on H-track: insert the adapter, twist to latch the cam, tug to prove it holds
 2544	rejected	Restore accurate weighing with a trapped grain under the balance pan
 2545	rejected	Add task: shake exactly 3 tablets out of a pill bottle
@@ -2546,111 +2546,111 @@
 2547	rejected	Restore flow through a limescale-blocked toilet rim jet
 2548	rejected	Clear a mixed toilet trapway clog with a plunger
 2549	closed	Add bimanual drill contact and trigger task
-2550	pending	Throw away an oil-soaked rag in the covered, self-closing oily-waste can, not the open trash bin
+2550	rejected	Throw away an oil-soaked rag in the covered, self-closing oily-waste can, not the open trash bin
 2551	rejected	Release a stick-vac bin with its button, empty the dust into a waste bin, refit it and leave the vac steady
 2552	rejected	Screen a mannequin's arm with a detector wand: sweep over, then under it at 5 cm, slow at the watch until it alarms
 2553	rejected	Roll a stored solar panel up onto its mounting stand
 2554	rejected	Seat a real DAC plug in a switch cage until it latches, then seat the boot and tug
 2555	rejected	Refit a Roomba's two rubber brushes, each peg in its matching drive socket, and snap the cleaning head's door shut
-2556	pending	Solder a cabinet light clear of flammable packaging
+2556	rejected	Solder a cabinet light clear of flammable packaging
 2557	rejected	Seat an 80 mm magnetic dust boot concentrically on a spindle nose with a 4-7 N press
-2558	revising	Mash cooked potato
-2559	revising	Close a wall belt barrier: draw the belt, pass its end hand to hand against the spring, and click it into the receiver
-2560	pending	Push a wafer boat into an oxidation furnace with the push rod at 1 ft/min until the rod's white band meets the door
-2561	pending	Peel a baking cup off a muffin
+2558	rejected	Mash cooked potato
+2559	pending	Close a wall belt barrier: draw the belt, pass its end hand to hand against the spring, and click it into the receiver
+2560	rejected	Push a wafer boat into an oxidation furnace with the push rod at 1 ft/min until the rod's white band meets the door
+2561	rejected	Peel a baking cup off a muffin
 2562	rejected	Add task: Open a clothes drawer jammed by a T-shirt sleeve caught behind its rail, without tearing the sleeve
-2563	pending	Add PCB stencil solder paste printing task
-2564	revising	Add task: Set a printer paper tray's guides snug to a fresh A4 stack
+2563	rejected	Add PCB stencil solder paste printing task
+2564	rejected	Add task: Set a printer paper tray's guides snug to a fresh A4 stack
 2565	rejected	Balance a powered-off camera gimbal on its free tilt axis
-2566	pending	Measure a robot joint's lost motion with controlled opposing pulls
-2567	pending	Clean the outside of a fixed window pane with a magnetic cleaner
+2566	rejected	Measure a robot joint's lost motion with controlled opposing pulls
+2567	rejected	Clean the outside of a fixed window pane with a magnetic cleaner
 2568	rejected	Change a camera's lens: hold the release, turn the old lens off, line up the red dots, turn the new one until it clicks
 2569	rejected	Invert washed teaspoons handles-up into a clean flatware cylinder held mouth to mouth, without touching them
 2570	revising	Add bimanual shallow wood drilling task
 2571	pending	Draw a right-angled triangle on an Etch A Sketch
 2572	rejected	Open a drawer past its child-safety latch
-2573	pending	Separate two stuck drinking cups
-2574	pending	Reset a jack-in-the-box and latch its lid
-2575	pending	Close a storage drawer over a bulky pillow
-2576	pending	Split a loaf cake into two layers with a wire
+2573	rejected	Separate two stuck drinking cups
+2574	accepted	Reset a jack-in-the-box and latch its lid
+2575	rejected	Close a storage drawer over a bulky pillow
+2576	rejected	Split a loaf cake into two layers with a wire
 2577	rejected	Add lever-arch-filing task
 2578	rejected	Add recip-blade-change: Fit a reciprocating-saw blade into its tool-f…
 2579	revising	Add miter-saw-45: Swing a mitre saw's turntable to its 45 degree dete…
 2580	rejected	Add relay-socket-clip: Replace a plug-in control relay: seat it in it…
 2581	rejected	Insert four spacers into the joints of a dry-laid 2x2 tile patch
 2582	rejected	Add trailer-7way-plug task
-2583	pending	Add table-football-pass task
-2584	pending	Add connect-a-trailer-7-way-plug task
-2585	pending	Add manual-feed pencil sharpening on a moving fixture
+2583	accepted	Add table-football-pass task
+2584	accepted	Add connect-a-trailer-7-way-plug task
+2585	revising	Add manual-feed pencil sharpening on a moving fixture
 2586	pending	Add turn-pan-handle-in: turn a frying pan's handle in on a cooktop, clear of the edge and the hot elements
 2587	rejected	Spray one tagged leaf of a pepper plant, shielding the other leaves with a card
-2588	pending	Add wet-mount coverslip placement task
-2589	revising	Add pool-bridge-shot task
+2588	rejected	Add wet-mount coverslip placement task
+2589	pending	Add pool-bridge-shot task
 2590	pending	Unfold a child's folding step stool: lift each end, push its leg out until its own lock clicks, stand it on its feet
-2591	pending	Move a toaster oven's rack down one rung: lift it past the anti-tip stop, draw it out, slide it in level
-2592	pending	Draw a baby carrier's cloth canopy forward to its stop over the doll's face, steadying the rocking carrier by its handle
+2591	accepted	Move a toaster oven's rack down one rung: lift it past the anti-tip stop, draw it out, slide it in level
+2592	rejected	Draw a baby carrier's cloth canopy forward to its stop over the doll's face, steadying the rocking carrier by its handle
 2593	revising	Get a wrench out from under a floor-hole cover and put it away
 2594	revising	Stack scrap lumber on a pallet when one offcut has a nail sticking out of it
-2595	pending	Pull a protruding nail with a claw hammer
-2596	revising	Add strip-wire-push-in-receptacle task
-2597	pending	Add task: Fit the hose end into the tap's sprung-sleeve coupler so it holds when tugged
+2595	rejected	Pull a protruding nail with a claw hammer
+2596	rejected	Add strip-wire-push-in-receptacle task
+2597	rejected	Add task: Fit the hose end into the tap's sprung-sleeve coupler so it holds when tugged
 2598	pending	Add correction-tape-typo task
-2599	pending	Add task: give a 1 mL IM injection in the deltoid with a retractable safety syringe
+2599	accepted	Add task: give a 1 mL IM injection in the deltoid with a retractable safety syringe
 2600	pending	Add rotary-dial-pencil task
 2601	pending	Add hdmi-blind-plug task
 2602	pending	Add h-shifter-reverse task
-2603	pending	Clip a worker's fall-arrest lanyard to the rated anchor across the deck, not to the guardrail beside the hook
+2603	accepted	Clip a worker's fall-arrest lanyard to the rated anchor across the deck, not to the guardrail beside the hook
 2604	rejected	Pressure-test a water-filled pipe circuit, isolate the pump, read the pressure drop and depressurize
-2605	pending	Clean up a broken mercury thermometer: glass onto the paper towel, then the beads squeegeed slowly onto it, never wiped
-2606	pending	Add soft-serve swirl task
+2605	rejected	Clean up a broken mercury thermometer: glass onto the paper towel, then the beads squeegeed slowly onto it, never wiped
+2606	rejected	Add soft-serve swirl task
 2607	closed	Recover the lower water phase from a separatory funnel
-2608	pending	Hang a coat rack on the wall by its two keyhole slots
-2609	pending	Prepare a forearm crutch for reuse
-2610	revising	End-of-day chairs up: lift a preschool chair, turn it over and set it seat down, legs up, on the table
-2611	pending	Brush the inner bottom and shoulder of a narrow-neck bottle
-2612	revising	Set an internal expansion anchor with a punch and hammer
+2608	rejected	Hang a coat rack on the wall by its two keyhole slots
+2609	rejected	Prepare a forearm crutch for reuse
+2610	pending	End-of-day chairs up: lift a preschool chair, turn it over and set it seat down, legs up, on the table
+2611	rejected	Brush the inner bottom and shoulder of a narrow-neck bottle
+2612	pending	Set a drop-in expansion anchor in concrete with its setting tool and a hammer
 2613	rejected	Add breadbin-rolltop-close: Close a roll-top bread bin: draw its slatted tambour along the curved grooves, over the corner and down the front
 2614	rejected	Add wine-stopper-wings: Reseal opened sparkling wine with a two-clamp…
 2615	rejected	Add saw-depth-set: Set a circular saw's depth of cut to 25 mm for 3/4…
 2616	rejected	Add clip-a-webcam-onto-a-laptop-screen task
-2617	pending	Add move-a-manikins-ankle-through-its-range task
-2618	pending	Lower the spring roller shade to the tape line
-2619	revising	Add let-out-a-bag-strap-at-its-ladder-lock task
-2620	pending	Add task: Serve potato salad with a squeeze disher
-2621	pending	Add task: Check a car wheel's tyre pressure with a pencil gauge at its angled valve, then put the gauge back
-2622	pending	Add fit-an-oxygen-regulator-onto-a-cylinder-valve task
+2617	accepted	Add move-a-manikins-ankle-through-its-range task
+2618	rejected	Lower the spring roller shade to the tape line
+2619	accepted	Add let-out-a-bag-strap-at-its-ladder-lock task
+2620	rejected	Add task: Serve potato salad with a squeeze disher
+2621	accepted	Add task: Check a car wheel's tyre pressure with a pencil gauge at its angled valve, then put the gauge back
+2622	accepted	Add fit-an-oxygen-regulator-onto-a-cylinder-valve task
 2623	rejected	Fit a sanding disc to a random orbital sander: line its dust holes up with the pad's, then press it on flat
 2624	rejected	Add connector-cpa task
-2625	pending	Garnish a full glass of water with a lime wedge: push its slit onto the 2 mm rim without tipping or spilling the glass
-2626	pending	Recover the lower phase through a contact-operated separatory funnel
-2627	pending	Assemble a rack-and-pinion parallel gripper, seating the second rack at the tooth that centres its jaws
-2628	pending	Add fit-a-slide-lock-across-two-cabinet-knobs task
-2629	pending	Clip a shoulder strap onto a laptop bag: squeeze each swivel snap hook open over its D-ring, the strap not twisted
+2625	rejected	Garnish a full glass of water with a lime wedge: push its slit onto the 2 mm rim without tipping or spilling the glass
+2626	rejected	Recover the lower phase through a contact-operated separatory funnel
+2627	rejected	Assemble a rack-and-pinion parallel gripper, seating the second rack at the tooth that centres its jaws
+2628	rejected	Add fit-a-slide-lock-across-two-cabinet-knobs task
+2629	accepted	Clip a shoulder strap onto a laptop bag: squeeze each swivel snap hook open over its D-ring, the strap not twisted
 2630	pending	Add put-away-a-spare-9v-battery-safely task
 2631	rejected	Ping-pong keep-ups: 10 bounces in a row on the bat
 2632	revising	Return a shopping trolley: push the chain key of the trolley in front home in your coin lock, then take the quarter back
 2633	rejected	Sweep scattered crumbs into a handheld dustpan and lift them clear
 2634	rejected	Add guarded dual-arm service-bay transport
 2635	rejected	Add fit-a-palm-protector-in-a-contracted-hand task
-2636	pending	Pour a draft beer with a proper foam head
-2637	pending	Homogenize a capped sample on a touch vortex mixer
-2638	pending	Add agar plate liquid spreading task
-2639	pending	Add tagged breaker safety task
-2640	pending	Weigh a steel specimen on a mechanical triple-beam balance
-2641	pending	Add task: put a cast agarose gel in the electrophoresis tank with its wells at the black electrode
+2636	rejected	Pour a draft beer with a proper foam head
+2637	rejected	Homogenize a capped sample on a touch vortex mixer
+2638	rejected	Add agar plate liquid spreading task
+2639	rejected	Add tagged breaker safety task
+2640	rejected	Weigh a steel specimen on a mechanical triple-beam balance
+2641	rejected	Add task: put a cast agarose gel in the electrophoresis tank with its wells at the black electrode
 2642	rejected	Add task: set a round-bottom flask down on a cork ring after taking it off the heating mantle
-2643	pending	Wring a wet yacht mop in a cone bucket
+2643	rejected	Wring a wet yacht mop in a cone bucket
 2644	closed	Close a chest freezer only when its opening is clear
-2645	pending	Add task: cover three steam-table pans, notched covers around the two ladles
+2645	rejected	Add task: cover three steam-table pans, notched covers around the two ladles
 2646	rejected	Add task: refill a table-top napkin dispenser behind its spring follower
-2647	pending	Apply a resident's lip balm along both lips of a care manikin, only on the lips, then cap it and return it to the tray
-2648	pending	Load a capped 96-well PCR plate onto a thermal cycler block, A1 back left; slide the cover forward, pull the lever down
+2647	rejected	Apply a resident's lip balm along both lips of a care manikin, only on the lips, then cap it and return it to the tray
+2648	rejected	Load a capped 96-well PCR plate onto a thermal cycler block, A1 back left; slide the cover forward, pull the lever down
 2649	closed	Add grind-pepper-over-plate: grind five turns of pepper over a plate with a twist mill, then stand it back up
-2650	pending	Set up a premolar bitewing on a dental training head
-2651	pending	Secure a loose trouser hem with a safety pin
+2650	rejected	Set up a premolar bitewing on a dental training head
+2651	accepted	Secure a loose trouser hem with a safety pin
 2652	rejected	Tilt a 20 mm spherical bearing into its inclined housing seat, register the grease hole, press it flush
 2653	rejected	Index a spring plunger fixture: pull the knob, turn the plate one stop, release the pin into the hole
-2654	pending	Change a wall soap dispenser's refill: hold the empty one, push the release latch, click the new one in, latch the cover
+2654	accepted	Change a wall soap dispenser's refill: hold the empty one, push the release latch, click the new one in, latch the cover
 2655	rejected	Load a strip of nails into a framing nailer: heads in the head track, past the nail stop, the pusher eased on
 2656	rejected	Seat a luer-lock syringe on a vial adapter and twist ~1.5 turns until it locks
 2657	revising	Hone a 200 mm chef's knife on a steel at 20 degrees, both sides, then park it
@@ -2658,77 +2658,77 @@
 2659	rejected	Clamp a gusset square on its fixture: seat it on the locators, flip both toggle clamps over-centre
 2660	revising	Crimp an RJ45 plug onto a CAT6 cable: insert eight wires, seat it, squeeze and pull-test
 2661	rejected	Fit a rigid cervical collar on a manikin: front shell under the chin, back shell, press both side tabs
-2662	pending	Prop a door open with a rubber wedge: push it under the door's bottom edge until its slope bites, then let go
-2663	pending	Dock a Nintendo Switch: lower the console straight down its dock's slot until its port seats on the hidden USB-C plug
-2664	pending	Add apple-wedger-press-through-to-board task
+2662	rejected	Prop a door open with a rubber wedge: push it under the door's bottom edge until its slope bites, then let go
+2663	rejected	Dock a Nintendo Switch: lower the console straight down its dock's slot until its port seats on the hidden USB-C plug
+2664	rejected	Add apple-wedger-press-through-to-board task
 2665	rejected	Add inline-skate-ratchet-cuff-buckle task
 2666	pending	Put a clog on a seated toddler manikin's dangling foot: knee bent back, toes under the vamp, heel in front of the strap
 2667	rejected	Snap an 8 mm panel push-clip into a hole: align, press until barbs seat, then pull-test
-2668	pending	Add hot-air power-inductor removal
+2668	rejected	Add hot-air power-inductor removal
 2669	rejected	Add portion-disher-level-and-sweep-release task
-2670	revising	Add plug-saw-into-intact-cord task
+2670	pending	Add plug-saw-into-intact-cord task
 2671	revising	Tighten a flat-pack cam lock: seat the cam, insert the bolt, turn 180 deg until panels are flush
 2672	rejected	Add cedar-shoe-tree-insert-and-seat task
 2673	rejected	Clip a screw-lock carabiner onto an anchor eye and screw the gate shut, then pull-test
 2674	rejected	Add conveyor-roller task
-2675	pending	Add barbell-spring-collar-slide-and-seat task
+2675	rejected	Add barbell-spring-collar-slide-and-seat task
 2676	rejected	Add belt-tensioner-idler-draw-and-locknut task
 2677	rejected	Add flip-mount-hinge-seat-and-detent task
 2678	rejected	Add hemocytometer-stage-clips-and-coverslip task
-2679	pending	Change an Apple Watch band: hold the release button while the old half slides out, then slide the new half in
+2679	accepted	Change an Apple Watch band: hold the release button while the old half slides out, then slide the new half in
 2680	rejected	Add card-file-follower-block-compress-and-lock task
 2681	rejected	Add esd-mat-ground-snap-and-banana-jack task
-2682	pending	Add refit-p-trap task
-2683	pending	Pull the comb from a set agarose gel without tearing a well, then set the gel on its tray in the gel box to run DNA
-2684	pending	Close a chest freezer after the stocker steps clear
-2685	pending	Recover retained beaker sample with a wash-bottle rinse
+2682	accepted	Add refit-p-trap task
+2683	rejected	Pull the comb from a set agarose gel without tearing a well, then set the gel on its tray in the gel box to run DNA
+2684	rejected	Close a chest freezer after the stocker steps clear
+2685	rejected	Recover retained beaker sample with a wash-bottle rinse
 2686	pending	Add lathe chuck-key safety task
-2687	pending	Open a corrugated mailer by pulling its tear strip
-2688	pending	Put an electrosurgical pencil left lying on the patient drape back in its holster without pressing CUT or COAG
-2689	pending	Cover a marked entry with a correction tape dispenser
+2687	rejected	Open a corrugated mailer by pulling its tear strip
+2688	rejected	Put an electrosurgical pencil left lying on the patient drape back in its holster without pressing CUT or COAG
+2689	rejected	Cover a marked entry with a correction tape dispenser
 2690	pending	Move two sterile medicine cups onto a sterile field with thumb forceps: only their tips may touch, no arm over the field
 2691	revising	Add cord-clamp task
 2692	rejected	Take down a ceramic wall hook while supporting it and withdrawing its recessed screw
-2693	pending	Free a slice stuck low in a plugged-in toaster: unplug it by the plug body, then lift the slice out
-2694	pending	Hang a framed picture on a wall hook by the wire behind it, level, then let go
+2693	rejected	Free a slice stuck low in a plugged-in toaster: unplug it by the plug body, then lift the slice out
+2694	revising	Hang a framed picture on a wall hook by the wire behind it, level, then let go
 2695	pending	Load a slide into a microscope's stage by its edges: coverslip up, seated under the objective, spring arm lowered gently
 2696	revising	Add contact-insert task
-2697	pending	Assemble a glass vacuum filter holder with its spring clamp
-2698	pending	Homogenize a sample with 15 strokes of a glass Dounce grinder
-2699	pending	Put a banknote under the till hold-down and close the drawer
-2700	pending	Pour two tablets into a held bottle cap, then into a medicine cup
-2701	pending	Put a beaker on a lit hot plate only after moving the acetone bottle beside it to the solvent tray
+2697	pending	Assemble a dry vacuum filter holder and lift it by the upper funnel
+2698	rejected	Homogenize a sample with 15 strokes of a glass Dounce grinder
+2699	accepted	Put a banknote under the till hold-down and close the drawer
+2700	pending	Open a push-and-turn safety cap and dispense two tablets
+2701	accepted	Put a beaker on a lit hot plate only after moving the acetone bottle beside it to the solvent tray
 2702	rejected	Plane a marked wood face with a free bench plane
 2703	rejected	Pot the 1-ball: one hand bridges the cue on the cloth, the other strokes it
-2704	pending	Restock two milk lanes in a dairy case, oldest code date in front
-2705	pending	Flatten an empty drink can with a wall-mounted can crusher
-2706	pending	Add ticket-stub-tear: Tear an event ticket's stub off along its perfo…
+2704	rejected	Restock two milk lanes in a dairy case, oldest code date in front
+2705	rejected	Flatten an empty drink can with a wall-mounted can crusher
+2706	rejected	Add ticket-stub-tear: Tear an event ticket's stub off along its perfo…
 2707	rejected	Add pipe-repair-clamp: Stop a leaking pipe with a hinged repair clamp…
-2708	pending	Add task: Press a servo horn onto its 25-tooth output spline with the arm on the zero mark
-2709	pending	Add task: Fit an add-on board onto a robot controller's 2 x 20 header with every pin in its own socket
-2710	pending	Add task: Take an anti-theft hard tag off a jacket cuff at a counter-mounted magnetic detacher
-2711	pending	Add task: Square the racked gantry against both end stops
+2708	rejected	Add task: Press a servo horn onto its 25-tooth output spline with the arm on the zero mark
+2709	rejected	Add task: Fit an add-on board onto a robot controller's 2 x 20 header with every pin in its own socket
+2710	rejected	Add task: Take an anti-theft hard tag off a jacket cuff at a counter-mounted magnetic detacher
+2711	rejected	Add task: Square the racked gantry against both end stops
 2712	rejected	Add price-gun-two-boxes task
 2713	rejected	Add pegboard-hook task
 2714	closed	Fit a servo horn onto its splined output shaft with the horn arm on the zero mark
 2715	closed	Seat a robot controller's add-on board on its two rows of header pins without bending any pin
 2716	rejected	Join two boards on three glued dowels, pressing them together evenly
 2717	closed	Unpin an anti-theft hard tag from a jacket sleeve cuff with a magnetic detacher
-2718	pending	Clean a car battery's tapered post with a terminal brush
+2718	accepted	Clean a car battery's tapered post with a terminal brush
 2719	rejected	Measure and record the radial runout of a conveyor roller
-2720	pending	Core a whole apple with a tube corer
-2721	pending	Cleave a 30 mm test piece off a silicon wafer: scribe a short nick at the tick, then break it with cleaving pliers
-2722	pending	Spin a Twister spinner with one flick: hold the light card still and send the arrow round at least two full turns
+2720	rejected	Core a whole apple with a tube corer
+2721	rejected	Cleave a 30 mm test piece off a silicon wafer: scribe a short nick at the tick, then break it with cleaving pliers
+2722	rejected	Spin a Twister spinner with one flick: hold the light card still and send the arrow round at least two full turns
 2723	rejected	Add price-gun-conveyor task
-2724	pending	Blend a jar of frozen fruit only after pulling out the spoon left standing in it
+2724	accepted	Blend a jar of frozen fruit only after pulling out the spoon left standing in it
 2725	rejected	Feed three workpieces one at a time through two conveyor gates
 2726	closed	Dispense a two-thirds cup of slush and set it on the pickup stand
-2727	pending	Put a toolbox down against the wall without blocking the fire extinguisher
+2727	rejected	Put a toolbox down against the wall without blocking the fire extinguisher
 2728	rejected	Take a turn at Guess Who: shut the doors over the five faces wearing hats without shutting any other face
-2729	pending	Compensate a passive oscilloscope probe
+2729	accepted	Compensate a passive oscilloscope probe
 2730	rejected	Unload a closed-eye workpiece from a moving overhead hanger
 2731	rejected	Reassemble a soft-serve freezer door: draw valve in its bore, draw handle engaged on its bar and pinned
-2732	pending	Close a junction box's open knockout with the right snap-in seal before it is energised
+2732	rejected	Close a junction box's open knockout with the right snap-in seal before it is energised
 2733	rejected	Put a bench plane back together after honing: iron onto both adjusters, lever cap hooked and cam locked
 2734	rejected	Clear a thermal label printer jam
 2735	rejected	Pull a seized compression olive off a copper pipe
@@ -2736,214 +2736,830 @@
 2737	rejected	Clear tangled thread from a sewing-machine bobbin
 2738	rejected	Roll a loose insect-screen spline back into its frame
 2739	rejected	Reseat a dropped bicycle chain
-2740	pending	Open a pumped-up garden pressure sprayer to refill it
+2740	rejected	Open a pumped-up garden pressure sprayer to refill it
 2741	rejected	Seat and lock a ribbon cable on a moving connector fixture
-2742	pending	Add task: Clamp two pine boards edge to edge with a one-hand bar clamp
-2743	pending	Add task: Take the battery pack off a cordless drill and put it in the tray
+2742	rejected	Add task: Clamp two pine boards edge to edge with a one-hand bar clamp
+2743	rejected	Add task: Take the battery pack off a cordless drill and put it in the tray
 2744	closed	wood stove damper
-2745	pending	Build a cube from six magnetic building tiles: stand four walls on the base so their edges catch, then lower the lid on
-2746	pending	Send a pull-back toy car through a gate: press it down, drag it back to wind it, and let go cleanly
+2745	rejected	Build a cube from six magnetic building tiles: stand four walls on the base so their edges catch, then lower the lid on
+2746	accepted	Send a pull-back toy car through a gate: press it down, drag it back to wind it, and let go cleanly
 2747	revising	Seat a Mini-ITX server board on four locating standoffs
 2748	rejected	Add wood-stove flue damper task
-2749	pending	Add task: Change the toner cartridge in a desktop laser printer and close its front door
+2749	accepted	Add task: Change the toner cartridge in a desktop laser printer and close its front door
 2750	rejected	Add refit-a-mini-splits-washed-air-filters task
 2751	pending	Load a full column of eight tips onto an 8-channel pipette, every tip sealed and level, without moving the tip box
-2752	revising	Add brush-dust-off-a-coworker-not-with-the-air-gun task
+2752	rejected	Add brush-dust-off-a-coworker-not-with-the-air-gun task
 2753	closed	Dry-fit two loose boards end to end on three dowels: all three into their holes at once, seam closed and flush
-2754	pending	Wind a cassette's loose loop of tape back in with a pencil: hold the cassette up, push the pencil through a hub, turn it
+2754	rejected	Wind a cassette's loose loop of tape back in with a pencil: hold the cassette up, push the pencil through a hub, turn it
 2755	rejected	Seat an electrical box and prebend both mounting flaps
 2756	rejected	Find the undersize bore on a moving inspection carriage
 2757	rejected	Calibrate and verify a moving checkweigher
-2758	pending	Loop a printed baggage tag through a suitcase handle and seal it
-2759	pending	Play a cassette on a shoebox recorder: pop the door open, slide the tape into it side A up, click it shut, press PLAY
-2760	pending	Set up a patient's oxygen at 2 L/min: push the cannula tubing onto the flowmeter's nipple, turn the knob to the line
-2761	pending	Free a circular saw's lower blade guard that was propped open with a wood shim
+2758	revising	Loop a printed baggage tag through a suitcase handle and seal it
+2759	rejected	Play a cassette on a shoebox recorder: pop the door open, slide the tape into it side A up, click it shut, press PLAY
+2760	rejected	Set up a patient's oxygen at 2 L/min: push the cannula tubing onto the flowmeter's nipple, turn the knob to the line
+2761	rejected	Free a circular saw's lower blade guard that was propped open with a wood shim
 2762	rejected	Secure a moving enclosure lid with its over-center latch
-2763	pending	Set an exam table's stirrups: draw each out, unfold it, lift it out of its lock and drop it into the outermost notch
+2763	rejected	Set an exam table's stirrups: draw each out, unfold it, lift it out of its lock and drop it into the outermost notch
 2764	rejected	Build a mahjong wall: lift a loose row of 17 tiles as one, pressed end to end between both arms, onto the other row
 2765	rejected	Change a door's euro lock cylinder: steady the door, find the key angle that frees the cam, draw it out, fit the new one
-2766	pending	Take a passport back out of a ticket window's recessed deal tray: draw it up the dish from under the glass
+2766	rejected	Take a passport back out of a ticket window's recessed deal tray: draw it up the dish from under the glass
 2767	rejected	Add task: Release both toolbox clips and open the lid
-2768	pending	Put a clip-on shade on a candlestick lamp: lift it over the bulb and press its fitter home without tipping the lamp
-2769	pending	Slide an edge guard onto a chef's knife with two hands, never going near the bare edge, and leave the knife on the board
-2770	pending	Add pan-fire-lid-on: put out a pan of burning oil with its lid and turn the burner off
+2768	rejected	Put a clip-on shade on a candlestick lamp: lift it over the bulb and press its fitter home without tipping the lamp
+2769	rejected	Slide an edge guard onto a chef's knife with two hands, never going near the bare edge, and leave the knife on the board
+2770	accepted	Add pan-fire-lid-on: put out a pan of burning oil with its lid and turn the burner off
 2771	rejected	Adjust when the cam on a moving carriage trips a roller switch
 2772	rejected	Set a two-part wind-up kitchen timer for 10 minutes: hold one part, wind the other to 55 first, then turn it back
 2773	rejected	Add task: stow a spirit level across a wide bench into a deep caddy slot
 2774	rejected	Lift a flexible profile from a moving carriage and support it at three saddles
 2775	rejected	Apply a balancing strip to a propeller and verify it stays balanced
-2776	pending	Add draw-a-circle-with-a-school-compass task
-2777	pending	Add clear-a-jammed-air-nailer task
+2776	rejected	Add draw-a-circle-with-a-school-compass task
+2777	rejected	Add clear-a-jammed-air-nailer task
 2778	rejected	Damp the swing of a suspended fixture while its trolley moves
 2779	rejected	Remove a press-fit pinion with a guided extractor on a moving carriage
 2780	revising	Steam a pitcher of milk for a latte with a commercial espresso machine's steam wand
 2781	pending	Add set-an-angle-grinder-guard-toward-the-operator-and-lock-its-band-clamp task
 2782	rejected	Fit a front-lock raised toilet seat: rear wings under the bowl's lip, then the front knob turned until tight
-2783	pending	Build a wooden block marble run: set three drilled blocks so their holes meet, then roll the marble down into the cup
-2784	pending	Put both AirPods Pro back in their case, each stem-first into its own well, and push the lid shut so its magnet holds it
-2785	pending	Buy a gumball from a coin gumball machine: drop the quarter in the slot, turn the handle a full turn, lift the door
-2786	pending	Open a keypad home safe: key the code, turn the knob within the 5 s the green light gives, swing the door open
-2787	pending	Pry a nailed 1x4 off two joists with a flat bar, levering on each joist in turn, and lay it on the table
+2783	rejected	Build a wooden block marble run: set three drilled blocks so their holes meet, then roll the marble down into the cup
+2784	accepted	Put both AirPods Pro back in their case, each stem-first into its own well, and push the lid shut so its magnet holds it
+2785	accepted	Buy a gumball from a coin gumball machine: drop the quarter in the slot, turn the handle a full turn, lift the door
+2786	rejected	Open a keypad home safe: key the code, turn the knob within the 5 s the green light gives, swing the door open
+2787	revising	Pry a nailed 1x4 off two joists with a flat bar, levering on each joist in turn, and lay it on the table
 2788	rejected	Find the two flat tennis balls among four by their bounce: flat ones into the grey bin, good ones into the blue box
 2789	rejected	Roll a registered batch code onto a moving carton
-2790	pending	Add cake-dome-cover: revision of lapsed TK-QTH3SB (credited)
-2791	pending	Tear the customer's receipt off a card terminal along its tear bar and lay it on the tip tray
+2790	rejected	Add cake-dome-cover: revision of lapsed TK-QTH3SB (credited)
+2791	rejected	Tear the customer's receipt off a card terminal along its tear bar and lay it on the tip tray
 2792	rejected	Add self-inking-stamp-in-box: stamp RECEIVED inside the box on a delivery note
-2793	pending	Open a new iPhone's box: lift its close-fitting lid off slowly, so the air in the fit doesn't pull the base up
-2794	revising	Add fill bucket to brim with garden hose task
+2793	rejected	Open a new iPhone's box: lift its close-fitting lid off slowly, so the air in the fit doesn't pull the base up
+2794	pending	Add fill bucket to brim with garden hose task
 2795	rejected	Engage a swivel caster directional lock while rolling a cart
-2796	pending	Guard two bare rebar stubs: fit impalement-rated caps, held by the neck and pushed home, and pass over the mushroom caps
+2796	rejected	Guard two bare rebar stubs: fit impalement-rated caps, held by the neck and pushed home, and pass over the mushroom caps
 2797	rejected	Seat a removable bridge and roll a loaded cart across it
 2798	rejected	Add dig out buried pipe with bimanual spade task
-2799	pending	Add task: Fit the server security bezel and check its latch
-2800	pending	Hand-tap an M6 tool hole in a robot tool adapter plate: start it square, back it off every turn, back it out
-2801	pending	Add foosball-forward-shot: score a table football goal from the three-man rod
+2799	rejected	Add task: Fit the server security bezel and check its latch
+2800	rejected	Hand-tap an M6 tool hole in a robot tool adapter plate: start it square, back it off every turn, back it out
+2801	closed	Add foosball-forward-shot: score a table football goal from the three-man rod
 2802	rejected	Set the preload on a rolling cam follower
 2803	rejected	Wind a cable onto a powered reel while holding its hinged guide
 2804	rejected	Add kelvin-probe-stepped-coupon-contact task
-2805	pending	Fit a robot arm joint's GT2 timing belt round both pulleys with its teeth meshed, then tension it and clamp the motor
-2806	pending	Fit a B22 bulb into a ceiling pendant's lampholder that hangs free on its flex
+2805	rejected	Fit a robot arm joint's GT2 timing belt round both pulleys with its teeth meshed, then tension it and clamp the motor
+2806	rejected	Fit a B22 bulb into a ceiling pendant's lampholder that hangs free on its flex
 2807	rejected	Hang a small tool shelf on the French cleat along a workbench's backboard
 2808	rejected	Add reticle-gate-vernier-keeper task
-2809	pending	Prepare a two-button folding walker for a seated person
-2810	pending	Rewind an extended tape measure under control
+2809	rejected	Prepare a two-button folding walker for a seated person
+2810	accepted	Rewind an extended tape measure under control
 2811	pending	Pry the connected caps off a filled eight-tube strip
-2812	pending	Add pick-strawberry task
-2813	pending	Play Sa-Re-Ga on a hand-pumped harmonium: one hand pumps the bellows nonstop while the other holds each key
+2812	rejected	Add pick-strawberry task
+2813	rejected	Play Sa-Re-Ga on a hand-pumped harmonium: one hand pumps the bellows nonstop while the other holds each key
 2814	rejected	Set the height and tension of a table-tennis net
 2815	rejected	Add task: pick the ordered item from a deep tote into the order bin
-2816	pending	Secure an open coin-cell remote before returning it to the toy shelf
+2816	accepted	Secure an open coin-cell remote before returning it to the toy shelf
 2817	pending	Add pinball-plunger-flipper-shot: launch the ball, then flip it back up into the top lanes
 2818	rejected	Add task: pack-apples-into-pocket-tray
-2819	pending	Give a newborn manikin five inflation breaths with an infant bag and mask
+2819	rejected	Give a newborn manikin five inflation breaths with an infant bag and mask
 2820	rejected	Add task: transplant-plugs-into-cell-strip
-2821	pending	Add seat-a-residents-lower-denture task
-2822	pending	Put a table fan back together after washing: blade onto the shaft's pin, reverse-thread cap, front grille, three clips
+2821	rejected	Add seat-a-residents-lower-denture task
+2822	rejected	Put a table fan back together after washing: blade onto the shaft's pin, reverse-thread cap, front grille, three clips
 2823	rejected	Add task: kit-gearbox-parts-into-fitted-tray
-2824	pending	Add listen-at-the-four-heart-sites-with-a-stethoscope task
-2825	pending	Tape over a used 9 V battery's snap terminals before dropping it in a jar of loose cells
+2824	rejected	Add listen-at-the-four-heart-sites-with-a-stethoscope task
+2825	rejected	Tape over a used 9 V battery's snap terminals before dropping it in a jar of loose cells
 2826	rejected	Add task: unload-and-load-cnc-vise
 2827	rejected	Counter-hold a trailer winch while switching its pawl and paying out strap
 2828	rejected	Add task: put-away-tote-to-location-b2
-2829	pending	Remove a wheelchair's swing-away leg rests: squeeze the release, swing out, lift off the pins, set down on the floor
-2830	pending	Put a Ken doll's head back on: hold the body in one hand and push the head onto its neck ball until it snaps
-2831	pending	Stack a zinc CR2032 coin cell with tweezers and dose its electrolyte by pipette
-2832	pending	Deploy a full-size medical privacy screen
+2829	rejected	Remove a wheelchair's swing-away leg rests: squeeze the release, swing out, lift off the pins, set down on the floor
+2830	rejected	Put a Ken doll's head back on: hold the body in one hand and push the head onto its neck ball until it snaps
+2831	revising	Stack a zinc CR2032 coin cell with tweezers and dose its electrolyte by pipette
+2832	rejected	Deploy a full-size medical privacy screen
 2833	rejected	Add paddle-bounce-ping-pong: bounce a ping-pong ball on a paddle ten times in a row
 2834	pending	Close a 300 mm wafer shipping box in the maker's order: left edge in and latched, right side pressed flush and latched
-2835	pending	Add replace-the-dead-coil-element-on-an-electric-range task
+2835	rejected	Add replace-the-dead-coil-element-on-an-electric-range task
 2836	pending	Refit a 2U server's cooling-fan assembly: lower it level onto its two hidden guide pins, then cam both blue levers down
 2837	rejected	Add refit-an-electric-coil-burner-after-cleaning task
-2838	pending	Put the cover on a junction box where one splice was left bare: cap it with a wire nut first
-2839	pending	Close the roller clamp on an IV line left running free: roll its wheel to the stop without sliding the clamp on the line
-2840	pending	Press three separate spritz cookies onto a baking sheet
+2838	accepted	Put the cover on a junction box where one splice was left bare: cap it with a wire nut first
+2839	rejected	Close the roller clamp on an IV line left running free: roll its wheel to the stop without sliding the clamp on the line
+2840	rejected	Press three separate spritz cookies onto a baking sheet
 2841	rejected	Add tow-cart-hitch-pin task
-2842	pending	Add heat-a-test-tube-with-its-mouth-away-from-your-partner task
+2842	rejected	Add heat-a-test-tube-with-its-mouth-away-from-your-partner task
 2843	rejected	Move a ceramic tile left standing on its edge into a lean-to rack, letting go only once it leans on both posts
 2844	rejected	Shelve a 1.2 kg steel tool tin whose lift-off lid only rests on top, without the lid coming off
 2845	rejected	Free a mug whose handle is cocked on a loose retaining rod, without dragging the rod out of its brackets
 2846	rejected	Add weld-slag-chip task
-2847	pending	Remove trapped hair from a hairbrush with a pin-tail comb
-2848	pending	Add highball-glass-rack-invert task
-2849	pending	Push a wooden toy train round a bend by its last wagon, keeping all four vehicles coupled and in the grooves
-2850	pending	Add sow-seed task: sow a bean one inch deep in loose potting mix and leave it covered
-2851	pending	Add carry-a-microscope-by-its-arm-and-base task
-2852	pending	Charge a LiPo pack whose charge lead was left plugged in
-2853	pending	Take the collar off the dog manikin
-2854	pending	Add erase-a-pencil-answer-holding-the-sheet task
+2847	revising	Remove trapped hair from a hairbrush with a pin-tail comb
+2848	rejected	Add highball-glass-rack-invert task
+2849	rejected	Push a wooden toy train round a bend by its last wagon, keeping all four vehicles coupled and in the grooves
+2850	rejected	Add sow-seed task: sow a bean one inch deep in loose potting mix and leave it covered
+2851	rejected	Add carry-a-microscope-by-its-arm-and-base task
+2852	revising	Charge a LiPo pack whose charge lead was left plugged in
+2853	rejected	Take the collar off the dog manikin
+2854	accepted	Add erase-a-pencil-answer-holding-the-sheet task
 2855	rejected	Add close-a-deli-slicers-gauge-plate-and-lift-off-its-carriage task
-2856	pending	Roll the IV roller clamp to 20 drops a minute
+2856	accepted	Roll the IV roller clamp to 20 drops a minute
 2857	pending	Add close-uv-transilluminator-cover-before-switch-on task
-2858	pending	Raise an office chair's seat to 53 cm: hold its gas-lift lever up as the seat rises, and let go on the height
+2858	accepted	Raise an office chair's seat to 53 cm: hold its gas-lift lever up as the seat rises, and let go on the height
 2859	rejected	Serve cask ale with a hand-pull beer engine without spilling
-2860	pending	Secure a ponytail with a plain hair elastic
-2861	pending	Reinstall a microwave turntable after cleaning
+2860	closed	Secure a ponytail with a plain hair elastic
+2861	accepted	Reinstall a microwave turntable after cleaning
 2862	rejected	Stand two playing cards by leaning their top edges together
 2863	rejected	Add ceiling-tile-lay-in task
-2864	pending	Take a baby's temperature under its arm with a digital stick thermometer
+2864	rejected	Take a baby's temperature under its arm with a digital stick thermometer
 2865	rejected	Seat a clip-on wheel balance weight on the marked rim
 2866	pending	Add switch-off-a-rotary-tool-before-plugging-it-in task
 2867	rejected	Seat a lens tube's recessed retaining ring
 2868	rejected	Add drain-pipe-pitch-hangers task
-2869	pending	Put a call headset on a child-size mannequin head: boom down, cups on both ears
-2870	pending	Clamp a wooden strip in a screw vise and saw a 150 mm piece to length
+2869	rejected	Put a call headset on a child-size mannequin head: boom down, cups on both ears
+2870	rejected	Clamp a wooden strip in a screw vise and saw a 150 mm piece to length
 2871	rejected	Level a dishwasher's upper rack left higher on one side with its height adjusters, then roll it in to dock
-2872	pending	Click a full 1 L bottle into a sparkling water maker's tilted Snap-Lock: neck in at an angle, then push up and back
+2872	rejected	Click a full 1 L bottle into a sparkling water maker's tilted Snap-Lock: neck in at an angle, then push up and back
 2873	rejected	Recentre a 17-inch floor pad lying off-centre on a floor machine's pad driver and click the centre lock home
 2874	rejected	Press home a kettle lid left resting on its catch, without tipping the full kettle
-2875	revising	Ready a telescope for viewing the sun: front solar filter on, finder capped, the eyepiece sun filter left unused
+2875	pending	Ready a telescope for viewing the sun: front solar filter on, finder capped, the eyepiece sun filter left unused
 2876	rejected	Put two coins back in an open kiss-lock coin purse and squeeze its ball clasp shut
-2877	pending	Add light-a-gas-grill-with-its-lid-open task
+2877	rejected	Add light-a-gas-grill-with-its-lid-open task
 2878	rejected	Add open-a-v-brake-to-free-the-wheel task
-2879	pending	Prepare an infant car seat left on its base latched on one side only
+2879	rejected	Prepare an infant car seat left on its base latched on one side only
 2880	rejected	Release a backup battery from its retention strap
 2881	rejected	Snug a loose toilet handle: hold it level outside while the other hand turns the tank's left-hand locknut, not too tight
 2882	rejected	Add operator-safe dual-arm transfer
-2883	pending	Snap a plastic wheel cover onto a steel wheel with its valve notch over the valve stem and every retaining clip engaged
-2884	pending	Free a server processor stuck to its heat sink by old paste: twist the seal loose, then tray it contact side up
-2885	revising	Focus a diode laser before cutting robot parts: lower its free-sliding module onto the focus bar, lock it, stow the bar
+2883	rejected	Snap a plastic wheel cover onto a steel wheel with its valve notch over the valve stem and every retaining clip engaged
+2884	rejected	Free a server processor stuck to its heat sink by old paste: twist the seal loose, then tray it contact side up
+2885	pending	Focus a diode laser before cutting robot parts: lower its free-sliding module onto the focus bar, lock it, stow the bar
 2886	rejected	Set a plug-in lamp timer: with a pen, push down only the 6:00-10:30 PM segments, 3.3 mm apart, then turn it to the time
 2887	rejected	Refit a pressure cooker's float valve cap: hold the loose valve in from the top and snap the silicone cap on underneath
-2888	pending	Set a short NMR sample's depth: push the tube through the tight spinner to the gauge line (no stop); load the changer
-2889	revising	Lift the grounded trailer foot, turn half a revolution in high, and stow the crank
+2888	rejected	Set a short NMR sample's depth: push the tube through the tight spinner to the gauge line (no stop); load the changer
+2889	pending	Retract a grounded two-speed landing leg to its travel stop and stow the crank
 2890	rejected	Square a racked wooden frame with a diagonal clamp
-2891	pending	Add take-a-cup-from-a-trembling-hand task
-2892	pending	Floss a dental training head's lower front teeth with a floss pick: ease it through, wipe both sides, bring it back out
+2891	rejected	Add take-a-cup-from-a-trembling-hand task
+2892	rejected	Floss a dental training head's lower front teeth with a floss pick: ease it through, wipe both sides, bring it back out
 2893	rejected	Add task: close-carton-flaps-in-order
 2894	rejected	Add task: change-receipt-printer-paper-roll
 2895	rejected	Add task: close-hood-off-its-prop-rod
 2896	rejected	Add task: isolate-and-drain-filter-housing
 2897	rejected	Add task: raise-bed-rails-until-they-latch
 2898	rejected	Add task: couple-camlock-hose-fitting
-2899	pending	Install a hot-swap drive carrier in a 1U server: slide it in to the connector, then cam it home with its handle
-2900	pending	Press through an Advent calendar door without touching the chocolate
-2901	revising	Pop an ORCA robot hand's dislocated thumb joint back in: both bearings into their arc grooves at once
+2899	rejected	Install a hot-swap drive carrier in a 1U server: slide it in to the connector, then cam it home with its handle
+2900	rejected	Press through an Advent calendar door without touching the chocolate
+2901	pending	Pop an ORCA robot hand's dislocated thumb joint back in: both bearings into their arc grooves at once
 2902	rejected	Add task: unfold-plate-past-spring-lock-pin
 2903	rejected	Add task: prepare-wheelchair-for-transfer
-2904	pending	Pull a Christmas cracker with both hands until it cracks and parts, then put the pieces down
+2904	rejected	Pull a Christmas cracker with both hands until it cracks and parts, then put the pieces down
 2905	rejected	Add task: swap-part-in-hold-down-clamp-fixture
 2906	rejected	Reassemble an electric carving knife: join the blades by rivet and keyhole, then click both into the handle
-2907	pending	Charge a three-valve pipette filler and dispense 5 mL
+2907	accepted	Charge a three-valve pipette filler and dispense 5 mL
 2908	rejected	Add task: bolt-sprung-door-shut
 2909	rejected	Key a pulley onto a shaft and lock it with its set screw
-2910	pending	Untangle three clothes hangers and hang them separately
-2911	pending	Clarify an analytical sample through a syringe membrane
+2910	rejected	Untangle three clothes hangers and hang them separately
+2911	rejected	Clarify an analytical sample through a syringe membrane
 2912	rejected	Remove only the center knockout from an electrical enclosure
-2913	revising	Capture three calibration impressions on an optical robot fingertip
-2914	pending	Fit lever-lock chain handcuffs on two training wrist forms
-2915	revising	Release a cheesecake from its springform band
-2916	revising	Revise paint-can lid closure with measured mallet strikes
-2917	pending	Move a fridge shelf up a slot, tipping it to hook in
+2913	rejected	Capture three calibration impressions on an optical robot fingertip
+2914	rejected	Fit lever-lock chain handcuffs on two training wrist forms
+2915	pending	Release a cheesecake from its springform band
+2916	pending	Revise paint-can lid closure with measured mallet strikes
+2917	rejected	Move a fridge shelf up a slot, tipping it to hook in
 2918	rejected	Reset a tripped breaker: push its mid-way handle firmly all the way to OFF, then to ON, leaving the other breakers on
 2919	rejected	Replace a foil shaver’s cutter and foil
 2920	rejected	Restore grip to a lint-clogged hook-and-loop strap
 2921	rejected	Reconnect a roller blind’s beaded chain
 2922	rejected	Drain gravy through a bottom-release fat separator and stop before the fat reaches the outlet
-2923	revising	Slice a cinnamon-roll log by drawing floss across it without squashing the spiral
-2924	pending	Draw a closed Spirograph rosette while keeping the wheel meshed inside its ring
-2925	pending	Wrap a burger to go in a foil-laminated sheet: front and back over the bun, then both sides up
-2926	revising	Secure an SO-101 robot arm to a small table edge with plastic clamps
-2927	revising	Light the dinner candle beside oxygen: clear the wax candle and matches, switch on a battery candle
-2928	pending	Rotate a honey dipper, drizzle onto toast, and return it to its rest
-2929	pending	Cut three bites off a sausage with a knife and fork: tines pin the round, slick link while the knife saws through
-2930	pending	Hook a Club across a steering wheel and pull it snug
-2931	revising	Fit an SO-101 arm's shoulder bracket over both horns of its fixed servo and line up its screw holes
-2932	pending	Untwist and dispense a wrapped candy
-2933	pending	Oil a squeaky cabinet hinge with WD-40: a short burst into each gap between its knuckles, then work the door
-2934	pending	Add open-a-shaken-bottle-of-sparkling-water task
-2935	revising	Add vacuum crevice task
-2936	pending	Add strut-spring-nut-clamp task
-2937	pending	Shut an overpacked suitcase with a sleeve hanging out: tuck it in, press the lid down, latch both
-2938	pending	Snap one banana off a bunch without dragging the bunch or denting the fruit, and lay it in an open lunch box
-2939	pending	Add measure-a-foot-on-a-brannock-device task
-2940	pending	Blot excess water from wet hair
+2923	pending	Slice a cinnamon-roll log by drawing floss across it without squashing the spiral
+2924	accepted	Draw a closed Spirograph rosette while keeping the wheel meshed inside its ring
+2925	accepted	Wrap a burger to go in a foil-laminated sheet: front and back over the bun, then both sides up
+2926	pending	Secure an SO-101 robot arm to a small table edge with plastic clamps
+2927	rejected	Light the dinner candle beside home oxygen: switch on the battery candle instead of striking a match
+2928	rejected	Rotate a honey dipper, drizzle onto toast, and return it to its rest
+2929	rejected	Cut three bites off a sausage with a knife and fork: tines pin the round, slick link while the knife saws through
+2930	rejected	Hook a Club across a steering wheel and pull it snug
+2931	pending	Fit an SO-101 arm's shoulder bracket over both horns of its fixed servo and line up its screw holes
+2932	accepted	Untwist and dispense a wrapped candy
+2933	rejected	Oil a squeaky cabinet hinge with WD-40: a short burst into each gap between its knuckles, then work the door
+2934	rejected	Add open-a-shaken-bottle-of-sparkling-water task
+2935	rejected	Add vacuum crevice task
+2936	revising	Add strut-spring-nut-clamp task
+2937	rejected	Shut an overpacked suitcase with a sleeve hanging out: tuck it in, press the lid down, latch both
+2938	rejected	Snap one banana off a bunch without dragging the bunch or denting the fruit, and lay it in an open lunch box
+2939	rejected	Add measure-a-foot-on-a-brannock-device task
+2940	rejected	Blot excess water from wet hair
 2941	revising	Complete three paddle returns against a tabletop rebound board
 2942	rejected	Tip and park a full-size hand truck on passive wheels
-2943	pending	Fish a stir bar out through a narrow flask neck on a magnetic retriever, then slide its magnet up to drop it in a beaker
+2943	accepted	Fish a stir bar out through a narrow flask neck on a magnetic retriever, then slide its magnet up to drop it in a beaker
 2944	rejected	Add task: sweep-crumbs-into-held-dustpan
 2945	rejected	Add task: scrape-board-into-sheet-pan
 2946	pending	Shake exactly two mints out of a flip-top mint box into a dish, then snap the lid shut and put the box down
-2947	pending	Split a joined pair of disposable chopsticks cleanly and lay the two sticks side by side across a lunch jar
+2947	rejected	Split a joined pair of disposable chopsticks cleanly and lay the two sticks side by side across a lunch jar
 2948	pending	Prepare a blot-transfer cassette and roll out trapped air
-2949	pending	Stop a chirping smoke alarm by snapping in the new 9 V battery left beside it, not by leaving the alarm dead
-2950	pending	Raise a bed's side rail by its release knob after moving the resident's forearm out of its path
+2949	pending	Stop a chirping smoke alarm: fit the new 9 V, latch the compartment and twist the alarm back onto its bracket
+2950	rejected	Raise a bed's side rail by its release knob after moving the resident's forearm out of its path
+2951	pending	Put an empty soup can in the recycling when its jagged cut lid still hangs from the rim, standing up
+2952	rejected	Add reassemble-a-countertop-deep-fryer task
+2953	rejected	Add fit-cartridges-to-a-half-mask-respirator task
+2954	pending	Add task: clean a wireless earbud and replace its silicone eartip
+2955	rejected	Unscrew a limescaled hidden aerator from a faucet spout with its key while holding the spout, then refit it flush
+2956	rejected	Add take-the-plates-off-a-contact-grill task
+2957	pending	Aspirate a tilted flask with the tip at its back wall
+2958	accepted	Change a mini centrifuge to its strip rotor: turn it onto the pin, click it on, load
+2959	rejected	Release a ratchet strap, lever held, handle folded flat
+2960	pending	Open a door through a child-safety knob cover
+2961	accepted	Add set-a-micropipette-to-250-microlitres task
+2962	pending	Wring two gauge blocks crossed, then turned into line
+2963	accepted	Fit a robot axis's side-mounted cable carrier: fold it round and click its free end into the carriage bracket
+2964	pending	Add task: Open a new superglue tube: unscrew the cap, flip it and pierce the foil seal with its pin
+2965	revising	Roll a TripleFlask flat from a lean so its layers match
+2966	rejected	Fit a spring-clip mini downlight into its hole in a ceiling tile: press both clips back flat, push it in, and let them spring out behind the tile
+2967	rejected	Fit a two-piece neck collar on a lying patient while keeping the head from rolling
+2968	rejected	Add task: Hang a hamster's water bottle on its wire cage with the spout through the bars
+2969	rejected	Add task: Attach a loose Joy-Con to a docked Nintendo Switch by sliding it down the console's side rail until its catch clicks
+2970	rejected	Cleft-graft an apple stub: set a scion at each end of the split, bark just inside the stub's, then pull the wedge
+2971	rejected	Fit a mallet-finger splint onto a drooping fingertip: slide it on and bring the tip straight without bending it
+2972	rejected	Add replace-a-self-inking-stamps-ink-pad task
+2973	rejected	Sort machined blocks with a go/no-go gap gauge
+2974	pending	Close a dozen-egg carton with its locking flap tucked inside the lid
+2975	pending	Realign and secure a robot conveyor's photoelectric detector
+2976	closed	Hold a spring-open berry clamshell punnet lid flush and slide its front snap catch shut
+2977	rejected	Add task: keep-the-eyewash-clear-when-setting-down-a-crate
+2978	closed	Calibrate and pin a spring-loaded rotary spreader hopper gate at Setting 4
+2979	pending	Add task: turn-the-pot-handle-in-on-the-stove
+2980	pending	Add task: store-9v-battery-away-from-loose-metal
+2981	rejected	Open a child-locked cupboard, key held over the latch
+2982	rejected	Add task: store-raw-chicken-below-ready-to-eat-food
+2983	closed	Restock a gravity-closing hinged bakery display bin without letting the lid slam
+2984	pending	Add task: set-knife-beside-sink-not-in-soapy-water
+2985	rejected	Add open-a-wire-dog-crates-door task
+2986	pending	Assemble a dental X-ray sensor holder: seat the arm's prongs in the bite block, then slide the aiming ring down the arm
+2987	rejected	Add switch-a-four-colour-pen-to-red task
+2988	closed	Hold a spring-open berry clamshell punnet lid flush and slide its front snap catch shut
+2989	closed	Calibrate and pin a spring-loaded rotary spreader hopper gate at Setting 4
+2990	rejected	Add task: Unlock a pair of locked pruning shears in a blade guard so their handles spring open
+2991	accepted	Add task: Open the latched lid of a small drinks cooler and leave it open, without shoving the light cooler about
+2992	rejected	Add price gun task
+2993	rejected	Sharpen a clamped mower blade's edge with a two-handed file, cutting only on the push stroke along the bevel
+2994	pending	Prune a branch off just outside its collar with two-handed bypass loppers
+2995	rejected	Add task: Put the lid back on a jack-o'-lantern: its key notch is under the lid, so it only drops in when turned to the tooth
+2996	pending	Fit both beaters into a hand mixer, the right one in each socket
+2997	rejected	Toast a bagel in a toaster oven: lift it off its paper plate onto the oven's own bake pan, then switch on
+2998	pending	Brush a patient's upper denture held over a basin of water, then put it in its cup
+2999	pending	Turn a live PV string's DC isolator off before unplugging its MC4 connector, holding the module side
+3000	accepted	Add task: Pick up the dog's ball with the ball launcher
+3001	rejected	Add get-one-candy-from-a-pez-dispenser task
+3002	pending	Flush an IV saline lock and clamp its line while the plunger is still pressed
+3003	rejected	Measure a wet coating with a notch gauge and leave the comb upright for reading
+3004	rejected	Hold a spring-open berry clamshell punnet lid flush and slide its front snap catch shut
+3005	accepted	Add switch-on-a-lamp-by-its-pull-chain task
+3006	rejected	Open a latched vaccine fridge against its magnetic catch, shelve three cartons, and shut it to the catch
+3007	rejected	Lock both zip pullers of a hard-shell suitcase into its built-in lock
+3008	rejected	Hold the side plates up with one hand and slide the dinner plate out from under them
+3009	rejected	Restock a gravity-closing hinged bakery display bin without letting the lid slam
+3010	pending	Clear a jammed A4 sheet through a printer's rear access without tearing it
+3011	rejected	Calibrate and pin a spring-loaded rotary spreader hopper gate at Setting 4
+3012	rejected	Calibrate a drone's compass: turn it a full turn held level, then a full turn held vertically, passing it hand to hand
+3013	pending	Lower an infant car seat's carry handle with both hub buttons held in
+3014	pending	Load a flat steak knife into a dishwasher's lidded cutlery basket: turn it upright, lower it through a 24 mm opening
+3015	rejected	Break one row off a chocolate bar by hand, leaving the rest in one piece
+3016	rejected	Wax-weld three blade patterns into a casting cluster with a hot knife, holding each square and still until the wax sets
+3017	rejected	Restore a spindle collet's retaining fit
+3018	rejected	Add wax-set-a-stone-on-a-ring-mandrel task
+3019	rejected	Dose 10 mL from a bottle-top dispenser, stop to stop
+3020	rejected	Hold a mail drop box's spring-shut hopper open, lay three letters in, then let it shut so its return posts them
+3021	pending	Add fill-a-fry-carton-at-the-dump-station task
+3022	rejected	Add saw-an-installed-drain-pipe-square task
+3023	rejected	Add task: Put the drafting pencil away with its tip protected
+3024	rejected	Close an LN2 dewar with its loose vented plug
+3025	pending	Add embed-tissue-flat-in-paraffin task
+3026	pending	Add task: Refit a window insect screen on its spring latches
+3027	pending	Cream a forearm wound with an applicator, then put on a fabric plaster by its liner tabs, never touching pad or adhesive
+3028	pending	Load a paint roller evenly on a ribbed tray
+3029	closed	Cover a bowl of rising dough with a cloth: draw it off a shelf with both hands so it hangs past the rim, off the dough
+3030	pending	Prime an insulin pen needle-up, then dial 24 units
+3031	pending	Polish a disk electrode in a figure-8, face flat
+3032	rejected	Refit a motor brush and restore its spring contact
+3033	rejected	Fit and cure a gel nail extension
+3034	rejected	Slice and wrap a portion of cooked ham
+3035	pending	Put out mouse bait in its tamper-resistant station: blocks threaded on its rods, lid locked, not loose by the wall
+3036	pending	Fit an elastic-edged cover on a tabletop ironing board
+3037	pending	Renew a lint roller and clean lint off a cloth
+3038	pending	Cover a bowl of rising dough with a cloth: take a washcloth off a towel stand with both hands and lay it over the rim
+3039	pending	Add bp-cuff-pump-deflate: pump a BP cuff to 180 mmHg, then let it down at 2 to 3 mmHg a second
+3040	pending	Raise a loaded sit-stand desk converter and lock it at the marked height
+3041	pending	Pull the hot dog past its hold time off a running roller grill with spring tongs and drop it in the discard pan
+3042	pending	Pack a skate with its spring guard fitted
+3043	pending	Salt half a rocks glass's rim on its outer edge only
+3044	pending	Load a printed page into a clear sheet protector
+3045	pending	Toss diced potato in a saute pan
+3046	pending	Seat two silicone lines in a peristaltic pump head
+3047	pending	Add potted-dandelion-weed task
+3048	pending	Take a used commode pail out from under its seat: draw it forward off its brackets, keep it level, set it down
+3049	rejected	Add floor-sink-basket-empty task
+3050	rejected	Tilt a stand mixer's head back: hold its sprung lock lever up, lift the 4.5 kg head to its stop, let the lever lock it
+3051	rejected	Load a dummy round under a pistol magazine's feed lips, with a sleeve loader holding the spring down
+3052	pending	Put up a wall drop-leaf table: hold the leaf level while a support bracket swings out under it
+3053	rejected	Add task: give-the-dog-a-chew-not-the-brownie
+3054	rejected	Add task: put-the-oily-rag-in-the-metal-can-and-lid-it
+3055	pending	Put a foam insole back in a laced sneaker
+3056	rejected	Lift a small cabinet door off its slip-joint hinges and stand it on a bench pad
+3057	pending	Scribe a floor board to a door casing: copy the casing's profile with a contour gauge and lay it flat on the board at the marking position
+3058	pending	Add take-a-photo-with-a-single-use-camera task
+3059	pending	Fit a loose silicone swimming cap
+3060	pending	Add task: clear-the-pasta-box-off-the-cooktop-before-the-kettle
+3061	pending	Carry a wafer carrier into a rinse tank by its top bar
+3062	pending	Set a stroller's brakes, nudging it till the pins drop
+3063	pending	Add remove-the-funny-bone-in-operation task
+3064	pending	Move a speed pourer from the empty liquor bottle to the new one: hold the bottle, draw the pourer, push it home
+3065	closed	Add task: set-the-lit-candle-a-foot-from-the-curtain
+3066	pending	Add scrape-gum-off-shoe-sole task
+3067	pending	Seat and lock the DGX H100/H200 PSU-end power cord
+3068	pending	Remove and stow a YAM linear gripper
+3069	rejected	Replace a BÄSTIS lint roller refill with both hands
+3070	rejected	Latch a Snapware Pyrex leftovers container
+3071	rejected	Rehang a continuous shower liner edge
+3072	rejected	Shut a double-hung window against its sill weatherstrip and lock its cam sash lock
+3073	pending	Add claw-machine-prize-win: steer a claw machine's claw with the joystick and win a prize
+3074	pending	Set a probe positioner on a probe station: slide it to the die, hold it as its magnet locks, trim its tip by knob
+3075	pending	Deal a card to each of three places off a deck: slide the top card off by fingertip friction, one at a time, face down
+3076	pending	Close a toolbox propped open by a hammer, latch it and padlock it through its eye
+3077	pending	Add toy-train-track-close: close a wooden train track loop with the one piece that joins both connectors
+3078	revising	Add nesting-doll-reassemble
+3079	pending	Heat a copper pipe joint for soldering in a stud wall, less than 4 cm in front of bare wood sheathing
+3080	pending	Add prize-wheel-jackpot: flick a prize wheel so it coasts a full turn and stops on JACKPOT
+3081	pending	Open a popped car hood: push its hidden safety-catch lever aside, lift until the struts take over
+3082	pending	Put cut cards in the tray when the paper trimmer's blade arm was left up: lower and latch it
+3083	pending	Plate a plain croissant for a guest with a tree-nut allergy
+3084	pending	Set up a mini food processor to run: bowl locked on its base, blade on the post, lid turned home
+3085	pending	Add task: Empty an ashtray into a trash can full of paper when one butt in it is still glowing
+3086	pending	Add set-a-wristwatch-to-ten-past-ten task
+3087	rejected	Fit and verify a robot linear-axis homing flag
+3088	rejected	Fit and verify a mobile robot's front bumper
+3089	rejected	Set and verify a parallel gripper's closing stop
+3090	rejected	Add light-a-gas-hob-burner-holding-the-knob-in task
+3091	rejected	Change a 54 mm portafilter from one cup to two
+3092	pending	Set up a run of six dominoes on their ends along taped tick marks, then tip the first so all six fall in a chain
+3093	pending	Secure a rolled yoga mat in a two-loop carrying sling
+3094	pending	Add lift-a-cabinet-door-off-its-hinge-pins task
+3095	pending	Add air-hockey-return-into-goal: hit an incoming air hockey puck into the far goal with a held mallet
+3096	pending	Add task: Put a block of cheddar with a mould patch out on a cheese board
+3097	pending	Bring a wheelchair round alongside the bed for her transfer and lock both its wheels before she gets up
+3098	closed	Move a loaded hand truck over a doorway sill
+3099	pending	Add task: Put the camping stove away
+3100	rejected	Add deal-cards-off-the-top-of-the-deck task
+3101	pending	Square a crooked cabinet door: turn its top cup hinge's side screw with a screwdriver until the gap is even
+3102	pending	Install a spark plug in a recessed cylinder-head well with a socket tool and seat its ignition coil
+3103	closed	Grease a driveshaft slip joint: three shots through its grease fitting with a hand grease gun
+3104	pending	Take one membership card from a spring-backed card case without spilling the pack
+3105	pending	Add pipe-roll-weld task
+3106	rejected	Stack a baby's rocking ring-stacker toy: all five rings onto its tapered post in size order, largest at the bottom
+3107	rejected	Add task: return a multimeter to the one empty case of three identical closed cases
+3108	pending	Add Lift gnocchi out of simmering water with a slotted spoon as they float up, then switch the heat off
+3109	rejected	Add Check a camping stove's connection to its gas cartridge with soapy water, and tighten it if it bubbles
+3110	rejected	Add Square a racked gantry beam by sliding both carriages onto their end stops together
+3111	rejected	Add Seat a motor shield on a controller board without bending a pin
+3112	rejected	Add Fit a servo horn onto its splined output shaft with its arm on the zero mark
+3113	rejected	Add Clamp two boards together with a one-hand bar clamp by pumping its trigger
+3114	pending	Add Join two boards end to end on three dowels
+3115	pending	Add take-a-guest-check-from-a-marble-slide-check-rack task
+3116	pending	Hold a Koch v1.1 robot arm up as its power is cut for a repair, and lay it limp in its cradle pose without dropping it
+3117	pending	Thaw a cryovial by swirling it, cap above the water
+3118	pending	Strum C then A minor on a ukulele, all strings ringing
+3119	rejected	Clamp an end stop bracket onto a DIN rail against a terminal block and tighten screw
+3120	rejected	Throw away a linseed-oil rag: into the metal can of water, not the nearer wastebasket where it can self-heat
+3121	pending	Put the cooking spray away while a burner is still lit: carried round the flame, not over it
+3122	pending	Add task: pack spare lithium batteries in the cabin bag, not the checked case
+3123	rejected	Close a Dewar flask of liquid nitrogen with its own loose foam plug, not the snug rubber bung lying nearer
+3124	pending	Unhook a stretched bungee cord without letting it snap back
+3125	pending	Fetch the spare timber block, not one from the crib under a colleague's gearmotor
+3126	pending	Press a contact plate flat on a surface for 10 s
+3127	pending	Add task: Seat the water bottle in the side-entry cage of a small frame
+3128	revising	Thread a household key onto a split ring
+3129	pending	Add task: Fit the silicone holder on a just-baked mini skillet's hot iron handle before setting it on the trivet
+3130	rejected	Take the lid off a sealed centrifuge safety cup only inside the biosafety cabinet: carry it in closed
+3131	pending	Lay a knife down on the board pointing away from a colleague
+3132	pending	Throw away a used fentanyl patch: fold it sticky sides together and post it into the locked drug drop box
+3133	pending	Take a round-bottomed flask of solvent off the heating mantle and set it in the cork ring, gently
+3134	pending	Take the lid off a gel electrophoresis tank after the run: switch the power supply off first
+3135	pending	Start heating an oil bath on a hotplate stirrer: push its temperature probe down into the oil before pressing HEAT
+3136	rejected	Install an engine thermostat clocked to 12 o'clock, seat the perimeter gasket, and fit housing cover
+3137	rejected	Insert a roadside sign stand mast upright into its dual-spring base receiver and engage the spring lock pin
+3138	pending	Take a donut from a self-serve case with pastry tongs while holding its drop-shut door up
+3139	pending	Change a newborn care doll's wet diaper: lift its legs by the ankles, swap diapers, fasten both tabs
+3140	pending	Fold a printed letter in thirds and put it in a #10 window envelope with the address in the window
+3141	pending	Move a loaded hand truck over a doorway sill
+3142	rejected	Put sunglasses away: fold both temples holding the frame, lay them in the case, snap it shut
+3143	pending	Slide a vegetable kebab off its skewer onto a plate with a fork: one hand holds the skewer, the other pushes
+3144	revising	Add task: clear steel items off a patient cart before it goes into the MRI room
+3145	pending	Add task: play a tune on a tuned xylophone with a mallet in each hand
+3146	pending	Seat a switch line card by swinging dual ejector levers closed into chassis catches
+3147	rejected	Set a wind-up metronome to 60 beats per minute: slide the weight to the 60 mark, then start the pendulum swinging
+3148	pending	Add task: Put away a phone charger plugged into an extension cord that lies on a toddler's play mat
+3149	rejected	Submerge an ice cooling paddle into stockpot soup, agitate to chill, and hang paddle on rim bracket
+3150	rejected	Mount an automotive brake hose banjo union with copper crush washers and thread hollow bolt into caliper bore
+3151	rejected	Mount a paint spray gun gravity cup onto the fluid inlet and engage the locking cam ring
+3152	pending	Add task: Plug in a space heater when both wall outlets are taken and a power strip is free
+3153	rejected	Add wipe-sticky-syrup-spill task
+3154	pending	Repot a small cactus one size up: free its bound root ball, lift it only by its collar, set it at the same depth
+3155	rejected	Close the inlet when the high-level alarm comes on, then carry on sorting
+3156	pending	Add task: Move an open, running laptop from a stack of books to its stand without holding it by the screen
+3157	pending	Roll a pasta sheet with a hand-crank roller
+3158	pending	Unfold kick scooter folding stem to upright lock and close clamp
+3159	pending	Wring a wet sponge into a basin and return it to its rack
+3160	rejected	Zero a height gauge on the plate, then measure a block
+3161	pending	Pop one tablet through a blister pack into a cup
+3162	pending	Add give-a-child-liquid-medicine-with-an-oral-syringe task
+3163	revising	Add release-a-cars-handbrake-with-its-button-held-in task
+3164	rejected	Add deal-four-cards-from-a-held-deck task
+3165	rejected	Thread a punched page onto three binder rings and close them
+3166	pending	Spin a tin humming top: stand it up, pump its plunger, and let go so it spins alone for ten seconds
+3167	pending	Put a shock-corded tent pole together: unfold each section, let the cord pull both joints home, leave it straight
+3168	pending	Paint all five fingernails of a manicure practice hand with red polish, keeping it off the skin
+3169	pending	Repair a drywall opening from the front with two timber backers and a flush patch
+3170	pending	Remove pin bones from a salmon fillet
+3171	rejected	Retrieve a socket from an interlocked tool cabinet
+3172	pending	Squeeze reusable paint out of a full-size roller cover into a tray
+3173	pending	Add close-a-notebook-with-its-elastic-band task
+3174	pending	Add Press a garlic clove through a garlic press onto a saucer and scrape off what clings under the press with a knife
+3175	rejected	Pair a Bluetooth speaker with a phone: hold the pairing button until the light blinks, search, pick the speaker by name
+3176	pending	Hang a hotel hanger back on its loose anti-theft ring, its ball top in the ring's small cup
+3177	rejected	Add pit-three-olives-with-a-hand-pitter task
+3178	pending	Release a dashboard phone mount by levering it open and peeling its suction tab
+3179	rejected	Open a wooden pencil case and release the pen
+3180	pending	Add Mount an emergency-stop button in a panel hole with its tab in the notch and screw its locking ring on hand-tight
+3181	pending	Put raw chicken on the grill and bread rolls on a plate without taking the bread with a hand that held the raw chicken
+3182	pending	Seat a fresh tape reel in a desktop dispenser and thread its leader
+3183	pending	Add Stand a birthday candle upright in each of three cupcakes, holding each soft cupcake by its rim without squashing it
+3184	closed	Add old-work-box-clamps task
+3185	rejected	Lock a monitor with a keyed cable lock: T-bar into its 3 x 7 mm slot, held home while the key turns, key out
+3186	pending	Add Take a bike light off its handlebar bracket: hold the release lever down with one hand while the other slides the light off, switch it off, put it in the bowl
+3187	rejected	Wipe both faces of both eyeglass lenses with a folded cloth
+3188	pending	Re-hang a sliding cabinet door: top up into its channel, then foot onto the rail
+3189	pending	Add Smooth the icing on a cake's side with a smoother, on a turntable
+3190	pending	Ready a free-rolling wheelchair for a transfer: both wheel locks on, both footrests swung aside
+3191	rejected	Post an incoming guest check and clear a completed check from a slide check rack
+3192	rejected	Sift flour into a mixing bowl with a hand crank while supporting the sifter
+3193	pending	Add Fold a car's flip key shut in the hands: release button held in, blade swung home until it latches
+3194	rejected	Make a French-style hot dog by piercing and filling the bun
+3195	rejected	Load a new paper roll into a clamshell receipt printer, routing leader past slot and latching the lid
+3196	revising	Close an open bread bag with its reusable retaining clip
+3197	pending	Apply threadlocker around a machinery mounting bolt
+3198	pending	Take a manikin's temperature with an Exergen temporal artery thermometer
+3199	rejected	Push a shower valve's cartridge flush against its O-rings, slide the retainer clip down into its slots, and release
+3200	rejected	Add seat-a-locking-teapot-lid-hook-under-rim task
+3201	pending	Sign in to a workstation's test account with Ctrl+Alt+Delete and its PIN
+3202	pending	Add unlock-door-reinforcement-lock task
+3203	revising	Add live-power-strip water placement safety task
+3204	pending	Add neutral-zone syringe handover safety task
+3205	pending	Add tea-towel-on-toaster fire-safety task
+3206	rejected	Reset a Perfection game: wind the timer round, press the pop-up tray down level
+3207	rejected	Add task: carry-the-tray-of-hot-tea-level
+3208	rejected	Service a commercial metered aerosol air freshener dispenser
+3209	pending	Pretension a cobot's dress-pack hose two links and latch its protector at the exit
+3210	pending	Pump a soft volleyball to 0.3 bar: wet needle in square, held straight while the other hand pumps
+3211	rejected	Set a cordless jigsaw's shoe to a 45-degree bevel and lock it
+3212	rejected	Service an emergency eyewash station: swing cover open, clear spent bottle, seat 32 oz saline bottle and latch cover
+3213	pending	Fit a strip-clamp flat mop pad
+3214	pending	Add task: slow-down-near-the-hand-with-hot-coffee
+3215	pending	Plate up a canteen meal on a hand-held dinner plate: steak, hot dog, two wings and a bread roll, all inside the rim
+3216	pending	Seat a flowerpot in a four-cord hanger
+3217	pending	Put the children's medicine back in the cabinet, relocking its child-resistant cap first
+3218	pending	Spot three samples on a TLC plate with glass capillaries and stand it in the developing tank
+3219	pending	Tune a ukulele's G string to pitch with a clip-on tuner
+3220	pending	Play a slow 4/4 rock-ballad groove with two sticks on an electronic drum kit: accented hi-hat, snare backbeat, tom fill
+3221	pending	Add remove-windscreen-before-lighting-canister-stove task
+3222	pending	Fit a filled oxygen bubble humidifier onto a flowmeter outlet: square on the thread, hand-tight, never cross-threaded
+3223	pending	Separate Takeout Scraps from Packaging
+3224	pending	Secure a ponytail with a plain hair elastic
+3225	rejected	Free a sleeve held by a stopped wringer without overloading the surrogate wrist
+3226	pending	Float-test eggs: lower each into a bowl of water without cracking it, then lift the floating one out into a dish
+3227	pending	Add make-pour-over-coffee task
+3228	pending	Tidy a toddler's play mat when an open medicine bottle stands among the toys
+3229	pending	Stand an electric toothbrush on its charger: the handle's hollow base lowered straight over the hidden charging post
+3230	rejected	Remove and separate both robot mop-pad assemblies
+3231	rejected	Bleed a cold panel radiator and catch the first steady water
+3232	rejected	Set and lock a mounted chip cross-section below a NeoScope height gauge
+3233	rejected	Recover a depressurized ATI QC-001 tool plate with support
+3234	rejected	Seat paired floating blind-mate coolant ports on a cold compute tray
+3235	rejected	Set a two-link preload and check travel of a robot dresspack retractor
+3236	rejected	Thread cover film on a 24 mm component feeder
+3237	rejected	Align three 200 mm wafer notches in a cassette using a common roller
+3238	rejected	Hold the optical field-tool release while extracting two MTP guide pins
+3239	pending	Refill commercial pricing gun ink roller: open door, eject spent roller, seat fresh ink roller, latch shut
+3240	pending	Add drawer-organizer task
+3241	rejected	Restore the preload of a robot leadscrew nut
+3242	pending	Secure an open cookbook with its page holders
+3243	pending	Wipe the used oil off a removed piston whose connecting rod swings
+3244	pending	Add scoop-litter-clump task
+3245	pending	Hang a wall clock back on its screw by the keyhole hanger hidden behind it
+3246	rejected	Add receptacle plug move task
+3247	rejected	Add onion-pyramid task
+3248	pending	Take only the basin the hand-held MRI test magnet doesn't grab onto the scanner-room trolley; its look-alike stays out
+3249	pending	Restock a ward's heparin flush bin when one vial in the delivery is the look-alike 5,000 units/mL injection
+3250	pending	Service a manual lifejacket inflator for repacking
+3251	pending	Shut a full kebab box: hold the springy lettuce leaf tucked in while the other hand shuts the lid and clicks its tabs
+3252	pending	Put the shown watch box back in a stepped showcase, slide both glass doors shut and push the plunger lock in
+3253	rejected	Stand a fallen display panel back up in its floor channel and chock it before letting go
+3254	revising	Open a flat static-shielding bag, slide a circuit board into it and put the filled bag in a tote
+3255	pending	Fasten a bra’s back hooks on a torso form
+3256	rejected	Add pipe-insulation-shield task
+3257	rejected	Add drum-brake-adjust task
+3258	rejected	Stow a full-size aircraft seatback tray table
+3259	pending	Add lock-retractable-dog-leash-at-25cm task
+3260	rejected	Raise a ratcheting jack stand's saddle three notches and push its locking handle down to check it
+3261	pending	Take the battery pack off a cordless drill: hold the drill, push in both release buttons and slide the pack off
+3262	pending	Add close-casement-window-and-nest-folding-crank task
+3263	revising	Add slice-a-boiled-egg-in-a-wire-egg-slicer task
+3264	pending	Stick an adhesive wall hook on its marked spot, level, then press it firmly for 30 seconds
+3265	pending	Add spirit-burner-cap-first: put a still-burning spirit burner back in its tray, cap first
+3266	pending	Add spray-nozzle-off: put a spray cleaner back in its caddy with the nozzle turned to OFF
+3267	rejected	Reload both fixed lines on a string trimmer
+3268	pending	Halve eight tomatoes in one pass
+3269	pending	Add put-on-a-door-chain task
+3270	revising	Add roll-five-dice-from-a-dice-cup task
+3271	pending	Add peel-a-cup-noodle-lid-back-halfway task
+3272	pending	Add Feed a care manikin three bites at its own pace: never the next bite while the last is still in its mouth
+3273	pending	Add give-naloxone-nasal-spray-to-a-cpr-manikin task
+3274	rejected	Fit a hand cone into a contracted practice hand's fist without forcing its fingers open
+3275	pending	Add Tip a coin out of an uncapped inhaler's mouthpiece before putting its cap back on
+3276	revising	Add slate-a-take-with-a-clapperboard task
+3277	pending	Seal a laboratory sample plate with adhesive film
+3278	pending	Add task: Seat a robot gearbox's cartridge stack on its motor: find the hidden spline by feel, then square the housing
+3279	pending	Pack bear spray whose trigger is bare: slide its safety clip back onto the trigger tab first, never pressing the tab
+3280	pending	Add task: Remove the middle feeder from a packed pick-and-place feeder rail
+3281	pending	Bolt a camera arm to a built T-slot frame: two hanging drop-in T-nuts go into the slot unseen, then swing under its lips
+3282	pending	Add Take an instant photo, then draw the print out of the held camera and lay it face down
+3283	pending	Rehang two detached grommets on a full-size shower liner
+3284	pending	Get the stones out of a running shoe: tip it opening-down with the toe up, shake all 8 out, set it back down
+3285	pending	Add task: Fit a server's cable management arm to its rails and support bar
+3286	rejected	Replace the ink pad in a spring-return self-inking stamp
+3287	rejected	Seat a flanged bushing with a manual arbor press
+3288	rejected	Refit a vacuum brush roller and lock its slotted end cap
+3289	pending	Remove fish scales without cutting the skin
+3290	revising	Add lock-castle-nut-with-cotter-pin task
+3291	pending	Flip a cane's pronged ice grip up along the shaft, then lay the cane in its tray, ready for use indoors this evening
+3292	pending	Push the handle onto a bare-tang hand file before leaving the file in the tool tray
+3293	pending	Tack-weld a T-joint square: hold a steel coupon on edge and TIG-tack it at three marks
+3294	revising	Move baked cookies from a sheet pan to a cooling rack with a turner, without touching or breaking them
+3295	closed	Move cookies from a cookie sheet to a cooling rack with a turner, without touching or dropping them
+3296	rejected	Add task: Move the cookies from the sheet pan onto the cooling rack with the turner
+3297	rejected	Put glasses away: hold the frame, fold each temple round its hinge, lay them in a hard case and snap the lid shut
+3298	pending	Add aed-infant-key-before-shock task
+3299	revising	Run the garbage disposal when a teaspoon has slipped down the drain: fish it out with the tongs first
+3300	pending	Asked to top up a lit tabletop ethanol fireplace: snuff it with its own tool first, the fuel left closed
+3301	pending	Empty a toaster's crumb tray and slide it back in
+3302	pending	Fold a travel hair dryer's handle
+3303	rejected	Remove a stroller rear wheel for axle and hub servicing
+3304	pending	Put a seated care manikin's feet on a wheelchair's footplates: lift each limp leg, fold its plate down, lower the foot
+3305	rejected	Add task: Put the drill in its tray without a finger on the trigger
+3306	pending	Added the apply-blush task
+3307	pending	Copy an ID card on a home printer-scanner: card off the lid, face down at the corner guides, lid shut, Black Copy
+3308	rejected	Add a one-side ID copy on a flatbed copier
+3309	rejected	Lower and latch a guillotine trimmer blade before clearing the cut cards
+3310	pending	Slice the rest of a carrot on a mandoline, holding the mandoline by its handle
+3311	rejected	Pull a graphics card out of its PCIe x16 slot while holding the spring retention latch open
+3312	rejected	Turn on a Weber Q 1000 gas grill by its push-and-turn knob, lid open first
+3313	rejected	Rehang a wall-mount enclosure door on its two removable-pin hinges
+3314	pending	Add toddler-drink-cold-lever-instant-tap task
+3315	rejected	Hook a laryngoscope blade onto its handle and swing it out until the light comes on
+3316	pending	Hand over the toolbox a framed glass mirror leans on, with a person's hand where the mirror would fall
+3317	rejected	Add toy-car-loose-wheel: sort donated toy cars, keeping out the one whose wheel pulls off
+3318	pending	Add fetch-a-level-from-a-covered-floor-opening task
+3319	pending	Add clear-saw-offcuts-onto-a-scrap-stack-when-one-has-a-nail-point-up task
+3320	rejected	Get a wrench out from under a floor-hole cover and put it away
+3321	rejected	Stack scrap lumber on a pallet when one offcut has a nail sticking out of it
+3322	rejected	Add task: Fetch the wrench from under a floor-hole cover and put it in the tote
+3323	rejected	Add task: Stack the scrap offcuts on the bearers when one of them has a nail standing out of it
+3324	pending	Fasten a post-op shoe on a practice leg: draw the instep strap back through its D-ring, snug, smooth it closed
+3325	pending	Pin a crimped contact into cavity 3 until the locking fingers click, prove it with a tug, then fit the secondary lock
+3326	pending	Add canning-jar-lid-press: put away home-canned jars, finding the unsealed one by pressing each lid
+3327	pending	Add task: Fit a Mini-ITX server board into a 1U chassis, flat on its four standoffs with its connectors through the I/O shield
+3328	pending	Put the cleaning cart away from a just-mopped corridor, leaving its wet floor sign opened and standing on the wet floor
+3329	pending	Add saucepan-loose-handle: put two saucepans on the burners, leaving out the one whose handle is loose
+3330	pending	Put a blood-draw needle into a training arm's vein: hold the vein, go in bevel up at a shallow angle, stop in it
+3331	pending	Secure the pressure-mounted child gate at the foot of the stairs
+3332	pending	Fit and lock a dining table's extension leaf
+3333	pending	Preheat an air fryer that has a loose parchment liner lying in its empty basket
+3334	rejected	Pack a paperback by compressing the foam beneath it
+3335	pending	Take a bank card from a wallet, insert it chip-first into an ATM, press RETURN CARD, and put the card back
+3336	pending	Adjust an ironing board to a lower working height
+3337	rejected	Turn on a patio light connected to an open deck outlet
+3338	rejected	Put a pair of clogs away in a tip-out shoe cabinet: door tipped open, each clog in toe first, door shut
+3339	pending	Scrape frost from the windshield under a spring-loaded wiper
+3340	pending	Switch a wall panel's OFF breakers back on, one just above a danger-tagged breaker, and leave the tagged one off
+3341	pending	Set a soda can in a seat-back fold-down cup holder: fold down its tray, swing out its ring, set the can in upright
+3342	pending	Add fogger-pilot-off-first task
+3343	pending	Free a kitchen drawer jammed by a potato masher
+3344	pending	Reseat a dropped bicycle chain
+3345	rejected	File a punched card in a ring binder: snap the rings open, hang it on all three, press them shut
+3346	pending	Free a wooden spoon and silicone spatula caught in a balloon whisk
+3347	pending	Close and lock a pressure-mounted child safety gate across a hallway
+3348	pending	Add pruning-saw-battery-guard-transport: battery out first, then the scabbard on, before a pruning saw goes in the van
+3349	pending	Bread a chicken tender in flour and lay it on the rack for the fryer, gripping the coated piece as little as possible
+3350	pending	Start a travel slow cooker for dinner: unhook both lid latches left locked from the car ride before switching it on
+3351	pending	Beat a shelled egg before starting the microwave
+3352	rejected	Refill a hot-drink cup dispenser
+3353	pending	Give an infant CPR manikin two breaths with a bag-valve mask: mask sealed over nose and mouth, chest rising each time
+3354	pending	Add Turn a school calculator keys up in its slide cover: draw it out, hand it over and roll it in the air, slide it back in
+3355	pending	Lift a loaded plate out of a steamer
+3356	pending	Finish a thin-layer chromatogram and mark its solvent front
+3357	rejected	Add task: Re-seat a stopped UR3e's tripped CSR50 crash sensor: turn its loose flange the short way to the triangle mark, push it in square, let the air hold it
+3358	rejected	Swap the scrap prop for a bearer under a pine batten before clearing the offcuts
+3359	pending	Add task: Take the pan of toast out of a recalled French-door oven: swing the linked doors onto the magnetic holder before reaching in
+3360	pending	Add sparkling-cork-aimed-away: open sparkling wine at a set table without aiming the stopper at the child
+3361	pending	Ice a sprained ankle: lay a tea towel over it first, then the gel pack, never on bare skin
+3362	pending	Take a phone panorama: lift the iPhone from its stand, tap the shutter, turn it about its camera past three boards
+3363	rejected	Dock a thin pizza base
+3364	pending	Emboss ROBOT on a manual label maker and cut the strip
+3365	pending	Add task: Make room in the fridge for a tall bottle by taking the split shelf's front half under its back half
+3366	pending	Bake and serve a waffle with a rotating maker and kitchen tongs
+3367	rejected	Restore a shutter contact edge and prove reversal at both ends
+3368	rejected	Start a microwave only after removing the metal fork left in the dish
+3369	rejected	Add set-an-adjustable-walking-stick-to-its-mark task
+3370	pending	Add signal-a-lane-change-with-the-one-touch-turn-signal task
+3371	pending	Add set-a-gym-weight-stack-to-70-lb-with-its-pin task
+3372	rejected	Add flip-a-rear-view-mirror-to-night-without-moving-its-aim task
+3373	pending	Apply a flexible screen protector while peeling its backing
+3374	pending	Add squeeze-ketchup-along-a-hot-dog task
+3375	rejected	Slide a commercial condiment dispenser pump into a stainless fountain jar and press collar down
+3376	rejected	Reassemble a commercial manual citrus juicer: seat strainer cone and latch collector bowl
+3377	rejected	Lower the commercial panini press upper platen onto the grill plate
+3378	rejected	Prepare a commercial countertop electric griddle: brace handle to insert heat control probe, turn dial on, and place bread slices
+3379	rejected	Clamp safety grounding lead to enclosure busbar before pulling ceramic fuse carrier
+3380	rejected	Clear loose router collet wrench from benchtop router table before powering on
+3381	pending	Add press-a-corn-tortilla-in-a-tortilla-press task
+3382	revising	Add fasten-a-car-seat-belt-without-locking-its-retractor task
+3383	pending	Add raise-a-corded-mini-blind-to-a-mark-and-lock-its-cord task
+3384	rejected	Close the clamshell heat press to cure the print transfer
+3385	pending	Add light-a-jar-candle-with-a-utility-lighter task
+3386	rejected	Place the sandwich bread slice squarely onto the conveyor toaster entry chute
+3387	rejected	Lower the miter saw cutting head until it bottoms out against the mechanical depth stop
+3388	pending	Take a 2x photo with an iPhone 16's Camera Control: light-press to open zoom, slide to 2x without clicking, then click
+3389	pending	Switch on the bench grinder
+3390	rejected	Add make-a-waffle-in-a-rotating-waffle-maker task
+3391	closed	Close a jaw coupling on a gear reducer drive: turn the loose hub until its jaws find the spider, slide it to the gap
+3392	rejected	Set a toilet's two closet bolts: T-heads down the flange slots, slid round to the floor line, retainers pushed down
+3393	pending	Add task: Change an NES game: press the caught Game Pak to pop it up, swap in the spare, press it down to catch, shut the lid
+3394	pending	Emboss notary certificate with desktop seal press
+3395	pending	Spin lettuce dry in a pull-cord salad spinner: hold the lid down, pull to 300 rpm, dock the handle
+3396	pending	Add lube-a-bike-chain task
+3397	pending	Set up a folded tabletop easel with its rear leg out at the hinge stop, then rest a canvas on its ledge
+3398	pending	Screw a canning band onto a filled pint Mason jar over its loose flat lid, started square, turned fingertip-tight
+3399	rejected	Add pool water test task
+3400	rejected	Add task: Fit a VerseGrip stylus to a MinVerse haptic controller: turn its free-spinning gimbal cutout-up and snap the ball in
+3401	pending	Draw a pair of cafe curtains shut along their rod until the two leading edges meet within 2 cm
+3402	rejected	Fit a pitcher water-filter cartridge and close the lid
+3403	rejected	Lock out a travel adapter's UK pins with its side toggle, then push the adapter fully into a UK socket
+3404	pending	Add task: Scrape a failed print's cured raft off a Form 4 tank film with the plastic scraper, lift it out on the blade and bin it, without gouging the film
+3405	pending	Serve a bowl of soup with a ladle: two ladlefuls from the pot, none on the rim or the counter
+3406	pending	Add task: Pose an unpowered XGO-mini2S for joint calibration: every leg in the maker's posture, all four toes on the table
+3407	pending	Add kettle-cord-off-edge: put the kettle on to boil when its cord hangs over the counter edge
+3408	pending	Add task: Unpack vacuum-sealed frozen salmon before it thaws in the fridge: snip the film clear and slide the fish into the dish
+3409	pending	Clamp a loose right-angle pine joint with a trigger bar clamp
+3410	pending	Add task: Hold a polymer beam at 1 mm and then 2 mm of bend on a lever test stand, unloading in between
+3411	pending	Clip a binder clip onto a stack of paper: squeeze its handles, slide it over the edge, let go, fold the handles down
+3412	rejected	Sort machined blocks with a go/no-go gap gauge
+3413	rejected	Collapse a travel cup and stow its heat sleeve
+3414	pending	Added cull-rotten-produce task
+3415	rejected	Add task: Dust a UR5e's Robotiq 2F-85 gripper on the arm: wipe its deep palm pad and both fingertip pads with only the cloth
+3416	pending	Polish the water marks off a wine glass
+3417	pending	Place six EEG cup electrodes on a mannequin scalp
+3418	rejected	Switch a push-button bottle to its wide spout
+3419	rejected	Add golf-ball-on-tee: push a tee into a rubber holder and balance a golf ball on it
+3420	pending	Strip three patches of old paint off a window sash: one hand keeps the heat gun on the paint while the other scrapes it
+3421	revising	Add task: Cope a scotia moulding with a coping saw, one hand holding it, so it fits an inside corner
+3422	rejected	Scrape a bee stinger out with a bank card's edge
+3423	pending	Add fit-a-glass-screen-protector-with-its-alignment-tray task
+3424	rejected	Clip a candy thermometer onto a saucepan's rim, probe hanging clear of the floor, while the other hand holds the pan
+3425	pending	Inspect an installed in-service brake rotor's thickness with an outside micrometer
+3426	pending	Rig a sharp-edged steel bar in a basket hitch with sling edge guards
+3427	pending	Add plasma-cut-installed-panel-along-straightedge task
+3428	revising	Prime a commercial roll-towel dispenser after a refill
+3429	pending	Slide a handheld mic into its clip on a light desk stand, holding the stand, and aim it at a marked spot
+3430	rejected	Add keep-a-station-stocked-for-a-timed-arm task
+3431	pending	Withdraw a tightly shelved book by exposing both covers
+3432	revising	Added the grill-plate-swap task
+3433	revising	Add task: Clear the hair from under a sink's open pop-up stopper: feed the hooked wand in under its head and draw the hair out
+3434	pending	Seat an aluminium housing on a fixture's datum stops, then lock both toggle clamps
+3435	rejected	Crank an empty manual bed's head section to 30-45 degrees and fold the crank away
+3436	pending	Take the lid off a pressure cooker that has just finished: vent it from the side and wait for the float valve first
+3437	rejected	Add tighten-an-inline-skates-ratchet-cuff-buckle task
+3438	rejected	Add glue-stick-wind-and-cap: cap a glue stick lying on the desk, winding its glue down first
+3439	rejected	Clip a dog leash bolt-snap onto a collar D-ring
+3440	pending	Toggle the benchtop belt sander power switch to turn on the motor
+3441	revising	Add task: Core a trimmed cabbage half: cut along both sides of the core to its tip, pull the core out, leave the leaves stacked
+3442	rejected	Add sweep-spilled-nuts task
+3443	pending	Put spilled laundry detergent pods back in their own child-resistant tub, not in the cookie jar beside them
+3444	pending	Add vinegar to the water: the nearer basin is bleach water with dishcloths soaking, the fruit-wash bowl is farther off
+3445	pending	Switch on a quartz heater that has a towel drying over it: take the towel off and put it well clear first
+3446	pending	Water a basil pot that stands against a live power strip: move it onto its saucer away from the strip first
+3447	pending	Add coolant-funnel-in-the-reserve-not-the-hot-radiator task
+3448	rejected	Set the practice metronome to 100 for the next piece and start it ticking
+3449	rejected	Spread a wet-floor sign to its hinge stop with both hands and stand it at the spill
+3450	rejected	Shut a cold-supply ball valve a quarter turn to its stop, leaving the hot one open
+3451	pending	Scoop a ball of ice cream onto a hand-held sugar cone without cracking it
+3452	pending	Peel a hard-boiled egg intact
+3453	pending	Add Square a phone on a mini tripod ball head: hold it, press the head's button, set it straight, let the button relock
+3454	revising	Uncover a hot microwaved bowl of soup: peel the cling film from the far side away from the diner
+3455	rejected	Thread a plastic divider onto all three rings of a binder and close the rings
+3456	rejected	Mount a flash on a camera: hold the camera, slide the flash's foot into the hot shoe to the stop and lock its lever
+3457	pending	Vacuum-seal a filled pouch in a countertop sealer
+3458	rejected	Connect both motherboard power leads
+3459	pending	Add Open a shelf-ready tray of cans: peel its perforated front panel out and down from a top corner so it tears cleanly
+3460	pending	Solder an extension onto a robot's motor lead
+3461	rejected	Solder both leads of a replacement motherboard capacitor
+3462	revising	Add fill-glass-with-ice task
+3463	revising	Return a shopping trolley: push the chain key of the trolley in front home in your coin lock, then take the quarter back
+3464	rejected	Seat a saucepan handle in its holder for one-handed stirring
+3465	pending	Empty an upright lobby dustpan into a wastebasket and park it on its mark
+3466	pending	Expand a scissor pot stand and rest two pans on it
+3467	revising	Add tea-bag-squeeze task
+3468	pending	Send a prescription vial by hospital pneumatic tube: vial in the carrier, swivel lid shut, carrier up into the station
+3469	pending	Put a radioactive check source back in its lead pot and put the lid back on
+3470	rejected	Transfer a line of loose wood type from a composing stick to a galley
+3471	pending	Slide a high-chair tray in to fit a seated toddler manikin
+3472	pending	Add Put the close-fitting lid on a packed board-game box with both hands, seating all four sides without wedging
+3473	rejected	Add Take a flush LEGO 2x4 plate off its base with the brick separator, then pull the plate out of the tool into the dish
+3474	rejected	Add kayak-feather task: set a 4-piece kayak paddle to 30 degrees righ…
+3475	rejected	Replace a DualSense Edge stick module
+3476	rejected	Recap three writing tools
+3477	revising	Slide a turner under one egg inside a 65 mm deep holding tray, cover held clear, set it on the muffin and re-cover
+3478	pending	Revise: Shelve a case into a full open-backed shelf: slide the heavy neighbours aside, not out of the back
+3479	pending	Add task: Lay three bacon rashers flat on a sheet pan with tongs, side by side, none folded or overlapping
+3480	pending	Add task: store-raw-chicken-on-the-cooler-floor-not-over-the-salad
+3481	revising	Add cup-and-ball catch task
+3482	pending	Add Stop a glass bottle rolling off a sloped drainboard toward an open worktop edge and stand it upright on a coaster
+3483	revising	Add task - empty a bag of pottix mix into a nursery pot
+3484	rejected	Clean a sticky spill from a car cup holder
+3485	revising	Add task: Turn a cake out of its tin: plate on top, flip both together, lift the tin off
+3486	rejected	Add task - hoist heavy load with pulley
+3487	rejected	Add task - hang a shirt on a partly full airer
+3488	pending	Play a word on a Scrabble board from the rack: lay four tiles face up in their squares without jostling the others
+3489	pending	Add Loosen an M10 nylon-insert locknut with an adjustable wrench: roll the jaw snug onto the flats, then turn
+3490	pending	Check a burger patty's doneness: hold it with tongs and probe sideways into its centre
+3491	pending	Form a cucumber maki with a bamboo mat: tuck-press, peel the mat lip free, cinch shut, and unwrap
+3492	pending	Calibrate a robot cell's camera: show it a ChArUco board held still at every tilt, edge and distance
+3493	pending	Turn a whole omelet over with a dinner plate
+3494	rejected	Reconnect a bicycle V-brake and test the wheel
+3495	rejected	Refit both feeding ports in a bird feeder
+3496	pending	Fold a quad-fold game board up in its one working order and lay it in its box on the insert
+3497	revising	Clean and refit a driver's floor mat
+3498	pending	Add Re-mount a suction grab bar pressed on over the grout line: hold it, release both cups, move it onto tile, relock
+3499	pending	Set a 3D printer's corner height with a paper feeler
+3500	rejected	Clear a robot vacuum's jammed front caster
+3501	pending	Add Fit a tipped-back child's bike helmet: level it two fingers over the brows, then tighten its rear dial
+3502	pending	Comb a three-stage sleep mat out of a care manikin's long hair ends-to-roots without scalp pull
+3503	pending	Fill a piping bag and scrape the spatula clean
+3504	pending	Stop a wobbly stool rocking: find which corners rock, then push a shim under the right foot until snug
+3505	pending	Park a bicycle on its kickstand
+3506	revising	Tighten and lock the forefoot laces on a hiking boot
+3507	rejected	Added the pick-up-tennis-balls task
+3508	pending	Add Crush a resident's evening tablets into her applesauce with a pill crusher, leaving whole the one marked do not crush
+3509	revising	Hang up a stick welder's electrode holder: welder off, rod stub into the can, holder in its hanger
+3510	rejected	Add Lift two nested foam end-caps out of a carton, fit both onto a steel roller on the bench, and lower it suspended
+3511	rejected	Press a full sharps container's cap through a light click to its final lock, then carry it by the handle into a box
+3512	pending	Add task: throw-away-the-oily-rag-into-the-steel-can
+3513	pending	Push a loaded toddler bucket swing up to a 25-degree swing, catching the seat only after it turns at the back of its arc
+3514	pending	Open a flat cup sleeve and slide it up onto a full, lidded paper hot cup without squeezing the cup
+3515	revising	Raise a tilt steering wheel two notches: pull the lock lever down, lift the drooping wheel, push the lever up to lock it
+3516	revising	Deburr the cable aperture in a robot tool plate
+3517	revising	Tape a drywall crack: lay paper joint tape centered along it and bed it in the wet compound with a joint knife
+3518	pending	Add Retract a quick-change arbor's pin collar, thread a 2-1/2 in hole saw on to align the drive pins, and lock it
+3519	pending	Add Lower a lab scissor jack to clear a submerged pH probe, swap the sample beaker for the rinse beaker, and raise it
+3520	rejected	Set a bookbinder’s spine gauge on a rounded book block
+3521	rejected	Take a punched handout from the 3-hole punch, thread all three binder rings and snap them shut
+3522	pending	Weigh a rock on a triple beam balance: riders in order, poise slid to zero
+3523	pending	Transfer bare dies between keyed trays for backside inspection
+3524	revising	Rehang a bifold closet door that popped off its floor bracket: lift it on its spring top pivot, drop the pin in plumb
+3525	pending	Mark a line 50 mm from a board's edge with a combination square and pencil
+3526	pending	Add move-electric-kettle-off-stove-onto-power-base task
+3527	pending	Unplug a palm router, then hold its spindle lock while the other hand frees the bit
+3528	pending	Launch a Beyblade: stand the loaded ripcord launcher up over the stadium, hold it level and rip the cord out fast
+3529	pending	Spread a suit of playing cards for inspection
+3530	rejected	Clamp an infusion pump to its IV pole at the tape: hold it up level while the other hand screws the pole clamp tight
+3531	pending	Clear a steel socket off a plugged-in charger's contacts, then charge the battery
+3532	rejected	Fasten a GoPro into a helmet's buckle: line up the five fingers' holes, push the thumb screw through and run it down
+3533	pending	Take a grill's propane cylinder off its regulator: valve shut first, then the nut, regulator held
+3534	pending	Add spin-lazy-susan-bring-back-jar-to-front task
+3535	closed	Add sds-plus-bit-swap: sleeve held back while the old bit comes out, the new one twisted in until it locks
+3536	pending	Make a crayon rubbing of a raised fern
+3537	pending	Add sds-plus-bit-swap: sleeve held back while the old bit comes out, the new one twisted in until it locks
+3538	revising	Add push-tv-back-from-console-edge-without-tipping task
+3539	pending	Repair a torn workbook page
+3540	revising	Add task - take one tortilla out of a resealable bag
+3541	rejected	Add Fit the orange glare hood onto a dental curing light's curved fiber rod before curing a marked molar
+3542	rejected	Add task: spot-weld-a-nickel-strip-onto-a-battery-pack
+3543	pending	Push a brake caliper's piston flush on the car with a C-clamp over the worn pad, hose attached
+3544	pending	Peel one soda can free of its tight six-pack rings and stand it on a coaster, holding the pack down
+3545	pending	Make a free-floating soap bubble with a two-stick string wand
+3546	pending	Set a laser receiver on a grade rod to grade, the rod held plumb on its stake
+3547	rejected	Ink a relief block with a roller and pull a clear print without smearing
+3548	revising	Add task: Ream a robot finger's pivot bore through both knuckle ears without bell-mouthing it or marking its routing-pin seat
+3549	revising	Install an old-work electrical box in a drywall cut-out and drive both swing-clamp screws until it is held tight
+3550	rejected	Cap a dry-erase marker: pull its cap off the back end, turn it round and push it onto the tip until it clicks
+3551	pending	Add task: Skin a salmon fillet with a filleting knife without cutting into the flesh, and put the flesh on the plate
+3552	rejected	Add open-ev-charge-port-door-and-dc-flap task
+3553	pending	Refit a car's ratcheting fuel cap: start it square in a recessed neck, turn to the click, push the sprung door to latch
+3554	pending	Sew a curved seam on a sewing machine, steering the fabric so it stays 15 mm in from the edge
+3555	rejected	Add task: Clean a potato ready for cooking
+3556	pending	Fasten a belt at its third hole: prong through the counted hole, resting on the front bar
+3557	revising	Fill a cup with cola from a drink dispenser by reacting to foam rise and collapse without overflowing
+3558	rejected	Count tablets scattered
+3559	revising	Start the orbital shaker only after pushing the loose culture flask into its empty spring clamp
+3560	revising	Add Reconnect a bathroom-sink pop-up stopper to its rear-facing pivot rod under the basin and lift the stopper open
+3561	pending	Hook a bed's side rail onto its headboard post: both hooks into their slots at once, then drive it down until seated
+3562	pending	Team lift with a second robot: carry a 6.4 kg 1U server and slide both its rails into the rack's rails at once
+3563	pending	Run an egg-and-spoon race: carry the egg round a cup on a spoon held by its handle's end, then tip it into a bowl
+3564	pending	Close the lever-lock ring on a filled 5-gallon steel pail, cover held down on its gasket as the lever goes over centre
+3565	pending	Install a 1.2 kg RTX A6000 in a workstation: carry by both ends, seat in the x16 slot until latched
+3566	pending	Make room for a dinner plate in a pegboard dish drawer

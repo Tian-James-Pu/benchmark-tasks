@@ -1,3 +1,3 @@
-Submitted PR2609, received TK-EYFPAE; waiting first review. No live crutch trials; do not push while pending.
-Updated 2026-11-18T08:16:22.382932+00:00
+Revision submitted on existing PR2609; received TK-F2TUKF (revision of TK-EYFPAE) at 2026-11-19T04:44:19Z; waiting review. Head 13655c34584a393262e25c8d3882a16f0b0a0350. Published README checked against local copy; preparation, projection and pull-off/reset procedure address requested review points. Do not push while pending.
+Updated 2026-11-20T02:45:46.093593+00:00
 https://github.com/robocurve/benchmark-tasks/pull/2609

@@ -1,0 +1,107 @@
+{
+  "checked_at": "2026-11-20T03:11:31.966921+00:00",
+  "decision": "NO-GO",
+  "scope": "Acceptance-priority ordinary finger-launched top; no claim, task build, GPU run, purchase or submission.",
+  "decisive_reason": "No evidence that ordinary spinning improves on the final importance objection in PR2862. A physical novelty distinction from2722 and the accepted Jenga precedent do not establish this task importance.",
+  "product": {
+    "name": "ForeverSpin Stainless Steel brushed",
+    "manufacturer_url": "https://foreverspin.com/products/stainless-steel-brush",
+    "dimensions_source": "https://foreverspin.com/",
+    "mass_g": 28,
+    "height_mm": 35.5,
+    "diameter_mm": 28,
+    "price_usd": 48,
+    "availability": "Product Shopify event available:true; no purchase attempted.",
+    "ordinary_launch_source": "https://foreverspin.com/cdn/shop/t/64/assets/how.mp4?v=164307495627834251381733356716",
+    "ordinary_launch_observation": "Official how-to video inspected as contact sheet: hold stem with thumb and index finger, tip on surface, snap fingers then release.",
+    "unknowns": [
+      "Stem diameter and precise profile",
+      "Center of mass and moments of inertia",
+      "Tip radius and contact friction",
+      "Measured hand-launch speed and persistence"
+    ]
+  },
+  "physics": {
+    "reference": "https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S3.html#S3.SS6.SSS3",
+    "formula": "omega_critical = sqrt(4*m*g*l*I1)/I3",
+    "qualification": "Fixed-tip upright stability, not exact retail-top minimum successful spin. Illustrative disk with radius14mm and center height6/8/10mm; actual inertia unmeasured. This is a sensitivity illustration, not a physical lower/upper bound.",
+    "estimates": [
+      {
+        "assumed_com_height_m": 0.006,
+        "I3_kgm2": 2.7440000000000003e-06,
+        "I1_about_tip_kgm2": 2.38e-06,
+        "omega_rad_s": 45.64818471761312,
+        "rpm": 435.90805445880255,
+        "assumed_stem_radius_m": 0.003,
+        "pad_speed_m_s": 0.13694455415283935,
+        "total_tangential_impulse_Ns": 0.04175287295504347
+      },
+      {
+        "assumed_com_height_m": 0.008,
+        "I3_kgm2": 2.7440000000000003e-06,
+        "I1_about_tip_kgm2": 3.164e-06,
+        "omega_rad_s": 60.77467413522866,
+        "rpm": 580.355388205248,
+        "assumed_stem_radius_m": 0.003,
+        "pad_speed_m_s": 0.182324022405686,
+        "total_tangential_impulse_Ns": 0.05558856860902248
+      },
+      {
+        "assumed_com_height_m": 0.01,
+        "I3_kgm2": 2.7440000000000003e-06,
+        "I1_about_tip_kgm2": 4.172e-06,
+        "omega_rad_s": 78.02460125285094,
+        "rpm": 745.0800583299191,
+        "assumed_stem_radius_m": 0.003,
+        "pad_speed_m_s": 0.23407380375855283,
+        "total_tangential_impulse_Ns": 0.071366501945941
+      }
+    ]
+  },
+  "robot": {
+    "source": "/home/mzhang/yam-isaac-lab-arena/yam_arena/constants.py",
+    "shoulder_velocity_rad_s": 5.5,
+    "wrist_velocity_rad_s": 20.0,
+    "gripper_effort_N": 50.0,
+    "limitations": "Motor limits are installed model parameters, not a demonstration of achievable contact motion. A stem locked to one axial wrist alone cannot reach the illustrative46\u201378rad/s. Multiple-joint body angular velocity is not bounded by one joint alone. Parallel jaws have no independent tangential finger stroke.",
+    "possible_native_contact_route": "Opposite pads of two arms move tangentially in opposite directions, rolling stem while tip stays on surface, then both release. At assumed3mm stem radius, equal/opposite pad speed0.137\u20130.234m/s reaches illustrative threshold. Total angular impulse needs total tangential impulse0.042\u20130.071Ns (~0.42\u20130.71N over100ms). Not proof of collision-free reach or sufficiently balanced release.",
+    "not_permitted": [
+      "Added hub motor or chuck",
+      "Post-release angular-velocity writes",
+      "Changing collision friction by controller phase",
+      "Invisible support constraints",
+      "Rescaling retail toy to help reach"
+    ]
+  },
+  "comparators": [
+    {
+      "pr": 2722,
+      "state": "OPEN pending",
+      "distinction": "Fixed-axis Twister arrow flick; top has six-DOF release and gyroscopic balance. Pending is not accepted."
+    },
+    {
+      "pr": 2522,
+      "state": "MERGED accepted",
+      "distinction": "Complete familiar Jenga game turn with physical load-sensitive block selection; not blanket approval of balancing puzzles."
+    },
+    {
+      "pr": 2862,
+      "state": "CLOSED final Not accepted",
+      "distinction": "Two-card house rejected for importance; balancing puzzle without demonstrated real-world impact. Closest negative precedent for top as presently framed."
+    }
+  ],
+  "reopen_only_if": [
+    "Substantive ordinary-use outcome or importance evidence beyond spin duration/desk entertainment/physics demonstration",
+    "Measured or manufacturer-grade full retail geometry and mass distribution",
+    "Independent acceptance of broader top-play task, rather than inference from pending2722"
+  ],
+  "artifact_hashes": {
+    "pr-2862.json": "778d6e908d5141ee9e986c9dbfcc81043e46efb0d1de4687fcc4c400f635384b",
+    "manufacturer-how-sheet.jpg": "5800a9b436f2ab8d33d38f29fc048d2c1031859a48dfedf91b9ebdf93050eac1",
+    "pr-2522.json": "3e232f3edb64930754d390a98d47e44de148867f2b18840cc9bc6a91d5355968",
+    "pr-2722.json": "57f2b0abf758503f1a19740f0375cea40ce920129120a65c7a196f264e378fae",
+    "manufacturer-home.html": "23a2303424cf96ede0ce44330390515e66c1c47dc92737f658c2fda4725ef0a6",
+    "manufacturer-product.html": "ea1ca4c985f6101c847c68009bfd4e306839434af787a3eef5a7a4008d321c38",
+    "manufacturer-how.mp4": "451c051a57f240cc5924c377e88d9127b0022aef50eb1c87edfc632a60a40457"
+  }
+}

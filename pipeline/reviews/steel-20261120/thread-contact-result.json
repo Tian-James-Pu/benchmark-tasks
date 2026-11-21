@@ -1,0 +1,59 @@
+{
+  "result": "/home/mzhang/code/benchmark-tasks/pipeline/isolated-trials/steel-thread-contact-20261120/result.json",
+  "status": "Native SDF compatibility and short thread-contact lead match demonstrated; free detachment demonstrated; controlled reengagement not demonstrated. Bounded gate stopped after one run.",
+  "qualified_task": false,
+  "metrics": {
+    "control_steps": 520,
+    "station_table_z_m": 0.7475,
+    "source_thread_pitch_m": 0.0025,
+    "fits": [
+      {
+        "start_step": 41,
+        "end_step_inclusive": 60,
+        "lead_mm_per_rev": 2.5305256941804575,
+        "rise_mm": 0.677645206451416,
+        "yaw_range_deg": 97.25677546897789,
+        "rms_fit_error_um": 4.451481071942008
+      },
+      {
+        "start_step": 42,
+        "end_step_inclusive": 60,
+        "lead_mm_per_rev": 2.528781186137357,
+        "rise_mm": 0.6548762321472168,
+        "yaw_range_deg": 94.5640382078472,
+        "rms_fit_error_um": 4.54592066881247
+      },
+      {
+        "start_step": 45,
+        "end_step_inclusive": 60,
+        "lead_mm_per_rev": 2.5332586904977523,
+        "rise_mm": 0.5700588226318359,
+        "yaw_range_deg": 81.92116273129989,
+        "rms_fit_error_um": 4.915038593437978
+      },
+      {
+        "start_step": 42,
+        "end_step_inclusive": 64,
+        "lead_mm_per_rev": 3.361197401549074,
+        "rise_mm": 1.941978931427002,
+        "yaw_range_deg": 114.67898455723754,
+        "rms_fit_error_um": 215.66634108274798
+      }
+    ],
+    "fit_window_limit": "Exploratory post-hoc short engaged window, not a full-revolution or convergence test. Including loss-of-contact interval degrades fit.",
+    "passive_z_drift_um": 0.5960464477539062,
+    "passive_max_lateral_mm": 0.16037666198360942,
+    "first_recorded_zero_contact_after_drive_step": 64,
+    "first_complete_geometric_clearance_step": 65,
+    "final_lateral_mm": 191.94518186964524,
+    "max_abs_axial_angular_speed_rad_s": 11.115429878234863,
+    "reengagement_demonstrated": false
+  },
+  "remaining_limits": [
+    "PhysX auto-closes nonwatertight source mesh duringSDF cooking; exact cooked topology andthreadclearance were not independentlymeasured.",
+    "Shortpost-hoc leadfit only; no multipleturn orresolution/time-step convergence sweep.",
+    "Force/torque parameters are diagnostic estimates; native inertia missing, controlleroscillation limitsdetachment interpretation.",
+    "Reengagement, free alignment and robotgrasp/turn ability remain unproved.",
+    "No preload, tightening,OEMforce calibration, M2.6feeder transfer or taskacceptance claim."
+  ]
+}

@@ -48,7 +48,7 @@ drop, the faucet's angle on the deck and the records.
 ## Runtime and seeds
 
 - Demo: 1,973 steps (98.7 s simulated), about 12 minutes on an L40S including start-up.
-- Dream-1: up to 2,400 steps (2 minutes simulated).
+- Dream-1: up to 2,400 steps (2 minutes simulated). In its run (score 0.0) the right arm reached over the faucet early on without picking up the key, then both arms drew back near their bases for the rest of the run; the key, the aerator and the faucet never moved.
 - `object_jitter=0` keeps the layout fixed, so no seed is needed. The scripted demo is open loop from the published layout and
   deterministic.
 

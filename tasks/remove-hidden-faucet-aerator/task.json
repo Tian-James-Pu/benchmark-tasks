@@ -16,5 +16,6 @@
   "run_limit": "2,400 steps (2 minutes at 20 Hz)",
   "reset_notes": "The scale bond is used up once broken. Before each trial: set the faucet's mounting nut so a spring scale pulling sideways at the spout's end turns the faucet at about 100 g (0.1 N m), and turn it back square, spout at the robot; screw the aerator in to its seat with its key and a torque screwdriver set to 0.2 N m while holding the spout, mark pointing at the robot; stand the key back on its taped outline, lugs up.",
   "fidelity": "Faucet: SimReady mesh, convex-hull colliders; lever and pop-up rod fixed. The thread is a scripted coupling (1 mm per turn, 1 turn engaged, fewer than a real one). Torques (bond 0.2, running 0.04, loose mount 0.1 N m) are low estimates, scaled to what the simulated wrist applies. No spout bore: the ribs stand below the spout. Key: custom part, taller than a real key so the gripper fits under the spout. Key friction 0.35, else uniform; no water.",
-  "scores": "Dream-1 run: pending; demo: 1.0"
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-3Z6Y2R"
 }

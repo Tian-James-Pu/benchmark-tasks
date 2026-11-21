@@ -1,0 +1,31 @@
+{
+  "scope": "CPU model invariants and synthetic contact interpretation, not hardware measurements or native validation",
+  "checks": [
+    "Raw food sinks under gravity",
+    "Cooked density proxy produces positive buoyancy",
+    "Translated loose vessel leaves no ghost water force",
+    "Water force follows the actual vessel",
+    "Residual water heat remains valid after burnerOFF",
+    "Water eventually cools below cooking threshold",
+    "Nominal simmer stays hot and evaporation is bounded",
+    "Twice estimated heat loss still maintains cooking heat",
+    "Disjoint burner and pan receive no powered heat",
+    "Centered smaller burner has full geometric overlap",
+    "Incidental lateral food contact is not upward support",
+    "Opposing normals cannot cancel into unsupported float",
+    "Food stack rooted on real plate qualifies support",
+    "Ordinary stacked spoonful qualifies actual spoon support",
+    "Pan-anchored food stack is not dry spoon retrieval",
+    "Food touching spoon handle is not bowl retrieval",
+    "Gripper contact cannot become valid spoon retrieval",
+    "Gripper support propagates through lower food despite plate contact",
+    "One-sided native plate event reconstructs positive food support",
+    "Two-sided reporting does not double the same contact"
+  ],
+  "count": 20,
+  "thermal_loss_sensitivity": {
+    "nominal_final_c": 100.0,
+    "twice_loss_final_c": 100.0
+  },
+  "batch_mass_kg": 0.10944202964492775
+}

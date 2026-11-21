@@ -1,0 +1,26 @@
+{
+  "task": "close-jaw-coupling-spider-and-hub",
+  "source_sha256": {
+    "README.md": "ee3effc01a0e2cdaf0268f55ce98cee1182d8385d29d358f914fe804f4bbf5de",
+    "demokit.py": "2e6c9ff748ba5e51f7e91adc55f26e0331dbac30b3f1a708c378d45492f3d4be",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "82e1f207845ef6a8ad18b21bfdbde9e80192328a2359e150946353f94d3e9082",
+    "task.py": "479277b41c81bee9bd6b8cfba1769d9e3488180e6d48b2075ecb35aa17b2d523"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "3e03e5e659b41a5a5408fe21731f8f1e2eb9c56b0e5b264994db97840a2d9a6d",
+      "bytes": 808612
+    },
+    "dream.mp4": {
+      "sha256": "a61c5cb76d4f5448ce524f3b754091d6a6408a9c6f83147106573517cf26e212",
+      "bytes": 346961
+    },
+    "setup.png": {
+      "sha256": "17316f0a3c994321fedb5c1b0a788026afa8658416400f01ac2d61f61ce06c71",
+      "bytes": 170384
+    }
+  },
+  "provenance": "Isolated task-specific side-camera trial; task.json media ID must be replaced by a fresh upload before submission."
+}

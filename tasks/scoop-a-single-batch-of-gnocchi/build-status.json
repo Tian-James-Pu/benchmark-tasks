@@ -1,0 +1,72 @@
+{
+  "updated_utc": "2026-11-20T08:18:11.673647+00:00",
+  "status": "parked_competing_hold_3108_all_owned_runs_terminal",
+  "full_task_qualified": false,
+  "submission_ready": false,
+  "active_diagnostic_wrapper_pid": null,
+  "active_diagnostic_source": "pipeline/isolated-trials/gnocchi-rear-scoop-r6-20261120",
+  "passed": [
+    "20 CPU physical/contact checks",
+    "15 scorer adversarial tests",
+    "native resting food weight check; earlier one-sided interpretation withdrawn because signed rows were filtered",
+    "53 native sensor inventory including robot links",
+    "native baseline spoon pinch before subsequent collision",
+    "55 native contact sensors including both dials",
+    "CPU full25degree angled dial regrasp route:13.03mm nominal native hull/pan clearance",
+    "8 shifted pan/plate target cases with smaller dump offset pass native IK",
+    "R4:12 physically plated pieces through two loaded native spoonfuls, no food outside pan/plate",
+    "R4:angle0.108degreesOFF with real side-pinch regrasp, pan translation below0.001mm",
+    "R4:released spoon rests ontable, both cookware stable and hands clear",
+    "24 bundled outcome/contact-adapter regressions including signed-force semantics",
+    "R5 native signed-force food/plate check:0.03354999N vs0.03355082N expected, opposite raw scalar signs deduplicated",
+    "25 scorer/adapter CPU tests including simultaneous shaft/plate support exclusion"
+  ],
+  "known_gaps": [
+    "No full1.0 demonstration; fullR1 ended.5 with16of32served.",
+    "No native final-source qualification after canonical signed-force and shaft-support fixes.",
+    "Tangential friction support omitted by scorer adapter; physical food exploit not demonstrated.",
+    "Unresolved compound-spoon normal-force reporting anomaly atrest; declared native massmatches.",
+    "Cooking/float timings, ingredientstorage and repeatable hardware reset need stronger evidence; new competitor review explicitly requests real testing.",
+    "Default setup camera occludes initial spoon.",
+    "No two full demos, final-source recorded controls, model run or uploaded submission.",
+    "Competitor3108 holds operation throughNov22 07:45:32UTC absent later receipt/decision."
+  ],
+  "prior_diagnostic_failure": "Right dial pinch-turn pushed loose pan118mm; next scoop hit displaced rim and rotated spoon. Original fixed-pan coupon late spoon rotation remains independently unresolved.",
+  "current_test": "All owned runs terminal; no further work under competing hold. FullR1 .5/7520, R6 diagnostic0/1960 with7physicallyplated, R5 signed-contact check0/120.",
+  "active_full_run_wrapper_pid": null,
+  "active_full_run_source": "pipeline/isolated-trials/gnocchi-full-r1-20261120",
+  "signed_force_review": "pipeline/reviews/resume-20261120/gnocchi-batch/signed-force-fix.json",
+  "competing_hold": {
+    "checked_utc": "2026-11-20T07:48:47.911022+00:00",
+    "status": "COMPETING_HOLD_DO_NOT_SUBMIT",
+    "competing_pr": 3108,
+    "url": "https://github.com/robocurve/benchmark-tasks/pull/3108",
+    "author": "rafaymhddn",
+    "head": "49fd817bd2618f91288f591a01fcdfb2d869099d",
+    "official_receipt": "2026-11-20T06:59:30Z",
+    "task_id": "TK-U47F4D",
+    "latest_review": "2026-11-20T07:45:32Z",
+    "hold_expires_utc": "2026-11-22T07:45:32+00:00",
+    "hold_rule": "48hours after official Not accepted review, unless superseded by a new receipt or decision.",
+    "review_url": "https://github.com/robocurve/benchmark-tasks/pull/3108#issuecomment-7033612655",
+    "new_feedback": [
+      "Change Impact on jobs claim to Societal relatability; no evidence500000restaurantcooks regularly perform exact operation.",
+      "Specify consistent fresh-gnocchi source/preparation, storage temperature and handling.",
+      "Test real setup for reproducible initial/float times; adjust simulated timing/run limit if required."
+    ],
+    "our_action": "Park further development and new native/model trials. No submission/upload. Existing immutable fullR1 and R6 retain bounded normal completion and evidence.",
+    "existing_jobs": [
+      {
+        "wrapper_pid": 3469988,
+        "folder": "pipeline/isolated-trials/gnocchi-full-r1-20261120"
+      },
+      {
+        "wrapper_pid": 4051241,
+        "folder": "pipeline/isolated-trials/gnocchi-rear-scoop-r6-20261120"
+      }
+    ],
+    "future_resume": "Recheck current official hold/revision and all-board reclaim status; expiration alone is not qualification. Preserve known numerical adapter and reproducibility gaps."
+  },
+  "completed_rear_scoop_evidence": "pipeline/reviews/resume-20261120/gnocchi-batch/rear-scoop-r6-result.json",
+  "full_run_evidence": "pipeline/reviews/resume-20261120/gnocchi-batch/full-r1-result.json"
+}

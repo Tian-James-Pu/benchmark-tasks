@@ -1,0 +1,48 @@
+{
+ "checked_at": "2026-11-21T20:21:09Z",
+ "decision": "clear",
+ "queries": [
+  "so-101",
+  "so101",
+  "so-arm",
+  "robot arm mount",
+  "table clamp",
+  "bar clamp",
+  "trigger clamp",
+  "quick-grip",
+  "clamp robot",
+  "table edge"
+ ],
+ "nearest_prs": [
+  {
+   "number": 2926,
+   "relationship": "Source idea (another team, TK-FZB4CE): same object and skill. Its revision hold lapses 2026-11-21T20:46:26Z with no revision received; this independent build answers its review (no force or pressure strips; ruler, feeler gauge, inclinometer and video checks). Submitted only after the lapse is confirmed."
+  },
+  {
+   "number": 3409,
+   "relationship": "Pending (other team): clamp a loose right-angle pine joint with a trigger bar clamp. Same tool, different object and set-up: two loose boards at a corner, no fixed jaw hooked blind under a tabletop, no robot base."
+  },
+  {
+   "number": 771,
+   "relationship": "Revising (other team): clamp two boards edge to edge by pumping a one-hand bar clamp. Board gluing on a bench; here the clamp's fixed jaw goes blind under a table edge and the movable jaw bears on a robot base wing."
+  },
+  {
+   "number": 2742,
+   "relationship": "Rejected final (relatability): one-hand bar clamp on two pine boards. Different object and purpose."
+  },
+  {
+   "number": 2931,
+   "relationship": "Pending (other team): fit an SO-101 shoulder bracket over servo horns. Same robot, different skill (assembly of a bracket), no clamping."
+  },
+  {
+   "number": 836,
+   "relationship": "Rejected: hold an SO-101 shoulder bracket and push a servo into its pocket. Same robot, different skill."
+  }
+ ],
+ "physical_skill": "Mount an SO-101 arm to a table edge as its build guide directs: for each of the base's two wings, hook a trigger clamp's fixed jaw blind under the tabletop, slide the movable jaw down onto the wing, and pump the trigger until both pads bear (no gap over 0.5 mm) with the bar square to the table, keeping the base on its marks; then let go with both grippers clear.",
+ "valid_shortcuts": "Either clamp may go on either wing, and two clamps on one wing count as one wing secured (0.5). Fitting only one clamp scores 0.5. Too few trigger strokes (jaws not bearing), pads half off the wings, clamping bare tabletop beside the base, or never letting go all score 0 (red-teamed). Pushing the base more than 4 mm off its marks or tipping it off the tabletop scores 0. There is no way to secure the base other than clamping its wings.",
+ "distinct_from_nearest": "No other team's live task clamps a robot arm's base to a table. The trigger-clamp tasks on the board (771, 2742, 3113, 3409) join loose boards on a bench; here the fixed jaw is hooked blind under a tabletop edge and the movable jaw bears on a small plastic base wing beside a heavy arm, the ordinary first step of setting up a low-cost robot arm, with the Impact on AI timelines category. The only exact match is the source idea #2926, claimed only after its hold lapses.",
+ "task_py_sha256": "9bd3c76f38ecc06cd67a216919cd8eee917850129139ce6436344149970af19e",
+ "task_metadata_sha256": "3db2da982d0b46c7c184380e42d3bf377b50196203db78f69da3cfa2df767aea",
+ "board_refreshed_at": "2026-11-21T20:21:09Z"
+}

@@ -1,0 +1,1 @@
+stopped 2026-11-21T06:17:51Z: no submission; PR #3318 (TK-JMBCTA) is pending for fetching a level from a covered floor opening, and reviewer final rejections #3320/#3322 explicitly say tool substitution is a duplicate. Local wrench scorer also has the off-table exploit flagged in #3320. Do not submit as a new task.

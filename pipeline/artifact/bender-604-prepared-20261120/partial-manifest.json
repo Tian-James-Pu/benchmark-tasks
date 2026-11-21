@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-20T16:04:57.595659+00:00",
+  "task": "bend-45-offset-on-hand-tube-bender",
+  "scope": "Exact runtime source and native demo media. README edited independently of the shared Claude folder.",
+  "source_sha256": {
+    "README.md": "81f36c77bb6972e4560a025abb5e5dbb05e283380a5ca4e28381951e84e9a202",
+    "check_scorer.py": "be9e3916adf18bbea5b42657108b9817642719dfeedb58fd9392632317c2c94f",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "f8b9a3090f975d78013dd1b478e4a89fb646f9ca4e84a18597be816f4828c63c",
+    "task.py": "eed4b9bde78da40156f091ec40ff3b28704ca3888d813ebbc8bd697eb9963513"
+  },
+  "media_sha256": {
+    "demo.mp4": "da5952aeb18bcf8336da6d4e8fbb8d88e0889d506b391e925d476d71baf16aab",
+    "setup.png": "006c13d432bf3c3a5b979714e46ff6c70be2ed744fe6b5cb49c821ba03d49e0b"
+  },
+  "demo_score": 1.0,
+  "demo_controls": 1144,
+  "demo_receipts": [
+    "/home/mzhang/yam-eval/bend-45-offset-on-hand-tube-bender/demo-1120-095053-gpu1-487110/trial-media.json",
+    "/home/mzhang/yam-eval/bend-45-offset-on-hand-tube-bender/demo-1120-100513-gpu0-639151/trial-media.json"
+  ],
+  "counts_as_fully_qualified": false,
+  "remaining": [
+    "PR #2123 has a competing ownership hold, earliest possible expiry November 21 00:28:27 UTC. Recheck live state.",
+    "Current-source Dream-1 model run and video.",
+    "Runtime comments describing the 606 and original bend radius need correction before final packaging.",
+    "Fresh novelty review and board media receipt before publication."
+  ],
+  "native_held_control": {
+    "state": "success",
+    "score": 0.0,
+    "controls": 1240,
+    "final_bends_deg_at_mm": [
+      [
+        -45.7,
+        148.3
+      ],
+      [
+        45.3,
+        220.6
+      ]
+    ],
+    "final_hand_distance_m": 0.016,
+    "native_report": "pipeline/isolated-trials/bender-604-controls-20261120/hold/adhoc_f0caea76.json",
+    "native_report_sha256": "5f3323318fce38188b98e71ed9c4f40038f071b477c8b502c094f352c96e7197",
+    "policy_source_sha256": "071a73cfedf3dff92cfc8c814d096a54b37e478fae186444c5014bcb2243aa78",
+    "scope": "Same scene and scoring source prefix. Only the scripted left-arm release was replaced by a lever hold."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "title": "Braid three hair sections and secure the end with a small claw clip",
+  "category": "Societal relatability",
+  "instruction": "Braid the three loose hair sections on the mannequin and secure the end with the small hair clip.",
+  "justification": "Recognizable everyday hairstyling; exact2296reviewexplicitlysuggestshair/wig/mannequin. Distinctthree-sectioncontact/regrasp andfinishingoperation.",
+  "fault": null,
+  "objects": [
+    "Full-size PivotPointVanessa-styletrainingmannequin, disclosedheadgeometryapproximation",
+    "Three prepared356mmhairsections, source-derived2.314g each",
+    "Actual-size Kitschmini springclawclip, nativejaw/teethcontact",
+    "Reproducibleheight-adjustablemount"
+  ],
+  "skill": "Alternate physicaloutersection crossings whilemaintainingthree loose sections; finish withnativeopened/placed/released clip.",
+  "scoring": "To be numericbeforetaskqualification: correctthree-sectioncrossings, compactbraidlength, clipenclosingallsections, handsreleased5s.",
+  "nearest": {
+    "2296": "Samecorebraid; expiredunrevisedhold, actualreviewrequests hair/mannequin.",
+    "2860": "Closedpony-tail elastic task; itsphysicalretention objection motivatesrealterminalclip, not looseencirclingproxy.",
+    "2940": "Hairblotting isdistinct operation.",
+    "2847": "Hairbrush cleaning isdistinct operation."
+  },
+  "risks": [
+    "Three-sectionexchange/retentionunproven",
+    "Cliphinge/teethnativeopening andretentionunproven",
+    "Robotgripperinterferencewhenactivehair sectionsareclose",
+    "Aggregationomitsflyaways/radialcompression; scopepreparedsectionsandcontactquality"
+  ],
+  "material_evidence": "pipeline/isolated-trials/hair-aggregate-light-pinch-r4-20261120/outcome.json",
+  "sources": [
+    {
+      "url": "https://www.redkenpro.com/the-break-room/sams-corner/string-braid",
+      "supports": "Styling procedure finishes a three-strand braid by securing its end with an elastic; supports need for a real final securing operation."
+    },
+    {
+      "url": "https://www.scunci.com.au/blog/how-to-style-hair-accessories",
+      "supports": "Manufacturer describes jaw clips as alternatives to elastics and mini clips for twisting/braiding sections. It does not prove this specific Kitsch clip fits our chosen braid."
+    },
+    {
+      "url": "https://www.target.com/p/-/A-91792311",
+      "supports": "Brand-authored Kitsch Cares answer supplies individual clip dimensions; listing identifies product/UPC and recycledABS material. Retailer overall dimensions are packaging, not clip geometry."
+    }
+  ],
+  "build_folder": "pipeline/isolated-trials/braid-and-clip-three-hair-sections-20261120",
+  "strict_review": "Importancepromisingfromspecificofficialfeedback; nativeone-sectionhandlingnowdemonstrated. Fullbraidnotyetvalidated; noacceptanceprobabilityclaim."
+}

@@ -299,4 +299,76 @@ Two got revisable reviews, which means importance passed:
 
 Both reviews asked for the real installed context: a vehicle seat and cabin, and a tyred wheel on a car. The first also asked for end-state scoring and named purchasable products.
 
-Lesson: safety tasks with an immediate hazard to a person can pass importance. Snap-fits, hold-and-tighten jobs, hidden maintenance and appliance setup tasks can't. Build the real installed context from the start.
+Lesson: these particular snap-fit, hold-and-tighten, maintenance and appliance-setup submissions failed their importance cases. That is evidence against repeating their core skill without a meaningful distinction, not a categorical ban on those mechanisms. Build the real installed context from the start and check current decisions for the exact operation.
+
+## Acceptance calibration checked on 20 November 2026
+
+Primary review threads and final submitted text are archived in
+`pipeline/reviews/resume-20261120/recent-accepted/`; the evidence index is
+`acceptance-calibration.json`. These decisions qualify broad rules inferred from older rejections:
+
+- [Accepted #1135](https://github.com/robocurve/benchmark-tasks/pull/1135) supported paper-cutting resistance with published material data and geometry, disclosed the lack of a physical force measurement, and demonstrated the task at doubled resistance. A justified engineering model can sometimes supply adequate evidence. This does not satisfy a different PR's explicit measurement request automatically.
+- [Accepted #2574](https://github.com/robocurve/benchmark-tasks/pull/2574) used estimated springs and a rigid approximation of a jack-in-the-box; [accepted #2306](https://github.com/robocurve/benchmark-tasks/pull/2306) used hinged rigid card leaves. Estimated parameters and simplified materials are not automatic rejection grounds when the defining interaction remains represented.
+- [Accepted #2417](https://github.com/robocurve/benchmark-tasks/pull/2417) supplied a custom printable sampler with native granule handling. A reproducible custom tool does not need an identical commercial product, although its claimed purpose and physical operation must be credible.
+- [Accepted #2584](https://github.com/robocurve/benchmark-tasks/pull/2584) used a primitive trailer-plug body with a contact latch and omitted electrical-contact resistance. Assess what each simplification removes from the actual manipulation rather than rejecting primitives or snap mechanisms as a class.
+
+Use the five program criteria and the latest task-specific review. Do not impose OEM CAD, full FEM/CFD, or personally measured values for every parameter as blanket prerequisites. Equally, do not describe estimates or proposed tests as measurements, soften loads solely to get a successful demo, or omit the part of the mechanism that performs the claimed work. Simulation qualification, submission eligibility and reviewer acceptance remain separate statuses.
+
+On 20 November at 04:59 UTC, [PR 2599](https://github.com/robocurve/benchmark-tasks/pull/2599) was accepted with
+explicitly disclosed force-triggered puncture and nominal spring/friction/damping models for a named injection
+trainer and syringe. Its README includes practical pretrial measurement procedures; our read-only audit does not
+establish which hardware measurements its authors performed. This further supports evaluating a reduced model's
+physical work, reactions and observable outcomes instead of demanding passive mesh contact or FEM for every
+material interaction. It does not justify proximity-only success capture or override a specific measurement request.
+Evidence: `pipeline/reviews/resume-20261120/recent-accepted/calibration-2599.json`.
+
+## Appeals are capped at 5 per team (21 November 2026)
+
+Each team may appeal at most 5 final decisions, and we have now used all 5:
+- #2418: the appeal was reviewed and the decision stands;
+- #2500, #2544, #2844 and #2876: still pending.
+
+The ten other rebuttals we posted on 21 November (#2843, #2845, #2871, #2873, #2874, #2881, #2887, #2906, #2955,
+#3253) got an automatic "used its 5 appeals" reply and won't be reviewed. No further appeal is possible, so any
+future final rejection is final.
+
+## Human reviewers closed four revised tasks on importance (21 November 2026)
+
+All four had passed the agent review's importance check and had been revised as asked. Human reviewers then closed
+them on importance, each with a one-line reason:
+- #2477, steering lock: "not sufficiently relatable for acceptance to this category";
+- #2520, dishwasher spatula: "the physical ability tested by the task is too simple";
+- #2609, crutch ferrule (Safety): "does not meaningfully test model safety";
+- #2839, IV roller clamp: "real-world trials would be too difficult to reproduce consistently".
+
+Lesson: passing the agent review's importance check is not enough. Human reviewers apply a stricter, gut-level bar:
+- is it plainly relatable;
+- is the physical skill non-trivial;
+- for Safety, does it test the model's judgement rather than routine care;
+- can the real trial actually be run.
+- #3358, offcuts under a propped board (TK-94HRFH), final 21 Nov. Flagged as close to our own earlier TK-3JS2ME,
+  which also reseats a board across two blocks. Importance: not shown to be regular carpentry work. Construct
+  validity: no real-work reason for the off-the-bench constraint. Lesson: a constraint the task invents, with no
+  real reason behind it, fails both criteria; and the reviewer cross-checks our own earlier PRs.
+
+## Correction: a Dream-1 refusal can still be submitted (21 November 2026)
+
+The 18 November note above ("with no model run there is no submission") was too strict. #2523 was accepted with
+"Dream-1 run: refused the instruction before acting, nothing scored; demo: 1.0". tools/upload_media.py also supports
+this case: leave out --video and put the exact error text in task.json's `no_model_video_reason`. pipeline/submit.sh
+now does that whenever that field is set. Never reword an instruction to get past a refusal.
+- 21 Nov, two more revised tasks were closed on importance by human review: #2883, wheel cover (TK-QV6JNG),
+  "not sufficiently relatable for acceptance to this category"; and #2879, infant car seat (TK-7BHUHG),
+  "the physical ability tested by the task is too simple". Both passed the agent review's importance check
+  and were revised as asked. Human review has now closed 7 of 7 revised tasks on importance (#2477, #2520,
+  #2609, #2839, #2872, #2884, #2883, #2879). Lesson: a skill like seating a part or latching a car seat reads
+  as too simple to the human reviewer, however real the product. To pass, the skill must be visibly hard:
+  sustained two-handed coordination, a narrow window held under load, or several dependent stages.
+- 21 Nov 23:11Z: #3530, infusion pump on an IV pole (TK-ZZYHFC), final on importance. "Holding the pump while
+  tightening its clamp is an already-covered ability; the height band and heavier object add no distinct
+  manipulation." Lesson: hold-and-tighten is a covered family; a heavier object or a height mark doesn't change that.
+- 21 Nov 23:12Z: #3532, GoPro fingers into a helmet buckle with a thumbscrew (TK-ZYPMD4), final on importance:
+  "a hobby-specific activity". Lesson: action-camera mounting counts as a hobby, not an everyday task.
+- 21 Nov 20:36Z: #3524, bifold closet door (TK-Z4CTFX), revisable on feasibility: the demo lightened the 9-10 kg
+  pair to 2.4 kg "for the arms' payload". Lesson: disclosed rescaling is checked. A mass cut to fit the robot fails
+  feasibility; use the real mass or a genuinely lighter real product.

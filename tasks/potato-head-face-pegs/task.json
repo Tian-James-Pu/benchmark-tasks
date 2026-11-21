@@ -1,0 +1,19 @@
+{
+  "title": "Give a classic Mr. Potato Head his eyes, nose, mouth and both ears, every peg pushed home, keeping him on his feet",
+  "category": "Societal relatability",
+  "keywords": [
+    "toy",
+    "interference fit",
+    "bracing",
+    "bimanual",
+    "peg insertion"
+  ],
+  "instruction": "Give Mr. Potato Head his eyes, nose, mouth and both ears, each pushed all the way in, and keep him upright the whole time.",
+  "context": "Putting Mr. Potato Head's face on is something most adults did as children or have done with their own: the toy has sold over 100 million units since 1952 and is in the National Toy Hall of Fame. Each part's round peg is an interference fit that takes a firm, straight push (about 8 N here), but the hollow 120 g figure slides at about 1 N and tips over at well under that when pushed at face height, so one hand has to brace him from behind or the far side while the other pushes each peg straight in; pushed one-handed he scoots away or falls over, and a peg pushed in at an angle jams partway.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left; heights above the table top (74.75 cm up). Task objects: Mr. Potato Head body (classic, Hasbro F3244 pattern), hollow polyethylene potato 7.2 deep x 8.8 wide x 11.6 tall on its base with feet (blue shoes, 6.2 long x 7.2 wide x 2.0 tall), 13.2 tall overall, 0.12 with no parts, standing on the table facing the arms, base centred at (27, 0). Holes 1.0 dia: eyes, nose and mouth on his front centre line at 10.6, 8.1 and 5.6 high; ears one on each side at 10.6 high; the hat and arm holes are not used. Parts, each with one 1.0 dia x 1.6 peg behind a 1.5 dia collar (1.4 on the ears), plastic: eyes, white plate 5.6 x 2.6 x 1.0 with two eyeballs, 0.010, stood on its flat lower edge facing the arms at (15, -9.5); mouth, red lips 5.0 x 2.2 x 1.1 with teeth, 0.009, stood on its lower edge facing the arms at (15, -18.5); nose, orange bulb 2.4 long x 2.1 dia, 0.006, lying on its side, peg pointing away from the arms, at (21.5, -15); two ears, pink, 2.8 out x 3.8 tall x 1.4 thick, 0.006 each, lying flat, pegs pointing at the body, at (30, -17.5) and (30, 17.5). Distractors, ignored by scoring (SimReady): plastic cup 6.4 dia x 10, 0.02, at (50, 12); apple 7 dia, 0.18, at (50, -14); thin marker 10.9 long, 0.01, at (46, 27) yaw 1.2 rad.",
+  "scoring": "0 if the body has at any time tilted more than 45 degrees from upright (fallen over or laid down), or if at the end he is not standing (within 10 degrees of upright, underside of his feet within 3 mm of the table). A part is seated when its peg is in its own hole (eyes top front, nose middle front, mouth bottom front, each ear in a side hole; any rotation about the peg), its collar no more than 1 mm out from the body (feeler card), the peg within 1.5 mm of the hole's axis and within 6 degrees of square to it. 1.0: all five seated, standing, nothing moving (under 0.5 mm per 0.05 s step) and every fingertip at least 3 cm from the figure, held 1 s. 0.5: three to five seated without the rest of 1.0. 0.25: one or two seated. 0 otherwise.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Pull the five parts out (a firm pull), stand the eyes and mouth back on their lower edges and lay the nose and ears back on their tape marks; stand the body on its mark facing the arms. Nothing is consumed.",
+  "fidelity": "Body, base with feet and parts are custom rigid meshes sized from the classic toy (SimReady has no Mr. Potato Head); sizes and masses are estimates from listings and photos, not measured. The interference fit is four hidden sprung pads per hole (8,000 N/m, 0.6 mm interference, friction 0.5/0.4), about 8 N to push home: an estimate. The hollow body is a rigid 3 mm shell; part shapes are simplified. Only the five scored holes are modelled; hat and arm holes are painted. Distractors are SimReady.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

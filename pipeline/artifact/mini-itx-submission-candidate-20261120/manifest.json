@@ -1,0 +1,32 @@
+{
+  "task": "seat-mini-itx-board-in-server-chassis",
+  "source_sha256": {
+    "README.md": "6d5ea2360d9da3d2c5c53af9559e43e7dd3180653aa07243eb92621c0d679f10",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "bd68d536b7083223ecf7cf589a22ee850aec98541af218e9fd4cd1f671ac64ac",
+    "task.py": "1f32b949243d9d6158d07c7e717242f797d32729d3cb7c0bef3eab8747728bbf",
+    "test_scoring.py": "a7369d9b2ab2362404efa88d580bdb1ee35eceb1328f855ce2a330b4ac973b42"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "f21623e9c8df277b3229178d1430dc331703c0254052b1fa44f55edc5566ba65"
+    },
+    "dream.mp4": {
+      "sha256": "e4cfef215117492b25a2b2c24fd5cc1034a58d68b8441c753795415e8684c48e"
+    },
+    "setup.png": {
+      "sha256": "4d78d89373fcbc5b78e6b0f6f13268fbd62fda06b87da1d1f648d9909514cba9"
+    }
+  },
+  "validated_for_goal": false,
+  "submission_recheck_needed": [
+    "Replace dark visual hole markers on the solid PCB collider with genuine through-holes that correspond to the described 3.96 mm mounting holes.",
+    "Replace demo grasps on the PCIe slot and DIMMs with a physically valid edge-handling route consistent with Supermicro guidance; regenerate all demo/media evidence.",
+    "Define screw readiness by actual compatible 6-32 screw passage/engagement or another practical check; current 0.6 mm axis tolerance is too loose for screw clearance.",
+    "Strengthen source evidence for rear-I/O connector protrusion and shield aperture dimensions; rerun full simulation qualification and refresh media/manifest after changes.",
+    "Recheck current PR #2747/#2029 holds and the board before any submission."
+  ],
+  "last_audit": "pipeline/reviews/resume-20261120/mini-itx/prepared-candidate-review-feedback-audit.json",
+  "last_audited_at": "2026-11-20T22:51:06.979612+00:00"
+}

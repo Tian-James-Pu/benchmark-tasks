@@ -9,7 +9,7 @@ Dream-1:
 ```bash
 inspect-robots run --embodiment yam_arena --policy dream \
   -E task=tasks/free-riser-foot-from-pencil-under-open-jar/task.py -E object_jitter=0 -E control_hz=20 -E cam_width=320 -E cam_height=176 \
-  --instruction "The riser under the open glass jar of varnish is sitting on a pencil. Get the riser flat on the table where it is, keeping the jar standing on it without spilling." \
+  --instruction "The riser under the open jar of varnish is sitting on a pencil. Get it sitting flat on the table where it is, with the jar still on it." \
   --scorer task_score --max-steps 2400 --store-frames --log-dir ~/yam-eval/riser-dream
 ```
 
@@ -18,14 +18,39 @@ riser's near end across its width (3 mm left of the midline, on the leaning rise
 pencil 7 cm to the right; the left arm lowers the riser flat and lets go.
 
 The run prints `task_score` at the end. `score()` in the task file returns 0 if the jar ever tilts past 15 degrees
-or ever leaves the riser's top. Otherwise, with the riser, jar and pencil at rest, it returns 1.0 for the riser flat
-(all four bottom corners within 2 mm of the table), within 1 cm of where it started and 5 degrees of straight ahead, the jar upright on
-it (within 3 degrees) and the pencil at least 2 cm clear; 0.5 if the riser is flat with the jar upright and the pencil
-not overlapping it seen from above, but the riser moved or turned further than that or the pencil lies within 2 cm;
-0 otherwise. `success()` is a score of 1.0, and must hold for 3 s.
+(varnish over the rim). Otherwise, with the riser, jar and pencil at rest and no gripper finger within 2 cm of any of
+them, it returns 1.0 for the riser flat (all four bottom corners within 2 mm of the table), within 1 cm of where it
+started and 5 degrees of straight ahead, the jar standing upright on it (within 3 degrees; its base centre inside
+the riser's top and its lowest point within 4 mm of it) and the pencil at least 2 cm clear; 0.5 if the riser is flat
+with the jar upright on it and the pencil not overlapping it seen from above, but the riser moved or turned further
+than that or the pencil lies within 2 cm; 0 otherwise. `success()` is a score of 1.0, and must hold for 3 s.
+Lifting the jar off and putting it back upright is a valid route and is not penalised.
 
-The memory of a spill is kept in the module and cleared when the scene is reset (the objects jump back to the
-starting layout). Moving things back by hand does not clear it. Run one trial per process to be safe.
+The record of a spill is module-level state kept for the whole trial. It is cleared only in `mechkit`'s `on_reset`
+hook, which runs after every reset of the scene, never because the objects return to where they started. The
+hands-off check uses `mechkit`'s `fingertips()`, read after every control step. Run one trial per process to be safe.
+
+## Real-world trial
+
+Use a planed oak block 26 x 7 x 4 cm, an ordinary hexagonal pencil, and an 8 oz straight-sided glass with water up to
+0.30 kg in total. Lay the pencil, set the block down with its right edge 1.5 cm over the pencil tip, and stand the
+glass on it. Measure with a ruler: each corner of the block against the table (a 2 mm feeler or a stack of two coins
+must not slide under any corner), the block's centre against tape marks at its start, the pencil's gap to the block.
+A spill is any water over the rim; wipe it up before the next trial.
+
+## Importance and sources
+
+A wooden block or riser on a bench that has been set down on a stray pencil rocks, and what stands on it leans. Here
+the thing on it is an open jar of oil-based varnish, a common finishing product. Its manufacturer classifies it as a
+flammable liquid and vapour, and its spill instructions are to shut off ignition sources and absorb the spill with
+inert material ([MINWAX Fast-Drying Polyurethane Clear Satin, Safety Data Sheet, revised 16 July 2024](https://www.paintsupply.com/wp-content/uploads/2024/05/SDS-Minwax-027426710283-101484-60.pdf)).
+The physical difficulty is that the pencil is pinned by the load: pulling it drags the riser and the jar along, and
+tipping the riser up carelessly tips the jar. One hand takes the weight off that side while the other clears the
+pencil, and the riser is checked for sitting flat before work goes on.
+
+Limits: the source shows the hazard of a varnish spill, not how often things get set down on a pencil; we found no
+statistic for that, and the claim that it is an everyday occurrence is our own judgement. The riser is a plain block
+standing in for any small stand or bench block.
 
 ## Assets
 
@@ -41,7 +66,9 @@ The jar and the three distractors come from the Hugging Face dataset
 They are © NVIDIA, licensed [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes made at load time:
 masses are set (glass 0.30 kg, standing for a jar with varnish in it; mug 0.30 kg; tape 0.06 kg; screwdriver
 0.10 kg), the glass and the screwdriver collide as convex hulls, and the invisible grasp-annotation curves are
-deactivated. No joints are involved. The riser and the pencil are `yam_arena` boxes. The files are not committed:
+deactivated. No joints are involved. The riser and the pencil are `yam_arena` boxes. `mechkit.py` is copied unchanged from
+`tasks/heat-shrink-lug/mechkit.py` in this repository (another team's open-source mechanism kit); this task uses
+only its `fingertips`, `on_step` and `on_reset` hooks. The files are not committed:
 `simready.py` downloads them into `~/.cache/simready` the first time the scene is built, which needs network access.
 
 ## Runtime and seeds

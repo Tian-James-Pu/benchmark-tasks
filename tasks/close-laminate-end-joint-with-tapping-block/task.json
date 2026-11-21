@@ -1,0 +1,21 @@
+{
+  "title": "Close a laminate plank's open end joint: hold a tapping block square on its end and tap the block with a mallet",
+  "category": "Impact on jobs",
+  "keywords": [
+    "flooring",
+    "laminate",
+    "tapping block",
+    "mallet",
+    "click joint",
+    "bimanual tool use"
+  ],
+  "instruction": "Close the open end joint of the laminate plank that was just laid.",
+  "context": "Carpenters (O*NET 47-2031.00, 889,700 employed) list \"Install structures or fixtures, such as windows, frames, floorings, trim, or hardware\" as a core task, and general maintenance and repair workers (49-9071.00, 1.6 million) \"repair ... floors\". Pergo's instructions for its Uniclic planks give the tap method, the one used where a plank can't be angled in, as under a door casing: \"tap the end into a locked position using the tapping block. Note: Uneven tapping or use of excessive force may damage the joint.\" A plank locked along its long edge will not slide under a steady push; struck on its own end, by the hammer or anything hard, the groove's lip is crushed and the next plank will not lock.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left, z up; origins on the table top (74.75 cm up). Floor section, fixed, standing in for the room's floor at table height: 1.8 thick plywood subfloor 164 x 82 (x 10 to 174, y -42 to 40), its far end on a steel trestle past the table's edge. Laid Pergo Pro laminate (19 x 120 x 1.0 planks: 0.8 HDF on a 0.2 attached pad, Uniclic joints): row 0 (y -44.5 to -25.5, cut at -42) and row 1 (y -25.5 to -6.5), end joints at x 55 and 76; in row 2, the previous plank from x 160.5 to 174. Task objects: the plank just laid, Pergo Pro 120 x 19 x 1.0, 1.6, long edge locked to row 1 (y -6.5 to 12.5), near end face at x 40 with its groove's lower lip protruding 0.6 towards the arms (0.2 to 0.45 above the subfloor), far end 0.5 short of the previous plank (gap 5.0 mm). Tapping block, Roberts 10-49 Double Tap, reinforced nylon: body 25.4 x 8.9 x 1.9 with a 0.8 deep, 0.6 high relief along its bearing edge's bottom, raised D-handle 9.1 high overall (bar 14 x 2.4 x 2.4), 0.30; lying flat on the subfloor, bearing edge's middle at (25.5, 12), yaw 12 degrees. Rubber mallet, 29.9 long, head 6.7 dia x 11.4, handle 2.8 dia, 0.45; lying on row 1, head centre at (21.5, -15), handle pointing right (-y). Distractors, ignored by scoring (SimReady): retractable utility knife 16 x 6.1 x 2.6, 0.12, on row 0 at (56, -33), yaw 0.5 rad; cloth work gloves 23.3 x 25.2 x 5.3, 0.12, on the subfloor at (80, 27), yaw 0.3 rad; roll of clear tape 10 dia x 5, 0.06, on the subfloor at (56, 30).",
+  "scoring": "Gap = the end joint's opening at the plank's far end (feeler gauges; 5.0 mm at the start). 0 for the whole trial if the mallet's head or a gripper ever touches the plank's end, i.e. its end face, the groove's protruding lower lip, or its top within 25 mm of the end (in simulation: the head within 2 mm, or a fingertip point within 7 mm). Otherwise: 1.0 if the gap is 0.5 mm or less, the plank is still (sliding under 2 mm/s) and every fingertip is at least 3 cm from the plank and from the tapping block, all continuously for 2 s; 0.75 if the gap is 0.5 mm or less without the rest; 0.5 if the gap is 1.5 mm or less; 0.25 if 3.0 mm or less; 0 otherwise. Holding the block is not required; the mallet may be left anywhere off the plank's end.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Lift the plank's free long edge about 2.5 cm to unlock it, slide it back against a 5.0 mm spacer in the far end joint, fold it flat, remove the spacer and check the gap with feeler gauges. Block and mallet back on their tape marks. Replace the plank if its near-end groove lip is dented.",
+  "fidelity": "Full-size, unscaled. The floor is fixed at table height; only the plank slides. Its long-edge lock and click end are one joint friction, calibrated, not measured (70 N to start, 10 N sliding, 20 N s/m): an arm's steady push through the block does not start it; mallet taps move it 0.3 to 2.5 mm. Planks and block are rigid primitives (Uniclic profile reduced to a groove lip); block mass estimated. SimReady mallet with cylinder colliders and a 0.45 kg head-heavy mass. No dent model.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-R6NQXP"
+}

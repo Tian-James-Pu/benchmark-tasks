@@ -1,0 +1,46 @@
+{
+ "checked_at": "2026-11-21T06:40:34Z",
+ "decision": "held",
+ "queries": [
+  "dice",
+  "dice cup / shaker / Yahtzee",
+  "roll the / tumbl",
+  "cup + tray (after #3200)",
+  "shake / tip out / pour (after #3200)",
+  "empty / dump / toss / flip (accepted)",
+  "pour tablets / pour coins (accepted)",
+  "LIBERO, RoboCasa, BEHAVIOR-1K, SimplerEnv, RoboARC task lists: dice, shaker, roll"
+ ],
+ "nearest_prs": [
+  {
+   "number": 3270,
+   "relationship": "The same core idea (roll five dice from a cup into a target) is currently held by the original team's open, revisable PR. Live check at 2026-11-21T06:40:34Z: latest official decision is Not accepted at 2026-11-20T22:02:37Z, no revision receipt since then, and the 48-hour hold expires 2026-11-22T22:02:37Z if no revision arrives. This candidate changes the unscoreable per-die turnover condition to a visible drop-height check, but remains ineligible to claim or submit while that hold is active."
+  },
+  {
+   "number": 740,
+   "relationship": "Accepted TK-QQSJZE, pour ten counted tablets into a held vial: a slow, controlled pour of small loose items into a narrow target. Here a slow low pour scores 0; the container must be inverted fast from height, the dice must tumble and stay inside a 3.2 cm-walled tray, and the cup is then stood back up."
+  },
+  {
+   "number": 1592,
+   "relationship": "Accepted TK-GK4X8T, pour and sort mixed coins: pouring plus sorting by type. No sorting or recognition here."
+  },
+  {
+   "number": 3284,
+   "relationship": "Revising TK-849U86, tip stones out of a running shoe by shaking it opening-down: loose items shaken out anywhere. Here the dice must land flat inside a small tray after a >= 10 cm drop and the cup is set back down upright outside the tray."
+  },
+  {
+   "number": 3275,
+   "relationship": "Revising TK-RDNT8A, tip a coin out of an inhaler mouthpiece: a single item tipped out of a device before capping; different object, target and skill."
+  },
+  {
+   "number": 2310,
+   "relationship": "Revising (and #3045 pending): toss diced potato in a saute pan, a pan-flip of food kept in the pan; no container inversion onto a separate target."
+  }
+ ],
+ "physical_skill": "Grip a round, light, open dice cup by its side (fingers off the dice), lift it, carry it over a 14 x 21.7 cm dice tray, and invert it quickly from high enough (rim >= 10 cm above the tray floor while the dice leave) that all five 16 mm dice drop out together and tumble but none bounce out over the 3.2 cm walls or end cocked; then stand the cup upright on the table outside the tray and let go.",
+ "valid_shortcuts": "Either arm, any grip on the cup's outside, any roll direction or speed, with or without shaking first, and any height at or above 10 cm all score. Setting the cup down anywhere on the table outside the tray counts. Not valid and scored accordingly (red-teamed): a slow low pour that slides the dice out (rim under 10 cm: 0); a fast but low flip (0); touching or picking dice (that die never counts); holding the cup instead of setting it down (0.75); dropping the cup into the tray (0.75 at most). Doing nothing scores 0.",
+ "distinct_from_nearest": "The original PR #3270 has the same core idea and currently holds it; do not submit until the hold expires and a fresh live board/PR check confirms the idea is available. The nearest accepted tasks are controlled pours of tablets or coins, which this task scores 0 if done slowly and low: it requires a high inversion, containment of five bouncing dice in a small walled target, and an upright cup set-down. Importance (Societal relatability: a recognisable everyday dice roll, with a dated Hasbro sales figure) remains a fresh-review risk; one-arm-only and moderate difficulty are also risks.",
+ "task_py_sha256": "89fae08f5305685ae67708b05bca173f7edd37dc6570bfe584bfe2e965072e6f",
+ "task_metadata_sha256": "b6bb32655a5d75e7564d469bc93fb202285ce99543458001fa211bfa1eb990ae",
+ "board_refreshed_at": "2026-11-21T05:57:45Z"
+}

@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-11-21T23:15:53+00:00",
+  "decision": "clear",
+  "queries": [
+    "bed",
+    "bed rail",
+    "bed frame",
+    "side rail",
+    "headboard",
+    "footboard",
+    "hook-in",
+    "hook in",
+    "two hooks",
+    "both hooks",
+    "keyhole",
+    "bracket",
+    "slot",
+    "headrest",
+    "crib",
+    "bunk",
+    "rail"
+  ],
+  "nearest_prs": [
+    {
+      "number": 1989,
+      "relationship": "Accepted: refit a car headrest, two posts down into two sleeves then hold the release button and push it down. Shares a two-prong alignment then a push-down; but there the light headrest is carried whole and slid vertically into sleeves. Here one end of a 3.8 kg, 2 m rail pivoting about its far end is carried (19 N), pushed sideways through two closed 6.35 mm slots inside a 3.2 mm height window, dropped behind the plate and driven down against a wedge."
+    },
+    {
+      "number": 2917,
+      "relationship": "Final rejection (ability overlaps existing tasks): tip a fridge glass shelf so its two rear hooks swing into slotted supports. Closest mechanism family (hooks into slots). Differences: no load-bearing carry of a cantilevered member, no sideways press into a wall plate within a narrow window, no wedge drive stage, and it is single-object handling from the front. Its rejection is the main importance risk for this task."
+    },
+    {
+      "number": 2385,
+      "relationship": "Final rejection (ability overlaps existing tasks): hang a light cutlery caddy on a dish rack's wire rail by two hooks. Hooks over an open wire; no slots, no load, no wedge."
+    },
+    {
+      "number": 1946,
+      "relationship": "Final rejection (simplified vs real context): hook gondola shelf brackets into a slotted upright. Light bracket by its own tabs; here the hooks are on a heavy rail whose far end is constrained elsewhere."
+    },
+    {
+      "number": 1775,
+      "relationship": "Accepted: refit a loaded drawer on roller slides, carrying it high so rear hooks clear. No slots or wedge; the drawer is carried whole."
+    },
+    {
+      "number": 2153,
+      "relationship": "Accepted: refit a fridge door bin over hidden supports. Light bin lowered onto supports; nothing passes through a slot or is wedged."
+    },
+    {
+      "number": 1412,
+      "relationship": "Accepted: hang a blind headrail in gated brackets. Snap-in headrail into ceiling brackets; different hardware and motion (no hooks through slots, no cantilevered load)."
+    },
+    {
+      "number": 3245,
+      "relationship": "Pending: hang a wall clock on its screw by a hidden keyhole hanger. Single keyhole over a screw on a light object; no two-point simultaneous alignment under load or wedge drive."
+    },
+    {
+      "number": 2266,
+      "relationship": "Final rejection: raise a hospital bed's half side rail to its latch. Different object (hospital bed guard rail) and operation (raise to latch), not furniture assembly."
+    }
+  ],
+  "physical_skill": "Two hands lift the near end of a 3.8 kg queen bed side rail (19 N at the end, far end resting in the footboard cradle) from the floor, keep it plumb (roll under about 1.6 degrees) and bring both 4.0 mm hooks level with both 6.35 mm slots 82.5 mm apart in the post's plate at once, inside a 3.2 mm height window, while pressing the end towards the post; lower so the hooks pass through and drop behind the plate, then drive the joint down its last 3 mm against the wedge (stop yielding above 16 N per hook), release and back off with the rail seated and still.",
+  "valid_shortcuts": "Any grip, approach, regrip or order that seats both hooks without dropping the rail or forcing it into the post earns 1.0. Checked: doing nothing 0; one arm alone hangs the rail on both hooks but cannot drive it home (0.75); hanging without driving (0.75); the careless route (end lifted only to seated height and pushed at the post) meets solid plate and scores 0. The rail cannot be destroyed or deformed in rigid simulation; forcing a hook into the plate beside its slot or past the post's face zeros the trial. Dream-1 over 1,500 steps scored 0.",
+  "distinct_from_nearest": "No accepted, pending or revising PR joins a bed's side rail to its post (grep of 3,559 PRs for bed rail, headboard, footboard, side rail, hook-in returns only a hospital bed guard rail (#2266, rejected) and a newborn-doll footboard (#1318), unrelated). The hook-into-slot family has two final rejections for overlap (#2917 fridge shelf, #2385 cutlery caddy); this task differs by the cantilevered 19 N carry of a member pivoting about its far end, the simultaneous two-slot alignment in a 3.2 mm window while pressing sideways, and a separate wedge drive stage needing both hands (one arm reaches only 0.75). The headrest (#1989) is two posts slid down into sleeves on a light carried part. External sets (LIBERO, RoboCasa, BEHAVIOR, SimplerEnv) have no bed-rail fastener. Main risk: a human reviewer grouping it with the hook-into-slot family as an already-covered ability.",
+  "task_py_sha256": "8b469525709cedc8c05538e727371be239bc634ebb5accf41542843b14e0731c",
+  "task_metadata_sha256": "fd61fc3649a0004cf010351abffca41f2bb733057b7b18ecc8f3707f3aff890c"
+}

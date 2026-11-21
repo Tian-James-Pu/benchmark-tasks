@@ -1,0 +1,19 @@
+{
+  "title": "Put a lift-off oven door back on its range: both slots over both hinge arms at the stop angle, then shut it",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "appliance",
+    "lift-off hinge",
+    "oven door",
+    "alignment"
+  ],
+  "instruction": "Put the oven door back on the range and close it.",
+  "context": "Range manuals have owners lift the oven door off to clean it. Refitting is the hard half: the door must be held square at the hinges' 7.5 degree stop angle so both bottom slots start over both hinge arms at once, then lowered; off angle or cocked, a slot catches and the door binds or hangs crooked.",
+  "setup": "Coordinates in cm from the midpoint between the arm bases, x forward, y left, z up from the station table (standing in for the floor, with the range lowered so its hinge line is 3.5 cm up). Range: Hotpoint RB525DDWW 30-inch electric range modelled at 85% scale, fixed, white porcelain-enamelled steel, 64.5 cm wide, front frame at x=46, modelled 30 cm deep, cooktop 68.3 cm up, backguard 21.9 cm, dark oven opening 51.3 x 41.0 cm. Two steel hinge arms: blades 1.8 x 0.43 cm standing 6.4 cm out of the frame at y=+27.8 and -27.8, pivot 0.3 cm in front of the frame at z=3.5, held at the special stop, 7.5 degrees open. Door (loose, 2.5 kg): porcelain-enamelled steel 63.7 wide x 43.2 tall x 4.3 cm thick, dark glass window 39.5 x 14.7 cm, visor handle 54.8 cm long standing 4.6 cm proud 3 cm below its top; two slots 1.0 x 2.6 cm, 6.4 cm deep in its bottom edge at y=+27.8 and -27.8, 1.6 cm in from its back face. It stands on the towel, bottom back edge at x=39.8 (6.2 cm in front of the frame), top leaning 8 degrees onto the frame. Towel: SimReady folded microfiber 40.9 x 20.9 x 1.7 cm, 0.21 kg, centre (34.5, 0), long side along y. Distractors (SimReady, loose, ignored by scoring): glass-cleaner spray bottle 11.8 x 4.0 x 28.3 cm, 0.5 kg at (56, 45); sponge 7.1 x 10.1 x 3.3 cm, 0.03 kg at (52, -43); paper-towel roll 12.4 cm diameter x 23.1 cm, 0.15 kg at (66, -45).",
+  "scoring": "1.0: both door slots fully down on their hinge blades (each slot top within 3 mm of its blade tip), both hinges within 0.5 degrees of shut, no gripper finger point within 3 cm of the door or handle, door under 5 mm/s and 0.05 rad/s, all held 2 s, no harm. 0.5: both slots fully down, hands clear, door still, not shut. 0.25: both blades at least 15 mm into their slots but not fully down, hands clear, door still. Otherwise 0. Harm, kept until reset and scoring 0: door falling faster than 0.6 m/s, tilting over 60 degrees from upright, or carried by its visor handle (both fingers of one gripper within 2 cm of it while the door is off the towel and not on the hinges).",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Lift the door off at the hinges' stop and stand it back on the towel, its bottom back edge 6.2 cm in front of the range's front frame, top leaning on the frame. Hinges back at the stop. Nothing is consumed.",
+  "fidelity": "Range, hinges and door are custom box models of a Hotpoint RB525DDWW at 85% scale; the door weighs 2.5 kg (real about 11 kg, estimated) so the arms can carry it, and the hinge line sits on the table (standing in for the drawer top). Hinge arms are rigid blades on joints: a light catch at the stop, a closing spring, no travel past the stop. The door rides on them by contact only. Rigid parts, uniform friction; towel and distractors are SimReady props.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

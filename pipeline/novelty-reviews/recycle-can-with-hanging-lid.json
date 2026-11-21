@@ -1,11 +1,12 @@
 {
-  "checked_at": "2026-11-19T21:01:42.783649+00:00",
+  "checked_at": "2026-11-20T01:25:57.940765+00:00",
   "decision": "clear",
   "queries": [
     "pipeline/refresh_known.sh this session (301 accepted, 318 pending, 162 revising)",
     "known_tasks.tsv grep (live and accepted): can opener|tin can|soup can|cut lid|recycl|pedal bin|utility knife|blade|sharp|crimp|food can|empty can; broader grep cans?|lid|bin|knife blade",
     "gh pr view bodies read: 1851, 672, 2481, 566, 2045",
-    "After the Dream-1 run: pipeline/refresh_known.sh rerun and the same grep repeated; no new can-lid, recycling-can or can-opener task."
+    "After the Dream-1 run: pipeline/refresh_known.sh rerun and the same grep repeated; no new can-lid, recycling-can or can-opener task.",
+    "Revision 20 Nov 2026 (Feasibility: pad protection, text only): pipeline/refresh_known.sh rerun (325 pending, 172 revising); grep can opener|tin can|soup can|cut lid|food can|empty can|recycl returns the same nearest set (566, 2481, 1732 closed, 315/1458 rejected); no new can-lid or recycling-can task. Scene, scorer and instruction unchanged."
   ],
   "nearest_prs": [
     {
@@ -43,6 +44,6 @@
   "valid_shortcuts": "Red team: nothing 0; naive bin with lid up 0 (latched Harm); one-arm fold without holding the can 0 (can tips, lid stays up); press from above 0 (lid opens, Harm); stop at flat 0 (Harm on entry); dip, retrieve, fix 0 (Harm stays latched); fold and leave on counter 0.5; hold in caddy 0.5. Tearing the lid off is impossible in simulation; in a real trial a loose torn-off lid scores 0 (not Folded). Using the optional spoon on the lid is allowed. Demo 1.0 twice on the final file. Dream-1: 0.0 (arms drawn back to the table's front edge, nothing touched).",
   "distinct_from_nearest": "No accepted or live task folds a hanging can lid into its can before recycling. 1851 cuts a lid with an opener; 2481 drops a plain can through a pedal bin's lid; 672 retracts a knife blade. The task is distinct in object state (partially cut, plastically bent lid), skill (two-handed fold of a stiff flap into a light unstable container) and context (household recycling guidance from Calgary, Gresham, Logan; Metro and Rockhampton use cans as containers for small lids). Residual risks: a reviewer may group it with 672 as 'make the sharp thing safe first', and programmes that accept large lids loose (Metro, Rockhampton) make 'fold it in' one acceptable option rather than the only one; the README states this limit.",
   "task_py_sha256": "3fb7866980e1410128553fa535aaccc521b2c9ba85e6bad00e4a47b7a18263c2",
-  "task_metadata_sha256": "084c7b6b19d0ee75a6c395f21e8309d108c62b6c1d569c1625a0265c1ef078ce",
+  "task_metadata_sha256": "c1cb7d38fe162febc5cfaf965c0282a455cba3aa1be8e2aaf14e8fc6e7510bcd",
   "note": "Hashes exclude scores/media by definition; written after the Dream-1 scores edit."
 }

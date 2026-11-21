@@ -13,11 +13,12 @@ import sys
 import numpy as np
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import mechkit as m  # noqa: E402  importing it hooks yam_arena (step/reset hooks, fingertips)
 from simready import SimReady  # noqa: E402
 
-from yam_arena.constants import FINGER_CLOSED, FINGER_OPEN
-from yam_arena.demo import Waypoint
-from yam_arena.task_file import TABLE_TOP, Box, Sphere
+from yam_arena.constants import FINGER_CLOSED, FINGER_OPEN  # noqa: E402
+from yam_arena.demo import Waypoint  # noqa: E402
+from yam_arena.task_file import TABLE_TOP, Box, Sphere  # noqa: E402
 
 SCENE = "station"
 TOP = TABLE_TOP[SCENE]
@@ -99,10 +100,14 @@ OBJECTS = [RISER, RAIL_A, RAIL_B, BALL, CHALK_CUBE, MUG, *STAND, COASTER, TAPE, 
 
 # The seated ball's centre above the table: it rests on the four inner edges of the stand's opening.
 SEAT_Z = STAND_H + float(np.sqrt(BALL_R**2 - (STAND_OPEN / 2) ** 2))
+SEAT_TOL = 0.003  # the seated ball's centre at most 3 mm above its seated height: actually resting on the edges
+CHALK_TOL = 0.003  # the chalk's underside at most 3 mm above the coaster: actually lying on it
 ON_TABLE = 0.003  # the ball's underside this close to the table top counts as on the table
 MUG_TIP = 20.0  # degrees from upright
-SUCCESS_HOLD_S = 3.0  # long enough for the grippers to let go and move away before the trial ends
-_harm = False
+BALL_CLEAR = BALL_R + 0.02  # every fingertip point at least 2 cm from the ball's surface
+CHALK_CLEAR = 0.035  # every fingertip point at least 3.5 cm from the chalk's centre (about 2 cm from its corners)
+HOLD_STEPS = 60  # 3 s at the 20 Hz control rate
+SUCCESS_HOLD_S = 0.0  # the trial record below counts its own 3 s hold
 
 
 def _rotate(quat_xyzw, v):
@@ -120,65 +125,89 @@ def _over_stand(ball, margin):
     return bool(abs(ball.pos[0] - STAND_X) < margin and abs(ball.pos[1] - STAND_Y) < margin)
 
 
-def _ball_seated(objects):
-    """The ball sits in the stand's opening: centre within 1 cm of the opening's centre in x and in y, and no more
-    than 5 mm above its seated height (3.0 cm above the table)."""
-    ball = objects["cue_ball"]
-    return bool(_over_stand(ball, 0.01) and ball.pos[2] < TOP + SEAT_Z + 0.005)
+def _clear(obj, tips, dist):
+    return bool(np.min(np.linalg.norm(np.asarray(tips) - np.asarray(obj.pos), axis=1)) >= dist)
 
 
-def _chalk_on_coaster(objects):
-    """The chalk lies on the coaster: centre over the coaster and its underside within 5 mm of the coaster."""
-    p = objects["chalk"].pos
+def _ball_seated(ball, tips):
+    """The ball sits in the stand's opening and nothing holds it: centre within 1 cm of the opening's centre in x
+    and in y, no more than 3 mm above its seated height, at rest, and every fingertip 2 cm or more from it."""
+    return bool(
+        _over_stand(ball, 0.01)
+        and ball.pos[2] < TOP + SEAT_Z + SEAT_TOL
+        and ball.resting()
+        and _clear(ball, tips, BALL_CLEAR)
+    )
+
+
+def _chalk_on_coaster(chalk, tips):
+    """The chalk lies on the coaster and nothing holds it: centre over the coaster, underside within 3 mm of the
+    coaster's top, at rest, and every fingertip about 2 cm or more from it."""
+    p = chalk.pos
     return bool(
         abs(p[0] - COASTER_X) < COASTER_SIZE[0] / 2
         and abs(p[1] - COASTER_Y) < COASTER_SIZE[1] / 2
-        and p[2] < TOP + COASTER_SIZE[2] + CHALK / 2 + 0.005
+        and p[2] < TOP + COASTER_SIZE[2] + CHALK / 2 + CHALK_TOL
+        and chalk.resting()
+        and _clear(chalk, tips, CHALK_CLEAR)
     )
 
 
-def _ball_on_table(objects):
+def _ball_on_table(ball):
     """The ball's underside is less than 3 mm above the table top (or below it: on the floor), anywhere but with
     its centre over the stand's opening. On the track, the stand's rim or the coaster it is at least 5 mm up."""
-    ball = objects["cue_ball"]
     return bool(ball.pos[2] < TOP + BALL_R + ON_TABLE and not _over_stand(ball, STAND_OPEN / 2))
 
 
-def _track(objects):
-    """Remember, for the whole trial, whether the ball got onto the table or the mug tipped."""
-    global _harm
-    ball, chalk, mug = objects["cue_ball"], objects["chalk"], objects["mug"]
-    at_start = (
-        np.linalg.norm(ball.pos - START["cue_ball"]) < 0.005
-        and np.linalg.norm(chalk.pos - START["chalk"]) < 0.005
-        and np.linalg.norm(mug.pos - START["mug"]) < 0.01
-        and _tilt_deg(mug) < 5
-    )
-    if at_start:  # a new trial: the scene is back at its starting layout
-        _harm = False
-    _harm = bool(_harm or _ball_on_table(objects) or _tilt_deg(mug) > MUG_TIP)
+class Trial:
+    """The trial's record. Harm (the ball reaching the table, or the mug tipping) is latched for the rest of the
+    trial; only a reset clears it, never a return of the objects to their places."""
+
+    def __init__(self):
+        self.reset()
+
+    def reset(self, env=None):  # the ONLY place the recorded harm is cleared
+        self.harm, self.hold, self.full, self.score = False, 0, False, 0.0
+
+    def step(self, env):
+        from yam_arena.scene import object_states  # simulator-only import
+
+        o = object_states(env, ("cue_ball", "chalk", "mug"))
+        tips = m.fingertips(env)
+        ball, chalk = o["cue_ball"], o["chalk"]
+        self.harm = bool(self.harm or _ball_on_table(ball) or _tilt_deg(o["mug"]) > MUG_TIP)
+        seated = _ball_seated(ball, tips)
+        both = seated and _chalk_on_coaster(chalk, tips)
+        self.hold = self.hold + 1 if both and not self.harm else 0
+        self.full = bool(self.full or (self.hold >= HOLD_STEPS and not self.harm))
+        if self.harm:
+            self.score = 0.0
+        elif self.full:
+            self.score = 1.0
+        else:
+            self.score = 0.5 if seated else 0.0
+
+
+TRIAL = Trial()
+m.on_step(TRIAL.step)
+m.on_reset(TRIAL.reset)
 
 
 def score(objects):
-    """0 if the ball ever touched the table or the mug ever tipped past 20 degrees. Otherwise 1.0 with the ball at
-    rest in the stand and the chalk at rest on the coaster, 0.5 with only the ball at rest in the stand, else 0."""
-    _track(objects)
-    if _harm:
-        return 0.0
-    if not (_ball_seated(objects) and objects["cue_ball"].resting()):
-        return 0.0
-    return 1.0 if _chalk_on_coaster(objects) and objects["chalk"].resting() else 0.5
+    """0 if the ball ever reached the table or the mug ever tipped past 20 degrees. Otherwise 1.0 once the ball has
+    sat released in the stand and the chalk lain released on the coaster, both at rest, for 3 s; 0.5 with only the
+    ball released and at rest in the stand; else 0."""
+    return float(TRIAL.score)
 
 
 def success(objects):
-    return score(objects) == 1.0
+    return bool(TRIAL.full)
 
 
-# Where the ball, the chalk and the mug rest at the start (measured in the simulator).
+# Where the ball and the chalk rest at the start (measured in the simulator); the demo is planned from these.
 START = {
     "cue_ball": np.array([0.3300, 0.0406, 0.8102]),
     "chalk": np.array([0.3301, 0.0013, 0.7913]),
-    "mug": np.array([0.3312, -0.2969, 0.7870]),  # its centre of mass, towards the handle
 }
 ACROSS = {"left": -np.pi / 2, "right": np.pi / 2}  # fingers close along x, across the track
 TRAVEL = TOP + 0.15

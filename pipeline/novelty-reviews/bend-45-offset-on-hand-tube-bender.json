@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-20T16:12:20.894947+00:00",
+  "decision": "held",
+  "queries": [
+    "tube bender",
+    "tube-bend",
+    "45 degree offset",
+    "bend copper tube",
+    "tube cutter",
+    "locking pliers on tube"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 2123,
+      "state": "open, in revision until at least 2026-11-21T00:28:27Z",
+      "overlap": "Exact two-mark offset task at a different stock size. Latest review asks the full scorer to check both bend locations."
+    },
+    {
+      "pr": 991,
+      "state": "accepted",
+      "overlap": "Copper tube bent to 90 degrees with different springback conditions. One bend, no required position or direction reversal between bends."
+    }
+  ],
+  "physical_skill": "Use a real-pattern lever bender to plastically form a marked 45-degree offset. Reposition and roll the latched soft copper tube between the two bends, then let go for final measurement.",
+  "valid_shortcuts": [
+    "The order of the two correct bends is free.",
+    "Recovering from overslide or adjusting a harmless unbent placement is allowed.",
+    "Two correctly shaped bends displaced from their marks earn partial credit; a held result earns zero at terminal."
+  ],
+  "distinct_from_nearest": "Accepted #991 tests angle and springback for one bend. This package requires the marks and opposite bend signs. The same full task in #2123 has an active ownership hold.",
+  "task_py_sha256": "a9cb4bad3ea0f1c4366e983d9a3d38cf3e6b765e253c8ddda2ffd2ad5e00cf37",
+  "task_metadata_sha256": "be803e376b85fb450f527ac6f383787055f575495ef955421fc7e7f2bd0c0c1f"
+}

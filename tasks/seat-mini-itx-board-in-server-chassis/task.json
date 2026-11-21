@@ -1,0 +1,20 @@
+{
+  "title": "Seat a Mini-ITX server board in a 1U chassis: on all four standoffs, its D-sub ports through the I/O shield cut-outs",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "server assembly",
+    "1U chassis",
+    "Mini-ITX",
+    "standoffs",
+    "I/O shield",
+    "bimanual"
+  ],
+  "instruction": "Install the motherboard in the server chassis, seated on its standoffs ready for its screws.",
+  "context": "Building and servicing servers means laying a motherboard into its chassis on the standoffs before the screws go in. The rear panel is full height and the board's VGA and COM shells stand 6 mm proud into shield cut-outs only 1 mm larger all round, so a board lowered straight down lands on the shield's lip: it must go in short of its place, or tilted, and be brought rearward until the shells pass and all four holes sit on their standoffs.",
+  "setup": "Cm from the midpoint between the arm bases (x forward, y left); heights above the table top. Chassis, fixed: open-top 1U Mini-ITX server chassis (as Supermicro SC505-203B), steel, 1 mm sheet: tray x 23.2 to 48.1, y -30.6 to 13.1, walls 4.3 tall; rear panel inner face x 48.0, with the I/O shield (y -8.45 to 7.0) and two cut-outs for the D-sub shells (y -7.34 to -5.43 and 3.63 to 5.51, heights 1.00 to 2.04), plus openings for the IPMI LAN, USB and dual-LAN stacks (y -4.81 to -2.75, -2.70 to -1.16 and -0.99 to 0.82; heights 1.00 to 3.54, 2.54 and 3.54), whose faces sit flush with the shield's inner face. Four brass 6-32 hex standoffs, 4.8 mm across, 6.35 mm tall (tops 0.74), on the Mini-ITX holes C, F, H, J at (46.87, 7.87), (44.58, -7.88), (31.38, 7.87), (31.38, -7.88). Power supply, fixed steel block 19.2 x 7.6 x 4.03 (as the PWS-203-1H), x 28.8 to 48.0, y -19.5 to -11.9. Board, loose: Mini-ITX server board (as Supermicro X11SCL-iF), 17.0 x 17.0 cm FR-4, 1.57 mm thick, 0.50 kg with two DDR4 UDIMMs fitted (3.2 tall), PCIe x16 slot, CPU socket, 24-pin power connector, rear I/O (VGA, COM, USB, two LAN, IPMI LAN) at its +x edge; four 3.96 mm mounting holes; starts flat, I/O edge toward the chassis, centre (14.2, 0) on a pink anti-static foam sheet 18 x 20 x 0.6 (fixed) centred at (14.2, 0). Seated, its centre is at (39.39, 0), connector faces against the shield. Distractors (ignored by scoring): PH2 Phillips screwdriver, 18.8 cm, wood and steel, 100 g, at (12, -20); roll of clear tape, 10 cm across, 60 g, at (13, 21); ceramic mug, 300 g, at (42, 23).",
+  "scoring": "Measured on the board's end state. A hole is engaged when its centre is within 0.6 mm of its standoff's axis (the standoff's tapped bore shows whole through the hole; photo straight down) and the board rests on that standoff: a 0.3 mm feeler gauge does not enter between them. Dropped: the board ever falls faster than 0.5 m/s (about 13 mm of free fall); recorded for the whole trial. 1.0: all four holes engaged, both grippers at least 3 cm from the board, and the board still (under 5 mm/s and 0.05 rad/s) for 1 s, not dropped. 0.5: all four holes engaged (it may still be held), not dropped. 0.25: not all four engaged, but the board in the bay: centre within 20 mm of its seated place, tilted at most 5 degrees and every hole within 3 mm of its standoff's height, not dropped. 0: anything else, including any dropped board and a board propped on the shield.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Lift the board out by its PCIe slot and memory modules and lay it flat on the foam at its tape marks. Nothing is consumed; the chassis, standoffs and power supply stay fixed.",
+  "fidelity": "Real sizes and hole pattern. The chassis, standoffs, power supply and board are custom rigid primitives (SimReady has no server parts); the board is one rigid body with estimated mass and centre of mass, and its D-sub shells, port stacks, slots and modules are boxes. Standoff threads, screws, shield grounding fingers and electrostatic effects are not simulated. Friction 0.6/0.5 on steel and board. Distractors are SimReady props.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

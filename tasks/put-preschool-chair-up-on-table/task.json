@@ -1,0 +1,19 @@
+{
+  "title": "Chairs up for the night: lift a preschool chair, turn it over, set it seat-down on its table and push it fully on",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "turn over",
+    "classroom",
+    "chairs up",
+    "controlled placement"
+  ],
+  "instruction": "End of the day: put this chair up on the table so the floor can be mopped, upside down with its seat flat on the tabletop and pushed fully onto it. Set it down; don't drop it or knock its legs on the table.",
+  "context": "Putting chairs up on the tables at the end of the school day, so the floor can be swept and mopped, is a routine almost everyone has done as a pupil, and staff in every preschool and classroom repeat it daily. The chair is heavy for its size and its weight sits off the seat's middle, so it swings as it is turned over, and the back must end up hanging over the table's edge for the seat to lie flat.",
+  "setup": "The bench top is the classroom floor; (x forward from the arm bases, y left) in cm, heights above the floor. TABLE: Correll 24 x 48 in activity table, laminate on particle board, 61 x 122 cm top, 3.2 cm thick, legs set at 20 in (top face 50.8 cm), long side across the arms, near edge at x = 40, centred on y = 0, four 3.2 cm square steel legs; fixed. CHAIR: Regency Andy 12 in stack chair (model 4500), blue polypropylene seat-and-back shell on a chrome tubular steel frame, 2.72 kg (6 lb); seat 30.5 x 30.5 cm, 0.6 cm shell with a 2.8 cm deep rolled rim under its front and sides, top face 30.5 cm above the floor; back 29 cm wide rising 25.4 cm above the seat, raked 10 deg; four splayed 1.9 cm steel legs on nylon glides, 35.6 cm wide and 40.6 cm deep overall with the back, 55.9 cm high. It stands upright on the floor facing the arms, seat centre at (7.7, 0), its back towards the table, the back's top 12 cm from the table's edge. Distractors (scoring ignores them), on the tabletop: a spiral notebook (23 x 17 x 1 cm, paper, 120 g) at (84, 36); a plastic crayon basket (20 x 27 x 11 cm, polypropylene, 150 g) at (86, -30); a paper cup (8 cm across, 11 cm tall, 10 g) at (88, 10). The arms start at their ready pose.",
+  "scoring": "Read each step from the chair's pose and the fingertips. 0.25: lifted while held (a fingertip within 12 mm of it), every part 5 cm or more above what is under it. 0.5: also turned over while held off the floor (its up axis within 30 deg of straight down). 0.75: also at rest upside down (within 60 deg) on the tabletop, touching nothing else (a part within 5 mm of the top, none within 2 cm of the floor), every fingertip 3 cm or more from it, still (under 1 cm/s and 0.05 rad/s) for 1 s. 1.0: also seat flat (within 5 deg), all four seat corners within 5 mm of the top's height and no more than 4 cm out past its edge, held 3 s. 0: dropped (no fingertip within 12 mm while every part is more than 1.5 cm above what is under it), or a leg or glide within 3 mm of the tabletop at any time.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Nothing is consumed. Put the chair back upright on its floor marks; the table does not move.",
+  "fidelity": "Rigid bodies. The chair is one rigid body at the maker's overall sizes and 6 lb: plates and 19 mm tubes, no moulded curves; the shell/frame mass split, rim depth and tube size are estimates. The table is fixed; the bench top stands for the floor. Uniform friction (0.9 static, 0.8 dynamic); no force sensing. Holding, letting go and hands-clear are read from fingertip points (12 mm, 3 cm). The arms are compliant under load; the scripted demo pre-compensates their measured sag.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

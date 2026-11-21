@@ -1,0 +1,68 @@
+{
+  "repository": "robocurve/benchmark-tasks",
+  "tasks": {
+    "turn-angle-grinder-guard-and-clamp": [
+      2781
+    ],
+    "retrieve-wrench-from-under-floor-hole-cover": [
+      2593
+    ],
+    "stack-scrap-lumber-with-nailed-offcut": [
+      2594
+    ],
+    "put-preschool-chair-up-on-table": [
+      2610
+    ],
+    "move-cookies-to-cooling-rack-with-turner": [
+      2311
+    ],
+    "fold-outlet-wires-and-seat-receptacle": [
+      2405
+    ],
+    "close-jaw-coupling-spider-and-hub": [
+      2484
+    ],
+    "set-heat-set-inserts-flush": [
+      2509
+    ],
+    "scoop-a-single-batch-of-gnocchi": [
+      3108
+    ],
+    "price-mark-stock-with-hand-labeller": [
+      2992
+    ],
+    "hang-mower-grass-bag-under-flap": [
+      2489
+    ],
+    "plug-saw-into-intact-cord": [
+      2670
+    ],
+    "ready-telescope-for-solar-viewing": [
+      2875
+    ],
+    "clamp-so101-arm-to-table-edge": [
+      2926
+    ],
+    "pierce-new-tube-seal-with-cap-point": [
+      2964
+    ],
+    "seat-mini-itx-board-in-server-chassis": [
+      2747,
+      2029
+    ],
+    "bend-45-offset-on-hand-tube-bender": [
+      2123
+    ],
+    "focus-diode-laser-module": [
+      2885
+    ],
+    "copy-casing-contour-with-gauge": [
+      2416,
+      3057
+    ],
+    "reassemble-table-fan-after-washing": [
+      2822,
+      2189
+    ]
+  }
+}

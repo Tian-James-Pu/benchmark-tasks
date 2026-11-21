@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-19T19:13:30.159175+00:00",
-  "next_check_at": "2026-11-19T21:13:30.159175+00:00",
+  "checked_at": "2026-11-21T23:14:58.343422+00:00",
+  "next_check_at": "2026-11-22T01:14:58.343422+00:00",
   "prs": [
     {
       "author": {
@@ -293,6 +293,21 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2418#issuecomment-6967964367",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABotmhEw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Appeal reviewed: the decision stands** (TK-83975C, Not accepted: final).\n\nThank you for your appeal. We continue to feel that the task is not established as core to occupations totaling more than 500k US workers, so will be upholding the original decision.",
+          "createdAt": "2026-11-20T01:06:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2418#issuecomment-7027138835",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "shut-off-locked-pre-rinse-sprayer",
@@ -362,13 +377,35 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2477#issuecomment-7000303529",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpK6MdA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-J5D6LK).\n\nTask is not sufficiently relatable for acceptance to this category.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T05:22:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2477#issuecomment-7057869940",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "start-car-with-jammed-steering-lock",
-      "labels": [],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
       "mergedAt": null,
       "number": 2477,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Free a jammed steering lock: turn the wheel off the bolt and hold it there while the key turns to ON",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2477"
     },
@@ -424,6 +461,21 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2500#issuecomment-7001688896",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpK_83Q",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Appeal reviewed: the decision stands** (TK-SM6ETU, Not accepted: final).\n\nThanks for your appeal. We looked again at the task and will be upholding our original decision. The appeal does not establish this unusual fault recovery as meaningful robot-building or AI-hardware work.",
+          "createdAt": "2026-11-21T05:30:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2500#issuecomment-7057964253",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "clear-tie-tail-from-jetson-fan",
@@ -493,13 +545,35 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2520#issuecomment-6999980038",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpK10ow",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-DNK9QG).\n\nThe physical ability tested by the task is too simple for acceptance.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T05:16:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2520#issuecomment-7057798307",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "clear-utensil-from-dishwasher-spray-arm",
-      "labels": [],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
       "mergedAt": null,
       "number": 2520,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Recover a wooden spatula obstructing a dishwasher spray arm",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2520"
     },
@@ -555,6 +629,21 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2544#issuecomment-7001689146",
           "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpLAr-w",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Appeal reviewed: the decision stands** (TK-GHB9F4, Not accepted: final).\n\nThank you for your appeal. We took another look at the task and will be upholding the original decision; the importance does not meet the required level for acceptance to this category.",
+          "createdAt": "2026-11-21T05:31:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2544#issuecomment-7057976315",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "clear-grain-under-balance-pan",
@@ -624,13 +713,35 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2609#issuecomment-6999954461",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpK1x2A",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-F2TUKF).\n\nTask does not meaningfully test model safety. properties\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T05:16:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2609#issuecomment-7057797592",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "replace-worn-crutch-ferrule",
-      "labels": [],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
       "mergedAt": null,
       "number": 2609,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Prepare a forearm crutch for reuse",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2609"
     },
@@ -656,13 +767,35 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2839#issuecomment-7000960039",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpK900w",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-ZR5HGX).\n\nReal-world trials would be too difficult to reproduce consistently as specified.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T05:27:29Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2839#issuecomment-7057929427",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "close-iv-roller-clamp",
-      "labels": [],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
       "mergedAt": null,
       "number": 2839,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Close the roller clamp on an IV line left running free: roll its wheel to the stop without sliding the clamp on the line",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2839"
     },
@@ -702,6 +835,36 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2843#issuecomment-7002120955",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJfyXg",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-RFTTYH.\n\nFair points: the tile and rack are box primitives, not a named purchasable rack; friction is rubber-like (1.2), making the tile easier to pinch and its foot more secure than glazed ceramic on wood; and the importance source is tile collection-care guidance, not evidence of how often people do this. We accept all three.\n\nOn the main finding, we think the task was read as \"standing an item upright\", which it is not. The tile starts upright and must not end upright: carried into the slot and released upright, it scores 0, as does pushing its top toward the posts with one closed gripper (it falls flat; both checks are in the README). The skill is managing a thin slab that stays unstable through the whole transfer, within about 3 degrees of falling. Both grippers cage its top edge, then loosen without letting go so it rotates 5 to 25 degrees onto two posts with its foot held in a 4.5 cm slot, and only then back off 3 cm. The nearest accepted task, box-on-edge-in-slot (#439), tips a box over a riser so that it drops into a slot and stands stably; it has no controlled release from an unstable pose into a lean.\n\nIf reopened, we would use a named purchasable plate or tile rack at real size, set glazed-ceramic-on-wood friction, add a \"Distinct from\" table naming the nearest tasks, and re-source the importance claim for the household lean-to action shown.\n",
+          "createdAt": "2026-11-21T03:07:43Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2843#issuecomment-7056388702",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhFfg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-RFTTYH) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:34Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2843#issuecomment-7056409982",
           "viewerDidAuthor": false
         }
       ],
@@ -757,6 +920,21 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2844#issuecomment-7002121871",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJfpxg",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-XGLVVH.\n\nWe accept most of the review. Like TK-5B8MZD, this task carries a load to a shelf while a loose upper piece rides on top, and the success condition is the same kind: the top piece must stay seated through the lift, carry and set-down. Our README also says one gripper at the tin's exact middle can carry it (with about 8 degrees of sag), so we can't claim the task needs two arms.\n\nThere is one difference we'd ask a person to weigh. In TK-5B8MZD the upper boxes are narrower than the bottom one, so the squeeze on the bottom box's sides leaves them alone without any choice. Here the lid is as long as the tin and is the highest, most obvious thing to grip. Gripping it lifts the lid alone; our red-team table shows this scores 0, as does a one-hand grip 7 cm off-centre, where the tin swings and the lid slides off. So the test is choosing a hold on the walls just below the lid (a 1.7 cm margin in the demo) and keeping a 22 cm, 1.2 kg tin level. If that counts as the same ability, we accept the decision.\n\nIf reopened, we would model the lid as a real slip-cover lid whose skirt overlaps the tin's walls, as the tins we cited are sold. That leaves a narrow band of wall below the skirt to grip, and any grip on the skirt takes the lid with it.\n",
+          "createdAt": "2026-11-21T03:07:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2844#issuecomment-7056386502",
+          "viewerDidAuthor": true
         }
       ],
       "headRefName": "shelve-tool-tin-with-unlatched-lid",
@@ -810,6 +988,36 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2845#issuecomment-7002137386",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJgIug",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-KFC88Y.\n\nThank you for the review. We concede that:\n\n- we have not shown that a loose rod through mug handles is a common household fixture (the README says so under \"Limits\");\n- the galley rack we cited holds its bar in front of the mugs, so it does not support the setup;\n- the README leaves out the YCB mug's licence.\n\nWe ask a person to judge the skill separately from the fixture. The review calls the binding physically interesting. A short sliding fit is pulled off-axis along a bar that only rests in its supports. Unless the fit is squared up and guided while the bar stays seated, it binds and drags the bar along with it. In our scripted variants, dragging, lifting or shoving the mug pulled the rod out of its bracket and scored 0. Searching the board's task titles, we found no task where the difficulty is freeing a jammed fit without disturbing the loose bar it rides on.\n\nIf the task is reopened, we would keep that skill and move it onto an everyday fixture: a ring cocked on a curtain or shower rod resting in open-top holders. Such holders are common, and the rod lifts straight out of them (\"Some rods fit into holders with an open top... you can just lift them out\", https://www.hunker.com/13400985/how-to-remove-a-shower-curtain-rod). We would use full-size parts and SimReady props, list every asset's source and licence, and keep the existing scoring structure.\n",
+          "createdAt": "2026-11-21T03:08:14Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2845#issuecomment-7056394426",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhOsA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-KFC88Y) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:46Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2845#issuecomment-7056412336",
           "viewerDidAuthor": false
         }
       ],
@@ -865,6 +1073,36 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2871#issuecomment-7006494749",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJf-Bw",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-76XUDS.\n\nWhat's fair: we gave no data on how often people change upper-rack height, and many owners never touch the adjusters. If \"most adults have done it themselves\" means the adjustment itself, we can't show that, and we accept it. The task also looks too much like a one-off appliance fix, partly because the scene had only the upper section of a dishwasher, with no door or lower rack.\n\nOne point we'd ask a person to look at again: this isn't installation or a technician's setup step. The instruction is the everyday act of putting the loaded upper rack back so the machine can run. The uneven rack is a state the user can leave it in, and the makers write about it in their user instructions:\n- Bosch's SHX33 manual (p. 19) says to \"ensure that the rack height is the same on both sides\", or the door won't close and the upper spray arm won't connect to the water circuit.\n- Samsung's UK support page says the door \"may not close properly\" if the left and right handles aren't adjusted together.\n\nThe skill that matters physically is moving one side of a loaded 2.5 kg rack while holding that side's spring lever in, then rolling the rack home without spilling the glasses. Pushing the rack in without that step scores 0.\n\nIf reopened, we'd:\n1. rebuild the scene as a complete installed dishwasher (door open, lower rack, kick plate) so a 10-second clip is recognisable;\n2. state the importance claim only as narrowly as the sources support.\n\nIf the bar is the adjustment's own frequency, we understand the decision.\n",
+          "createdAt": "2026-11-21T03:07:59Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2871#issuecomment-7056391687",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhLgw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-76XUDS) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:42Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2871#issuecomment-7056411523",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "level-dishwasher-upper-rack",
@@ -904,13 +1142,35 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2872#issuecomment-7006349140",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpLPXbg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-X52XTB).\n\nTask is not sufficiently relatable for acceptance to this category.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T05:51:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2872#issuecomment-7058216814",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "refit-soda-maker-bottle",
-      "labels": [],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
       "mergedAt": null,
       "number": 2872,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Click a full 1 L bottle into a sparkling water maker's tilted Snap-Lock: neck in at an angle, then push up and back",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2872"
     },
@@ -950,6 +1210,36 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2873#issuecomment-7015281640",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJfz_Q",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-735LHY.\n\nWe accept the construct-validity and clarity findings. The real centre lock is removable, and making it captive removes the grasp and placement of the lock. The driver also sits detached instead of on a tipped-back machine, and the real-trial fixture has no drawings or named equivalent. These are fair points.\n\nOn importance, we'd ask for one reconsideration. The click isn't the hard part of the task. The lock cannot pass the pad's 9 cm hole until a 43 cm, 300 g pad has been slid to within 1 cm of concentric on a high-friction grip face and kept flat. The manufacturer's manual says pads \"must be installed concentric (centered) with the outside edge of the pad driver\" or the machine vibrates (NSS Charger 1500 operator manual, cited in the README). O*NET 37-2011.00 (janitors and cleaners) lists \"Follow procedures for the use of chemical cleaners and power equipment to prevent damage to floors and fixtures\" as a core task, alongside floor cleaning. We recognise this may not be enough to set the task apart from covered positioning skills, and we leave that to your judgement.\n\nIf the task is reopened, we would:\n- make the centre lock a free part that has to be picked up, placed through the pad's hole and pressed home;\n- mount the driver on a tipped-back machine body at the real angle;\n- add dimensioned drawings, STL files and the spring and clip specifications for a real trial.\n",
+          "createdAt": "2026-11-21T03:07:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2873#issuecomment-7056389117",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhHAQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-735LHY) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:36Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2873#issuecomment-7056410369",
           "viewerDidAuthor": false
         }
       ],
@@ -1005,6 +1295,36 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2874#issuecomment-7015283123",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJgANw",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-UF9G9T.\n\nWhat we accept: pressing a lid past a catch is a known snap-fit skill. The kettle is unpowered, so no scald can happen during the trial. Our README also overstated the Consumer NZ survey (July 2019). Lids that would not stay closed or popped open while boiling were 9% of faulty kettles; the 24% counts all lid faults. The 15% that would not switch off is a separate figure, not one tied to lids.\n\nWhat we would ask you to reconsider:\n- RoboCasa's `CloseElectricKettleLid` starts with the lid fully open and names the goal. Its kettle is a fixed fixture. Here the instruction is only \"Prepare the kettle for use.\" The lid sits 1 cm proud on its catch and looks almost shut. The robot has to notice that fault without being told, then push about 12 N down on a free 2 kg kettle resting loose on its base, without tipping it past 15 degrees or sliding it off.\n- The hazard is the one the manufacturer names. The Gastroback 42442 manual says to press the lid on \"until it engages with a click\". It lists a lid \"not closed correctly\" as the reason boiling water doesn't switch off, because \"the automatic shut-off may not work properly.\" TK-EE45EG, a half-latched infant seat whose hazard also comes later, passed importance.\n\nIf the task is reopened, we will correct the survey figures and make the hazard immediate. The kettle would start switched on, full credit would require switching it off before pressing the lid, and pressing the lid while it is still on would score 0.\n",
+          "createdAt": "2026-11-21T03:08:02Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2874#issuecomment-7056392247",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhM9A",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-UF9G9T) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:44Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2874#issuecomment-7056411892",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "prepare-kettle-lid-latched",
@@ -1059,6 +1379,21 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2876#issuecomment-7015313038",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJfsJg",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-FKYK65.\n\nWe accept most of the review. Picking up the coins is the same flat-coin pickup as the accepted piggy-bank task, and dropping them through an open mouth is easier than turning them on edge to fit a slot. Closing the clasp is also close to tasks already accepted: the snap-lid pill organizer (#2116), where one hand holds the strip while the other snaps the lid, and the locking pliers squeezed past their lock point (#1766). The only distinct part we can point to is that the purse weighs 35 g and stands loose. If one half is pushed alone the purse gives way and the clasp does not snap, so the gripper has to pinch both frame halves together against each other. We know that may not count as a distinct enough skill. We are not claiming anything more.\n\nIf a reviewer sees value in it and reopens the task, we would:\n- replace the hinge detent torque with real ball-on-ball contact on the two 9 mm balls;\n- set the clasp force from a spring-gauge measurement of a real 8.5 cm sew-in frame, and state the measured value and the method in the README;\n- check that the real purse stands open on its own for the reset, which the flag asks for.\n\nIf the decision stands, we understand.\n",
+          "createdAt": "2026-11-21T03:07:34Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2876#issuecomment-7056387110",
+          "viewerDidAuthor": true
         }
       ],
       "headRefName": "kiss-lock-coin-purse",
@@ -1113,20 +1448,50 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2879#issuecomment-7015367195",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABomo_rg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-7BHUHG** (a revision of TK-EE45EG), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-19T19:26:54Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2879#issuecomment-7019839406",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpUUlcg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-7BHUHG).\n\nThe physical ability tested by the task is too simple for acceptance.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T19:04:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2879#issuecomment-7067739506",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "prepare-infant-carrier-on-base",
       "labels": [
         {
-          "id": "LA_kwDOVgdJU88AAAADBVqJYw",
-          "name": "Not accepted",
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
           "description": "",
           "color": "ededed"
         }
       ],
       "mergedAt": null,
       "number": 2879,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Prepare an infant car seat left on its base latched on one side only",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2879"
     },
@@ -1166,6 +1531,36 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2881#issuecomment-7015340330",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJf30g",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-LKVG3M.\n\nWe accept that holding one part while the other hand works is already well represented on the board, and that this task shares that shape. We ask only that two points be weighed again:\n\n1. **Recognisability.** The fault is not hidden: anyone who flushes sees and feels a wobbly handle hanging below level. The fix only needs the tank lid lifted. This Old House says a loose handle comes from \"the nut that secures the handle to the tank\" loosening, and calls the repair \"a simple DIY task that most homeowners can tackle\" (https://www.thisoldhouse.com/bathrooms/how-to-fix-a-toilet-handle).\n\n2. **What else is hard.** Besides holding, the robot reaches past a 1.2 cm china wall and turns a nut about a horizontal axis 1.7 cm behind it. The nut tightens the other way from what most people expect, and the robot has to stop it within about 30 degrees past snug. Kohler's instructions (087220) say: \"The locknut has left-hand threads. Do not overtighten the locknut, or the trip lever will not move freely\" (https://resources.kohler.com/webassets/kpna/catalog/pdf/en/087220-9.pdf). None of the accepted hold-and-work tasks we know of (the suitcase handle button, rotary can opener, headrest release) asks the robot to stop a turn at a seat behind a wall.\n\nIf the PR is reopened, we would name the purchasable trip-lever kit and its size. We would also make the overtightening check the observable test Kohler gives (the trip lever must still swing freely), add a \"distinct from\" table naming the nearest board tasks, and fix anything else the reviewer asks for.\n",
+          "createdAt": "2026-11-21T03:07:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2881#issuecomment-7056390098",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhJ-w",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-LKVG3M) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2881#issuecomment-7056411131",
           "viewerDidAuthor": false
         }
       ],
@@ -1236,13 +1631,35 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2883#issuecomment-7018893658",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpURS9w",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-QV6JNG).\n\nTask is not sufficiently relatable for acceptance to this category.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T19:00:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2883#issuecomment-7067685623",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "snap-wheel-cover-on-steel-wheel",
-      "labels": [],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
       "mergedAt": null,
       "number": 2883,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Snap a plastic wheel cover onto a steel wheel with its valve notch over the valve stem and every retaining clip engaged",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2883"
     },
@@ -1268,13 +1685,35 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2884#issuecomment-7008622121",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpLgDUQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-VMNUPY).\n\nThe physical ability tested by the task is too simple for acceptance.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T06:16:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2884#issuecomment-7058490193",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "free-cpu-stuck-to-heat-sink",
-      "labels": [],
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
       "mergedAt": null,
       "number": 2884,
-      "state": "OPEN",
+      "state": "CLOSED",
       "title": "Free a server processor stuck to its heat sink by old paste: twist the seal loose, then tray it contact side up",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2884"
     },
@@ -1314,6 +1753,36 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2887#issuecomment-7015391015",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJgP8Q",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-SQENVC.\n\nWe accept both points as fair, in part:\n\n- **Scoring:** a 0.6 mm feeler-gauge check on a fit you can only partly see is not an observable outcome. That needs fixing.\n- **Importance:** this is not something \"most adults\" have done, and a 12 mm cap is hard to recognise in a short clip.\n\nWe'd ask the reviewer to look again at \"hidden maintenance\". This is not a repair or an occasional service job. It is routine owner care that the maker puts on the normal use cycle. The Instant Pot quick start guide (Duo family, \"Remove & Install Float Valve\", QVC-hosted PDF K49640) says: \"The float valve and silicone cap must be installed before use to seal in pressurized steam. Clean after each use.\" Its install steps are two-handed: \"Place one finger on the flat top of float valve. Turn lid over. Attach silicone cap to bottom of float valve.\" The same guide gives the sealing ring, anti-block shield and steam release valve the same \"cleaned after each use\" note.\n\nOn how common it is: in EIA's Residential Energy Consumption Survey 2024 (Table HC3.1, preliminary release March 2026), 18.46 million of 132.54 million US homes, about 14%, use an Instant Pot or electric pressure cooker at least once a week. That is far short of most adults, but it is a large group doing this step regularly, not a specialist one.\n\nIf the task is reopened, we would replace the sub-millimetre checks with outcomes you can see. Full credit would need the cap touching the shank step in a side photo against a mm scale, with no visible gap (1 mm band), and the valve still in its hole. Partial credit would use mm-scale bands, and the task.json and scorer would match exactly.\n",
+          "createdAt": "2026-11-21T03:08:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2887#issuecomment-7056396273",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhQHQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-SQENVC) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:48Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2887#issuecomment-7056412701",
           "viewerDidAuthor": false
         }
       ],
@@ -1369,6 +1838,36 @@
           "reactionGroups": [],
           "url": "https://github.com/robocurve/benchmark-tasks/pull/2906#issuecomment-7015531351",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJf2gQ",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-B7MKQ8.\n\nWe concede two points. First, construct validity: the latch is a rule, and its insertion force is not modelled. The README says so, and it records that one arm could finish the task without bracing the handle. Second, the real-trial flag: the trial specified sharp serrated blades with no pad protection.\n\nOn importance, we ask for a second look at how often this is done. The skill is not a niche setup step. It is a forced part of every use. The maker's Use & Care manual (Hamilton Beach 74250, pp. 4-5) tells the user to take the blades out and slide them apart \"to disengage rivet from keyhole\" whenever they are washed. To assemble, it says \"Slide the rivet on one blade into the keyhole slot in the other blade until they are locked together\", then slide the pair onto the motor housing \"until both blades click into place.\" So every owner repeats this assembly each time they carve. We could not find a reliable ownership survey, so we don't claim that most adults have done it.\n\nThe physical skill is also more than a snap-fit catch. Two 1.2 mm steel plates must be laid face to face and slid about 7 mm so that a 2 mm rivet travels along a 3 mm slot. The joined pair then goes blind into a 4 x 13 mm socket.\n\nIf reopened, we would:\n- measure the real latches' insertion force with a push gauge, apply it as a resistance on each blade tail, and show the full score with the handle braced;\n- specify cut-resistant sleeves on the gripper pads, plus taped serrations, for real trials;\n- re-upload the demo and the Dream-1 videos.\n",
+          "createdAt": "2026-11-21T03:07:49Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2906#issuecomment-7056389761",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhIcw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-B7MKQ8) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:38Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2906#issuecomment-7056410739",
+          "viewerDidAuthor": false
         }
       ],
       "headRefName": "reassemble-carving-knife-blades",
@@ -1385,6 +1884,670 @@
       "state": "CLOSED",
       "title": "Reassemble an electric carving knife: join the blades by rivet and keyhole, then click both into the handle",
       "url": "https://github.com/robocurve/benchmark-tasks/pull/2906"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABoo0wZA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-TYK7YM**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-19T21:02:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2951#issuecomment-7022129252",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABotT5dg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted** (TK-TYK7YM).\n\nFlags: Sharp cut lid and rim may damage the shared gripper pads.\n\nFeasibility (not met): The real trial permits direct gripper contact with the sharp lid and rim without protection for the shared robot's pads.\n\nWhat to change: Please specify how the real trial protects the robot's gripper pads from the can's cut lid and rim, such as a cut-resistant pad cover or a reliably pad-safe tool procedure. Preserve the lid-folding action and explain how the protected setup can be run repeatedly.\n\nTo submit a revision, push your changes to this pull request (no need to open a new one). Your idea stays reserved for 48 hours from this review; if no revision arrives by then, the hold lapses and another team can claim the idea.",
+          "createdAt": "2026-11-20T00:51:28Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2951#issuecomment-7026833782",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABot6lkw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-NHN859** (a revision of TK-TYK7YM), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-20T01:26:21Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2951#issuecomment-7027467667",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABot6nmA",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Revision for the Feasibility review.\n\n> \"Please specify how the real trial protects the robot's gripper pads from the can's cut lid and rim, such as a cut-resistant pad cover or a reliably pad-safe tool procedure.\"\n\n- Every finger of both grippers wears a 5 cm stall cut from an ANSI/ISEA 105 cut level A4 Kevlar knit glove (PIP G-Tek KEV 09-K1300, 2XL), taped at its open end, checked under a light before each trial and replaced at the first cut or pulled yarn, or every 20 trials.\n- Every can's cut lid edge and the cut ring inside the seam are deburred with a fine mill file until a wiped cotton ball no longer snags.\n- The spoon in the scene is a valid, unpenalised tool route with no finger on the lid. The demo folds with closed fingers, so its pads touch only each other and the can's label; we measured every finger surface's closest approach to the cut edges in the demo (table in the README).\n- Files: `README.md` (\"Real-trial rig protection\", \"Response to review\"), `task.json` (setup, reset_notes, fidelity).\n\n> \"Preserve the lid-folding action\"\n\nAll bending happens at the uncut tab, which is not filed, so the lid's start angle, stiffness and permanent set are unchanged. The scene, instruction, scoring, scripted demo and videos are unchanged. Files: `README.md`.\n\n> \"explain how the protected setup can be run repeatedly\"\n\nBatches of ten prepared cans, at most three trials per can, the opener stopped 1 cm short (measured from a marked start point), the lid restored to 100 degrees with a protractor, and a written inspection of the tab, lid, edges and sleeves. Files: `README.md` (\"Repeatable reset\"), `task.json` (reset_notes).\n",
+          "createdAt": "2026-11-20T01:26:23Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2951#issuecomment-7027468184",
+          "viewerDidAuthor": true
+        }
+      ],
+      "headRefName": "recycle-can-with-hanging-lid",
+      "labels": [],
+      "mergedAt": null,
+      "number": 2951,
+      "state": "OPEN",
+      "title": "Put an empty soup can in the recycling when its jagged cut lid still hangs from the rim, standing up",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2951"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABopAUgA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-8X8XG3**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-19T21:10:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2955#issuecomment-7022318720",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABotWUcg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-8X8XG3).\n\nImportance (not met): Hidden aerator maintenance fails societal relatability, and the remaining holding-and-turning skill is already well covered.\n\nConstruct validity (not met): The aerator remains a faucet joint after unthreading and automatically re-engages, so the robot never handles or aligns a separate part.\n\nScoring (not met): The fixed 1.1-turn removal threshold does not establish that the specified real aerator has actually left its threads.\n\nThis task does not meet the societal-relatability bar: servicing a hidden aerator is not an activity most people recognise from a short clip. Moreover, the aerator remains attached to the faucet in simulation after it is supposedly removed, so the robot does not perform the distinctive work of handling and aligning it for rethreading; the remaining hold-and-turn skill is already well covered.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-20T00:53:24Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2955#issuecomment-7026873458",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJfwjg",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-8X8XG3.\n\nWe accept most of the review:\n\n- **Construct validity:** this is fair. In our code the aerator stays on a slider joint of the faucet. It drops only 4 mm \"out of the thread\" and goes back in by itself, so the robot never handles or aligns a separate part.\n- **Scoring:** this is fair too. Our model has one engaged turn, and the 1.1-turn threshold rests on that. It does not show that a real M16.5 x 1 aerator has left its threads.\n- **Relatability:** we have no data that most adults have serviced a hidden aerator. The maker's own guide (Neoperl, \"remove stuck Cach\u00e9 aerator\") says only that aerators \"should be cleaned or replaced regularly\", and it never mentions holding the spout.\n\nOur one remaining point is that the review describes the skill as a generic \"hold and turn\", and that is not quite it. The key is a loose 25 g tool. It turns the aerator only through lug-on-rib contact, from below and under an overhang. A wrist can turn only so far, so the key has to be dropped out, turned back and re-seated for every stroke. All the while the other hand has to hold the spout against a loose faucet that slips at half the torque needed to break the bond. Board tasks that hold one control while working another do not re-seat a tool in a recessed fitting.\n\nIf the task is reopened, we would:\n\n1. make the aerator a free body with its full real thread length, so it comes out into the key or gripper and has to be aligned and started by hand;\n2. score removal by the visible end state: the aerator off the spout and resting on the key or deck, checked with a photo and a ruler rather than a turn count.\n\nWe understand if the importance finding stands.\n",
+          "createdAt": "2026-11-21T03:07:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2955#issuecomment-7056388238",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhCmw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-8X8XG3) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/2955#issuecomment-7056409243",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "remove-hidden-faucet-aerator",
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 2955,
+      "state": "CLOSED",
+      "title": "Unscrew a limescaled hidden aerator from a faucet spout with its key while holding the spout, then refit it flush",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2955"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpA3Rhw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-LRH79C**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-20T18:23:18Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3253#issuecomment-7047336327",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpE9HuQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-LRH79C).\n\nFlags: Miniaturization \u00b7 Related earlier rejected task: [TK-NL7755](https://tasks.robocurve.org/mine)\n\nImportance (not met): The 0.45 kg panel has no person in its fall path, and the artificial tabletop exercise does not convey the injury risk or handling demands of real slabs.\n\nConstruct validity (not met): A small panel balanced on an added pivot rib and restrained by a loose block does not reproduce safe handling and restraint of heavy stored slabs.\n\nThe tabletop panel is a scaled-down stand-in for heavy slab handling, but it removes the forces and foreseeable injury risk that make that work safety-critical. The pivot rib and loose chock also create an artificial restraint arrangement, so the task does not establish a meaningful real-world safety skill as specified.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-20T21:59:25Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3253#issuecomment-7051626425",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJfxsA",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Please request a human review of the decision for TK-LRH79C.\n\nWe concede most of the review. The 18 x 16 cm, 0.45 kg panel is a bench-top stand-in. It does not carry the forces or injury risk of a real slab, and nobody stands in its fall path. Our README says the same. The 5 mm floor rib is also our addition. It stands in for whatever stops a real panel from standing unaided, and it is not real rack hardware.\n\nOne point we would ask a person to look at again: the loose restraint. OSHA's bulletin on stone slabs (SHIB 08-12-2008, https://www.osha.gov/publications/shib081208) says the 46 deaths it counts (1984-2006) include cases where workers \"improperly positioned the wedge between slabs\". It asks for supports to be removed \"in a sequence that does not allow for the other slabs to shift or collapse\", and for workers to \"never walk in the 'fall shadow' of a slab\". So a loose wedge pushed in beside an upright sheet is real practice, not an arrangement we made up, and doing things in the right order is the safety skill the bulletin describes. The task scores exactly that: hold the panel up, push the wedge in, then let go.\n\nIf the task is reopened, we would:\n- use a real panel at real size and mass, up to what the arms can carry, in a real channel or A-frame, with no rib;\n- put a person stand-in (feet and lower legs) in the fall shadow. Any fall, or any time the person stand-in is touched, scores 0;\n- keep the scoring based only on the end state, with fall history that is cleared only when the scene resets.\n\nIf miniaturisation alone settles it, we accept that.\n",
+          "createdAt": "2026-11-21T03:07:42Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3253#issuecomment-7056388528",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpJhD-g",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Your team has used its 5 appeals, so this decision (TK-LRH79C) won\u2019t be reviewed again. Each team can appeal up to 5 final decisions.",
+          "createdAt": "2026-11-21T03:09:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3253#issuecomment-7056409594",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "chock-leaning-panel-in-floor-channel",
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 3253,
+      "state": "CLOSED",
+      "title": "Stand a fallen display panel back up in its floor channel and chock it before letting go",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3253"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpLU2Uw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-94HRFH**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T05:59:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3358#issuecomment-7058306643",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpPloMw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-94HRFH).\n\nFlags: Earlier same-team task [TK-3JS2ME](https://tasks.robocurve.org/mine) also reseats a board across two blocks\n\nImportance (not met): Carpenters regularly clear scraps, but replacing a scrap prop under a short batten while keeping it off the bench is not shown to be regular carpentry work, and the cleanup context does not explain why that constraint matters.\n\nConstruct validity (not met): The setup offers no real-work reason to keep this small batten continuously off the bench while replacing its scrap support.\n\nThe task does not establish why this support swap and the prohibition on bench contact are meaningful parts of routine carpentry work. Clearing scrap is relevant, but the defining manipulation is an artificial constraint rather than a demonstrated real-world operation.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T12:44:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3358#issuecomment-7062775859",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "clear-offcuts-propped-board",
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 3358,
+      "state": "CLOSED",
+      "title": "Swap the scrap prop for a bearer under a pine batten before clearing the offcuts",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3358"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpMADDQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-K5PMGF**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T07:04:20Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3388#issuecomment-7059014413",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpPoYKQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted** (TK-K5PMGF).\n\nFlags: Note for the team: specify a conductive, compliant pad if needed for the phone's touch-sensitive Camera Control. \u00b7 Note for the team: use an artificial cake or another repeatable dry photo subject.\n\nConstruct validity (not met): A robot with touch-capable pads could select 2x and take a photo on the touchscreen without performing the specified Camera Control gesture and still receive full credit.\n\nScoring (not met): The real-trial score does not verify use of the Camera Control and requires measuring approximately 0.3 mm of phone motion between video frames.\n\nFeasibility (not met): The only specified phone is an iPhone 16 listed at $799, with no lower-cost sourcing route for repeated real trials.\n\nWhat to change: Please revise the real-trial procedure and scoring: require observable use of the Camera Control for photo credit, and require its slide for zoom credit, so touchscreen shortcuts cannot earn the corresponding scores. Replace the 0.3 mm frame-to-frame motion measurement with a practical photo or video outcome check, and specify camera views that show the relevant control and shutter actions. Provide a compatible iPhone 16 sourcing route costing no more than a few hundred dollars, such as an available used or refurbished unit.\n\nTo submit a revision, push your changes to this pull request (no need to open a new one). Your idea stays reserved for 48 hours from this review; if no revision arrives by then, the hold lapses and another team can claim the idea.",
+          "createdAt": "2026-11-21T12:48:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3388#issuecomment-7062820905",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpQPJdA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-33JPJJ** (a revision of TK-K5PMGF), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T13:38:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3388#issuecomment-7063456116",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "take-2x-photo-with-iphone-camera-control",
+      "labels": [],
+      "mergedAt": null,
+      "number": 3388,
+      "state": "OPEN",
+      "title": "Take a 2x photo with an iPhone 16's Camera Control: light-press to open zoom, slide to 2x without clicking, then click",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3388"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpMqNAg",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-VFT84J**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T08:08:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3398#issuecomment-7059705090",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpPqjTw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted** (TK-VFT84J).\n\nConstruct validity (not met): The task awards full credit to an overtightened band even though correct tightness is necessary for the claimed canning procedure.\n\nScoring (not met): Neither the simulator score nor the real-trial checks distinguish fingertip-tight from overtightened, and the band obscures the disc edge needed for the proposed centring photo.\n\nWhat to change: Define a repeatable acceptable tightness range for the specified jar and band, and add a practical real-trial check that distinguishes fingertip-tight from overtightened; update the simulated scoring or its documented approximation accordingly. Also specify how to check the disc's final centring and flatness when its edge is covered by the band.\n\nTo submit a revision, push your changes to this pull request (no need to open a new one). Your idea stays reserved for 48 hours from this review; if no revision arrives by then, the hold lapses and another team can claim the idea.",
+          "createdAt": "2026-11-21T12:51:27Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3398#issuecomment-7062856527",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpQnLvg",
+          "author": {
+            "login": "Tian-James-Pu"
+          },
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Revision in response to the review (also in the README's *Response to review* section):\n\n| Review request | What changed |\n|---|---|\n| \"Define a repeatable acceptable tightness range for the specified jar and band\" | Fingertip-tight is now **0 to 120 degrees of band turn past first contact** (the point of first resistance), for the Ball regular-mouth pint (MFR #61000) and its band. 0 degrees is Ball's current \"just until a point of resistance is met\"; 90 degrees is NDSU's and Clemson's \"then turn the band one-quarter turn more\"; the 30 degrees on top is the mark-reading tolerance. It is an angle, not a torque, so it repeats with a marker and a printed protractor. Over 120 degrees is over-tight. See *Scoring* (`task.json` `scoring`, `level()` in `task.py`). |\n| \"add a practical real-trial check that distinguishes fingertip-tight from overtightened\" | *Real trial*: a paint-pen first-contact mark on the band and on the jar's shoulder, made once per jar, band and lid (the method Clemson gives for beginners). After the trial, a top photo against a printed protractor ring gives the turn between the two marks. A caliper on the band's top says which turn it is on. No force is measured. |\n| Construct validity: \"awards full credit to an overtightened band\" | An over-tight band now scores **0.5**, not 1.0. Red team `overtight` turned the band 202 degrees past contact and scored 0.5 (see *Validation*). |\n| \"update the simulated scoring or its documented approximation accordingly\" | The simulator now has the closure's give. The rim's sealing surface is a sprung link, so a band can be turned on past contact as a real one can, by compressing the compound and flexing the lid and flange. Before, it was rigid, and fingertip-tight and cranked-down looked alike. The scorer reads the band's angle past its first-contact angle, the quantity the real trial reads from the marks. It does not read the spring or any force. `task.json` `scoring` is the text of `level()` and `Trial.step()`, and `fidelity` now describes the give and its estimated stiffness. |\n| \"specify how to check the disc's final centring and flatness when its edge is covered by the band\" | The check is made through the band's 58 mm opening, with the band left on. A paper centre target (concentric rings 1 mm apart) is stuck centred on the lid at preparation. The top photo gives the lid's offset from the band, from the gaps between the opening's edge and the target's outer ring, and the band's offset from the jar, from the gaps between the skirt and the shoulder; together they give the lid's offset from the jar's axis. Flatness comes from the caliper's depth rod onto the lid's face through the opening at three points. Nothing is unscrewed before it is read. |\n\nThe scene layout, objects and instruction are unchanged. The only scene change is inside the jar: the sprung sealing surface, which the\nband reaches only once it is threaded on. The Dream-1 run never lifted the band off the counter, so its score (0.0) stands.\n",
+          "createdAt": "2026-11-21T14:08:20Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3398#issuecomment-7063849918",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpQnNag",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-EPX54K** (a revision of TK-VFT84J), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T14:08:22Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3398#issuecomment-7063850346",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "close-mason-jar-two-piece-lid",
+      "labels": [],
+      "mergedAt": null,
+      "number": 3398,
+      "state": "OPEN",
+      "title": "Screw a canning band onto a filled pint Mason jar over its loose flat lid, started square, turned fingertip-tight",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3398"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpUADkA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-WS8279**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T18:38:29Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3513#issuecomment-7067403152",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "push-toddler-swing-in-phase-to-25-degrees",
+      "labels": [],
+      "mergedAt": null,
+      "number": 3513,
+      "state": "OPEN",
+      "title": "Push a loaded toddler bucket swing up to a 25-degree swing, catching the seat only after it turns at the back of its arc",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3513"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpVRq3Q",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-Z4CTFX**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T20:25:19Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3524#issuecomment-7068740317",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpVaCjQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted** (TK-Z4CTFX).\n\nFeasibility (not met): The demo lifts a 2.4 kg pair, while the specified real pair weighs 9\u201310 kg and was explicitly lightened for the arms' payload.\n\nWhat to change: The specified real bifold pair weighs 9\u201310 kg, but the demonstration uses 2.4 kg and says this reduction was needed for the arms' payload. Demonstrate full completion with a realistically weighted door and a robot embodiment capable of gripping and lifting it; update the simulated mass and provide the corresponding model run if the embodiment changes.\n\nTo submit a revision, push your changes to this pull request (no need to open a new one). Your idea stays reserved for 48 hours from this review; if no revision arrives by then, the hold lapses and another team can claim the idea.",
+          "createdAt": "2026-11-21T20:36:33Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3524#issuecomment-7068877453",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "rehang-bifold-closet-door-on-spring-pivot",
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVqJYw",
+          "name": "Not accepted",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 3524,
+      "state": "OPEN",
+      "title": "Rehang a bifold closet door that popped off its floor bracket: lift it on its spring top pivot, drop the pin in plumb",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3524"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpVU4zQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-T24TM6**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T20:29:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3528#issuecomment-7068793037",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "rip-beyblade-ripcord-launch-into-stadium",
+      "labels": [],
+      "mergedAt": null,
+      "number": 3528,
+      "state": "OPEN",
+      "title": "Launch a Beyblade: stand the loaded ripcord launcher up over the stadium, hold it level and rip the cord out fast",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3528"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpVY7qQ",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-ZZYHFC**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T20:35:08Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3530#issuecomment-7068859305",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpXJphA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-ZZYHFC).\n\nImportance (not met): Registered nurses and LPNs use infusion pumps, but holding the pump while tightening its clamp is an already-covered ability; the height band and heavier object add no distinct manipulation.\n\nThe task's central manipulation is holding a device while tightening its clamp, an ability already well covered by the benchmark. The height mark and the pump's weight do not add a sufficiently distinct manipulation.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T23:11:26Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3530#issuecomment-7070706052",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "clamp-infusion-pump-on-iv-pole-at-mark",
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 3530,
+      "state": "CLOSED",
+      "title": "Clamp an infusion pump to its IV pole at the tape: hold it up level while the other hand screws the pole clamp tight",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3530"
+    },
+    {
+      "author": {
+        "id": "U_kgDOC5pLgA",
+        "is_bot": false,
+        "login": "Tian-James-Pu",
+        "name": ""
+      },
+      "comments": [
+        {
+          "id": "IC_kwDOVgdJU88AAAABpValQw",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "Received as **TK-ZYPMD4**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+          "createdAt": "2026-11-21T20:37:16Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3532#issuecomment-7068886339",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOVgdJU88AAAABpXKVSA",
+          "author": {
+            "login": "achyutha11"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "**Not accepted: final** (TK-ZYPMD4).\n\nImportance (not met): Mounting a GoPro on a helmet is a hobby-specific activity that most people have not done or watched closely, and camera sales alone do not establish comparable societal impact.\n\nThe coordinated mounting operation is clear, but attaching an action camera to a helmet is a hobby-specific activity rather than an everyday task most people have performed or watched closely. Camera sales alone do not establish an alternative impact case at the benchmark's required scale.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+          "createdAt": "2026-11-21T23:12:25Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/robocurve/benchmark-tasks/pull/3532#issuecomment-7070717256",
+          "viewerDidAuthor": false
+        }
+      ],
+      "headRefName": "pin-gopro-fingers-into-buckle-with-thumbscrew",
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "mergedAt": null,
+      "number": 3532,
+      "state": "CLOSED",
+      "title": "Fasten a GoPro into a helmet's buckle: line up the five fingers' holes, push the thumb screw through and run it down",
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/3532"
     }
   ]
 }

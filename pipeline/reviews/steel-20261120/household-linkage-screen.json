@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-20T03:50:16.360015+00:00",
+  "scope": "Brief non-safety candidate screen inspired by STEEL closed-loop linkages; no task or GPU run.",
+  "examples": [
+    "loop_fourbar",
+    "loop_hoberman_sphere"
+  ],
+  "candidate": "Expand a household trivet",
+  "primary_products": [
+    {
+      "name": "IKEA HALVN\u00c4BB70602173",
+      "url": "https://www.ikea.com/us/en/p/halvnaebb-trivet-extendable-bright-red-pine-70602173/",
+      "size": "16\u201332 x20cm; manufacturer search result, detailed mechanism not inspected."
+    },
+    {
+      "name": "Totally Bamboo20-6628",
+      "url": "https://wholesale.totallybamboo.com/products/expandable-trivet",
+      "size": "8.75in square closed;11.75x8.75in open; slatted sliding design, not established scissor linkage."
+    }
+  ],
+  "board_search": "Live trivet search returned1814,1430,1819,1817,1816,2042; no exact expansion title. This narrow search does not clear benchmark novelty.",
+  "decision": "Do not allocate GPU or claim a task from this screen.",
+  "reason": "Real expandable products establish existence, but meaningful robotic difficulty and purpose of required extension are not yet established. A large dish can often remain stable on a smaller support, so a prescribed extension length must not manufacture an obstacle. This is conditional evidence insufficiency, not a categorical rejection of household linkage tasks."
+}

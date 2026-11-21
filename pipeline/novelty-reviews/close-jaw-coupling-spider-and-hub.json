@@ -1,0 +1,56 @@
+{
+ "checked_at": "2026-11-21T06:46:12Z",
+ "decision": "clear",
+ "queries": [
+  "jaw coupling spider replacement",
+  "Lovejoy L100 L099 jaw coupling installation",
+  "flexible coupling spider into hubs",
+  "jaw coupling gap setting",
+  "shaft coupling assembly",
+  "keyed coupling drive transfer",
+  "coupled shaft alignment runout",
+  "sensor cable coupling ring",
+  "gladhand coupling",
+  "Lovejoy jaw coupling assembly vs pull-out disconnect lockout"
+ ],
+ "nearest_prs": [
+  {
+   "number": 2484,
+   "relationship": "Exact same jaw-coupling spider/hub assembly. Live board still lists it revising. Latest review remains 2026-11-19T07:08:24Z, so its 48-hour hold expires 2026-11-21T07:08:24Z unless another official receipt or decision arrives; ownership checker remains the final gate."
+  },
+  {
+   "number": 930,
+   "relationship": "Final rejection of a generic keyed-coupling trainer because a robot-drive/assembly context was not established. Current task uses a named industrial brake motor, pillow blocks, commercial Lovejoy hubs and a replaceable spider; it assembles real hardware rather than demonstrating a trainer key or drive-transfer test."
+  },
+  {
+   "number": 817,
+   "relationship": "Final rejection of shaft alignment because slider positions substituted for physically moving rotor axes and measuring runout. Current task is a real contact assembly with a freely turning and sliding hub; it does not claim shaft-alignment measurement."
+  },
+  {
+   "number": 1540,
+   "relationship": "Accepted sensor cable connection using a coupling ring while holding a sensor; a cable plug and threaded ring, not three jaws and an elastomer spider."
+  },
+  {
+   "number": 1960,
+   "relationship": "Accepted gladhand pneumatic coupling; its seal/lever connection differs from the three-jaw elastomer coupling and axial gap setup."
+  },
+  {
+   "number": 2002,
+   "relationship": "Accepted drain-pipe slip-coupling dry-fit after a final rejection; axial pipe insertion without rotating jaw mesh or compliant spider registration."
+  },
+  {
+   "number": 1637,
+   "relationship": "Accepted single-source AC pull-out-disconnect lockout. It flips and padlocks an HVAC isolator; it does not assemble a three-jaw coupling, register an elastomer spider, rotate a free keyed hub into mesh, or set a catalogue face gap. The current jaw-coupling skill is a different mechanical coupling operation."
+  },
+  {
+   "number": 2458,
+   "relationship": "False lexical match from the current board: \u201ccatch-a-spider-under-a-glass\u201d refers to an insect, not a jaw-coupling spider; unrelated operation."
+  }
+ ],
+ "physical_skill": "Place a six-leg elastomer spider fully into the three jaws of a fixed industrial motor hub, turn the freely rotating keyed hub on a second shaft until its jaws find the spider gaps, slide it to an 18 mm catalogue gap, release both hubs, and verify engagement and rest.",
+ "valid_shortcuts": "Either hub may be approached first, the spider may be oriented by any equivalent rotation that puts its legs between the fixed jaws, and the loose hub may be turned in either direction to find mesh. Setting only the gap without spider engagement does not score; holding a part earns at most partial credit; full credit requires all components released and stable.",
+ "distinct_from_nearest": "This is a physical jaw-coupling installation, not a generic keyed trainer, shaft-axis adjustment, cable-ring connection or pipe slip-fit. The exact same-operation PR #2484 received no importance/construct objection in its public review, only a request for a more detailed demo; this candidate provides a three-camera detail video and sourced commercial geometry. Its job-impact framing remains a review risk because frequency of this exact maintenance operation is not separately quantified. The accepted AC pull-out-disconnect lockout task (#1637) isolates one HVAC supply and secures a padlock; it does not assemble a Lovejoy jaw coupling or set its hub-to-spider engagement and face gap.",
+ "task_py_sha256": "811cad49c03dd877e0ea44bc6b9546823442de90361d268f6bbf3018c47eea5a",
+ "task_metadata_sha256": "e9de529cfee269caf732afad0c632d55e4b6fba63b0d184a997afdf78d9b2f75",
+ "board_refreshed_at": "2026-11-21T04:33:19Z"
+}

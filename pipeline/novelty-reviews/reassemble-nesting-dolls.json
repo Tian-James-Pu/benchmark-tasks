@@ -1,0 +1,46 @@
+{
+ "checked_at": "2026-11-21T07:27:14Z",
+ "decision": "clear",
+ "queries": [
+  "doll, matryo, nesting (known_tasks.tsv, all states, refreshed 2026-11-21)",
+  "lid, nest, press ... on, push-fit, friction fit, stack (accepted, pending, revising)",
+  "RoboARC 106-task index: nesting doll, matryoshka, nest, lid (no hits)"
+ ],
+ "nearest_prs": [
+  {
+   "pr": 3078,
+   "state": "OPEN, Not accepted (revising, other team); latest review 2026-11-20T07:41:25Z, no Received after it; hold lapses 2026-11-22T07:41:25Z",
+   "read": "Title, task.json, README and review: five-piece nesting doll reassembly; rejected on construct validity (tops seat by weight with 1.5 mm clearance) and feasibility (demo used gravity-seated tops).",
+   "comparison": "Same idea, claimed after the lapse. Ours models the snug fit with sprung pads and contact friction (tops rest 5-7 mm up unpressed, seat at ~5-10 N, hold 4-9 N), and the demo presses and twists each top on."
+  },
+  {
+   "pr": 2264,
+   "state": "OPEN, Not accepted (revising, other team), TK-WQ8VQ6",
+   "read": "Title: close a rigid telescoping-lid box over its product without wedging the lid.",
+   "comparison": "One lid lowered square by gravity over one box. Ours: two nested closures, each a friction fit needing a real press, a face to align, and an assembly order (inner doll closed and inside before the outer closes)."
+  },
+  {
+   "pr": 2337,
+   "state": "OPEN, Not accepted (revising, other team), TK-CYLBEJ",
+   "read": "Title: paint-can lid close.",
+   "comparison": "Press-in lid with no orientation or nesting; ours presses a light round-headed shell held by its head, turned to a painted face, then nests the closed doll."
+  },
+  {
+   "pr": 2342,
+   "state": "MERGED, TK-GTGGNW",
+   "read": "Title: put a CD back in its jewel case, press it onto the hub until the teeth grip, then shut the lid.",
+   "comparison": "Flat disc onto a hub; ours coaxial hollow shells pressed together square and nested in order."
+  },
+  {
+   "pr": 2214,
+   "state": "CLOSED, Not accepted: final",
+   "read": "Title: separate nested bowls and lay out two breakfast settings.",
+   "comparison": "Reverse direction, no fits or closures."
+  }
+ ],
+ "physical_skill": "Close each doll by pressing its top square down a snug friction fit (about 10 N for the 150 mm doll, 5 N for the 103 mm doll) with its face turned to the apron (before or by twisting against the fit), with the inner doll closed and dropped inside first, carrying the closed doll by its head through the fit into the next bottom half with about 2 mm of play, then closing the outer doll over it and letting go.",
+ "valid_shortcuts": "None that score: do nothing 0; set tops on without pressing (they rest 5-7 mm up) 0.25; press tops on without turning (faces 90 degrees off) 0.25; keep holding the last top 0.75; close doll 2 outside doll 1 and close doll 1 empty 0.5. One arm could in principle do every step (each press is against the table); the task does not claim two-handedness.",
+ "distinct_from_nearest": "A friction-fit closure of hollow coaxial shells that must be pressed and turned to a face, repeated in nested order, carrying a closed doll by its fit; nearest board tasks are single lids or hubs without nesting or orientation. Residual risk: reviewers may view lid closing as covered (press/snap-fit family) or judge relatability afresh.",
+ "task_py_sha256": "e097cc436286c42a23e020ab6371bc9783470c6f45d194756693c08a71b09e42",
+ "task_metadata_sha256": "cf605b596a5eafa8f5b602651759b79b53a61431076e406df3cb3a3e4b15f936"
+}

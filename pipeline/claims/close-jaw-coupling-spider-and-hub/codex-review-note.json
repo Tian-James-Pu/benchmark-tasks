@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-20T04:18:36.580517+00:00",
+  "reviewer": "codex /root/review_crutch",
+  "scope": "Coordination note only: owner and status preserved; task edits/ongoing jobs untouched.",
+  "decision": "Submission held by exact competing idea; validation work may proceed under owner.",
+  "competing_pr": 2484,
+  "latest_review_utc": "2026-11-19T07:08:24Z",
+  "hold_until_utc": "2026-11-21T07:08:24Z",
+  "official_evidence": "/home/mzhang/code/benchmark-tasks/pipeline/reviews/resume-20261120/ready-queue-screen/pr-2484.json",
+  "feedback": "**Not accepted** (TK-63BGVT).\n\nThe demo should show more detail",
+  "missing_evidence": [
+    "Complete free-spider seating, hub orientation/translation and hands-clear retained gap; first native trial completed at score0/1297 on sourcef594787967be.",
+    "Show close-up native media of jaws/spider and numeric face gap; full materialFEM unnecessary for placement test, but no hand-held/scoring-only completion.",
+    "Document exact final operation boundary: positioned hub vs fully secured operable coupling; do not claim commissioning while leaving an unretained sliding hub. Establish operation-specific importance rather than broad machinist employment.",
+    "Freeze final package; two full-score native demos with source hashes.",
+    "Required none/one-arm/careless/hold controls with expected scores and recorded media, plus task-specific negative controls.",
+    "Write task.json andREADME, source-calibration/reset details and all numeric score conditions; both absent in all four at snapshot.",
+    "Dream once on final package, or explicit exhausted-credit exception without fabricated model score/video.",
+    "Fresh all-board/official-comments ownership review at intended submission, then standard preflight/media/quota checks under shared submission lock. Review receipt can reopen hold; expiry alone never grants permanent clearance."
+  ],
+  "observed_full_score_completed_runs": 0,
+  "owner_status_sha256_before": {
+    "owner": "98038b25280788a45a2f06c209513024c99adee81c6416b691b4b5872db7e027",
+    "status": "98ff51814afe79a1ac6ee6c8c4524ccd3151a4d3707dd19e263e9e1cdec07598"
+  },
+  "owner_status_unchanged_during_write": true
+}

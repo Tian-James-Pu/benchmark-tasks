@@ -1,0 +1,48 @@
+{
+ "checked_at": "2026-11-21T08:33:19Z",
+ "decision": "clear",
+ "queries": [
+  "hinge, cabinet door, cupboard, concealed hinge, cup hinge (known_tasks.tsv, all states, refreshed 2026-11-21)",
+  "screwdriver, screw, adjust, gap, overlay, side screw (known_tasks.tsv, accepted, pending, revising)",
+  "PRs numbered after #3101 with cabinet door, hinge or screwdriver adjustment: none found",
+  "RoboARC 106-task index: screw, screwdriver (furniture assembly screw driving only)",
+  "Accepted task folders using a screwdriver: fit-lever-set-to-bored-door (TK-W8FDKM)"
+ ],
+ "nearest_prs": [
+  {
+   "pr": 3101,
+   "state": "OPEN, Not accepted (revising, other team); latest review 2026-11-20T07:44:28Z, no Received after it; hold lapses 2026-11-22T07:44:28Z",
+   "read": "Title, task.json, README and review: square a crooked cabinet door with the top cup hinge's side screw; rejected on construct validity (screw turned by proximity of the driver, no recess engagement, force or torque) and feasibility (demo relied on that rule).",
+   "comparison": "Same idea, claimed after the lapse, built independently. Ours: real PH2 recess geometry on a sprung seat with the SimReady screwdriver's own mesh, engagement only with tip within 0.8 mm, axis within 6 degrees and at least 10 N push, 0.2 N m reaction torque applied to the screwdriver; demo meets this twice at 1.0."
+  },
+  {
+   "pr": 1865,
+   "state": "OPEN, Not accepted (revising, other team); latest review 2026-11-16T21:16:32Z, no Received after it; hold lapsed 2026-11-18",
+   "read": "Title and review thread: even out a lift-up flap door's gaps with its hinge's side screw, then close it; last review asked for identified purchasable hinge and stay.",
+   "comparison": "A flap door with a custom three-adjuster hinge and stay; ours is a side-hung door on a named Blum CLIP top hinge, turned with a hand screwdriver that must be seated and pushed, with screw and direction to choose."
+  },
+  {
+   "pr": 2407,
+   "state": "CLOSED, Not accepted: final",
+   "read": "Title and review: reattach a concealed cabinet hinge; final on importance (hidden maintenance, occupation not established).",
+   "comparison": "Clipping a hinge arm onto its plate, not adjusting an installed hinge; importance risk noted (see distinct_from_nearest)."
+  },
+  {
+   "pr": "TK-W8FDKM",
+   "state": "MERGED (accepted)",
+   "read": "Fit a lever set to a bored door: hold the outside lever level while both screws are driven with a ratcheting screwdriver (bit drives while within 1.5 mm of axis).",
+   "comparison": "Fastening screws home in an assembly; ours adjusts an installed hinge to a measured gap, choosing screw and direction, with push and alignment gating and a turning torque."
+  },
+  {
+   "pr": "TK-Q8FKPK",
+   "state": "MERGED (accepted)",
+   "read": "Shim a door's hinge jamb with opposed tapered shims.",
+   "comparison": "Packing a door frame with shims; no hinge adjustment or screwdriving."
+  }
+ ],
+ "physical_skill": "Seat a PH2 screwdriver held level in a 6 mm recess on a hinge arm inside an open wall cabinet, push it in with at least 10 N while keeping it within 6 degrees of the screw's axis, and turn it clockwise against 0.2 N m by 0.5 to 1.1 turns (more than one wrist twist, so easing off and winding back with the tip still seated), then shut the door so the gap to the next door reads 2-3 mm and even at both ends.",
+ "valid_shortcuts": "None that score full: doing nothing 0; turning with the tip seated but without pushing 0; pushing and turning with the gripper 20 degrees off axis 0 (10 degrees off lets the driver pivot back to ~4.5 degrees in the grip and turns 0.28 turn: 0.25); turning the right screw the wrong way 0; over-turning 1.75 turns 0.25; turning correctly but leaving the door open 0.25; holding the shut door 0.5. Turning the top hinge's screw instead cannot reach the 1.0 window by geometry. One arm could in principle shut the door too; the task does not claim two-handedness.",
+ "distinct_from_nearest": "The only board task with this exact operation is the lapsed #3101 (claimed here after its hold). Against #1865 (flap door, custom hinge) and accepted screwdriving tasks, the distinct ability is adjusting an installed hinge to a measured target by a seated, pushed, aligned screwdriver in a confined installed cabinet. Residual risk: importance is judged afresh (#2407 was closed for good on importance for hinge reattachment), so the README argues the jobs case with BLS and O*NET sources and labels the inference.",
+ "task_py_sha256": "c4db8ff2575470364aa105f5192fceca86df8247cdfa5a86e7e3cbc059bccc3c",
+ "task_metadata_sha256": "6a896c1c3ba978e3cee2d4e3c38319af75245623d11bd76e253adeeb4ba49f4b"
+}

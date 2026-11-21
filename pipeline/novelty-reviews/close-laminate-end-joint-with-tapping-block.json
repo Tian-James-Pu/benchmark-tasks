@@ -1,0 +1,48 @@
+{
+ "checked_at": "2026-11-21T23:15:36Z",
+ "decision": "clear",
+ "queries": [
+  "known_tasks.tsv refreshed 2026-11-21 23:15 UTC (3,559 rows, all states): laminate, tapping block, floor, plank, click, mallet, hammer, joint, tap, strike, knock; rows added since the 18:20 refresh (3400+) reviewed: no flooring, tapping-block or click-floor task",
+  "gh search prs robocurve/benchmark-tasks 2026-11-21 23:15 UTC: 'tapping block', 'Uniclic', 'click lock floor', 'floor plank', 'mallet block' -> no results; 'laminate' -> only unrelated (#1130 drawer laminate, #1717 pouch laminator, #2925 foil wrap, #2948 blot cassette)",
+  "earlier pass 19:59 UTC: 'tapping block', 'laminate floor', 'click lock', 'Uniclic', 'floor plank' -> only #1920 (click-lock vinyl tile, final reject) and #2516 (pet carrier, unrelated)",
+  "BEHAVIOR-1K knowledgebase laying_wood_floors-0 BDDL read (ontop/nextto placement of plywood)",
+  "#1920 final review re-read 23:14 UTC: importance not met; floor layers plus click-lock-installing carpenters not shown >500k; not an everyday activity most people have watched up close"
+ ],
+ "nearest_prs": [
+  {
+   "pr": 1920,
+   "state": "CLOSED, Not accepted: final (importance), other team",
+   "read": "Body and both reviews read: angle a click-lock vinyl tile's long tongue into the laid row and lower it flat; final review: floor layers plus the subset of carpenters installing click-lock flooring not shown to exceed 500k; not an everyday activity for societal relatability.",
+   "comparison": "Different operation (angle-in long side, no tool) but the same domain; its importance ruling applies to this task's category argument. Flagged as the main acceptance risk, not a duplicate."
+  },
+  {
+   "pr": 897,
+   "state": "CLOSED, Not accepted: final, other team",
+   "read": "Comments read: miniature floorboards with plain edges, overlaps BEHAVIOR laying wood floors.",
+   "comparison": "Ours is full size with a real Uniclic plank already in its long-edge lock; the task is the end-joint engagement by tapping through a block."
+  },
+  {
+   "pr": 2206,
+   "state": "MERGED",
+   "read": "Body read: hold a nail upright and tap it in with a claw hammer, then drive it home.",
+   "comparison": "Vertical penetration of a held nail; ours horizontal low taps through a placed tool on a sliding locked plank that must never be touched."
+  },
+  {
+   "pr": 2612,
+   "state": "OPEN, pending revision, other team",
+   "read": "Body and review read: steady a drop-in anchor setting tool and strike it with a club hammer.",
+   "comparison": "Punch guided by a hole, vertical; ours a loose block placed and squared over the groove lip, horizontal taps, closed-joint end state."
+  },
+  {
+   "pr": 2916,
+   "state": "OPEN, pending, other team",
+   "read": "Body and review read: rubber mallet strikes directly on a paint-can lid rim.",
+   "comparison": "Direct strikes on the work; here a direct strike on the work is the scored failure."
+  }
+ ],
+ "physical_skill": "Bimanual tool-on-tool work: place a tapping block flat and square on a locked plank's end with its relief over the groove lip, and tap its back with a choked-up rubber mallet low over the floor, hard enough to break the lock's static friction (70 N; steady arm pushes cannot), until the plank stops moving, without ever touching the plank's end with the mallet or a gripper.",
+ "valid_shortcuts": "One-handed: block set on the end, released, then tapped (scores 1.0, allowed and stated). Invalid routes red-teamed on GPU: steady push through the block (0.0, gap 4.92 mm), mallet straight on the plank's end (0.0, direct-blow latch), gripper ramming the end (0.0, contact latch), nothing (0.0).",
+ "distinct_from_nearest": "No board task closes a click-floor end joint or uses a tapping block; #1920 is the other joining method (angle-in, no tool) and was finally rejected on importance, which is this task's main risk; hammer tasks #2206/#2612/#2916 strike the work or a guided punch vertically.",
+ "task_py_sha256": "dff84b4fe302542dd1f028f5d28949294d4f07b2b0a1998b30b12101aef5174a",
+ "task_metadata_sha256": "9dc34959ebe4e59bfacb204317935912f97dbb4ed5671d3ad119ea6cca721579"
+}

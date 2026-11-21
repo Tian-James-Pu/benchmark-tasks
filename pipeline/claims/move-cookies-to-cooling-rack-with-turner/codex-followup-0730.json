@@ -1,0 +1,10 @@
+{
+  "evidence": "pipeline/reviews/resume-20261120/cookies/independent-audit-0730.json",
+  "actions": [
+    "Bind the two score-1 runs and selected media to exact controller, scorer, asset and replica hashes. The local source files were modified after both runs began.",
+    "Make the displayed and real turner consistent. The viewed demo sheet shows a slotted blade, while the README names a solid OXO blade and the rigid collision profile is declared solid. Verify actual blade thickness and under-cookie clearance.",
+    "Correct the turner-distance description or compute minimum distance to the blade and handle surfaces. Checking an axis line can pass a fingertip within 21 mm of a blade edge despite the published 50 mm clearance condition.",
+    "Distinguish breakage risk from measured breakage. Specify the PETG surrogate and its manipulation equivalence, including at least replica-to-pan, blade and rack friction checks with stated measured values or provisional limits. The README currently claims any grab, drop or upside-down landing breaks a real cookie.",
+    "Resolve runtime placeholders using one selected final artifact. Two existing success records ended at 1843 controls, 92.15 s at 20 Hz, with 1844 frames in the observed movie. Verify current hold and model/media packet before submission."
+  ]
+}

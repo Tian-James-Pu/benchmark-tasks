@@ -1,0 +1,19 @@
+{
+  "title": "Fit a balsa glider's wing through the slot in its body, centred and square, then leave the glider on the table",
+  "category": "Societal relatability",
+  "keywords": [
+    "balsa glider",
+    "toy assembly",
+    "slot fit",
+    "bimanual",
+    "fragile part"
+  ],
+  "instruction": "Fit the wing through the glider's body, centred and square, and leave the glider on the table.",
+  "context": "Putting together a dime-store balsa glider is a childhood job many people remember: Guillow's has made them in Wakefield, Massachusetts, for 100 years, and the No. 30 Jetfire is sold as 'no glue required, slot and tab'. The wing is a 2 mm balsa sheet that must slide through a slot in a 3.2 mm body that is barely taller than the sheet, while the other hand holds the light body up; pushed through tilted, it wedges the slot and splits the balsa, and a wing left off-centre or crooked makes the glider turn.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left; heights from the table top (74.75 cm up). Task objects: Guillow's Jetfire No. 30 balsa glider, tailplane and nose clip already on, wing off. Body: balsa profile 28 long x 3.4 tall (6.4 at the fin) x 0.32 thick; tailplane 12 x 4 x 0.16 through its tail slot, flush with the body's lower edge; red plastic nose clip; 0.005 in all. It stands on its lower edge and tailplane along x, nose away from the arms, its wing slot (9.5 long x 0.28 tall, bottom 0.7 above the lower edge) centred at (30, 10). Wing: flat balsa plate 30.5 span, 7.5 root chord tapering to 4.5 at the tips, 0.2 thick, straight trailing edge, 0.004, flat on the table printed side up, trailing edge towards the arms, root-chord centre at (30, -13.5), turned 6 degrees anticlockwise. Distractors, ignored by scoring (SimReady): ceramic mug 11.4 x 9 x 8, 0.30, at (50, 24) yaw 2.4 rad; notebook 22.9 x 17 x 1, 0.12, at (53, -20) yaw 0.25 rad; thin blue marker 10.9 x 0.8, 0.01, at (47, 2) yaw 1.2 rad.",
+  "scoring": "0 if the slot has ever cracked: the balsa strip under the wing slot split from the slot's ends (in simulation, the slot wedged open more than 0.5 mm, about 4 N). Through: the wing passes through the wing slot, its leading tip at least 5 mm past the body's middle. Offset: the wing's centre from the body's mid-plane, along the span (half the difference of the two tip overhangs measured from the body's sides). Out of square: the angle, seen from above, between the wing's span and the perpendicular to the body. 1.0: through, offset at most 3 mm, out of square at most 3 degrees, the glider standing on the table (lower edge within 3 mm of it, tilted at most 10 degrees), glider and wing still, every fingertip at least 3 cm from glider and wing, all held 1 s. 0.5: through, offset at most 10 mm and out of square at most 8 degrees, without the rest of 1.0. 0.25: through, further off-centre or out of square than that. 0 otherwise (the wing not through the slot).",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Slide the wing back out, lay it flat on its tape marks, and stand the glider on its tape marks. A glider whose slot has split is replaced (about $5).",
+  "fidelity": "Glider and wing are custom rigid meshes at the Jetfire's listed 12 in span; body thickness, chords, slot size and masses are estimates (no published drawing). The wing is a flat rigid plate: its built-in dihedral and flex are not modelled. The slot's give is one sprung strip (8 N/mm); a crack is that strip forced 0.5 mm open (about 4 N), an estimate, not measured. Tailplane and nose clip are fixed to the body. Distractors are SimReady props.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

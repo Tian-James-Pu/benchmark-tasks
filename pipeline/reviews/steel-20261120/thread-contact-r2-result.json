@@ -1,0 +1,77 @@
+{
+  "result": "/home/mzhang/code/benchmark-tasks/pipeline/isolated-trials/steel-thread-contact-r2-20261120/result.json",
+  "status": "R2 stabilized the diagnostic wrench and demonstrated multi-turn thread contact, complete free removal and assisted reengagement. Strict first-contact one-turn lead criterion failed; later settled reengagement matches source pitch. No further run.",
+  "all_predeclared_contact_criteria_met": false,
+  "qualified_task": false,
+  "metrics": {
+    "steps": 1200,
+    "windows": [
+      {
+        "label": "advance",
+        "completed_required_turns": true,
+        "start_step": 60,
+        "end_step": 165,
+        "turns": 3.028468890339757,
+        "lead_mm_per_rev": 2.4977962242338765,
+        "rms_residual_mm": 0.003593473372006509,
+        "lateral_max_mm": 0.07645549169944066,
+        "tilt_max_deg": 0.28334381813316173,
+        "positive_contact_fraction": 0.7169811320754716,
+        "source_lead_match_within_10_percent": true,
+        "residual_within_0p20mm": true,
+        "alignment_within_1mm_5deg": true,
+        "passed": true
+      },
+      {
+        "label": "reverse",
+        "completed_required_turns": true,
+        "start_step": 300,
+        "end_step": 405,
+        "turns": 3.0218213378142416,
+        "lead_mm_per_rev": 2.5015738362231486,
+        "rms_residual_mm": 0.003588217837623079,
+        "lateral_max_mm": 0.07200712652572666,
+        "tilt_max_deg": 0.2636689584551188,
+        "positive_contact_fraction": 0.7735849056603774,
+        "source_lead_match_within_10_percent": true,
+        "residual_within_0p20mm": true,
+        "alignment_within_1mm_5deg": true,
+        "passed": true
+      },
+      {
+        "label": "reengage",
+        "completed_required_turns": true,
+        "start_step": 843,
+        "end_step": 885,
+        "turns": 1.0017415861538166,
+        "lead_mm_per_rev": 2.1451223177834207,
+        "rms_residual_mm": 0.06795144112396792,
+        "lateral_max_mm": 0.5229839269564873,
+        "tilt_max_deg": 2.3061182778955374,
+        "positive_contact_fraction": 0.9767441860465116,
+        "source_lead_match_within_10_percent": false,
+        "residual_within_0p20mm": true,
+        "alignment_within_1mm_5deg": true,
+        "passed": false
+      }
+    ],
+    "free_detachment_demonstrated": true,
+    "first_detached_step": 680,
+    "released_assistance_zero": true,
+    "released_lateral_max_mm": 0.08106540629012057,
+    "released_z_drift_mm": 0.036835670471191406,
+    "released_remains_over_bolt": true,
+    "max_abs_angular_velocity_rad_s": 3.920197010040283,
+    "maximum_applied_force_component_N": 0.6444653592025776,
+    "maximum_applied_torque_component_Nm": 0.0006137451976192808,
+    "all_predeclared_contact_criteria_met": false
+  },
+  "remaining_limits": [
+    "First-contact reengagement transient fails strict lead tolerance; later settled3-turn fit is exploratory and cannot erase it.",
+    "One resolution, time step and prescribed initial pose; no robustness or convergence claim.",
+    "Original source nut is not watertight; PhysX cooks hole closure. Exact cooked topology and contact clearance remain unmeasured.",
+    "Force loads, compliant guide gains and friction are diagnostic choices, not OEM torque/force calibration.",
+    "Free native rigid-body contact is demonstrated with virtual compliant alignment and gravity compensation; robot/tool grasp, arbitrary misalignment, fastening preload and practical work remain unproved.",
+    "M20 proof cannot be rescaled into a claim about the M2.6 feeder or an accepted task."
+  ]
+}

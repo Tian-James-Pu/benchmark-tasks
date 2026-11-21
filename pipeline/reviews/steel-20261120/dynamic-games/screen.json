@@ -1,0 +1,149 @@
+{
+  "checked_at": "2026-11-20T03:20:58.834690+00:00",
+  "scope": "Bounded read-only screen; no GPU, claim, task build, purchase, upload, submission or remote comments.",
+  "decision": "NEITHER GO: external benchmark overlap defeats current novelty/importance case, despite recognizable game play and plausible native contact.",
+  "steel_commit": "a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a",
+  "toy_category_judgment": "Do not reject games categorically. Both are recognizable physical activities; commercial miniature game equipment is legitimate at its own scale. AcceptedJenga2522 proves games can qualify. Rejectedcardhouse2862 is not used as a universal toy rule.",
+  "air_hockey": {
+    "decision": "NO-GO as a new task in this form",
+    "ordinary_relevance": "Real tabletop sport involving striker contact, puck sliding and goal entry. Meaningful dynamic robot control, not static reach/pick-place.",
+    "hardware": {
+      "primary_url": "https://www.playcraft.com/playcraft-sport-table-top-40-air-hockey-table.html",
+      "product": "Playcraft Sport PSAH4001",
+      "outside_dimensions_mm": [
+        1016,
+        508,
+        203.2
+      ],
+      "playfield_mm": [
+        1003.3,
+        495.3
+      ],
+      "mass_kg": 8.618,
+      "supplied": "Two pushers,two pucks,electric air-blower motor",
+      "secondary_manufacturer_manual": "https://franklinsports.com/media/wysiwyg/Manuals/replacement-parts/88906-20in-air-hockey.pdf",
+      "secondary_evidence": "Franklin88906 is a real20in/508mm battery-powered tabletop product; no need invent one-third-scale arcade table. Current availability not established.",
+      "missing_before_faithful_build": [
+        "Puck and pusher exactdimensions/masses/handlegeometry",
+        "Measured powered-surface deceleration and rail/puck rebound",
+        "Physical native-gripper fit on stockpusher"
+      ]
+    },
+    "steel_contact_audit": {
+      "source": "https://github.com/skild-ai/steel/blob/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/01_basic_contacts/air_hockey/example.py",
+      "mechanism": "Free nonkinematic puck with gravity and zeroinitialtwist; sixUR5jointtargets, no drivenpuckcoordinate. Howevermallet is weldedgeometry on body6/wrist, not picked/held by fingers.",
+      "scene_geometry_mm": {
+        "field": [
+          880,
+          1300
+        ],
+        "puck": [
+          82,
+          82,
+          28
+        ],
+        "mallet_disc": [
+          120,
+          120,
+          54
+        ],
+        "mallet_stem": [
+          50,
+          50,
+          70
+        ]
+      },
+      "puck_mass_kg": 0.0887211,
+      "materials": "Fieldmu0.02,puckmu0.04,puckrestitution0.75; low-friction surrogate, no explicitaircushion model. Uncalibrated for retailproduct.",
+      "max_commanded_arm_joint_rate_rad_s": 3.29944,
+      "runtime": "60Hz prerecordedjointtargets; cannot transfer to20HzYAM by namechange."
+    },
+    "yam_contact_path": "Physicallygrasp stockpusher handle with unmodifiedparallelgripper, keepflat onfield, translate tangentially throughpuck then letpuckcoast. Must forbid gripper/puckpickup and directpucktouch if claimingairhockey; scoring goalpositionalone isinsufficient. Planeheight/railclearance anddynamiccontact must be checked, notmerelyIKreach.",
+    "launch_estimate": {
+      "model": "Illustrative Coulombslide only, notretailmeasurement: v=sqrt(2*mu*g*L).",
+      "travel_m": 0.8,
+      "assumed_mu": [
+        0.02,
+        0.04
+      ],
+      "required_initial_puck_speed_m_s": [
+        0.5602856414365801,
+        0.7923635529225206
+      ],
+      "interpretation": "0.56\u20130.79m/s puck speed isplausible for a contact strike; YAMconfiguration5.5rad/s shoulder and20rad/s wrist are motorlimits, not proof ofmallet acceleration orgraspstability. A0.15mstrike at0.6m/s lasts0.25s/five20Hzactions. Couldbe acoupon ifnoveltychanged."
+    },
+    "board": "No exacthockey/pucktask in freshrepo search; this is not comprehensive externalclearance.",
+    "decisive_external_overlap": {
+      "url": "https://air-hockey-challenge.robot-learning.net/",
+      "rules": "https://air-hockey-challenge.robot-learning.net/game-rules",
+      "code": "https://github.com/AirHockeyChallenge/air_hockey_challenge",
+      "reason": "Established simulated/realrobotbenchmark already tests dynamicmalletstrike,puckgoalentry,reactivity,actuatorlimits andtableconstraints. Aone-shot smallcommercialtableversion narrows thesameability; no meaningfuldistinction supplied. Nativepickup/grasp beforestrike doesnotbyitselfchange corebenchmark."
+    }
+  },
+  "beer_pong": {
+    "decision": "NO-GO as a new task in this form",
+    "ordinary_relevance": "Recognizableparty/sportgame withballisticrelease andcupcapture; officialrulesusewater, soalcohol isnotnecessary.",
+    "hardware": {
+      "primary_url": "https://bpong.com/wsobp/official-rules-of-the-world-series-of-beer-pong/",
+      "table_mm": [
+        2438.4,
+        609.6,
+        698.5
+      ],
+      "ball_diameter_mm": 40,
+      "cup_oz": 16,
+      "cup_top_height_base_mm": [
+        92.075,
+        117.475,
+        57.15
+      ],
+      "water": "Officialcupsone-third toone-half filled withwater; standardbounce shotsareordinaryplay.",
+      "manufacturer_obtainable_product": "https://www.gopong.com/products/gopong-pro-8-foot-premium-beer-pong-table",
+      "limit": "Do not call1m throw distance a regulation8fttable game. Ashorterretailgame needs itsown source; liquidcupcapture affects rebound and cannot silentlybefaked."
+    },
+    "steel_contact_audit": {
+      "source": "https://github.com/skild-ai/steel/blob/a8471c460ba7e36b1c4bb6e63eacd28e282b6e5a/examples/shelf/01_basic_contacts/beer_pong/example.py",
+      "mechanism": "Free40mmball,2.7g,nonkinematic,normalgravity,zeroinitialtwist. SevenFrankaarmcoordinates andtwoslidingfingercoordinates driven; norelease-timeballvelocitywrite insharedexportedrunner. Cupsstaticworldgeometry; thinwall convexcollisions.",
+      "geometry": "Ballstarts y=-0.40m; cupcenter info y=0.63m, height0.12m. About1.03m nominalseparation, muchshorterthanregulationtable.",
+      "gripper_rates": "Peakcommanded fingercoordinate rates0.625m/s each; installedYAMjaws max20*(.096/2/6.57)=0.146m/s each. Steel\u2019s fastrelease cannotbeassumed underYAM.",
+      "materials": "Tablerestitution1.0 andball0.6 inexportedscene; actual bounce/cupcapture needmeasurement. Nofluidmodel identified."
+    },
+    "yam_contact_path": "Pinchreal40mmball atlowforce, accelerate armthroughthrow, openjaws while moving, then nativefreeballtablebounce andcupcapture. Noattachedballpose/velocityinjection, nohiddenlauncher. UnmodifiedYAMopening/timing andrealballcrushresistance areunproven.",
+    "launch_estimate": {
+      "model": "Ideal45degree equal-height no-drag directthrow comparison only; bounce pathrequires separate restitution/geometrycalculation.",
+      "range_m": [
+        1,
+        2
+      ],
+      "speed_m_s": [
+        3.132091952673165,
+        4.4294469180700204
+      ],
+      "interpretation": "3.13m/s for1m,4.43m/s for2m; these exceed an ordinaryslowplacement motion. AggregateYAMtipspeed dependsJacobian andjointlimits, so notclaiming impossible; nativecontact demo needed.20Hz release timingmoves0.16\u20130.22m peraction atthose speeds."
+    },
+    "board": "No exactbeerpong titlefound; #2481canthrow isrevisedpending butcenterspedallinkage andisnot claimedexactduplicate. #2631/#2833 werefinalrejected for externalPaddleBounceoverlap, notbecausegamesareworthless.",
+    "decisive_external_overlap": {
+      "url": "https://github.com/ALRhub/fancy_gym/blob/da1bced0181ced8267247779c001509a2fc94635/docs/source/envs/fancy/mujoco.md",
+      "code": "https://github.com/ALRhub/fancy_gym/blob/da1bced0181ced8267247779c001509a2fc94635/fancy_gym/envs/mujoco/beerpong/beerpong.py",
+      "reason": "FancyGymBeerPong-v0 alreadytests throw/release timing andballlandingincup; tracks table/cupcontact, andcurrentlydoesnotforceexactlyonebounce. Requiringonebounce is a constrainedroute tothesamecorecup-tossoutcome, notyet a meaningfulnewskill case.",
+      "caveat": "FancyGym pinsballpose/velocity tohand before release; physicalgrasp wouldimprovefidelity butdoesnotautomaticallyestablishtasknovelty. Do not claim theexistingbenchmark alreadytests nativefingergrasp ormandatoryonebounce."
+    }
+  },
+  "recommendation": "Preserve ascontact/ballistics mechanisms only. No unheld, importance-valid newbuildcandidate established; stopbeforeGPU. Reopenonlywith a substantive ordinarygame operation not coveredby these benchmarks, notchangedcounts,goals,tablecolors orstartingpositions.",
+  "source_hashes": {
+    "fancy-commit.txt": "931f55fd9a403d92a23a4c7ff00f75f3cbfaa27acdc4963201235d25baffb11f",
+    "beer_pong-scene.bin": "753f50c7b1d56ef498ef45e463e88c00287d9344e1536930df45f631380d06dd",
+    "mujoco.md": "4ebc62a652e93c483fc8eec0060a1429b2d039ecd5ac71b2db3d54733b4d46b6",
+    "air_hockey-scene.bin": "a6fcc49019cad030267bfd3f878f6c061b2d4451b624d7a9000103b673a0ba19",
+    "beerpong.py": "152ede82688c9dca4aa67d6bca579cf955491dd600735b55b043c05e3bc442eb",
+    "beer_pong.py": "219902ec32da411c14737f1e58ba14cd0f1df9ec33a7c08263c553568c2fadd6",
+    "beer_pong-scene.json": "fb4aa2f8d649ca49f18545e945447823cd57302c97c3cc48631eac5d051ddb58",
+    "air_hockey.py": "e1b90746c5f302732176f9a6cc6c2cd4b8db32b0ed88ccbf7ea6c91898a17746",
+    "pr-2631.json": "113bf6ca3dc343c833d685a6e292375488268d9effa2c33665c29c3174f790d7",
+    "pr-2481.json": "4294eb8136ff0039e19f5081e54947849f8e4d20d0a0c92b604158acb91bcb51",
+    "pr-2833.json": "e16c120122f0785e6bcd91f83a364ae6f6d05d76fbffc9824d07caf6232e4ad5",
+    "live-searches.json": "82d0b7ac6cfb955fc0a49d1083ad944bb5bb01b9d73626f935fa37bd7e5855e9",
+    "scene-summary.json": "bb41bfc1b39f8bfbcf6587b3a0cc377e62f3a48d833beb7453c90f6e9060bab9",
+    "air_hockey-scene.json": "72ff38ffd98b7710c261eb7d545fba8a3d43fd10579580854645f79fb187125f"
+  }
+}

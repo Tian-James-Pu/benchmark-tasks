@@ -1,0 +1,573 @@
+{
+  "source": "https://steel.skild.ai/examples/",
+  "count": 81,
+  "examples": [
+    {
+      "name": "basic_dzhanibekov",
+      "title": "Basic dzhanibekov",
+      "description": "The Dzhanibekov effect on a free T-shaped rigid body.",
+      "url": "https://steel.skild.ai/examples/basic_dzhanibekov/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/basic_dzhanibekov"
+    },
+    {
+      "name": "basic_joints",
+      "title": "Basic joints",
+      "description": "Joints of every type built with the ModelBuilder: ball, distance, prismatic, revolute and more.",
+      "url": "https://steel.skild.ai/examples/basic_joints/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/basic_joints"
+    },
+    {
+      "name": "basic_multi_solver_overlay",
+      "title": "Basic multi solver overlay",
+      "description": "Four solvers run the same quadruple pendulum, overlaid as viewer layers.",
+      "url": "https://steel.skild.ai/examples/basic_multi_solver_overlay/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/basic_multi_solver_overlay"
+    },
+    {
+      "name": "basic_pendulum",
+      "title": "Basic pendulum",
+      "description": "A double pendulum built with the ModelBuilder.",
+      "url": "https://steel.skild.ai/examples/basic_pendulum/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/basic_pendulum"
+    },
+    {
+      "name": "basic_shapes",
+      "title": "Basic shapes",
+      "description": "Every collision shape the ModelBuilder offers, dropped together.",
+      "url": "https://steel.skild.ai/examples/basic_shapes/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/basic_shapes"
+    },
+    {
+      "name": "basic_urdf",
+      "title": "Basic urdf",
+      "description": "A quadruped articulation loaded from URDF.",
+      "url": "https://steel.skild.ai/examples/basic_urdf/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/basic_urdf"
+    },
+    {
+      "name": "body_limits",
+      "title": "Speed caps",
+      "description": "Gold bodies have a fall-speed cap, a spin cap and spin damping.",
+      "url": "https://steel.skild.ai/examples/body_limits/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/body_limits"
+    },
+    {
+      "name": "d6",
+      "title": "Six-axis joints",
+      "description": "A driven gantry, a universal joint and a gimbal.",
+      "url": "https://steel.skild.ai/examples/d6/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/d6"
+    },
+    {
+      "name": "drives",
+      "title": "Joint motors",
+      "description": "Three arms driven to the same angle with different torque limits.",
+      "url": "https://steel.skild.ai/examples/drives/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/drives"
+    },
+    {
+      "name": "load_friction",
+      "title": "Load-dependent friction",
+      "description": "A hinge whose friction grows with load holds a heavy pendulum.",
+      "url": "https://steel.skild.ai/examples/load_friction/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/load_friction"
+    },
+    {
+      "name": "selection_cartpole",
+      "title": "Selection cartpole",
+      "description": "Batch control of many cartpole worlds through an ArticulationView.",
+      "url": "https://steel.skild.ai/examples/selection_cartpole/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/selection_cartpole"
+    },
+    {
+      "name": "sleeping",
+      "title": "Sleeping",
+      "description": "Four stacks of ants topple into each other; sleeping islands turn grey.",
+      "url": "https://steel.skild.ai/examples/sleeping/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/sleeping"
+    },
+    {
+      "name": "vel_limit",
+      "title": "Joint speed limits",
+      "description": "Two double pendulums; the gold one has a speed limit.",
+      "url": "https://steel.skild.ai/examples/vel_limit/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/00_basics/vel_limit"
+    },
+    {
+      "name": "air_hockey",
+      "title": "Air hockey",
+      "description": "A robot arm strikes a puck into the far goal.",
+      "url": "https://steel.skild.ai/examples/air_hockey/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/air_hockey"
+    },
+    {
+      "name": "balance_bird",
+      "title": "Balance bird",
+      "description": "A procedural toy bird balances on a narrow pedestal.",
+      "url": "https://steel.skild.ai/examples/balance_bird/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/balance_bird"
+    },
+    {
+      "name": "basic_conveyor",
+      "title": "Basic conveyor",
+      "description": "A baggage-claim conveyor: one rotating belt mesh on a kinematic root carries bags around.",
+      "url": "https://steel.skild.ai/examples/basic_conveyor/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/basic_conveyor"
+    },
+    {
+      "name": "basic_conveyor_forces",
+      "title": "Basic conveyor forces",
+      "description": "A multi-belt conveyor circuit moves boxes with a velocity field instead of belt friction.",
+      "url": "https://steel.skild.ai/examples/basic_conveyor_forces/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/basic_conveyor_forces"
+    },
+    {
+      "name": "beer_pong",
+      "title": "Beer pong",
+      "description": "Throw a ping-pong ball: one bounce, then into the cup.",
+      "url": "https://steel.skild.ai/examples/beer_pong/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/beer_pong"
+    },
+    {
+      "name": "bounce",
+      "title": "Bounce",
+      "description": "Balls bounce on pads from dead to very bouncy.",
+      "url": "https://steel.skild.ai/examples/bounce/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/bounce"
+    },
+    {
+      "name": "incline",
+      "title": "Incline",
+      "description": "A box and two stacks rest on a 22\u00b0 slope without sliding.",
+      "url": "https://steel.skild.ai/examples/incline/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/incline"
+    },
+    {
+      "name": "kinematic",
+      "title": "Kinematic paddle",
+      "description": "A paddle on a fixed path sweeps boxes; one box ignores gravity.",
+      "url": "https://steel.skild.ai/examples/kinematic/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/kinematic"
+    },
+    {
+      "name": "mjorg_falling_chain",
+      "title": "Falling chain (mujoco.org)",
+      "description": "Four interlocked thin chain links drop onto a catch bar and hang from it.",
+      "url": "https://steel.skild.ai/examples/mjorg_falling_chain/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/mjorg_falling_chain"
+    },
+    {
+      "name": "mjorg_luggage_carousel",
+      "title": "Luggage carousel (mujoco.org)",
+      "description": "Three conveyor belts feed six bags onto a spinning baggage-claim carousel.",
+      "url": "https://steel.skild.ai/examples/mjorg_luggage_carousel/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/mjorg_luggage_carousel"
+    },
+    {
+      "name": "mjorg_magnetic_door",
+      "title": "Magnetic door (mujoco.org)",
+      "description": "A magnet strip snaps an ajar fridge door shut; a light tug cannot open it, a hard one can, and it swings back and latches.",
+      "url": "https://steel.skild.ai/examples/mjorg_magnetic_door/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/mjorg_magnetic_door"
+    },
+    {
+      "name": "newton_cradle",
+      "title": "Newton cradle",
+      "description": "A five-ball Newton's cradle: one ball swings in, one swings out.",
+      "url": "https://steel.skild.ai/examples/newton_cradle/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/newton_cradle"
+    },
+    {
+      "name": "overlap",
+      "title": "Overlapping boxes",
+      "description": "20 boxes start deep inside each other and separate gently.",
+      "url": "https://steel.skild.ai/examples/overlap/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/overlap"
+    },
+    {
+      "name": "rods",
+      "title": "Sliding blocks",
+      "description": "Tall blocks slide across a grippy floor and tip over.",
+      "url": "https://steel.skild.ai/examples/rods/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/rods"
+    },
+    {
+      "name": "spinning_top",
+      "title": "Spinning top",
+      "description": "A spinning chuck winds up a top and lets it go on its tip.",
+      "url": "https://steel.skild.ai/examples/spinning_top/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/spinning_top"
+    },
+    {
+      "name": "torsion",
+      "title": "Pinch grip",
+      "description": "Fingertips pinch a bar off-centre; the gold pair holds it level.",
+      "url": "https://steel.skild.ai/examples/torsion/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/01_basic_contacts/torsion"
+    },
+    {
+      "name": "bolt_sweep",
+      "title": "Bolt sweep",
+      "description": "A robot-mounted scraper sweeps 96 loose nuts, bolts and washers into a bin.",
+      "url": "https://steel.skild.ai/examples/bolt_sweep/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/bolt_sweep"
+    },
+    {
+      "name": "brick_pour",
+      "title": "Brick pour",
+      "description": "Pour toy bricks from a jar down three chutes.",
+      "url": "https://steel.skild.ai/examples/brick_pour/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/brick_pour"
+    },
+    {
+      "name": "card_house",
+      "title": "Card house",
+      "description": "Four levels of playing cards held up by friction alone.",
+      "url": "https://steel.skild.ai/examples/card_house/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/card_house"
+    },
+    {
+      "name": "crane_wrecking_ball",
+      "title": "Crane wrecking ball",
+      "description": "A UR10 grasps a toy crane and slews its ball into a dry-stacked miniature building.",
+      "url": "https://steel.skild.ai/examples/crane_wrecking_ball/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/crane_wrecking_ball"
+    },
+    {
+      "name": "domino_spiral",
+      "title": "Domino spiral",
+      "description": "Dominoes along a spiral, the first one tilted to start the chain.",
+      "url": "https://steel.skild.ai/examples/domino_spiral/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/domino_spiral"
+    },
+    {
+      "name": "jenga",
+      "title": "Jenga",
+      "description": "Lift a loose block and add it to the top of the tower.",
+      "url": "https://steel.skild.ai/examples/jenga/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/jenga"
+    },
+    {
+      "name": "mjorg_gothic_arch",
+      "title": "Gothic arch (mujoco.org)",
+      "description": "A mortarless pointed arch of seventeen loose stones stands on friction alone.",
+      "url": "https://steel.skild.ai/examples/mjorg_gothic_arch/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/mjorg_gothic_arch"
+    },
+    {
+      "name": "mjorg_house_of_cards",
+      "title": "House of cards (mujoco.org)",
+      "description": "A four-storey house of 26 thin playing cards stands on friction alone.",
+      "url": "https://steel.skild.ai/examples/mjorg_house_of_cards/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/mjorg_house_of_cards"
+    },
+    {
+      "name": "mjorg_sleeping_dominos",
+      "title": "Sleeping dominos (mujoco.org)",
+      "description": "One tilted domino starts a wave through 96 sleeping dominoes; each row wakes as it arrives.",
+      "url": "https://steel.skild.ai/examples/mjorg_sleeping_dominos/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/mjorg_sleeping_dominos"
+    },
+    {
+      "name": "ratio_stack",
+      "title": "Mass-ratio stack",
+      "description": "Six cubes, each three times heavier than the one below.",
+      "url": "https://steel.skild.ai/examples/ratio_stack/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/ratio_stack"
+    },
+    {
+      "name": "shapes_in_box",
+      "title": "Shapes in box",
+      "description": "Rigid bodies of every shape type dropped into a box container.",
+      "url": "https://steel.skild.ai/examples/shapes_in_box/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/shapes_in_box"
+    },
+    {
+      "name": "trebuchet",
+      "title": "Trebuchet",
+      "description": "A counterweight trebuchet hurls a boulder at a brick wall.",
+      "url": "https://steel.skild.ai/examples/trebuchet/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/02_many_contacts/trebuchet"
+    },
+    {
+      "name": "contacts_rj45_plug",
+      "title": "Contacts rj45 plug",
+      "description": "An RJ45 plug moved into its socket with the translation gizmo.",
+      "url": "https://steel.skild.ai/examples/contacts_rj45_plug/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/03_mesh_sdf_contacts/contacts_rj45_plug"
+    },
+    {
+      "name": "franka_plate_rack",
+      "title": "Franka plate rack",
+      "description": "A Franka lifts a dinner plate and places it in a wire rack beside two resting plates.",
+      "url": "https://steel.skild.ai/examples/franka_plate_rack/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/03_mesh_sdf_contacts/franka_plate_rack"
+    },
+    {
+      "name": "nut_bolt_hydro",
+      "title": "Nut bolt hydro",
+      "description": "A nut on a bolt with hydroelastic mesh contacts.",
+      "url": "https://steel.skild.ai/examples/nut_bolt_hydro/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/03_mesh_sdf_contacts/nut_bolt_hydro"
+    },
+    {
+      "name": "nut_bolt_sdf",
+      "title": "Nut bolt sdf",
+      "description": "A nut on a bolt with SDF mesh contacts.",
+      "url": "https://steel.skild.ai/examples/nut_bolt_sdf/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/03_mesh_sdf_contacts/nut_bolt_sdf"
+    },
+    {
+      "name": "robot_panda_hydro",
+      "title": "Robot panda hydro",
+      "description": "A Franka Panda picks and places with hydroelastic contacts and inverse kinematics.",
+      "url": "https://steel.skild.ai/examples/robot_panda_hydro/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/03_mesh_sdf_contacts/robot_panda_hydro"
+    },
+    {
+      "name": "viaduct_kit",
+      "title": "Viaduct kit",
+      "description": "A robot arm seats the top tier of a toy viaduct onto its pegs.",
+      "url": "https://steel.skild.ai/examples/viaduct_kit/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/03_mesh_sdf_contacts/viaduct_kit"
+    },
+    {
+      "name": "basic_mimic_joint",
+      "title": "Basic mimic joint",
+      "description": "A lead screw: a prismatic nut joint mimics a revolute screw joint.",
+      "url": "https://steel.skild.ai/examples/basic_mimic_joint/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/04_mimic_joints/basic_mimic_joint"
+    },
+    {
+      "name": "linkages",
+      "title": "Linkages",
+      "description": "Copied joint motion and a closed four-bar linkage.",
+      "url": "https://steel.skild.ai/examples/linkages/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/05_looped_linkages/linkages"
+    },
+    {
+      "name": "loop_delta_robot",
+      "title": "Delta robot",
+      "description": "Three driven arms swing a level platform in circles on parallelogram forearms.",
+      "url": "https://steel.skild.ai/examples/loop_delta_robot/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/05_looped_linkages/loop_delta_robot"
+    },
+    {
+      "name": "loop_dr_testmech",
+      "title": "Loop dr testmech",
+      "description": "The DR TestMech in many worlds on Kamino.",
+      "url": "https://steel.skild.ai/examples/loop_dr_testmech/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/05_looped_linkages/loop_dr_testmech"
+    },
+    {
+      "name": "loop_fourbar",
+      "title": "Loop fourbar",
+      "description": "A four-bar linkage in many worlds on Kamino.",
+      "url": "https://steel.skild.ai/examples/loop_fourbar/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/05_looped_linkages/loop_fourbar"
+    },
+    {
+      "name": "loop_hoberman_sphere",
+      "title": "Hoberman sphere",
+      "description": "A Hoberman sphere of 120 bars and 240 hinges opens and closes from one driven hub.",
+      "url": "https://steel.skild.ai/examples/loop_hoberman_sphere/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/05_looped_linkages/loop_hoberman_sphere"
+    },
+    {
+      "name": "loop_parallel_gripper",
+      "title": "Parallelogram gripper",
+      "description": "One slider opens and closes two parallelogram fingers whose jaws stay vertical.",
+      "url": "https://steel.skild.ai/examples/loop_parallel_gripper/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/05_looped_linkages/loop_parallel_gripper"
+    },
+    {
+      "name": "anymal_d_many_worlds",
+      "title": "Anymal d many worlds",
+      "description": "ANYmal D in many worlds on Kamino.",
+      "url": "https://steel.skild.ai/examples/anymal_d_many_worlds/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/06_looped_linkages_contacts/anymal_d_many_worlds"
+    },
+    {
+      "name": "loop_dr_legs",
+      "title": "Loop dr legs",
+      "description": "DR Legs in many worlds on Kamino.",
+      "url": "https://steel.skild.ai/examples/loop_dr_legs/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/06_looped_linkages_contacts/loop_dr_legs"
+    },
+    {
+      "name": "balance_board",
+      "title": "Balance board",
+      "description": "Restore balance by placing the missing counterweight.",
+      "url": "https://steel.skild.ai/examples/balance_board/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/balance_board"
+    },
+    {
+      "name": "box_turn",
+      "title": "Box turn",
+      "description": "Two arms pinch a box between their fingertips, flip it and turn it.",
+      "url": "https://steel.skild.ai/examples/box_turn/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/box_turn"
+    },
+    {
+      "name": "controller_operational_space_hybrid_force_motion",
+      "title": "Controller operational space hybrid force motion",
+      "description": "Operational-space hybrid force and motion control on two robots.",
+      "url": "https://steel.skild.ai/examples/controller_operational_space_hybrid_force_motion/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/controller_operational_space_hybrid_force_motion"
+    },
+    {
+      "name": "drawer_fork",
+      "title": "Drawer and fork",
+      "description": "Pull open a drawer, then put a fork in its tray.",
+      "url": "https://steel.skild.ai/examples/drawer_fork/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/drawer_fork"
+    },
+    {
+      "name": "ragdoll",
+      "title": "Ragdoll",
+      "description": "A 10-part ragdoll tumbles down a staircase.",
+      "url": "https://steel.skild.ai/examples/ragdoll/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/ragdoll"
+    },
+    {
+      "name": "robot_allegro_hand",
+      "title": "Robot allegro hand",
+      "description": "An Allegro hand articulation from USD.",
+      "url": "https://steel.skild.ai/examples/robot_allegro_hand/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/robot_allegro_hand"
+    },
+    {
+      "name": "robot_anymal_d",
+      "title": "Robot anymal d",
+      "description": "ANYmal D in many worlds on MuJoCo or Kamino.",
+      "url": "https://steel.skild.ai/examples/robot_anymal_d/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/robot_anymal_d"
+    },
+    {
+      "name": "robot_asroballet",
+      "title": "Robot asroballet",
+      "description": "LQR and learned-policy control of the asRoBallet robot.",
+      "url": "https://steel.skild.ai/examples/robot_asroballet/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/robot_asroballet"
+    },
+    {
+      "name": "robot_cartpole",
+      "title": "Robot cartpole",
+      "description": "A cartpole articulation from USD.",
+      "url": "https://steel.skild.ai/examples/robot_cartpole/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/robot_cartpole"
+    },
+    {
+      "name": "robot_g1",
+      "title": "Robot g1",
+      "description": "A Unitree G1 humanoid from USD.",
+      "url": "https://steel.skild.ai/examples/robot_g1/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/robot_g1"
+    },
+    {
+      "name": "robot_policy",
+      "title": "Robot policy",
+      "description": "Robots pretrained in IsaacLab with RL, run with their policies.",
+      "url": "https://steel.skild.ai/examples/robot_policy/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/robot_policy"
+    },
+    {
+      "name": "robot_ur10",
+      "title": "Robot ur10",
+      "description": "A UR10 arm from USD under a joint-space controller.",
+      "url": "https://steel.skild.ai/examples/robot_ur10/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/robot_ur10"
+    },
+    {
+      "name": "toaster",
+      "title": "Toaster",
+      "description": "Insert a slice of bread and press the toaster lever.",
+      "url": "https://steel.skild.ai/examples/toaster/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/toaster"
+    },
+    {
+      "name": "toy_train",
+      "title": "Toy train",
+      "description": "Push a toy train along a track on its free-spinning wheels.",
+      "url": "https://steel.skild.ai/examples/toy_train/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/07_articulations/toy_train"
+    },
+    {
+      "name": "franka_cable_ik_pick_place",
+      "title": "Franka cable ik pick place",
+      "description": "A Franka FR3 uses GPU IK to pick up a deformable cable and move it.",
+      "url": "https://steel.skild.ai/examples/franka_cable_ik_pick_place/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/08_thin_shells_and_rods/franka_cable_ik_pick_place"
+    },
+    {
+      "name": "ball_tied_to_cloth",
+      "title": "Ball tied to cloth",
+      "description": "A rigid ball tied to the centre of a pinned VBD cloth sheet.",
+      "url": "https://steel.skild.ai/examples/ball_tied_to_cloth/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/ball_tied_to_cloth"
+    },
+    {
+      "name": "boxes_chain_cloth_soft",
+      "title": "Boxes chain cloth soft",
+      "description": "Rigid boxes and a pendulum chain meet a cloth sheet and soft bodies.",
+      "url": "https://steel.skild.ai/examples/boxes_chain_cloth_soft/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/boxes_chain_cloth_soft"
+    },
+    {
+      "name": "boxes_into_sand",
+      "title": "Boxes into sand",
+      "description": "Rigid boxes fall into a granular MPM bed.",
+      "url": "https://steel.skild.ai/examples/boxes_into_sand/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/boxes_into_sand"
+    },
+    {
+      "name": "fourbar_split_solvers",
+      "title": "Fourbar split solvers",
+      "description": "A four-bar linkage split between Kamino and MuJoCo or Steel.",
+      "url": "https://steel.skild.ai/examples/fourbar_split_solvers/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/fourbar_split_solvers"
+    },
+    {
+      "name": "franka_chain_on_cable",
+      "title": "Franka chain on cable",
+      "description": "A Franka picks and places a short rigid chain tied to a VBD cable.",
+      "url": "https://steel.skild.ai/examples/franka_chain_on_cable/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/franka_chain_on_cable"
+    },
+    {
+      "name": "franka_cloth_block",
+      "title": "Franka cloth block",
+      "description": "A rigid block rests on a VBD cloth hammock a Franka handles.",
+      "url": "https://steel.skild.ai/examples/franka_cloth_block/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/franka_cloth_block"
+    },
+    {
+      "name": "franka_shirt_fold_stack",
+      "title": "Franka shirt fold stack",
+      "description": "A Franka folds and stacks a T-shirt with two-way cloth coupling.",
+      "url": "https://steel.skild.ai/examples/franka_shirt_fold_stack/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/franka_shirt_fold_stack"
+    },
+    {
+      "name": "particle_pad_drawer",
+      "title": "Particle pad drawer",
+      "description": "An XPBD particle pad falls into a ball-jointed rigid drawer.",
+      "url": "https://steel.skild.ai/examples/particle_pad_drawer/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/particle_pad_drawer"
+    },
+    {
+      "name": "proxy_joint_gripper",
+      "title": "Proxy joint gripper",
+      "description": "A palm and two cube fingers grip a VBD soft grid.",
+      "url": "https://steel.skild.ai/examples/proxy_joint_gripper/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/proxy_joint_gripper"
+    },
+    {
+      "name": "shapes_onto_sand",
+      "title": "Shapes onto sand",
+      "description": "A dozen rigid shapes dropped onto MPM material with two-way coupling.",
+      "url": "https://steel.skild.ai/examples/shapes_onto_sand/",
+      "source": "https://github.com/skild-ai/steel/tree/main/examples/shelf/09_coupling/shapes_onto_sand"
+    }
+  ]
+}

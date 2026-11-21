@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-21T14:07:54Z",
+  "decision": "clear",
+  "queries": [
+    "mason, canning, jar, band (known_tasks.tsv, all states, refreshed 2026-11-21)",
+    "cap, screw on, thread(ed) on, twist, lid, bottle (accepted, pending, revising)",
+    "locking ring, hand-tight, cross-thread (PRs after #2700)",
+    "revision 2026-11-21: known_tasks.tsv refreshed; mason|canning|jar lid|band on|fingertip: no new canning-band task (only #3326 lid-press inspection, #1977 stuck pickle lid, rejected)"
+  ],
+  "nearest_prs": [
+    {
+      "pr": 281,
+      "state": "MERGED, TK-4TJ2UQ",
+      "read": "Title and acceptance: battery into a flashlight, tail cap screwed back on.",
+      "comparison": "Small one-piece cap on a tube; ours a 74 mm ring that must pass over and clamp a separate loose 6 g disc, regripping through 1.25 turns."
+    },
+    {
+      "pr": 1405,
+      "state": "MERGED",
+      "read": "Title: spin-on oil filter threaded square by hand then torqued with a cap wrench.",
+      "comparison": "Heavy one-piece canister onto a fixed nipple under a car; ours a light two-piece closure on a free-standing filled jar, kitchen context."
+    },
+    {
+      "pr": 3180,
+      "state": "OPEN, Received TK-T7YCN9 (revision), other team",
+      "read": "Title: mount an e-stop in a panel hole, tab in notch, screw its locking ring on hand-tight.",
+      "comparison": "Nut-like ring onto a fixed button body against a rigid panel; ours the ring must not cock or push off a loose disc beneath it, and the jar is free-standing."
+    },
+    {
+      "pr": 3222,
+      "state": "OPEN, Received TK-QWMWSB (revision), other team",
+      "read": "Title: humidifier bottle threaded square onto a flowmeter outlet, never cross-threaded.",
+      "comparison": "Whole bottle turned onto a fixed outlet; ours a ring clamping a separate loose lid."
+    },
+    {
+      "pr": 3326,
+      "state": "OPEN, Received TK-6S23DY (revision), other team",
+      "read": "Title: put away home-canned jars, finding the unsealed one by pressing each lid.",
+      "comparison": "Inspection of already-sealed jars by pressing; ours closes the jar before processing. Same context, different skill."
+    }
+  ],
+  "physical_skill": "Lift a thin 74 mm band, bring it down square over a loose 6 g disc on the jar rim, start it on a continuous glass thread without cross-threading, and turn it about 1.25 turns in several regrips until the flange seats on the disc, keeping the disc centred and the jar upright, then release.",
+  "valid_shortcuts": "None that score: do nothing 0; set the band square on the jar unturned (rests 3.7+ mm up) 0; bring it down tilted (cocks or pushes off the disc) 0. One arm suffices in simulation (the filled jar does not spin on the counter); the task does not claim two-handedness. Revision: over-tightening (202 degrees past contact) scores 0.5; stopping at first resistance scores 1.0 (Ball guidance); a quarter turn short scores 0.5.",
+  "distinct_from_nearest": "A two-piece closure: the threaded ring clamps a separate loose disc that it must not disturb, on a free-standing filled jar; nearest board tasks thread a one-piece cap, bottle or nut onto a fixed or rigid part, and the only canning task inspects sealed lids. Residual risk: reviewers may see screw-on closures as covered by #281/#1405/#3222.",
+  "task_py_sha256": "e1841538407704f424dbfaa341cb0bc7fff7843bfc6cbb21198da8984d3ef2dc",
+  "task_metadata_sha256": "f0f7a99de2d49a070fee7fb17eec7c6ad4e68d1c40249e2596394b553430550e"
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Fit a hinge-pin door stop: pull the top hinge pin, hold the stop's ring on the knuckle and put the pin back through it",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "door",
+    "hinge pin",
+    "door stop",
+    "peg in hole",
+    "home improvement"
+  ],
+  "instruction": "Fit the hinge-pin door stop on this door.",
+  "context": "A hinge-pin stop keeps a swinging door's handle off the wall. It has no screws: the top hinge's pin comes out, the stop's ring is held on the top knuckle, which is too small to balance it, and the pin goes back through the ring and all five knuckles.",
+  "setup": "World frame: x forward from the arm bases (y=0 between them), y left, z up; heights above the table top (74.75 cm), which stands in for a plane 1.75 m above the floor. Door (fixed frame): the top 45 cm of a 2x4 stud wall section, painted, faces at x=43.6 and 55.0 cm, with a 28 x 80 in (71.1 x 203.2 cm) opening: 1.9 cm pine jambs 11.4 cm deep, head jamb underside 28.1 cm up, 2-1/4 in (5.7 cm) casing 1.1 cm thick at its inner edge on this side with a 3/16 in reveal. Door leaf: hollow-core, 71.1 x 3.5 cm, top edge 27.8 cm up (its lower part below the table is not modelled), hinged on the left, 2 degrees open, swinging toward the robot; its face is flush with the jamb edge. Top hinge: 3-1/2 x 3-1/2 in steel, five knuckles 1.78 cm tall, barrel 1.05 cm, pin axis at (42.0, 8.0) cm, 1.6 cm in front of the door face and 0.64 cm from the casing's edge; top knuckle's top 10.0 cm up (7 in below the door's top). Pin: steel, 0.234 in (5.94 mm) x 88 mm with a 10.4 mm button head, 22 g, tapped up so its head's underside is 4.0 cm above the top knuckle. Hinge-pin stop (zinc, 35 g): ring 3.5 mm thick (6.5 mm hole, 11.8 mm across) on the pin's axis, 6 mm bar 12 mm wide to a 12 mm-tall boss 6.4 cm out, white rubber tips 12 mm across on a stud beside the ring and on the boss; 7.0 x 3.3 x 1.25 cm overall; lying flat with its ring at (34.5, 22.0) cm and its bar pointing at the robot. Distractors (SimReady, loose, ignored by scoring): ceramic mug 11.4 x 9.0 x 8.0 cm, 0.30 kg at (15, -49) cm; paper notebook 22.9 x 17.0 x 1.0 cm, 0.12 kg at (12, 47) cm, yaw 0.2 rad; roll of clear tape 10 x 10 x 5 cm, 0.10 kg at (33, 42) cm.",
+  "scoring": "Read every control step. Stop seated: ring centre within 1.0 mm of the hinge axis, ring underside -0.5 to +2.0 mm from the top knuckle's top, stop tilted at most 10 degrees. Pin home: head and tip within 1.0 mm of the axis and 3 degrees of vertical, head underside -0.5 to +1.5 mm from the ring's top. 1.0: stop seated and pin home, pin and stop still (no tracked point moving over 0.5 mm per step) and every fingertip point at least 3 cm from both, continuously for 1 s. 0.75: stop seated and pin home otherwise. 0.5: stop seated and the pin through its ring, head and tip within 1.0 mm of the axis, tip at least 18 mm below the knuckle's top. 0.25: stop seated, pin not through it. 0 otherwise. Full credit lapses if the state is lost.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "Push the pin home without the stop, then tap it up from below until a 40 mm gauge block fits under its head; lay the stop on its tape mark; set the door 2 degrees open (1 in at the latch edge). Nothing is consumed.",
+  "fidelity": "All parts full size and rigid. Doorway is its top 45 cm (table = plane 1.75 m up); the hinge joint, for the lower two hinges, carries the whole 10 kg leaf. Pin's hand-loose fit in the knuckles is up to 3 N axial friction. Bores are 12 convex sectors, 0.2-0.3 mm clearance. Stop shaped after Ives 70, sizes approximate, stud fixed at about 103 degrees. Uniform friction per material. Mug, notebook and tape are SimReady props.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

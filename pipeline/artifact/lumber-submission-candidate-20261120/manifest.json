@@ -1,0 +1,21 @@
+{
+  "task": "stack-scrap-lumber-with-nailed-offcut",
+  "source_sha256": {
+    "README.md": "ff65e1163cfe47fd156cf31ec95be72d279028d974c837dd51b9ae83b43d4cbf",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "c11eb5f65d21d702d079d491ed2aa9e8e7a6577de472d2d14c570c14808d6019",
+    "task.py": "65bc999ce4a24b18b75af6605eec85a5a6c76bad999811b320a46876288f89a7"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "fbe867b9803f79f7cd833f284163a8dfdbc10a0070fe32473d9a25b6945459b0"
+    },
+    "dream.mp4": {
+      "sha256": "b46c74bc0f1ff292af0c25dc8238d64406a1ef69e367448be9d9b4a1ab2e7e4b"
+    },
+    "setup.png": {
+      "sha256": "c16b378764ae0b43f7bbc388914893778c3eb002728eb02452093f2b8245bd2d"
+    }
+  }
+}

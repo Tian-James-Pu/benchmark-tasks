@@ -1,0 +1,19 @@
+{
+  "title": "Snap a snap-off cutter's dull end segment into a pocket disposal can and put the knife down retracted",
+  "category": "Societal relatability",
+  "keywords": [
+    "snap-off blade",
+    "utility knife",
+    "bimanual",
+    "detented slider",
+    "blade disposal"
+  ],
+  "instruction": "Snap the dull end segment off the cutter's blade, put it in the blade-disposal case, and put the knife down with its blade retracted.",
+  "context": "Snapping off a dull segment is the routine upkeep of the snap-off cutter found in most households and workshops. OLFA's own procedure for its DC-3 disposal can: insert the dull tip up to the break line, then push the handle down so the segment snaps off into the can. The knife was left with two score lines past the nose: snapped like that, it breaks at the second line and wastes two segments, so the slider must first be set back one segment.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left; table top 74.75 cm up. Self-healing cutting mat (PVC), 22 x 30 x 0.3, centred at (28.5, 0). Snap-off cutter (OLFA-style 18 mm heavy-duty, ABS handle 15.2 x 2.5 x 1.7, steel nose, thumb slider on the spine with notches every 0.25), 0.045 with blade, lying flat on the mat, nose at (20, -6) pointing toward the robot (-x), spine (slider side) facing +y. Blade: 18 mm x 100 mm x 0.5 mm carbon-steel snap-off blade, score lines every 1.25, the end segment dull; it starts with its tip line 3.0 past the nose (score lines 1 and 2 both outside). Blade-disposal can (OLFA DC-3 type, ABS, 6.3 long x 3.2 wide x 6.3 tall, 0.032), standing on the mat with its long side along x, centre at (26.8, 4.0); its door is slid open over a 2.6 x 0.3 snapping slot across the middle of its top. Distractors, ignored by scoring (SimReady): ceramic mug 11.4 x 9.0 x 8.0, 0.30, at (46, 22); roll of clear tape 10 dia x 5, 0.06, at (45, -22); thin marker 10.9 x 0.8, 0.01, at (44, 3) yaw 1.3 rad.",
+  "scoring": "0 if no segment came off, two segments came off (break at score line 2), the knife ever fell (downward speed over 0.8 m/s, about a 3 cm drop) or its centre is off the mat. 1.0: exactly one segment off, lying wholly inside the can (below its top face, within its walls), the blade retracted (the new tip at least 1 mm inside the nose), the knife resting on the mat (lowest point within 3 mm of it, still), the can upright (within 10 degrees) on the mat, every fingertip at least 5 cm from knife and can, all held 1 s. 0.5: exactly one segment off, blade retracted, knife resting on the mat with every fingertip at least 5 cm from it, the can or segment conditions of 1.0 not met (segment loose on the mat, say). 0.25: exactly one segment off, otherwise (blade left out, knife still held).",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "One blade segment is consumed per trial: after a trial, reset the knife by extending the blade to the 3.0 cm mark (tip line 3.0 cm past the nose, checked with a steel rule), empty the can, and put both on their tape marks. A fresh blade lasts seven trials.",
+  "fidelity": "Knife, blade and can are custom rigid meshes at real size (SimReady has no snap-off cutter or disposal can). The slider is a joint with 2.5 mm notches (estimated). The blade's bending at score line 1 is a sprung revolute joint, 0.3 N m/rad, breaking at 10 degrees (about 0.05 N m, estimated); a break goes at the exposed score line nearest the nose. Score lines bend square to the blade though drawn angled. Blade colliders are 1 mm thick, segments 2 g. Distractors are SimReady props.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

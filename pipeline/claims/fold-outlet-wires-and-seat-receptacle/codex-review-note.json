@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-11-20T04:18:36.580517+00:00",
+  "reviewer": "codex /root/review_crutch",
+  "scope": "Coordination note only: owner and status preserved; task edits/ongoing jobs untouched.",
+  "decision": "Submission held by exact competing idea; validation work may proceed under owner.",
+  "competing_pr": 2405,
+  "latest_review_utc": "2026-11-19T07:05:24Z",
+  "hold_until_utc": "2026-11-21T07:05:24Z",
+  "official_evidence": "/home/mzhang/code/benchmark-tasks/pipeline/reviews/resume-20261120/ready-queue-screen/pr-2405.json",
+  "feedback": "**Not accepted** (TK-ZTTJ9V).\n\nInclude the two mounting screws",
+  "missing_evidence": [
+    "Finish representative flexible/plastic copper folding into real wall box without teleporting conductors or suppressing contact; original source-estimated constitutive model is acceptable if behavior faithful.",
+    "Add and complete both mounting screws; current file has bosses/spacing but score() returns0 and no complete mounting procedure.",
+    "Keep de-energized bench context, attached routing and real installed access; current2596 revision is pending and must remain distinct wire-termination task.",
+    "Implement observable final seated-and-secured scoring, then full demos and adversarial controls; cold/wrong route is not a measured result yet.",
+    "Freeze final package; two full-score native demos with source hashes.",
+    "Required none/one-arm/careless/hold controls with expected scores and recorded media, plus task-specific negative controls.",
+    "Write task.json andREADME, source-calibration/reset details and all numeric score conditions; both absent in all four at snapshot.",
+    "Dream once on final package, or explicit exhausted-credit exception without fabricated model score/video.",
+    "Fresh all-board/official-comments ownership review at intended submission, then standard preflight/media/quota checks under shared submission lock. Review receipt can reopen hold; expiry alone never grants permanent clearance."
+  ],
+  "observed_full_score_completed_runs": 0,
+  "owner_status_sha256_before": {
+    "owner": "98038b25280788a45a2f06c209513024c99adee81c6416b691b4b5872db7e027",
+    "status": "7f3af912f58f60af8343028cf9596803f113531ee7e30474c1e7ffaefd9f1a40"
+  },
+  "owner_status_unchanged_during_write": true
+}

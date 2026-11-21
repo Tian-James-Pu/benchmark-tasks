@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-11-21T20:34:31Z",
+  "decision": "clear",
+  "queries": [
+    "infusion, alaris, IV pole, IV stand, pole clamp, drip stand (known_tasks.tsv, all states, refreshed 2026-11-21 19:1x UTC, 3,515 rows, max PR #3516)",
+    "pole, hang ... on, stand clamp, lab stand, C-clamp (all states)",
+    "IV, pump, hospital, nurs, mount, hold ... while, level while, screw clamp (accepted, pending, revising)",
+    "gh search prs robocurve/benchmark-tasks: 'infusion pump', 'IV pole', 'pole clamp', 'IV stand' -> only #2856 (IV roller clamp, merged)",
+    "re-check after Dream-1 run, 2026-11-21 20:34 UTC: known_tasks.tsv refreshed (max PR #3529); new PRs #3501-#3529 read by title, infusion|IV pole|IV stand|pole clamp|alaris: only #1966 (accepted, tubing). Nearest new hold-while-lock task #3515 (tilt steering wheel lever) is a car column lever, not a device clamped on a pole."
+  ],
+  "nearest_prs": [
+    {
+      "pr": 1966,
+      "state": "MERGED",
+      "read": "Body read: load a primed IV set into an Alaris pump module, upper fitment into its recess then the safety clamp pressed home.",
+      "comparison": "Same device family and occupation, different operation: soft tubing seated in a pump's channel. Ours mounts the pump itself on its pole by its own lead-screw clamp; no tubing."
+    },
+    {
+      "pr": 2018,
+      "state": "MERGED",
+      "read": "Body read: hold a door lever set's outside half level while both screws are driven with a ratcheting screwdriver.",
+      "comparison": "Hold-while-fasten pattern on a light part pinned through a door. Ours carries the whole device in free air at a marked height, offset 9 cm from the pole axis, while its own clamp knob is turned about 3.4 turns in regrip strokes; letting go early drops it."
+    },
+    {
+      "pr": 3052,
+      "state": "OPEN, pending, other team",
+      "read": "Body read: hold a hinged drop-leaf level while the other arm swings a support bracket out to its stop.",
+      "comparison": "Hinged leaf constrained by its hinge, bracket swung once; ours an unconstrained device held in the air and a screw clamp turned through multiple regrips until it bites."
+    },
+    {
+      "pr": 3409,
+      "state": "OPEN, pending, other team",
+      "read": "Title/body read: clamp a loose right-angle pine joint with a trigger bar clamp.",
+      "comparison": "Bar clamp closed on parts that rest on a bench; ours the clamp is what will carry the load, and until it bites a hand carries it."
+    },
+    {
+      "pr": 2299,
+      "state": "CLOSED, Not accepted: final, other team",
+      "read": "Comments read: flask clamped on a lab stand; final rejection because the distinctive spring-lever clamp was a custom robot-oriented mechanism, not the thumbscrew clamps used in labs.",
+      "comparison": "Precedent for construct validity, not a duplicate: ours uses the real product's own clamp as its DFU describes it (folded-out clamp, screw tightened onto the pole), at the published 148 x 225 x 148 mm size."
+    },
+    {
+      "pr": 776,
+      "state": "MERGED",
+      "read": "Title: clamp a small part before drilling it.",
+      "comparison": "Workholding on a bench; nothing is carried while the clamp closes."
+    }
+  ],
+  "physical_skill": "Lift a full-size infusion pump by its carry handle, carry it back so the 25 mm pole enters its open 31 mm clamp throat, and hold it level at a tape band in free air against its off-axis weight while the other hand turns the clamp's lead-screw knob through about 3.4 turns in half-turn regrip strokes until the jaw bites; then both hands release and the pump must hang on its own clamp, upright, at the band, without sliding.",
+  "valid_shortcuts": "None that score above 0.25: do nothing 0; one arm carries and lets go without turning the knob (drops down the pole, harm) 0; release after the first half turn (slides, harm) 0; screw the clamp tight while the pump stands on the table (5 cm low, not hanging) 0; keep holding the handle 0; clamped tight off the band 0.25 by design. Pushing the pump off the table or tipping it is harm (0). Distractors under the pump void hanging. Mass is reduced to 1.0 kg (disclosed), which makes the hold easier in simulation, not a different strategy.",
+  "distinct_from_nearest": "No board task mounts a device on an IV pole or hangs a device by its own screw pole clamp. Nearest hold-while-fasten tasks (#2018, #3052, #1540) hold parts that are already constrained by a door, hinge or connector; here nothing constrains the pump until the jaw bites, so the holding hand carries the full off-axis load in air through a multi-stroke screw-up. The only pump task (#1966) loads tubing. Residual risks: reviewers may see it as another hold-while-fasten task, or question the 1.0 kg mass and table-mounted mast stand-in (both disclosed in fidelity and README).",
+  "task_py_sha256": "97287770bdcfbc0ed6fb2c416def66b82ca0e1956be88c8d425242530e1362cc",
+  "task_metadata_sha256": "e3dcb9df897e5a4a99511d7cdaf09d385be295081a931d797a801c501aeaa6d0"
+}

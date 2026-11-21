@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-20T04:18:36.580517+00:00",
+  "reviewer": "codex /root/review_crutch",
+  "scope": "Coordination note only: owner and status preserved; task edits/ongoing jobs untouched.",
+  "decision": "Submission held by exact competing idea; validation work may proceed under owner.",
+  "competing_pr": 2311,
+  "latest_review_utc": "2026-11-18T23:09:27Z",
+  "hold_until_utc": "2026-11-20T23:09:27Z",
+  "official_evidence": "/home/mzhang/code/benchmark-tasks/pipeline/reviews/resume-20261120/ready-queue-screen/pr-2311.json",
+  "feedback": "**Not accepted** (TK-7D26TA).\n\nWe are concerned about reproducibility with using perishable materials on the rigs. Can you please specify a non-perishable stand-in that maintains fidelity to the real context?",
+  "missing_evidence": [
+    "Complete actual turner pickup, under-cookie scoop, rack transfer and release; latest recorded completed diagnostic in this snapshot scored 0/330 on source7590b241c9a2.",
+    "Specify an obtainable/reproducible nonperishable cookie substitute that preserves slip, lifting and fragility relevant to scoring; mass/diameter match alone does not answer original2311 feedback.",
+    "Audit touch/break/fall tracking and partial-credit shortcuts; do not ban a physically valid safe sequence merely to force bimanual use.",
+    "Freeze final package; two full-score native demos with source hashes.",
+    "Required none/one-arm/careless/hold controls with expected scores and recorded media, plus task-specific negative controls.",
+    "Write task.json andREADME, source-calibration/reset details and all numeric score conditions; both absent in all four at snapshot.",
+    "Dream once on final package, or explicit exhausted-credit exception without fabricated model score/video.",
+    "Fresh all-board/official-comments ownership review at intended submission, then standard preflight/media/quota checks under shared submission lock. Review receipt can reopen hold; expiry alone never grants permanent clearance."
+  ],
+  "observed_full_score_completed_runs": 0,
+  "owner_status_sha256_before": {
+    "owner": "98038b25280788a45a2f06c209513024c99adee81c6416b691b4b5872db7e027",
+    "status": "a17c64bd39bcc43b70429a6d601d5b678211ba44d8be000f6170d62a58203284"
+  },
+  "owner_status_unchanged_during_write": true
+}

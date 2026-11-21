@@ -1,0 +1,101 @@
+{
+  "checked_utc": "2026-11-20T08:33:53.945282+00:00",
+  "decision": "conditional GO for native geometry/grasp/trigger/roller coupon; not full-task qualification",
+  "latest_original_review": "2026-11-18T07:41:32Z",
+  "hold_expiry": "2026-11-20T07:41:32Z",
+  "original_pr": 2428,
+  "original_head": "4ec879205427b5a6ce66c9e99e8ec273d18bcc75",
+  "fresh_all_pr_count": 3144,
+  "fresh_candidates": [
+    {
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 2539,
+      "state": "CLOSED",
+      "title": "Add price-labeler task"
+    },
+    {
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVvZGQ",
+          "name": "Not accepted: final",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 2434,
+      "state": "CLOSED",
+      "title": "Remove the leftover price-label adhesive from a returned pan's base with a 91% IPA wipe"
+    },
+    {
+      "labels": [
+        {
+          "id": "LA_kwDOVgdJU88AAAADBVqJYw",
+          "name": "Not accepted",
+          "description": "",
+          "color": "ededed"
+        }
+      ],
+      "number": 2428,
+      "state": "OPEN",
+      "title": "Add price-label-gun-mark-boxes task"
+    }
+  ],
+  "novelty": "No later active exact match in all-PR title snapshot;2539 final was duplicate of then-held2428 and omitted roller stroke. Actual all-source search still needed before publication.",
+  "source_model": "SATO KENDO26",
+  "manufacturer_dimensions_mm": {
+    "width": 50,
+    "length": 245,
+    "height": 123.5,
+    "label_width": 26,
+    "label_feed_pitch": 12
+  },
+  "bare_mass_g": 280,
+  "sources": [
+    "https://www.satoeurope.com/pdf/products/hand-labelling-devices/sato-kendo-brochure.pdf",
+    "https://www.sato-oceania.com/hubfs/Website%20Assets/Resources/Hand%20Labellers/KENDO_JUDO-Operation-Manual.pdf"
+  ],
+  "ordinary_operation": "Firm squeeze prints; complete release presents a label beneath applicator roller; lightly contact item and pull labeller backward. Loaded roll and set price are normal reset preparation.",
+  "implementation_scope": "Independent native loose tool with free roller and sprung trigger. First prove head grasp, trigger closure/release and controlled roller contact through >=12mm backwards stroke. No copied competitor source.",
+  "assumptions_and_open_gates": [
+    "Internal/body subdivision, grip dimensions and hinge pose inferred from manufacturer photographs, not measured OEM CAD. Freeze inferred dimensions explicitly.",
+    "Trigger force not published; use disclosed conservative bounded coupon estimate, no claim of measured calibration. Preserve mechanics and disclose force sensitivity.",
+    "Final full-task feed/application must preserve label identity, continuous material transport, all-label history and contact-conditioned rolling transfer. Stationary squeeze/single-touch/hover/repeated-cycle overwrite must never place a complete label.",
+    "Loose ordinary boxes must retain native support and motion; no invented fixed cartons.",
+    "Final reproduction requires actual purchasable named tool/labels, normal labels reset and ordinary photo checks."
+  ],
+  "other_routes_rejected": [
+    {
+      "route": "ukulele2332",
+      "reason": "new exact3118 hold throughNov22 07:48:28Z"
+    },
+    {
+      "route": "bicycle side-entry bottle2420",
+      "reason": "new exact3127 pending receivedNov20 07:40:11Z"
+    },
+    {
+      "route": "plant seedling680",
+      "reason": "exact2106 final Nov19 says real trials not consistently repeatable;2820 plant-free substitute invalid"
+    },
+    {
+      "route": "cotter-pin994",
+      "reason": "2060/2658 final importance rejects specific operation worker reach"
+    },
+    {
+      "route": "zip-top bag",
+      "reason": "2277 already accepted"
+    },
+    {
+      "route": "litter grabber2331",
+      "reason": "2376 already accepted"
+    }
+  ],
+  "no_gpu_run": true,
+  "no_submission": true
+}

@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-11-21T20:24:54.027115+00:00",
+  "decision": "clear",
+  "queries": [
+    "bifold",
+    "bi-fold",
+    "closet",
+    "pivot",
+    "jamb",
+    "floor bracket",
+    "plumb",
+    "track",
+    "door",
+    "hinge",
+    "lift-off",
+    "bypass",
+    "sliding door",
+    "rehang",
+    "re-hang",
+    "hang",
+    "spring",
+    "slot",
+    "cabinet",
+    "wardrobe"
+  ],
+  "nearest_prs": [
+    {
+      "number": 3188,
+      "relationship": "Pending (TK-LVMJWW): re-hang a sliding cabinet door, top up into its channel then foot onto the rail. Closest door re-hang; a 29 cm sliding cabinet panel with no pivot, spring or plumb set. Here a full-size 79 in bifold pair hangs on a spring-loaded top pivot and the hidden bottom pin must be lifted over toothed rails and dropped into a 10 mm slot at one spot (plumb). Different hardware and defining knack; not a duplicate."
+    },
+    {
+      "number": 1410,
+      "relationship": "Final rejection (miniaturization): hang a 14 cm bypass closet door on its track. The rejection was for miniaturisation and missing rollers; this door, opening, track and bracket are at 100% scale with the real bifold hardware (spring top pivot, toothed jamb bracket), addressing that objection. Different door type (bifold on pivots, not bypass on rollers)."
+    },
+    {
+      "number": 3094,
+      "relationship": "Pending (TK-NVTZYW): lift a small cabinet door off its loose-pin butt hinges. Removal on butt hinges; no spring pivot, floor bracket, slot or plumb set."
+    },
+    {
+      "number": 3313,
+      "relationship": "Final rejection (importance): rehang an electrical enclosure door on removable-pin hinges. Rejected as specialised maintenance; this is an everyday household closet fault (Societal relatability), cited from maker instructions and Family Handyman."
+    },
+    {
+      "number": 989,
+      "relationship": "Final rejection: lift a service door off lift-off hinges. Industrial door removal, not a household bifold rehang."
+    },
+    {
+      "number": 166,
+      "relationship": "Final rejection: hang a door on a pin hinge. Butt-hinge pin alignment, not a spring-pivot bifold."
+    },
+    {
+      "number": 1847,
+      "relationship": "Accepted: toilet roll on a spring spindle, one end seated then the free end steered into the other socket. Shares a spring-compressed end, but a small handheld roll; here a 2 m door pivoting about its top with the pin hidden 2 m below the pivot and 14-34 cm below the hands."
+    },
+    {
+      "number": 2153,
+      "relationship": "Accepted: refit a fridge door bin over hidden supports. Shares a hidden-placement element; different object, no spring, pivot or plumb target."
+    },
+    {
+      "number": 3026,
+      "relationship": "Pending: refit a window insect screen on its spring latches. Spring-latched screen into a window frame; different object and mechanism (no pivot pin, no slot, no plumb)."
+    },
+    {
+      "number": 1969,
+      "relationship": "Accepted: shim a door's hinge jamb. Door installation context but a different operation (driving shims), not rehanging a bifold."
+    }
+  ],
+  "physical_skill": "Pinch the folded bifold pair at its hinged edge with both hands 14-34 cm above the floor, lift the whole 2.4 kg door 5-10 mm against its 300 N/m spring top pivot (the rails need 5 mm, the track stops it at about 10 mm), carry the hidden bottom pin about 5.5 cm back while the door pivots about its top 2 m above, lower it into the 10 mm jamb-bracket slot within 4 mm of the mark directly under the top pivot so the toothed wheel locks there, then let go and back away with the door still and hanging plumb.",
+  "valid_shortcuts": "Any grip, one arm or two, and any lift height or order that seats the pin at the mark without the guide leaving the track scores 1.0; folding or swinging the door is allowed and it may end at any swing angle. Dragging without lifting stops against the rails (0, checked); seating straight back lands 13 mm off the mark and the teeth hold it there (0.5, checked); holding the door seated keeps it at 0.5 (checked); letting go before the pin is over the slot gives 0 (checked); doing nothing gives 0. Pulling the guide out of the track zeroes the trial whatever the end state. The door is captive at its top pivot and guide, so it cannot be removed or broken to game the score.",
+  "distinct_from_nearest": "No accepted, pending or revising PR rehangs a bifold closet door or seats a bottom pivot pin in a floor jamb bracket under a spring-loaded top pivot (grep of 3,522 PRs for bifold/bi-fold returns none). The nearest live door re-hang (#3188) is a small sliding cabinet panel into a channel and rail; hinge-pin tasks (#3094, #3313, #989, #166) are butt or lift-off hinges. #1410's bypass closet door was rejected for miniaturisation, which this full-size model answers. External sets (LIBERO, RoboCasa, BEHAVIOR, SimplerEnv) open and close doors but none rehangs one on its pivots. Main risks are importance (everyday but occasional household fix) and the reduced door mass, disclosed in fidelity.",
+  "task_py_sha256": "3832ea0f191f58c41cfef0ce5a53c186f94ca041e30ddde6cd4d1370e82da338",
+  "task_metadata_sha256": "77747e6123a601fbf811032b528f23321ada19a4cb192c296ec4840a7651b240"
+}

@@ -1,0 +1,36 @@
+Steel
+Copyright 2026 Skild AI and the Steel contributors.
+Steel was created by Skild AI in collaboration with NVIDIA.
+The authors are listed in AUTHORS.
+
+Steel is implemented in Newton (https://github.com/newton-physics/newton),
+the open-source physics engine hosted by the Linux Foundation. Newton source
+files retain their original copyright and SPDX notices.
+
+The solver is linked from this package, not bundled here. The Apache-2.0 license
+applies to the project code and this documentation, not automatically to
+third-party assets or trademarks.
+
+Launch media:
+assets/launch.mp4 and assets/launch-poster.jpg were created by Skild AI.
+Copyright 2026 Skild AI. Licensed under Apache-2.0.
+
+Example media:
+site/public/examples/*/poster.jpg, preview.mp4 and clip.mp4 are recordings of
+the examples in examples/shelf, made by the Steel contributors.
+Copyright 2026 Skild AI and the Steel contributors. Licensed under Apache-2.0.
+The robot models and other assets they show keep their own licenses, listed in
+examples/THIRD_PARTY.md.
+
+Trademarks:
+Skild, Skild AI and the Skild logo are trademarks of Skild AI and are not
+licensed under Apache-2.0. The logo files site/src/assets/skild-mark-*.svg
+and site/public/favicon.svg are not covered by the Apache-2.0 grant.
+
+The examples/ collection was migrated from the Steel Shelf project. Its
+component notices and asset inventory are retained in examples/NOTICE,
+examples/THIRD_PARTY.md, examples/third_party_inventory.json and
+examples/licenses/.
+
+The documentation site in site/ ships third-party code and fonts under their own
+licenses; the build writes their notices to third-party-notices.txt at the site root.

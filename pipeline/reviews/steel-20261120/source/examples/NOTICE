@@ -1,0 +1,51 @@
+Steel Shelf
+Copyright 2026 Skild AI and the Steel contributors.
+Steel was created by Skild AI in collaboration with NVIDIA.
+Authors: https://github.com/skild-ai/steel/blob/main/AUTHORS
+
+Project-original source, including the 27 Steel WebGPU ports, carries a
+"Copyright (c) 2026 Skild AI and the Steel contributors" SPDX header.
+
+Newton-derived source:
+Copyright (c) 2025-2026 The Newton Developers.
+Original copyright and Apache-2.0 SPDX headers are retained.
+
+Steel WebGPU ports:
+The 27 ports were written by Skild AI from steel-webgpu, as recorded in their
+headers and presets.toml. "Modified for Steel Shelf" identifies the later
+adaptation. The pinned steel-webgpu license (f2f72c1e) carries these notices:
+Copyright 2026 Skild AI
+Copyright 2025 The Newton Developers
+Its complete text is retained in licenses/steel-webgpu-LICENSE.txt. See
+THIRD_PARTY.md for provenance.
+
+Bundled Universal Robots model data:
+UR10e: spinning_top, brick_pour, box_turn, toaster, toy_train.
+UR5e: air_hockey.
+Copyright 2018 ROS Industrial Consortium.
+BSD-3-Clause; complete notices, conditions and disclaimers:
+licenses/UR10e-BSD-3-Clause.txt and licenses/UR5e-BSD-3-Clause.txt.
+
+Bundled Kinova Gen3 model data:
+viaduct_kit.
+Copyright (c) 2018, Kinova inc.
+BSD-3-Clause; complete notice: licenses/Kinova-Gen3-BSD-3-Clause.txt.
+
+Bundled Franka model/gripper data:
+The complete newton-assets Franka license, including the Apache-2.0 text and
+appended BSD/Willow Garage terms, is retained in
+licenses/Franka-complete-LICENSE.txt. This covers full Franka exports and
+Franka gripper components where present in other robot scenes.
+
+Pelican bicycle CAD in the separately installed Newton dependency:
+Original CAD created by liinbor (LuckyIYI) of the Skild AI team.
+Copyright 2026 Skild AI; Apache-2.0.
+
+Original project documentation charts and rendered recordings are Apache-2.0.
+Model notices remain applicable to depicted third-party model content.
+
+Runtime asset licenses are separate from project code and bundled data.
+Complete notices, including the restricted Disney Research terms, are in
+licenses/runtime-assets/. Model files and policies are not bundled here.
+THIRD_PARTY.md and third_party_inventory.json record the component terms,
+pinned sources, file hashes and distribution boundaries.

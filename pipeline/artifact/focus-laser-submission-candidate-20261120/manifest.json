@@ -1,0 +1,21 @@
+{
+  "task": "focus-diode-laser-module",
+  "source_sha256": {
+    "README.md": "8bf2ab14ed9fa355c9d2a488c7c75dcaa8a74aaa75427598ce1e761045b15c3b",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539",
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "c1bd820e1604eae65e9491e183ec3018c43ee09188b464c6500f52f082de14ad",
+    "task.py": "ec8bd4b49a51ba3641a91b794741fdc0245377709e4f83b8cb474467d5445b11"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "1ff4f329c48c408813ba008bf6780a47e07523fa765e6e7a68ad1ffd621780a2"
+    },
+    "dream.mp4": {
+      "sha256": "6365ff48a0fe69299a4b4b28fadebe533122ae2d5638d65844b3a1e3788ecc24"
+    },
+    "setup.png": {
+      "sha256": "8531433bf171c97c66cec93579c180beae33a1b4902e24064de13d9784cbec22"
+    }
+  }
+}

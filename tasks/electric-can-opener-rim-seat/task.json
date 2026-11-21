@@ -1,0 +1,19 @@
+{
+  "title": "Open a 15 oz can on a lever electric can opener: seat the rim on the geared wheel, pierce, catch the can at release",
+  "category": "Societal relatability",
+  "keywords": [
+    "kitchen",
+    "electric can opener",
+    "bimanual",
+    "rim seating",
+    "hand-off"
+  ],
+  "instruction": "Open the can with the electric can opener and set the open can down on the counter, leaving the lid on the magnet.",
+  "context": "Opening a can on a countertop electric opener is an everyday kitchen job. The maker's guide (Hamilton Beach 76702): raise the can until its rim sits on the geared wheel under the cutter, press the lever down until it pierces the lid, let the motor turn the can (no need to hold it; it stops when the can is open), then hold the can while lifting the lever, and the lid comes away on the magnet. The can's 1.9 mm bead must be lifted onto a 20 mm wheel 15 cm up and held there while the other hand presses the lever; a can still gripped stalls the motor, and lifting the lever with nothing holding the can drops it.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left; the counter is the table top (74.75 cm up). Task objects: lever electric can opener (Hamilton Beach 76702 class), plastic and steel, 14.5 deep x 11.7 wide x 22.9 tall, on the counter with its front face at x 40, centred on y 0, facing the arms; a geared steel wheel 2.0 dia stands 0.8 out of the face, its top 15.0 above the counter; the piercing lever (8.5 long grip) is hinged 16.6 above the counter, raised, and carries a 1.8 dia cutting wheel and a magnet. Can: No. 300 (15 oz) three-piece steel food can, 7.62 dia over the seams (body 7.24), 11.27 tall, lid 0.32 below the top seam, paper label, 0.47 filled, standing upright on the counter at (27, -13). Distractors, ignored by scoring (SimReady): ceramic mixing bowl 16.3 dia x 5.5, 0.35, at (53, 22); ceramic mug 11.4x9.0x8.0, 0.30, at (56, -21) yaw 2.4 rad; cotton dish cloth 26x23.3x2.1, 0.05, at (20, 25) yaw 0.3 rad.",
+  "scoring": "0 if, at any time after the lid was pierced, the can tilts more than 20 degrees from upright or falls (its base comes down 3 cm within 0.1 s, as a can falling out of the opener does): a pierced or opened can spills. Cut = how far round the lid the cut runs. 1.0: lid cut through (360 degrees) and held on the magnet with the lever raised (within 10 degrees of its stop), can upright (within 10 degrees) with its base on the counter (within 3 mm), nothing moving, every fingertip at least 5 cm from the can, all held 1 s. 0.75: lid cut through and on the magnet, without the rest of 1.0. 0.5: cut at least 270 degrees, not through. 0.25: lid pierced (lever pressed home with the bead on the geared wheel under the cutter), cut under 270 degrees. 0 if never pierced.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "A fresh sealed can each trial (the opened one is used up): set it on its tape mark. Pull the lid off the magnet and discard it, and raise the lever. Wipe the cutter and geared wheel if juice reached them.",
+  "fidelity": "PhysX rigid bodies; opener and can are custom meshes at published sizes (no SimReady electric opener; its cans are solid). Cutting is not simulated: once pierced, a speed motor (45 deg/s, 0.3 N m max, estimates) turns the can body under its clamped top seam; a full turn frees the lid, then shown on the magnet. Geared wheel and opener body are smooth and slippery. Lever spring (4 to 10 N) and latch (18 N on the cutter) are estimates. Distractors are SimReady.",
+  "scores": "Dream-1 run: pending; demo: pending"
+}

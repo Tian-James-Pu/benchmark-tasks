@@ -239,15 +239,25 @@ with a final segment-direction spread of 0.689 degrees. The rooted contact
 run still becomes nonfinite at 2,400 Hz: fixing placement alone is insufficient.
 Neither run validates the complete hand or repair task.
 
-The prototype is parked pending actual tube material data. The route has a
-minimum local bend radius of 18.07 mm. For its 3 mm outer diameter, the linear
-beam model estimates 8.30% outer-fibre strain and 41.18 MPa stress at the most
-curved cell. This is a model-validity check, not a measurement of real stress:
-the generic [Chemours PTFE table](https://www.teflon.com/en/products/product-selection-guide)
-lists 28 MPa tensile strength, and the installed tube grade and forming/creep
-history are unknown. Even a converged linear solver would not establish the
-installed tube's physical response at that curvature. No material softening or
-curved stress-free shape was introduced to obtain a successful result.
+The prototype is parked pending loaded tube and seat measurements. A commercial
+size-matched option is BOLA S 1810-23 PTFE tubing: 1.5 mm ID, 3.0 mm OD,
+0.75 mm wall, with a manufacturer minimum bend radius of 12 mm at 23 °C
+([BOLA catalog, p. 190](https://www.bola.de/static/katalog/bola-en/files/basic-html/page190.html)).
+The CAD-derived path has a minimum centerline radius of 18.07 mm; even subtracting
+1.5 mm to compare conservatively as an inside radius gives 16.57 mm. This makes
+that tube size geometrically plausible, but does not prove that this SKU is used
+in the source hand, or validate force-deflection, loaded/cyclic behavior, kink
+resistance or seat retention.
+
+The linear beam diagnostic estimates 8.30% outer-fibre strain and 41.18 MPa by
+extrapolating a small-strain constitutive law. That stress is not a physical
+failure prediction: the model is outside its validity at that strain. No
+material softening or curved stress-free shape was introduced to make the
+simulation succeed. The constrained 24-segment tube still becomes nonfinite at
+2,400 Hz; high-rate component stability does not establish a calibrated
+load path. The next gate is a measured force-deflection and seat-retention test
+for the selected tube under the source tendon route/load, followed by a
+calibrated, timestep-converged full-hand repair and negative-control trial.
 
 The rooted eight-cell, 4,800 Hz control completed three seconds with finite
 states, but the tube left its seat and its endpoints moved about 0.3 m. Its

@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-11-21T23:37:11.758476+00:00",
+  "decision": "clear",
+  "queries": [
+    "egg",
+    "spoon",
+    "egg and spoon (GitHub full text)",
+    "spoon race (GitHub full text)",
+    "egg spoon (GitHub full text)",
+    "balance ball spoon (GitHub full text)",
+    "spoon (GitHub full text)",
+    "sports day",
+    "race",
+    "balanc",
+    "carry a",
+    "ladle",
+    "rolling",
+    "roll",
+    "tip",
+    "cantilever",
+    "marble",
+    "ball on",
+    "tray",
+    "carry-ball",
+    "spill",
+    "olympic",
+    "relay",
+    "obstacle",
+    "slalom",
+    "round the",
+    "around the",
+    "cone",
+    "tongs",
+    "scoop",
+    "spatula",
+    "\"egg and spoon\" (GitHub PR search, re-check)",
+    "\"egg-and-spoon\" (GitHub PR search, re-check)",
+    "\"spoon race\" (GitHub PR search, re-check)",
+    "all PR titles #3518-#3562 read (re-check)",
+    "all PR titles #3518-#3560 read (re-check)"
+  ],
+  "nearest_prs": [
+    {
+      "number": 333,
+      "relationship": "Accepted (TK-DF9CF5): carry a full cup of water past an open laptop. Steady carry of a held spillable container past an obstacle. Here the load is a free rolling egg on a utensil pinched only at the far end of a 22.5 cm lever (sags 3-6 degrees in the pads, must be levelled), carried round a marker (270-degree sweep) and then deliberately tipped out into a target with no contact. Different object, hold constraint, course and finish; not a near-duplicate."
+    },
+    {
+      "number": 2833,
+      "relationship": "Final rejection (TK-UWTXEC): paddle-bounce ping-pong, rejected as a duplicate of embodied-olympics-fun Paddle Bounce. Dynamic repeated bouncing on a paddle; here the egg must never leave the spoon until the finish, no bouncing or timing. Precedent shows external game suites matter; that suite's full family list could not be found online (web searches for embodied-olympics-fun returned nothing usable), disclosed in the README."
+    },
+    {
+      "number": 656,
+      "relationship": "Final rejection (TK-WJENGF): carry-ball-tray, a variant of a loaded-tray task. Two-hand tray carry of loose balls; here a one-hand cantilevered utensil carry held at the handle's end, round a marker, then a controlled tip-out."
+    },
+    {
+      "number": 431,
+      "relationship": "Final rejection: two-arm tilt of a long board to roll a ball into a cup. Rolling by tilt into a target but no carry, no utensil hold constraint, no course."
+    },
+    {
+      "number": 713,
+      "relationship": "Final rejection: feed a manikin a spoonful over a held bowl. Spoon carry of food to a mouth; different goal (feeding), no rolling free object or marker course."
+    },
+    {
+      "number": 3405,
+      "relationship": "Pending: serve a bowl of soup with a ladle. Liquid scooping and pouring; no free rigid rolling object balanced on a utensil, no course, no grip-zone rule."
+    },
+    {
+      "number": 3121,
+      "relationship": "Pending: carry cooking spray round a lit burner rather than over it. Route-around-a-hazard carry of a held can; nothing balanced loose, no utensil, safety framing."
+    },
+    {
+      "number": 2380,
+      "relationship": "Final rejection: give a measured dose with a medicine spoon. Liquid dosing; unrelated skill."
+    }
+  ],
+  "physical_skill": "Pick the 22.5 cm wooden spoon up by only the last 7 cm of its 1.1 cm round handle with a 45 g egg loose in its 5 mm-deep bowl 14.4 cm out; level the spoon against its 3-6 degree sag in the pads (the egg starts rolling at 14-17 degrees along, 24-27 across); carry it with eased starts and stops (an abrupt 0.6 m/s start throws the egg out) at least 8 cm up, 6-20 cm round an upturned cup through a 270-degree sweep; then over the finish bowl tip the spoon past about 30 degrees so the egg rolls off its tip into the bowl, never touching the egg.",
+  "valid_shortcuts": "Any arm, grip within the handle zone, route direction, speed or retries is allowed; only the stated end state and fouls count. Checked in task.py failure modes: doing nothing 0; carrying straight to the bowl without rounding the cup 0; dragging the spoon on the table round the cup 0 (egg spills, and below 8 cm never counts); holding the spoon at its neck 0 (grip foul); the other gripper resting on the egg 0 (touch foul); abrupt 0.6 m/s moves 0 (egg thrown out); 0.3 m/s abrupt, eased 4x/8x faster and a slightly higher grip all reach 1.0, recorded honestly. Picking the egg up by hand is a touch foul; pushing the bowl to the egg is a bowl-moved foul; the cup is fixed; distractors cannot serve as ramps. Leaving the egg on the spoon over the bowl caps at 0.5. No destructive or object-modifying route reaches a nonzero score (egg rigid, cup fixed).",
+  "distinct_from_nearest": "No accepted, pending or revising PR is an egg-and-spoon race or balances a free object on a utensil held at its end (title grep of 3,522 PRs in known_tasks.tsv and GitHub full-text search for egg and spoon, spoon race, egg spoon, balance ball spoon found none). The nearest accepted task, #333's cup carry past a laptop, is a held container, not a free rolling object on a cantilevered utensil with a grip-zone rule, a marker course and a tip-out finish. Ball-on-tray (#656), tilt-roll (#431) and paddle bounce (#2833) were rejected and differ in hold, dynamics and goal. External sets (LIBERO, RoboCasa, SimplerEnv, BEHAVIOR, RoboDojo, DataCenterBench) have no egg-and-spoon task. Main risk: Embodied First Exam's embodied-olympics-fun suite, whose full family list is unpublished; a reviewer may hold an egg-and-spoon family there, as with #2833's Paddle Bounce. Societal relatability: the primary-school sports-day race, cited in the README. Re-checked after a session interruption: known_tasks.tsv refreshed (3,559 PRs); every title opened since the first review (#3518-#3562) read, and GitHub PR search for \"egg and spoon\", \"egg-and-spoon\" and \"spoon race\" returned nothing. No new near-duplicate.",
+  "task_py_sha256": "ebc6e66dee965ac50420ae46d5b55ddd3ea9af3e370208c9f9535d925be84026",
+  "task_metadata_sha256": "5b795431a657df2b24985bb125066e483b4e53b465fd45bc7257c4fcb18d8dca"
+}

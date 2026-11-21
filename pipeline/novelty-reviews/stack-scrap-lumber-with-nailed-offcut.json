@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-11-20T22:29:08.169098+00:00",
+  "decision": "clear",
+  "queries": [
+    "scrap lumber pallet",
+    "stack scrap lumber offcut nail",
+    "protruding nail offcut disposal",
+    "denail tote",
+    "scrap with nails construction housekeeping",
+    "pull nail claw hammer"
+  ],
+  "nearest_prs": [
+    {
+      "number": 2594,
+      "relationship": "Exact same pallet-stack/sort-out idea. Last revisable review at 2026-11-19T01:38:24Z asked to render a visible DENAIL label; a 48-hour hold remains until 2026-11-21T01:38:24Z absent a newer receipt. Current candidate includes visible labels in the tote and checks them in camera views. Separate live hold guard remains a veto."
+    },
+    {
+      "number": 2595,
+      "relationship": "Final rejection for pulling a protruding nail using a claw hammer. That task performs nail extraction with a levered hammer and hand-held nail handling. This task stacks clean offcuts while routing the nailed board to a labeled tote; it never touches or removes the nail. The rejection reason was overlap with existing tasks, so related hazard/importance risk remains noted."
+    },
+    {
+      "number": 1744,
+      "relationship": "Rejected nail removal from painted trim using a fulcrum block; extraction/paint-preservation operation, not sorting material into safe/unsafe destinations."
+    },
+    {
+      "number": 1467,
+      "relationship": "Accepted task puts a brad nailer away with the muzzle never pointed at a coworker; tool orientation/storage, not lumber stacking or nail segregation."
+    },
+    {
+      "number": 1960,
+      "relationship": "Accepted task fills drywall nail holes with spackle; repair of a flush hole, not handling a protruding nail."
+    },
+    {
+      "number": 2206,
+      "relationship": "Accepted start-and-drive-a-nail task; tool/material use, not scrap sorting."
+    }
+  ],
+  "physical_skill": "Bimanually move and stack three clean full-size 2x3 offcuts on a half pallet, identify the visibly nailed fourth board, lift and lower it into a labeled DENAIL tote while keeping fingertips 3 cm clear of the hazardous board, and release every board stable.",
+  "valid_shortcuts": "Clean offcuts may be stacked side by side or in layers and in any order; either arm may start each lift. The nailed board must still be segregated into the tote, and all placements must be released and stable. Leaving it on the bench, stacking it with clean wood, holding it, or dropping it scores zero.",
+  "distinct_from_nearest": "The final-rejected #2595 task applies claw-hammer leverage to extract a nail from a board and collect it. This candidate uses no hammer and performs no extraction: its defining decision is to keep a visibly hazardous offcut out of the clean stack, place it in a designated tote, and complete the separate stacking job. #2594 is the exact idea and still holds the claim until its 48-hour window expires; verify all-board state at release.",
+  "task_py_sha256": "65bc999ce4a24b18b75af6605eec85a5a6c76bad999811b320a46876288f89a7",
+  "task_metadata_sha256": "4a54d3b4c41e867525bc57265e9a8d2511751e3f7e2949ccc3433f40d8637a9d"
+}

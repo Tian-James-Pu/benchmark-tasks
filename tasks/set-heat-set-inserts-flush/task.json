@@ -1,0 +1,21 @@
+{
+  "title": "Set four heat-set inserts in a printed plate with a soldering iron, then press each flush with a steel block while hot",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "robot building",
+    "heat-set insert",
+    "soldering iron",
+    "3D-printed part",
+    "two tools",
+    "timed press",
+    "bimanual"
+  ],
+  "instruction": "Set the four threaded inserts flush into the plate with the soldering iron, then put the iron back in its holder.",
+  "context": "Printed robot parts take their screws in brass heat-set inserts; an open humanoid's build guide calls for setting them. The maker's method: melt each in about 90% of the depth with the iron, do the last short way with a flat tool, and hold it while the plastic sets, since inserts creep back out. Pushed to flush with the iron, its hot shoulder marks the part. So one hand works the hot iron while the other brings flat steel down within seconds.",
+  "setup": "Positions in cm: x forward from the arm bases, y left; heights above the table. Blue silicone soldering mat, 20 x 30 x 0.2, centred (28, -5). On it, orange PETG plate 4 x 8 x 1.2 (print file in README; four 4.0 mm holes 7 mm deep on a 2.4 x 6.0 pattern), long side along y, centred (28, -3), taped down. In each hole a CNC Kitchen M3 standard brass insert (5.7 mm long, 4.6 mm OD), dropped in, top 4.4 mm proud. Hakko FX-888D station at 245 C off the table; its FX-8801 iron (21.7 cm, 46 g) with an M3 heat-set insert tip for Hakko T18 (Virtjoule, Adafruit 4239) lies tip down in a holder tube (3 x 3 cm square inside, 12 cm long, sloping 45 deg down toward -y; closed end at (28, -25.3), 4.4 high) on a 9 x 11 cm base clamped to the table. Hardened steel 1-2-3 block (2.54 x 5.08 x 7.62, 0.48 kg, All Industrial 55510 type) standing on end at (22, 12), long side along y. Distractors (ignored by scoring): digital caliper (23.8 cm, steel, 150 g) lying at (40, 25); ceramic mug (9 cm, 350 g) at (42, 6).",
+  "scoring": "0 if ever: a fingertip within 1 cm of the iron's hot end (tip to 9.5 cm up), a fingertip within 1 cm of a hot insert's top, the iron out of its holder and in no hand for 2 s, or the iron or block dropped off the table; or at the end the iron is not lying in its holder (tip within 1.5 cm of its place, within 15 deg of the tube) with every fingertip 3 cm from it. Otherwise per insert: 0.2 if its top is 0.2 mm proud to 0.3 mm below the face (straightedge and 0.2 mm feeler gauge; caliper depth rod); 0.1 if 0.2 to 1.5 mm proud; 0 if higher, lower, or with a melt mark (a ring pressed into the face by the iron's shoulder: photo). 1.0 when all four are flush and unmarked, the iron in its holder, every fingertip 3 cm from iron, inserts and block, and iron and block still, held 1 s. Possible: 0, 0.1 to 0.8 in steps of 0.1, 1.0.",
+  "run_limit": "3,600 steps (3 minutes at 20 Hz); the scripted demo needs about 1,700",
+  "reset_notes": "Each trial uses a fresh printed plate (about 40 g of PETG, 25 min) and four new inserts dropped into the holes by hand; the iron stays hot in its holder (handle it by the grip). A real trial runs the iron at 245 C; robot finger pads need heat-resistant silicone covers.",
+  "fidelity": "Approximate. PhysX cannot melt plastic: each insert is a stiff-sprung slider whose set depth a rule moves. The iron's tip on it (axis within 2 mm, iron within 10 deg) softens it in 1 s; a push over 0.3 N then sinks it (up to 3 mm/s); unpressed it creeps up 0.35 mm; it sets 5 s after the iron leaves (2 s under the block). Times are estimates. The tip's pin collides only as a 1.5 mm cone. Iron, holder, block, plate are primitives; no cord.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

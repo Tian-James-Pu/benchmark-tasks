@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-11-20T16:36:13.573872+00:00",
+  "scope": "Frozen candidate and validated simulation recordings. No physical certification or ownership clearance.",
+  "task": "stack-scrap-lumber-with-nailed-offcut",
+  "source_sha256": {
+    "simready.py": "493faf0df6dd1a7ee6801a468114969e4c13a75d554c1db33d96fa60352285fe",
+    "task.json": "9d023fb3b4c3b6c38399ea46faeae9b9d99037d01d0cd7dac4e06acf1682ad1a",
+    "task.py": "65bc999ce4a24b18b75af6605eec85a5a6c76bad999811b320a46876288f89a7",
+    "README.md": "94c9c23d9cd386a8cc828265490db9e2723a175ea2e37ae3cb390a7edcddb140",
+    "mechkit.py": "716b0eed2a3bbd18e0ee5dda8ff3642d836875fb2ba4d3ecd722bed621314539"
+  },
+  "media": {
+    "demo.mp4": {
+      "sha256": "fbe867b9803f79f7cd833f284163a8dfdbc10a0070fe32473d9a25b6945459b0",
+      "bytes": 903182
+    },
+    "dream.mp4": {
+      "sha256": "b46c74bc0f1ff292af0c25dc8238d64406a1ef69e367448be9d9b4a1ab2e7e4b",
+      "bytes": 459160
+    },
+    "setup.png": {
+      "sha256": "c16b378764ae0b43f7bbc388914893778c3eb002728eb02452093f2b8245bd2d",
+      "bytes": 194074
+    }
+  },
+  "existing_board_media_id": "M-UGTRA7",
+  "model_and_demo": {
+    "yam_scripted": {
+      "record_sha256": "9ff7dbb71a726a4ab8f50a906ca536c6bc53fd6417f233c6d9c6b921c2ab53b8",
+      "report": "/home/mzhang/yam-eval/stack-scrap-lumber-with-nailed-offcut/demo-1119-234122-gpu3-2004302/adhoc_1509a8b5.json",
+      "controls": 503,
+      "score": 1
+    },
+    "dream": {
+      "record_sha256": "be5b1170e613d29658f51ee0a63520fe7b98a03d98ed6175e9a6996d189ee117",
+      "report": "/home/mzhang/yam-eval/stack-scrap-lumber-with-nailed-offcut/dream-1119-234122-gpu0-2004303/adhoc_d38a7178.json",
+      "controls": 1600,
+      "score": 0
+    }
+  },
+  "prior_validation": "pipeline/reviews/resume-20261120/lumber/final-validation-held.json",
+  "reviewer_feedback_evidence": {
+    "denail_label": "Visible and legible in a 320x176 Dream top-camera contact sheet.",
+    "nail_location": "45 mm from the nearest board end (110 mm half length minus 65 mm centre offset), matching task source and setup.",
+    "gripper_protection": "Specified sacrificial tape and a blunted nail. No physical puncture test was performed."
+  },
+  "remaining": [
+    "Competing PR #2594 hold can lapse at 2026-11-21T01:38:24Z.",
+    "Refresh exact ownership and novelty before publication."
+  ],
+  "validated_for_goal": false
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Push the nano-SIM out of a triple-cut SIM card, leaving the micro and mini frames in the card",
+  "category": "Societal relatability",
+  "keywords": [
+    "SIM card",
+    "triple-cut",
+    "nano-SIM",
+    "breakaway tabs",
+    "bimanual",
+    "precision press"
+  ],
+  "instruction": "Push the nano-SIM out of the card, leaving the micro and mini frames in the card.",
+  "context": "New phone lines and replacement SIMs ship on triple-cut cards; carriers tell users to pop out the size they need by hand and keep the white frames as adapters. The parts nest: a 12.3 x 8.8 mm nano in a 1.5 mm micro ring in the mini outline. One hand holds the card so it can't tip, the other presses inside the nano only; a press on the ring or across a cut tears the frames out instead.",
+  "setup": "Positions are (x forward from the arm bases, y to the left) in cm; heights above the table. Notebook stack (SimReady misc_notebook_a01/a02, fixed): four closed paper notebooks, each 22.9 x 17.0 x 1.0 cm, about 250 g, stacked 4.0 cm high, centred at (30, 8.5), right edge (the -y edge) at y = 0. SIM card: triple-cut (2FF/3FF/4FF) carrier card, ISO/IEC 7810 ID-1, 8.56 x 5.40 x 0.076 cm white PVC, 5 g, chip side up, lying flat on the stack with its long side along y, centred at (30.0, 0.8); its right end is 3.5 cm out over the stack's edge, the cut-outs at that end. Cut-outs, nested and concentric: mini (2FF) 2.5 x 1.5 cm, its outer edge 0.625 cm from the card's right end; micro (3FF) 1.5 x 1.2 cm; nano (4FF) 1.23 x 0.88 cm with gold contacts, centred at (29.7, -1.6). Distractors (SimReady, loose, not scored): ceramic mug dishware_mug_a01, 11.4 x 9.0 x 8.0 cm, 300 g, at (52, 22); eyeglasses accessory_eyeglasses_a01, 14.5 x 17.4 x 5.7 cm, 30 g, at (56, -16); plastic ballpoint pen stationery_pen_plastic_a01, 17.8 x 1.5 x 1.2 cm, 12 g, lying at (17, -20). Both grippers start open at their ready poses.",
+  "scoring": "Read at the end (real trial: photos of the card's chip side and of the table, and the video). A part is torn if any of its tabs is broken (sim: its tabs gave way); torn stays torn. The nano is out once its tabs gave way and it dropped clear of the card, unless it fell off the table (its centre more than 1 cm below the table top). 1.0: the nano out and lying on the table or the notebooks (its centre at most 4.3 cm above the table, moving under 1 cm/s), neither the micro ring nor the mini frame torn, the card flat (tilt at most 10 degrees) and still (under 1 cm/s and 3 degrees/s), and every fingertip point of both grippers at least 3 cm from the card and from the nano, all held 1 s; it stays 1.0 while the nano is out and both frames are untorn. 0.75: the nano out and both frames untorn, without the 1.0 conditions. 0.5: the nano out, but the micro ring or the mini frame torn. 0.25: the nano not out, and the micro ring or the mini frame torn. 0: the nano not out and neither frame torn. Overriding all of these, 0 if the card was ever more than 2 cm below the table top (knocked off the table).",
+  "run_limit": "1,200 steps (1 minute at 20 Hz)",
+  "reset_notes": "The card is consumed: a fresh triple-cut card (about US$8 each) for each trial, laid on its tape outline on the notebook stack. Pick up the nano and any frames.",
+  "fidelity": "Card: rigid PVC plates (primitives) on sliders; each part's tabs are one stiff spring that gives way at a set load (nano 5, micro 7, mini 9 N: estimates). No bending. A torn-loose nano drags on its cut edges until clear (damping), then is a free body (0.3 g; real 0.1 g). Tab sliders get extra joint inertia for solver stability. Notebooks fixed in place. Notebooks, mug, glasses, pen: SimReady.",
+  "scores": "Dream-1 run: pending; demo: 1.0"
+}

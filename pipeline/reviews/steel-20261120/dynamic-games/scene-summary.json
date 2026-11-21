@@ -1,0 +1,67 @@
+{
+  "air_hockey": {
+    "robot": "ur5",
+    "gravity": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "fps": 60,
+    "driven": 6,
+    "target_frames": 841,
+    "max_commanded_coordinate_rate_per_s": [
+      3.299441635608673,
+      0.5880403518676758,
+      0.7639825344085693,
+      0.49285411834716797,
+      3.299441635608673,
+      9.134732863458339e-06
+    ],
+    "free_payload": "hockey_puck",
+    "payload_mass_kg": 0.08872109651565552,
+    "payload_initial_twist": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload_kinematic": false,
+    "payload_no_gravity": false
+  },
+  "beer_pong": {
+    "robot": "franka",
+    "gravity": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "fps": 60,
+    "driven": 9,
+    "target_frames": 421,
+    "max_commanded_coordinate_rate_per_s": [
+      1.8872934579849243,
+      1.737077683210373,
+      1.862461119890213,
+      2.3128581047058105,
+      0.6473618745803833,
+      0.6159067153930664,
+      3.7536442279815674,
+      0.624999962747097,
+      0.624999962747097
+    ],
+    "free_payload": "pong/ball",
+    "payload_mass_kg": 0.0027000000700354576,
+    "payload_initial_twist": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "payload_kinematic": false,
+    "payload_no_gravity": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-11-21T20:36:45.071622+00:00",
+  "decision": "clear",
+  "queries": [
+    "gopro",
+    "go pro",
+    "action camera",
+    "camera mount",
+    "camera",
+    "tripod",
+    "ball head",
+    "thumb screw",
+    "thumbscrew",
+    "buckle",
+    "helmet",
+    "helmet mount",
+    "mounting buckle",
+    "quick-release",
+    "interleav",
+    "knuckle",
+    "clevis",
+    "shackle",
+    "hinge pin",
+    "yoke",
+    "u-joint",
+    "pin through",
+    "bolt through",
+    "line up holes",
+    "align holes",
+    "screw holes",
+    "wing nut",
+    "knob screw"
+  ],
+  "nearest_prs": [
+    {
+      "number": 1886,
+      "relationship": "Revising, with a human-review appeal (TK-6UQ94P, last decision 18 Nov 17:27 UTC, rejected four times on importance): shackle a trailer's towing lug and screw the pin home. Closest skill family (a threaded pin through aligned holes of interleaved parts, then screwed home). Different object and context: a 1/2 in rigging shackle whose two ears straddle a fixed lug, the pin threading into one ear. Here a free 86 g consumer camera's two fingers must be held between a helmet buckle's three (five 3 mm layers, holes within about 1 mm) by one hand while the other passes a 54 mm thumb screw to a captive nut, then the camera must be held level during eight regripped half turns and its lens direction is scored. Everyday camera-mounting job, not rigging; not a near-duplicate."
+    },
+    {
+      "number": 190,
+      "relationship": "Accepted (TK-XDB5VZ): release a camera from a cam-clamped quick-release plate. Camera-mount context but a release by a cam lever; no interleaved fingers, holes, pin or screw."
+    },
+    {
+      "number": 903,
+      "relationship": "Accepted (TK-QJ8724): fit a U-joint cross through its yoke ears. Pushes one journal through two fixed ears; no free part held on an axis by the other hand, no screw run down, no orientation hold."
+    },
+    {
+      "number": 3453,
+      "relationship": "Pending (TK-DAQ7SB): square a phone on a mini tripod ball head while holding its button. Levelling is the whole task; no hole alignment or screw."
+    },
+    {
+      "number": 3281,
+      "relationship": "Pending: bolt a camera arm to a T-slot frame with drop-in T-nuts. Hidden T-nut placement in an extrusion slot; no interleaved fingers or through-pin."
+    },
+    {
+      "number": 2931,
+      "relationship": "Pending: fit an SO-101 shoulder bracket over servo horns and line up screw holes. Hole alignment of a bracket over horns; no pin passed through interleaved layers held by the other hand, no screw run."
+    },
+    {
+      "number": 994,
+      "relationship": "Revising (old): clevis pin plus cotter pin with leg bending. Pin into a clevis and cotter bending; no threaded fastening or held free part; also #2060/#2658 clevis-cotter variants were finally rejected."
+    },
+    {
+      "number": 1756,
+      "relationship": "Final rejection: aim a registered inspection camera on its mount. Aiming, not fastening; no pin or holes."
+    }
+  ],
+  "physical_skill": "Pick up the 86 g camera lying on its side, turn it upright and set its two 3 mm folding fingers into the buckle's two 3.3 mm gaps; hold it so all five 5.2 mm holes stay within about 1 mm of one axis (let go and it drops 2 mm to the slots' floor) while the other hand pushes the 4.9 mm thumb screw 13.95 mm through all five fingers to the captive nut; then turn the paddle head through about eight half turns with a regrip after each (0.8 mm per turn) while the first hand keeps the camera level, and finally have both hands back off 3 cm with the camera clamped facing forward within 5 degrees.",
+  "valid_shortcuts": "Any arm assignment, grip, order of approach or number of retries is allowed; only the end state counts. Checked: doing nothing scores 0; one hand at a time (line up, let go, then screw) scores 0 because the camera drops and falls off; letting go before the screw is run down scores 0.75 (camera clamped tilted); the screw run into the empty buckle scores 0 (the pinned check needs both camera finger holes within 1 mm of the screw axis). A camera fastened backwards or tilted past 5 degrees stays at 0.75, as the scoring text says; any gripper fingertip point within 3 cm of camera, screw or buckle scores 0, so holding instead of releasing earns nothing. The thread is code that only advances with turning once the tip reaches the nut, so pushing harder cannot seat it, and the screw cannot be forced through an off-axis hole (real convex contacts). No destructive or object-modifying route reaches a nonzero score.",
+  "distinct_from_nearest": "No accepted, pending or revising PR mounts an action camera or uses the GoPro finger/buckle interface (title grep of 3,530 PRs (refreshed after the Dream-1 run, no new camera-mount or pin-through PR) and GitHub full-text search for GoPro, action camera, thumb screw, mounting buckle, helmet mount found none live). Camera-mount tasks on the board are a cam-lever release (#190), a ball-head levelling (#3453) and T-slot T-nuts (#3281). The nearest skill relative is #1886's screw-pin shackle, which is rigging hardware over a fixed lug, rejected repeatedly on importance (scale of rigging work); this task is an everyday consumer job (Societal relatability, about 3 million GoPro cameras sold in 2023) with a free held part between three fixed fingers, five layers to line up, a screw run home with regrips and a level-orientation hold. #903's U-joint pushes a journal through two fixed ears with no screw. External sets (LIBERO, RoboCasa, SimplerEnv, BEHAVIOR, RoboDojo) have no camera mounting or bimanual pin-through-interleaved-parts task. Main risks: reviewer may see #1886 as the same skill family; the thread is code (disclosed in fidelity).",
+  "task_py_sha256": "3dc53aff11dd11f76527df9f8a800a4c6080a1bbfefa5ff15be72ec593cdd093",
+  "task_metadata_sha256": "a154616548fbf6819ef1443cc782a1f9da4b3b7f3e5cc72b06279a2da2504628"
+}

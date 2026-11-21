@@ -1,0 +1,65 @@
+{
+ "checked_at": "2026-11-21T23:46:41Z",
+ "decision": "clear",
+ "queries": [
+  "known_tasks.tsv refreshed 2026-11-21 ~23:20 UTC (3,559 PRs, all states): christmas, xmas, tree stand, holiday, festive, eye bolt, eyebolt, plumb, upright, leaning tree, tabletop tree",
+  "level, leveling, levelling, foot screw, tram, thumbscrew, thumb wheel, wing nut, set screw, screw clamp, knob ... turns (all states)",
+  "BEHAVIOR activity list (pipeline/pdf-screening/.../behavior.txt): christmas_tree appears only in putting_up_Christmas_decorations_inside (pick-and-place)",
+  "PRs newer than #3504 (all states): level, screw, bolt, tilt, straighten, lean, stand; nearest new hits #3546 (grade rod held plumb, pending), #3524 (bifold door pin plumb, revising), #3530 (hold pump while tightening clamp, rejected)",
+  "Re-refreshed known_tasks.tsv after the Dream-1 run (~23:50 UTC); re-grepped christmas, xmas, tree stand, eye bolt and read titles of PRs newer than #3555: no tree-stand or opposing-screw re-alignment task."
+ ],
+ "nearest_prs": [
+  {
+   "pr": 2379,
+   "state": "CLOSED, Not accepted: final (other team)",
+   "read": "Comments read: level a builder's automatic level on three foot screws; rejected on importance (surveying specialists), construct validity (enlarged screw circle) and a custom base.",
+   "comparison": "Same family of physics (screws turned against each other to tilt a part) but a specialist instrument; ours is a household job with a real $18 stand at full size, and the screws cage the part from the side so one must be let out while the other pushes."
+  },
+  {
+   "pr": 2392,
+   "state": "CLOSED, Not accepted: final (other team)",
+   "read": "Comments read: level an analytical balance on two thumb-wheel feet; rejected on importance (occasional lab chore) and cost.",
+   "comparison": "Feet lift a body vertically; ours drives a trunk sideways in a cage. Closed on importance, not duplication."
+  },
+  {
+   "pr": 3504,
+   "state": "OPEN, pending (other team)",
+   "read": "Body read: find which corners of a stool rock and push a shim under the short foot.",
+   "comparison": "Shim insertion, no screw adjustment; different object and skill."
+  },
+  {
+   "pr": 880,
+   "state": "CLOSED, Not accepted: final (other team)",
+   "read": "Body read: raise a hinged mast with two guy lines, ring eyes onto pegs so it stands plumb.",
+   "comparison": "Plumb by guy-line choice; no threads, no caged trunk."
+  },
+  {
+   "pr": 2080,
+   "state": "CLOSED, Not accepted: final",
+   "read": "Title read: eyebolt-lift task.",
+   "comparison": "Lifting by an eyebolt; no adjustment of a tree stand."
+  },
+  {
+   "pr": 3546,
+   "state": "OPEN, pending (other team)",
+   "read": "Body read: one arm holds a grade rod plumb by its bubble while the other loosens a laser receiver's rod clamp, slides it to grade and clamps it.",
+   "comparison": "Hold-plumb-and-clamp of a surveying rod; ours holds nothing, it re-aligns a caged trunk by turning two opposing screw threads by matched amounts. Different object, setting and skill."
+  },
+  {
+   "pr": 3530,
+   "state": "CLOSED, Not accepted: final (our team)",
+   "read": "Review read: hold-and-tighten (pump held while its clamp is screwed) judged an already-covered ability.",
+   "comparison": "Ours has no hold-while-tightening: both arms turn screws in opposite senses, the backing-out bolt kept ahead; the tree is never held, and pushing it is blocked."
+  }
+ ],
+ "physical_skill": "Turn two eye bolts on opposite sides of a stand in opposite directions by matched amounts (about 3.5 turns each of a 1.41 mm thread, pinching each eye and rolling the wrist, regripping every half turn) so the caged trunk moves from a 2.5 degree lean to within 1 degree of plumb with all three caps still bearing.",
+ "valid_shortcuts": [
+  "Backing B out first, then screwing A in (sequential, one bolt at a time) is valid and scores 1.0 if the end state is met.",
+  "One arm turning both bolts with other grips is valid if reachable; not exercised.",
+  "Pushing the trunk by hand: blocked by the caps (red team push 0.0).",
+  "Screwing A alone jams (onearm 0.0); backing B alone leaves the lean (careless 0.0); backing A out lets the tree flop (wrongway 0.0, harm)."
+ ],
+ "distinct_from_nearest": "No accepted or pending PR straightens a Christmas tree or adjusts a tree stand; the nearest skill matches (#2379, #2392) were specialist instrument levelling closed on importance. Ours is a household seasonal job (21.6 million US real trees in 2023; RCTB calls the eye-bolt stand the most common type) with a coupled let-out/drive adjustment of a caged trunk.",
+ "task_py_sha256": "0909f557cd59126bb7ce3c37fadabcfac0bae0db29f0989597129b9fd5fdcf37",
+ "task_metadata_sha256": "63164f0c291f617ddf328c398ef331a957fd9a7ce167f169e0d9eaeb9a1f1b3a"
+}

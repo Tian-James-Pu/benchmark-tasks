@@ -1,0 +1,877 @@
+{
+  "checked_at": "2026-11-20T03:13:42.648242+00:00",
+  "source_snapshot": "pipeline/reviews/resume-20261120/own-prs.json",
+  "scope": "All 27 team PRs; all open revisions and all 17 final rejection threads audited. Shared local coordination note; no publication.",
+  "counts": {
+    "submitted": 27,
+    "accepted": 1,
+    "pending_after_revision": 6,
+    "pending_first_review": 3,
+    "rejected_final": 17
+  },
+  "accepted": [
+    {
+      "pr": 2406,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2406",
+      "folder": "reset-shower-chair-short-leg",
+      "merged_at": "2026-11-19T02:00:32Z"
+    }
+  ],
+  "pending_priorities": [
+    {
+      "rank": 1,
+      "pr": 2951,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2951",
+      "folder": "recycle-can-with-hanging-lid",
+      "tier": "stronger",
+      "status": "pending_after_revision",
+      "basis": "Cut protection, tool route and repeatable reset address a narrow feasibility request.",
+      "remaining_risk": "Protection is documented, not physically measured.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending."
+    },
+    {
+      "rank": 2,
+      "pr": 2609,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2609",
+      "folder": "replace-worn-crutch-ferrule",
+      "tier": "stronger",
+      "status": "pending_after_revision",
+      "basis": "Worn-tip preparation, shaft projection, pull-off test and reset now specified.",
+      "remaining_risk": "Resistance targets are model choices rather than empirical population data.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending."
+    },
+    {
+      "rank": 3,
+      "pr": 2520,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2520",
+      "folder": "clear-utensil-from-dishwasher-spray-arm",
+      "tier": "stronger",
+      "status": "pending_after_revision",
+      "basis": "Stock spatula reset and observable full-circle clearance test address reproducibility objections.",
+      "remaining_risk": "Real reset must reliably reproduce the specified jam.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending."
+    },
+    {
+      "rank": 4,
+      "pr": 2879,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2879",
+      "folder": "prepare-infant-carrier-on-base",
+      "tier": "stronger",
+      "status": "pending_after_revision",
+      "basis": "Named hardware, installed vehicle context and final-state scorer address all three requests.",
+      "remaining_risk": "One-sided latch fault remains conditional on the real product sample.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending."
+    },
+    {
+      "rank": 5,
+      "pr": 2477,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2477",
+      "folder": "start-car-with-jammed-steering-lock",
+      "tier": "moderate",
+      "status": "pending_after_revision",
+      "basis": "Visible angle measurement and dimensioned fixture replace inaccessible wrist-torque assessment.",
+      "remaining_risk": "Real column calibration and applicability of torque thresholds remain uncertain.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending."
+    },
+    {
+      "rank": 6,
+      "pr": 2883,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2883",
+      "folder": "snap-wheel-cover-on-steel-wheel",
+      "tier": "conditional",
+      "status": "pending_after_revision",
+      "basis": "Installed wheel/bodywork and clip retention geometry corrected.",
+      "remaining_risk": "Requested real insertion-force measurement is still missing; exact rim unspecified.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending."
+    },
+    {
+      "rank": 7,
+      "pr": 2839,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2839",
+      "folder": "close-iv-roller-clamp",
+      "tier": "uncertain_first_review",
+      "status": "pending_first_review",
+      "basis": "Recognizable clinical operation with reproducible setup.",
+      "remaining_risk": "Non-rolling wheel, unsqueezed tube and estimated force weaken defining mechanics.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending."
+    },
+    {
+      "rank": 8,
+      "pr": 2884,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2884",
+      "folder": "free-cpu-stuck-to-heat-sink",
+      "tier": "higher_risk_first_review",
+      "status": "pending_first_review",
+      "basis": "Direct server-service relevance.",
+      "remaining_risk": "Older Dell fault combined with LGA3647 geometry without carrier; paste fault unverified.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending.",
+      "revision_preparation": "pipeline/reviews/resume-20261120/cpu/revision-preparation.json",
+      "preparation_result": "Primary Dell procedure supports Xeon5150 with original PowerEdge1955 cooler, not the submitted LGA3647/Supermicro combination. Exact cooler geometry, paste characterization and category relevance still need resolution. No pending-PR edit."
+    },
+    {
+      "rank": 9,
+      "pr": 2872,
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2872",
+      "folder": "refit-soda-maker-bottle",
+      "tier": "higher_risk_first_review",
+      "status": "pending_first_review",
+      "basis": "Named consumer product and angled insertion.",
+      "remaining_risk": "Covered snap-fit skill and appliance-setup importance risk; safe repositioning may be penalized.",
+      "next_action": "Monitor official review; prepare evidence locally; do not push while pending.",
+      "ranking_reassessment": "Recent accepted2574 and2584 show estimated springs/snap mechanisms alone do not establish rejection risk. No exact duplicate found in this audit; importance remains uncertain. Permanent2cm machine displacement failure is a concrete scoring concern. Simulation/source/media qualification completed; acceptance remains pending."
+    }
+  ],
+  "ranking_limit": "Qualitative relative triage, not calibrated acceptance probabilities. Stronger does not mean accepted or independently physically revalidated.",
+  "closed_actions": {
+    "monitor_existing_appeals": [
+      2500,
+      2544
+    ],
+    "human_denial_retire": [
+      2418
+    ],
+    "new_appeals_recommended": [],
+    "assessment": "pipeline/reviews/closed-pr-audit-20261120/assessment.json"
+  },
+  "new_task_queue": [
+    {
+      "folder": "retrieve-wrench-from-under-floor-hole-cover",
+      "owner": "claude",
+      "priority": 1,
+      "evidence": "Three full-score demos, six recovered current control variants and completed current-source Dream0/1800 independently verified; older demo source differs only in module docstring.",
+      "blocker": "Other-team hold plus unverified exact cover retention/load capacity and source-grounded access/hazard claims.",
+      "not_before_utc": "2026-11-21T01:37:33Z",
+      "action": "Preserve Claude-owned task. Address specific hardware and context gaps; cleat-based securing itself is supported by Construction Safety Council guidance. After2026-11-21T01:37:33Z recheck original2593 and all-board holds, then final source/media/package checks.",
+      "status": "simulation_evidence_verified_acceptance_not_ready",
+      "audit": "pipeline/reviews/resume-20261120/wrench-cover/qualification.json",
+      "documentation_update": "README inaccurate lapse, bimanual necessity, step/frame counts and counter semantics corrected. BUILD.md supplies exact nonoverlapping frame cut list, material and cleat fastener specification. Physical load/retention evidence remains unverified.",
+      "documentation_evidence": "pipeline/reviews/resume-20261120/wrench-cover/documentation-fixes/final-review.json"
+    },
+    {
+      "folder": "turn-angle-grinder-guard-and-clamp",
+      "owner": "claude",
+      "priority": 2,
+      "evidence": "Incomplete demo; recent scores 0 to 0.25.",
+      "action": "Do not continue acceptance-oriented tuning while competing task remains held. Preserve existing work. Read pipeline/reviews/resume-20261120/queue-novelty/pr-2781.json.",
+      "blocker": "Reclaimed by pending PR2781, TK-QP4EX8 received2026-11-19T02:48:49Z",
+      "status": "do_not_submit_duplicate_held"
+    },
+    {
+      "folder": "key-a-sheave-onto-a-motor-shaft",
+      "owner": "claude",
+      "priority": 3,
+      "evidence": "Key seating works; recent completed score0.25.",
+      "action": "Resolve exact-operation importance evidence and real required tightening capability before additional demo tuning or submission. Do not treat token torque plus joint lock as actual clamp validation.",
+      "blocker": "New same-operation PR2909 final rejection on exact-operation workforce importance. Local model also substitutes0.2Nm for manufacturer110-130in-lb torque.",
+      "status": "held_importance_and_force_fidelity"
+    },
+    {
+      "folder": "stack-scrap-lumber-with-nailed-offcut",
+      "owner": "claude",
+      "priority": 4,
+      "evidence": "Two current-source full-score demos (1.0/503), idle 0/260, held-result 0.7/602, and fresh Dream 0/1600; official media M-UGTRA7. Scorer lower-bound fix and reproducible fixture documentation applied and verified.",
+      "action": "Await competing hold expiry, then refresh original PR2594 and all-board reclaim/novelty checks. Preserve Claude ownership. Current package preflight correctly stops on unresolved duplicate concern.",
+      "blocker": "Other team PR2594 active48h hold",
+      "not_before_utc": "2026-11-21T01:38:24Z",
+      "status": "simulation_and_media_complete_submission_held",
+      "audit": "pipeline/reviews/resume-20261120/lumber/final-validation-held.json"
+    },
+    {
+      "folder": "put-preschool-chair-up-on-table",
+      "owner": "claude",
+      "priority": 5,
+      "evidence": "Early reachability probes.",
+      "action": "Preserve existing work; no assumed release at the old hold expiry. Fresh competing receipt overrides timer.",
+      "blocker": "Original PR2610 revised, received TK-UMQC2W at2026-11-20T04:13:25Z; pending review.",
+      "not_before_utc": "2026-11-21T01:40:24Z",
+      "status": "do_not_submit_competing_revision_pending"
+    }
+  ],
+  "acceptance_optimization": [
+    "All categories are eligible; safety and recovery are optional. Prioritize the PDF and manufacturer-grounded ordinary tasks.",
+    "Preserve defining work: no captive substitute for a removed part, artificial support, missing insertion resistance, or softened thread/force solely to make success possible.",
+    "Use importance evidence about the exact operation; manuals establish existence, workforce totals do not establish task prevalence.",
+    "Use observable final-state scoring; penalize history only for irreversible damage or a stated real hazard.",
+    "Pass source/scale/reachability, novelty, two fresh full-score demos, negative controls, visual review, package/media checks before submission.",
+    "Submit validated unheld candidates immediately through shared submit.sh; revisions through revise.sh only after eligible feedback.",
+    "Do not overwrite Claude task folders or spend GPU time duplicating active builders."
+  ],
+  "supporting_evidence": [
+    "pipeline/reviews/resume-20261120/acceptance-audit-seven.md",
+    "pipeline/reviews/resume-20261120/pr-2609.json",
+    "pipeline/reviews/resume-20261120/wheel-cover-force-preparation.md",
+    "pipeline/reviews/closed-pr-audit-20261120/assessment.json"
+  ],
+  "additional_research_leads": [
+    {
+      "title": "Contour-gauge profile transfer",
+      "status": "Parked after approximate grip failure; exact replacement concept is now held by pending PR #3057.",
+      "source_pr": 2416,
+      "hold_expired_at": "2026-11-19T22:36:25Z",
+      "hardware": "Wolfcraft6949000, 105x180x20mm,91pins,130mm contour width,30mm depth",
+      "next_action": "Check the official state of PR #3057 before spending additional simulation time.",
+      "evidence": "pipeline/reviews/resume-20261120/contour-gauge-coupon-r2/outcome.json",
+      "competing_pr": 3057
+    },
+    {
+      "title": "Contaminated-glove removal",
+      "pdf_id": "SR-004",
+      "status": "unclaimed; high-risk fit and deformable-contact gate only",
+      "next_action": "Establish unmodified commercial glove fit and opposite-gripper cuff access before simulation; stop if tabs, enlarged cuff or scripted peel required.",
+      "evidence": "pipeline/reviews/resume-20261120/unclaimed-pdf-acceptance-screen.json"
+    }
+  ],
+  "independent_validation_update": {
+    "folder": "recycle-can-with-hanging-lid",
+    "scope": "Simulation/source/media validation under BRIEF Definition of done; physical pad durability and actual can yield moment remain unmeasured and are not claimed validated.",
+    "passed": true,
+    "evidence": "pipeline/reviews/resume-20261120/can-lid-validation-qualification.json",
+    "new_simulation_runs_this_audit": 0,
+    "accepted": false
+  },
+  "queue_rechecked_at": "2026-11-20T02:57:50.967378+00:00",
+  "queue_note": "This fresh live-PR check supersedes the initial local-only queue ranking. All current advanced candidates are blocked by holds, duplicate intake, or substantive importance/fidelity gates.",
+  "steel_source_assessment": "pipeline/reviews/steel-20261120/adoption-plan.json",
+  "independent_validation_count": 10,
+  "validation_count_scope": "Independent simulation/source/media qualification in Codex ledger, distinct from27submitted and1accepted.",
+  "latest_status_snapshot": "pipeline/pr-watch-latest.json",
+  "latest_validation_update": {
+    "folder": "free-cpu-stuck-to-heat-sink",
+    "evidence": "pipeline/reviews/resume-20261120/cpu/qualification.json",
+    "scope": "Numerical simulation/source/media qualification only. Hardware/fault/force concerns remain unresolved; not acceptance or real repair validation.",
+    "accepted": false
+  },
+  "recent_acceptance_calibration": "pipeline/reviews/resume-20261120/recent-accepted/acceptance-calibration.json",
+  "pdf_coverage_update": {
+    "checked_at": "2026-11-20T03:35:56.603066+00:00",
+    "screened_catalog_entries": 100,
+    "qualified_tasks_added": 0,
+    "evidence": "pipeline/reviews/resume-20261120/pdf-remaining-coverage.json",
+    "next_leads": [
+      "SR-024: real Sailrite/Lenzip repair and bounded CPU reach identified. Flexible threading, stop forming and sewn-end restoration remain unvalidated; pipeline/pdf-screening/sr024-zipper-slider-gate/gate.json.",
+      "SR-043: full-size CPU access passed, but native tube pilot invalid under stiff lowering and incorrect drive release. Zero-drive gravity-contact follow-up needed; no full task or qualification. See pipeline/isolated-trials/sr043-wheel-tube-20261120/outcome.json."
+    ]
+  },
+  "physics_reuse_update": {
+    "evidence": "pipeline/reviews/steel-20261120/thread-contact-r2-result.json",
+    "status": "Native original-size M20 thread contact: stable three-turn advance/reverse, free removal and final retention demonstrated. Strict first recontact turn failed pitch tolerance; later settled pitch matches are exploratory. No further coupon run or task qualification.",
+    "counts_as_task_validation": false
+  },
+  "updated_at": "2026-11-20T16:43:17.336543+00:00",
+  "last_live_pr_check": {
+    "checked_at": "2026-11-20T16:34:49.714359+00:00",
+    "counts_unchanged": true,
+    "source": "Direct GitHub list; nine open, none labeled for revision."
+  },
+  "latest_status_checked_at": "2026-11-20T15:01:44.204380+00:00",
+  "current_continuation": {
+    "new_acceptances": 0,
+    "new_submissions": 0,
+    "validation_count": 10,
+    "lumber_review": "pipeline/reviews/resume-20261120/lumber/qualification.json",
+    "lumber_isolated_patch": "pipeline/reviews/resume-20261120/lumber/proposed-fixes/review.patch",
+    "lumber_cpu_regression": "7 passed; tested patch adopted, two full native demos and controls complete. Held, not counted or submitted.",
+    "tube_diagnostic": "pipeline/isolated-trials/sr043-contact-margin-r5-20261120/comparison.md",
+    "zipper_geometry": "pipeline/isolated-trials/sr024-zipper-geometry-20261120/slider-crossing-1458.json",
+    "quota_read_only_check": "Superseded by user update: no rolling submission quota.",
+    "competing_hold_guard_update": "pipeline/reviews/resume-20261120/new-claims/bender-and-focus-holds-1423.json",
+    "hair_braiding_research": "pipeline/reviews/resume-20261120/hair-braiding/gate.json",
+    "ready_queue_review": "pipeline/reviews/resume-20261120/ready-queue-screen/ranking.json",
+    "lumber_proposed_demo": "Two current-source demos 1.0/503. Fresh Dream 0/1600, media uploaded M-UGTRA7. Original patch adopted; ownership hold remains.",
+    "active_work": {
+      "checked_at": "2026-11-20T05:33:22.565143+00:00",
+      "lumber_proposal": {
+        "folder": "pipeline/isolated-trials/lumber-proposal-20261120",
+        "demo": "1.0/503",
+        "none": "0.0/260",
+        "hold": "0.7/602",
+        "original_files": "Tested three-file patch adopted at04:35:40UTC; README cut list and measurement detail added afterward. Owner/status preserved.",
+        "next": "Final model and media now complete. Await actual ownership clearance and fresh novelty review; no PR and not counted while held.",
+        "model": "Dream0.0/1600",
+        "media": "M-UGTRA7"
+      },
+      "hair_braiding": {
+        "owner_agent": "/root/acceptance_audit",
+        "state": "Full-scene R5 grasp and exchange remained numerically stable, but crossings reversed and disappeared on release: bent loop, not braid. Agent testing free-tail exchange. Root separately checking native clip pickup/turn route, no full qualification.",
+        "scope": "No per-fiber requirement; preserve native contact/slip/release, source-supported finite mechanics and disclosed aggregate approximation. Shared runtime and allocator.",
+        "evidence": "pipeline/isolated-trials/hair-aggregate-light-pinch-r4-20261120/outcome.json",
+        "qualified": false,
+        "clip_prerequisite": "pipeline/isolated-trials/clip-turn-20261120/outcome.json",
+        "clip_state": "Native ordinary pickup,165.5mm lift, turn to within1.01deg upright, restore and release complete. Whole-grip relative drift41um/0.225deg. Right ear handoff at current location fails CPU; clip opening/fastening still unproven.",
+        "clip_rim_draft": "pipeline/isolated-trials/clip-rim-pickup-20261120/outcome.json",
+        "clip_revision": {
+          "folder": "pipeline/isolated-trials/clip-rim-pickup-r2-20261120",
+          "run": "/home/mzhang/yam-eval/codex-clip-rim-pickup-r2-20261120/demo-1120-005611-gpu2-2969371",
+          "state": "Terminal565controls. Revised hinge/ear model retains native one-hand pickup/carry/release. Ordinary stronger closure stalls at35.4deg and23.8mm measured finger gap; requires higher ear grasp to avoid clamping lower body, not softened mechanics. Full braid fastening still unproven."
+        }
+      },
+      "iv_spiking_and_priming": {
+        "owner_agent": "/root/review_crutch",
+        "state": "R2 native trial removed both caps and retained chamber at port, but insertion remains about10mm shallow; no fluid connection or priming score claimed. Agent preparing bounded native feedback press and contamination adapter.",
+        "folder": "pipeline/isolated-trials/iv-bag-spike-prime-20261120"
+      },
+      "gnocchi_batch": {
+        "owner_agent": "/root/review_dishwasher",
+        "state": "Original zero-scored coupon terminal4380controls:32 ready,10 lifted,9 pose-plated,22 still in pan,1 dropped. Native contact-rest320-step diagnostic validates force sign/plate support/dial initialization/mass update. Short full-scene grip diagnosis now records53 resolved native sensors; full successful demonstration remains outstanding.",
+        "scorer_tests": "15 reference outcomes plus6 independent frozen-adapter adversaries pass; later native smoke caught sleeping-contact and initial dial-state defects under correction."
+      }
+    },
+    "lumber_patch_applied": "pipeline/reviews/resume-20261120/lumber/proposed-fixes/adoption.json",
+    "lumber_final_validation": "pipeline/reviews/resume-20261120/lumber/final-validation-held.json",
+    "floor_cover_final_packet": "pipeline/reviews/resume-20261120/wrench-cover/final-packet-held.json",
+    "floor_cover_media": "M-BPBQER",
+    "additional_hardware_lead": "pipeline/reviews/resume-20261120/cabinet-hinge-sourcing/gate.json",
+    "gnocchi_independent_scoring_review": "pipeline/reviews/resume-20261120/gnocchi-batch/scoring-review/review.json",
+    "gnocchi_independent_adapter_review": "pipeline/reviews/resume-20261120/gnocchi-batch/adapter-review/review.json",
+    "latest_accepted_calibration": "pipeline/reviews/resume-20261120/recent-accepted/calibration-2599.json",
+    "hair_geometry_review": "pipeline/reviews/resume-20261120/hair-braiding/geometry-review/review.json",
+    "latest_evidence": "pipeline/reviews/resume-20261120/continuation-1740.json",
+    "jaw_coupling_new_full_demos": "pipeline/reviews/resume-20261120/jaw-coupling/evidence-0620.json",
+    "back_deburr_lead": "pipeline/reviews/resume-20261120/back-deburr/screen-0626.json",
+    "drill_feed_terminal": "pipeline/isolated-trials/back-deburr-drill-press-r4-20261120/outcome.json",
+    "jaw_coupling_recent_audit": "pipeline/reviews/resume-20261120/jaw-coupling/independent-native-audit-0722.json",
+    "cookies_current_source_audit": "pipeline/artifact/cookie-submission-prepared-20261120/manifest.json",
+    "siphon_pdf_reach_and_flow": "pipeline/pdf-screening/sr029-siphon/screening.json",
+    "siphon_rigid_stock_intake": "pipeline/pdf-screening/sr029-siphon/stock-intake-screening.json",
+    "verified_terminal_frame_archive": "pipeline/reviews/resume-20261120/storage/archived-outlet-1443.jsonl",
+    "siphon_native_r1": "pipeline/isolated-trials/sr029-stock-intake-r1-20261120/outcome.json",
+    "gnocchi_hold": "pipeline/reviews/resume-20261120/gnocchi-batch/reclaim-20261120/decision.json",
+    "siphon_long_intake": "pipeline/pdf-screening/sr029-siphon/long-hose-lift-screen.json",
+    "siphon_measured_lift": "pipeline/isolated-trials/sr029-extended-lift-r4-20261120/outcome.json",
+    "siphon_active_lift": "pipeline/isolated-trials/sr029-extended-lift-r5-20261120/manifest.json",
+    "siphon_fluid_controls": "pipeline/pdf-screening/sr029-siphon/flow-kernel-controls.json",
+    "siphon_native_inlet_recovery": "pipeline/isolated-trials/sr029-extended-lift-r5-20261120/outcome.json",
+    "siphon_loaded_receiver_diagnostic": "pipeline/isolated-trials/sr029-loaded-receiver-r7-20261120/outcome.json",
+    "iv_priming_contact_gate": "pipeline/isolated-trials/iv-bag-spike-prime-20261120/r11/result.json",
+    "siphon_model_control_and_carry_limit": "pipeline/pdf-screening/sr029-siphon/venturepak-quasistatic-carry-budget.json",
+    "siphon_inline_valve_alternative": "pipeline/pdf-screening/sr029-siphon/venturepak-inline-valve-bound.json",
+    "siphon_inline_valve_layout": "pipeline/pdf-screening/sr029-siphon/venturepak-inline-route.json",
+    "siphon_longer_lever_geometry": "pipeline/pdf-screening/sr029-siphon/venturepak-apollo-push-adapter-geometry.json",
+    "siphon_raised_stem_dense_geometric_witness": "pipeline/pdf-screening/sr029-siphon/venturepak-apollo-extended-stem-dense.json",
+    "siphon_native_component_trial": "pipeline/isolated-trials/sr029-valve-turn-r10-20261120/preflight.json",
+    "siphon_native_post_drain_intake_return": "pipeline/isolated-trials/sr029-return-intake-r11-20261120/outcome.json",
+    "siphon_loaded_pail_trial": "pipeline/isolated-trials/sr029-loaded-pail-r12-20261120/outcome.json",
+    "siphon_two_handle_sensitivity": "pipeline/isolated-trials/sr029-side-handle-bucket-r13-20261120/preflight.json",
+    "siphon_r13_terminal": "pipeline/isolated-trials/sr029-side-handle-bucket-r13-20261120/outcome.json",
+    "sr077_optical_coupon": "pipeline/pdf-screening/sr077-optical-encoder/pulse-integrity-evidence.json",
+    "sr015_paddle_interface": "pipeline/isolated-trials/sr015-paddle-interface-20261120/gate.json",
+    "new_accepted_mechanism_comparators": "pipeline/reviews/resume-20261120/recent-accepted/nov20-physical-mechanism-calibration.json",
+    "siphon_r14_terminal": "pipeline/isolated-trials/sr029-supported-handle-bucket-r14-20261120/outcome.json",
+    "sr015_native_component_results": {
+      "primary_model": "Yedi GV029. The manufacturer manual shows axial hook use and paddle removal in photographs.",
+      "provenance": "pipeline/isolated-trials/sr015-yedi-engagement-20261120/geometry-provenance.json",
+      "protocol": "pipeline/reviews/resume-20261120/sr015-bread-scoring/qualification-protocol.md",
+      "reference_scoring_tests": "13 passed",
+      "passive_restraint_budget": "pipeline/reviews/resume-20261120/sr015-bread-scoring/retention-budget.json",
+      "serve_native": "pipeline/isolated-trials/sr015-serve-20261120/outcome.json",
+      "pickup_native": "pipeline/isolated-trials/sr015-yedi-pickup-20261120/outcome.json",
+      "hook_paddle_contact_native_diagnostic": "pipeline/isolated-trials/sr015-yedi-engagement-20261120/r2/result.json",
+      "failed_initial_hook_staging": "pipeline/isolated-trials/sr015-yedi-engagement-20261120/result.json",
+      "tool_tip_pivot_rejected": "pipeline/reviews/resume-20261120/sr015-bread-scoring/hook-vertical-tip-pivot-rejected.json",
+      "limits": "Source-photo estimates for loaf/tool. Three isolated positive gates, no joint full task. Contact proof uses bounded external wrench on the hook. No hardware extraction-force calibration.",
+      "novelty": "No direct paddle/bread submission returned in public GitHub search. Accepted PR699 slices a loaf. Official board verification outstanding.",
+      "hook_tcp_pivot_rejected": "pipeline/reviews/resume-20261120/sr015-bread-scoring/hook-vertical-route.json",
+      "hook_low_peg_exit_rejected": "pipeline/reviews/resume-20261120/sr015-bread-scoring/hook-hanging-low-route-rejected.json",
+      "hook_straight_entry_peg_rejected": "pipeline/reviews/resume-20261120/sr015-bread-scoring/hook-hanging-straight-entry-rejected.json",
+      "next_support_design": "Using Rogers BF-1000 silicone foam compression data to design a soft surrogate insert with passive contact along the actual paddle blade. No extrapolation to baked bread extraction force.",
+      "upright_cpu_path": "pipeline/reviews/resume-20261120/sr015-bread-scoring/hook-hanging-route.json",
+      "upright_plan": "Start on an ordinary through-ring utensil peg. Approach via elevated route, slide free of the pin, raise fully outside the loaf envelope, then transport over the bore. Whole-arm nominal CPU witness passes; straight transport hit the loaf.",
+      "surrogate_design": "Subagent evaluating BF-1000 replaceable foam cheek insert, actual cavity and paddle mesh, native free paddle with passive reactions into the loaf. Currently an engineering force bracket, not measured bread force.",
+      "insertion_tolerance_note": "Bore and tip dimensions are estimates. Native hover acceptance is millimetre-scale staging, not the submillimetre nominal bore-entry fit. Integrated demonstration must observe actual hook pose and compensate repeatable grasp orientation error before descending.",
+      "upright_native_result": "pipeline/isolated-trials/sr015-yedi-upright-20261120/outcome.json",
+      "upright_native_measurement": {
+        "native_hover_pass": false,
+        "hold_second_max_error_mm": 8.607560428962492,
+        "hold_second_max_rotation_error_deg": 5.185680458670356
+      },
+      "retention_cpu_preflight": "pipeline/isolated-trials/sr015-foam-insert-20261120/preflight.json",
+      "upright_hold_diagnostics": "pipeline/isolated-trials/sr015-yedi-upright-20261120/hold-diagnostics.json",
+      "upright_next_gate": "Peg-to-hover transport measured. The frame velocity did not meet the retained damping/stillness criterion. Check substep contact, then use actual observed hook rigid transform for precision alignment instead of assuming nominal pickup transform."
+    },
+    "labeller_r8_native_roll": "pipeline/reviews/resume-20261120/price-label-gun/r8-result.json",
+    "competing_revisions_rechecked": {
+      "scoop_a_single_batch_of_gnocchi": "pipeline/reviews/resume-20261120/gnocchi-batch/reclaim-20261120/latest-competitor-receipt.json",
+      "set_heat_set_inserts_flush": {
+        "pr": 2509,
+        "received_at": "2026-11-20T10:27:18Z",
+        "task_id": "TK-PGSNL6",
+        "state": "pending_review"
+      },
+      "earliest_resubmission_hold_expiry_within_ready_queue": {
+        "pr": 2311,
+        "expires_at_if_unchanged": "2026-11-20T23:09:27Z",
+        "task": "cookies"
+      }
+    },
+    "sr015_precision_alignment": {
+      "feedback_failed": "pipeline/isolated-trials/sr015-yedi-align-20261120/outcome.json",
+      "feedback_failure_mechanism": "Separate joint clips capped required coupled -0.642/0.436 rad wrist motion. Median hook tip error rose from 7.96 mm to 35.81 mm.",
+      "coupled_measured_wrist_native": "pipeline/isolated-trials/sr015-yedi-measured-wrist-20261120/outcome.json",
+      "early_clearance": "pipeline/reviews/resume-20261120/sr015-bread-scoring/axial-entry-preflight.json",
+      "strict_clearance_sensitivity": "pipeline/reviews/resume-20261120/sr015-bread-scoring/axial-entry-sensitivity.json",
+      "strict_clearance_note": "0.30 mm smaller final catch shift. Passed nominal, 16/16 simultaneous fixed offsets of ±0.125 mm in both translation axes and ±0.4 degrees in both tilt axes, and 41/49 total CPU cases. No native insertion.",
+      "dish_transfer_preflight": "pipeline/reviews/resume-20261120/sr015-bread-scoring/paddle-dish-preflight.json",
+      "bore_pose_adapter": "pipeline/reviews/resume-20261120/sr015-bread-scoring/bore_trajectory.py",
+      "scoring_and_transform_tests": 16,
+      "rigid_face_retention_failed": "pipeline/isolated-trials/sr015-foam-insert-20261120/result.json",
+      "new_pressure_model_geometry_diagnostic": "pipeline/isolated-trials/sr015-foam-pressure-20261120/settled-geometry.json",
+      "pressure_model_note": "Pressure model near the calculated force, gauge still tips or carries loaf. Narrow rigid upper blade-side wall interferes with native settled pose. No full task qualification.",
+      "finer_timestep_outcome": "pipeline/isolated-trials/sr015-yedi-finer-20261120/outcome.json",
+      "finer_timestep_note": "960 Hz reduced the final second tip span from 1.9075 mm to 0.1454 mm. It shifted grasp bias to 10.852 mm median error with the same wrist command.",
+      "fine_recalibration_cpu": "pipeline/isolated-trials/sr015-yedi-finer-20261120/fine-recalibration-plan.json",
+      "fine_recalibration_active": "pipeline/isolated-trials/sr015-yedi-fine-recalibration-20261120/launch.json",
+      "measured_paddle_pose_entry_preflight": "pipeline/reviews/resume-20261120/sr015-bread-scoring/axial-entry-measured-inlet.json",
+      "dish_transfer_and_release_cpu": "pipeline/reviews/resume-20261120/sr015-bread-scoring/paddle-dish-preflight.json",
+      "native_serving_bevel_negative": "pipeline/isolated-trials/sr015-serve-integrated-20261120/outcome.json",
+      "native_serving_bevel_positive": "pipeline/isolated-trials/sr015-serve-bevel-20261120/outcome.json",
+      "serving_change": "Native scene rotated loaf ends 11.03 mm beyond board edge without bevel. Same commands with leading 4 mm by 1.5 mm bevel pass with 12.99 mm inside board edge and max 4.89° tilt.",
+      "pressure_replacement_result": "pipeline/isolated-trials/sr015-foam-pressure-20261120/result.json",
+      "pressure_cooked_contacts": "pipeline/isolated-trials/sr015-cooked-inspection-20261120/comparison.json",
+      "pressure_latest": "Targeted relief removed the authored overlap but withdrawal remained invalid. Cooked collider inspection traces 14.445N and 31.002N contacts to surfaces expanded about 0.65–0.70 mm versus source geometry. Agent checking cook fidelity before another full manipulation trial."
+    },
+    "labeller_native_transfer_gate": {
+      "r1_negative": "pipeline/reviews/resume-20261120/price-label-gun/material-r1-failed-passivity.json",
+      "finding": "R1 invalid torque injection retained. R2 native damping remained partial as axle tilt narrowed pressure coverage; actual work estimates include positive increments, so passivity is not yet proven. R3 policy-only axle leveling is active.",
+      "full_stub": "Three-carton route now clears 260 nominal geometry samples; printed 1.99 and six-face inventory present in draft. Native three-carton transfer/scoring unverified.",
+      "r2_native_partial": "pipeline/reviews/resume-20261120/price-label-gun/material-r2-result.json"
+    },
+    "braid_current_contact_result": {
+      "finding": "R31 finer native model avoided speed alert and seemed to retain three sections, but independent audit reveals 2.959 mm pair overlap before lift against unchanged 0.456 mm tolerance. Handling invalid. Staged insertion across jaw depth is in CPU design only."
+    },
+    "price_labeller_native_demo_audit": "pipeline/reviews/resume-20261120/price-label-gun/full-r1-independent-audit.json",
+    "sr015_full_policy_integration": "pipeline/isolated-trials/sr015-full-policy-draft-20261120/integration-preflight.json",
+    "price_labeller_hold_2992": "pipeline/reviews/resume-20261120/price-label-gun/hold-2992.json",
+    "sr015_robot_catch_slip": "pipeline/isolated-trials/sr015-traction-reserve-ram-retry-20261120/launch.json",
+    "sr021_alignment_native_attempt": "pipeline/isolated-trials/sr021-stapler-v124-20261120/launch.json",
+    "sr015_catch_feedback_projection": "pipeline/reviews/resume-20261120/sr015-bread-scoring/catch-feedback-preflight.json",
+    "price_labeller_repeat_independent_audit": "pipeline/reviews/resume-20261120/price-label-gun/full-r2-independent-audit.json",
+    "sr015_free_hook_pass": "pipeline/isolated-trials/sr015-yedi-native-feedback-20261120/outcome.json",
+    "sr021_driver_reset_wire_collision": "pipeline/isolated-trials/sr021-stapler-v124-20261120/outcome.json",
+    "sr029_affinity_native_dry": "pipeline/isolated-trials/sr029-affinity-receiver-20261120/outcome.json",
+    "sr015_loaded_catch_corrected_run": "pipeline/isolated-trials/sr015-assembled-catch-adjusted-20261120/launch.json",
+    "sr021_native_withdrawal_feedback": "pipeline/isolated-trials/sr021-v130-ram-retry-20261120/launch.json",
+    "sr029_native_grip_cause": "pipeline/isolated-trials/sr029-affinity-undergrip-20261120/outcome.json",
+    "submission_gate_current": "pipeline/reviews/resume-20261120/continuation-1459.json",
+    "cord_mating_negative_controls": "pipeline/reviews/resume-20261120/new-claims/cord-prong-aperture-1428.json",
+    "trial_media_verification": "/home/mzhang/yam-eval/codex-trial-receipt-smoke-20261120/demo-1120-093758-gpu1-351082/trial-media.json",
+    "rivet_cutting_geometry": "pipeline/pdf-screening/sr037-rivet/residual_ligament.json",
+    "prepared_submission_entrypoint": {
+      "script": "pipeline/submit.sh",
+      "source_verifier": "pipeline/stage_submission_package.py",
+      "command": "pipeline/submit.sh move-cookies-to-cooling-rack-with-turner --package pipeline/artifact/cookie-submission-prepared-20261120",
+      "dry_run": "Exact staging passed. Standard novelty freshness gate refused the package; independently verified hold remains in effect.",
+      "validation": [
+        "16 existing guard tests passed",
+        "exact archived source and media snapshot passed",
+        "tampered demo refused",
+        "extra source file refused"
+      ]
+    },
+    "pdf_novelty_audits": {
+      "SR-086": "pipeline/pdf-screening/sr086-peristaltic/live-overlap-1505.json",
+      "SR-071": "pipeline/pdf-screening/sr071-suction-lip/latest-service-evidence-1505.json"
+    },
+    "bender_receipt_audit": "pipeline/reviews/resume-20261120/new-claims/tube-bender-receipts-1508.json",
+    "verified_outlet_frame_archives": {
+      "manifest": "pipeline/reviews/resume-20261120/storage/archived-outlet-1506.jsonl",
+      "runs": 10,
+      "bytes_saved": 10203325230
+    },
+    "bender_documentation_patch": "pipeline/reviews/resume-20261120/new-claims/bender-docs-1510/review.json",
+    "live_retry_comparison": {
+      "bread": {
+        "live_wrapper_pid": 404298,
+        "complete_pose_samples": 509,
+        "exact_shared_pose_samples": 509,
+        "feedback_samples": 0,
+        "max_controls": 1050
+      },
+      "stapler": {
+        "live_wrapper_pid": 404299,
+        "compared_prefix": {
+          "AXIAL_POSE": {
+            "common_samples": 106,
+            "identical_samples": 106
+          },
+          "REPAIR_POSE": {
+            "common_samples": 213,
+            "identical_samples": 213
+          }
+        },
+        "latest_sample_control": 1166,
+        "latest_repair_stage": "tool_transverse_regrasp",
+        "transverse_pre_lift": {
+          "tip_normal_N": [
+            50.00071334838867,
+            49.91241455078125
+          ]
+        },
+        "withdrawal_alignment_started": false,
+        "max_controls": 3000
+      }
+    },
+    "new_draft_receipt_audit": "pipeline/reviews/resume-20261120/new-claims/focus-and-itx-receipts-1514.json",
+    "laser_focus_score_continuity": "pipeline/reviews/resume-20261120/new-claims/focus-score-continuity-1514/controlled-measurements.json",
+    "mini_itx_support_trials": {
+      "launch": "pipeline/isolated-trials/mini-itx-native-support-20261120/launch.json",
+      "source": "pipeline/isolated-trials/mini-itx-native-support-20261120/source.json",
+      "session": 61212,
+      "state": "both native trials terminal with 1.0",
+      "success_criterion": "Verify native terminal states, check all four support regions in clear condition and compare against the 0.6 mm stable shim case. Shim intentionally substitutes foreign support; it does not reproduce actual shield binding.",
+      "result": "pipeline/isolated-trials/mini-itx-native-support-20261120/outcome.json"
+    },
+    "jaw_coupling_readme_validation": "pipeline/reviews/resume-20261120/jaw-coupling/reproducibility-fix-1517.json",
+    "itx_support_revision": {
+      "manifest": "pipeline/isolated-trials/mini-itx-native-support-20261120/patched-sources.json",
+      "review_patch": "pipeline/isolated-trials/mini-itx-native-support-20261120/support-check.patch",
+      "helper": "pipeline/isolated-trials/mini-itx-native-support-20261120/support_measurement.py",
+      "runtime_handle": 90805,
+      "state": "native full install and all three diagnostic runs terminal",
+      "probes": [
+        "unobstructed 0.6 mm drop",
+        "0.6 mm supported shim",
+        "0.1 mm supported shim",
+        "full installation demo"
+      ],
+      "notes": "The small shim isolates the native load criterion. Tests and contact attribution still need full review before adoption.",
+      "first_terminal": {
+        "report": "pipeline/isolated-trials/mini-itx-native-support-20261120/patched_native_clear/adhoc_f3ad373d.json",
+        "score": 1.0,
+        "controls": 20
+      },
+      "diagnostics": "pipeline/isolated-trials/mini-itx-native-support-20261120/patched-partial-results.json"
+    },
+    "itx_support_v2": {
+      "package": "pipeline/isolated-trials/mini-itx-native-support-20261120/review-v2",
+      "patch": "pipeline/isolated-trials/mini-itx-native-support-20261120/v2-review.patch",
+      "revision": "pipeline/isolated-trials/mini-itx-native-support-20261120/v2-rebase.json",
+      "controlled_inputs": "pipeline/isolated-trials/mini-itx-native-support-20261120/v2-controlled-inputs.json",
+      "native_handle": 40956,
+      "launcher": "pipeline/isolated-trials/mini-itx-native-support-20261120/run_v2.sh",
+      "v1_handle": 90805,
+      "qualified": false,
+      "state": "full install started on GPU 1; alternate high approach follows"
+    },
+    "itx_edge_grasp_evidence": "pipeline/isolated-trials/mini-itx-native-support-20261120/edge-grasp-screen.json",
+    "itx_support_full_demo": "pipeline/isolated-trials/mini-itx-native-support-20261120/v1-full-demo-result.json",
+    "native_feedback_comparison": "pipeline/reviews/resume-20261120/live-native-retries-1529.json",
+    "bender_repeats": "pipeline/reviews/resume-20261120/new-claims/bender-repeat-verification-1532.json",
+    "focus_available_platform": {
+      "variant": "pipeline/isolated-trials/focus-available-platform-20261120/variant.json",
+      "run_handle": 86341,
+      "still_held": 2885
+    },
+    "mini_itx_v2_native": {
+      "result": "pipeline/isolated-trials/mini-itx-native-support-20261120/v2-task/adhoc_7d69830e.json",
+      "score": 1.0,
+      "controls": 400,
+      "open_requirements": [
+        "Manufacturer-compliant edge grip",
+        "Repeat with a real shield-bound negative control",
+        "Competing hold and fresh novelty review"
+      ],
+      "high_approach": {
+        "result": "pipeline/isolated-trials/mini-itx-native-support-20261120/v2-high/adhoc_64f45349.json",
+        "score": 1.0,
+        "controls": 392,
+        "interpretation": "The policy worked rather than serving as a false-positive control. Under the revised scorer it ended with standoff support and rear-shell clearance. The path still grips board components and lacks retained frames."
+      }
+    },
+    "stapler_early_alignment_comparison": "pipeline/reviews/resume-20261120/sr021-stapler/withdrawal-damping-prefix-1533.json",
+    "mini_itx_edge_pickup": {
+      "screen": "pipeline/isolated-trials/mini-itx-native-support-20261120/edge_pickup_preflight.json",
+      "passing_pairs": 4,
+      "tested_lift_mm": 25,
+      "native": false
+    },
+    "stapler_v130_terminal": "pipeline/isolated-trials/sr021-v130-ram-retry-20261120/outcome.json",
+    "bread_live_reserve": {
+      "first_activation": {
+        "time_s": 44.749999999999595,
+        "phase": "lift",
+        "recoveries": 3,
+        "relative_axial_drift_mm": 0.00261262949270355,
+        "local_axial_offset_mm": 0.24000000000000002,
+        "paddle_rise_mm": 3.6928653717041016,
+        "measured_to_target_xyz_mm": [
+          -0.0014850742739436207,
+          0.2573824845604983,
+          0.1541170048886542
+        ],
+        "issued_hook_increment_xyz_mm": [
+          -0.000692377909073265,
+          0.0,
+          0.05049088825426597
+        ],
+        "issued_hook_tracking_bias_xyz_mm": [
+          1.1390984491811418,
+          1.6984577857398904,
+          1.9995091117457342
+        ],
+        "issued_rotation_increment_deg": 0.0016362430602878265,
+        "extra_vertical_command_allowance_mm": 0.05,
+        "traction_probe_force_guard_latched": false,
+        "ik_error_mm": 0.0015239305742443144
+      },
+      "max_allowance_mm": 0.8500000000000003,
+      "first_force_latch": {
+        "time_s": 45.59999999999955,
+        "phase": "lift",
+        "recoveries": 3,
+        "relative_axial_drift_mm": 0.1540090703060909,
+        "local_axial_offset_mm": 0.24000000000000002,
+        "paddle_rise_mm": 3.606855869293213,
+        "measured_to_target_xyz_mm": [
+          0.15458162499518147,
+          0.2546703780949061,
+          0.035320245396208705
+        ],
+        "issued_hook_increment_xyz_mm": [
+          0.062265698602207376,
+          0.0,
+          0.019426134967914788
+        ],
+        "issued_hook_tracking_bias_xyz_mm": [
+          1.1723927626463848,
+          1.7696566322550695,
+          2.7121590834360276
+        ],
+        "issued_rotation_increment_deg": 0.0016939630372392793,
+        "extra_vertical_command_allowance_mm": 0.8000000000000003,
+        "traction_probe_force_guard_latched": true,
+        "ik_error_mm": 0.0016460802410285795
+      },
+      "peak_observed_rise_mm": 3.7091970443725586
+    },
+    "focus_available_platform_outcome": "pipeline/isolated-trials/focus-available-platform-20261120/outcome.json",
+    "itx_edge_native": {
+      "entrypoint": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe/task.py",
+      "input": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe/input.json",
+      "runtime_handle": 78998,
+      "state": "first run terminal; second run started",
+      "prior_import_failure_preserved": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe/import-failure/run.log",
+      "first_terminal": {
+        "report": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe/native/adhoc_7cc65f58.json",
+        "controls": 210,
+        "peak_rise_mm": -0.00026321411139562656,
+        "observed_tip_contact": false
+      },
+      "retry": {
+        "entrypoint": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe-r2/task.py",
+        "handle": 64871,
+        "change": "Set the screened jaw opening before arm motion and record contact actor names and pad distances throughout."
+      }
+    },
+    "bread_terminal": "pipeline/isolated-trials/sr015-traction-reserve-ram-retry-20261120/outcome.json",
+    "itx_failed_pickup_tracking": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe-r3/outcome.json",
+    "focus_followup_native": {
+      "repeat_with_frames": 89480,
+      "frame_free_controls": 21940,
+      "controls": [
+        "nothing",
+        "unlocked",
+        "nostow"
+      ]
+    },
+    "raised_foam_screen": {
+      "handle": 13897,
+      "script": "pipeline/isolated-trials/mini-itx-native-support-20261120/screen_raised_edge_block.py",
+      "report": "pipeline/isolated-trials/mini-itx-native-support-20261120/screen_raised_edge_block.json",
+      "passing_lifts": {
+        "32": 0,
+        "48": 3,
+        "64": 20
+      },
+      "native_48_mm_handle": 26925,
+      "chosen_height_mm": 48,
+      "reason": "Lowest tested height with feasible open approach, full arm clearance and a paired sampled 25 mm lift."
+    },
+    "itx_raised_native_result": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe-r4/outcome.json",
+    "focus_staged_package": "pipeline/artifact/focus-320-prepared-20261120/partial-manifest.json",
+    "itx_raised_pose_replay": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe-r4/measured-pose-screen.json",
+    "focus_footprint_trials": {
+      "hypotheses": "pipeline/isolated-trials/focus-available-platform-20261120/footprint-hypotheses.json",
+      "handle": 82668
+    },
+    "focus_native_controls": {
+      "nothing": {
+        "entrypoint_sha256": "9fae272f7061be5a595a605f9511d5c50804610781d7b11e45922213b9dee35a",
+        "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/controls/nothing/adhoc_c8f45f04.json",
+        "score": 0.0,
+        "controls": 61
+      },
+      "unlocked": {
+        "entrypoint_sha256": "ce0422fa962e1c3610718ebb64efc3f6d515afb1d3de3e2953b96e8cb52da2b4",
+        "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/controls/unlocked/adhoc_c3cbe1a3.json",
+        "score": 0.25,
+        "controls": 642
+      },
+      "nostow": {
+        "entrypoint_sha256": "81358f10bbbcd9da82949b9a3e2592b4a9dcd44a3d964f16fa09483ce9a33a8e",
+        "terminal_report": "pipeline/isolated-trials/focus-available-platform-20261120/controls/nostow/adhoc_727c80e4.json",
+        "score": 0.75,
+        "controls": 642
+      }
+    },
+    "belt_end_clamp_reassessment": "pipeline/pdf-screening/sr076-belt-clamp/live-comparator-and-physics-1551.json",
+    "bender_staged_package": "pipeline/artifact/bender-604-prepared-20261120/manifest.json",
+    "focus_footprint_results": {
+      "outer365_h20": {
+        "result": "pipeline/isolated-trials/focus-available-platform-20261120/footprint/outer365_h20/adhoc_60871657.json",
+        "score": 1.0,
+        "controls": 769,
+        "status": "success"
+      },
+      "outer370_h24": {
+        "result": "pipeline/isolated-trials/focus-available-platform-20261120/footprint/outer370_h24/adhoc_2983a2fb.json",
+        "score": 1.0,
+        "controls": 769,
+        "status": "success"
+      }
+    },
+    "sr043_timestep_evidence": {
+      "960_hz": "pipeline/isolated-trials/sr043-contact-timestep-r6-20261120/outcome.json",
+      "480_hz": "pipeline/isolated-trials/sr043-contact-timestep-r7-20261120/outcome.json"
+    },
+    "focus_450": {
+      "publication_package": "pipeline/artifact/focus-alhp1-prepared-20261120/manifest.json",
+      "positive_runs": [
+        "pipeline/isolated-trials/focus-alhp1-regrip-20261120/controls/trace/adhoc_17ef5fb3.json",
+        "/home/mzhang/yam-eval/codex-focus-alhp1-prepared-20261120/demo-1120-112728-gpu3-1533829/trial-media.json"
+      ],
+      "score": 1.0,
+      "demo_steps": 913,
+      "model_score": 0.0,
+      "model_steps": 2400,
+      "controls": {
+        "nothing": {
+          "score": 0.0,
+          "expected": 0.0,
+          "controls": 61,
+          "native_report": "pipeline/isolated-trials/focus-alhp1-regrip-20261120/controls/nothing/adhoc_caf729f6.json",
+          "source_sha256": "76ce786245f3af6d956e009a239c8555ee820b966ef263e89086cf2fb2dff94a"
+        },
+        "hold": {
+          "score": 0.0,
+          "expected": 0.0,
+          "controls": 1045,
+          "native_report": "pipeline/isolated-trials/focus-alhp1-regrip-20261120/controls/hold/adhoc_5d717222.json",
+          "source_sha256": "425ba0f5db7afb0e024e4ef55fde14e6afae1f774c26159b5e5254f05228de1e"
+        },
+        "unlocked": {
+          "score": 0.25,
+          "expected": 0.25,
+          "controls": 642,
+          "native_report": "pipeline/isolated-trials/focus-alhp1-regrip-20261120/controls/unlocked/adhoc_0312e4c3.json",
+          "source_sha256": "916fe0768facf23b22bb06b7ee6194c61e55cd5846cdf647d35297e54719e062"
+        },
+        "nostow": {
+          "score": 0.75,
+          "expected": 0.75,
+          "controls": 642,
+          "native_report": "pipeline/isolated-trials/focus-alhp1-regrip-20261120/controls/nostow/adhoc_3a07163d.json",
+          "source_sha256": "3a9f87927b008b53d4c291de75582ee9981fb198d3677fff6d9769b5801dff08"
+        }
+      },
+      "remaining_controls": {
+        "tool_session": 19550,
+        "wrapper_pid": 1540468,
+        "current_live_report": "pipeline/isolated-trials/focus-alhp1-regrip-20261120/controls/onearm/adhoc_754b3b7b.live.json"
+      },
+      "decision": "Source and media snapshot passed. Standard preflight correctly refuses due to competing ownership. Do not count toward validated totals usable for publication yet.",
+      "hold": {
+        "pr": 2885,
+        "earliest_expiry": "2026-11-21T16:34:23Z"
+      }
+    },
+    "focus_320": {
+      "partial_package": "pipeline/artifact/focus-320-prepared-20261120/partial-manifest.json",
+      "model": {
+        "score": 0.0,
+        "controls": 2400,
+        "receipt": "/home/mzhang/yam-eval/codex-focus-320-prepared-20261120/dream-1120-111301-gpu2-1387921/trial-media.json",
+        "note": "Postprocessing was terminated. The verified H.264 video was regenerated offline from all 2,401 original contiguous top-camera frames with no new model calls. Contact sheet inspected."
+      }
+    },
+    "jaw_coupling": "pipeline/artifact/jaw-coupling-prepared-20261120/manifest.json",
+    "itx_64_mm_probe": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe-r5/outcome.json",
+    "sr043_axial_mesh": "pipeline/isolated-trials/sr043-contact-axial-mesh-r8-20261120/outcome.json",
+    "sr074_physical_observability": [
+      "pipeline/pdf-screening/sr074-paste-nozzle/deposition-resolution-1629.json",
+      "pipeline/pdf-screening/sr074-paste-nozzle/native-camera-projection-1630.json"
+    ],
+    "lumber_frozen_packet": "pipeline/artifact/lumber-prepared-20261120/manifest.json",
+    "focus_final_controls_verified": 6,
+    "SR035_BT1": "pipeline/pdf-screening/sr035-guitar-string/bt1-mechanism-decision-1643.json",
+    "floor_cover_frozen_packet": "pipeline/artifact/floor-cover-prepared-20261120/manifest.json",
+    "SR035_native_bridge_coupon": "pipeline/pdf-screening/sr035-guitar-string/bt1-native-bridge-coupon-1701.json",
+    "latest_itx_support_audit": "pipeline/isolated-trials/mini-itx-current-support-audit-20261120/outcome.json",
+    "SR035_moving_pin": "pipeline/isolated-trials/sr035-bridge-moving-pin-20261120/outcome.json",
+    "itx_native_shim_controls": {
+      "shim_baseline": {
+        "report": "pipeline/isolated-trials/mini-itx-current-support-fix-20261120/shim_baseline/adhoc_f8a95520.json",
+        "score": 1.0,
+        "controls": 20
+      },
+      "shim_fixed": {
+        "report": "pipeline/isolated-trials/mini-itx-current-support-fix-20261120/shim_fixed/adhoc_1bccb5c7.json",
+        "score": 0.25,
+        "controls": 60
+      }
+    },
+    "SR077_SEN0038_signal": "pipeline/pdf-screening/sr077-optical-encoder/sen0038_signal_screen.json",
+    "bender_latest_mark_audit": "pipeline/artifact/bender-604-prepared-20261120/manifest.json",
+    "itx_edge_probe_r6": "pipeline/isolated-trials/mini-itx-native-support-20261120/pickup-probe-r6/outcome.json",
+    "itx_passive_edge_tool": "pipeline/isolated-trials/mini-itx-native-support-20261120/edge-tool-geometry/design-and-load-evidence.json",
+    "ITX_combined_edge_tool": "pipeline/isolated-trials/mini-itx-native-support-20261120/edge-tool-geometry/combined-transfer-evidence.json",
+    "SR074_pneumatic_timing": "pipeline/pdf-screening/sr074-paste-nozzle/timed-dispense-screen.json"
+  },
+  "quota_policy_update": {
+    "updated_at": "2026-11-20T23:45:00Z",
+    "status": "No rolling submission quota",
+    "source": "User update; pipeline/quota-policy.json",
+    "note": "Older checked_at/count data in this audit remain historical; submission readiness and competing holds still apply."
+  },
+  "latest_live_queue_delta": {
+    "checked_at_utc": "2026-11-21T00:13:34.135145+00:00",
+    "idea": "move-cookies-to-cooling-rack-with-turner",
+    "local_claim_owner": "claude",
+    "hold_from_pr2311": "expired at 2026-11-20T23:09:27Z",
+    "competing_receipts": [
+      {
+        "pr": 3294,
+        "team_or_author": "BrutalCaeser",
+        "received": "TK-XA8QWW",
+        "at": "2026-11-20T23:09:53Z",
+        "state": "open_waiting_review"
+      },
+      {
+        "pr": 3296,
+        "team_or_author": "WiltonSF",
+        "received": "TK-L7GDF7",
+        "at": "2026-11-20T23:10:10Z",
+        "state": "open_waiting_review"
+      }
+    ],
+    "decision": "do_not_submit_duplicate; local candidate preflight is stale (task.py hash mismatch), task.json has no media ID; preserve Claude-owned folder and avoid new PR while these submissions are pending.",
+    "hang-mower-grass-bag-under-flap": {
+      "pr": 2489,
+      "review_status": "revision received and waiting for review",
+      "receipt": "TK-VV8CRY",
+      "receipt_at_utc": "2026-11-20T20:33:48Z",
+      "result": "hold renewed through 2026-11-22T20:33:48Z; do not submit a competing task",
+      "source": "Live gh pr view 2489 at 2026-11-21T00:17Z"
+    }
+  },
+  "latest_candidate_preflight": {
+    "checked_at_utc": "2026-11-21T00:15:51.255071+00:00",
+    "mode": "read-only --preflight",
+    "results": {
+      "stack-scrap-lumber-with-nailed-offcut": "blocked: source-matched novelty review hash stale; PR2594 hold ends 2026-11-21T01:38:24Z",
+      "retrieve-wrench-from-under-floor-hole-cover": "blocked: novelty review older than two hours; PR2593 hold ends 2026-11-21T01:37:33Z; prior audit also flags cover-load/retention evidence",
+      "seat-mini-itx-board-in-server-chassis": "blocked: novelty review older than two hours; PR2747 hold ends 2026-11-21T02:00:34Z; prior audit found construct-validity issues",
+      "close-jaw-coupling-spider-and-hub": "blocked: novelty review older than two hours; PR2484 hold ends 2026-11-21T07:08:24Z"
+    },
+    "no_quota": "No rolling quota applies; these are freshness, ownership and task-quality gates."
+  }
+}

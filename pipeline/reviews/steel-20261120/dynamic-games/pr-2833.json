@@ -1,0 +1,38 @@
+{
+  "body": "Pick up a table tennis paddle, drop a ping-pong ball onto it from no more than 15 cm, and keep it bouncing on the red face ten times in a row, each bounce 10 to 25 cm high. It tests sustained rhythmic, dynamic control: each tap has to add back what the bounce loses, with the face level to a degree or so, or the ball dies away or walks off the edge.\n\n- Category: Societal relatability\n- Scripted demo: 1.0 (success at step 256 of 1,200; identical on two runs)\n- Dream-1: 0.0 (1,200 steps)\n- Counterfactuals: paddle held still under a 12 cm drop 0; a 25 cm drop over a still paddle 0 (too high)\n\nSee `tasks/paddle-bounce-ping-pong/README.md` for sources, geometry, scoring and run commands.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n",
+  "comments": [
+    {
+      "id": "IC_kwDOVgdJU88AAAABoUNBiw",
+      "author": {
+        "login": "achyutha11"
+      },
+      "authorAssociation": "COLLABORATOR",
+      "body": "Received as **TK-UWTXEC**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself.",
+      "createdAt": "2026-11-19T05:19:39Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2833#issuecomment-7000506763",
+      "viewerDidAuthor": false
+    },
+    {
+      "id": "IC_kwDOVgdJU88AAAABoVtLcw",
+      "author": {
+        "login": "achyutha11"
+      },
+      "authorAssociation": "COLLABORATOR",
+      "body": "**Not accepted: final** (TK-UWTXEC).\n\nImportance (not met): embodied-olympics-fun: Paddle Bounce tests the same repeated table-tennis-ball bouncing on a held paddle, with a different bounce count and starting drop.\n\nThis task tests the same paddle-and-ball bouncing skill and consecutive-bounce goal as embodied-olympics-fun: Paddle Bounce. Changing the bounce count and adding the initial pickup do not make it a distinct benchmark task.\n\nIf you think this misjudges your task, reply on this pull request within 48 hours and a person will review it.\n\nThis task doesn\u2019t meet the importance bar, so it can\u2019t be revised, and this pull request is now closed. You\u2019re welcome to submit a different task in a new pull request.",
+      "createdAt": "2026-11-19T06:54:27Z",
+      "includesCreatedEdit": false,
+      "isMinimized": false,
+      "minimizedReason": "",
+      "reactionGroups": [],
+      "url": "https://github.com/robocurve/benchmark-tasks/pull/2833#issuecomment-7002082163",
+      "viewerDidAuthor": false
+    }
+  ],
+  "number": 2833,
+  "state": "CLOSED",
+  "title": "Add paddle-bounce-ping-pong: bounce a ping-pong ball on a paddle ten times in a row"
+}

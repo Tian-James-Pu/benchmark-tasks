@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-11-20T22:29:32.200347+00:00",
+  "decision": "clear",
+  "queries": [
+    "cookie",
+    "baked cookie",
+    "turner",
+    "spatula",
+    "cooling rack",
+    "sheet pan",
+    "pizza peel",
+    "spritz cookie",
+    "gnocchi slotted spoon",
+    "skillet silicone handle holder trivet"
+  ],
+  "nearest_prs": [
+    {
+      "number": 2311,
+      "relationship": "Exact same cookie-transfer idea. Live check at 2026-11-20T22:12:12.845390+00:00: PR #2311 remains open and Not accepted; latest official review is 2026-11-18T23:09:27Z, with no later receipt. Its 48-hour hold remains active until 2026-11-20T23:09:27Z; recheck it before submission."
+    },
+    {
+      "number": 3129,
+      "relationship": "Pending task fits a silicone holder on a hot mini-skillet handle and carries the skillet to a trivet. Shares baked-food context, but not thin-turner transfer of multiple low items from a rimmed pan to a wire rack."
+    },
+    {
+      "number": 2471,
+      "relationship": "Pending task rotates one pizza in place with a peel; no transfer of several small items over a pan rim to wire supports."
+    },
+    {
+      "number": 2840,
+      "relationship": "Pending task presses spritz cookies onto a baking sheet; no post-bake thin-blade transfer."
+    },
+    {
+      "number": 2048,
+      "relationship": "Revising slotted-spoon pickup of floating gnocchi from water; different object support and tool mechanics."
+    },
+    {
+      "number": 3108,
+      "relationship": "Pending relisting of gnocchi pickup; different floating-object scoop and heat shutoff."
+    },
+    {
+      "number": 2412,
+      "relationship": "Accepted task slides a quarter sheet pan onto toaster-oven rails; here the pan stays stationary and cookies move."
+    },
+    {
+      "number": 2019,
+      "relationship": "Accepted task scrapes griddle debris into a tray; no intact fragile-item lift and placement."
+    },
+    {
+      "number": 2181,
+      "relationship": "Rejected task holds a burger patty with a turner while probing; not a multi-item transfer."
+    },
+    {
+      "number": 1435,
+      "relationship": "Rejected pancake flip by tossing the pan; different skill."
+    }
+  ],
+  "physical_skill": "Use a 1 mm solid turner to get under four 10 mm by 57 mm, 16 g cookie replicas inside a 28 mm rimmed sheet pan, carry each level and set it on 2 mm wire rack rails without direct grasp or drop; finish by setting down the turner.",
+  "valid_shortcuts": "Cookie order and either arm may vary; one-arm completion is allowed. A second hand may steady pan/rack. Direct hand contact, pouring/tilting the pan, dropping/fast-flinging cookies, or leaving the turner held do not receive full credit. The demos and exact-source negative controls exercise these distinctions.",
+  "distinct_from_nearest": "The defining contact sequence is thin-blade insertion beneath several low fragile items, level carrying over a rim, and placement onto wire supports while the source pan remains fixed. The newly observed mini-skillet task instead sleeves a handle and carries the whole skillet. The exact #2311 idea remains under hold until a fresh post-deadline check.",
+  "task_py_sha256": "4e5943b8524d28e73868291c5a7eeee0f860ed9dd605634f1aa50964efcd2156",
+  "task_metadata_sha256": "1449ca715f0db2e62a86378e23eb2dd5b3d4ba7bddcdec9ccda3bf3b470855d8"
+}

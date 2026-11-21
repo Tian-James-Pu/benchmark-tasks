@@ -1,0 +1,2138 @@
+                             Installation Instructions and Use & Care Guide
+                                 RESIDENTIAL GAS WATER HEATERS
+                                                           NOT FOR USE IN MANUFACTURED (MOBILE) HOMES
+
+
+
+
+                              Low Lead Content
+
+
+
+
+                                                                               • For Your Safety •
+                                                                        AN ODORANT IS ADDED TO THE GAS USED
+                                                                               BY THIS WATER HEATER.
+
+
+
+
+DO NOT RETURN THIS UNIT TO THE STORE. To obtain technical, warranty, or service assistance during or after the installation
+of this water heater, visit our website at: http:// www.AOSmithAtLowes.com or call toll free 1-877-817-6750.
+                    KEEP THIS MANUAL IN THE POCKET ON HEATER FOR FUTURE REFERENCE
+                      WHENEVER MAINTENANCE ADJUSTMENT OR SERVICE IS REQUIRED.
+March 2021                                                                                100341468_2000598643_REV_A
+                                                             1
+                                                         TABLE OF CONTENTS
+
+SAFE INSTALLATION, USE AND SERVICE ..............3                                        Outdoor Air Through Two Vertical Ducts................... 18
+
+APPROVALS .................................................................3              Air From Other Indoor Spaces.................................. 18
+                                                                                          Venting...................................................................... 19
+GENERAL SAFETY INFORMATION...........................4
+                                                                                          Gas Piping ................................................................ 21
+INTRODUCTION ..........................................................5                  Sediment Traps ........................................................ 22
+   Abbreviations Used ................................................... 5
+                                                                                        LIGHTING INSTRUCTIONS ......................................23
+   Qualified Installer or Service Agency ......................... 5
+   Preparing for The Installation .................................... 5                TEMPERATURE REGULATION ................................24
+                                                                                          Start-Up Conditions .................................................. 25
+TYPICAL INSTALLATION ............................................6
+   GET TO KNOW YOUR WATER HEATER - GAS                                                  FOR YOUR INFORMATION ......................................25
+   MODELS ................................................................... 6           Operational Conditions ............................................. 26
+   Application/Use of Water Heater ............................... 7                    PERIODIC MAINTENANCE.......................................27
+   HOTTER WATER CAN SCALD ................................. 7                             Venting System Inspection ....................................... 27
+   Facts to Consider About the Location........................ 8                         Burner Inspection ..................................................... 27
+   High Altitude .............................................................. 9         Burner Cleaning........................................................ 27
+   Adjusting the Air Shutter ............................................ 9               Air Shutter Adjustment .............................................. 28
+   Clearances ............................................................... 10          Housekeeping........................................................... 28
+   Insulation Blankets ................................................... 11             Anode Rod Inspection .............................................. 28
+   Hard Water ............................................................... 11          Temperature-Pressure Relief Valve Test .................. 28
+INSTALLATION REQUIREMENTS ...........................12                                   Draining and Flushing............................................... 30
+   Gas Supply Systems ................................................ 12               LEAKAGE TEST POINTS ..........................................31
+   Gas Pressure Requirements ................................... 12                       Service ...................................................................... 31
+   Supply Gas Regulator .............................................. 12                 Removing and Replacing the Gas Control Valve/
+   Mixing Valves ............................................................ 13          Thermostat .............................................................. 32
+   Water Piping ............................................................. 13        STATUS LIGHT & DIAGNOSTIC CODES ................34
+   Temperature-Pressure Relief Valve .......................... 14
+   Filling the Water Heater ............................................ 15
+   Air Requirements ...................................................... 16
+   Unconfined Space .................................................... 16
+   Confined Space ........................................................ 16
+   Fresh Air Openings For Confined Spaces ................ 17
+   Outdoor Air Through Two Openings ......................... 17
+   Outdoor Air Through One Opening ........................... 17
+   Outdoor Air Through Two Horizontal Ducts .............. 18
+
+
+
+
+                                                                                    2
+                        SAFE INSTALLATION, USE AND SERVICE
+
+The proper installation, use and servicing of this water heater is extremely important to your safety and the safety of
+others.
+
+Many safety-related messages and instructions have been provided in this manual and on your own water heater to
+warn you and others of a potential injury hazard. Read and obey all safety messages and instructions throughout this
+manual. It is very important that the meaning of each safety message is understood by you and others who install,
+use, or service this water heater.
+
+
+
+
+                                          This is the safety alert symbol. It is used to alert you to
+                                          potential personal injury hazards. Obey all safety
+                                          messages that follow this symbol to avoid possible
+                                          injury or death.
+
+
+
+                                                      DANGER indicates an imminently
+                                 DANGER               hazardous situation which, if not avoided,
+                                                      will result in injury or death.
+
+                                                      WARNING indicates a potentially hazardous
+                                 WARNING              situation which, if not avoided, could result
+                                                      in injury or death.
+
+                                                      CAUTION indicates a potentially hazardous
+                                 CAUTION              situation which, if not avoided, could result in
+                                                      minor or moderate injury.
+
+                                                      CAUTION used without the safety alert
+                                                      symbol indicates a potentially hazardous
+                              CAUTION                 situation which, if not avoided, could result in
+                                                      property damage.
+
+
+All safety messages will generally tell you about the type of hazard, what can happen if you do not follow the safety
+message, and how to avoid the risk of injury.
+
+
+
+
+                                                  APPROVALS
+
+
+
+
+                                                      Low Lead Content
+
+                                                               3
+GENERAL SAFETY INFORMATION
+
+
+
+
+                                    CAUTION
+                Improper installation, use and service may
+                      result in property damage.
+                • Do not operate water heater if any part has been
+                  exposed to flooding or water damage.
+                • Inspect anode rods regularly, replace when significantly depleted.
+                • Install in location with drainage.
+                • Fill tank with water before operation.
+                • Properly sized thermal expansion tanks are required on all
+                  closed water systems.
+                    Refer to this manual for installation and service.
+
+            4
+                                               INTRODUCTION
+Thank You for purchasing this water heater. Properly               PREPARING FOR THE INSTALLATION
+installed and maintained, it should give you years of
+trouble free service.                                              1. Read the “General Safety” section, page 4 of this
+                                                                      manual first and then the entire manual carefully. If you
+ABBREVIATIONS USED                                                    don’t follow the safety rules, the water heater will not
+                                                                      operate properly. It could cause DEATH, SERIOUS
+Abbreviations Found In This Instruction Manual:                       BODILY INJURY AND/OR PROPERTY DAMAGE.
+•   UL - Underwriters Laboratories Inc.                                This manual contains instructions for the installation,
+                                                                       operation, and maintenance of the gas-fired water
+•   ANSI - American National Standards Institute                       heater. It also contains warnings throughout the manual
+•   NFPA - National Fire Protection Association                        that you must read and be aware of. All warnings and
+•   ASME - American Society of Mechanical Engineers                    all instructions are essential to the proper operation of
+                                                                       the water heater and your safety. Since we cannot put
+•   AHRI - Air-Conditioning, Heating and Refrigeration                 everything on the first few pages, READ THE ENTIRE
+    Institute                                                          MANUAL BEFORE ATTEMPTING TO INSTALL OR
+•   CAN - Canada                                                       OPERATE THE WATER HEATER.
+•   EPACT - Energy Policy Act                                      2. The installation must conform with these instructions
+                                                                      and the local code authority having jurisdiction. In
+•   CSA - Canadian Standards Association
+                                                                      the absence of local codes, the installation must
+This gas-fired water heater is design certified by                    comply with the National Fire Protection Association, 1
+Underwriters Laboratories Inc. under the American                     Batterymarch Park, Quincy, MA 02269.
+National Standard/CSA Standard for Gas Water Heaters
+ANSI Z21.10.3 • CSA 4.3 (current edition).                         3. If after reading this manual you have any questions or
+                                                                      do not understand any portion of the instructions, call
+QUALIFIED INSTALLER OR SERVICE AGENCY                                 the local gas utility or the manufacturer whose name
+                                                                      appears on the rating plate.
+Installation and service of this water heater requires
+ability equivalent to that of a Qualified Agency (as defined       4. Carefully plan the place where you are going to put
+by ANSI below) in the field involved. Installation skills             the water heater. Correct combustion, vent action, and
+such as plumbing, air supply, venting, gas supply and                 vent pipe installation are very important in preventing
+electrical supply are required in addition to electrical              death from possible carbon monoxide poisoning and
+testing skills when performing service.                               fires, see Figure 9 (page 11) and Figure 10 (page
+                                                                      14).
+ANSI Z223.1 2006 Sec. 3.3.83: “Qualified Agency” - “Any
+individual, firm, corporation or company that either in                Examine the location to ensure the water heater is
+person or through a representative is engaged in and is                consistent with the requirements described in Facts to
+responsible for (a) the installation, testing or replacement           Consider About the Location (page 9).
+of gas piping or (b) the connection, installation, testing,        5. For California installation this water heater must be
+repair or servicing of appliances and equipment; that                 braced, anchored, or strapped to avoid falling or
+is experienced in such work; that is familiar with all                moving during an earthquake. See instructions for
+precautions required; and that has complied with all the              correct installation procedures. Instructions may be
+requirements of the authority having jurisdiction.”                   obtained from California Oﬃce of the State Architect,
+                                                                      400 P Street, Sacramento, CA 95814.
+If you are not qualified (as defined by ANSI above) and
+licensed or certified as required by the authority having          6. Massachusetts Code requires this water heater to be
+jurisdiction to perform a given task do not attempt to                installed in accordance with Massachusetts 248-CMR
+perform any of the procedures described in this manual.               2.00: State Plumbing Code, and 248-CMR 5.00.
+If you do not understand the instructions given in this
+manual do not attempt to perform any procedures
+outlined in this manual.
+
+
+
+
+                                                               5
+                                                        TYPICAL MIXING VALVE INSTALLATION
+                                            COMBINATION SPACE HEATING / POTABLE WATER HEATING SYSTEM
+
+
+
+                                                                               EXPANSION TANK               COLD WATER INLET
+
+                                                                                                CHECK VALVE †       SHUT-OFF
+                                                                                                   (1/8” HOLE        VALVE
+                TEMPERED WATER                             CHECK      VACUUM
+                                                                                              DRILLED IN CLAPPER)
+                TO FIXTURES                                VALVE †    RELIEF
+                (MUST MEET TEMPS LISTED                               VALVE
+                IN MASS. CODE 248 CMR † )
+
+                                                                                                        FLOW CONTROL
+                                                                                                            VALVE
+                                                           UNION          UNION
+                                                                                               PUMP *
+                                                                          TEMP/
+                MUST BE VERTICAL TO                                       PRESSURE                        OUT
+                REMOVE AIR BUBBLES                                        RELIEF                                       IN
+                                                                          VALVE
+                                                       HOT
+                                                      WATER                              TO
+                                                       OUT                               AIR
+                MIXING VALVE
+                                                                                       HANDLER
+                (MUST BE INSTALLED BELOW
+                TOP OF WATER HEATER                                           SEE
+                AS PER MANUFACTURER’S                                         NOTE ‡                          AIR
+                RECOMMENDATIONS)                                                                            HANDLER
+                                                                                       SHUT-OFF
+                                                                                        VALVE *
+                 WATER HEATER ACCEPTED
+                 BY THE BOARD FOR
+                 INSTALLATION IN
+                 MASSACHUSETTS. †                                                100’-0” MAXIMUM DISTANCE
+                                                                                    FROM WATER HEATER
+                                                                                   TO FAN COIL AND BACK
+                                                                                 (DEVELOPED LENGTH) NOT
+                                                                                                              †
+                                                                              INCLUDING COIL IN HEATING UNIT.
+
+                *   MASSACHUSETTS INSTALLATION REQUIREMENTS:
+                    1.) CONNECT ELECTRONICALLY-CONTROLLED TIMER TO AN ALL-BRONZE PUMP. PUMP MUST ACTIVATE EVERY 6 HOURS
+                        FOR 60 SECONDS. TURN PUMP TIMER OFF BEFORE CLOSING PIPING LOOP SHUT-OFF VALVE.
+                    2.) ALL WATER PIPING MUST BE INSTALLED AND INSULATED IN ACCORDANCE WITH MASSACHUSETTS CODE (248 CMR
+                        & 780 CMR).
+                    3.) PIPING LOOP BETWEEN WATER HEATER AND AIR HANDLER MUST BE INSTALLED IN COMPLIANCE WITH 248 CMR.
+
+                †   REQUIRED FOR MASSACHUSETTS.
+
+                ‡   PIPING FROM THE TOP OF THE WATER HEATER WITH TEES IS ACCEPTABLE.
+
+
+
+
+Some water heater models are equipped with inlet/outlet                   •     The domestic hot water line from the water heater should
+connections for use with space heating applications. If this                    be vertical past any mixing valve or supply line to the
+water heater is to be used to supply both space heating and                     air handler to remove air bubbles from the system.
+domestic potable (drinking) water, the instructions listed                      Otherwise, these bubbles will be trapped in the air
+below must be followed.                                                         handler heat exchanger coil, reducing efficiency.
+•   This water heater is suitable for combination water                   •     Do not connect the water heater to any system or
+    (potable) heating and space heating application only.                       components previously used with non-potable water
+•   Be sure to follow the manual(s) shipped with the air                        heating appliances when used to supply potable water.
+    handler system.
+•   This water heater is not to be used as a replacement for              Solar Installation
+    an existing boiler installation.
+•   Do not use with piping that has been treated with
+                                                                          If this water heater is used as a solar storage heater
+    chromates, boiler seal or other chemicals and do not
+                                                                          or as a backup for the solar system, the water supply
+    add any chemicals to the water heater piping.
+                                                                          temperatures to the water heater tank may be in excess of
+•   If the space heating system requires water temperatures
+    in excess of 120°F, install a Thermostatic Mixing Valve               120°F. A Thermostatic Mixing Valve or other temperature
+    in the domestic (potable) hot water supply at each point-             limiting valve must be installed in the water supply line to
+    of-use to limit the risk of scald injury. Install the mixing          limit the supply temperature to 120°F.
+    valve per the manufacturers instructions.
+•   Pumps, valves, piping, and fittings must be compatible                NOTICE: Solar water heating systems can often supply
+    with potable water.                                                   water with temperatures exceeding 180°F and may result
+•   A properly installed flow control valve is required to                in water heater malfunction.
+    prevent thermosiphoning. Thermosiphoning is the result
+    of a continuous flow of water through the air handler
+    circuit during the off cycle.
+
+
+                                                                      6
+                                  TYPICAL INSTALLATION
+GET TO KNOW YOUR WATER HEATER - GAS MODELS
+
+A. Vent Pipe                       I. Ground Joint Union                    Q. Temperature-Pressure Relief
+                                                                            Valve
+B. Draft Hood                      J. Sediment Trap                         R. Rating Plate
+C. Anode                           K. Inner Door                            S. Flue Baﬄe(s)
+D. Hot Water Outlet                L. Outer Door                            T. Gas Control Valve/Thermostat
+E. Outlet                          M. Union                                 U. Drain Valve
+F. Insulation                      N. Inlet Water Shut-oﬀ Valve             V. Pilot and Main Burner
+G. Gas Supply                      O. Cold Water Inlet                      W. Flue
+H. Manual Gas Shut-oﬀ Valve        P. Inlet Dip Tube                        X. Metal Drain Pan
+
+
+
+                                                           •   INSTALL IN ACCORDANCE WITH LOCAL CODES.
+                                                           •   SEDIMENT TRAP AS REQUIRED BY LOCAL
+                                                               CODES.
+                                                           •   ALL PIPING MATERIALS TO BE SUPPLIED BY
+                                                               CUSTOMERS.
+
+
+                                                               GAS CONTROL/
+                                                               TEMPERATURE KNOB
+
+
+
+
+                                                                           IGNITER
+                                                                           BUTTON                    WHITE
+                                                                                                      WIRE
+                                                                            IGNITER                  (RIGHT
+                                                                            LEAD                      SIDE)
+                                                                            WIRE
+                                                                                       PILOT       RED WIRE
+                                                                            IGNITER    TUBE        (LEFT SIDE)
+                                                                            WIRE
+                       T
+                                                                                               MANIFOLD TUBE
+
+
+
+
+                              L
+
+
+
+
+                                   FIGURE 1. TYPICAL INSTALLATION
+
+
+
+   **CLOSED WATER SYSTEMS ARE THOSE WITH BACK FLOW PREVENTION DEVICES INSTALLED IN THE
+   WATER SERVICE LINE.
+
+
+
+
+                                                       7
+                                        TYPICAL INSTALLATION
+
+
+
+
+                                                                                 FOR COMBO HEATING PURPOSES:
+                                                                               CERTAIN MODELS ARE EQUIPPED WITH
+                                                                             SIDE PLUMBING CONNECTIONS FOR SPACE
+                                                                               HEATING. THE HOT AND COLD FITTING
+                                                                              ASSEMBLIES (PART # 100108524) CAN BE
+                                                                             ORDERED THROUGH THE MANUFACTURER
+
+
+
+
+            FIGURE 2. MIXING VALVE USAGE                       HOTTER WATER CAN SCALD
+
+APPLICATION/USE OF WATER HEATER                                Water heaters are intended to produce hot water.
+                                                               To reduce the risk of scalding, install Thermostatic
+This Water Heater has been design certified as                 Mixing Valves at each point-of-use. Water heated to a
+complying with ANSI Z21.10.3-CSA 4.3 current edition for       temperature which will satisfy space heating, clothes
+water heaters and is considered suitable for:                  washing, dish washing, and other sanitizing needs can
+                                                               scald and permanently injure you upon contact. Some
+•   Water (Potable) Heating and Space Heating*: All            people are more likely to be permanently injured by hot
+    models are considered suitable for water (potable)         water than others. These include the elderly, children,
+    heating and space heating.                                 the infirm, or physically/mentally handicapped. If anyone
+*These water heaters cannot be used in space heating           using hot water in your home fits into one of these groups
+applications only.                                             or if there is a local code requiring a certain temperature
+                                                               water at the hot water tap, then you must take special
+                                                               precautions. In addition to using the lowest possible
+                                                               temperature setting that satisfies your hot water needs, a
+                                                               means such as a *Mixing Valve should be used at the hot
+                                                               water taps used by these people or at the water heater.
+                                                               See Figure 2 (page 8). Mixing valves are available
+                                                               at plumbing supply or hardware stores. Consult a
+                                                               qualified installer or service agency. Follow mixing valve
+                                                               manufacturer’s instructions for installation of valves.
+                                                               Before changing the factory setting on the thermostat,
+                                                               see Temperature Regulation (page 25).
+
+
+
+                                                           8
+                                         TYPICAL INSTALLATION
+
+FACTS TO CONSIDER ABOUT THE LOCATION                                •   Sensors mounted in the drain pan that trigger an
+                                                                        alarm or turn oﬀ the incoming water to the water
+Carefully choose an indoor location for the new water                   heater when leakage is detected.
+heater, because the placement is a very important
+                                                                    •   Sensors mounted in the drain pan that turn oﬀ the
+consideration for the safety of the occupants in the
+                                                                        water supply to the entire home when water is
+building and for the most economical use of the water
+                                                                        detected in the drain pan.
+heater. This water heater is not for use in manufactured
+(mobile) homes or outdoor installation.                             •   Water supply shut-oﬀ devices that activate based on
+                                                                        the water pressure diﬀerential between the cold water
+Whether replacing an old water heater or putting the                    and hot water pipes connected to the water heater.
+water heater in a new location, the following critical points
+                                                                    •   Devices that will turn oﬀ the gas supply to a gas water
+must be observed:
+                                                                        heater while at the same time shutting oﬀ its water
+1. Select a location indoors as close as practical to the               supply.
+   gas vent or chimney to which the water heater vent
+   is going to be connected, and as centralized with the
+   water piping system as possible.
+
+2. Selected location must provide adequate clearances
+   for servicing and proper operation of the water heater.
+
+
+
+
+Installation of water heater must be accomplished in
+such a manner that if the tank or any connections should
+leak, flow will not cause damage to the structure. For
+this reason, it is not advisable to install water heater in
+an attic or upper floor. When such locations cannot be
+avoided, a suitable metal drain pan should be installed
+under the water heater. Metal Drain pans are available
+at your local hardware store. Such a metal drain pan
+must have a minimum length and width of at least 2” (51
+mm) greater than water heater dimensions and must be
+piped to an adequate drain. The pan must not restrict
+combustion air flow.
+
+Water heater life depends upon water quality, water
+pressure and the environment in which the water heater
+is installed. Water heaters are sometimes installed in
+locations where leakage may result in property damage,
+even with the use of a drain pan piped to a drain.
+However, unanticipated damage can be reduced or
+prevented by a leak detector or water shut-oﬀ device                INSTALLATIONS IN AREAS WHERE FLAMMABLE
+used in conjunction with a piped drain pan. These                   LIQUIDS (VAPORS) ARE LIKELY TO BE PRESENT OR
+devices are available from some plumbing supply                     STORED (GARAGES, STORAGE AND UTILITY AREAS,
+wholesalers and retailers, and detect and react to                  ETC.): Flammable liquids (such as gasoline, solvents,
+leakage in various ways:                                            propane [LP or butane, etc.] and other substances such
+                                                                    as adhesives, etc.) emit flammable vapors which can be
+                                                                    ignited by a gas water heater’s pilot light or main burner.
+
+
+
+
+                                                                9
+The resulting flashback and fire can cause death or                 7,700 feet (2,347 m), the water heater’s Btu input should
+serious burns to anyone in the area, as well as property            be reduced at the rate of 4 percent for each 1,000 feet
+damage. If installation in such areas is your only option,          (305 m) above sea level which requires replacement of
+then installation must be accomplished in a way that                the burner orifice in accordance with the National Fuel
+the pilot flame and main burner flame are elevated from             Gas Code ANSI Z223.1/NFPA 54. Contact your local gas
+floor at least 18 inches. While this may reduce chances             supplier for further information.
+of flammable vapors, from a floor spill being ignited,
+gasoline and other flammable substances should never                Failure to replace the standard orifice with the proper
+be stored or used in the same room or area containing a             high altitude orifice when installed at elevations above
+gas water heater or other open flame or spark producing             7,700 feet (2,347 m) could result in improper and
+appliance.                                                          ineﬃcient operation of the water heater, producing carbon
+                                                                    monoxide gas in excess of the safe limits. This could
+NOTE: Flammable vapors may be drawn by air currents                 result in serious injury or death. Contact your local gas
+from other areas of the structure to the appliance.                 supplier for any specific changes that may be required in
+                                                                    your area.
+Also, the water heater must be located and/or protected
+so it is not subject to physical damage by a moving
+vehicle.
+
+
+
+
+                                                                    ADJUSTING THE AIR SHUTTER
+                                                                    Your water heater is equipped with an air shutter which is preset in the
+                                                                    open position. (See Figure 3) For most water heater applications,
+This water heater must not be installed directly on                 adjusting the air shutter is not necessary.
+carpeting. Carpeting must be protected by metal or wood
+panel beneath the water heater extending beyond the full               WARNING
+width and depth of the water heater by at least 3” (76.2            For correct water heater operation, it is essential that the air shutter be
+mm) in any direction, or if the water heater is installed in        properly adjusted. If you lack the necessary skills to properly set the air
+                                                                    shutter, you should not proceed, but get help from a qualified person.
+an alcove or closet, the entire floor must be covered by
+the panel. Failure to heed this warning may result in a fire                                   Burner compartment
+                                                                                            opening (behind outer door
+hazard.                                                                                       at front of water heater)
+                                                                                                                               Manifold
+                                                                                                                                Tube
+HIGH ALTITUDE
+
+                                                                          Dark areas
+                                                                               are
+                                                                          air openings
+
+
+
+                                                                          Air Shutter
+                                                                          Set Screw
+
+
+                                                                          Air Shutter
+
+
+
+
+                                                                             Air openings
+                                                                              into burner
+
+
+
+
+Water heaters covered in this manual have been tested
+and approved for installation at elevations up to 7,700                             FIGURE 3. AIR SHUTTER OPEN
+feet (2,347 m) above sea level. For installation above
+
+                                                               10
+A correctly set burner should have a stable, quiet flame. The flame will
+be blue with a well-defined blue inner flame. See Figure 4. Some
+yellow tipping is normal with LP gas.
+
+
+                                                                                                     UNSTABLE YELLOW FLAMES
+                                                                                                     • Unstable flames; no defined cones
+                                                                                                     • Hazy, yellow flame
+                                                                                                     • Correct by rotating air shutter clockwise   .
+                   NORMAL FLAMES:
+                   • Blue with well defined inner flame                                          FIGURE 7. UNSTABLE FLAME
+                   • Some yellow tipping is normal for LP gas
+                                                                                   CLEARANCES
+                  FIGURE 4. NORMAL FLAMES
+    WARNING                                                                        Minimum clearances between the water heater and
+If your burner’s flames do not appear as described above, the gas may              combustible construction are 0 inch at the sides and rear,
+not be burning cleanly, and there could be a risk of carbon monoxide               4” (102 mm) at the front, and 6” (153 mm) from the vent
+poisoning. Refer to the instructions that follow.
+                                                                                   pipe. Clearance from the top of the jacket is 12” (305
+If flames are seen lifting from the burner ports, close the air shutter            mm).
+gradually until a stable flame is achieved. See Figure 5 and Figure 6.
+NOTE: In most water heater installations, flame lifting occurs only at
+altitudes above 5,400 feet (1646 m).
+
+
+
+
+                 FLAME LIFTING:
+                                                                                                   FIGURE 8. CLEARANCES
+                 • Flame lifting from the burner ports
+                 • Excessive noise from the flames
+                 • Correct by closing the air shutter as
+                 shown below; rotate it counter-clockwise .
+
+                   FIGURE 5. FLAME LIFTING
+
+
+      How to adjust the air shutter:
+
+
+     1. Loosen set screw.
+
+
+
+
+      2. Rotate air shutter
+      counter-clockwise to
+      reduce the size of
+      the openings.
+      Fine-tune as
+                                                                                   A gas water heater cannot operate properly without the
+      described below.                                                             correct amount of air for combustion. Do not install in a
+                                  HALF-CLOSED            CLOSED                    confined area such as a closet, unless you provide air
+      3. Tighten the set screw                                                     as described in Air Requirements (page 16). Never
+      when you are finished.
+                                                                                   obstruct the flow of ventilation air. If you have any doubts
+                                                                                   or questions at all, call your gas supplier. Failure to
+FIGURE 6. AIR SHUTTER: HALF-CLOSED AND CLOSED
+                                                                                   provide the proper amount of combustion air can result in
+                                                                                   a fire or explosion and cause death, serious bodily injury,
+If the air shutter is closed too far, the flame will look hazy and not have        or property damage.
+defined cones. See Figure 7. If this occurs, rotate the air shutter
+clockwise to make the air openings larger. Continue until you observe
+normal flames as shown in Figure 4.
+
+
+
+
+                                                                                            FIGURE 9. VENTILATION CLEARANCES
+                                                                              11
+If this water heater will be used in beauty shops, barber                  certain it does not sag, thereby obstructing the
+shops, cleaning establishments, or self-service laundries                  combustion air flow.
+with dry cleaning equipment, it is imperative that the
+                                                                        HARD WATER
+water heater or water heaters be installed so that
+combustion and ventilation air be taken from outside                    Where hard water conditions exist, water softening or the
+these areas.                                                            threshold type of water treatment is recommended. This
+                                                                        will protect the dishwashers, coﬀee urns, water heaters,
+Propellants of aerosol sprays and volatile compounds,
+                                                                        water piping and other equipment.
+(cleaners, chlorine based chemicals, refrigerants, etc.)
+in addition to being highly flammable in many cases, will               GAS SUPPLY SYSTEMS
+also change to corrosive hydrochloric acid when exposed
+to the combustion products of the water heater. The                     Low pressure building gas supply systems are defined
+results can be hazardous, and also cause product failure.               as those systems that cannot under any circumstances
+                                                                        exceed 14” W.C. (1/2 PSI Gauge). These systems do
+INSULATION BLANKETS                                                     not require pressure regulation. Measurements should
+                                                                        be taken to ensure that gas pressures are stable and fall
+                                                                        within the requirements stated on the water heater rating
+                                                                        plate. Readings should be taken with all gas burning
+    Breathing Hazard - Carbon Monoxide Gas                              equipment oﬀ (static pressure) and with all gas burning
+                         Do not obstruct water heater air intake
+                                                                        equipment running at maximum rate (dynamic pressure).
+                         with insulating blanket.                       The gas supply pressure must be stable within 1.5”
+                         Gas and carbon monoxide detectors              W.C. from static to dynamic pressure to provide good
+                         are available.                                 performance. Pressure drops that exceed 1.5” W.C.
+                         Install water heater in accordance with        may cause rough starting, noisy combustion or nuisance
+                         the instruction manual.                        outages. Increases or spikes in static pressure during
+    Breathing carbon monoxide can cause brain damage or                 oﬀ cycles may cause failure to ignite or in severe cases
+    death. Always read and understand instruction manual.               damage to appliance gas valves. If your low pressure
+                                                                        system does not meet these requirements, the installer is
+Insulation blankets are available to the general public for             responsible for the corrections.
+external use on gas water heaters but are not necessary
+with these products. The purpose of an insulation blanket               High Pressure building supply systems use pressures
+is to reduce the standby heat loss encountered with                     that exceed 14” W.C. (1/2 PSI Gauge). These systems
+storage tank heaters. The water heaters covered by this                 must use field supplied regulators to lower the gas
+manual meet or exceed the Energy Policy Act standards                   pressure to less than 14” W.C. (1/2 PSI Gauge).
+with respect to insulation and standby heat loss                        Appliances require gas regulators that are properly
+requirements, making an insulation blanket unnecessary.                 sized for the water heater input and deliver the rating
+                                                                        plate specified pressures. Gas supply systems where
+Should you choose to apply an insulation blanket to this                pressure exceeds 5 PSI often require multiple regulators
+heater, you should follow these instructions. See Leakage               to achieve desired pressures. Systems in excess of 5
+Test Points (page 31) for identification of components                  PSI building pressure should be designed by gas delivery
+mentioned below. Failure to follow these instructions                   professionals for best performance. Water heaters
+can restrict the air flow required for proper combustion,               connected to gas supply systems that exceed 14” W.C.
+potentially resulting in fire, asphyxiation, serious personal           (1/2 PSI Gauge) at any time must be equipped with a gas
+injury or death.                                                        supply regulator.
+
+•   DO NOT apply insulation to the top of the water
+    heater, as this will interfere with safe operation of the
+    draft hood. See Figure 16 (page 20).
+•   DO NOT cover the thermostat or the temperature-
+    pressure relief valve.
+• DO NOT allow the insulation to come within 2 inches
+  (5 cm) of the floor to prevent blockage of combustion
+  air flow to the burner.
+• DO NOT cover the instruction manual. Keep it on the
+  side of the water heater or nearby for future reference.
+•   DO obtain new warning and instruction labels from
+    the manufacturer for placement on the blanket directly
+    over the existing labels.
+•   DO inspect the insulation blanket frequently to make
+                                                                   12
+                                 INSTALLATION REQUIREMENTS
+GAS PRESSURE REQUIREMENTS                                          MIXING VALVES
+Natural gas models require a minimum gas supply                                                   Water temperature over 125°F (52°C)
+pressure of 5.0” W.C. (1.24 kPa). Propane gas models                                              can cause severe burns instantly
+                                                                                                  resulting in severe injury or death.
+require a minimum gas supply pressure of 11” W.C. (2.74
+kPa). The minimum supply pressure is measured while                                               Children, the elderly and the physically
+                                                                                                  or mentally disabled are at highest risk
+gas is flowing (dynamic pressure). The supply pressure                                            for scald injury.
+(dynamic) should never fall below the specified minimum
+                                                                                                  Feel water before bathing or showering.
+supply pressure. The supply pressure should be
+measured with all gas fired appliances connected to the                                           Temperature limiting devices such as
+                                                                                                  mixing valves must be installed when
+common main firing at full capacity. If the supply pressure                                       required by codes and to ensure safe
+drops more than 1.5” W.C. (0.37 kPa) as gas begins                                                temperatures at fixtures.
+to flow to the water heater then the supply gas system
+including the gas line and/or the gas regulator may be             Water heated to a temperature which will satisfy clothes
+restricted or undersized. See Gas Piping (page 21).                washing, dish washing, and other sanitizing needs can
+The gas valve on all models has a maximum gas supply               scald and cause permanent injury upon contact. Short
+pressure limit of 14” W.C. (3.48 kPa) The maximum                  repeated heating cycles caused by small hot water uses
+supply pressure is measured while gas is not flowing               can cause temperatures at the point of use to exceed the
+(static pressure).                                                 water heater’s temperature setting by up to 30°. If you
+                                                                   choose a higher temperature setting, Thermostatic Mixing
+SUPPLY GAS REGULATOR                                               Valves at each point-of-use are particularly important to
+                                                                   reduce the risk of scalding.
+The maximum allowable gas supply pressure for this
+water heater is 14.0 inches W.C. (3.48 kPa). Install a             Some people are more likely to be permanently injured
+positive lock-up gas pressure regulator in the gas supply          by hot water than others. These include the elderly,
+line if inlet gas pressure can exceed 14.0 inches W.C.             children, the infirm and the physically/mentally disabled.
+(3.48 kPa) at any time. Regulators must be sized/used              Table 1 shows the approximate time-to-burn relationship
+according to manufacturer’s specifications.                        for normal adult skin. If anyone using hot water provided
+                                                                   by the water heater being installed fits into one of these
+If a positive lock-up regulator is required follow these
+                                                                   groups or if there is a local code or state law requiring a
+instructions:
+                                                                   certain water temperature at the point of use, then special
+1. Positive lock-up gas pressure regulators must be rated          precautions must be taken.
+   at or above the input Btu/hr rating of the water heater
+                                                                   In addition to using the lowest possible
+   they supply.
+                                                                   temperature setting that satisfies demand of the
+2. Positive lock-up gas pressure regulator(s) should be            application,Thermostatic Mixing Valves installed at each
+   installed no closer than 3 feet (1 meter) and no farther        point-of-use are particularly important to reduce the risk
+   than 8 feet (2.4 meters) of equivalent length from the          of scalding. See Figure 2 (page 8)
+   water heater’s inlet gas connection.
+                                                                   Mixing valves are available at plumbing supply stores.
+3. After installing the positive lock-up gas pressure              Consult a Qualified Installer or Service Agency. Follow
+   regulator(s), and while the water heater is operating,          mixing valve manufacturer’s instructions for installation of
+   an initial nominal supply pressure setting of 7.0” W.C.         the valves.
+   is recommended and will generally provide good
+                                                                             TABLE 1. APPROXIMATE TIME-TO-BURN
+   water heater operation. Some addition adjustment
+   maybe required later to maintain a steady gas supply                Water
+                                                                                             Time for           Time for Permanent Burns
+                                                                                         1st Degree Burn            2nd & 3rd Degree
+   pressure.                                                        Temperature °F
+                                                                                       (Less Severe Burns)         (Most Severe Burns)
+4. When installing multiple water heaters in the same                     110          (normal shower temp.)
+   gas supply system it is recommended that individual                    116             (pain threshold)
+   positive lock-up gas pressure regulators be installed at               116                35 minutes                 45 minutes
+   each unit.                                                             122                 1 minute                   5 minutes
+                                                                          131                5 seconds                  25 seconds
+                                                                          140                2 seconds                   5 seconds
+                                                                          149                 1 second                   2 seconds
+                                                                          154              instantaneous                 1 second
+                                                                    (U.S. Government Memorandum, C.P.S.C., Peter L. Armstrong, Sept. 15,1978)
+
+
+
+
+                                                              13
+WATER PIPING
+WATER (POTABLE) HEATING AND SPACE HEATING
+This water heater shall not be connected to any heating
+systems or component(s) used with a non-potable water
+heating appliance.
+
+
+
+
+All piping components connected to this unit for space
+heating applications shall be suitable for use with potable
+water. Toxic chemicals, such as those used for boiler
+treatment shall not be introduced into this system.
+
+When the system requires water for space heating at
+temperatures higher than required for domestic water
+purposes, Thermostatic Mixing Valves are recommended
+at each point-of-use to reduce the risk of scalding.
+See Figure 2 (page 8) for the suggested piping
+arrangement.
+
+These water heaters cannot be used in space heating
+applications only.
+CLOSED WATER SYSTEMS
+Water supply systems may, because of code
+requirements or such conditions as high line pressure,
+among others, have installed devices such as pressure
+reducing valves, check valves, and back flow preventers.
+Devices such as these cause the water system to be a
+closed system.
+THERMAL EXPANSION
+As water is heated, it expands (thermal expansion). In
+                                                                         FIGURE 10. TYPICAL PIPING ARRANGEMENT
+a closed system the volume of water will grow when it
+is heated. As the volume of water grows there will be a             Note: To protect against untimely corrosion of hot and
+corresponding increase in water pressure due to thermal             cold water fittings, it is strongly recommended that
+expansion. Thermal expansion can cause premature tank               dielectric unions or couplings be installed on this water
+failure (leakage). This type of failure is not covered under        heater when connected to copper pipe.
+the limited warranty. Thermal expansion can also cause
+intermittent temperature-pressure relief valve operation:           Figure 10 shows the typical attachment of the water
+water discharged from the valve due to excessive                    piping to the water heater. The water heater is equipped
+pressure build up. This condition is not covered under the          with 1” NPT threaded nipple (75 gallon nominal capacity
+limited warranty. The temperature-pressure relief valve is          models) or 1.25” NPT threaded nipple (100 gallon
+not intended for the constant relief of thermal expansion.          nominal capacity models) water connections.
+
+A properly sized thermal expansion tank must be installed
+on all closed systems to control the harmful eﬀects of
+thermal expansion. Contact a local plumbing service
+technician to have a thermal expansion tank installed.
+
+
+
+
+                                                               14
+TEMPERATURE-PRESSURE RELIEF VALVE                                    circumstances. Excessive length, over 30 feet (9.14 m),
+                                                                     or the use of more than four elbows can cause restriction
+                                                                     and reduce the discharge capacity of the valve.
+
+                                                                     No valve or other obstruction is to be placed between the
+                                                                     temperature-pressure relief valve and the tank. Do not
+                                                                     connect discharge piping directly to the drain unless a
+                                                                     6” (15.2 cm) air gap is provided. To prevent bodily injury,
+                                                                     hazard to life, or property damage, the relief valve must
+                                                                     be allowed to discharge water in adequate quantities
+                                                                     should circumstances demand. If the discharge pipe is
+                                                                     not connected to a drain or other suitable means, the
+                                                                     water flow may cause property damage.
+
+
+
+This water heater is provided with a properly rated/                                      CAUTION
+sized and certified combination temperature-pressure                                   Water Damage Hazard
+relief valve (T&P valve) by the manufacturer. The valve
+is certified by a nationally recognized testing laboratory
+                                                                             • Temperature-Pressure Relief Valve discharge
+                                                                               pipe must terminate at adequate drain.
+that maintains periodic inspection of production of listed
+equipment of materials as meeting the requirements for               T&P Valve Discharge Pipe Requirements:
+relief valves for hot water supply systems, ANSI Z21.22 •
+CSA 4.4, and the code requirements of ASME. If replaced,             •   Shall not be smaller in size than the outlet pipe size
+the new T&P valve must meet the requirements of local                    of the valve, or have any reducing couplings or other
+codes, but not less than a combination temperature-                      restrictions.
+pressure relief valve rated/sized and certified as indicated         •   Shall not be plugged or blocked.
+in the above paragraph. The new valve must be marked
+with a maximum set pressure not to exceed the marked                 •   Shall not be exposed to freezing temperatures.
+hydrostatic working pressure of the water heater (150                •   Shall be of material listed for hot water distribution.
+psi = 1,035 kPa) and a discharge capacity not less than
+                                                                     •   Shall be installed so as to allow complete drainage
+the water heater Btu/hr or kW input rate as shown on the
+                                                                         of both the temperature-pressure relief valve and the
+water heater’s model rating label.
+                                                                         discharge pipe.
+Note: In addition to the factory installed                           •   Must terminate a maximum of six inches above a
+temperature-pressure relief valve on the water heater,                   floor drain or external to building. In cold climates, it is
+each remote storage tank that may be installed and                       recommended that discharge pipe be terminated at an
+piped to a water heating appliance must also have its                    adequate drain inside building.
+own properly sized, rated, and approved temperature-
+                                                                     •   Shall not have any valve or other obstruction between
+pressure relief valve installed. Call the toll free technical
+                                                                         the relief valve and the drain.
+support phone number listed on the back cover of this
+manual for technical assistance in sizing a temperature-
+                                                                                                     Burn hazard.
+pressure relief valve for remote storage tanks.
+
+For safe operation of the water heater, the temperature-                                             Hot water discharge.
+pressure relief valve must not be removed from its
+                                                                                                     Keep clear of Temperature-
+designated opening nor plugged. The temperature-                                                     Pressure Relief Valve
+pressure relief valve must be installed directly into the                                            discharge outlet.
+fitting of the water heater designed for the relief valve.
+Install discharge piping so that any discharge will exit
+the pipe within 6 inches (15.2 cm) above an adequate                 The temperature-pressure relief valve must be manually
+floor drain, or external to the building. In cold climates           operated at least twice a year. Caution should be taken to
+it is recommended that it be terminated at an adequate               ensure the following:
+drain inside the building. Be certain that no contact is
+made with any live electrical part. The discharge opening            1. No one is in front of or around the outlet of the
+must not be blocked or reduced in size under any                        temperature-pressure relief valve discharge line.
+
+                                                                     2. The water manually discharged will not cause any
+                                                                        bodily injury or property damage because the water
+                                                                        may be extremely hot.
+
+
+                                                                15
+If, after manually operating the valve, it fails to completely        AIR REQUIREMENTS
+reset and continues to release water, immediately close
+the cold water inlet to the water heater, follow the draining
+instructions in this manual, and replace the temperature-
+pressure relief valve with a properly rated/sized new one.              Breathing Hazard - Carbon Monoxide Gas
+Note: The purpose of a temperature-pressure relief valve                                   Install water heater in accordance with
+is to prevent excessive temperatures and pressures in                                      the Instruction Manual and NFPA 54 or
+                                                                                           CAN/CSA-B149.1.
+the storage tank. The T&P valve is not intended for the
+                                                                                           To avoid injury, combustion and ventilation
+constant relief of thermal expansion. A properly sized                                     air must be taken from outdoors.
+thermal expansion tank must be installed on all closed                                     Do not place chemical vapor emitting
+systems to control thermal expansion, see Figure 10                                        products near water heater.
+(page 14).
+                                                                         Breathing carbon monoxide can cause brain damage or
+If you do not understand these instructions or have any                  death. Always read and understand instruction manual.
+questions regarding the temperature-pressure relief valve
+call the toll free number listed on the back cover of this            For safe operation, an adequate supply of fresh
+manual for technical assistance.                                      uncontaminated air for combustion and ventilation must
+                                                                      be provided.
+FILLING THE WATER HEATER
+                                                                      An insuﬃcient supply of air can cause recirculation of
+Never use this water heater unless it is completely full              combustion products resulting in contamination that may
+of water. To prevent damage to the tank, the tank must                be hazardous to life. Such a condition often will result
+be filled with water. Water must flow from the hot water              in a yellow, luminous burner flame, causing sooting of
+faucet before turning on the gas to the water heater.                 the combustion chamber, burners, and flue tubes, and
+                                                                      creates a risk of asphyxiation.
+
+                                                                      Do not install the water heater in a confined space unless
+                                                                      an adequate supply of air for combustion and ventilation
+                                                                      is brought in to that space using the methods described
+                                                                      in Confined Space (page 17) that follows later in this
+                                                                      manual.
+
+                                                                      Never obstruct the flow of ventilation air. If you have any
+                                                                      doubts or questions at all, call your gas supplier. Failure
+To fill the water heater with water:                                  to provide the proper amount of combustion air can result
+                                                                      in a fire or explosion and cause property damage, serious
+1. Close the water heater drain valve by turning the                  bodily injury or death.
+   handle to the right (clockwise). The drain valve is on
+   the lower front of the water heater.                               UNCONFINED SPACE
+
+2. Open the cold water supply valve to the water heater.              An unconfined space is one in which the volume is not
+   NOTE: The cold water supply valve must be left open                less than 50 cubic feet per 1,000 Btu/hr (4.8 cubic meters
+   when the water heater is in use.                                   per kW) of the total input rating of all appliances installed
+                                                                      in the space. Rooms communicating directly with the
+3. To ensure complete filling of the tank, allow air to exit          space in which the appliances are installed, through
+   by opening the nearest hot water faucet. Allow water               openings not furnished with doors, are considered a part
+   to run until a constant flow is obtained. This will let air        of the unconfined space.
+   out of the water heater and the piping.
+                                                                      Makeup air requirements for the operation of exhaust
+4. Check all water piping and connections for leaks.                  fans, kitchen ventilation systems, clothes dryers and
+   Repair as needed.                                                  fireplaces shall also be considered in determining the
+                                                                      adequacy of a space to provide combustion, ventilation
+                                                                      and dilution air.
+
+
+
+
+                                                                 16
+UNUSUALLY TIGHT CONSTRUCTION                                         free area specified. Where the louver and grille design
+In unconfined spaces in buildings, infiltration may be               and free area are not known, it shall be assumed that
+adequate to provide air for combustion, ventilation and              wood louvers will have 25% free area and metal louvers
+dilution of flue gases. However, in buildings of unusually           and grilles will have 75% free area. Non motorized
+tight construction (for example, weather stripping, heavily          louvers and grilles shall be fixed in the open position.
+insulated, caulked, vapor barrier, etc.) additional air must
+                                                                     FRESH AIR OPENINGS FOR CONFINED SPACES
+be provided using the methods described in that follows.
+                                                                     The following instructions shall be used to calculate the
+CONFINED SPACE                                                       size, number and placement of openings providing fresh
+A confined space is one in which the volume is less than             air for combustion, ventilation and dilution in confined
+50 cubic feet per 1,000 Btu/hr (4.8 cubic meters per kW)             spaces. The illustrations shown in this section of the
+of the total input rating of all appliances installed in the         manual are a reference for the openings that provide
+space.                                                               fresh air into confined spaces only. Do not refer to these
+                                                                     illustrations for the purpose of vent installation. See
+Openings must be installed to provide fresh air for                  Venting (page 19) for complete venting instructions.
+combustion, ventilation and dilution in confined spaces.
+The required size for the openings is dependent on the               OUTDOOR AIR THROUGH TWO OPENINGS
+method used to provide fresh air to the confined space
+and the total Btu/hr input rating of all appliances installed
+in the space.
+DIRECT VENT APPLIANCES
+Appliances installed in a direct-vent configuration
+that derives all air for combustion from the outdoor
+atmosphere through sealed intake air piping are not
+factored in the total appliance input Btu/hr calculations
+used to determine the size of openings providing fresh air
+into confined spaces.
+EXHAUST FANS
+Where exhaust fans are installed, additional air shall be
+provided to replace the exhausted air. When an exhaust
+fan is installed in the same space with a water heater,
+suﬃcient openings to provide fresh air must be provided
+that accommodate the requirements for all appliances
+in the room and the exhaust fan. Undersized openings                      FIGURE 11. FRESH AIR FROM TWO OPENINGS
+will cause air to be drawn into the room through the
+                                                                     The confined space shall be provided with two permanent
+water heater’s vent system causing poor combustion.
+                                                                     openings, one commencing within 12 inches (300 mm)
+Sooting, serious damage to the water heater and the risk
+                                                                     of the top and one commencing within 12 inches (300
+of fire or explosion may result. It can also create a risk of
+                                                                     mm) of the bottom of the enclosure. The openings shall
+asphyxiation.
+                                                                     communicate directly with the outdoors. See Figure 11 .
+LOUVERS AND GRILLES
+                                                                     Each opening shall have a minimum free area of 1
+The free areas of the fresh air openings in the                      square inch per 4,000 Btu/hr (550 mm2 per kW) of the
+instructions that follow do not take in to account the               aggregate input rating of all appliances installed in the
+presence of louvers, grilles or screens in the openings.             enclosure. Each opening shall not be less than 100
+The required size of openings for combustion, ventilation
+and dilution air shall be based on the “net free area” of
+each opening. Where the free area through a design
+of louver or grille or screen is known, it shall be used in
+calculating the size of opening required to provide the
+
+
+
+
+                                                                17
+square inches (645 cm2).                                             OUTDOOR AIR THROUGH TWO HORIZONTAL
+                                                                     DUCTS
+OUTDOOR AIR THROUGH ONE OPENING
+
+
+
+
+                                                                     FIGURE 13. FRESH AIR FROM TWO HORIZONTAL DUCTS
+      FIGURE 12. FRESH AIR FROM ONE OPENING
+                                                                     The confined space shall be provided with two permanent
+Alternatively a single permanent opening, commencing                 horizontal ducts, one commencing within 12 inches (300
+within 12 inches (300 mm) of the top of the enclosure,               mm) of the top and one commencing within 12 inches
+shall be provided. See Figure 12.                                    (300 mm) of the bottom of the enclosure. The horizontal
+                                                                     ducts shall communicate directly with the outdoors. See
+The water heater shall have clearances of at least 1 inch            Figure 13.
+(25 mm) from the sides and back and 6 inches (150 mm)
+from the front of the appliance. The opening shall directly          Each duct opening shall have a minimum free area of 1
+communicate with the outdoors or shall communicate                   square inch per 2,000 Btu/hr (1100 mm2 per kW) of the
+through a vertical or horizontal duct to the outdoors or             aggregate input rating of all appliances installed in the
+spaces that freely communicate with the outdoors and                 enclosure.
+shall have a minimum free area of the following:
+                                                                     When ducts are used, they shall be of the same cross
+1. One square inch per 3000 Btu/hr (733 mm2 per kW)                  sectional area as the free area of the openings to which
+   of the total input rating of all appliances located in the        they connect. The minimum dimension of rectangular air
+   enclosure, and                                                    ducts shall be not less than 3 inches.
+2. Not less than the sum of the areas of all vent
+   connectors in the space.
+
+
+
+
+                                                                18
+OUTDOOR AIR THROUGH TWO VERTICAL                                 AIR FROM OTHER INDOOR SPACES
+DUCTS
+                                                                 The confined space shall be provided with two permanent
+The illustrations shown in this section of the manual are        openings, one commencing within 12 inches (300 mm) of
+a reference for the openings that provide fresh air into         the top and one commencing within 12 inches (300 mm)
+confined spaces only.                                            of the bottom of the enclosure. See Figure 15.
+
+DO NOT refer to these illustrations for the purpose of
+vent installation. See Venting (page 19) for complete
+venting instructions.
+
+
+
+
+                                                                         FIGURE 15. AIR FROM INDOOR SPACES
+
+                                                                 Each opening shall communicate directly with an
+                                                                 additional room(s) of suﬃcient volume so that the
+ FIGURE 14. FRESH AIR FROM TWO VERTICAL DUCTS                    combined volume of all spaces meets the criteria for an
+                                                                 unconfined space.
+The confined space shall be provided with two permanent
+vertical ducts, one commencing within 12 inches (300             Each opening shall have a minimum free area of 1
+mm) of the top and one commencing within 12 inches               square inch per 1,000 Btu/hr (2200 mm2 per kW) of the
+(300 mm) of the bottom of the enclosure. The vertical            aggregate input rating of all appliances installed in the
+ducts shall communicate directly with the outdoors. See          enclosure. Each opening shall not be less than 100
+Figure 14.                                                       square inches (645 cm2).
+
+Each duct opening shall have a minimum free area of 1            VENTING
+square inch per 4,000 Btu/hr (550 mm2 per kW) of the
+aggregate input rating of all appliances installed in the        Water heaters covered by these instructions are Category
+enclosure.                                                       I, Natural Draft appliances.
+
+When ducts are used, they shall be of the same cross             Chemical vapor corrosion of the flue and vent system
+sectional area as the free area of the openings to which         may occur if air for combustion contains certain chemical
+they connect. The minimum dimension of rectangular air           vapors. Spray can propellants, cleaning solvents,
+ducts shall be not less than 3 inches.                           refrigerator and air conditioner refrigerants, swimming
+                                                                 pool chemicals, calcium and sodium chloride, waxes,
+                                                                 bleach and process chemicals are typical compounds
+                                                                 which are potentially corrosive.
+
+                                                                 VENT DAMPERS - Any vent damper, whether it is
+                                                                 operated thermally or otherwise must be removed if its
+                                                                 use inhibits proper drafting of the water heater.
+
+                                                                 Thermally Operated Vent Dampers: this gas-fired water
+                                                                 heater has a thermal eﬃciency at or above 80% which
+                                                                 may produce a relatively low flue gas temperature.
+
+                                                                 Such temperatures may not be high enough to properly
+                                                                 open thermally operated vent dampers. This would
+                                                                 cause spillage of the flue gases and may cause carbon
+                                                                 monoxide poisoning. Vent dampers must bear evidence
+                                                            19
+of certification as complying with the current edition of
+the American National Standard ANSI Z21.66 CGA 6.14
+(covering electrically and mechanically actuated vent
+dampers). Before installation of any vent damper, consult
+the local gas utility for further information.
+
+To ensure proper venting of this gas-fired water heater,
+the correct vent pipe diameter must be utilized. Any
+additions or deletions of other gas appliances on a
+common vent with this water heater may adversely aﬀect
+the operation of the water heater. Consult your gas
+supplier if any such changes are planned.
+
+For proper venting in certain installations, a larger
+diameter vent pipe may be necessary. Consult your gas
+supplier to aid you in determining the proper venting
+for your water heater from the vent tables in the current
+edition of the National Fuel Gas Code ANSI Z223.1/NFPA
+54.
+
+Periodically check the venting system for signs of
+obstruction or deterioration and replace if needed.
+
+The combustion and ventilation air flow must not be                  Draft Hood                    Vent
+obstructed.                                                                                      Screw                 Draft Hood
+
+The water heater with draft hood installed must be
+connected to a chimney or listed vent pipe system,
+which terminates to the outdoors. Never operate the                                                       Vent to outdoors
+water heater unless it is vented to the outdoors and has                                                  or chimney
+adequate air supply to avoid risks of improper operation,
+explosion or asphyxiation.                                                                            Screw
+                                                                    Top of Heater
+•   For proper draft hood attachment, the draft hood legs
+    may be angled slightly inward.
+•   Place the draft hood legs in the receiving holes on the
+    top of the water heater. The legs will snap in the holes
+    to give a tight fit. Secure draft hood with the supplied                 FIGURE 16. DRAFT HOOD ATTACHMENT
+    brackets.
+                                                                    The vent pipe from the water heater must be no less than
+•   Place the vent pipe over the draft hood. With the vent          the diameter of the draft hood outlet on the water heater
+    pipe in position, drill a small hole through both the           and must slope upward at least 1/4 inch per linear foot
+    vent pipe and draft hood. Secure them together with a           (21 mm per meter). See Figure 17 (page 20).
+    sheet metal screw. See Figure 16 (page 20).
+Obstructed or deteriorated vent systems may                         All vent gases must be completely vented to the outdoors
+present serious health risk or asphyxiation.                        of the structure (dwelling). Install only the draft hood
+                                                                    provided with the new water heater and no other draft
+                                                                    hood.
+
+                                                                    Vent pipes must be secured at each joint with sheet metal
+                                                                    screws.
+
+
+
+
+                                                                       FIGURE 17. VENT PIPE MINIMUM UPWARD SLOPE
+
+
+                                                               20
+There must be a minimum of 6” (153 mm) clearance
+between single wall vent pipe and any combustible
+material. Fill and seal any clearance between single
+wall vent pipe and combustible material with mortar
+mix, cement, or other noncombustible substance. For
+other than single wall, follow vent pipe manufacturer’s
+clearance specifications. To ensure a tight fit of the vent
+pipe in a brick chimney, seal around the vent pipe with
+mortar mix cement.
+
+Failure to have required clearances between vent piping
+and combustible material will result in a fire hazard.
+
+Be sure vent pipe is properly connected to prevent
+escape of dangerous flue gases which could cause
+deadly asphyxiation.
+                                                                   Size the main gas line in accordance with Table 2 and
+                                                                   Table 3. The sizes shown are for straight lengths of pipe
+                                                                   at 0.5 in. W.C. pressure drop, which is considered normal
+                                                                   for low pressure systems. Note: Fittings such as elbows,
+                                                                   tees and line regulators will add to the pipe pressure
+                                                                   drop. Also refer to the current editions of the National Fuel
+                                                                   Gas Code (NFPA 54).
+
+                                                                   Make sure gas supplied is same type listed on model
+                                                                   rating plate. The inlet gas pressure must not exceed 14
+                                                                   inch water column (2.6 kPa) for natural and propane
+                                                                   (L.P.) gas. The minimum inlet gas pressure shown on
+                                                                   rating plate is that which will permit firing at rated input.
+
+                                                                   If the gas control valve is subjected to pressures
+                                                                   exceeding 1/2 pound per square inch (3.5 kPa), the
+                                                                   damage to the gas control valve could result in a fire or
+                                                                   explosion from leaking gas.
+
+                                                                   If the main gas line shut-oﬀ serving all gas appliances is
+                                                                   used, also turn “oﬀ” the gas at each appliance. Leave all
+                                                                   gas appliances shut “oﬀ” until the water heater installation
+Chemical vapor corrosion of the flue and vent system
+                                                                   is complete.
+may occur if air for combustion contains certain chemical
+vapors. Spray can propellants, cleaning solvents,                  A gas line of suﬃcient size must be run to the water
+refrigerator and air conditioner refrigerants, swimming            heater. Consult the current edition of National Fuel
+pool chemicals, calcium and sodium chloride, waxes,                Gas Code ANSI Z223.1/NFPA 54 and your gas supplier
+bleach and process chemicals are typical compounds                 concerning pipe size.
+which are potentially corrosive.
+                                                                   The gas piping must include the following:
+GAS PIPING
+                                                                   •   A readily accessible manual shut oﬀ valve in the gas
+Contact your local gas service company to ensure                       supply line serving the water heater, and
+that adequate gas service is available and to review
+                                                                   •   A sediment trap ahead of the gas control valve to help
+applicable installation codes for your area.
+                                                                       prevent dirt and foreign materials from entering the
+                                                                       gas control valve.
+                                                                   •   A flexible gas connector or a ground joint union
+                                                                       between the shut oﬀ valve and control valve to permit
+                                                                       servicing of the unit.
+
+
+
+
+                                                              21
+Be sure to check all the gas piping for leaks before                                   The water heater and its gas connection must be leak
+lighting the water heater. Use a soapy water solution, not                             tested before placing the water heater in operation.
+a match or open flame. Rinse oﬀ soapy solution and wipe
+dry.                                                                                   The water heater and its individual shut-oﬀ valve shall be
+                                                                                       disconnected from the gas supply piping system during
+The minimum inlet gas pressure shown on the rating                                     any pressure testing of that system at test pressures in
+plate is that which will permit firing at the rated input.                             excess of 1/2 pound per square inch (3.5 kPa). It shall
+                                                                                       be isolated from the gas supply piping system by closing
+GAS SUPPLY LINE SIZES (IN INCHES)* MAXIMUM CAPAC-                                      its individual manual shut-oﬀ valve during any pressure
+ITY OF PIPE IN CUBIC FEET PER HOUR
+                                                                                       testing of the gas supply piping system at test pressures
+         TABLE 2. INPUT IN THOUSANDS (BTU/HR)                                          equal to or less than 1/2 pound per square inch (3.5 kPa).
+LENGTH
+  IN
+                       NOMINAL IRON PIPE SIZES (INCHES)                                Connecting the gas piping to the gas control valve of the
+ FEET    1/2"   3/4"      1"    1 1/4"   1 1/2"    2"    2 1/2"    3"       4"
+                                                                                       water heater can be accomplished by either of the two
+  10     175    360       680   1400     2100     3960   6300     11000   23000
+  20     120    250       465   950      1460     2750   4360     7700    15800
+                                                                                       methods shown in Figure 18 and Figure 19.
+  30      97    200       375   770      1180     2200   3520     6250    12800
+  40      82    170       320   660       990     1900   3000     5300    10900        SEDIMENT TRAPS
+  50      73    151       285   580       900     1680   2650     4750    9700
+  60      66    138       260   530       810     1520   2400     4300    8800         A sediment trap shall be installed as close to the inlet of
+  70      61    125       240   490       750     1400   2250     3900    8100         the water heater as practical at the time of water heater
+  80      57    118       220   460       690     1300   2050     3700    7500
+                                                                                       installation. The sediment trap shall be either a tee fitting
+  90      53    110       205   430       650     1220   1950     3450    7200
+  100     50    103       195   400       620     1150   1850     3250    6700
+                                                                                       with a capped nipple in the bottom outlet or other device
+  125     44    93        175   360       550     1020   1650     2950    6000         recognized as an eﬀective sediment trap. If a tee fitting is
+  150     40    84        160   325       500      950   1500     2650    5500         used, it shall be installed in conformance with one of the
+  175     37    77        145   300       460      850   1370     2450    5000
+                                                                                       methods of installation shown in Figure 18 and Figure 19.
+  200     35    72        135   280       430     800    1280     2280    4600
+
+                       TABLE 3. INPUT IN KW
+
+LENGTH                 NOMINAL IRON PIPE SIZES (INCHES)
+  IN
+METERS   1/2"   3/4"      1"    1 1/4"   1 1/2"    2"    2 1/2"    3"       4"
+   3      51    105       199   410       615     1160   1845     3221    6735
+   6      35    73        142   278       428      805   1277     2255    4626
+   9      28    59        110   225       346      644   1031     1830    3748
+  12      24    50        94    193       290      556    878     1552    3192
+  15      21    44        83    170       264      492    776     1391    2840
+  18      19    40        76    155       237      445    703     1259    2577
+  21      18    37        70    143       220      410    659     1142    2372
+                                                                                       FIGURE 18. GAS PIPING WITH FLEXIBLE CONNECTOR.
+  24      17    35        64    135       202      381    600     1083    2196
+  27      16    32        60    126       190      357    571     1010    2108
+  31      15    30        57     117      182      337    542     952     1962
+  38      13    27        51    105       161      299    483     864     1757
+  46      12    25        47     95       146      278    439     776     1610
+  53      11    23        42     88       135      249    401     717     1464
+  61      10    21        40     82       126      234    375     688     1347
+
+
+
+
+                                                                                           FIGURE 19. GAS PIPING WITH BLACK IRON PIPE
+
+                                                                                       Contaminants in the gas lines may cause improper
+                                                                                       operation of the gas control valve that may result in fire or
+                                                                                       explosion. Before attaching the gas line be sure that all
+                                                                                       gas pipe is clean on the inside. To trap any dirt or foreign
+                                                                                       material in the gas supply line, a sediment trap must be
+                                                                                       incorporated in the piping. The sediment trap must be
+                                                                                       readily accessible. Install in accordance with the “Gas
+                                                                                       Piping” section. Refer to the current edition of the National
+Use pipe joint compound or thread sealant tape marked                                  Fuel Gas Code, ANSI Z223.1/NFPA 54.
+as being resistant to the action of petroleum [Propane
+(L.P.)] gases.
+                                                                                  22
+         INSTALLATION CHECKLIST
+Note: Use and complete this checklist before lighting the
+heater. Correct any conditions that do not meet these
+instructions.
+                                                Check Here
+                                                                                                                 Check Here
+Water Heater Location
+1. Centrally located with the water piping system.                Vent Termination
+   Located as close to gas piping and vent pipe                   Horizontal
+   system as possible.                                            1. 12 in. min. above grade/snow level.
+2. Located indoors and in a vertical position.                    2. Away from corners, other vents, windows etc.
+   Protected from freezing temperatures.
+3. Proper clearances from combustible surfaces                    Vertical
+   maintained and not installed directly on a                     1. Exhaust vent termination 18 in. min. above
+   carpeted floor.                                                    roof/snow level.
+4. Provisions made to protect the area from water
+   damage. Metal drain pan installed and piped                    Water System Piping
+   to an adequate drain.                                          1. Temperature and Pressure relief valve properly
+                                                                     installed with a discharge line run to an open
+5. Installation area free of corrosive elements and
+                                                                     drain and protected from freezing.
+   flammable material.
+                                                                  2. All piping properly installed and free of leaks.
+6. Suﬃcient room to service the water heater.
+                                                                  3. Heater completely filled with water.
+Gas Supply and Piping                                             4. Closed system pressure build-up precautions
+1. Gas supply is the same type as listed on the                      installed.
+   water heater data plate.                                       5. All components used in combo heating
+2. Gas line equipped with shut-oﬀ valve, union                       systems or recirculation loop systems suitable
+   and dirt leg                                                      for potable water.
+3. Approved pipe joint compound used.                             6. Check valves installed in combo heating and
+                                                                     recirculation loop systems.
+4. Adequate pipe size and of approved material.
+                                                                  7. Thermostatic Mixing Valves at each point-of-
+5. Chloride-free soap and water solution or other
+                                                                     use.
+   approved means used to check all connections
+   and fittings for possible gas leaks.
+                                                                  Electrical Connections
+                                                                  1. Unit connected to a dedicated 120V electrical
+Vent Pipe System
+                                                                      supply.
+1. Vent pipe and fittings of approved material.
+                                                                  2. Proper polarity.
+2. Acceptable size, length and number of elbows
+   on exhaust vent system.                                        3. Water heater properly grounded.
+3. Installed in accordance with prevailing                        4. Installed in accordance with prevailing
+   provisions of local codes, or in the absence of                    provisions of local codes, or in the absence of
+   such, the latest edition of “National Fuel Gas                     such, the latest edition of “National Electrical
+   Code” ANSI Z223.1 (NFPA 54).                                       Code” (NFPA 70)”.
+4. Horizontal piping slopes at an upward pitch of
+   1/8 in. rise per 4 ft. away from the water heater.               After all actions on checklist are checked/
+                                                                  completed, read the Lighting Instructions and
+5. Not obstructed in any way.
+                                                                         proceed with lighting the heater.
+
+
+
+
+                                                             23
+                FOR YOUR SAFETY READ BEFORE LIGHTING
+                           WARNING: If you do not follow these instructions exactly, a
+                            fire or explosion may result causing property damage, personal
+                            injury or loss of life.                                                                     FLAMMABLE
+
+
+
+BEFORE LIGHTING: ENTIRE SYSTEM MUST BE FILLED WITH WATER AND AIR PURGED FROM ALL LINES
+A. This appliance has a pilot which is lit by a piezo- C. Use only your hand to push in or turn the gas control
+   electric spark gas ignition system. Do not open        knob. Never use tools. If the knob will not push in or
+   the inner door of the appliance and try to light       turn by hand, don't try to repair it, call a qualified
+   the pilot by hand.                                     service technician. Force or attempted repair may
+B.BEFORE LIGHTING smell all around the appliance          result in a fire or explosion.
+  area for gas. Be sure to smell next to the floor D. Do not use this appliance if any part has been under
+  because some gas is heavier than air and will           water. Immediately contact a qualified installer or
+  settle on the floor.                                    service agency to replace a flooded water heater.
+WHAT TO DO IF YOU SMELL GAS                               Do not attempt to repair the unit! It must be replaced!
+  Do not try to light any appliance.                   E. DO NOT USE THIS APPLIANCE IF THERE HAS
+  Do not touch any electric switch; do not use any        BEEN AN IGNITION OF VAPORS. Immediately
+  phone in your building.                                 call a qualified service technician to inspect the
+  Immediately call your gas supplier from a neighbor's appliance. Water heaters subjected to a
+ phone. Follow the gas supplier's instructions. flammable vapors ignition will show a
+ If you cannot reach your gas supplier, call the fire discoloration on the air intake grid and require
+ department.                                              replacement of the entire water heater.
+
+                                    LIGHTING INSTRUCTIONS
+     Gas Control/Temperature Knob           FIGURE 'A'       FIGURE 'B'             FIGURE 'C'
+                                    120°F                 120°F                  120°F
+                                                                                                              MAIN BURNER
+                                    Mark                  Mark                   Mark
+                           Status
+                           Light                                                                           THERMOPILE
+
+       VAC
+
+
+
+
+                                       "OFF" POSITION     "PILOT" POSITION        "ON" POSITION
+
+                                                         CONTROL KNOB                                        PILOT
+      Igniter
+             GAS CONTROL                                                                                      FIGURE 'D'
+1.            STOP! It is imperative that you read all safety             temperature knob to the desired setting. See Figure ‘C’.
+              warnings before lighting the pilot.                         If the status light does not start blinking within 90
+2.    Turn the gas control/temperature knob                               seconds, repeat steps 2 through 5 up to THREE (3)
+      counterclockwise to the "OFF" setting.                              times, waiting 10 minutes between lighting attempts.
+3.    Wait ten (10) minutes to clear out any gas. If you then             The circuitry in this advanced gas valve requires
+      smell gas, STOP!         Follow “ B” in the safety                  that you wait 10 minutes between lighting attempts.
+      information above        on this label. If you do not               If the status light turns solid red, release the gas
+      smell gas, go to the next step.                                     control/temperature knob and repeat steps 2 through 5
+4.    Turn the gas control/temperature knob clockwise to                  (waiting 10 minutes before attempting to relight the pilot).
+      “ PILOT”. See Figure ‘B’.                                           If the status light does not start blinking after three
+5.    Press the gas control/temperature knob all the way                  lighting attempts, turn the gas control/temperature knob
+      in and hold it in. The knob should travel in about                  to "OFF" and call a qualified service technician or your
+      1/4 inch (6.35 mm) if it is set to "PILOT" correctly.               gas supplier.
+      While holding the gas control/temperature knob in,
+                                                                               DANGER: Hotter water increases the risk of scald
+      click the igniter button continuously (about once a
+                                                                               injury. Consult the instruction manual before
+      second) for up to 90 seconds or until Status Light
+                                                                               changing temperature.
+      begins to blink.
+                                                                               Refer to the Lighting Instructions in the Installation
+6.    When the status light starts blinking, release the
+                                                                               Manual for more detailed troubleshooting
+      gas control/temperature knob. Set the gas control/
+                                                                               information.
+                      TO TURN OFF GAS TO APPLIANCE
+1.     Turn the gas control/temperature knob counterclockwise to the "OFF" setting. The status light will stop blinking and stay
+       on for a short time after the water heater is turned off. See Figure ‘A’.
+
+
+
+
+                                                                     24
+                                  TEMPERATURE REGULATION
+Short repeated heating cycles caused by small hot              NOTE:
+water uses can cause the temperature to exceed the             The temperatures indicated are approximates. The actual
+thermostat setting by up to 30°F. If you experience            temperature of the heated water may vary.
+this type of use you should consider using lower               STANDARD MODE
+temperature settings. If you choose a higher
+temperature setting, Thermostatic Mixing Valves                The controller adjusts the water heater to maintain the
+located at each point-of-use are particularly important        temperature set by the user.
+to help reduce the risk of scalding.                           VACATION SETTING
+Any water heater’s intended purpose is to heat water.          The Vacation setting (VAC) sets the controller at
+Hot water is needed for cleansing, cleaning, and               approximately 55°F. This setting is recommended when
+sanitizing (bodies, dishes, clothing). Untempered hot          the water heater is not in use for a long period of time.
+water can present a scald hazard. Depending on the             This eﬀectively turns the controller temperature setting
+time element, and the people involved (adults, children,       down to a temperature that prevents the water in the
+elderly, infirm, etc.) scalding may occur at diﬀerent          water heater from freezing while still conserving energy.
+temperatures.
+                                                               STATUS LIGHT CODE
+                                                               Normal Flashes:
+                                                               •   0 Flashes Indicates Control Oﬀ/Pilot Out.
+                                                               •   1 Flash Indicates Normal Operation.
+                                                               •   A solid red light indicates that the gas control
+                                                                   valve/thermostat is shutting down.
+                                                               See Table 5 (page 34) for detailed diagnostic
+                                                               information.
+                                                               Never allow small children to use a hot water tap, or
+                                                               to draw their own bath water. Never leave a child or
+                                                               handicapped person unattended in a bathtub or shower.
+                                                               NOTE: A water temperature range of 120°F-140°F
+                                                               (49°C-60°C) is recommended by most dishwasher
+HOTTER WATER CAN SCALD: Water heaters are                      manufacturers.
+intended to produce hot water. Water heated to a               The thermostat is adjusted to the pilot position when
+temperature which will satisfy space heating, clothes          it is shipped from the factory. Water temperature can
+washing, dish washing, and other sanitizing needs can          be regulated by moving the temperature dial to the
+scald and permanently injure you upon contact. See             preferred setting. The preferred starting point is 120°F at
+Table 1 (page 13).
+                                                               the “HOT” setting. Align the knob with the desired water
+Some people are more likely to be permanently injured by       temperature as shown in Figure 20. There is a hot water
+hot water than others. These include the elderly, children,    scald potential if the thermostat is set too high. To reduce
+the infirm, or physically/mentally handicapped. If anyone      the risk of scalding, tnstall Thermostatic Mixing Valves
+using hot water in your home fits into one of these groups     (temperature limiting valves) ate each point-of-use.
+or if there is a local code or state law requiring a certain
+                                                               If overheating occurs or the gas supply fails to shut oﬀ,
+temperature water at the hot water tap, then you must          turn oﬀ the manual gas control valve to the water heater.
+take special precautions. In addition to using the lowest
+possible temperature setting that satisfies demand of                GAS CONTROL VALVE/THERMOSTAT
+                                                                     SETTINGS
+application, Thermostatic Mixing Valves (temperature                              GAS CONTROL/TEMPERATURE KNOB
+limiting valves) at each point-of-use are particularly
+                                                                                                       120°F
+important to reduce the risk of scalding. These valves                                                 MARK
+are available at plumbing supply or hardware stores, see
+Figure 2 (page 8). Follow manufacturer’s instructions
+for installation of the valves. Before changing the factory
+setting on the thermostat, read this section and see                        VAC
+
+
+
+
+Figure 20.                                                                                       STATUS
+                                                                                                 LIGHT
+WATER TEMPERATURE ADJUSTMENT
+                                                                          IGNITER
+The water temperature setting can be adjusted from 55°F
+to 160°F. Turn the Gas Control/Temperature Knob to the             FIGURE 20. GAS CONTROL/TEMPERATURE KNOB
+desired setting/temperature.
+                                        FOR YOUR INFORMATION
+START-UP CONDITIONS                                                  Use this formula to “clock” the meter. Be sure that other
+                                                                     gas consuming appliances are not operating during this
+DRAFT HOOD OPERATIONS                                                interval.
+Check draft hood operation by performing a worst case
+                                                                             3,600 X H = Btu/Hr
+depressurization of the building. With all doors and                             T
+windows closed, and with all air handling equipment and
+exhaust fans operating such as furnaces, clothes dryers,                     T = Time in seconds needed to burn one
+                                                                                 cubic foot of gas.
+range hoods and bathroom fans, a match flame should
+still be drawn into the draft hood of the water heater                       H = Heating value of gas in Btu’s per cubic foot of gas.
+with its burner firing. If the flame is not drawn toward the
+draft hood, shut oﬀ water heater and make necessary air                      Btu/Hr = Actual heater input rate.
+supply changes to correct.                                                   Example:
+
+CONDENSATION                                                                 T = 50.3 seconds/ft3
+                                                                             H = 1,050 Btu/ft3 (natural gas)
+Whenever the water heater is filled with cold water, some                    Btu/Hr = ?
+condensate will form while the burner is on. A water
+heater may appear to be leaking when in fact the water is                    3,600 X 1,050 = 75,100 Btu/Hr (22.0 kW)
+condensation. This usually happens one of the following                           50.3
+occurs:
+                                                                     Compare the actual input rate to that given on the
+A. A new water heater is filled with cold water for the first        heater’s rating plate. In the example, the full input rate
+   time.                                                             should be 75,100 Btu/Hr for natural gas.
+
+B. Burning gas produces water vapor in water heaters,                Because of the suddenness and amount of water,
+   particularly high eﬃciency models where flue temperatures         condensation water may be diagnosed as a “tank leak”.
+   are lower.                                                        After the water in the tank warms up (about 1-2 hours),
+                                                                     the condition should disappear.
+C. Large amounts of hot water are used in a short time and
+   the refill water in the tank is very cold.                        Do not assume the water heater is leaking until there has
+                                                                     been enough time for the water in the tank to warm up.
+Moisture from the products of combustion condense on
+the cooler tank surfaces and form drops of water which               An undersized water heater will cause more
+may fall onto the burner or other hot surfaces to produce            condensation. The water heater must be sized properly
+a “sizzling” or “frying” noise.                                      to meet the family’s demands for hot water including
+                                                                     dishwashers, washing machines and shower heads.
+Excessive condensation can cause pilot outage due to
+water running down the flue tube onto the main burner                Excessive condensation may be noticed during the
+and putting out the pilot.                                           winter and early spring months when incoming water
+                                                                     temperatures are at their lowest.
+CHECKING GAS INPUT
+                                                                     Good venting is essential for a gas fired water heater
+With this heater in operation, determine whether it is
+                                                                     to operate properly as well as to carry away products of
+receiving the full rated input of gas. This may be done by
+                                                                     combustion and water vapor.
+timing the gas meter and measuring gas pressure with a
+gauge or manometer. When the heater is operating at full             SMOKE/ODOR
+capacity (full gas input) it should consume approximately
+                                                                     It is not uncommon to experience a small amount of
+1 cubic foot of gas in the time shown in Table 5.
+                                                                     smoke and odor during the initial start-up. This is due to
+TABLE 4. INPUT CHECK TIME REQUIRED TO CONSUME 1                      burning oﬀ of oil from metal parts, and will disappear in a
+                  CU. FT. OF GAS                                     short while.
+                         BTU Per    Approx. Time Required To
+  Model    Type of Gas
+                          Cu. Ft.   Consume 1 Cu. Ft. of Gas         STRANGE SOUNDS
+            Natural       1050
+   75                                 50.3 sec. 119. 8 sec.          Possible noises due to expansion and contraction of
+            Propane       2500
+                                                                     some metal parts during periods of heat-up and cool-
+            Natural       1050
+   100
+            Propane       2500
+                                      50.3 sec. 119.8 sec.           down do not necessarily represent harmful or dangerous
+                                                                     conditions.
+
+
+
+
+                                                                26
+Condensation causes sizzling and popping within the
+burner area during heating and cooling periods and                  Do not remove the anode leaving the tank unprotected.
+should be considered normal.                                        By doing so, all warranty on the water heater tank is
+                                                                    voided.
+OPERATIONAL CONDITIONS
+                                                                    AIR IN HOT WATER FAUCETS
+SMELLY WATER
+                                                                    HYDROGEN GAS: Hydrogen gas can be produced in
+In each water heater there is installed at least one                a hot water system that has not been used for a long
+anode rod (see parts section) for corrosion protection of           period of time (generally two weeks or more). Hydrogen
+the tank. Certain water conditions will cause a reaction            gas is extremely flammable and explosive. To prevent
+between this rod and the water. The most common                     the possibility of injury under these conditions, we
+complaint associated with the anode rod is one of a                 recommend the hot water faucet, located farthest away,
+“rotten egg smell” in the hot water. This odor is derived           be opened for several minutes before any electrical
+hydrogen sulfide gas dissolved in the water. The smell is           appliances which are connected to the hot water system
+the result of four factors which must all be present for the        are used (such as a dishwasher or washing machine).
+odor to develop:                                                    If hydrogen gas is present, there will probably be an
+                                                                    unusual sound similar to air escaping through the pipe
+A. A concentration of sulfate in the supply water.                  as the hot water faucet is opened. There must be no
+B. Little or no dissolved oxygen in the water.                      smoking or open flame near the faucet at the time it is
+                                                                    open.
+C. A sulfate reducing bacteria which has accumulated within
+                                                                    TEMPERATURE-EXCEEDED SAFETY SHUT-OFF SYSTEM
+   the water heater (this harmless bacteria is nontoxic to
+   humans).                                                         This water heater is equipped with an automatic gas
+                                                                    Shut-oﬀ system. This system works when high water
+D. An excess of active hydrogen in the tank. This is caused         temperatures are present. The high temperature Shut-oﬀ
+   by the corrosion protective action of the anode.                 is built into the gas control valve. It is non-resettable. If
+                                                                    the high temperature Shut-oﬀ activates, the gas control
+Smelly water may be eliminated or reduced in some
+                                                                    valve must be replaced. Contact your gas supplier or
+water heater models by replacing the anode(s) with one
+                                                                    service agency. Turn “OFF” the entire gas supply to the
+of less active material, and then chlorinating the water
+                                                                    water heater.
+heater tank and all hot water lines.
+                                                                    See the 4-flash error code in Table 5 (page 34) for
+Contact the local water heater supplier or service agency
+                                                                    troubleshooting.
+for further information concerning an Anode Replacement
+Kit and this chlorination treatment.
+
+If the smelly water persists after the anode replacement
+and chlorination treatment, we can only suggest that
+chlorination or aeration of the water supply be considered
+to eliminate the water problem.
+
+
+
+
+                                                               27
+                                      PERIODIC MAINTENANCE
+VENTING SYSTEM INSPECTION
+                                                                     BURNER INSPECTION
+                                                                     Flood damage to a water heater may not be readily
+                                                                     visible or immediately detectable. However, over a period
+                                                                     of time a flooded water heater will create dangerous
+                                                                     conditions which can cause DEATH, SERIOUS BODILY
+                                                                     INJURY, OR PROPERTY DAMAGE. Contact a qualified
+                                                                     installer or service agency to replace a flooded water
+                                                                     heater. Do not attempt to repair the unit! It must be
+                                                                     replaced!
+
+                                                                     At least once a year a visual inspection should be made
+                                                                     of the main burner and pilot burner, see Figure 21. You
+                                                                     should check for sooting. Soot is not normal and will
+                                                                     impair proper combustion.
+
+                                                                     Soot build-up indicates a problem that requires correction
+                                                                     before further use. Turn OFF gas to water heater and
+                                                                     leave oﬀ until repairs are made, because failure to correct
+                                                                     the cause of the sooting can result in a fire causing
+                                                                     death, serious injury, or property damage.
+
+At least once a year a visual inspection should be made
+of the venting system. You should look for:
+
+1. Obstructions which could cause improper venting.
+   The combustion and ventilation air flow must not be
+   obstructed.
+
+2. Damage or deterioration which could cause improper
+   venting or leakage of combustion products.
+
+3. Rusted flakes around top of water heater.
+
+Be sure the vent piping is properly connected to prevent                      FIGURE 21. GAS BURNER ASSEMBLY
+escape of dangerous flue gases which could cause
+deadly asphyxiation.
+
+Obstructions and deteriorated vent systems may present               BURNER CLEANING
+serious health risk or asphyxiation.
+                                                                     If inspection of the burner shows that cleaning is
+Chemical vapor corrosion of the flue and vent system                 required, turn the gas control knob clockwise (    ) to the
+may occur if air for combustion contains certain chemical            OFF position, depressing slightly.
+vapors. Spray can propellants, cleaning solvents,
+                                                                     NOTE: The knob cannot be turned from PILOT to OFF
+refrigerator and air conditioner refrigerants, swimming
+                                                                     unless knob is depressed slightly. DO NOT FORCE.
+pool chemicals, calcium and sodium chloride, waxes,
+bleach and process chemicals are typical compounds                   Loose deposits on or around the burner can be removed
+which are potentially corrosive.                                     by carefully using the hose of a vacuum cleaner inserted
+                                                                     through the access door of the water heater. If the
+If after inspection of vent system you found sooting or
+                                                                     burner needs to be removed for additional cleaning,
+deterioration, something is wrong. Call the local gas utility
+                                                                     call a service agency to remove and clean the burner
+to correct problem and clean or replace the flue and
+                                                                     and correct the problem that required the burner to be
+venting before resuming operation of water heater.
+                                                                     cleaned.
+
+
+
+
+                                                                28
+AIR SHUTTER ADJUSTMENT                                               Anode rods from new (top) to partially depleted (middle)
+                                                                     to fully depleted stage (bottom).
+If the burner flame exhibits flame lifting and/or noise, do
+the following:
+
+1. Use a screw driver to loosen the air shutter screw.
+
+2. Adjust the air shutter by rotating the shutter. Counter
+   clockwise to close and Clockwise to open.
+    a. Close air shutter - to prevent noisy flames that are
+       lifting from the burner ports.
+    b. Open air shutter – to reduce yellow tipping of the
+       flame. (A small number of yellow tips can be normal           FIGURE 18. Anode Depletion
+       to LP gases.)
+                                                                     The anode rod is a sacrificial metal rod that helps reduce
+3. Tighten the air shutter screw to secure the air shutter.          corrosion and premature failure (leaks) in the tank. The
+                                                                     anode rod is a consumable item. Inspect the anode
+See Adjusting the Air Shutter (page 10).                             rod after the first six months of operation or when you
+                                                                     drain and flush the tank. Replace the anode rod if it is
+HOUSEKEEPING                                                         substantially worn out or depleted. Thereafter, inspect the
+                                                                     anode rod annually or more frequently if needed. If you
+                                                                     use a water softener, your anode rod will deplete faster
+                             ADVERTENCIA                             than normal. Inspect the anode rod more frequently,
+                                                                     replacing the anode rod as needed. Obtain new anode
+                      Peligro de incendio y explosión                rods from your local plumbing supplier or have a qualified
+                        No obstruya las aberturas para el
+                                                                     person replace it. (Anode rods are a consumable item
+                        aire de combustión en la parte               and are not covered under warranty).
+                        inferior del calentador de agua.
+                        No use ni almacene vapores                   TEMPERATURE-PRESSURE RELIEF VALVE TEST
+                        inflamables, como gasolina, solventes
+                        o adhesivos en la misma habitación o
+                        área cerca del calentador de agua                                          Burn hazard.
+                        u otro artefacto.
+                        Puede producir lesiones graves o                                          Hot water discharge.
+                        la muerte.
+                                                                                                   Keep clear of Temperature-
+                                                                                                   Pressure Relief Valve
+Vacuum around base of water heater for dust, dirt, and                                             discharge outlet.
+lint on a regular basis.
+
+INSTALLED IN SUITABLE AREA: To ensure suﬃcient                       It is recommended that the temperature-pressure relief
+ventilation and combustion air supply, proper clearances             valve should be checked to ensure that it is in operating
+from the water heater must be maintained. See Facts to               condition every 6 months.
+Consider About the Location (page 9). Combustible
+                                                                     When checking the temperature-pressure relief valve
+materials such as clothing, cleaning materials, or
+                                                                     operation, make sure that (1) no one is in front of or
+flammable liquids, etc. must not be placed against or
+                                                                     around the outlet of the temperature-pressure relief
+adjacent to the water heater which can cause a fire.
+                                                                     valve discharge line, and (2) that the water discharge
+ANODE ROD INSPECTION                                                 will not cause any property damage, as the water may
+                                                                     be extremely hot. Use care when operating valve as the
+                                                                     valve may be hot.
+
+                                                                     To check the relief valve, lift the lever at the end of the
+                                                                     valve several times, see Figure 22. The valve should seat
+                                                                     properly and operate freely.
+
+                                                                     If after manually operating the valve, it fails to completely
+                                                                     reset and continues to release water, immediately close
+                                                                     the cold water inlet to the water heater and drain the
+                                                                     water heater, see “Draining and Flushing” (page 29).
+Remove and inspect the anode rod. See Figure 1 (page
+                                                                     Replace the temperature-pressure relief valve with a
+7) for location of the anode rod. Replace the anode
+                                                                     properly rated/sized new one, see Temperature-Pressure
+rod if it is depleted.
+                                                                     Relief Valve (page 15) for information on replacement.
+
+
+                                                                29
+      TEMPERATURE-PRESSURE
+           RELIEF VALVE
+                                                                                              Burn harzard.
+
+                                                                                              Hot water discharge.
+
+     DISCHARGE PIPE                                                                           Keep hands clear of drain
+      FIGURE 22. CHECKING THE RELIEF VALVE                                                    valve discharge.
+
+If the temperature-pressure relief valve on the water
+heater weeps or discharges periodically, this may be due
+to thermal expansion.                                            TO DRAIN THE WATER HEATER STORAGE TANK:
+                                                                 1. Turn oﬀ the gas supply at the Main Gas Shutoﬀ Valve
+NOTE: Excessive water pressure is the most common                   if the water heater is going to be shut down for an
+cause of temperature-pressure relief valve leakage.                 extended period.
+Excessive water system pressure is most often caused
+                                                                 2. Ensure the cold water inlet valve is open.
+by thermal expansion in a “closed system.” See Closed
+Water Systems (page 14) and Thermal Expansion                    3. Open a nearby hot water faucet and let the water run
+(page 14). The temperature-pressure relief valve is not             until the water is no longer hot.
+intended for the constant relief of thermal expansion.           4. Close the cold water inlet valve to the water heater.
+Temperature-pressure relief valve leakage due to                 5. Connect a hose to the water heater drain valve and
+pressure build up in a closed system that does not have             terminate it to an adequate drain.
+a thermal expansion tank installed is not covered under          6. Open the water heater drain valve and allow all the
+the limited warranty. Thermal expansion tanks must be               water to drain from the storage tank.
+installed on all closed water systems.                           7. Close the water heater drain valve when all water in
+DO NOT PLUG THE TEMPERATURE-PRESSURE                                the storage tank has drained.
+RELIEF VALVE OPENING. THIS CAN CAUSE                             8. Close the hot water faucet opened in Step 4.
+PROPERTY DAMAGE, SERIOUS INJURY OR DEATH.                        9. If the water heater is going to be shut down for an
+                                                                    extended period, the drain valve should be left open.
+                                                                 TO FLUSH THE WATER HEATER STORAGE TANK:
+                                                                 1. Ensure the cold water inlet valve is open.
+                                                                 2. Open a nearby hot water faucet and let the water run
+                                                                    until the water is no longer hot. Then close the hot
+                                                                    water faucet.
+                                                                 3. Connect a hose to the drain valve and terminate it to
+                                                                    an adequate drain.
+                                                                 4. Ensure the drain hose is secured before and during
+                                                                    the entire flushing procedure. Flushing is performed
+                                                                    with system water pressure applied to the water
+                                                                    heater.
+                                                                 5. Open the water heater drain valve to flush the storage
+                                                                    tank.
+DRAINING AND FLUSHING
+                                                                 6. Flush the water heater storage tank to remove
+It is recommended that the water heater storage tank be             sediment and allow the water to flow until it runs clean.
+drained and flushed every 6 months to reduce sediment            7. Close the water heater drain valve when flushing is
+buildup. The water heater should be drained if being shut           completed.
+down during freezing temperatures. See Figure 25 for the
+                                                                 8. Remove the drain hose.
+location of the water heater components described below.
+                                                                 9. Fill the water heater - see Filling the Water Heater
+                                                                    (page 16) .
+                                                                 10. Turn on the gas supply to the water heater at the Main
+                                                                     Gas Shutoﬀ Valve.
+                                                                 11. Allow the water heater to complete several heating
+                                                                     cycles to ensure it is operating properly.
+
+                                                            30
+                        LEAKAGE TEST POINTS
+
+                                          A. Water at the draft hood is water vapor which has
+                                             condensed out of the combustion products. This is
+                                             caused by a problem in the vent. Contact the gas utility.
+
+                                          B. *Condensation may be seen on pipes in humid weather
+                                             or pipe connections may be leaking.
+
+                                          C. *The anode rod fitting may be leaking.
+
+                                          D. Small amounts of water from temperature-pressure relief
+                                             valve may be due to thermal expansion or high water
+                                             pressure in your area.
+
+                                          E. *The temperature-pressure relief valve may be leaking
+                                             at the tank fitting.
+
+                                          F. Water from a drain valve may be due to the valve being
+                                             slightly opened.
+
+                                          G. *The drain valve may be leaking at the tank fitting.
+
+                                          H. Combustion products contain water vapor which can
+                                             condense on the cooler surfaces of the tank. Droplets
+                                             form and drip onto the burner or run on the floor. This
+                                             is common at the time of start-up after installation and
+                                             when incoming water is cold.
+
+                                          I. Water in the water heater bottom or on the floor may be
+                                             from condensation, loose connections, or the relief valve.
+                                             DO NOT replace the water heater until a full inspection
+                                             of all possible water sources is made and necessary
+                                             corrective steps taken.
+
+
+
+                                          *To check where threaded portion enters tank, insert
+                                          cotton swab between jacket opening and fitting. If cotton
+                                          is wet, follow the instructions in Draining and Flushing
+FIGURE 25. WATER HEATER COMPONENTS
+                                          (page 29) and then remove fitting. Put pipe dope or
+                                          thread sealant tape on the threads and replace. Then
+                                          follow the instructions in Filling the Water Heater (page
+                                          16).
+
+                                          SERVICE
+                                          Before calling for repair service, read the “Start Up
+                                          Conditions” and “Operational Conditions” found in the
+                                          “For Your Information” section of this manual.
+
+                                          If a condition persists or you are uncertain about the
+                                          operation of the water heater contact a service agency.
+                                          If you are not thoroughly familiar with gas codes, your
+                                          water heater, and safety practices, contact your gas
+                                          supplier or qualified installer to check the water heater.
+
+                                          Use the ”Leakage Checkpoints” guide to check a
+                                          “leaking” water heater. Many suspected leaks are not
+                                          leaking tanks. Often the source of the water can be found
+                                          and corrected.
+
+
+                                     31
+Read this manual first. Then before checking the water                32).
+heater make sure the gas supply has been turned OFF,
+and never turn the gas ON before the tank is completely
+full of water.
+                                                                        GAS CONTROL/
+                                                                        TEMPERATURE KNOB
+Never use this water heater unless it is completely
+filled with water. To prevent damage to the tank, the
+tank must be filled with water. Water must flow from the                                         VAC
+
+
+
+
+hot water faucet before turning “ON” gas to the water                                IGNITER
+                                                                                     BUTTON                          WHITE
+heater.                                                                                                               WIRE
+                                                                                      IGNITER                        (RIGHT
+                                                                                      LEAD                            SIDE)
+Read this manual first. Then before checking the water                                WIRE
+
+heater make sure the gas supply has been turned                                        IGNITER
+                                                                                                       PILOT
+                                                                                                       TUBE
+                                                                                                                   RED WIRE
+                                                                                                                   (LEFT SIDE)
+“OFF”, and never turn the gas “ON” before the tank is                                  WIRE
+                                                                                                               MANIFOLD TUBE
+completely full of water.
+
+Never use this water heater unless it is completely
+                                                                        FIGURE 23. GAS CONTROL VALVE REMOVAL
+filled with water. To prevent damage to the tank, the
+tank must be filled with water. Water must flow from the          5. Referring to Figure 24 (page 32), disconnect the
+hot water faucet before turning “ON” gas to the water                ground joint union in the gas piping.
+heater.
+                                                                  6. Disconnect the remaining pipe from the gas control
+Leakage from other appliances, water lines, or ground                valve/thermostat.
+seepage should also be checked.
+
+REMOVING AND REPLACING THE GAS CON-
+TROL VALVE/THERMOSTAT
+IMPORTANT: Use only factory authorized
+replacement parts. This gas control valve/
+thermostat is shipped from the factory as a natural
+gas unit. However, it may be converted to use
+LP gas. Before installing this gas control valve/
+thermostat, make sure that it is configured for the
+type of gas that you are using.
+REMOVING THE GAS CONTROL VALVE/THERMOSTAT:
+1. Turn the gas control/temperature knob to the OFF
+   position. See Figure 20 (page 25).
+
+2. Turn oﬀ the gas at the manual shut-oﬀ valve on the                        FIGURE 24. PIPING CONFIGURATION
+   gas supply pipe.
+                                                                  7. To remove the gas control valve/thermostat,
+3. Drain the water heater. Follow the instructions in                thread a 4” section of gas pipe into the gas inlet
+   Draining and Flushing (page 29).                                  and use it to turn the gas control valve/thermostat
+                                                                     (counterclockwise.) Do not use a pipe wrench or
+4. Disconnect the igniter wire from the igniter lead wire.
+                                                                     equivalent to grip body. Damage may result, causing
+   Use needle nose pliers to disconnect the red (+) and
+                                                                     leaks. Do not insert any sharp objects into the inlet or
+   white (-) thermopile wires. Disconnect the pilot tube
+                                                                     outlet connections. Damage to the gas control valve/
+   (7/16” wrench) and manifold tube (3/4” wrench) at the
+                                                                     thermostat may result.
+   gas control valve/thermostat. See Figure 23 (page
+
+
+
+
+                                                             32
+REPLACING THE GAS CONTROL VALVE/THERMOSTAT:
+1. To replace the gas control valve/thermostat,
+   reassemble in reverse order. When replacing the
+   gas control valve/thermostat, thread a 4” section
+   of gas pipe into the inlet and use it to turn the gas
+   control valve/thermostat (clockwise). DO NOT OVER
+   TIGHTEN; damage may result.
+
+2. Be sure to use approved thread sealant tape or pipe
+   joint compound on the gas piping connections and
+   fitting on the back of the gas control valve that screws
+   into the tank.
+
+3. Be sure to remove the pilot ferrule nut from the new
+   gas control valve/thermostat.
+
+4. Turn the main gas supply on and check the gas supply
+   connections for leaks. Correct any leak found. Next,
+   light the pilot and main burner, then check the manifold
+   tube and pilot tube connections for leaks. Correct
+   any leak found. Use an approved noncorrosive leak
+   detection solution. If such a solution is not available,
+   use a mixture of hand dish washing soap and water
+   (one part soap to 15 parts water) or childrens’ soap
+   bubble solution. Bubbles forming indicate a leak.
+
+Be sure tank is completely filled with water before lighting
+and activating the water heater. Follow the Lighting
+Instructions on the front of the water heater.
+
+
+
+
+                                                               33
+                   TABLE 5. STATUS LIGHT AND DIAGNOSTIC CODE TROUBLESHOOTING CHART
+
+         LED Status                               Problem                                            Corrective Action
+0 FLASHES (LED NOT LIT)       Pilot light is not lit or Thermopile has not yet    Turn Gas Control Valve/Thermostat knob to OFF. Wait
+                              reached normal operating temperature.               10 minutes, then attempt to relight Pilot by following the
+                                                                                  lighting instructions on the water heater’s label. Until
+                                                                                  the Thermopile reaches its normal operating tempera-
+                                                                                  ture, the Status Light will not blink, even if the Pilot is lit.
+                                                                                  It may take up to 90 seconds of continuous Pilot opera-
+                                                                                  tion before the Thermopile reaches normal operating
+                                                                                  temperature and the Status Light starts to blink.
+                                                                                  If the Status Light does not blink after three lighting at-
+                                                                                  tempts, check to make sure unit is getting gas. Remove
+                                                                                  the outer door. Press reset button. Replace outer door.
+                                                                                  Turn Gas Control Valve/Thermostat knob to OFF. Wait
+                                                                                  10 minutes, then attempt to light Pilot by following the
+                                                                                  lighting instructions on the water heater’s label. Look
+                                                                                  through the view port for the Pilot flame. If Pilot is
+                                                                                  not visible, the spark igniter or gas supply to the Pilot
+                                                                                  should be checked.
+                                                                                  If the Pilot is visible and the Status Light does not blink
+                                                                                  after 90 seconds of continuous Pilot operation, the Pilot
+                                                                                  flame may not be heating the Thermopile suﬃciently
+                                                                                  (weak Pilot), the Thermopile may be defective, or wiring
+                                                                                  connectors may be loose.
+                                                                                  NOTE: If the water heater has been operating but has
+                                                                                  stopped and will not re-light, check the flame-arrestor
+                                                                                  for signs of high temperature (blue or black) discolor-
+                                                                                  ation indicating a flammable vapor incident. If you sus-
+                                                                                  pect a flammable vapor incident has occurred, do not
+                                                                                  use this appliance. Immediately call a qualified techni-
+                                                                                  cian to inspect the appliance. Water heaters subjected
+                                                                                  to a flammable vapors ignition will require replacement
+                                                                                  of the entire water heater.
+LIGHT ON (SOLID)              Pilot light was recently extinguished and the       Turn Gas Control Valve/Thermostat knob to OFF. Wait
+                              Thermopile is cooling down.                         10 minutes for the Thermopile to cool, then attempt to
+                                                                                  relight Pilot by following the lighting instructions on the
+                                                                                  water heater’s label. NOTE: This gas control valve/
+                                                                                  thermostat has built-in circuitry that requires waiting 10
+                                                                                  minutes between lighting attempts.
+                                                                                  Until the Thermopile reaches its normal operating tem-
+                                                                                  perature, the Status Light will not blink, even if the Pilot
+                                                                                  is lit. It may take up to 90 seconds of continuous Pilot
+                                                                                  operation before the Thermopile reaches normal oper-
+                                                                                  ating temperature and the Status Light starts to blink
+1 FLASH (EVERY 3 SECONDS)     Normal Operation                                    No corrective action necessary.
+
+
+
+
+2 FLASHES                     Pilot is lit but the Thermopile is not producing    Turn Gas Control Valve/Thermostat knob to OFF. The
+                              the required output voltage.                        Thermopile is probably defective, but loose wiring
+                                                                                  connections or a weak Pilot flame can also cause this
+                                                                                  symptom.
+
+
+4 FLASHES                     The Gas Control Valve’s temperature sensor          Relight pilot and verify 4 flashes. If 4 flashes are
+                              has detected that the water temperature was         observed, turn Gas Control Valve/Thermostat knob to
+                              too high. Once this condition occurs, the           OFF. Turn Main Gas Supply OFF. Replace the Gas
+                              Main Burner and the Pilot Light will be shut        Control Valve/Thermostat. See Removing and Replac-
+                              oﬀ. Since the Pilot light will be oﬀ, should this   ing the Gas Control Valve/Thermostat (page 32).
+                              condition occur, this Flash Code will only be
+                              displayed immediately after the Pilot has been
+                              relit. Turn Gas Control Valve/Thermostat knob
+                              to OFF.
+
+
+
+
+                                                                34
+               TABLE 5. STATUS LIGHT AND DIAGNOSTIC CODE TROUBLESHOOTING CHART
+
+        LED Status                          Problem                                           Corrective Action
+5 FLASHES                 The temperature sensor (thermistor) is defec-     Turn Gas Control Valve/Thermostat knob to OFF. Turn
+                          tive.                                             Main Gas Supply OFF. Replace the Gas Control Valve/
+                                                                            Thermostat. See Removing and Replacing the Gas
+                                                                            Control Valve/Thermostat (page 32).
+
+
+7 FLASHES                 Gas Control Valve failure.                        Turn Gas Control Valve/Thermostat knob to OFF. Turn
+                                                                            Main Gas Supply OFF. Replace the Gas Control Valve/
+                                                                            Thermostat. See Removing and Replacing the Gas
+                                                                            Control Valve/Thermostat (page 32).
+
+
+8 FLASHES                 This condition only appears if the gas control/   Make sure that the gas control valve/thermostat knob
+                          temperature knob has been turned oﬀ and the       is set to OFF. Wait one minute. Remove the outer door.
+                          thermopile continued to produce electric pow-     Look through the sight glass for a pilot flame. If a pilot
+                          er. This condition can occur if the thermopile    flame is observed with the gas control valve/thermostat
+                          does not cool down as quickly as expected         knob set to the OFF position, the pilot valve is stuck
+                          when the unit is shut oﬀ. This condition can      open. Turn the main gas supply OFF. Replace the gas
+                          also occur if the gas control/temperature knob    control valve/thermostat. For instructions, see Remov-
+                          has been turned oﬀ and the pilot continues to     ing and Replacing the Gas Control Valve/Thermo-
+                          operate because the pilot valve is stuck in the   stat (page 32).
+                          open position.                                    If the pilot flame is not observed when the gas control
+                                                                            valve/thermostat knob is set to the OFF position, wait
+                                                                            10 minutes for the thermopile to cool, then attempt to
+                                                                            relight the pilot by following the lighting instructions on
+                                                                            the water heater’s label. If this condition returns, re-
+                                                                            place the gas control valve/thermostat. See Removing
+                                                                            and Replacing the Gas Control Valve/Thermostat
+                                                                            (page 32).
+
+
+
+
+                                                          35
+                                   TABLE 6. GENERAL TROUBLESHOOTING GUIDELINES
+                                        These guidelines should be used by a qualified service agent.
+
+
+       Symptom                                     Problem                                              Corrective Action
+
+
+                         Improperly sealed, hot or cold supply connection, relief
+                                                                                    Tighten threaded connections.
+                         valve, drain valve, or thermostat threads.
+WATER LEAKS
+                         Leakage from other appliances or water lines.              Inspect other appliances near water heater.
+                         Condensation of flue products.                             See Condensation (page 26).
+                         Thermal expansion in closed water system.                  Install thermal expansion tank (DO NOT plug T&P valve).
+LEAKING T&P VALVE                                                                   Check relief valve for proper operation (DO NOT plug T&P
+                         Improperly seated valve.
+                                                                                    valve).
+
+                         High sulfate or mineral content in water supply.           Drain and flush heater thoroughly, then refill.
+SMELLY WATER
+                         Bacteria in water supply.                                  Chlorinate or aerate water supply.
+
+                         Gas control knob not positioned correctly.                 See the Lighting Instructions on the water heater’s label.
+
+                         Main gas supply oﬀ.                                        Turn on main gas shutoﬀ valve.
+PILOT WILL NOT LIGHT
+                         Thermopile malfunction.                                    Replace pilot/thermopile assembly.
+                         No spark.                                                  Locate piezo switch on thermostat. Replace if needed.
+
+BURNER WILL NOT STAY Thermopile malfunction.                                        Replace pilot/thermopile assembly.
+LIT                  Defective Gas Control.                                         Replace Gas Control.
+                         Dirty pilot burner.                                        Clean pilot assembly.
+                         Thermopile malfunction.                                    Replace pilot/thermopile assembly.
+PILOT OUTAGE
+                         Defective Gas Control.                                     Replace Gas Control.
+                         Thermopile tip is not in contact with pilot flame.         Insert thermopile correctly.
+                         Heater not lit or thermostat not on.                       See Lighting Instructions on the water heater’s label.
+                         Thermostat set too low.                                    See Temperature Regulation (page 25).
+                         Heater undersized.                                         Reduce hot water use.
+NOT ENOUGH HOT           Low gas pressure.                                          Contact your gas supplier.
+WATER
+                         Incoming water is unusually cold.                          Allow more time for heater to re-heat.
+                         Leaking hot water pipes or fixtures.                       Have plumber check and repair leaks.
+                         High temperature limit switch activated.                   Contact a service agency to determine cause.
+WATER TOO HOT            Thermostat set too high.                                   See Temperature Regulation (page 25).
+WATER HEATER
+                         Condensation dripping on burner.                           See Condensation (page 26).
+SOUNDS
+                                                                                    Drain and flush the water heater. See Draining and Flush-
+SIZZLING OR RUMBLING Sediment or calcium in bottom of heater tank.
+                                                                                    ing (page 30).
+
+                                                                                    No adjustment available. Contact a service agency to
+SOOTING                  Improper combustion.
+                                                                                    determine cause.
+
+                         Lack of supply air.
+
+                         Improperly installed vent piping.
+VENT GAS ODORS                                                                      Contact a service agency to determine cause.
+                         Downdraft.
+
+                         Poor combustion.
+
+
+
+
+                                                                       36
+NOTES
+
+
+
+
+  37
+NOTES
+
+
+
+
+  38
+NOTES
+
+
+
+
+  39
+Copyright © 2021 A.O. Smith Corporation. All Rights Reserved.
+        Limited Warranty provided by Manufacturer.
+
+
+
+                             40
+

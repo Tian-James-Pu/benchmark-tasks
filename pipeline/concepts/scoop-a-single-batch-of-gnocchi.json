@@ -1,0 +1,24 @@
+{
+  "title": "Scoop one cooked batch of potato gnocchi",
+  "category": "Impact on jobs",
+  "justification": "Ordinary restaurant batch cooking; fresh recipe adds all pieces together and removes with a slotted spoon. Worker-population/context source still to be written for a full task.",
+  "fault": null,
+  "instruction": "Transfer the cooked gnocchi to the plate and finish at the cooking station.",
+  "objects": "A full-size24cm saucepan, one roughly110g batch of32 fresh potato gnocchi, full-size OXO1191300-sized slotted spoon, plate and hob.",
+  "skill": "Wait for genuine cooking/readiness cue, slide an unconstrained spoon under multiple buoyant pieces and transfer/drain them by native contact.",
+  "scoring": "Cooking progress accrues only while immersed. Float plus60s immersed post-float is required by chosen recipe. Native spoon retrieval and released plate support; no artificially staged pieces or45s spoilage cutoff. Full burner-off criterion and whole-task validation remain to implement.",
+  "nearest": "Expired2048, latestreview2026-11-15T02:04:30Z; holdexpiredNov17. Accepted535drainswholepotthroughlid, differentoperation. Fresh searches recordedin gnocchi-batch/ownership.json.",
+  "risks": [
+    "Density evolution is disclosed estimated buoyancy proxy, not measured thermochemistry.",
+    "No heat/slosh/soft-food damage simulator; normal cold simulation with real hot-water procedure.",
+    "Need ensure physical handle/rim clearance, stable native grasp, batch capacity and full recipe dwell; no simplified ready-floating replacement.",
+    "Full task must have completed assets/source documentation, readiness/shortcut tests, controls and full demos."
+  ],
+  "sources": [
+    "https://shop.kingarthurbaking.com/content/class-pdfs/Gnocchi_June2024.pdf",
+    "https://www.oxo.com/nylon-slotted-spoon.html"
+  ],
+  "implementation": "Independent new task, forces and demo. MIT central mechkit explicitly licensed by source heat-shrink-lug README at83024cf. Original2048README inspected including end; no license grant found, no source copied.",
+  "status": "bounded coupon build",
+  "created_utc": "2026-11-20T04:56:16.509066+00:00"
+}

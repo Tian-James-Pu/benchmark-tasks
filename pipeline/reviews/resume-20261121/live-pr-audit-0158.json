@@ -1,0 +1,128 @@
+{
+  "checked_at_utc": "2026-11-21T01:59:31.630333+00:00",
+  "scope": "Live status audit of all nine open team PRs; no writes to PRs.",
+  "acceptance_rank_basis": "Use the existing 2026-11-21 acceptance-priorities snapshot and current reviewer requests/receipts; do not infer acceptance from model score alone.",
+  "team_open_prs": [
+    {
+      "pr": 2951,
+      "title": "Put an empty soup can in the recycling when its jagged cut lid still hangs from the rim, standing up",
+      "state": "OPEN",
+      "updated_at": "2026-11-20T01:26:23Z",
+      "head_sha": "8f4cee5dbd61a0404fa2675e3d4706deb52781d1",
+      "latest_official_comment_at": "2026-11-20T01:26:21Z",
+      "latest_official_comment_first_line": "Received as **TK-NHN859** (a revision of TK-TYK7YM), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2884,
+      "title": "Free a server processor stuck to its heat sink by old paste: twist the seal loose, then tray it contact side up",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T12:07:30Z",
+      "head_sha": "2fc91cb28981e603b8c1b63b27ea4f6eb8783bf2",
+      "latest_official_comment_at": "2026-11-19T12:07:30Z",
+      "latest_official_comment_first_line": "Received as **TK-VMNUPY**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2883,
+      "title": "Snap a plastic wheel cover onto a steel wheel with its valve notch over the valve stem and every retaining clip engaged",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T18:54:32Z",
+      "head_sha": "c7120a306a82455156e21db166e06548e3924e3b",
+      "latest_official_comment_at": "2026-11-19T18:54:32Z",
+      "latest_official_comment_first_line": "Received as **TK-QV6JNG** (a revision of TK-9B68FP), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2879,
+      "title": "Prepare an infant car seat left on its base latched on one side only",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T19:26:54Z",
+      "head_sha": "e01b5f488ab7f6800635b9c12b0ec7fd23010aec",
+      "latest_official_comment_at": "2026-11-19T19:26:54Z",
+      "latest_official_comment_first_line": "Received as **TK-7BHUHG** (a revision of TK-EE45EG), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2872,
+      "title": "Click a full 1 L bottle into a sparkling water maker's tilted Snap-Lock: neck in at an angle, then push up and back",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T10:23:06Z",
+      "head_sha": "1058cc49646c454780028885d0f7651bbe8262fa",
+      "latest_official_comment_at": "2026-11-19T10:23:06Z",
+      "latest_official_comment_first_line": "Received as **TK-X52XTB**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2839,
+      "title": "Close the roller clamp on an IV line left running free: roll its wheel to the stop without sliding the clamp on the line",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T05:48:21Z",
+      "head_sha": "3b0ba6f3cf0f920d1e7c4225269c239632c0026c",
+      "latest_official_comment_at": "2026-11-19T05:48:21Z",
+      "latest_official_comment_first_line": "Received as **TK-ZR5HGX**, and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2609,
+      "title": "Prepare a forearm crutch for reuse",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T04:44:19Z",
+      "head_sha": "13655c34584a393262e25c8d3882a16f0b0a0350",
+      "latest_official_comment_at": "2026-11-19T04:44:19Z",
+      "latest_official_comment_first_line": "Received as **TK-F2TUKF** (a revision of TK-EYFPAE), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2520,
+      "title": "Recover a wooden spatula obstructing a dishwasher spray arm",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T04:45:58Z",
+      "head_sha": "fd4c5e3472800d49779ca88e66050cfae6623a7d",
+      "latest_official_comment_at": "2026-11-19T04:45:57Z",
+      "latest_official_comment_first_line": "Received as **TK-DNK9QG** (a revision of TK-E72LCU), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    },
+    {
+      "pr": 2477,
+      "title": "Free a jammed steering lock: turn the wheel off the bolt and hold it there while the key turns to ON",
+      "state": "OPEN",
+      "updated_at": "2026-11-19T05:06:53Z",
+      "head_sha": "69ad98b1bb2c4267aac84e70596e18ced75c5249",
+      "latest_official_comment_at": "2026-11-19T05:06:53Z",
+      "latest_official_comment_first_line": "Received as **TK-J5D6LK** (a revision of TK-89FRWD), and waiting for review. The decision will be posted here: accepted tasks are merged, and tasks not accepted get feedback here, and you can push a revision to this pull request. Please don\u2019t merge this pull request yourself."
+    }
+  ],
+  "most_likely_next_acceptance": {
+    "pr": 2951,
+    "reason": "Revision TK-NHN859 directly responds to each explicit feasibility request and is waiting for review. Remaining limitation: the cut-resistant sleeve/can-edge interaction has no reported physical cut-load trial."
+  },
+  "next_candidates": [
+    {
+      "pr": 2520,
+      "reason": "Revision TK-DNK9QG adds a reproducible spatula setup/reset and observable clearance check; only minor action-force ambiguity remains."
+    },
+    {
+      "pr": 2879,
+      "reason": "Revision TK-7BHUHG names the carrier/base and adds a persistent final ready-state check; a real half-latched sample remains conditional."
+    },
+    {
+      "pr": 2609,
+      "reason": "Revision TK-F2TUKF defines wear, projection, pull-off and retirement checks; wear-resistance target is still model-selected rather than population-grounded."
+    }
+  ],
+  "higher_risk_open_prs": [
+    {
+      "pr": 2839,
+      "risk": "Current model slides a non-rotating wheel and does not squeeze tubing; central clinical construct is missing."
+    },
+    {
+      "pr": 2883,
+      "risk": "Reviewer requested evidence on real seating force; simulated peak is about 110 N and has not been measured on the selected cover."
+    },
+    {
+      "pr": 2884,
+      "risk": "Real thermal paste adhesion/release and hardware-model correspondence remain uncertain."
+    },
+    {
+      "pr": 2872,
+      "risk": "Task importance and machine-displacement scoring remain open review risks."
+    },
+    {
+      "pr": 2477,
+      "risk": "Still waiting on review; no newer feedback to target."
+    }
+  ]
+}

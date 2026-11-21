@@ -11,6 +11,7 @@ import sys
 import numpy as np
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from mechkit import fingertips, on_reset, on_step  # noqa: E402
 from simready import SimReady  # noqa: E402
 
 from yam_arena.constants import FINGER_CLOSED, FINGER_OPEN
@@ -62,8 +63,23 @@ MOVED = 0.01  # the riser's centre from where it started
 TURNED = 5.0  # degrees, the riser's long side from straight away from the arms
 CLEAR = 0.02  # between the pencil and the riser, seen from above
 JAR_SPILL = 15.0  # degrees from vertical at which the varnish runs over the rim
-_harm = False
-_last = None  # the three task objects' positions at the previous step
+JAR_FOOT_TOL = 0.004  # the jar's lowest point within 4 mm of the riser's top face: standing on it
+HANDS_OFF = 0.02  # "let go": no point on either gripper's fingers within 2 cm of the riser, the jar or the pencil
+_harm = False  # the jar tipped past JAR_SPILL at some step of this trial
+_tips = None  # points on both grippers' fingers at the latest step
+
+
+@on_reset
+def _new_trial(environment=None):
+    """The record of a spill is cleared only by a reset of the scene, never by anything that happens in a trial."""
+    global _harm, _tips
+    _harm, _tips = False, None
+
+
+@on_step
+def _see_grippers(environment):
+    global _tips
+    _tips = fingertips(environment)
 
 
 def _rotate(quat_xyzw, v):
@@ -111,42 +127,54 @@ def _pencil_gap(objects):
 
 
 def _jar_on_riser(objects):
-    """The jar's base is on the riser's top face: its centre inside the outline and within 1 cm of the face."""
+    """The jar stands on the riser's top face: the centre of its base inside the top's outline and its lowest point
+    within 4 mm of the face."""
     riser, jar = objects["riser"], objects["jar"]
     base = jar.pos - _rotate(jar.quat_xyzw, np.array([0.0, 0.0, JAR_H / 2]))
     p = _unrotate(riser.quat_xyzw, base - riser.pos)
+    top = float(riser.pos[2]) + RISER_SIZE[2] / 2
     return bool(
-        abs(p[0]) <= RISER_SIZE[0] / 2 and abs(p[1]) <= RISER_SIZE[1] / 2 and abs(p[2] - RISER_SIZE[2] / 2) <= 0.01
+        abs(p[0]) <= RISER_SIZE[0] / 2 and abs(p[1]) <= RISER_SIZE[1] / 2 and abs(float(jar.low[2]) - top) <= JAR_FOOT_TOL
+    )
+
+
+def _box_gap(obj, size):
+    """The smallest distance (m) from any fingertip point to the object's box, or 0 before the first step."""
+    if _tips is None:
+        return 0.0
+    local = np.array([_unrotate(obj.quat_xyzw, p - obj.pos) for p in _tips])
+    return float(np.linalg.norm(np.maximum(np.abs(local) - np.array(size) / 2, 0.0), axis=1).min())
+
+
+def _aabb_gap(obj):
+    """The smallest distance (m) from any fingertip point to the object's world bounding box."""
+    if _tips is None:
+        return 0.0
+    lo, hi = np.asarray(obj.low, dtype=float), np.asarray(obj.high, dtype=float)
+    return float(np.linalg.norm(np.maximum(np.maximum(lo - _tips, _tips - hi), 0.0), axis=1).min())
+
+
+def _hands_off(objects):
+    return bool(
+        _box_gap(objects["riser"], RISER_SIZE) > HANDS_OFF
+        and _box_gap(objects["pencil"], PENCIL_SIZE) > HANDS_OFF
+        and _aabb_gap(objects["jar"]) > HANDS_OFF
     )
 
 
 def _track(objects):
-    """Remember, for the whole trial, whether the jar tilted far enough to spill or left the riser. The memory is
-    cleared only when the scene has just been reset: the objects are in the starting layout on the first step, or
-    jumped there (more than 1 cm in one step). Moving things back by hand does not clear it."""
-    global _harm, _last
-    riser, pencil, jar = objects["riser"], objects["pencil"], objects["jar"]
-    now = np.concatenate([riser.pos, pencil.pos, jar.pos])
-    jumped = _last is None or float(np.max(np.abs(now - _last))) > 0.01
-    _last = now
-    at_start = (
-        np.linalg.norm(pencil.pos[:2] - np.array([PENCIL_X, PENCIL_Y])) < 0.005
-        and np.linalg.norm(riser.pos[:2] - np.array(RISER_XY)) < 0.005
-        and max(_corner_heights(riser)) > 0.004
-        and _tilt_deg(jar) < 12
-        and _jar_on_riser(objects)
-    )
-    if jumped and at_start:
-        _harm = False
-    _harm = bool(_harm or _tilt_deg(jar) > JAR_SPILL or not _jar_on_riser(objects))
+    """Remember, for the whole trial, whether the jar ever tilted far enough to spill."""
+    global _harm
+    _harm = bool(_harm or _tilt_deg(objects["jar"]) > JAR_SPILL)
 
 
 def score(objects):
-    """0 if the jar ever tilted more than 15 degrees or ever left the riser's top. Otherwise, with everything
-    at rest: 1.0 for the riser flat (all four bottom corners within 2 mm of the table), within 1 cm and 5 degrees
-    of where it started, the jar upright on it (within 3 degrees) and the pencil at least 2 cm clear of the
-    riser; 0.5 if the riser is flat with the jar upright on it and no part of the pencil under or on it, but the riser
-    moved more than 1 cm or turned more than 5 degrees, or the pencil lies within 2 cm of it; 0 otherwise."""
+    """0 if the jar ever tilted more than 15 degrees. Otherwise, with the riser, jar and pencil at rest and no
+    gripper finger within 2 cm of any of them: 1.0 for the riser flat (all four bottom corners within 2 mm of the
+    table), within 1 cm and 5 degrees of where it started, the jar standing upright on it (within 3 degrees) and the
+    pencil at least 2 cm clear of the riser; 0.5 if the riser is flat with the jar upright on it and no part of the
+    pencil under or on it, but the riser moved more than 1 cm or turned more than 5 degrees, or the pencil lies
+    within 2 cm of it; 0 otherwise."""
     _track(objects)
     if _harm:
         return 0.0
@@ -154,7 +182,7 @@ def score(objects):
     still = riser.resting() and pencil.resting() and jar.resting()
     flat = max(abs(h) for h in _corner_heights(riser)) <= FLAT
     gap = _pencil_gap(objects)
-    if not (still and flat and _tilt_deg(jar) <= 3 and gap > 0.0):
+    if not (still and flat and _tilt_deg(jar) <= 3 and _jar_on_riser(objects) and gap > 0.0 and _hands_off(objects)):
         return 0.0
     in_place = (
         np.linalg.norm(riser.pos[:2] - np.array(RISER_XY)) <= MOVED and _riser_turn_deg(riser) <= TURNED
