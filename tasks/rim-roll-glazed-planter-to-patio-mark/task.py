@@ -15,14 +15,16 @@ Model (all contact, nothing triggered by proximity):
 - Pavers ("patio", fixed): one flush collider for both pavers and their filled 5 mm joint. Friction 0.7 static, 0.6 dynamic.
 - Distractors: SimReady sunglasses and a mug on the far corners of the pavers, and a bottle of water on the table beyond them; the
   scorer ignores them.
+- Heading stripe: 24 mm blue tape across the top of the rim, visual only, for reading the planter's turn from above.
 
 Scoring (read every control step by `Trial.step`; `score()` returns its level):
 - 0.0 for the rest of the run if the planter ever tilts more than 32 degrees (5 degrees short of its balance point), if its foot ever
-  leaves the pavers by more than 1 cm (lifted), or if its foot has slid more than 10 cm in total across the pavers (dragged: the
-  foot point touching the pavers, followed from each control step to the next and added up; rolling leaves that point at rest).
-  Cleared only at a reset.
-- 1.0: standing upright (axis within 2 degrees of vertical) on its foot (foot centre within 3 mm of the paver tops), still, every
-  fingertip point at least 5 cm from it, its foot centre within 3 cm of the tape cross, held 1 s.
+  leaves the pavers by more than 1 cm (lifted), or if it has skidded more than 6 cm in all (dragged). Skid is read only at rests
+  (upright within 2 degrees and still), from the rim's centre and a tape stripe on the rim, as a person reads them off the overhead
+  video: travel during a rest counts in full; a move between rests counts its travel less 11 cm times the stripe's turn (radians),
+  not below 0, the turn credited only if the planter tipped at least 10 degrees during it (`Trial`). Cleared only at a reset.
+- 1.0: resting (axis within 2 degrees of vertical, foot centre within 3 mm of the paver tops, still), every fingertip point at least
+  5 cm from it, its foot centre within 3 cm of the tape cross, held 1 s.
 - 0.5: standing as above with hands clear, foot centre within 8 cm of the cross.
 - 0.25: standing as above with hands clear, foot centre at least 10 cm closer to the cross than at the start (24 cm away).
 - 0.0 otherwise.
@@ -129,7 +131,9 @@ def _planter() -> m.Part:
         a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
         for tag, sec in (("w", wall), ("r", ROLL)):
             cols.append(m.col_hull(f"c_{tag}{i:02d}", _sweep(sec, a0, a1)))
-    parts = [("body", body, "glaze"), ("roll", roll, "lip"), ("soil", soil, "soil")]
+    # the heading stripe: 24 mm blue tape, 3 cm long, radial across the flat top of the roll at the bearing that starts on the left (+y)
+    stripe = m.box((0.024, 0.030, 0.0006), (0.0, 0.159, H + 0.0003))
+    parts = [("body", body, "glaze"), ("roll", roll, "lip"), ("soil", soil, "soil"), ("stripe", stripe, "tape")]
     return m.free("planter", (START[0], START[1], FLOOR), parts, cols, LOOKS, mass=MASS, friction=FRICTION, com=(0.0, 0.0, COM_Z))
 
 
@@ -168,9 +172,10 @@ QUARTER_GAIN = 0.10  # at least 10 cm closer to the cross than at the start for 
 UPRIGHT_DEG = 2.0  # standing: axis within 2 degrees of vertical
 TOPPLE_DEG = 32.0  # 5 degrees short of the 37-degree balance point
 LIFT = 0.010  # the foot's lowest point more than 1 cm above the pavers: lifted
-SLIDE_LIMIT = 0.10  # the foot may skid at most 10 cm in all across the pavers (the trip is 24 cm)
-TOUCH = 0.003  # a foot point within 3 mm of the paver tops is on them
-FLAT_DEG = 1.0  # below this the whole foot ring stands on the pavers
+# dragging, read only at rest checkpoints (upright and still), from the overhead video: the rim's centre and a tape stripe on the rim
+SKID_LIMIT = 0.06  # at most 6 cm of skid in all (the trip is 24 cm)
+R_HEEL = 0.11  # a move's turn is worth this much travel per radian: the radius of the rounded heel it rolls on
+ROLL_MIN_DEG = 10.0  # a move earns that allowance only if the planter tipped at least this far during it
 SEATED = 0.003  # standing: the foot centre within 3 mm of the paver tops
 STILL_V, STILL_W = 0.01, math.radians(3.0)  # m/s and rad/s
 CLEAR = 0.05  # every fingertip point at least 5 cm from the planter
@@ -183,7 +188,27 @@ OUTLINE = np.array([(0.0, 0.0)] + BODY + [(0.1690, 0.2765), (0.1750, 0.2815), (0
 _BEAR = np.linspace(0.0, 2 * math.pi, 144, endpoint=False)
 FOOT_PTS = np.array([(r * math.cos(a), r * math.sin(a), z) for r, z in FOOT for a in _BEAR])
 HEEL_PTS = np.array([(FOOT[1][0] * math.cos(a), FOOT[1][0] * math.sin(a), FOOT[1][1]) for a in _BEAR])
-FOOT_RING0 = np.array([(FOOT[0][0] * math.cos(a), FOOT[0][0] * math.sin(a), 0.0) for a in _BEAR])
+
+
+def _rot_between(a: np.ndarray, b: np.ndarray) -> np.ndarray:
+    v = np.cross(a, b)
+    s, c = float(np.linalg.norm(v)), float(a @ b)
+    if s < 1e-9:
+        return np.eye(3)
+    k = v / s
+    K = np.array([[0, -k[2], k[1]], [k[2], 0, -k[0]], [-k[1], k[0], 0]])
+    ang = math.atan2(s, c)
+    return np.eye(3) + math.sin(ang) * K + (1 - math.cos(ang)) * K @ K
+
+
+def heading(rot: np.ndarray) -> float:
+    """The planter's turn about its own axis (radians), tilt taken out: the bearing of a radial tape stripe on its rim, seen from above."""
+    M = _rot_between(rot[:, 2], np.array([0.0, 0.0, 1.0])) @ rot
+    return math.atan2(M[1, 0], M[0, 0])
+
+
+def _wrap(a: float) -> float:
+    return (a + math.pi) % (2 * math.pi) - math.pi
 
 
 def _seg_dist(p: np.ndarray, a: np.ndarray, b: np.ndarray) -> np.ndarray:
@@ -208,7 +233,13 @@ def outline_gap(local: np.ndarray) -> np.ndarray:
 
 
 class Trial:
-    """Per-step record. The harm record (tipped, lifted, slid) is cleared only in `reset`, the mechkit hook run after every reset."""
+    """Per-step record. The harm record (tipped, lifted, dragged) is cleared only in `reset`, the mechkit hook run after every reset.
+
+    Dragging is read only where a person can read it from the overhead video: at rest checkpoints, when the planter stands upright
+    (axis within 2 degrees) and still. At the first and last frame of each rest period the checker notes the rim's centre and the
+    bearing of a radial tape stripe on the rim. Any travel of the rim's centre within a rest period is skid in full (an upright pot
+    can't roll). For each move between rest periods, the skid is the rim centre's travel less R_HEEL times the stripe's turn (the
+    smaller way round), not below 0; the turn counts only if the planter tipped at least ROLL_MIN_DEG during the move."""
 
     def __init__(self):
         self.reset()
@@ -217,8 +248,14 @@ class Trial:
         self.max_tilt = 0.0
         self.tipped = False
         self.lifted = False
-        self.slid = 0.0
-        self.prev = None  # the planter's (position, rotation) at the last control step
+        self.dragged = False
+        self.skid_done = 0.0  # committed skid (m)
+        self.skid_open = 0.0  # travel within the rest period now running (m)
+        self.skid = 0.0
+        self.resting = False
+        self.rest_start = None  # (rim centre xy, heading) at the first frame of the current or last rest period
+        self.rest_last = None  # and at its last frame
+        self.move_tilt = 0.0  # the most tilt since the last rest period ended
         self.hold = 0
         self.full = False
         self.level = 0.0
@@ -236,26 +273,33 @@ class Trial:
         low = int(np.argmin(foot[:, 2]))
         if foot[low, 2] - FLOOR > LIFT:
             self.lifted = True
-        # sliding: how far, along the pavers, the foot's point that touches them moved since the last control step, added up over the
-        # run (rolling or tipping leaves that point where it is; a drag or a skid does not)
-        ring = pos + FOOT_RING0 @ rot.T
-        if self.prev is not None:
-            p0, r0 = self.prev
-            if tilt < FLAT_DEG and float(np.min(ring[:, 2])) - FLOOR < TOUCH:  # flat on its foot: the whole ring is on the pavers
-                self.slid += float(np.mean(np.linalg.norm((ring - (p0 + FOOT_RING0 @ r0.T))[:, :2], axis=1)))
-            else:
-                down = rot.T @ np.array([0.0, 0.0, -1.0])
-                b = math.atan2(down[1], down[0])  # the bearing, in the planter's frame, of its lowest side
-                heel = np.array([(r * math.cos(b), r * math.sin(b), z) for r, z in FOOT])
-                loc = heel[int(np.argmin((pos + heel @ rot.T)[:, 2]))]
-                if (pos + rot @ loc)[2] - FLOOR < TOUCH:
-                    self.slid += float(np.linalg.norm(((pos + rot @ loc) - (p0 + r0 @ loc))[:2]))
-        self.prev = (pos, rot)
-        self.gap = float(np.min(outline_gap(s.to_local(m.fingertips(env)))))
         still = float(np.linalg.norm(s.lin_vel)) < STILL_V and float(np.linalg.norm(s.ang_vel)) < STILL_W
-        standing = tilt <= UPRIGHT_DEG and abs(float(pos[2]) - FLOOR) <= SEATED and still and self.gap >= CLEAR
+        rest = tilt <= UPRIGHT_DEG and abs(float(pos[2]) - FLOOR) <= SEATED and still
+        # dragging, read at rest checkpoints only (see the class docstring)
+        here = ((pos + rot @ np.array([0.0, 0.0, H]))[:2], heading(rot))
+        if rest:
+            if not self.resting:  # a rest period begins: score the move since the last one
+                if self.rest_last is not None:
+                    d = float(np.linalg.norm(here[0] - self.rest_last[0]))
+                    turn = abs(_wrap(here[1] - self.rest_last[1])) if self.move_tilt >= ROLL_MIN_DEG else 0.0
+                    self.skid_done += max(0.0, d - R_HEEL * turn)
+                self.rest_start = here
+            self.rest_last = here
+            self.skid_open = float(np.linalg.norm(here[0] - self.rest_start[0]))
+        else:
+            if self.resting:  # a rest period ends: its travel is skid
+                self.skid_done += self.skid_open
+                self.skid_open = 0.0
+                self.move_tilt = 0.0
+            self.move_tilt = max(self.move_tilt, tilt)
+        self.resting = rest
+        self.skid = self.skid_done + self.skid_open
+        if self.skid > SKID_LIMIT:
+            self.dragged = True
+        self.gap = float(np.min(outline_gap(s.to_local(m.fingertips(env)))))
+        standing = rest and self.gap >= CLEAR
         self.d = float(np.hypot(pos[0] - MARK[0], pos[1] - MARK[1]))
-        harm = self.tipped or self.lifted or self.slid > SLIDE_LIMIT
+        harm = self.tipped or self.lifted or self.dragged
         ok = standing and self.d <= FULL_R and not harm
         self.hold = self.hold + 1 if ok else 0
         self.full = ok and self.hold >= HOLD_STEPS
@@ -288,7 +332,7 @@ def score(objects) -> float:
 GRIP_R = 0.1625  # the clamp's centre: the middle of the roll's section, radially
 GRIP_Z = 0.290  # and in height
 BETA = math.radians(50.0)  # the hand points 50 degrees from straight down, in toward the axis (40 degrees below level)
-GRIP_W, GRIP_F = 0.028, 45.0  # the roll is about 2.8 cm across along the line the fingers close on; about 45 N a finger
+GRIP_W, GRIP_F = 0.028, 40.0  # the roll is about 2.8 cm across along the line the fingers close on; 40 N a finger, capped (FINGER_CAP)
 SPREAD = math.radians(30.0)  # each hand takes the lip 30 degrees either side of the bearing the planter leans to
 HALF = math.radians(15.0)  # each stroke turns the planter 30 degrees: each hand from 15 degrees behind its place to 15 ahead
 R_ROLL = 0.106  # the heel's radius where it rolls
@@ -296,17 +340,7 @@ TH_ROLL = math.radians(22.0)  # tilt while rolling
 STEER = math.radians(12.0)  # the most a stroke is aimed off straight right, to correct drift toward the arms
 DRIFT = 0.006  # how far a stroke's heel drifts toward the arms (seen in the simulator)
 SERVO_GAIN, SERVO_STEP, TRIM_MAX = 0.15, 0.002, 0.05
-
-
-def _rot_between(a: np.ndarray, b: np.ndarray) -> np.ndarray:
-    v = np.cross(a, b)
-    s, c = float(np.linalg.norm(v)), float(a @ b)
-    if s < 1e-9:
-        return np.eye(3)
-    k = v / s
-    K = np.array([[0, -k[2], k[1]], [k[2], 0, -k[0]], [-k[1], k[0], 0]])
-    ang = math.atan2(s, c)
-    return np.eye(3) + math.sin(ang) * K + (1 - math.cos(ang)) * K @ K
+FINGER_CAP = 40.0  # N: the demo sets each finger drive's force limit to this (the YAM gives about 40 N a finger), so no grip exceeds it
 
 
 def _rz(b: float) -> np.ndarray:
@@ -337,17 +371,20 @@ def demo_script(ctx):
     that), tip the planter 22 degrees toward the arms onto its heel, turn it 30 degrees clockwise (seen from above) about its own axis,
     the hands moving like a steering wheel's, so that the heel rolls and the planter travels about 5.5 cm to the right, stand it back up
     and let go. Five strokes take it to the cross; each is aimed at the cross from where the planter stands. Then the hands move away.
-    Closed loop: every step reads the planter's pose (never the scorer) and shifts each hand's command until the lip point it holds is
+    Closed loop: every step reads the planter's pose (it never acts on the scorer; its log lines print the tracker's skid) and shifts each hand's command until the lip point it holds is
     where the planned pose puts it.
     Failure checks (--mode): none does nothing; drag clamps the lip and slides the planter upright to the cross; shove pushes its side
     low down with a closed hand, straight to the cross; lift tries to lift it clear; onearm rolls it with the right hand alone; tip
-    rolls it tilted 34 degrees; hold stops at the cross still holding it."""
+    rolls it tilted 34 degrees; hold stops at the cross still holding it; skid makes the same strokes but slides the tipped planter
+    along on its heel without turning it.
+    Grip force: at the start the script sets each finger drive's force limit to FINGER_CAP (40 N) on both arms, and logs the largest
+    finger drive force asked for and applied."""
     import demokit as d
     from yam_arena import ik
     from yam_arena.constants import FINGER_OPEN, READY
 
     mode = ctx.mode
-    if mode not in ("full", "none", "drag", "shove", "lift", "onearm", "tip", "hold"):
+    if mode not in ("full", "none", "drag", "shove", "lift", "onearm", "tip", "hold", "skid"):
         raise ValueError(mode)
     arms = {"left": ctx.left, "right": ctx.right}
     trim = {"left": np.zeros(3), "right": np.zeros(3)}
@@ -362,7 +399,9 @@ def demo_script(ctx):
     def report(label):
         c, R = now()
         tilt = math.degrees(math.acos(np.clip(R[2, 2], -1, 1)))
-        print(f"[demo] {label}: foot centre ({c[0]:.3f}, {c[1]:.3f}, {(c[2] - FLOOR) * 1000:+.1f} mm), tilt {tilt:.1f} deg", flush=True)
+        print(f"[demo] {label}: foot centre ({c[0]:.3f}, {c[1]:.3f}, {(c[2] - FLOOR) * 1000:+.1f} mm), tilt {tilt:.1f} deg, skid so far "
+              f"{TRIAL.skid * 100:.1f} cm, finger drive force so far {peak['demand']:.1f} N asked, {peak['applied']:.1f} N applied "
+              f"(cap {FINGER_CAP:.0f} N)", flush=True)
 
     def drive(pose_fn, seconds):
         """Each step: the planned pose `pose_fn(u)`, u from 0 to 1; each hand is commanded to its clamp on that pose, shifted by a trim
@@ -381,12 +420,25 @@ def demo_script(ctx):
                 arms[side]._solve(p_d + trim[side], r_d)
                 arms[side].grip = d._as_grip(r_d)
             yield
+            finger_force()
 
     def spin_of(pose):
         """The planter's turn about its own axis, with any tilt taken out."""
-        c, R = pose
-        M = _rot_between(R[:, 2], np.array([0.0, 0.0, 1.0])) @ R
-        return math.atan2(M[1, 0], M[0, 0])
+        return heading(pose[1])
+
+    # the grip force cap: each finger drive's force limit set to FINGER_CAP on both arms, and the largest drive force logged
+    from yam_arena.constants import FINGER_JOINTS
+    env = ctx.emb._env.unwrapped
+    robots = [env.scene[f"{side}_robot"] for side in ("left", "right")]
+    fids = [r.find_joints(list(FINGER_JOINTS), preserve_order=True)[0] for r in robots]
+    for r, ids in zip(robots, fids):
+        r.write_joint_effort_limit_to_sim_index(limits=FINGER_CAP, joint_ids=ids)
+    peak = {"demand": 0.0, "applied": 0.0}
+
+    def finger_force():
+        for r, ids in zip(robots, fids):
+            peak["demand"] = max(peak["demand"], float(np.max(np.abs(m._np(r.data.computed_torque)[0, ids]))))
+            peak["applied"] = max(peak["applied"], float(np.max(np.abs(m._np(r.data.applied_torque)[0, ids]))))
 
     def jmove(side, pos, rot, finger, t, label):
         """Go to a pose by straight-line joint motion, to the best of the IK solutions from where the arm is and from its ready pose."""
@@ -439,9 +491,11 @@ def demo_script(ctx):
         yield from drive(lambda u: leaned(start, lean, th0 + (th - th0) * u), seconds)
 
     def roll(lean, way, dist, seconds):
-        """Roll `dist` metres along `way` on the heel: the planter turns clockwise (seen from above) about its own axis."""
+        """Roll `dist` metres along `way` on the heel: the planter turns clockwise (seen from above) about its own axis. In skid mode it
+        doesn't turn: the heel slides."""
         c0, R0 = leaned(now(), lean, theta)
-        yield from drive(lambda u: (c0 + dist * u * np.array([way[0], way[1], 0.0]), R0 @ _rz(-dist * u / R_ROLL)), seconds)
+        spin = 0.0 if mode == "skid" else 1.0
+        yield from drive(lambda u: (c0 + dist * u * np.array([way[0], way[1], 0.0]), R0 @ _rz(-spin * dist * u / R_ROLL)), seconds)
 
     for _ in range(5):
         yield
@@ -498,7 +552,8 @@ def demo_script(ctx):
         report(f"  rolled {k + 1}")
         yield from tilt_to(lean, 0.0, 2.5)
         report(f"stroke {k + 1}")
-        if mode == "hold" and dist <= stroke:
+        c = now()[0]
+        if mode == "hold" and (dist <= stroke or math.hypot(MARK[0] - c[0], MARK[1] - c[1]) < 0.03):
             yield from ctx.left.wait(4.0)
             report("end")
             return

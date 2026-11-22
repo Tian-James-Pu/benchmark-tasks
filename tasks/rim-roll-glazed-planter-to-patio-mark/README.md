@@ -20,6 +20,17 @@ Instruction: **"Move the planter onto the taped square on the patio."** The inst
 | `simready.py` | Loads the SimReady distractors, downloading them once from Hugging Face |
 | `task.json` | The task's details for the board |
 
+## Response to review
+
+Review of 22 November 2026, 01:46 UTC. Each request, quoted, and what changed.
+
+| Request | Change |
+|---|---|
+| "the accumulated movement of an occluded heel contact point over hundreds of steps cannot be reliably measured from the overhead and single side video" ... "replace the accumulated heel-contact slip criterion with a repeatable real-trial check measurable from visible marks or video ... without sub-millimetre tracking of a hidden contact" | `task.py` (`Trial`), `task.json` scoring, README "Scoring" and "Measurement". The heel-contact tracker is gone. Skid is now read only at rests (pot upright within 2 degrees and still), from two visible marks on the overhead video: the rim's centre and a 24 mm blue tape witness stripe across the top of the rim. Travel during a rest counts in full; a move between rests counts its travel less 11 cm times the stripe's turn (rolling on the 11 cm heel turns the pot; dragging doesn't), not below 0, the turn credited only if the phone logged at least 10 degrees of tilt. Over 6 cm in all scores 0. Each reading is a start and end frame of a rest, to about 0.5 cm and 5 degrees against the 40 cm tape square; nothing hidden or sub-millimetre. The code computes exactly these readings. The stripe is added to the scene, the screenshot and the setup text. |
+| "the full-score demo uses about 45 N per finger, exceeding the YAM's roughly 40 N per finger" ... "demonstrate full completion with gripper force limited to about 40 N per finger (cap the commanded force in the demo and confirm in the sim)" | `task.py` (`GRIP_F` 40 N, `FINGER_CAP`, `demo_script`), README "The demo". The demo commands 40 N and sets every finger drive's force limit in the simulator to 40 N on both arms, so no finger can push harder. It logs the largest finger drive force: 40.0 N applied in every run. Two fresh GPU runs with cameras and video scored 1.0 (table below); the new demo video and screenshot are uploaded. At 40 N the demo no longer moves a 19.5 kg pot, so the weight tolerance is now 18.5 +/- 0.3 kg (disclosed). |
+| "consider gripper pad protection against moist potting mix" ... "Add pad protection (e.g. nitrile finger covers) and keep the soil dry or sealed." | `task.json` setup and reset notes, README "Real trial". Nitrile finger cots go over every gripper finger pad (checked at each reset). The drained mix is sealed in a tied heavy-duty plastic liner bag, its top 5 cm below the rim, so nothing moist is open to the rim or the fingers; the 18.5 kg is unchanged. |
+| Red-team the drag the new rule must catch | A run (not submitted) that drags the pot upright 24 cm to the cross with an outside force at its foot and leaves it standing there, hands clear: skid 23.5 cm, score 0. The arms' own `drag` and `skid` (heel slid without turning) attempts can't move the pot at 40 N and score 0. |
+
 ## Run a trial
 
 Environment: the `yam_arena` simulator package and Inspect Robots. From this folder:
@@ -31,12 +42,12 @@ inspect-robots run --embodiment yam_arena -E task=task.py -E object_jitter=0 -E 
 ```
 
 The scene is the same for every seed: there is no randomisation, and `object_jitter=0`. A trial is at most 3,000 control
-steps (150 s at 20 Hz). The scripted demo takes 1,345 steps (67 s), so the limit is about 2.2 times the demo.
+steps (150 s at 20 Hz). The scripted demo takes 1,600 steps (80 s) on GPU physics, so the limit is about 1.9 times the demo.
 Runtime: about 35 s of wall time per 1,000 steps without cameras (CPU physics, `--fast`). With the three cameras at
-640 x 360 on a shared RTX PRO 6000 GPU it ran at 1.5 to 3 steps per second, depending on how busy the GPU was.
+640 x 360 on a shared RTX PRO 6000 GPU it ran at 1 to 3 steps per second, depending on how busy the GPU was.
 
-Model run: Dream-1 scored 0.0 over the full 3,000 steps; it reached for and touched the rim but never tipped or moved the
-planter.
+Model run (rerun after this revision added the rim stripe): Dream-1 scored 0.0 over the full 3,000 steps; its arms moved
+about in front of the planter but never tipped or moved it.
 
 ## The demo
 
@@ -44,16 +55,16 @@ From this folder:
 
 ```bash
 python demokit.py task.py OUT                                    # the full-score run, with video and setup.png
-python demokit.py task.py OUT_checks --fast --mode none,onearm,tip,hold,drag,shove,lift   # the failure checks
+python demokit.py task.py OUT_checks --fast --mode none,onearm,tip,hold,drag,skid,shove,lift   # the failure checks
 ```
 
 The demo is a scripted reference, not a policy. It reads the planter's pose from the simulator (the planter is in full view
-of the cameras) and never reads the scorer. Each of its five strokes goes like this:
+of the cameras) and never acts on the scorer (its log lines print the tracker's skid, for checking). Each stroke goes like this:
 
 1. **Hold.** Both hands take the rolled lip, one 30 degrees either side of the bearing that faces the arms, set 15 degrees
    round ahead of it. Each hand comes from above and outside, pointing in toward the pot's axis 50 degrees from straight down.
    Its fingers close across the roll's 3.2 cm section on a line 50 degrees below level: one finger on the inside top of the
-   roll, the other under its outer bulge, about 45 N each. A pull toward the arms then bears on the inner finger, so the
+   roll, the other under its outer bulge, 40 N each. A pull toward the arms then bears on the inner finger, so the
    hold depends less on friction. A pinch closing almost vertically on the roll slipped off its round at this mass.
 2. **Tip.** The hands tip the pot 22 degrees toward the arms, about the edge of its heel. The heel stays where it is: the
    pot turns about it.
@@ -63,7 +74,14 @@ of the cameras) and never reads the scorer. Each of its five strokes goes like t
    degrees of straight right, to take out drift.
 4. **Stand it up.** The hands stand the pot upright, let go and back off along their approach.
 
-The fifth stroke is shortened to finish on the cross. The hands then move away, and the pot must stand still, hands clear,
+**Grip force cap.** At the start the script sets the force limit of every finger drive, on both arms, to 40 N (the YAM
+gives about 40 N a finger), and commands 40 N. The simulator then can't push a finger harder than 40 N, whatever the
+command. The script logs the largest finger drive force: 40.0 N applied in every run below (the position controller asked
+for up to about 100 N while the fingers were blocked by the lip; the limit held it at 40 N). At 40 N the hands sometimes
+slip a little on the round of the roll and the pot settles upright early, so a stroke can travel 4 to 5 cm instead of 5.5;
+the next stroke is aimed from where the pot stands, so it takes five or six strokes.
+
+The last stroke is shortened to finish on the cross. The hands then move away, and the pot must stand still, hands clear,
 for 1 s.
 
 Closed loop: every step, each hand's command is shifted until the lip point it holds is where the planned pose puts it. This
@@ -73,30 +91,28 @@ Results (`task_score` from the harness):
 
 | Run | Physics | Score | Steps | Notes |
 |---|---|---|---|---|
-| final A | GPU, cameras, video | 1.0 | 1,345 | the submitted video and screenshot; no blank frames |
-| final B | GPU, cameras, video | 1.0 | 1,345 | a second fresh run; no blank frames |
-| check | CPU (`--fast`) | 1.0 | 1,319 | the foot slid 5.2 cm in all, against the 10 cm limit; most tilt 23.0 degrees; foot centre 0.5 cm from the cross |
-| check at 19.5 kg | CPU (`--fast`) | 1.0 | 1,322 | the same script with the mass raised to 19.5 kg (a heavier pot or wetter mix) |
+| final A | GPU, cameras, video | 1.0 | 1,600 | the submitted video and screenshot; six strokes; skid 0.0 cm; most tilt 22.8 degrees; finger drive force at most 40.0 N; no blank frames |
+| final B | GPU, cameras, video | 1.0 | 1,600 | a second fresh run, the same; no blank frames |
+| check | CPU (`--fast`) | 1.0 | 1,343 | five strokes; skid 0.0 cm; finger drive force at most 40.0 N; foot centre 1.8 cm from the cross |
+| check at 19.5 kg | CPU (`--fast`) | 0.0 | 2,235 | the same script with the mass raised to 19.5 kg: at 40 N the hands slip and the pot isn't moved. Keep the real pot at 18.5 +/- 0.3 kg |
 
-Failure checks (`--mode`, CPU physics, 18.5 kg):
+Failure checks (`--mode`, CPU physics, 18.5 kg, grip capped at 40 N):
 
 | Mode | What the script does | Score |
 |---|---|---|
 | `none` | nothing | 0.0 |
 | `onearm` | the same strokes with the right hand alone | 0.0 (one hand doesn't tip it: the pot never leaves its foot) |
-| `tip` | the same strokes, tilted 34 degrees instead of 22 | 0.0 (it reaches the cross, but passed 32 degrees) |
+| `tip` | the same strokes, tilted 34 degrees instead of 22 | 0.0 (at 40 N the hands slip off before 34 degrees and the pot stays at the start) |
 | `hold` | the full demo, but stops at the cross still holding the rim | 0.0 (hands not clear) |
-| `drag` | holds the lip and slides the pot upright toward the cross | 0.0 (the arms move it about 2 cm: not 10 cm closer) |
+| `drag` | holds the lip and slides the pot upright toward the cross | 0.0 (the arms move it 0.5 cm: not 10 cm closer) |
+| `skid` | the same strokes, but slides the tipped pot along on its heel without turning it | 0.0 (the hands slip and the pot drops back upright where it was) |
 | `shove` | pushes the pot's side low down with a closed hand | 0.0 (it doesn't move) |
 | `lift` | tries to lift it 8 cm | 0.0 (it doesn't leave the pavers) |
 
-At 18.5 kg the arms can't lift or drag the pot, so the last three never trip the lift and drag rules. Those rules were also
-checked offline, by feeding the tracker hand-made trajectories (no simulator). A pot dragged upright 24 cm to the cross scores 0
-(slid 24 cm). A pot lifted 2 cm and carried there scores 0 (lifted). A pot tipped to 34 degrees and set back scores 0. An
-ideal roll of 30 degrees on the heel counts 0.0 cm of slide, or 0.3 cm if the travel is off by 6%. Standing at the cross for 21
-steps scores 1.0, and for 10 steps 0.5. Standing 6, 13 and 18 cm from the cross scores 0.5, 0.25 and 0. At the cross with a
-fingertip 3 cm from the lip, tilted 3 degrees, or moving 2 cm/s, it scores 0. A pot that reached 1.0 and was then pushed 10 cm
-away drops to 0.25. A pot that was dragged and then stood at the cross scores 0.
+At 18.5 kg and 40 N the arms can't lift, drag or skid the pot, so those checks never trip the lift and skid rules. The skid
+rule was checked in the simulator with an outside force instead (a red-team run, not part of the submission): a force at
+the foot drags the pot upright 24 cm to the cross and lets it stand there, hands clear. The tracker counted 23.5 cm of skid
+and scored 0. In the demo runs the same tracker counted 0.0 cm.
 
 ## Scoring
 
@@ -109,14 +125,25 @@ while the level is 1.0. Its harm record is cleared only by the reset hook, never
   25 degrees (the demo uses 22).
 - **Lifted:** the lowest point of its foot ever more than 1 cm above the pavers. Tilting onto the heel keeps one point down,
   so it doesn't count; the whole pot off the ground does.
-- **Dragged:** its foot slid more than 10 cm in all. Every step the tracker finds the foot point touching the pavers (the
-  lowest heel point on the side the pot leans to, or the whole foot ring when it stands flat). It measures how far that same
-  point of the pot moved across the pavers since the last step, and adds that up. Rolling and pivoting leave the touching
-  point where it is, so they add almost nothing (the demo adds about 1 cm per stroke of skid). Dragging moves it the full
-  distance. 10 cm is under half the trip, so a pot dragged most of the way is out.
+- **Dragged:** more than 6 cm of skid in all. Skid is read only at rests, the moments a person can read from the overhead
+  video: the pot upright (axis within 2 degrees), its foot centre within 3 mm of the paver tops, moving under 1 cm/s and
+  turning under 3 degrees/s. At the first and the last frame of each rest the checker notes two things: the rim's centre,
+  and the bearing of the blue heading stripe taped across the top of the rim.
+  - During a rest, any travel of the rim's centre is skid in full. An upright pot can't roll, so a pot slid upright, however
+    slowly, is caught.
+  - For each move between one rest and the next, skid is the rim centre's travel less 11 cm times the stripe's turn in radians
+    (the smaller way round), and not below 0. Rolling on the heel turns the pot by its travel divided by the heel's radius
+    (10.6 to 11 cm where it rolls), so a clean roll adds nothing. A drag moves the pot without turning it and adds its full
+    travel. The turn is credited only if the pot tipped at least 10 degrees during the move (the phone's log), since an
+    upright pot can't roll.
+  6 cm is a quarter of the trip. The demo's strokes travel 4 to 5.5 cm for a 30-degree turn (5.8 cm of allowance), and its
+  total skid was 0.0 cm. There is no sub-millimetre or hidden reading: each check is two overhead frames, read to about
+  0.5 cm and 5 degrees against the 40 cm tape square. The turn needs no wrap-around: a 30-degree stroke is far from 180.
+  What this doesn't see: a skid offset, within one move, by an equal turn about the heel. That still needs the full sliding
+  friction of the foot, about 110 N at 18.5 kg, which the arms can't apply (the `drag` and `skid` checks below).
 
-**Standing:** axis within 2 degrees of vertical; foot centre within 3 mm of the paver tops; moving under 1 cm/s and turning
-under 3 degrees/s; every fingertip point (12 on each gripper) at least 5 cm from the pot's outline, its open top counted as
+**Standing:** resting as above (axis within 2 degrees of vertical; foot centre within 3 mm of the paver tops; moving under
+1 cm/s and turning under 3 degrees/s); every fingertip point (12 on each gripper) at least 5 cm from the pot's outline, its open top counted as
 closed at the rim.
 
 **Levels:** 1.0 once it has stood with its foot centre within 3 cm of the tape cross for 1 s (20 steps running). 0.5 standing
@@ -131,7 +158,8 @@ is the real filled pot's:
 
 - the pot: 22.2 lb (10.1 kg), from the retailer's listing for the Large size of this series (see Sources). We could not
   load the white listing's specification table; one search result quoted 27.8 lb for it. For a real trial, weigh the filled
-  pot and bring it to 18.5 kg by how wet the mix is. The demo also scored 1.0 at 19.5 kg in CPU physics.
+  pot and bring it to 18.5 kg by how wet the mix is. With the grip capped at 40 N a finger, the demo does not move a
+  19.5 kg pot (CPU physics), so keep the filled pot within 0.3 kg of 18.5.
 - the mix: 15 L of potting mix fills the pot to 5 cm below the rim (from the modelled inside profile: 15.2 L with a 13 mm
   wall). A gardening guide gives "each 10 liters of moist mix ≈ 5–7 kg", so 7.5 to 10.5 kg. The model takes 8.4 kg
   (0.56 kg/L), a watered-and-drained mix.
@@ -190,11 +218,17 @@ puzzles, knots and assemblies.
 
 **Parts** (roughly $150 to $250 in all, an estimate): one 14-inch rolled-rim glazed ceramic planter (the At Home Large above or
 equivalent); two 60 x 60 x 2 cm porcelain patio pavers (about 16 kg each); a 2 cu ft bag of potting mix; 24 mm blue
-painter's tape; a bathroom scale; a steel rule; a phone with an inclinometer app.
+painter's tape; a heavy-duty (3 mil or thicker) plastic planter liner or contractor bag and a cable tie; a box of nitrile
+finger cots (or the fingertips cut from nitrile gloves) for the gripper pads; a bathroom scale; a steel rule; a phone with an
+inclinometer app.
 
 **Setup.** Use a sturdy table rated for at least 60 kg: pavers plus pot come to about 51 kg. Lay the pavers side by side
-across it, edges 16 cm in front of the arm bases, with a 5 mm gap filled with grout or sand. Fill the pot with mix to 5 cm
-below the rim, water it and let it drain, and adjust until it weighs 18.5 +/- 0.5 kg. Tape the 40 cm square (inner edges)
+across it, edges 16 cm in front of the arm bases, with a 5 mm gap filled with grout or sand. Fill the liner bag with mix,
+water it and let it drain, tie it shut and set it in the pot with its top 5 cm below the rim, so no moist mix is open to the
+rim or the fingers. Adjust the mix in the bag until the pot weighs 18.5 +/- 0.3 kg (the demo was checked at 18.5 kg; at
+19.5 kg the 40 N grip slips and the pot isn't moved). Slip a nitrile finger cot over each gripper finger pad, so the pads are
+kept off grit and damp and are easy to replace. Tape the heading stripe: 24 mm blue painter's tape, 3 cm long, radially
+across the top of the rim on its left side (+y) at the start. Tape the 40 cm square (inner edges)
 and the 8 cm cross on the right paver, the cross at (48, -12) cm. Draw a 20 cm pencil circle at (48, 12) cm on the left paver
 for the start. Stand the pot in that circle. Tape the phone inside the rim on the far side from the arms, logging tilt. Set the
 distractors as listed in `task.json`. Film from above and from the side (the side camera looking along y), at 30 fps or more.
@@ -207,14 +241,19 @@ distractors as listed in `task.json`. Film from above and from the side (the sid
   video for 1 s.
 - Tipped: the phone's logged maximum tilt over 32 degrees.
 - Lifted: the side video shows daylight more than 1 cm under the whole foot (a 1 cm block beside it gives the scale).
-- Dragged: before the trial, put a short radial strip of contrasting tape on the foot's edge every 30 degrees. In the
-  overhead and side video, the touching part of the foot should stay put on the paver while it touches. Add up how far it
-  moves while touching, frame to frame. Over 10 cm is a drag.
+- Dragged: from the phone's log and the overhead video, find each rest (phone within 2 degrees of level, pot still). On the
+  overhead frame at the start and at the end of each rest, mark the rim's centre (fit a circle to the rim) and the stripe's
+  bearing (a protractor overlay). Scale from the 40 cm tape square. For each rest add the rim centre's travel within it; for
+  each move between rests add (travel - 11 cm x turn in radians), not below 0, counting the turn only if the phone logged
+  10 degrees or more during the move. Over 6 cm in all is a drag. A still pot gives the same frame at both ends of a rest,
+  so a rest adds nothing unless the pot moved.
 
-**Reset** (about 2 minutes): roll the pot back into its start circle the same way, or with a plant dolly. Check its weight
-and mix level, and re-set any distractor that moved.
+**Reset** (about 2 minutes): roll the pot back into its start circle the same way, or with a plant dolly, and turn it so the
+stripe is on its left (+y). Check its weight, that the bag is tied with its top 5 cm below the rim, and that the finger cots
+are intact; re-set any distractor that moved.
 
-**Rig safety.** Nothing is sharp, hot or wet: the glazed rim is rounded and the mix is drained. The pot could go over if an
+**Rig safety.** Nothing is sharp, hot or wet: the glazed rim is rounded, the mix is drained and sealed in its tied bag, and
+the finger pads are covered by nitrile cots. The pot could go over if an
 arm lets it tilt past its balance point. Keep people out of the space beside and in front of the pavers. Put a foam mat on
 the floor in front of the table, and have the operator ready at the e-stop. The arms can't lift the pot, so it can't be swung.
 
@@ -227,6 +266,8 @@ the floor in front of the table, and have the operator ready at the e-stop. The 
   15 cm up the axis. Friction of its foot on the pavers: 0.7 static, 0.6 dynamic (ceramic on porcelain). The potting mix is
   part of the rigid body: it can't spill or shift.
 - **Pavers** (fixed): two visual slabs and a darker joint over one flush box collider. The tape is visual only (0.6 mm).
+- **Heading stripe:** a 24 mm blue tape strip across the top of the rim, visual only.
+- **Finger cots:** not modelled; the pads keep their own friction. The grip is capped at 40 N a finger in the demo.
 - **Distractors:** SimReady sunglasses and a mug on the far corners of the pavers, and a water bottle on the table beyond them.
   The scorer ignores them, and the demo doesn't touch them.
 - **Not modelled:** breakage, chipping and scratching (these are scored from the pot's pose), the mix's movement, and any
