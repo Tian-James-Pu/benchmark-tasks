@@ -4,10 +4,12 @@ ends come to rest against the plate's bottom rail, so the TV hangs flat against 
 
 The TV is an LG 24LQ520S-PU (22.2 x 13.4 x 2.3 in, 7.2 lb without its stand, VESA 75 x 75, LG's spec sheet), at
 full size and its real mass. The mount is a Monoprice EZ Series tilt wall mount, model 5915 (wall plate 17.5 x 8.5
-in, the TV 1.9 in out from the wall, VESA 75 x 75 and up), at full size. The wall is a 50 x 56 cm wall section (two
-studs) standing on the station table, which stands in for the console top: the plate is lag-bolted to it so that the
-hung TV clears the console by 2 cm. The section is narrower than the TV so that the robot's wrists, which reach further
-towards the wall than its fingertips, pass beside it when the hands hold the TV's side edges.
+in, the TV 1.9 in out from the wall, VESA 75 x 75 and up), at full size. The wall is a 100 x 56 cm section (the
+plate lag-bolted into two studs 16 in apart) standing on the station table, which stands in for the console top, so
+that the hung TV clears the console by 2 cm. The wall runs 22 cm past the TV on each side, as a continuous wall does,
+so the hands hold the TV's side edges from in front of the wall: each gripper leans 60 degrees out from vertical with
+its wrist outboard, turned 24 degrees about its own side axis so that the wrist stays back from the wall (every arm link
+at least 2.4 cm off it in the demonstration), and pinches the rim with 30 N a finger.
 
 World frame: x forward from the arms (towards the wall), y left, z up. The TV's own frame: origin at the middle of
 its bottom edge on the screen face, x towards its back (the wall), y and z as the world's when it hangs.
@@ -130,7 +132,7 @@ def _mount():
 _mp, _mc = _mount()
 MOUNT = m.fixed("mount", (X_WALL, 0.0, TOP), _mp, _mc, LOOKS, friction=(0.4, 0.3))
 
-WALL_W = 0.50  # the wall section: two studs 16 in apart, faced with a 50 cm wide board
+WALL_W = 1.00  # the wall section: a 100 cm wide board, studs 16 in apart, 22 cm past the TV on each side
 MARK_Z = B_H + TV_H + 0.020  # the pencil mark, 2 cm above where the hung TV's top edge goes
 _wall = ((0.020, WALL_W, 0.56), (0.010, 0.0, 0.28))
 WALL = m.fixed("wall", (X_WALL, 0.0, TOP), [("board", m.box(*_wall), "wall"),
@@ -263,12 +265,28 @@ def success(objects):
 
 
 # -- the closed-loop demonstration -------------------------------------------------------------------------------
-GRIP_Z = 0.130  # where the hands take the side edges, above the TV's bottom edge (its centre of mass is at 0.17)
-GRIP_IN = 0.006  # TCP this far in from the edge: the pads overlap the rim, the gripper body stays outside it
+GRIP_Z = 0.170  # where the hands take the side edges, above the TV's bottom edge (its centre of mass is at 0.17)
+GRIP_IN = 0.027  # TCP this far in from the edge: the pads overlap the rim, clear of the rear housing (y within 0.20)
 GRIP_L = np.array([PANEL_D / 2, TV_W / 2 - GRIP_IN, GRIP_Z])
 GRIP_R = np.array([PANEL_D / 2, -(TV_W / 2 - GRIP_IN), GRIP_Z])
-FLIP = True  # the grip turned over about its own axis
-TILT = 35.0  # the grip leans this far from straight down, its fingers closing across the rim (along x)
+LEAN = 60.0  # the grip leans this far from straight down, wrist outboard, its fingers closing across the rim (along x)
+BACK = 24.0  # and is turned this far about its own side axis, fingers towards the wall, wrist away from it
+GRIP_N = 30.0  # newtons a finger, under the YAM gripper's ~40 N
+
+
+def grip_rotation(side, lean=LEAN, back=BACK):
+    """TCP rotation for a side-edge pinch: the approach axis leans `lean` from straight down with the wrist outboard, the
+    fingers close along x, and the whole grip is turned `back` degrees so that the fingers point a little towards the wall
+    and the wrist (link 4, the part nearest the wall) stays clear of it."""
+    from yam_arena.urdf import axis_angle_matrix
+
+    s = 1.0 if side == "left" else -1.0
+    th = math.radians(lean)
+    a = np.array([0.0, -s * math.sin(th), -math.cos(th)])
+    c = np.array([1.0, 0.0, 0.0])
+    r = np.column_stack([c, np.cross(a, c), a])
+    ax = np.cross(a, c)
+    return axis_angle_matrix(ax / np.linalg.norm(ax), math.radians(back)) @ r
 
 
 def demo_script(ctx):
@@ -279,7 +297,7 @@ def demo_script(ctx):
     if mode == "none":
         yield from ctx.until(lambda: False, timeout=30.0, label="do nothing")
         return
-    gl, gr = d.tilted(TILT, -90.0, FLIP), d.tilted(TILT, 90.0, FLIP)
+    gl, gr = d._as_grip(grip_rotation("left")), d._as_grip(grip_rotation("right"))
 
     def tv():
         return ctx.state("tv")
@@ -300,15 +318,15 @@ def demo_script(ctx):
             yield from ctx.together(l.turn(pitch - target, axis=(0.0, 1.0, 0.0), t=0.5, label=label),
                                     r.turn(pitch - target, axis=(0.0, 1.0, 0.0), t=0.5, label=label))
 
-    out_l, out_r = np.array([0.0, 0.055, 0.005]), np.array([0.0, -0.055, 0.005])
-    front = np.array([-0.07, 0.0, 0.02])
+    # backed off along each grip's approach axis (out to the side and up), then in along it: the open fingers straddle the rim
+    out_l, out_r = -0.075 * gl.rot[:, 2], -0.075 * gr.rot[:, 2]
+    front = np.array([-0.03, 0.0, 0.0])
     arms = [(l, GRIP_L, gl, out_l)] + ([] if mode == "onearm" else [(r, GRIP_R, gr, out_r)])
-    # out to the side first, in front of the screen, so that the far finger passes outside the TV's edge
     yield from ctx.together(*[a.move(world(g) + o + front, grip=gp, finger=FINGER_OPEN, t=2.0, label="out to the side") for a, g, gp, o in arms])
     yield from ctx.together(*[a.move(world(g) + o, t=1.2, label="beside the edge") for a, g, gp, o in arms])
     yield from ctx.together(*[a.move(world(g), t=1.2, label="onto the edge") for a, g, gp, o in arms])
     yield from ctx.together(*[a.servo(world(g), timeout=1.0, label="onto the edge") for a, g, gp, o in arms])
-    yield from ctx.together(*[a.close(PANEL_D, 50.0, t=0.6, label="pinch the rim") for a, g, gp, o in arms])
+    yield from ctx.together(*[a.close(PANEL_D, GRIP_N, t=0.6, label="pinch the rim") for a, g, gp, o in arms])
     if mode == "onearm":
         yield from l.move(l.at() + np.array([-0.02, -Y0, 0.06]), t=2.5, label="lift with one hand")
         yield from l.wait(1.0)
@@ -317,10 +335,14 @@ def demo_script(ctx):
         yield from l.wait(3.0)
         return
 
+    hook_pts = np.array([[(FIN_X0 + FIN_X1) / 2, y, TAB_Z - FINGER[1]] for y in (VESA / 2, -VESA / 2)])
+    hook_up = np.array([(FIN_X0 + FIN_X1) / 2, 0.0, TAB_Z - FINGER[1]])
+
     def carry_to(origin, t=1.0, label="carry"):
-        """Move both hands by the TV's offset from `origin` (its pose as a camera sees it). The hands keep the trim that
-        their servo found for the arms' droop under the load."""
-        yield from both(np.asarray(origin, dtype=float) - tv().pos, t=t, label=label)
+        """Move both hands so that the hook fingers (where they are on the TV's pose, as a camera sees it) go where they
+        would be with the TV upright at `origin`. The hands keep the trim that their servo found for the arms' droop."""
+        now = tv().to_world(hook_pts).mean(axis=0)
+        yield from both(np.asarray(origin, dtype=float) + hook_up - now, t=t, label=label)
 
     p0 = tv().pos.copy()
     hook_z = TOP + B_H + 0.017  # the TV's origin when its hook fingers are 7 mm over the lip
@@ -335,26 +357,27 @@ def demo_script(ctx):
         for _ in range(2):
             yield from carry_to((X_TV - 0.022, MARK_Y, hook_z), t=0.5, label="over the rail")
         yield from unpitch(lean)
-        yield from carry_to((X_TV - 0.008, MARK_Y, hook_z), t=1.0, label="hooks in over the channel")
+    if mode == "drop":  # let go with the hooks 7 mm over the rail but still in front of it: nothing catches the TV
+        pass
+    elif mode != "careless":
+        yield from carry_to((X_TV + 0.002, MARK_Y, hook_z), t=1.0, label="hooks in over the channel")
         yield from unpitch(lean)
         for _ in range(2):
-            yield from carry_to((X_TV - 0.008, MARK_Y, hook_z), t=0.4, label="hooks over the channel")
+            yield from carry_to((X_TV + 0.002, MARK_Y, hook_z), t=0.4, label="hooks over the channel")
     else:  # straight up from where it leans, then in
         yield from carry_to((p0[0], MARK_Y, hook_z), t=2.0, label="lift straight up")
         yield from carry_to((X_TV, MARK_Y, hook_z), t=1.0, label="push to the wall")
-    if mode == "drop":  # let go 3 cm over the rail
-        yield from both((0.0, 0.0, 0.024), t=0.6, label="too high")
-    else:
+    if mode != "drop":
         yield from both((0.0, 0.0, -0.026), t=1.2, label="lower onto the rail")
         yield from both((0.0, 0.0, -0.04), t=1.5, label="let the hooks take the weight")  # the arms' droop goes as the rail takes the load
         yield from l.wait(0.4)
     yield from ctx.together(l.open(t=0.6, label="let go"), r.open(t=0.6, label="let go"))
     if mode == "holdon":
-        yield from ctx.together(l.close(PANEL_D, 40.0, t=0.4), r.close(PANEL_D, 40.0, t=0.4))
+        yield from ctx.together(l.close(PANEL_D, GRIP_N, t=0.4), r.close(PANEL_D, GRIP_N, t=0.4))
         yield from ctx.until(lambda: False, timeout=6.0)
         return
-    yield from both((0.0, 0.025, 0.0), (0.0, -0.025, 0.0), t=0.8, label="off the edge")
-    yield from both((0.0, 0.0, 0.06), t=0.8, label="hands up")  # over the candle on the console
-    yield from both((-0.13, 0.0, 0.0), t=1.5, label="hands back")
-    yield from both((0.0, 0.03, 0.0), (0.0, -0.03, 0.0), t=0.8, label="hands aside")
+    yield from both(-0.06 * gl.rot[:, 2], -0.06 * gr.rot[:, 2], t=0.8, label="off the edge")
+    yield from both((-0.06, 0.0, 0.0), t=0.8, label="hands back")
+    yield from ctx.together(l.move((0.22, 0.32, TOP + 0.15), grip=d.down(45.0), t=2.0, label="hands aside"),  # outboard of the props
+                            r.move((0.22, -0.32, TOP + 0.15), grip=d.down(-45.0), t=2.0, label="hands aside"))
     yield from l.wait(4.0)

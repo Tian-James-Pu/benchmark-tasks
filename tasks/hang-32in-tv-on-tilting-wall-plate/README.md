@@ -2,7 +2,8 @@
 
 A 24-inch TV with its two mount brackets already bolted on stands on the TV console, leaning against the wall just
 under the mount's wall plate. The robot is told only "Hang the TV on its wall mount." It has to do what the mount's
-own manual draws as a two-person job: take the 3.3 kg TV by its side edges, pull it a couple of centimetres off the
+own manual draws as a two-person job: take the 3.3 kg TV by its side edges, from in front of a wall that runs well
+past the TV on both sides, pull it a couple of centimetres off the
 wall so that the hooks at the top of both brackets (out of sight behind the panel) clear the plate's top rail, lift
 it until the hooks are over the rail, bring it in, and lower it so that both hooks drop over the rail
 together. The lower ends of the brackets then come to rest against the plate's bottom rail and the TV hangs flat.
@@ -12,6 +13,15 @@ Lifted straight up from where it leans, the hooks run into the underside of the 
 Tipped with its top away from the wall, the hooks pass outside the rail and the TV drops; held crooked, one hook
 catches and the other does not. Let go before both hooks are on, and the TV falls back onto the console or onto its
 face.
+
+## Response to review
+
+| Request | Change |
+|---|---|
+| "Verify that the grasp succeeds within the actual gripper force limit; the demo commands 50 N per finger." | The demonstration now pinches with 30 N a finger (`GRIP_N` in `task.py`), under the YAM gripper's roughly 40 N, and hangs the TV at its real 3.27 kg: two fresh recorded runs each scored 1.0 (see "The demonstration"). The hold needs a pad friction coefficient of only 0.27. README: "The demonstration", "Real trial". |
+| Construct validity: "The wall is narrower than the TV specifically so the wrists can pass around its edges, unlike the continuous wall where the task is normally performed." | The wall is now 100 cm wide, 22 cm past the TV on each side (`WALL_W` in `task.py`; `setup`, `fidelity`; README: "The real objects", "Width of the wall", "Real trial" parts list). Nothing about the wall is shaped for the robot. |
+| Feasibility: "The submission states that the YAM cannot reach the TV edges against a full-width wall, and the demonstrated grasp uses the narrowed wall." | New grasp, checked offline for reach and wall clearance first, then in simulation: each gripper leans 60 degrees out from vertical with its wrist outboard and is turned 24 degrees about its own side axis, so its wrist stays back from the wall (`grip_rotation` and `demo_script` in `task.py`). Over the whole demonstration every arm link stays at least 2.4 cm in front of the wall. The first submission's grasp (35 degrees out) was rerun against the full-width wall as a red team: the wall stops the left hand 47 mm short of the edge and the TV ends crooked, 0.5, not 1.0 (README: "Failure checks"). |
+| "Use a wall extending beyond the TV on both sides and demonstrate the complete task with a reachable grasp or a specified alternative embodiment. Ensure the demonstrated grip is within that hardware's force limits, and update the real-trial setup and demo accordingly." | Same embodiment (two YAM arms). Complete task demonstrated against the 100 cm wall at 30 N a finger: 1.0 in two recorded runs. The failure checks were rerun on the new scene, and Dream-1 was run once more on it (README: "Model run"). Real trial: a 100 x 56 cm plywood wall section, and the 30 N grip noted. |
 
 ## Run and score
 
@@ -29,7 +39,7 @@ Everything runs from the repository root with the Isaac Lab Arena environment so
     python demokit.py task.py ~/yam-eval/hang-tv/demo --mode full          # writes full/demo.mp4, setup.png, result.json
     python demokit.py task.py ~/yam-eval/hang-tv/checks --no-record --mode none,onearm,careless,drop,holdon
 
-A trial is at most 2,400 control steps (2 minutes at 20 Hz). The demonstration succeeds at step 420 (21 s of
+A trial is at most 2,400 control steps (2 minutes at 20 Hz). The demonstration succeeds at step 442 (22 s of
 simulated time); on a shared GPU a trial takes about 3-4 minutes of wall time once shaders are compiled. Nothing in
 the scene is random: the seed only matters if `object_jitter` is set, and it is 0 here.
 
@@ -39,7 +49,7 @@ the scene is random: the seed only matters if `object_jitter` is set, and it is 
 |---|---|---|
 | TV | LG 24LQ520S-PU, 24-inch HD smart TV: 22.2 x 13.4 x 2.3 in (564 x 340 x 58 mm) and 7.2 lb (3.27 kg) without its stand, VESA 75 x 75 ([LG spec sheet](https://content.abt.com/documents/165855/lg-smart-tv-24LQ520S-PU-spec-sheet.pdf)) | Full size and real mass: a 564 x 340 x 20 mm panel with its bezel, and a 400 x 250 x 38.4 mm rear housing (58.4 mm deep overall), 3.27 kg, centre of mass 20 mm behind the screen at mid-height |
 | Wall mount | Monoprice EZ Series tilt wall mount, model 5915: wall plate 17.5 x 8.5 in (444.5 x 216 mm), the TV 1.9 in (48 mm) out from the wall, steel, minimum VESA 75 x 75, up to 154 lb ([sell sheet](https://downloads.monoprice.com/files/specsheets/5915_Sellsheet_200625.pdf)); hanging step drawn in the [installation manual](https://downloads.monoprice.com/files/manuals/5915_Manual_170918.pdf) | Full size: plate 444.5 x 216 mm of 2 mm steel whose top and bottom edges turn out 20 mm and up 14 mm into two rails, each a channel 12 mm deep behind its lip; two 25 mm wide, 20 mm deep, 236 mm long brackets 75 mm apart on the TV's VESA holes, each with a hook (a 3 mm tab and a 4 x 10 mm down-turned finger) at the top and a foot at its lower end that bears on the bottom rail |
-| Wall | A section of stud wall: two studs 16 in apart | A 50 x 56 x 2 cm board standing on the table, the plate lag-bolted to it, with a pencil mark (3 cm vertical line with a 2 cm tick) 38 cm up, on the line where the TV's centre goes |
+| Wall | A section of stud wall, the plate lag-bolted into two studs 16 in apart | A 100 x 56 x 2 cm board standing on the table, 22 cm wider than the TV on each side, the plate lag-bolted to it, with a pencil mark (3 cm vertical line with a 2 cm tick) 38 cm up, on the line where the TV's centre goes |
 
 The sell sheet gives the mount's display range as 32-70 inches, with the footnote "The minimum and maximum display
 sizes are only approximations. Your TV will work with this mount as long as it has a compatible VESA pattern and
@@ -58,10 +68,12 @@ Nothing is scaled, and nothing is lightened.
   TV's bottom edge 2 cm above it. Everything relative to the wall, the plate and the TV (hook travel, rail
   clearances, the 48 mm standoff) is as on the real mount. The board is a mounting stand-in for the wall, not a
   shrunken one.
-- **Width of the wall:** the board is 50 cm wide, a section with two studs 16 in apart that the plate's lag bolts go
-  into, so the TV (56.4 cm wide) overhangs it by 3 cm each side. It is that narrow because the YAM's wrist reaches
-  further towards the wall than its fingertips: holding the TV's side edges in front of a full-width wall, the wrists
-  hit it (we checked: with the full-width board the hands stop 2-3 cm short of the edges). A person's hands fit in the 48 mm behind the TV; the robot's wrists do not. The real trial uses the same board.
+- **Width of the wall:** the board is 100 cm wide, so the wall runs 22 cm past the TV (56.4 cm wide) on each side, as
+  a continuous wall does; nothing about the wall is shaped for the robot. The hands hold the TV's side edges from in
+  front of the wall: each gripper leans 60 degrees out from vertical, wrist outboard, turned 24 degrees about its own
+  side axis so the fingers point slightly towards the wall and the wrist stays back from it. In the demonstration the
+  part of either arm nearest the wall (the wrist link) stays at least 2.4 cm in front of it throughout (computed from
+  the recorded joint angles on the arm's own geometry).
 - **Approximations, not rescaling:** the TV's rear-housing outline, where its VESA holes sit (18 cm above its bottom
   edge here), its centre of mass, and the bracket and rail profiles are not given in the sources; they are drawn
   from the manual's pictures at plausible sizes and are listed in `task.py`.
@@ -113,24 +125,29 @@ later loses it.
 
 `demo_script` in `task.py` is closed loop: it reads the TV's pose (as a camera could), never the scorer.
 
-1. Each hand comes out beside its side edge of the TV, in front of the screen, then in over the edge, the gripper
-   leaning 35 degrees out from vertical so that its fingers straddle the 20 mm rim 13 cm above the TV's bottom edge,
-   and pinches the rim (about 50 N a finger).
+1. Each hand comes out beside its side edge of the TV, in front of the wall, then slides in along its own approach
+   axis: the gripper leans 60 degrees out from vertical (wrist outboard) and is turned 24 degrees about its side axis
+   (fingers slightly towards the wall, wrist back from it), so that its fingers straddle the 20 mm rim 2.7 cm in from
+   the edge, 17 cm above the TV's bottom edge (level with its centre of mass), and pinch it with 30 N a finger (because of the 24-degree turn the pads meet the rim at that angle, not flat). That
+   is under the YAM gripper's roughly 40 N; holding 1.6 kg a hand between two pads needs a pad friction coefficient of
+   only 0.27.
 2. Each hand servoes on its own measured position as it starts to take the weight; then both pull the TV 22 mm off
    the wall, its bottom edge sliding on the console, so that the hook fingers come out from under the top rail.
-3. Reading the TV's pose, they lift it 3.7 cm (until the hook fingers are 7 mm over the rail's lip), centre it on the
-   pencil mark, and tip its top 2.5 degrees towards the wall by turning both grips, correcting twice for the arms'
+3. Reading the TV's pose, they steer by where its hook fingers are (behind the panel, computed from the pose) and
+   lift it 3.7 cm until the fingers are 7 mm over the rail's lip, centre it on the pencil mark, and tip its top 2.5 degrees towards the wall by turning both grips, correcting twice for the arms'
    droop under the load.
-4. They bring it in until the fingers are over the channel and the brackets' feet are still clear of the bottom
+4. They bring it in until the hook fingers are over the middle of the channel and the brackets' feet are still clear of the bottom
    rail, correct again, and lower it 2.6 cm so that both hooks drop over the rail at once; they go on down another
    4 cm so that the rail takes the whole load before they open. The TV swings plumb on its hooks until the brackets'
    feet rest on the bottom rail.
-5. They open, slide off the edges, move back 13 cm and aside, and wait.
+5. They open, back off the edges along the approach axis, move back 6 cm, then out to the sides over the console, and wait.
 
 **Result:** two fresh runs of `python demokit.py task.py OUT --mode full` on the GPU, rendered as the harness renders,
-each scored **task_score 1.0** (success at step 420, 21.0 s; no blank frames). In a run of the same script with the
-TV's pose printed, the hung TV sat 1 mm from the pencil mark with roll 0.0 and tilt 1.2 degrees (the TV hangs on its
-hook fingers, 11.8 mm below the lip top), both feet against the bottom rail.
+each scored **task_score 1.0** (success at step 442, 22.1 s; no blank frames), with the 100 cm wall and 30 N a finger.
+In a run of the same script with the TV's pose printed, the hung TV sat 0 mm from the pencil mark with roll 0.0 and
+tilt 1.2 degrees (both hook fingers 9.9 mm below the lip top), both feet against the bottom rail, the fingers 7 cm
+from the TV. From that run's recorded joint angles on the arm's own link geometry, the nearest part of either arm to
+the wall (the left wrist link, while the TV is brought in over the rail) stayed 24.6 mm in front of it.
 
 The demonstration reads the TV's pose from the simulator, as a camera-based pose estimate would give it; it never
 reads the scorer.
@@ -145,8 +162,15 @@ Run on the GPU with `python demokit.py task.py OUT --no-record --no-cameras --mo
 | `none` | Does nothing for 32 s | 0.0 | The TV stays leaning on the console; no hook is on the rail |
 | `onearm` | Pinches one side edge and lifts with that hand alone, then lets go | 0.0 | One hand cannot lift the 3.3 kg TV off the console; it stays leaning, no hook seated |
 | `careless` | Lifts straight up from where the TV leans without pulling it off the wall first, then pushes it in and lowers | 0.0 | The hook tabs jam under the top rail after 3 mm; the TV never gets over the rail and ends back on the console |
-| `drop` | Brings the hooks over the rail but lets go 3.7 cm above it | 0.0 | The TV falls (recorded as dropped, faster than 0.5 m/s, and tipped over onto its face) |
+| `drop` | Lifts the TV until its hooks are 7 mm over the rail but lets go before bringing them in over the channel | 0.0 | Nothing catches the hooks; the TV falls back onto the console with no hook seated |
 | `holdon` | Hangs the TV correctly, lets go, then grips the rim again and holds on | 0.0 | Both hooks seated and both feet home, but the fingers are on the TV: hands-clear fails, which scores 0 |
+
+Red team for the review (the same demonstration script with the grasp swapped, run on the GPU without cameras): the
+first submission's grasp (gripper leaning 35 degrees out, wrist towards the wall) run against the
+100 cm wall. The wall stops the left hand 46.7 mm short of where it is sent on the TV's edge, so it holds the TV badly;
+the TV still ends on both hooks but crooked (one bracket foot off the bottom rail, tilt 2.0 degrees) and scores 0.5,
+the tier for both hooks seated, not 1.0. The demonstrated grasp above is the one that reaches the edges against the
+full wall.
 
 Not run as a variant: a TV hung on both hooks but off the mark, or tipped more than 2 degrees, scores 0.5 by the
 table above.
@@ -174,19 +198,22 @@ table above.
 
 ## Model run
 
-Dream-1 was attempted once on the final version, with the instruction above and the 2,400-step limit. Its API refused
-the request before the first action, so there is no model video: "DreamAPI refused the inference request: DA-4000 BAD_REQUEST (malformed): unsafe instruction, refused: Hanging a TV carries significant risk of dropping heavy electronics and injury."
+Dream-1 was attempted once on the revised scene (the 100 cm wall), with the instruction above and the 2,400-step
+limit. Its API refused the request before the first action, so there is no model video: "DreamAPI refused the inference request: DA-4000 BAD_REQUEST (malformed): unsafe instruction, refused: Hanging a TV requires lifting heavy equipment beyond normal tabletop manipulation." (On the first
+submission's scene it had also refused: "...unsafe instruction, refused: Hanging a TV carries significant risk of
+dropping heavy electronics and injury.")
 
 ## Real trial
 
 **Parts (about $220):** an LG 24LQ520S-PU (listed at $169.99 on [LG's page](https://www.lg.com/us/monitors/lg-24lq520s-pu)), a Monoprice 5915 mount (about $31 at [Zoro](https://zoro.com/monoprice-tilting-wall-mount-for-32-55-tv-5915/i/G8789317)), a 2 x 4 stud frame faced
-with a 50 x 56 cm sheet of 12 mm plywood (the wall section, two studs 16 in apart) clamped upright to the edge of a 75 cm high table, two
+with a 100 x 56 cm sheet of 12 mm plywood (the wall section, 22 cm wider than the TV on each side, two studs 16 in apart under the plate) clamped upright to the edge of a 75 cm high table, two
 5/16 x 2.5 in lag bolts, a pencil, a tape measure, a phone with a level app, and a phone camera.
 
 **Preparation:** bolt the brackets to the TV's VESA holes with the screws in the mount's kit. Lag-bolt the plate to
 the wall section, level, with its centre 20 cm above the table and its middle on the wall's centre line. Draw the
 pencil mark (a 3 cm vertical line) on the centre line 38 cm above the table. Lay a thin towel (under 1 cm thick) on the table
-under the plate to protect the screen's bottom edge, and pad the robot's finger pads with tape.
+under the plate to protect the screen's bottom edge, and pad the robot's finger pads with tape. The
+demonstration's grip is 30 N a finger, under the roughly 40 N the YAM gripper can give.
 
 **Starting position:** the TV stands on its bottom edge on the table under the plate, screen facing the robot,
 leaning back so its hooks rest against the plate below the top rail; its centre is 25 mm left of the pencil mark
