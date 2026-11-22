@@ -1,0 +1,21 @@
+{
+  "title": "Tap the six marked blocks out of a Don't Break the Ice tray with its mallet, one at a time, without dropping Phillip",
+  "category": "Societal relatability",
+  "keywords": [
+    "board game",
+    "Don't Break the Ice",
+    "mallet",
+    "dynamic tap",
+    "friction-held blocks",
+    "tool use"
+  ],
+  "instruction": "Using the game's mallet, knock out only the six ice blocks marked with red dots, without letting Phillip fall through.",
+  "context": "Don't Break the Ice has been on sale since 1968 (Schaper, then Milton Bradley and Hasbro); most adults played it as children. Hasbro's rules: \"Carefully tap on that ice block using your mallet.\" The blocks rest only on friction against each other: a brisk tap at a block's centre knocks it out alone, while a slow press or a blow on the line between two blocks carries the neighbours down, and Phillip with them.",
+  "setup": "Units cm, g; x forward from the arm bases, y left, z up; heights above the table top. Hasbro Don't Break the Ice (C2093), assembled per its rules. Ice-tray frame, blue plastic, 24.4 x 24.4 outside, 21.6 x 21.6 inside (6 x 6 cells at 3.6 pitch), rim 1.4 wide x 3.9 high, on 4 legs (1.2 dia) so the ice's underside is 5.0 above the table; centre at (27, -10), sides square to x and y, legs taped down. 32 small ice blocks, white plastic, 3.55 x 3.55 x 3.5, 4 each; 1 large block, 7.15 x 7.15 x 3.5, 16, in the 4 central cells; Phillip the Penguin figure, black and white plastic, about 3.8 dia x 6.2 high, 10, standing in the large block's slot. Cells are named (row, column): row 0 nearest the arms, column 0 on the left (+y). Red sticker dots, 1.2 dia, on the blocks in cells (0,5), (1,2), (3,1), (4,1), (2,4), (4,4). The game's mallet, plastic: head 2.4 dia x 5.0 long, flat handle 11 x 0.9 x 1.4, 20 in all; head centre at (30, -30), handle pointing at the arms (-x), head face down on the table with the handle's end resting on the table (about 9.5 degrees tilt). Distractors, ignored by scoring (SimReady): plastic cup 6.4 dia x 10, 30, upright at (33, 27); small plastic plate 9.9 dia x 4.5, 50, at (19, 20); apple 7.0 x 6.7 x 6.8, 150, at (44, 18).",
+  "scoring": "A block is out once it has dropped through the tray (its top below the tray's underside). 0 for the whole trial if Phillip falls through (his large block ever sinks 1 cm or more) or a gripper finger ever touches an ice block or Phillip; 0 if more than 2 unmarked blocks are out. Otherwise: 1.0 if all 6 marked blocks are out, no unmarked block is out, every finger and the mallet's head are at least 3 cm from the ice and Phillip, and no block in the tray moves (under 5 mm/s), all continuously for 1 s; 0.75 if all 6 marked blocks are out; 0.5 if 4 or 5 are out; 0.25 if 2 or 3 are out; 0 if fewer than 2.",
+  "run_limit": "1,200 steps (1 minute at 20 Hz)",
+  "reset_notes": "Turn the tray over, press all 33 blocks back into their cells from below (the last row squeezed in, as the rules say), turn it back onto its taped leg marks, stand Phillip in his slot and check the six dots. The mallet goes back on its tape mark. About 2 minutes.",
+  "fidelity": "Full scale; sizes from the box and rules, masses estimated. Blocks are rigid boxes on vertical slides, held by a calibrated per-step law, not contact friction: a block 4 mm deeper than its stuck neighbours slips out alone; one pushed 8 mm with them breaks the sheet and takes neighbours deeper than 5.5 mm; a block without support on two opposite sides falls. Evaluated at 20 Hz, so taps above about 0.1 m/s count as sharp (a real tap is faster). The tray is fixed. Mallet and tray are primitives.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-M6VAWN"
+}
