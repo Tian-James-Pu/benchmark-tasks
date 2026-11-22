@@ -15,6 +15,12 @@ against its neighbours: up to 4 N before it slips), and a per-step law in `Trial
 - a block left without support on two opposite sides (a neighbour or the frame on both its x sides, or on both its
   y sides) falls.
 
+Credit needs the mallet: each step the scorer records which body last touched each block (the mallet's head, its handle,
+a finger, a distractor). A marked block earns credit only if its hold let go within 5 control steps (0.25 s) of the
+mallet head touching it, with nothing else (a finger, the handle) within 2 mm of it in between. The trial is void if a
+distractor comes within 2 mm of the ice or Phillip, a finger presses into them, or a block drops out with a finger as its
+last toucher.
+
     python demokit.py task.py OUT --mode full                                   # the demonstration, with video (GPU)
     python demokit.py task.py OUT --no-record --mode none,careless,fingers,offcentre   # the red-team modes
 """
@@ -65,6 +71,9 @@ PENGUIN_DROP = 0.010  # Phillip's block sunk 1 cm: he fell through
 CLEAR = 0.03  # hands and mallet head at least 3 cm from the ice for full credit
 STILL = 0.005  # m/s
 HOLD_STEPS = 20  # 1 s at 20 Hz
+STRIKE = 0.002  # a body touches a block when a point of it (or its bounding box) is within 2 mm of the block's box
+STRIKE_WINDOW = 5  # control steps (0.25 s): a block's hold must let go this soon after the mallet head's last touch
+DISTRACTORS = ("cup", "plate", "apple")
 SUCCESS_HOLD_S = 0.0  # the Trial counts its own hold
 
 
@@ -214,14 +223,43 @@ OBJECTS = [
 # -- reading the scene -----------------------------------------------------------------------------------------------------
 
 
-def head_points(st):
-    """World points on the mallet head's surface (both faces' rims and centres) and the handle's end."""
-    R = m.quat_matrix(st.quat_xyzw)
-    pts = [(0.0, 0.0, -HEAD_L / 2), (0.0, 0.0, HEAD_L / 2), (-HEAD_R - HANDLE_L, 0.0, 0.0)]
-    for a in np.linspace(0, 2 * math.pi, 8, endpoint=False):
+def _head_local():
+    pts = [(0.0, 0.0, -HEAD_L / 2), (0.0, 0.0, HEAD_L / 2)]
+    for a in np.linspace(0, 2 * math.pi, 16, endpoint=False):
+        ca, sa = math.cos(a), math.sin(a)
+        for z in np.linspace(-HEAD_L / 2, HEAD_L / 2, 6):
+            pts.append((HEAD_R * ca, HEAD_R * sa, z))
         for z in (-HEAD_L / 2, HEAD_L / 2):
-            pts.append((HEAD_R * math.cos(a), HEAD_R * math.sin(a), z))
-    return np.asarray(st.pos, float) + np.asarray(pts) @ R.T
+            pts.append((HEAD_R * 0.5 * ca, HEAD_R * 0.5 * sa, z))
+    return np.asarray(pts)
+
+
+def _handle_local():
+    hx, hy, hz = HANDLE_L / 2, HANDLE_W / 2, HANDLE_T / 2
+    pts = []
+    for x in np.linspace(-hx, hx, 23):
+        for y in (-hy, 0.0, hy):
+            for z in (-hz, 0.0, hz):
+                if y == 0.0 and z == 0.0 and abs(x) < hx:
+                    continue
+                pts.append((x, y, z))
+    return np.asarray(pts) + np.asarray(_HANDLE_C)
+
+
+HEAD_LOCAL, HANDLE_LOCAL = _head_local(), _handle_local()
+
+
+def mallet_points(st):
+    """World points on the mallet head's surface and on the handle's surface: (head, handle)."""
+    R = m.quat_matrix(st.quat_xyzw)
+    pos = np.asarray(st.pos, float)
+    return pos + HEAD_LOCAL @ R.T, pos + HANDLE_LOCAL @ R.T
+
+
+def block_box(depth, n):
+    """World boxes (low, high) of one block at its depth: one box, two for the large block (Phillip's bounding box too)."""
+    lows, highs = block_boxes(depth, [n])
+    return lows, highs
 
 
 def face_centre(st):
@@ -254,8 +292,9 @@ def box_distance(points, lows, highs):
 
 
 class Trial:
-    """Runs the ice sheet's law every control step and keeps the score. `penguin` (Phillip fell through) and `touched` (a
-    finger touched the ice or Phillip) are recorded across steps and cleared only by `reset`."""
+    """Runs the ice sheet's law every control step and keeps the score. `penguin` (Phillip fell through), `touched` (a
+    finger pressed into the ice or Phillip, or knocked a block out), `distractor` (a distractor touched them), `last` (each block's last toucher) and
+    `credit` (which marked blocks the mallet head struck out) are recorded across steps and cleared only by `reset`."""
 
     def __init__(self):
         self.ids = None
@@ -266,6 +305,12 @@ class Trial:
         self.penguin, self.touched = False, False
         self.hold, self.full, self.score = 0, False, 0.0
         self.marked_out, self.other_out = 0, 0
+        self.steps = 0
+        self.min_tip = 1.0  # the closest any fingertip came to the ice or Phillip (m), for the record
+        self.last = {}  # block -> (the body that last touched it, control step)
+        self.credit = {}  # marked block -> True if the mallet head struck it out
+        self.distractor = None  # the first distractor that touched the ice or Phillip: voids the trial
+        self.legacy_marked_out = 0  # marked blocks out regardless of what removed them (the old rule, for red teams)
         self.log = []
         if environment is not None:
             asset = environment.unwrapped.scene["ice"]
@@ -295,6 +340,42 @@ class Trial:
         depth = {n: -float(q[ids[n]]) for n in NAMES}
         speed = {n: abs(float(qd[ids[n]])) for n in NAMES}
         intact = [n for n in NAMES if n not in self.broken]
+        self.steps += 1
+
+        # -- who touches which block, before the law decides what lets go this step
+        on_ice = [n for n in NAMES if depth[n] < OUT]
+        tips = m.fingertips(environment)
+        head_pts, handle_pts = mallet_points(m.state(environment, "mallet"))
+        from yam_arena.scene import object_states
+        dstates = object_states(environment, DISTRACTORS)
+        for n in on_ice:
+            lows, highs = block_box(depth, n)
+            bodies = set()
+            if box_distance(head_pts, lows, highs).min() <= STRIKE:
+                bodies.add("head")
+            if box_distance(handle_pts, lows, highs).min() <= STRIKE:
+                bodies.add("handle")
+            d_tip = float(box_distance(tips, lows, highs).min())
+            self.min_tip = min(self.min_tip, d_tip)
+            if d_tip <= STRIKE:  # a finger at the block: it is now the block's last toucher
+                bodies.add("finger")
+            pressed = np.all((tips[:, None, :] > lows[None] + np.array([-0.002, -0.002, 0.0])) &
+                             (tips[:, None, :] < highs[None] + np.array([0.002, 0.002, -0.003])), axis=2)
+            if pressed.any():  # a fingertip 3 mm or more below the block's (or Phillip's) top, inside its outline
+                if not self.touched:
+                    print(f"[ice] a finger pressed into {n}: trial void", flush=True)
+                self.touched = True
+            for dn in DISTRACTORS:
+                ds = dstates[dn]
+                gap = np.maximum(np.maximum(lows - np.asarray(ds.high)[None], np.asarray(ds.low)[None] - highs), 0.0)
+                if float(np.linalg.norm(gap, axis=1).min()) <= STRIKE:
+                    bodies.add(dn)
+                    if self.distractor is None:
+                        self.distractor = dn
+                        print(f"[ice] the {dn} touched {n}: trial void", flush=True)
+            if bodies:
+                others = sorted(bodies - {"head"})
+                self.last[n] = (others[0] if others else "head", self.steps)
 
         def deepest_neighbour(n):
             return max([depth[o] for o in NEIGHBOURS[n] if o not in self.broken] or [0.0])
@@ -323,8 +404,16 @@ class Trial:
                     changed = True
         for n, why in new:
             m._TOUCHED.add(("ice", n))  # mechkit gives it back its spring before the next reset settles
-            self.log.append((n, why))
-            print(f"[ice] {n} falls ({why}) at depth {depth[n] * 1000:.1f} mm", flush=True)
+            body, at = self.last.get(n, (None, -10**9))
+            if n in MARKED:
+                self.credit[n] = body == "head" and self.steps - at <= STRIKE_WINDOW
+            if body == "finger":  # a finger knocked a block out: the trial is void
+                if not self.touched:
+                    print(f"[ice] {n} dropped out with a finger its last toucher: trial void", flush=True)
+                self.touched = True
+            self.log.append((n, why, body, self.steps - at))
+            print(f"[ice] {n} falls ({why}) at depth {depth[n] * 1000:.1f} mm; last touched by {body} {self.steps - at} steps before"
+                  + (f"; credit {self.credit[n]}" if n in MARKED else ""), flush=True)
         if new:
             j = [ids[n] for n, _ in new]
             asset.write_joint_stiffness_to_sim(torch.zeros((1, len(j)), device=asset.device), joint_ids=j)
@@ -339,23 +428,17 @@ class Trial:
         # -- score
         if depth["big"] > PENGUIN_DROP:
             self.penguin = True
-        on_ice = [n for n in NAMES if depth[n] < OUT]
         lows, highs = block_boxes(depth, on_ice)
-        tips = m.fingertips(environment)
-        inside = np.all((tips[:, None, :] > lows[None] + np.array([-0.002, -0.002, 0.0])) &
-                        (tips[:, None, :] < highs[None] + np.array([0.002, 0.002, -0.003])), axis=2)
-        if inside.any():
-            if not self.touched:
-                print(f"[ice] a finger touched the ice (boxes {np.where(inside.any(axis=0))[0].tolist()}) tips {np.round(tips[inside.any(axis=1)] - (0, 0, TOP), 4).tolist()}", flush=True)
-            self.touched = True
-        self.marked_out = sum(depth[n] >= OUT for n in MARKED)
+        self.legacy_marked_out = sum(depth[n] >= OUT for n in MARKED)
+        self.marked_out = sum(depth[n] >= OUT and self.credit.get(n, False) for n in MARKED)
         self.other_out = sum(depth[n] >= OUT for n in NAMES if n not in MARKED and n != "big")
-        clear = float(np.min(box_distance(np.vstack([tips, head_points(m.state(environment, "mallet"))]), lows, highs))) >= CLEAR
+        clear = float(np.min(box_distance(np.vstack([tips, head_pts]), lows, highs))) >= CLEAR
         still = all(speed[n] < STILL for n in on_ice)
-        ok = self.marked_out == 6 and self.other_out == 0 and clear and still and not (self.penguin or self.touched)
+        void = self.penguin or self.touched or self.distractor is not None
+        ok = self.marked_out == 6 and self.other_out == 0 and clear and still and not void
         self.hold = self.hold + 1 if ok else 0
         self.full = self.full or self.hold >= HOLD_STEPS
-        if self.penguin or self.touched or self.other_out > 2:
+        if void or self.other_out > 2:
             self.score = 0.0
         elif self.full and self.marked_out == 6 and self.other_out == 0:
             self.score = 1.0
@@ -499,6 +582,7 @@ def demo_script(ctx):
         _report(ctx, f"after {n} (face {1000 * (aim[2] - face_now()[2]):.1f} mm in; stroke averaged {(f0 - face_now()[2]) / max(ctx.t - t0, 1e-6):.2f} m/s)")
         yield from r.move(tcp_for_face(np.array([aim[0], aim[1], TOP + Z_TOP + TRAVEL])), t=0.4, label="back up")
     yield from r.move(np.array([0.24, -0.26, TOP + 0.22]), t=1.2, label="mallet well clear")
-    _report(ctx, "clear")
+    _report(ctx, f"clear (credited {sorted(k for k, v in TRIAL.credit.items() if v)}; closest fingertip to the ice so far "
+                 f"{TRIAL.min_tip * 1000:.1f} mm)")
     for _ in range(HOLD_STEPS + 20):
         yield

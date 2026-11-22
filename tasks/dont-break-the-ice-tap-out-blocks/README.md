@@ -98,6 +98,13 @@ seed. A demo run takes about 40 s of wall time on a free GPU once shaders are co
 - **The mallet** is one free rigid body: cylinder head and flat box handle, 20 g, with its centre of mass from the
   colliders. It lies with its head face down and its handle's end on the table, so it starts tilted about 9.5 degrees.
 - **The tray** is welded to the world, standing for a tray whose legs are taped to the table.
+- **The contact check** (`Trial.step`, every control step, before the law decides what lets go): for each block still in
+  the tray it lists every body within 2 mm of the block's box (Phillip's bounding box counts as part of the large block):
+  the mallet's head (130 points on its faces and side), the handle (points over its surface), the fingers (12 points on
+  each gripper's fingers), and the cup, plate and apple (their live bounding boxes). The block's **last toucher** becomes
+  that body, with anything other than the head winning a tie. When a block's hold lets go, it is credited to the mallet
+  only if its last toucher is the head and that touch was at most 5 control steps (0.25 s) earlier. In the demonstration
+  each marked block lets go on the very step the head is on it.
 
 ## Scale and mass
 
@@ -113,17 +120,26 @@ and do not depend on these estimates.
 
 ## Scoring
 
-Read every control step from the scene, and in a real trial from the end state and the video:
+Read every control step from the scene, and in a real trial from the end state and the strike camera:
 
+- **Struck out by the mallet.** A marked block counts only if the game's mallet struck it out: its friction hold let go
+  within 0.25 s (5 control steps at 20 Hz) after the mallet's head came within 2 mm of it, and nothing else came within
+  2 mm of it in between (not the handle, a finger, another object). A block knocked out by anything else stays out but
+  earns nothing. In a real trial: the strike camera's last frame before the block starts to sink below its neighbours
+  shows the mallet head's face on that block's top, and no finger or other object touches that block in any frame from
+  that strike to the drop.
 - A block is **out** once it has dropped through the tray (its top below the tray's underside; in a real trial, it is on
   the table under the tray).
-- **0 for the whole trial** if Phillip falls through (his large block ever sinks 1 cm or more), or if a gripper finger ever
-  touches an ice block or Phillip (in simulation: a fingertip point inside a block's box, 2 mm margin sideways, 3 mm below
-  its top; in a real trial, from the video). These are recorded and cleared only at a reset.
+- **0 for the whole trial** if Phillip falls through (his large block ever sinks 1 cm or more); if the cup, plate or apple
+  ever comes within 2 mm of an ice block or Phillip in the tray (their bounding boxes in simulation; in a real trial, any
+  touch on the strike camera); if a gripper finger ever presses into an ice block or Phillip (a fingertip point inside
+  its outline, 2 mm margin sideways, 3 mm or more below its top); or if any block drops out with a finger as the last body
+  to touch it (a block knocked out by hand). These are recorded and cleared only at a reset.
 - **0** if more than 2 unmarked blocks are out.
-- Otherwise **1.0** if all 6 marked blocks are out, no unmarked block is out, every fingertip and the mallet's head are at
-  least 3 cm from the ice and Phillip, and no block in the tray moves (under 5 mm/s), all continuously for 1 s;
-  **0.75** if all 6 marked blocks are out; **0.5** if 4 or 5; **0.25** if 2 or 3; **0** if fewer than 2.
+- Otherwise **1.0** if all 6 marked blocks are out and counted, no unmarked block is out, every fingertip and the
+  mallet's head are at least 3 cm from the ice and Phillip, and no block in the tray moves (under 5 mm/s), all
+  continuously for 1 s; **0.75** if all 6 marked blocks are out and counted; **0.5** if 4 or 5 are; **0.25** if 2 or 3
+  are; **0** if fewer than 2.
 
 Possible scores: 0, 0.25, 0.5, 0.75, 1.0. Unmarked blocks that drop are allowed in the game's own rules, so one or two
 cost only full credit; more than two, which is what a slow press or a careless sweep causes, scores 0.
@@ -136,11 +152,17 @@ cost only full credit; more than two, which is what a slow press or a careless s
   with double-sided tape. Stand Phillip in his slot. Lay the mallet on its tape mark, face down, handle towards the arms.
   Check before each trial that every block's top is flush with the rim (a straightedge across the rim) and that Phillip
   stands upright.
+- **Strike camera.** A phone filming at 60 fps or more on a tripod at (75, -10) cm, on the far side of the tray facing
+  the arms (so the arms never block it), lens 30 cm above the table, aimed at the tray's centre. From there it looks down
+  on the ice at about 25 degrees: every marked block's top, the mallet head over it and the fingers are in view. Start it
+  before the trial and stop it after the last second.
 - **Reset** (about 2 minutes): lift the tray off its tape, turn it over, press the fallen blocks back in from below, turn it
   back, re-check the straightedge, stand Phillip, and put the mallet back.
 - **Measurement.** Count the blocks lying under the tray and note which carry dots; check that Phillip's block is still in
-  the tray; check the video for any finger touching a block or Phillip, and for the last second with the hand and mallet
-  head 3 cm or more clear and nothing moving.
+  the tray. On the strike camera, step frame by frame to each dotted block's drop: it counts only if the last frame before
+  it starts to sink shows the mallet head's face on its top and nothing else touched it from that strike on. Check the
+  same video for the cup, plate or apple touching the ice or Phillip, a finger pressing into a block, any block knocked
+  out by a finger, and the last second with the hand and mallet head 3 cm or more clear and nothing moving.
 - **Rig safety.** All parts are light plastic; the mallet weighs about 20 g and a tap is a few newtons. No sharp edges,
   heat or liquid.
 
@@ -160,19 +182,37 @@ closed-loop demo runner shared by several tasks in this repository (copied from 
 
 ## Validation
 
-All runs below are of this `task.py`, through `demokit.py`.
+All runs below are of this `task.py` (revised scorer), through `demokit.py`, except the distractor red team, which used a
+copy of it described in its row.
 
 | Run | Where | Result |
 |---|---|---|
-| `full` (the demonstration), recorded | GPU | 1.0, success at step 510 (25.5 s); all six marked blocks slipped out alone (depth at release 4.9 to 12.4 mm), no other block moved out, Phillip stayed |
-| `full`, second run, recorded | GPU | 1.0, success at step 510; the same six releases (4.9 to 12.4 mm) |
-| `full` | CPU (`--fast`), twice | 1.0 both times, same six releases |
+| `full` (the demonstration), recorded | GPU | 1.0, success at step 510 (25.5 s); all six marked blocks slipped out alone (depth at release 4.9 to 12.4 mm), each with the mallet head its last toucher on the step it let go (0 steps), so all six counted; no other block moved out, Phillip stayed |
+| `full`, second run, recorded | GPU | 1.0, success at step 510; the same six releases, all six counted (the recorded video is identical frame for frame) |
+| `full` | CPU (`--fast`), three times | 1.0 each time, all six counted |
 | `none` (do nothing) | CPU and GPU | 0.0 |
-| `careless` (each marked block pressed down with the mallet at 1 cm/s) | CPU; GPU partly | 0.0: the first press already breaks the sheet around block (0,5) and the second brings Phillip down; on the GPU the same pattern (Phillip fell at the (3,1) press) before the run was stopped |
-| `fingers` (each marked block jabbed with the closed fingertips, no mallet) | CPU | 0.0: the blocks pop out, but a finger touched the ice |
+| `fingers` (each marked block jabbed with the closed fingertips, no mallet) | CPU and GPU | 0.0: all six marked blocks pop out, but each has a finger as its last toucher, so none counts, and the first one out with a finger as its last toucher voids the trial |
+| cup, tilted (the right hand picks up the cup and strikes marked blocks (0,5) and (4,4) with the leading point of its bottom rim, briskly, as the demo strikes with the mallet) | CPU and GPU | 0.0. On the CPU both blocks slip out cleanly, on the GPU block (4,4) does. Each has the cup as its last toucher, so none counts, and the cup's coming within 2 mm of the ice voids the trial. The old scorer gave the CPU run 0.25. The cup started at (42, -30) cm in this copy, within the right hand's reach; the scene's own cup is at (33, 27), beyond it |
+| cup, upright (the same, the cup held upright, aimed at (4,4) and (4,1)) | CPU | 0.0: the cup's bottom covers neighbouring blocks, none comes out alone, and it voids the trial on first touch |
+| `careless` (each marked block pressed down with the mallet at 1 cm/s) | CPU | 0.0: the first press breaks the sheet around block (0,5), and a later press brings Phillip down |
 | `offcentre` (the same brisk taps aimed 18 mm off centre, on the line between two blocks) | CPU | 0.0: each blow pushes two blocks together, the sheet breaks and Phillip falls |
-| `stroke0.6`, `stroke1.0`, `stroke2.0` (the demo with slower down strokes, averaging 0.07, 0.04 and 0.02 m/s) | CPU | 0.5 (five marked blocks out), 0.0 and 0.0 |
+| `stroke0.6`, `stroke1.0`, `stroke2.0` (the demo with slower down strokes, averaging 0.07, 0.04 and 0.02 m/s; before the revision) | CPU | 0.5 (five marked blocks out), 0.0 and 0.0 |
 
-Model run: Dream-1, run once with the command above for 1,200 steps, picked the mallet up and held it by the tray's right side, but no marked block came out; it scored 0.0.
+The plate and the apple are covered by the same bounding-box rule as the cup. In the demonstration a fingertip comes
+within 2 mm of the top of unmarked block (2,1) during the strike on (3,1) (the fingers reach down to about the level of
+the head's face, 6 cm behind it); it does not press into it, and the block stays.
+
+Model run: Dream-1, run once with the command above for 1,200 steps, picked the mallet up and held it by the tray's right side, but no marked block came out; it scored 0.0. The revision changed only the scorer, not the scene or the instruction, and with no block out the revised scorer gives the same 0.0, so it was not run again.
 
 The task is one-armed (the other arm has no role; the tray stands taped down), so there is no separate one-arm red team.
+
+## Response to review
+
+| Review request | Change |
+|---|---|
+| Construct validity: "The cup or plate can be held and used to knock marked blocks out without touching them with a finger or using the mallet." | `task.py` (`Trial.step`): the cup, plate and apple are now tracked every step (their live bounding boxes); any of them coming within 2 mm of an ice block or Phillip scores 0 for the whole trial, and a block they knock out never counts. Red team: the right hand struck two marked blocks out cleanly with the cup's rim; the old scorer gave 0.25, the revised one 0.0 (Validation). The distractors stay where they were, beyond the right hand's reach, but the rule does not rely on that. |
+| Scoring: "The scorer awards credit for marked blocks falling without checking that the game's mallet caused their removal." | `task.py`: a contact check records each block's last toucher (mallet head, handle, finger, cup, plate, apple; within 2 mm). A marked block counts only if its hold let go within 0.25 s (5 control steps) of the mallet head touching it, with nothing else touching it in between. `task.json` `scoring` and README "Scoring" state this rule word for word. |
+| "Require a marked block to be struck out by the game's mallet before it can earn credit" | As above: every score level now counts only marked blocks "out and counted", i.e. struck out by the mallet head. A block knocked out by a finger also voids the trial, as does a finger pressing into the ice. |
+| "implement the corresponding contact check in simulation" | `Trial.step`, "who touches which block", run before the ice law each step, with the 2 mm and 5-step thresholds as named constants (`STRIKE`, `STRIKE_WINDOW`); README "How the simulator models it", "The contact check". |
+| "and video check in real trials" | `task.json` `setup` and README "Real trial": a named strike camera (60 fps or more, at (75, -10) cm facing the arms, 30 cm up). A dotted block counts only if the last frame before it starts to sink shows the mallet head's face on its top and nothing else touched it from that strike on. |
+
