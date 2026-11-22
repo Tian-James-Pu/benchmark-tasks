@@ -14,8 +14,9 @@ Model (declared in code):
   hole, 29.8 cm from the hole's centre to the neck; the head (12 g) is a 12.7 x 11.9 cm x 2 mm plate on a hinge at the neck (the bending of
   the plastic neck: a 0.15 N m/rad spring, +-40 degrees), so the head can lie flat on the wall while the handle meets it at an angle, as a
   real one does.
-- Fly ("fly", fixed, seen only): a 7 mm body with two wings on the wall's face. It has no collider (a fly is about 12 mg). It is hidden when
-  it flies off.
+- Fly ("fly", fixed): a solid 7 x 4 x 3 mm body (with two wings, seen only) on the wall's face. Its box collider is what the swatter's head
+  must touch: a swat needs the head's face within the 0.5 mm contact tolerance of the fly's body, not merely near the wall. It is hidden when
+  it flies off, and its body then stays as a 3 mm bump that no longer counts (the real stand-in's pad pulls back into the wall).
 
     python demokit.py task.py OUT --mode full
 """
@@ -70,7 +71,8 @@ FLY_Y, FLY_Z = 0.490, 0.140  # where the fly sits on the wall (y, and its height
 NEAR = 0.15  # anything this close scares it
 ESCAPE_STEPS = 2  # it flies off this many checks (0.1 s) after the first check that finds something within NEAR
 FLAT_DEG = 10.0  # a hit must be this flat to the wall
-SQUASH = 0.005  # and the head's face over the fly this close to the wall: the fly's body is about 4 mm tall
+FLY_H, FLY_W, FLY_L = 0.003, 0.004, 0.007  # the fly's solid body: high (off the wall), wide (along y), long (up the wall)
+TOUCH = 0.0005  # contact: the head's face this close to the fly's body (PhysX rests colliders at 0 gap; this is the measuring tolerance)
 EDGE = 0.004  # the fly's centre at least this far inside the head's edge
 
 # -- where things are -------------------------------------------------------------------------------------------------------------------
@@ -135,14 +137,16 @@ SWATTER = m.mechanism("swatter", (HOOK_X, SWAT_Y, TOP + _hang_z), [HEAD], LOOKS,
                       free_mass=HANDLE_MASS, friction=(0.9, 0.8), solver_iters=48,
                       frame_inertia=(HANDLE_MASS * NECK ** 2 / 12, HANDLE_MASS * NECK ** 2 / 12, 3e-6))
 
-# -- the fly: seen only (a house fly is about 12 mg and does not push anything) ------------------------------------------------------
-_body = m.Mesh(m.sphere(0.0035).v * np.array([0.45, 0.6, 1.0]), m.sphere(0.0035).f)  # 7 mm long, 4 mm wide, 3 mm off the wall
-_fly_parts = [("body", _body.moved((-0.0016, 0.0, 0.0)), "fly"),
-              ("wing_l", m.box((0.0004, 0.004, 0.005), (-0.0032, 0.0022, -0.0015)), "wing"),
-              ("wing_r", m.box((0.0004, 0.004, 0.005), (-0.0032, -0.0022, -0.0015)), "wing")]
-FLY = m.fixed("fly", (WALL_X - 0.0005, FLY_Y, TOP + FLY_Z), _fly_parts, (), looks=LOOKS)
+# -- the fly: a thin solid body on the wall that the head must touch ----------------------------------------------------------------
+_body = m.Mesh(m.sphere(0.0035).v * np.array([0.43, 0.57, 1.0]), m.sphere(0.0035).f)  # 7 mm long, 4 mm wide, 3 mm off the wall
+_fly_parts = [("body", _body.moved((-FLY_H / 2, 0.0, 0.0)), "fly"),
+              ("wing_l", m.box((0.0003, 0.004, 0.005), (-FLY_H + 0.0002, 0.0022, -0.0015)), "wing"),
+              ("wing_r", m.box((0.0003, 0.004, 0.005), (-FLY_H + 0.0002, -0.0022, -0.0015)), "wing")]
+FLY = m.fixed("fly", (WALL_X, FLY_Y, TOP + FLY_Z), _fly_parts, [m.col_box("fly_c", (FLY_H, FLY_W, FLY_L), (-FLY_H / 2, 0.0, 0.0))], looks=LOOKS)
 FLY_PRIMS = [f"{m.ENV_PATH}/fly/visual/{n}" for n in ("body", "wing_l", "wing_r")]
-FLY_AT = np.array([WALL_X - 0.0015, FLY_Y, TOP + FLY_Z])  # the fly's centre, 1.5 mm off the wall
+FLY_AT = np.array([WALL_X - FLY_H / 2, FLY_Y, TOP + FLY_Z])  # the fly's centre, 1.5 mm off the wall
+# the four corners of the fly body's top face (the face towards the room), which the head's face must reach
+FLY_TOP = np.array([[WALL_X - FLY_H, FLY_Y + sy * FLY_W / 2, TOP + FLY_Z + sz * FLY_L / 2] for sy in (-1, 1) for sz in (-1, 1)])
 
 # -- distractors (NVIDIA SimReady, loose) -----------------------------------------------------------------------------------------------
 MUG = SimReady("mug", pos=(0.30, -0.30, TOP), size=(0.114, 0.090, 0.080), mass=0.30, package="dishware_mug_a01", usd="sm_dishware_mug_a01_01.usda", yaw=2.4)
@@ -173,20 +177,22 @@ def swatter_points(s):
     return np.vstack([head, s.to_world(HANDLE_PTS)])
 
 
-def hit(s, fly):
-    """Whether the head lies flat on the wall over the fly now, with how flat it is (degrees) and the gap at the fly (m)."""
+def hit(s, fly=None):
+    """Whether the head lies flat on the fly's body now, touching it: (swat, tilt in degrees, gap in m).
+
+    The gap is the smallest distance, along the head's normal, from the head's wall-side face to a corner of the fly body's top face
+    (negative if pressed into it). The fly's collider stops the head at a gap of about 0, so a swat needs real contact; a head held off
+    the fly, even by 1 mm, is not a swat."""
     Rh, neck = head_frame(s)
     n = Rh[:, 0]  # the head's normal
     tilt = math.degrees(math.acos(min(1.0, abs(float(n[0])))))
-    local = Rh.T @ (fly - neck)  # the fly in the head's frame (origin at the neck)
+    local = Rh.T @ (FLY_AT - neck)  # the fly's centre in the head's frame (origin at the neck)
     inside = abs(local[1]) <= HEAD_W / 2 - EDGE and -HEAD_L + EDGE <= local[2] <= -EDGE
-    # the head's mid-plane over the fly, along the wall's normal
-    if abs(n[0]) < 1e-3:
-        return False, tilt, 1.0
-    d_along = float(local[0])  # distance from the plane, along the head's normal
-    gap = abs(d_along / n[0]) - HEAD_T / 2  # along x, from the fly's centre (on the wall) to the head's face
-    gap = max(0.0, gap - 0.0015)  # the fly's centre is 1.5 mm off the wall's face
-    return bool(inside and tilt <= FLAT_DEG and gap <= SQUASH), tilt, gap
+    base = Rh.T @ (np.array([WALL_X, FLY_Y, TOP + FLY_Z]) - neck)  # the fly's foot on the wall: which side of the head the wall is
+    side = 1.0 if base[0] >= 0 else -1.0
+    corners = (FLY_TOP - neck) @ Rh  # the top face's corners in the head's frame
+    gap = float(np.min(side * corners[:, 0])) - HEAD_T / 2
+    return bool(inside and tilt <= FLAT_DEG and gap <= TOUCH), tilt, gap
 
 
 class Trial:
@@ -197,16 +203,22 @@ class Trial:
         self.steps = 0
         self.swatted = False
         self.escaped = False
-        self.first_near = None  # the step at which something first came within NEAR
+        self.first_near = None  # the step at which something first came within NEAR: the fly's escape timer starts
         self.late_flat = False  # a flat slap over the spot after it flew off
-        self.tried = False  # the swatter off its hook and brought within NEAR of the fly
+        self.tried = False  # what first came within NEAR was a swatter already taken off its peg (an eligible approach)
+        self.min_gap = None  # the smallest head-to-fly gap seen while the fly was there (m), for the log
         self.hold = 0
         self.full = False
         self.score = 0.0
+        self._last_score = 0.0
         self.log = []
         if env is not None:
             for p in FLY_PRIMS:
                 m.set_visible(p, True)
+
+    def _note(self, msg):
+        self.log.append(msg)
+        print(f"[swat] {msg}", flush=True)
 
     def step(self, env):
         self.steps += 1
@@ -217,23 +229,30 @@ class Trial:
         off_hook = float(np.linalg.norm(s.pos - np.array([HOOK_X, SWAT_Y, TOP + _hang_z]))) > 0.05
         if not self.swatted and not self.escaped:
             d = float(min(np.linalg.norm(pts - fly, axis=1).min(), np.linalg.norm(tips - fly, axis=1).min()))
-            ok, tilt, gap = hit(s, fly)
-            if ok:
+            ok, tilt, gap = hit(s)
+            self.min_gap = gap if self.min_gap is None else min(self.min_gap, gap)
+            if ok:  # the swat test runs first at each check
                 self.swatted = True
-                self.log.append(f"swatted at step {self.steps} (tilt {tilt:.1f} deg, gap {gap * 1000:.1f} mm)")
-            elif d < NEAR:
-                if self.first_near is None:
+                self._note(f"swatted at step {self.steps} (tilt {tilt:.1f} deg, gap {gap * 1000:.2f} mm)")
+            else:
+                if d < NEAR and self.first_near is None:  # the escape timer starts, and runs whatever happens next
                     self.first_near = self.steps
-                    if off_hook:
-                        self.tried = True
-                if self.steps - self.first_near >= ESCAPE_STEPS:
+                    self.tried = off_hook
+                    allp = np.vstack([pts, tips])
+                    near_pt = allp[int(np.argmin(np.linalg.norm(allp - fly, axis=1)))] - fly
+                    self._note(f"something within {NEAR * 100:.0f} cm at step {self.steps} (swatter off its peg: {off_hook}; nearest point "
+                               f"{near_pt[0] * -100:.1f} cm out from the wall, {near_pt[1] * 100:+.1f} cm along it, {near_pt[2] * 100:+.1f} cm up)")
+                # the fly takes off ESCAPE_STEPS checks after the timer started, even if everything has moved away again since
+                if self.first_near is not None and self.steps - self.first_near >= ESCAPE_STEPS:
                     self.escaped = True
-                    self.log.append(f"flew off at step {self.steps} (first near at {self.first_near}; tilt {tilt:.1f}, gap {gap * 1000:.1f} mm)")
+                    self._note(f"flew off at step {self.steps} (timer started at {self.first_near}; tilt {tilt:.1f}, gap {gap * 1000:.1f} mm; "
+                               f"smallest gap before {self.min_gap * 1000:.2f} mm)")
                     for p in FLY_PRIMS:
                         m.set_visible(p, False)
         elif self.escaped and not self.late_flat:
-            if hit(s, fly)[0]:
+            if hit(s)[0]:
                 self.late_flat = True
+                self._note(f"late flat slap over the empty spot at step {self.steps}")
         # the hold: swatter lying on the table, let go, everything still
         rest = bool(np.all(pts[:, 2] < TOP + REST_Z) and np.all(pts[:, 2] > TOP - 0.01))
         still = float(np.linalg.norm(s.lin_vel)) < 0.02 and float(np.linalg.norm(s.ang_vel)) < 0.2
@@ -247,10 +266,13 @@ class Trial:
             self.score = 0.75
         elif self.late_flat:
             self.score = 0.5
-        elif self.tried:
+        elif self.escaped and self.tried:  # only once the fly has actually flown off, after an eligible approach
             self.score = 0.25
         else:
             self.score = 0.0
+        if self.score != getattr(self, "_last_score", 0.0):
+            self._note(f"score {self.score} at step {self.steps}")
+            self._last_score = self.score
 
 
 TRIAL = Trial()
@@ -281,11 +303,13 @@ def demo_script(ctx):
     flat on the wall over the fly; then roll the swatter onto its face, lay it on the table, let go and move clear.
     Modes: none does nothing; slow turns the head onto the fly over 2.4 s; close lines up with the head 12 degrees from the wall (within
     15 cm of the fly) before flicking; edge strikes with the head edge-on; poke jabs at the fly with the bare fingers; hold swats but
-    keeps hold of the swatter."""
+    keeps hold of the swatter; retreat lines up, swings the head briefly inside 15 cm and straight back out; nearmiss lines up and turns the
+    head to about 16 cm from the fly, never inside 15 cm, then backs off; side lines up 25 cm further along the wall and slides the head
+    slowly (5 cm/s) along the wall towards the fly from the side; hover flicks but stops the head short of the fly."""
     import demokit as d
 
     mode = ctx.mode
-    if mode not in ("full", "none", "slow", "close", "edge", "poke", "hold"):
+    if mode not in ("full", "none", "slow", "close", "edge", "poke", "hold", "retreat", "nearmiss", "side", "hover"):
         raise ValueError(mode)
     l = ctx.left
     for _ in range(10):
@@ -333,9 +357,34 @@ def demo_script(ctx):
         yield from l.move(np.array([0.25, 0.05, TOP + h]), grip=d.tilted(th, -90.0), t=0.8)
     yield from l.move(np.array([0.25, 0.05, TOP + 0.19]), grip=d.down(-90.0), t=0.8)
     cock = ALPHA - 12.0 if mode == "close" else COCK
+    if mode == "side":  # line up 25 cm further from the fly along the wall, the head nearly flat to it, then slide in slowly
+        start = tcp + [0.0, -0.25, 0.0]
+        yield from l.move(start + [-0.02, 0.0, 0.02], grip=grip(cock), t=1.5)
+        yield from l.move(start, grip=grip(ALPHA - 4.0), t=1.5)
+        yield from l.wait(0.6)
+        yield from l.move(tcp, grip=grip(ALPHA - 4.0), t=5.0)  # 5 cm/s, side-on
+        yield from l.move(tcp, grip=grip(ALPHA + 2.0), t=0.6)
+        yield from l.wait(2.0)
+        return
     yield from l.move(tcp + [-0.02, 0.0, 0.02], grip=grip(cock), t=1.5)
     yield from l.move(tcp, grip=grip(cock), t=1.0)
     yield from l.wait(0.6)
+    if mode == "nearmiss":  # never inside 15 cm: turn the head in a little, then back off
+        yield from l.move(tcp, grip=grip(cock + 2.0), t=0.5)
+        yield from l.wait(1.0)
+        yield from l.move(tcp + [-0.05, 0.0, 0.0], grip=grip(cock - 10.0), t=1.0)
+        yield from l.wait(2.0)
+        return
+    if mode == "retreat":  # dip the head inside 15 cm for one step and straight back out
+        yield from l.move(tcp, grip=grip(cock + 25.0), t=0.05)
+        yield from l.move(tcp, grip=grip(cock - 15.0), t=0.15)
+        yield from l.move(tcp + [-0.05, 0.0, 0.0], grip=grip(cock - 15.0), t=0.8)
+        yield from l.wait(2.0)
+        return
+    if mode == "hover":  # the flick from 1 cm further back and without the overdrive: the head comes up short of the fly
+        yield from l.move(tcp + [-0.010, 0.0, 0.0], grip=grip(ALPHA + 2.0), t=0.05)
+        yield from l.wait(1.5)
+        return
     if mode == "slow":
         yield from l.move(tcp, grip=grip(ALPHA + 3.0), t=2.4)
     else:

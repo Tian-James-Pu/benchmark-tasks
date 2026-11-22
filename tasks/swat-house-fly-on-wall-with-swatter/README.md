@@ -9,8 +9,8 @@ for a robot is the same thing that makes it hard for a person:
 - **The fly reacts to anything that looms.** Here, once any part of the swatter or of either hand comes within 15 cm of
   the fly, it flies off 0.1 s later. The robot has to line the swatter up from further away (the demo holds the head
   about 18 cm off), and then close the last 15 cm in about a tenth of a second: about 1.5 m/s at the head.
-- **The head has to land flat.** The fly is killed only if the mesh head lies flat on the wall over it (within 10
-  degrees). An edge, a corner or a tilted head misses. The swatter's flexible neck is what lets the head slap flat while
+- **The head has to land flat, on the fly.** The fly is killed only if the mesh head lies flat over it (within 10
+  degrees) and touches its 3 mm body. An edge, a corner, a tilted head or a head held just off the fly misses. The swatter's flexible neck is what lets the head slap flat while
   the hand and handle stay well off the wall, as in a real swat.
 - **The swatter must be taken from its peg first, and put down afterwards.** It hangs by its handle's hole; it has to be
   slid off the peg, turned in the hand from hanging to level with the head upright, and, after the swat, laid down
@@ -20,6 +20,15 @@ for a robot is the same thing that makes it hard for a person:
 
 A slow, careful approach, the natural default for a robot, always fails here: the fly leaves before the head arrives.
 
+## Response to review
+
+| Request | What changed |
+|---|---|
+| "Require the simulated swatter head to contact the fly stand-in before recording a swat, rather than accepting a gap above it." | `task.py`: the fly is now a solid 7 x 4 x 3 mm body with a box collider that stops the head. `hit()` measures the gap from the head's wall-side face to the body's top face; a swat needs a gap of 0.5 mm or less (contact), not the old 6.5 mm from the wall. Checked: a head held flat 0.6 to 6.5 mm over the fly is not a swat, and both recorded demos swat with a 0.00 mm gap (Scoring, Validation). `task.json` scoring and fidelity updated. |
+| "Fix the 0.25 score so it is awarded only after the fly actually escapes following an eligible approach, including when the swatter retreats." | `task.py`: the first check that finds something within 15 cm starts a timer, and the fly flies off 0.1 s later whatever happens next, including when the swatter pulls back. 0.25 now needs `escaped`: an approach alone gives nothing. Checked: the retreat run scored 0 until the escape step, then 0.25; the nearmiss run (never inside 15 cm) scored 0 (Validation). |
+| "Make the real-trial escape trigger match the specified 15 cm approach rule, including side-on approaches" | The single forward-looking sensor is replaced by 13 VL53L1X sensors set flush round the fly: straight out, 45 and 75 degrees left, right, up and down, and 70 degrees on the diagonals. Thresholds are set so that each fires at 150 mm from the fly. The sketch runs the simulator's rule: a 100 ms timer from the first reading under 150 mm, not cancelled by retreat. By `detector/coverage.py`'s geometry, a head-sized card fires it at 126 to 152 mm from every direction, side-on along the wall included. The remaining gap (thin objects between cones) is stated in Real trials and `detector/WIRING.md`. In the simulator, a slow side-on slide along the wall triggers the escape (Validation, side). |
+| "provide the detector's parts, wiring, controller program and calibration procedure so another lab can rebuild and verify it." | New `detector/` folder: `PARTS.md` (parts with links and prices), `WIRING.md` (puck layout with every sensor's position, angle and threshold, pin table, ASCII wiring diagram, timing), `detector.ino` (complete Arduino sketch with a calibration mode), `CALIBRATION.md` (ruler, angle template and test card at set distances and 25 directions including side-on, 240 fps timing, contact test, with pass/fail limits), `coverage.py` (the thresholds and expected firing distances). |
+
 | File | What it is |
 |---|---|
 | `task.py` | The `yam_arena` task file: wall, peg, swatter and fly, the scorer (`score`, `success`) and the closed-loop scripted demo (`demo_script`) |
@@ -27,6 +36,7 @@ A slow, careful approach, the natural default for a robot, always fails here: th
 | `simready.py` | Loads the SimReady distractors, downloading them once from Hugging Face |
 | `demokit.py` | Runs a closed-loop scripted demo on the harness's own embodiment, unchanged |
 | `task.json` | The task's details for the board |
+| `detector/` | The real rig's fly escape detector: `WIRING.md` (puck layout, pin table, wiring diagram, timing, what it does not match), `PARTS.md` (parts with links), `detector.ino` (the Arduino sketch), `CALIBRATION.md` (calibration and acceptance check with pass/fail limits), `coverage.py` (thresholds and where the detector fires) |
 
 ## Run a trial
 
@@ -46,7 +56,7 @@ this folder, in the simulator's Python environment:
 ```bash
 cd tasks/swat-house-fly-on-wall-with-swatter
 python demokit.py task.py ~/yam-eval/swat-house-fly-on-wall-with-swatter/demo --mode full     # full/demo.mp4, setup.png, result.json (task_score)
-python demokit.py task.py ~/yam-eval/swat-house-fly-on-wall-with-swatter/redteam --fast --mode none,slow,close,edge,poke,hold
+python demokit.py task.py ~/yam-eval/swat-house-fly-on-wall-with-swatter/redteam --fast --mode none,slow,close,edge,poke,hold,hover,retreat,nearmiss,side
 ```
 
 Nothing is randomised: every seed gives the same scene, with the fly in the same place. The demo earns full credit
@@ -79,8 +89,10 @@ an angle of about 20 degrees in the demo and the head folds flat against the wal
 directions (twist, side bend) is not modelled. The gripper's housing is about as wide as its open fingers, so a hand
 holding the handle cannot get closer than about 10 cm to the wall: the swatter's length and neck do the reaching.
 
-**How the fly is modelled.** The fly is not a physical body (it weighs about 12 mg). It is a visual marker on the wall;
-code decides whether it is swatted or flies off, and hides it when it flies off.
+**How the fly is modelled.** The fly is a fixed solid body on the wall, 7 x 4 x 3 mm, with a box collider. The swatter's
+head lands on it and has to touch it. Code decides whether it is swatted or flies off, and hides it when it flies off.
+Its collider stays behind as a 3 mm bump that no longer counts as a fly. In the real rig the pad pulls back into the
+wall instead.
 
 ## Scoring
 
@@ -90,19 +102,27 @@ fingertip points of both grippers.
 - **Near:** any point of the swatter (a 7 x 7 grid over the head, 32 points along the handle's edges) or of either
   gripper's fingers (each finger's tip and a point 3 cm up it, at its middle and both edges) within 15 cm of the fly's
   centre.
-- **Swat:** the head lies flat on the wall over the fly: the head's plane within 10 degrees of the wall's; the fly's
-  centre at least 4 mm inside the head's outline; and the head's face within 6.5 mm of the wall at the fly's position
-  (the fly is 3 mm high, so a head that close is touching it).
-- **Escape:** the fly flies off at the second check after the first check that finds something near (0.1 s later),
-  unless a swat has happened by then (the swat test runs first at each check). Once flown off it does not come back.
+- **Swat:** the head lies flat on the fly and touches it:
+  - the head's plane within 10 degrees of the wall's;
+  - the fly's centre at least 4 mm inside the head's outline;
+  - the head's wall-side face within 0.5 mm of the fly's body.
+
+  The fly is a solid 7 x 4 x 3 mm box collider on the wall, so the physics stops the head on it, at a gap of about 0. The
+  gap is measured from the head's face to the nearest corner of the body's top face, along the head's normal. A head
+  held off the fly is not a swat, even 1 mm off (6.5 mm from the wall had counted before this revision). The 0.5 mm is
+  the measuring tolerance. In the recorded demos the gap at the swat was 0.00 mm.
+- **Escape:** the first check that finds something near starts the fly's timer. The fly flies off at the second check
+  after that (0.1 s later), unless a swat has happened by then; the swat test runs first at each check. The timer runs
+  whatever happens in between: a swatter that comes within 15 cm and is pulled straight back out still scares the fly
+  off. Once flown off it does not come back. This is the rule the real rig's detector runs (`detector/detector.ino`).
 
 | Score | When |
 |---|---|
 | 1.0 | Swatted, and then the swatter lies on the table (every point of it less than 4 cm above the table top), let go (every fingertip point more than 5 cm from it) and still (under 2 cm/s and 0.2 rad/s) for 1 s. It stays 1.0 from then on. |
 | 0.75 | Swatted, but the swatter not laid down and let go that way |
 | 0.5 | Not swatted, but after the fly flew off the head lay flat over its spot by the swat test (a slap that was right but too slow or started too close) |
-| 0.25 | The fly flew off at the approach of a swatter taken off its peg (the hole's centre more than 5 cm from where it hung when something first came near), with no later flat slap |
-| 0 | Anything else: nothing done, or the fly scared off by a hand, or by the swatter still on its peg |
+| 0.25 | The fly has actually flown off, the swatter having already been taken off its peg (the hole's centre more than 5 cm from where it hung) when something first came near, with no later flat slap. Nothing is given before the fly has flown off |
+| 0 | Anything else: nothing done, nothing came within 15 cm, or the fly scared off while the swatter was still on its peg |
 
 Whether the fly was swatted or flew off is recorded when it happens and cleared only by a reset. Possible scores: 0, 0.25, 0.5, 0.75, 1.0.
 
@@ -131,26 +151,38 @@ The recorded runs (GPU, 640 x 360) and the failure checks are in the table below
 
 ## Model run
 
-Dream-1 was attempted once on the final version, with the instruction above and a 1,200-step limit. Its API refused
-the request before the first action (the arms held their ready poses), so nothing was scored and there is no model video: "DreamAPI refused the inference request: DA-4000 BAD_REQUEST (malformed): unsafe instruction, refused: Striking or swatting living creatures such as animals or insects is unsafe." The fly here is a 7 mm stand-in on a panel, not a living insect; in the real rig it is a felt pad on a solenoid.
+Dream-1 was run once on this revision (the scene changed: the fly is now a solid body). It was given the instruction above
+and a 1,200-step limit. Its API refused the request before the first action, so nothing was scored and there is no model
+video. The exact error: "DreamAPI refused the inference request: DA-4000 BAD_REQUEST (malformed): unsafe instruction in
+this scene, refused: No fly swatter or fly present; sweltering action off table is unsafe." The first version was refused
+the same way ("Striking or swatting living creatures such as animals or insects is unsafe"). The fly here is a 7 mm
+stand-in on a panel, not a living insect; in the real rig it is a felt pad on a solenoid.
 
 ## Validation
 
-| Run | Mode | Score | What happened |
+All runs are of this revision's `task.py`. The two recorded runs ran on the GPU at 640 x 360 and give the submitted video
+and screenshot. The others are CPU `--fast` runs of the same script, with no cameras.
+
+| Run | Mode | Score | What happened (from the scorer's log) |
 |---|---|---|---|
-| GPU, recorded 1 (the submitted video and screenshot) | full | 1.0 | Swatted, swatter laid down and let go; full credit reached at step 463 (23.15 s) |
-| GPU, recorded 2 | full | 1.0 | Same: full credit reached at step 463 (23.15 s); the simulation is deterministic for this scene |
-| CPU `--fast` | none | 0 | Nothing moves; the fly stays |
-| CPU `--fast` | slow (turn onto the fly over 2.4 s) | 0.5 | The fly flew off as the head came within 15 cm; the head then lay flat over its spot |
-| CPU `--fast` | close (line up with the head 12 degrees from the wall, within 15 cm) | 0.5 | The fly flew off while the hand held still; the flick then landed flat on the empty spot |
-| CPU `--fast` | edge (the gripper rolled 80 degrees, so the head comes in edge-on) | 0.25 | The fly flew off as the swatter came near; no flat slap |
-| CPU `--fast` | poke (no swatter: a quick jab at the fly with the closed fingers) | 0 | The fly flew off at the hand's approach; the gripper's housing stopped against the wall with the fingertips 7 cm short of it |
-| CPU `--fast` | hold (the full swat, swatter kept in hand) | 0.75 | Swatted, never laid down |
+| GPU, recorded 1 (submitted) | full | 1.0 | Something within 15 cm at step 329; swatted at step 331 (tilt 2.2 degrees, head-to-fly gap 0.00 mm); laid down and let go; 1.0 at step 463 (23.15 s) |
+| GPU, recorded 2 | full | 1.0 | The same: swatted at step 331 with a 0.00 mm gap, 1.0 at step 463. The scene is deterministic |
+| CPU | hover: the same flick from 1 cm further back, without the overdrive, so the head comes up short | 0.25 | The head never reached the fly: the smallest head-to-fly gap was 57 mm. The fly flew off at step 331, 0.1 s after the swatter came within 15 cm |
+| Scorer check, no simulation | head placed flat over the fly at set gaps, through `hit()` | - | Gap 6.5, 3.5, 2.0, 1.0 or 0.6 mm: not a swat. Gap 0.2 or 0 mm: a swat. The pose the review cited (face 6.5 mm from the wall, a 3.5 mm gap over the fly) is no longer a swat |
+| CPU | retreat: swing the head inside 15 cm for one step and straight back out | 0.25 | Timer started at step 329. The score stayed 0 at steps 329 and 330, while the swatter was already pulling back. The fly flew off at step 331 with the head 148 mm away, and only then 0.25 |
+| CPU | nearmiss: line up, turn the head in to about 16 cm, back off | 0 | Nothing came within 15 cm; the fly never flew off; no 0.25 |
+| CPU | side: line up 25 cm further along the wall, the head nearly flat to it, and slide it in side-on at 5 cm/s | 0.25 | Timer started at step 363, the head's nearest point 0.6 cm out from the wall and 14.9 cm along it (side-on). The fly flew off at step 365. The scorer logged no flat slap on the spot afterwards |
+| CPU | slow: turn the head onto the fly over 2.4 s | 0.5 | The fly flew off as the head came within 15 cm; the head then lay flat on its spot |
+| CPU | close: line up with the head 12 degrees from the wall, within 15 cm | 0.5 | The fly flew off while the hand held still; the flick then landed flat on the empty spot |
+| CPU | edge: gripper rolled 80 degrees, head edge-on | 0.25 | The fly flew off as the swatter came near; no flat slap |
+| CPU | poke: no swatter, a quick jab with the closed fingers | 0 | The fly flew off at the hand's approach, the swatter still on its peg; the fingertips stopped 7 cm short of the wall |
+| CPU | hold: the full swat, swatter kept in hand | 0.75 | Swatted (gap 0.00 mm), never laid down |
+| CPU | none | 0 | Nothing moves; the fly stays |
 
 While building the demo, with the fly moved to four other spots on the wall ((y, height) = (46, 12.5), (46, 15.7),
-(51.9, 12.6) and (51.9, 12.3) cm), the same sequence also scored 1.0 in CPU runs. An earlier version that drew the
-swatter 25 degrees back (head 22 cm off) instead of 15 missed the fly at (51.9, 12.6) by 0.9 mm: the head was still
-6 mm off the wall when the fly left. The flick is only just fast enough, which is the point of the task.
+(51.9, 12.6) and (51.9, 12.3) cm), the same sequence also scored 1.0 in CPU runs of the first version. One earlier
+version drew the swatter 25 degrees back (head 22 cm off) instead of 15. It missed the fly at (51.9, 12.6): the head was
+still 6 mm off the wall when the fly left. The flick is only just fast enough, which is the point of the task.
 
 ## Distinct from
 
@@ -181,32 +213,61 @@ board (pushing a swing in phase, ripping a ripcord, clapping a clapperboard) hav
 ## Real trials
 
 **Rig.** A 60 x 40 cm sheet of 12 mm MDF, painted white, screwed to a 10 x 60 cm MDF foot and clamped to the table at the
-positions above; a 5 mm steel peg (or a straight screw-in tool peg) screwed into its left end 44 cm up. The fly is an
-electromechanical stand-in, about $30 in parts:
+positions above. A 5 mm steel peg (or a straight screw-in tool peg) is screwed into its left end, 44 cm up. The fly is an
+electromechanical stand-in with an escape detector that runs the simulator's rule. The full build is in `detector/`:
 
-- an 8 mm hole through the panel at the fly's spot (y 49, 14 cm up); behind it a small 12 V push-pull solenoid
-  (10 mm stroke) carrying a 3 mm rod whose tip, a 7 mm black felt pad cut to a fly's outline, stands 3 mm proud of the
-  wall when the solenoid is out and pulls back behind the face when it fires;
-- a VL53L1X time-of-flight distance sensor set flush in the panel 2 cm beside the hole, looking straight out, and an
-  Arduino Nano that fires the solenoid 100 ms after the sensor first reads under 15 cm, and lights an LED that stays on
-  until the reset button is pressed;
-- a 14 mm felt ring, flush with the wall, round the hole.
+- **`WIRING.md`:** the sensor puck's layout, the pin table, an ASCII wiring diagram, timing, and what the detector does not
+  match.
+- **`PARTS.md`:** parts with links, about $360, or about $140 with unbranded sensors.
+- **`detector.ino`:** the Arduino sketch.
+- **`CALIBRATION.md`:** the calibration and acceptance check, with pass/fail limits.
+- **`coverage.py`:** computes the thresholds and where the detector fires.
 
-The time-of-flight sensor sees a cone (27 degrees) straight out from the wall, not a sphere round the fly: a hand
-coming in along the wall from the side is seen later than in the simulator. State this when comparing results.
+The build:
+
+- **Fly pad.** A black felt pad cut to a fly's outline (7 x 4 mm, 3 mm thick) on a 3 mm rod. It sits at the centre of a
+  127 mm sensor puck set flush in the panel at the fly's spot (y 49, 14 cm up). The pad stands 3 mm proud of the face, like
+  the simulated fly's 3 mm body. A 12 V push-pull solenoid (5.5 mm stroke) behind it pulls it 2.5 mm behind the face when
+  the fly escapes. A 14 mm felt ring sits flush round it.
+- **Sensors.** Thirteen VL53L1X time-of-flight sensors are set flush in the puck round the pad: one straight out, four
+  tilted 45 degrees (left, right, up, down), four tilted 70 degrees (the diagonals) and four tilted 75 degrees (left,
+  right, up, down) to see along the wall. Each one's threshold is set so that a target on its axis fires at 150 mm from
+  the fly.
+- **Controller.** An Arduino Nano starts a 100 ms timer at the first reading under any threshold. The timer runs whatever
+  happens next: a swatter pulled straight back still scares the fly off. When it runs out, the Nano fires the solenoid and
+  latches a red LED until RESET is pressed. This is the simulator's rule: the fly leaves at the second 20 Hz check after
+  the first check that finds anything within 15 cm.
+
+**How closely the detector matches the 15 cm rule (`detector/WIRING.md`).**
+- **The swatter's head is seen from every direction, side-on included.** `coverage.py` puts a 100 x 100 mm card (smaller
+  than the head) brought in face-on at 135 to 152 mm from the fly from the sides, above and the diagonals, from straight
+  out to grazing the wall at 85 degrees. From below, where the table is 14 cm under the fly, it is 126 to 151 mm.
+- **A head slid flat along the wall** 5 to 30 mm off it fires the detector at 149 to 150 mm.
+- **A thin object can come closer unseen.** A fingertip or the handle's 4 mm edge, coming in between the cones, can get
+  within a few centimetres. So the real fly can be scared later than the simulated one, never sooner.
+- **Checking a build.** `CALIBRATION.md` checks the firing distance in 25 directions (pass: within 12 mm of
+  `coverage.py`'s value, never under 120 mm or over 165 mm), the side-on slide (140 to 160 mm), the timing on a 240 fps
+  video (100 to 150 ms from crossing 150 mm, including an approach that pulls straight back out), and a contact test.
+- **Not yet built.** We have not built this detector. The thresholds and firing distances come from `coverage.py`'s
+  geometry, and the sketch has not been compiled or run on hardware here. `CALIBRATION.md` is how a lab verifies its
+  build before scoring trials.
 
 **Preparation, each trial (under 2 minutes):** wipe the swatter's head clean; ink the fly pad and the felt ring with a
 washable ink pad (one colour for the pad, another for the ring); press the reset button (the pad comes out, the LED
 goes off); hang the swatter on the peg by its hole, head down, flat faces towards the panel's end; put the distractors on
-their tape marks; start a phone video at 240 fps from beside the table.
+their tape marks; start a phone video at 240 fps from beside the table. At the start of each session, run steps 2 and 3 of
+`detector/CALIBRATION.md`.
 
 **Measurement (after the trial, before anyone touches the scene):**
 
-- *Swat:* a pad-coloured fly mark on the mesh face of the head. The pad is out only until the fly escapes, so a mark
-  proves the head reached it in time. A mark on the rim or edge only is not a swat (not flat).
-- *Late flat slap (0.5):* no fly mark, but a ring-coloured mark on the mesh face.
-- *Escape on a taken swatter (0.25):* the LED is on, and the video frame in which it lights shows the swatter off its
-  peg.
+- *Swat:* a pad-coloured fly mark on the mesh face of the head. Ink transfers only on contact, as the simulator's swat
+  needs contact. The pad is out only until the fly escapes, so a mark proves the head touched it in time. A mark on the
+  rim or edge only is not a swat (not flat).
+- *Late flat slap (0.5):* no fly mark, but a ring-coloured mark on the mesh face. The pad is gone by then, and a head
+  lying flat on the wall touches the flush felt ring. In the simulator the fly's body stays as a 3 mm bump after it
+  escapes, and the head must touch that.
+- *Escape on a taken swatter (0.25):* the red LED is on, which means the fly actually escaped. The 240 fps video frame
+  in which the first thing crossed the 150 mm mark shows the swatter already off its peg. With the LED off, no 0.25.
 - *Laid down (1.0):* the swatter lies on the table (a ruler: no part more than 4 cm up), the gripper at least 5 cm from
   it, nothing moving.
 
