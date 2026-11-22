@@ -1,0 +1,370 @@
+{
+ "frame": {
+  "note": "card frame: x forward, y to the robot's left, from the midpoint between the arm bases; z above the table; mm unless stated. World (yam_arena) z = table_world_z_m + z/1000.",
+  "table_world_z_m": 0.7475,
+  "arm_base_y_mm": 305,
+  "table_mm": [
+   1300,
+   1100
+  ]
+ },
+ "hand": {
+  "model": "fabricated adult left hand form, fingers up, palm toward the robot (fab/hand_form.scad, fab/hand_form.md)",
+  "material_core": "PLA, 3D printed, painted",
+  "material_ring_finger_skin": "Smooth-On Dragon Skin 10 Medium platinum silicone, cast over the PLA bone",
+  "axis_xy_mm": [
+   300,
+   0
+  ],
+  "web_z_mm": 130,
+  "palm_mm": {
+   "thickness_x": 28,
+   "width_y": 80,
+   "height_z": 95,
+   "center_y": -12,
+   "bottom_z": 35
+  },
+  "wrist_mm": {
+   "x": 32,
+   "y": 55,
+   "z": 25,
+   "bottom_z": 10
+  },
+  "plate_mm": {
+   "x": 150,
+   "y": 150,
+   "z": 10,
+   "center_dx": 20
+  },
+  "plate_mass_g": 1770,
+  "form_mass_g": 260,
+  "ring_finger": {
+   "length_mm": 72,
+   "profile_u_mm": [
+    -3,
+    0,
+    10,
+    18,
+    28,
+    36,
+    44,
+    52,
+    60,
+    64.5
+   ],
+   "profile_d_mm": [
+    19.0,
+    17.0,
+    17.0,
+    17.3,
+    18.0,
+    17.0,
+    16.0,
+    16.4,
+    15.6,
+    15.0
+   ],
+   "tip_dome_radius_mm": 7.5,
+   "pip_crest_u_mm": 28,
+   "dip_crest_u_mm": 52,
+   "bone_dia_mm": 9.6,
+   "skin_thickness_at_pip_mm": 4.2,
+   "lines_u_mm": {
+    "base": [
+     7,
+     8
+    ],
+    "pip": [
+     26,
+     27
+    ],
+    "dip": [
+     50,
+     51
+    ],
+    "width": 1
+   }
+  },
+  "other_fingers": {
+   "note": "rigid PLA; base point (y, web z offset) in the hand plane, tilt from vertical toward +y positive, length, diameter",
+   "middle": {
+    "base_y_mm": -20,
+    "base_dz_mm": -3,
+    "tilt_deg": -12,
+    "length_mm": 78,
+    "dia_mm": 17
+   },
+   "index": {
+    "base_y_mm": -38,
+    "base_dz_mm": 0,
+    "tilt_deg": -22,
+    "length_mm": 70,
+    "dia_mm": 16.5
+   },
+   "little": {
+    "base_y_mm": 18,
+    "base_dz_mm": -8,
+    "tilt_deg": 12,
+    "length_mm": 58,
+    "dia_mm": 14.5
+   },
+   "thumb": {
+    "base_y_mm": -45,
+    "base_z_mm": 70,
+    "tilt_deg": -45,
+    "length_mm": 60,
+    "dia_mm": 20
+   }
+  },
+  "skin_E_note": "E from the datasheet 100% modulus by a neo-Hookean fit, E = sigma100 / ((2 - 1/4)/3); see geometry_check.txt",
+  "datasheet": {
+   "shore_A": 10,
+   "modulus_100_psi": 22,
+   "specific_gravity": 1.07,
+   "tensile_psi": 475,
+   "elongation_pct": 1000,
+   "modulus_strain_pct": 100
+  },
+  "palm_top_u_mm": 0
+ },
+ "ring": {
+  "model": "plain comfort-fit band, US size 7.5, 316L stainless steel, polished (fab/ring.md: turned from solid 22 mm 316L round bar)",
+  "us_size": 7.5,
+  "id_mm": 17.75,
+  "width_mm": 4.0,
+  "wall_mm": 1.9,
+  "od_mm": 21.55,
+  "edge_radius_mm": 0.5,
+  "density_g_cm3": 7.98,
+  "mass_g": 3.74,
+  "grade_aisi": 316,
+  "stock_bar_dia_mm": 22,
+  "grade_suffix": "L"
+ },
+ "random": {
+  "hand_offset_mm": 15,
+  "ring_start_offset_mm": 20
+ },
+ "mechanism": {
+  "mu_ring_skin": 0.8,
+  "mu_pad_steel": 0.5,
+  "pinch_hold_N": 6,
+  "peak_push_N": 5,
+  "push_plan_factor": 2.5,
+  "tilt_example_deg": 12,
+  "square_push_est_N": 2.01,
+  "tilted_push_est_N": 6.9,
+  "fallback_push_est_N": 1.2,
+  "note": "estimates from geometry_check.txt (datasheet modulus, shape factor, mu); gate G1 measures the real push",
+  "tilt_ratio_est": 3.4,
+  "tilt_pinch_exceeded_deg": 10.3,
+  "offset_pinch_exceeded_mm": 0.97,
+  "max_hold_N": 8
+ },
+ "scoring": {
+  "release_mm": 30,
+  "still_mm": 2,
+  "still_deg": 2,
+  "around_mm": 5,
+  "past_dip_top_u_mm": 50,
+  "past_pip_top_u_mm": 26,
+  "seated_low_u_mm": 8,
+  "stand_move_mm": 5,
+  "off_table_z_mm": -20,
+  "hold_s": 1
+ },
+ "camera": {
+  "front": {
+   "pos_mm": [
+    60,
+    0,
+    160
+   ],
+   "look_mm": [
+    300,
+    0,
+    160
+   ],
+   "width_px": 4000,
+   "view_mm": 300
+  },
+  "back": {
+   "pos_mm": [
+    540,
+    0,
+    160
+   ],
+   "look_mm": [
+    300,
+    0,
+    160
+   ],
+   "width_px": 4000,
+   "view_mm": 300
+  },
+  "rule_resolution_mm": 1,
+  "rule_length_mm": 300,
+  "video": {
+   "note": "phone on a tripod beyond the far table edge, 1.4 m up, whole run; whole table top in frame (geometry_check.txt VIDEO)",
+   "pos_mm": [
+    1300,
+    0,
+    1400
+   ],
+   "look_mm": [
+    360,
+    0,
+    0
+   ],
+   "width_px": 3840,
+   "height_px": 2160,
+   "view_mm": 2200
+  }
+ },
+ "gates": {
+  "G1_push_peak_max_N": 5,
+  "G1_scale_range_g": 5000,
+  "G1_scale_res_g": 1,
+  "G1_fallback_knuckle_d_mm": 17.9,
+  "G2_knuckle_min_d_mm": 17.95,
+  "G2_caliper_res_mm": 0.02,
+  "G2_every_trials": 10,
+  "G1_push_peak_max_g": 510,
+  "G1_sim_match_pct": 20,
+  "G1_trials": 5,
+  "G2_spare_skins": 2,
+  "G1_pinch_mass_g": 612,
+  "G1_pinch_N": 6,
+  "G2_caliper_range_mm": 150,
+  "G1_lever_ratio": 1,
+  "G1_lever_arm_mm": 46
+ },
+ "run": {
+  "steps": 2400,
+  "demo_steps_est": 600
+ },
+ "bom": {
+  "hand_form_usd": 69,
+  "ring_usd": 20,
+  "plate_post_usd": 25,
+  "total_usd": 114,
+  "pla_usd_est": 6,
+  "dragon_skin_kit_usd": 40.99,
+  "dragon_skin_kit_sku": "Blick 61934-0310",
+  "silc_pig_brown_usd": 21.7,
+  "silc_pig_sku": "Blick 61936-8004"
+ },
+ "evidence": {
+  "source": "Blue Nile, Find Your Ring Size (FAQ), fetched 2026-11-21"
+ },
+ "geometry": {
+  "gripper_body_above_pad_tip_mm": 65,
+  "gripper_body_half_width_mm": 35.5,
+  "seat_push_pitch_deg": 50,
+  "pose_ring_low_u_mm": {
+   "over_tip": 75,
+   "at_pip": 26,
+   "release": 20,
+   "seat_push_top": 12
+  },
+  "retreat_z_mm": 280,
+  "lift_z_mm": 100,
+  "pick_tip_z_mm": 2,
+  "tilt_pitches_deg": [
+   90,
+   75,
+   60,
+   50
+  ],
+  "middle_seated_gap_min_mm": 0.77,
+  "carry_pitch_deg": 60,
+  "carry_azimuth_deg": -90,
+  "pick_note": "pads close along x on the flat ring's +/-x points at the carry pitch, so the grasp is kept from pick to PIP push (red team p2 L4.3)"
+ },
+ "sweep": {
+  "pad_catch_half_width_mm": 15,
+  "tip_capture_mm": 1.375,
+  "pip_pass_mm": 1.37,
+  "aim_grid_step_mm": 0.25,
+  "aim_grid_max_mm": 15,
+  "mean_max": 0.5,
+  "draws": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    15,
+    0,
+    0,
+    0
+   ],
+   [
+    -15,
+    0,
+    0,
+    20
+   ],
+   [
+    0,
+    15,
+    20,
+    0
+   ],
+   [
+    0,
+    -15,
+    -20,
+    -20
+   ],
+   [
+    7.5,
+    7.5,
+    10,
+    -10
+   ],
+   [
+    -7.5,
+    -7.5,
+    -10,
+    10
+   ],
+   [
+    15,
+    -15,
+    20,
+    20
+   ],
+   [
+    -15,
+    15,
+    -20,
+    -20
+   ],
+   [
+    0,
+    0,
+    0,
+    -20
+   ]
+  ],
+  "draw_note": "[hand dx, hand dy, ring dx, ring dy] mm",
+  "pip_pass_note": "first centre offset at which the push exceeds the 8 N hold limit's 8.0 N axial capacity (geometry_check.txt MECH; r3, red team p2 L2.1: best case for a blind plan)"
+ },
+ "sim": {
+  "skin_tet_mm": 1.0,
+  "bone": "rigid",
+  "ring": "rigid"
+ },
+ "ring_start": {
+  "rest": "lying flat on the table top, axis vertical (r3: the cone is removed, red team p2 L2.2)",
+  "xy_mm": [
+   200,
+   160
+  ],
+  "y_left_of_centre_mm": 160,
+  "centre_z_mm": 2.0
+ }
+}
