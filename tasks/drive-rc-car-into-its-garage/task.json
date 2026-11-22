@@ -1,0 +1,21 @@
+{
+  "title": "Drive a toy remote-control car into its shoebox garage with the two-lever remote",
+  "category": "Societal relatability",
+  "keywords": [
+    "bimanual",
+    "remote control",
+    "toy car",
+    "closed-loop control",
+    "parking",
+    "two levers at once"
+  ],
+  "instruction": "Drive the toy car into its garage with the remote control.",
+  "context": "Driving a toy RC car into a cardboard-box garage is one of the most familiar children's games; most adults have done it. Cheap toy cars have a two-lever remote: left lever forward/reverse, right lever left/right, each simply on or off, so a slow, tight manoeuvre needs both thumbs tapping at once. The car turns no tighter than 34 cm, so it has to shunt back and forth, then thread a door 2 cm wider than itself on each side.",
+  "setup": "Table top: the robot's own (x forward from the arm bases, y left, origin midway between them; table edges at x 0.91 m and y +-0.65 m). Toy RC car (rigid model of a 1:24 toy car; plastic body, rubber tyres): 18.0 x 8.8 x 6.4 cm, 190 g, wheelbase 11 cm, centre at x 0.58, y +0.20, nose pointing +x (to the far edge). Remote (plastic, 2 x AA): 20.0 x 9.5 x 3.2 cm, 180 g, lying flat in a cardboard cradle (21.6 x 11.1 cm, 1.2 cm rims front and back) taped to the table at x 0.27, y 0.00; left lever (throttle, blue 20 mm ball on a 28 mm stem) at y +0.075 tilts forward/back; right lever (steering, red ball) at y -0.075 tilts left/right; both spring-centred, 22 degrees each way, switching on past 10 degrees. Garage: a children's shoebox base (cardboard, 5 mm walls 10 cm tall), lid off, open side up, taped to the table at its back corners: outside 17 x 28 cm, inside 16 cm wide (x 0.60 to 0.76) and 27 cm long (y -0.63 to -0.36); a door 13 cm wide and 7.5 cm high cut up from the bottom edge in the middle of its end facing +y (door face at y -0.36). Distractors (not scored): a ceramic mug (11.4 x 9 x 8 cm, 300 g) at x 0.84, y +0.36; a puzzle cube (7.2 cm, 100 g) at x 0.85, y -0.24.",
+  "scoring": "Measured at the end of the run. 1.0: the whole car is inside the garage (no part of its 18 x 8.8 cm footprint in front of the door's face; a car resting against a side or back wall counts), both levers released (back within 5 degrees of centre) and the car still for 1 s, with no gripper finger within 3 cm of the car. 0.5: not 1.0, but the car's centre is inside the garage (behind the door's face, between the side walls). 0.25: neither, but the car is lined up at the door: its centre within 3 cm of the garage's centre line (x 0.68) and at most 25 cm out from the door's face, and its length within 15 degrees of the garage's axis (nose or tail first). 0: anything else. The run scores 0, whatever the end state, if at any moment a gripper finger came within 1 cm of the car, the car moved while its own motor was off (pushed or dragged), or any of its wheels went past the table's edge (the car is stopped there). Possible scores: 0, 0.25, 0.5, 1.0.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "reset_notes": "Put the car back on its tape marks (centre and nose direction), levers centred (they spring back); the garage and the remote's cradle stay taped. Check the car's batteries every ten runs: a weak pack slows it.",
+  "fidelity": "The car is a rigid body on a planar x/y/yaw joint chain whose velocities follow a toy-car model of the remote's on/off switches (0.6 m/s top speed, 0.3 s spin-up, 0.12 s coast-down, 18 deg steering lock, 0.08 s steering lag, 2 N tyre grip; estimates for a 1:24 toy car on its slow setting); no tyre slip, bumps or battery sag; a wheel past the table's edge stops the car (the fall is not simulated). Remote levers are sprung hinges; shoebox and remote are primitives; distractors are SimReady props.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-EYATPG"
+}
