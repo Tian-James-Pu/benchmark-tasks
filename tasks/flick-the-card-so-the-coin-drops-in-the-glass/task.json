@@ -1,0 +1,22 @@
+{
+  "title": "Whip an index card out from under a quarter so the coin drops straight into the juice glass below",
+  "category": "Societal relatability",
+  "keywords": [
+    "inertia",
+    "dynamic",
+    "fast pull",
+    "coin",
+    "index card",
+    "glass",
+    "school science"
+  ],
+  "instruction": "Get the quarter into the glass without touching the quarter or lifting the card.",
+  "context": "The coin-on-a-card inertia trick is a standard grade-school science activity and a familiar table trick. It works only when the card leaves fast: friction from a card pulled or pushed slowly carries the coin away with it, and only a card that slips out at about 1 m/s or more leaves the coin behind to drop straight down.",
+  "setup": "Positions are (x forward from the arm bases, y to the left) in cm; heights are above the table. Glass: 8 oz clear glass juice tumbler (NVIDIA SimReady dishware_glass_8oz_a01), 6.6 cm across the rim, 10.0 cm tall, about 3 mm wall and 4 mm base, 150 g, loose, standing on a tape circle centred at (36.0, -15.0). Card: Oxford ruled 3 x 5 in index card (item 31), 12.7 x 7.62 cm, 2.0 g, paper, laid flat across the rim, ruled side up, centred over the glass, long side pointing away from the robot, so it overhangs the rim 3.0 cm towards and away from the robot and 0.5 cm at each side. Coin: US quarter (24.26 mm across, 1.75 mm thick, 5.67 g, copper-nickel clad), lying flat at the card's centre over the glass's axis. Distractors (NVIDIA SimReady, loose, ignored by the scorer except that none may touch the coin): a notebook (misc_notebook_a01, 22.9 x 17 x 1 cm, 120 g) centred at (20, 27), turned 90 degrees; a ceramic mug (dishware_mug_a01, 11.4 x 9 x 8 cm, 300 g) at (43, 17), turned 200 degrees; an apple (food_produce_apple_b01, 7 cm, 180 g) at (50, -33). Both grippers start open at their ready poses.",
+  "scoring": "Harm, recorded for the whole trial: a finger point (each finger's tip and 3 cm up it, middle and both edges) within 2.5 cm of the coin's centre; the coin's centre more than 1.0 cm above its starting height; the glass's axis more than 10 degrees from vertical, its base centre more than 2.0 cm from its mark, or its base more than 1.0 cm off the table; a distractor's bounding box within 5 mm of the coin's rim. Card clear: seen from above, no part of the card within 3.3 cm of the glass's axis. Coin in the glass: its centre within 3.0 cm of the glass's axis and between the glass's base and 1.0 cm below the rim. Hands clear: every finger point at least 5 cm from the glass (3.3 cm radius, 10 cm tall) and from the coin. 1.0: coin in the glass, card clear, hands clear, coin and glass still (under 1 cm/s and 0.5 rad/s), no harm, for 1 s (20 control steps) in a row; it then stays 1.0 unless a harm follows. 0.5: no harm, card clear, and the coin's centre within 6.0 cm (seen from above) of the glass's axis, without 1.0. 0.25: no harm, card clear, coin farther away. 0: any harm, or the card still over the mouth. Possible scores: 0, 0.25, 0.5, 1.0.",
+  "run_limit": "1,200 steps (1 minute at 20 Hz)",
+  "reset_notes": "Nothing is consumed. Stand the glass on its tape mark, lay the same card back on its tape marks across the rim, take the quarter out of the glass and set it in the drawn circle at the card's centre.",
+  "fidelity": "PhysX rigid bodies at 240 Hz. The card is one rigid 2 g box 0.3 mm thick (real: 0.2 mm, flexible); the coin a rigid disc with continuous collision. The glass is drawn with the SimReady mesh but collides as a 4 mm base and 24 flat wall panels following its measured radii. Friction is estimated: coin 0.35/0.30, card 0.40/0.35, glass 0.40 (PhysX averages pairs); no restitution, air drag or card flutter. The glass's 150 g mass is an estimate.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-VENWND"
+}
