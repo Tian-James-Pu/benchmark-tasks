@@ -1,0 +1,395 @@
+{
+ "units": "mm, g, N, deg, s unless stated; frame: x forward, y left, from the arm-base midpoint, z above the table",
+ "evidence": {
+  "nia_url": "https://www.nia.nih.gov/health/safety/home-safety-and-alzheimers-disease",
+  "nia_fetch": "fetch/nia_alz_home_safety_2.html",
+  "nia_sha256": "b2ab6e4b8318dbf00ccb4ce5deeaf329af1935d391dfb3a29772f49243ba9288",
+  "fetch_date": "2026-11-21",
+  "nia_fetch_r1": "fetch/nia_alz_home_safety_r1c.html",
+  "fetch_date_r1": "2026-11-22",
+  "nia_fetch_r2": "fetch/nia_alz_home_safety_r2.html",
+  "fetch_date_r2": "2026-11-22",
+  "nia_fetch_r4": "fetch/nia_alz_home_safety_r4.html",
+  "fetch_date_r4": "2026-11-22"
+ },
+ "bases": {
+  "left": [
+   0,
+   305
+  ],
+  "right": [
+   0,
+   -305
+  ],
+  "separation": 610
+ },
+ "table": {
+  "x_min": -190,
+  "x_max": 910,
+  "y_half": 650,
+  "depth": 1100,
+  "width": 1300
+ },
+ "panel": {
+  "sheet_model": "National Hardware N316-299, 24 x 12 in, 26 ga galvanized steel",
+  "sheet_y": 610,
+  "sheet_z": 305,
+  "sheet_t": 0.46,
+  "sheet_mass_g": 672,
+  "face_x": 400,
+  "sheet_z_bottom": 60,
+  "sheet_z_top": 365,
+  "sheet_y_half": 305,
+  "upright_t": 18,
+  "upright_z": 382,
+  "base_x": 200,
+  "base_t": 18,
+  "gusset": 150,
+  "steel_density_g_cm3": 7.85,
+  "plywood_mass_g": 3800,
+  "stand_mass_kg": 3.8
+ },
+ "disc": {
+  "model": "Master Magnetics 07002",
+  "dia": 12.7,
+  "t": 4.75,
+  "pull_rated_lb": 1.41,
+  "pull_rated_N": 6.27,
+  "mass_g": 2.95,
+  "ferrite_density_g_cm3": 4.9,
+  "pack": 10,
+  "price_usd": 4.79
+ },
+ "food": {
+  "strawberry": {
+   "h": 38,
+   "w": 30,
+   "t": 12,
+   "mass_g": 9
+  },
+  "cookie": {
+   "dia": 40,
+   "t": 8,
+   "mass_g": 11,
+   "alt_t": 6
+  },
+  "donut": {
+   "od": 40,
+   "id": 6,
+   "t": 12,
+   "mass_g": 11,
+   "pocket_centre_r": 11.5,
+   "pocket_dia": 12.9,
+   "pocket_wall": 2.05
+  },
+  "count": 3
+ },
+ "plain": {
+  "dia": 40,
+  "t": 8,
+  "mass_g": 11,
+  "count": 1,
+  "note": "r3: plain magnet A only (B deleted, blind r1 item 2); A is a plain black disc the size of the cookie (40 x 8), so a pinch that would take a cookie or doughnut at a spot would take A there too; A sits at its drawn cell, the card hangs from it"
+ },
+ "cards": {
+  "model": "Mead 4 x 6 in ruled index cards",
+  "w": 152.4,
+  "h": 101.6,
+  "t": 0.2,
+  "mass_g": 2.5,
+  "A": {
+   "magnet_above_card_centre": 25.5,
+   "note": "card centre = A's centre - 25.5 in z, same y; A's top 5.3 inside the card's top edge"
+  },
+  "price_usd": 3.98,
+  "count": 1,
+  "note": "r3: the note's cell is drawn",
+  "card_top_above_magnet": 25.3,
+  "card_bottom_below_magnet": 76.3
+ },
+ "box": {
+  "model": "Hobby Lobby 43535 (SKU 919936) Wood Box With Hinge Lid",
+  "y_len": 122,
+  "x_depth": 74,
+  "h": 49,
+  "body_h": 39,
+  "lid_t": 10,
+  "wall": 3,
+  "inner_y": 116,
+  "inner_x": 68,
+  "inner_depth": 36,
+  "mass_g": 80,
+  "y": 0,
+  "hinge_x": 183,
+  "lid_open_deg": 100,
+  "price_usd": 5.49,
+  "spot_x": 220
+ },
+ "randomisation": {
+  "cols_y": [
+   -140,
+   0,
+   140
+  ],
+  "rows_z": {
+   "low": [
+    150,
+    170
+   ],
+   "high": [
+    290,
+    310
+   ]
+  },
+  "cells": 6,
+  "jitter_y": 10,
+  "items": 4,
+  "note_cells": 6,
+  "food_cell_sets": 10,
+  "orders": 6,
+  "assignments": 360,
+  "min_gap_between_items": 20,
+  "box_spots_y": [
+   -195,
+   -65,
+   65,
+   195
+  ],
+  "box_spot_spacing": 130,
+  "box_spots": 4,
+  "draws_total": 1440,
+  "note": "r3 (blind r1 item 1): the note (with its plain magnet A) and the three food magnets take 4 of 6 cells (3 columns x 2 rows) at random; every item's centre (A's centre for the note) moves y +/-10 and z within its row's range"
+ },
+ "scoring": {
+  "lid_gap_max": 4,
+  "kept_disp_max": 10,
+  "kept_gap_max": 1,
+  "card_rot_max": 5,
+  "release_clear": 30,
+  "still_mm": 2,
+  "hold_s": 1,
+  "off_table": 10,
+  "tiers": [
+   1.0,
+   0.5,
+   0
+  ],
+  "in_above_rim_max": 4,
+  "note": "r3: Off and the 0.25 tier dropped (blind r1 item 3); Kept read at the end only (item 4); stillness of magnets outside the box no longer read (no tier holds with one outside)"
+ },
+ "force_budget": {
+  "peak_pull_N": 6.27,
+  "mu_pad": 0.6,
+  "grip_needed_N": 5.2,
+  "slide_mu_est": 0.3,
+  "slide_force_N": 1.9,
+  "limit_push_N": 10,
+  "limit_hold_N": 8,
+  "grip_needed_min_N": 2.6
+ },
+ "cameras": {
+  "front": {
+   "pos": [
+    60,
+    0,
+    600
+   ],
+   "look": [
+    360,
+    0,
+    150
+   ],
+   "px": 3840,
+   "view_mm": 836,
+   "px_per_mm_y": 3.94,
+   "px_per_mm_z": 2.13,
+   "distance": 540.8,
+   "px_per_mm_box_z": 1.4,
+   "note": "r4 (red team p3 L3.1): aimed lower (look was (400, 0, 210)) so the box, the open lid and 40 above the shut lid are in frame at every spot; px/mm are the least local values on the board (camera_check.py, camera_check.txt)"
+  },
+  "side": {
+   "pos": [
+    220,
+    -400,
+    39
+   ],
+   "look": [
+    220,
+    0,
+    39
+   ],
+   "px": 1920,
+   "view_mm": 300,
+   "px_per_mm": 6.4,
+   "pos_rel_box": [
+    0,
+    -400,
+    39
+   ],
+   "note": "set after the run, once the arms are at ready, at (220, box spot y - 400, 39): rim height, rim seen edge-on"
+  },
+  "top": {
+   "pos": [
+    300,
+    0,
+    1200
+   ],
+   "look": [
+    300,
+    0,
+    0
+   ],
+   "px": 3840,
+   "view_mm": 1200,
+   "px_per_mm": 3.2
+  },
+  "wide": {
+   "pos": [
+    360,
+    0,
+    2200
+   ],
+   "look": [
+    360,
+    0,
+    0
+   ],
+   "px": 1920,
+   "view_mm": 2540,
+   "px_per_mm": 0.76
+  }
+ },
+ "run_limit_steps": 2400,
+ "demo_steps_est": 900,
+ "cost_usd": {
+  "sheet": 14.99,
+  "discs": 4.79,
+  "cards": 3.98,
+  "box": 5.49,
+  "plywood_est": 25.0,
+  "pla_est": 5.0,
+  "total": 62.74,
+  "fallback_second_sheet": 14.99,
+  "tape": 3.49
+ },
+ "model_numbers": {
+  "sheet_N316_suffix": 299,
+  "disc_07002": 7002,
+  "box_43535": 43535,
+  "box_sku": 919936,
+  "cards_in": [
+   4,
+   6
+  ],
+  "tape_hl_item": 6689,
+  "tape_sku": 758128
+ },
+ "geometry": {
+  "magnet_inside_card_top": 5.3,
+  "side_by_side": 110,
+  "worst_stack": 32,
+  "lid_open_edge_height": 72.9,
+  "lid_shut_angle_deg": 3.1,
+  "pad_off_steel": 3,
+  "pulled_off": 40,
+  "finger_open": 94,
+  "tip_moment_Nm": 1.19,
+  "restoring_moment_Nm": 3.07,
+  "table_space_x_min": 163,
+  "table_space_x_max": 600,
+  "note_card_to_adjacent_item_min": 23.8,
+  "high_note_card_to_low_item_min": 23.7,
+  "low_note_card_to_high_item_min": 74.7,
+  "low_note_card_bottom_min": 73.7,
+  "high_item_top_max": 330,
+  "high_note_card_top_max": 335.3,
+  "board_top_margin": 29.7,
+  "same_column_item_gap_min": 80,
+  "adjacent_food_gap_min": 80,
+  "tip_moment_Nm_r3": 1.94,
+  "tip_pull_height_r3": 310
+ },
+ "gates": {
+  "G1_scale_range_N": 10,
+  "G1_resolution_N": 0.1,
+  "G1_repeats": 5,
+  "G2_min_inner_x": 41,
+  "G3_hang_s": 30,
+  "feeler_mm": 1,
+  "G1_pass_min_N": 3.1,
+  "G2_depth_min": 34,
+  "G1_pass_max_N": 6.3,
+  "G2_caliper_mm": 150,
+  "G2_caliper_res_mm": 0.02,
+  "G3_stopwatch_res_s": 1,
+  "G1_fallback_sheets": 2,
+  "G1_fallback_sheet_t": 0.92,
+  "G3_fallback_discs": 2,
+  "G3_fallback_note": "r4 (red team p3 L4.3): K1 rebuilt with two 07002 discs from the bought pack; 07003 dropped (fetch/daaefa63.html: every fulfillment option not available)",
+  "feeler_after_photos": true
+ },
+ "reach": {
+  "result_dir": "runs/reach/food-magnets/r4open + runs/reach/food-magnets/r5open",
+  "finger": "open",
+  "finger_open": 94,
+  "corners": 12,
+  "targets_per_corner": 8,
+  "required_total": 96,
+  "unreachable": 0,
+  "worst_nearest_base_horizontal": 495,
+  "pinch_min_mesh_clearance": 1.6,
+  "drop_min_mesh_clearance": 15.1,
+  "pulled_min_clearance": 34.2,
+  "lid_push_min_clearance": 27.2,
+  "previous": "runs/reach/food-magnets/r1closed",
+  "drop_x": 235,
+  "drop_above_rim": 80,
+  "previous_r2": "runs/reach/food-magnets/r2open",
+  "summary": "reach/summary_r5.txt",
+  "drop_best_clear_range": [
+   15.1,
+   20.5
+  ],
+  "drop_other_arm_min_mesh": 11.5,
+  "drop_other_arm_min_capsule": 9.5,
+  "previous_r3": "runs/reach/food-magnets/r3open",
+  "previous_r4": "runs/reach/food-magnets/r4open",
+  "result_dir_r5": "runs/reach/food-magnets/r5open",
+  "corners_r5_new": 4,
+  "pinch_min_mesh_pair": "nearest arm fingertip to the note card (card_A), adj_lo_m / adj_lo_p corners; proximity, not penetration",
+  "pinch_nearest_arm_upright_min": 2.2,
+  "pinch_far_arm_min": 3.6,
+  "pinch_tip_sheet_min": 0.4,
+  "drop_nearest_arm_min_mesh": 11.1,
+  "note_r5": "r5 (red team p3 L4.1/L4.2): 4 corner files put a food magnet in the note row, in the next column, at the 23.8 card-to-item gap, both rows, food on either side; minima now per nearest arm (reach/summarize_nearest.py)"
+ },
+ "sweep": {
+  "assignments": 360,
+  "jitter_grid_mm": 1,
+  "box_spots": 4,
+  "patterns": 1126,
+  "frontier": 12,
+  "best_mean": 0.0426,
+  "best_single_pattern_mean": 0.035,
+  "cell_reference": 0.0417,
+  "monte_carlo_draws": 20000,
+  "monte_carlo_mean": 0.0414,
+  "band_sweeps_mean": 0,
+  "rows": 52,
+  "source": "scorer_test.txt",
+  "previous_r2": {
+   "best_mean": 0.4375,
+   "band_sweeps_mean": 0.25,
+   "draws": 144
+  }
+ },
+ "tape": {
+  "model": "Scotch Masking Tape 3/4 in, Hobby Lobby item 6689 (SKU 758128)",
+  "width_in": 0.75,
+  "roll_ft": 10,
+  "width_mm": 19,
+  "roll_m": 3.05,
+  "price_usd": 3.49,
+  "fetch": "fetch/hl_6689.html"
+ }
+}
