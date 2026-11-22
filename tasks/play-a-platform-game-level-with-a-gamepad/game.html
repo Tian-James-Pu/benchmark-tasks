@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Platform level (gamepad)</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  canvas { display: block; margin: 0 auto; background: #000; }
+  #info { position: fixed; left: 8px; bottom: 6px; color: #888; font: 14px monospace; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<div id="info"></div>
+<script>
+// The same level, physics and constants as task.py's GAME (keep the two in step). Screen pixels, x right, y up from the bottom left.
+// One fixed game step per 1/20 s; the gamepad is read once per step (Gamepad API, standard mapping: axes[0] is the left stick's
+// left-right value, -1 left to +1 right; buttons[0] is A). R or the controller's Menu button (buttons[9]) restarts the level.
+const GAME = {
+  HZ: 20,
+  W: 1920, H: 1080,
+  CHAR_W: 72, CHAR_H: 96,
+  START_X: 130, START_Y: 200,
+  V_RUN: 450.0,
+  ACCEL: 1800.0, DECEL: 2400.0,
+  JUMP_V: 1050.0,
+  GRAVITY: 2400.0,
+  JUMP_CUT: 150.0,
+  FALL_MAX: 1500.0,
+  DEADZONE: 0.20, SATURATION: 0.90,
+  LIVES: 3,
+  RESPAWN_STEPS: 10,
+  BLOCKS: [["A", 0, 520, 200], ["B", 610, 1400, 200], ["S", 820, 1000, 350], ["C", 1700, 1920, 200]],
+  FLAG_X: 1830,
+};
+const MILESTONE = { B: 1, S: 2, C: 3 };   // the flag is 4
+const SCORE_OF = [0, 0.25, 0.5, 0.75, 0.75];  // before the hands-off check at the end; 1.0 needs LEVEL CLEAR and then hands off
+
+function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+function speedFraction(axis) {
+  return clamp((Math.abs(axis) - GAME.DEADZONE) / (GAME.SATURATION - GAME.DEADZONE), 0, 1);
+}
+
+class Game {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = GAME.START_X; this.y = GAME.START_Y; this.vx = 0; this.vy = 0;
+    this.ground = true; this.on = "A"; this.jumping = false; this.aPrev = false;
+    this.lives = GAME.LIVES; this.best = 0; this.clear = false; this.over = false; this.wait = 0; this.steps = 0;
+  }
+  step(axis, aDown) {
+    const g = GAME, dt = 1 / g.HZ;
+    const pressed = aDown && !this.aPrev;
+    this.aPrev = aDown;
+    this.steps += 1;
+    if (this.over) return;
+    if (this.wait > 0) {
+      this.wait -= 1;
+      if (this.wait === 0) {
+        this.x = g.START_X; this.y = g.START_Y; this.vx = 0; this.vy = 0;
+        this.ground = true; this.on = "A"; this.jumping = false;
+      }
+      return;
+    }
+    const f = speedFraction(axis);
+    const target = f > 0 ? Math.sign(axis) * f * g.V_RUN : 0;
+    const rate = (f > 0 ? g.ACCEL : g.DECEL) * dt;
+    this.vx += clamp(target - this.vx, -rate, rate);
+    if (pressed && this.ground) { this.vy = g.JUMP_V; this.ground = false; this.jumping = true; }
+    if (this.jumping && !aDown && this.vy > g.JUMP_CUT) this.vy = g.JUMP_CUT;
+    if (this.vy <= 0) this.jumping = false;
+    this.vy = Math.max(this.vy - g.GRAVITY * dt, -g.FALL_MAX);
+    const hw = g.CHAR_W / 2;
+    this.x += this.vx * dt;
+    for (const [, x0, x1, top] of g.BLOCKS) {
+      if (this.x + hw > x0 && this.x - hw < x1 && this.y < top) {
+        this.x = this.vx > 0 ? x0 - hw : x1 + hw;
+        this.vx = 0;
+      }
+    }
+    this.x = clamp(this.x, hw, g.W - hw);
+    const y0 = this.y;
+    this.y += this.vy * dt;
+    this.ground = false;
+    if (this.vy <= 0) {
+      let land = null;
+      for (const [name, x0, x1, top] of g.BLOCKS) {
+        if (this.x + hw > x0 && this.x - hw < x1 && y0 >= top - 1e-6 && this.y < top && (land === null || top > land[1])) land = [name, top];
+      }
+      if (land !== null) { this.y = land[1]; this.vy = 0; this.ground = true; this.on = land[0]; }
+    }
+    if (this.ground) this.best = Math.max(this.best, MILESTONE[this.on] || 0);
+    if (this.x + hw >= g.FLAG_X) { this.clear = true; this.over = true; this.best = 4; }
+    else if (this.y + g.CHAR_H < 0) {
+      this.lives -= 1;
+      if (this.lives <= 0) this.over = true; else this.wait = g.RESPAWN_STEPS;
+    }
+  }
+}
+
+// -- drawing (canvas y runs down: flip) ----------------------------------------------------------------------------------------------
+const cv = document.getElementById("c"), ctx = cv.getContext("2d");
+function fit() {
+  const s = Math.min(window.innerWidth / GAME.W, window.innerHeight / GAME.H);
+  cv.style.width = (GAME.W * s) + "px"; cv.style.height = (GAME.H * s) + "px";
+}
+window.addEventListener("resize", fit); fit();
+function rect(x0, x1, y0, y1, col) { ctx.fillStyle = col; ctx.fillRect(x0, GAME.H - y1, x1 - x0, y1 - y0); }
+function heart(cx, cy, col) {
+  ctx.fillStyle = col; ctx.beginPath();
+  for (let i = 0; i < 40; i++) {
+    const t = 2 * Math.PI * i / 40;
+    const x = 16 * Math.pow(Math.sin(t), 3), y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+    const px = cx + 1.9 * x, py = GAME.H - (cy + 1.9 * y);
+    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+  }
+  ctx.closePath(); ctx.fill();
+}
+function draw(game, axis, aDown) {
+  const g = GAME;
+  rect(0, g.W, 0, g.H, "#6aaef0");
+  ctx.fillStyle = "#f6f6f8";
+  for (const [cx, cy, w, h] of [[420, 820, 180, 56], [500, 860, 120, 44], [1250, 760, 220, 60], [1340, 800, 140, 48]]) {
+    ctx.beginPath(); ctx.roundRect(cx - w / 2, g.H - (cy + h / 2), w, h, h / 2); ctx.fill();
+  }
+  for (const [name, x0, x1, top] of g.BLOCKS) {
+    if (name === "S") {
+      const base = g.BLOCKS[1][3];
+      rect(x0, x1, base, top, "#b8612e");
+      for (let yy = base + 50; yy < top; yy += 50) rect(x0, x1, yy - 3, yy + 3, "#5a2e14");
+      for (let yy = base; yy < top; yy += 50) {
+        const off = (Math.floor(yy / 50) % 2) ? 0 : 45;
+        for (let xx = x0 + off + 45; xx < x1 - 5; xx += 90) rect(xx - 3, xx + 3, yy, Math.min(yy + 50, top), "#5a2e14");
+      }
+    } else {
+      rect(x0, x1, 0, top - 22, "#8c5426");
+      rect(x0, x1, top - 22, top, "#40b333");
+    }
+  }
+  const fx = g.FLAG_X;
+  rect(fx, fx + 12, 200, 560, "#d9d9d9"); rect(fx - 8, fx + 20, 200, 216, "#d9d9d9");
+  ctx.fillStyle = "#1acc40"; ctx.beginPath();
+  ctx.moveTo(fx + 12, g.H - 470); ctx.lineTo(fx + 12, g.H - 550); ctx.lineTo(fx + 120, g.H - 510); ctx.closePath(); ctx.fill();
+  const shown = game.wait === 0 && game.y >= 0 && !(game.over && !game.clear);
+  if (shown) {
+    const x = game.x, y = game.y;
+    rect(x - 30, x + 30, y, y + 34, "#1f39bf");
+    rect(x - 36, x + 36, y + 30, y + 66, "#eb1f1a");
+    rect(x - 26, x + 26, y + 62, y + 96, "#facc9e");
+    rect(x + 6, x + 16, y + 74, y + 88, "#050505");
+  }
+  for (let k = 0; k < game.lives; k++) heart(70 + 80 * k, 1010, "#f21a40");
+  for (let k = 0; k < 4; k++) { const qx = 1560 + 90 * k; rect(qx - 30, qx + 30, 980, 1040, k < game.best ? "#ffd61a" : "#404c66"); }
+  if (game.over) {
+    rect(380, 1540, 470, 730, "#0d0d1a");
+    ctx.fillStyle = game.clear ? "#ffe633" : "#ff4d40";
+    ctx.font = "bold 150px monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.fillText(game.clear ? "LEVEL CLEAR" : "GAME OVER", 960, g.H - 600);
+  }
+  document.getElementById("info").textContent =
+    `axes[0] ${axis.toFixed(2)}  speed ${(100 * speedFraction(axis)).toFixed(0)} %  A ${aDown ? "down" : "up"}  ` +
+    `lives ${game.lives}  best ${game.best}  score before the end check ${SCORE_OF[game.best]}  step ${game.steps}`;
+}
+
+// -- input, once per fixed step ------------------------------------------------------------------------------------------------------
+const keys = new Set();
+window.addEventListener("keydown", e => { keys.add(e.code); if (e.code === "KeyR") game.reset(); });
+window.addEventListener("keyup", e => keys.delete(e.code));
+let menuPrev = false;
+function readInput() {
+  let axis = 0, a = false;
+  const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+  for (const p of pads) {
+    if (p && p.connected && p.mapping === "standard") {
+      axis = p.axes[0]; a = p.buttons[0].pressed;
+      const menu = p.buttons[9] && p.buttons[9].pressed;
+      if (menu && !menuPrev) game.reset();
+      menuPrev = menu;
+      break;
+    }
+  }
+  if (keys.has("ArrowRight")) axis = keys.has("ShiftLeft") ? 0.5 : 1;   // keyboard only for checking the page
+  if (keys.has("ArrowLeft")) axis = keys.has("ShiftLeft") ? -0.5 : -1;
+  if (keys.has("Space")) a = true;
+  return [axis, a];
+}
+
+const game = new Game();
+let acc = 0, last = performance.now(), axis = 0, aDown = false;
+function frame(now) {
+  acc += Math.min(now - last, 250); last = now;
+  const stepMs = 1000 / GAME.HZ;
+  while (acc >= stepMs) { [axis, aDown] = readInput(); game.step(axis, aDown); acc -= stepMs; }
+  draw(game, axis, aDown);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
