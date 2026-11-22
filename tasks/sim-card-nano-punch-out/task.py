@@ -285,10 +285,8 @@ class Card:
             self.score = 1.0 if self.full else 0.75
         elif nano_out:
             self.score = 0.5
-        elif not frames_ok:
-            self.score = 0.25
         else:
-            self.score = 0.0
+            self.score = 0.0  # the nano not out: nothing earned, torn frames or not (damage alone earns no credit)
         corners = s.to_world(CORNERS)
         self.last = {"t": round(self.t, 2), "torn": dict(self.torn), "loose": self.loose, "peak_N": {k: round(v, 2) for k, v in self.peak.items()},
                      "load_N": {k: round(v, 2) for k, v in self.load.items()},
@@ -336,7 +334,7 @@ def demo_script(ctx):
     step until a part of the card sinks into it (read from the parts' own positions, which the cameras show), and lifts at once. The
     nano drops onto the table. Then the left lets go and both move clear.
     Red-team modes: none (nothing), onearm (the right alone: the card is not held), careless (the same press landing 5.2 mm off the
-    nano's centre, across it: on the micro ring by the nano's cut line), hold (as full, but the left never lets go)."""
+    nano's centre, across it: on the micro ring by the nano's cut line; it tears the ring and scores 0), hold (as full, but the left never lets go)."""
     import demokit as d
     from yam_arena.constants import FINGER_CLOSED, FINGER_OPEN
 

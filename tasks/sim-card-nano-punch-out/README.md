@@ -24,6 +24,14 @@ would, and the nano drops 4 cm onto the desk.
 | `demokit.py` | the closed-loop demo runner, unchanged |
 | `simready.py` | the SimReady prop loader, unchanged |
 
+## Response to review
+
+| request (review of TK-YPPT7J) | change |
+|---|---|
+| Construct validity: "A robot can earn 0.25 by deliberately tearing an outer frame without separating the nano-SIM, contrary to the requested outcome." | The 0.25 tier is gone. A trial where the nano is not out scores 0 whether or not a frame is torn, so tearing a frame alone earns nothing. Every nonzero score now needs the nano out of the card. `task.py` (`Card.step`, the score branch) |
+| Scoring: "The 0.25 tier rewards damage without progress toward removing the nano-SIM." | Possible scores are now 0, 0.5, 0.75 and 1.0. The partial levels both need the nano out: 0.75 with both frames untorn, 0.5 with a frame torn. All conditions stay numeric. `task.py`, `task.json` (`scoring`, word for word what `score()` does), README "Scoring" |
+| What to change: "Change the 0.25 tier to zero when an outer frame is torn but the nano-SIM is still attached [...] Update both the scorer and scoring documentation accordingly." | Done in the scorer (`task.py`), `task.json` `scoring` and the README's "Scoring" and "The demo" sections. Red-team on the GPU pipeline: the `careless` press lands on the micro ring and tears it with the nano still in it (ring tabs 7.03 N, nano tabs 0.38 N). It now scores **0.0** (it scored 0.25 before). We also ran a one-off press, not shipped, on the mini piece's band 10 mm along the card from the nano's centre. It tore nothing and scored 0.0. In the code, any trial with the nano not out scores 0, whichever frame is torn. The full demo is unchanged and still scores 1.0 (see "Results"). |
+
 ## Requirements
 
 - `yam-isaac-lab-arena` with Isaac Lab-Arena (`source <ARENA_DIR>/yam.env`).
@@ -70,8 +78,9 @@ the scorer (its log lines print the scorer's record for debugging, and nothing a
 | `full` | as above | 1.0 / 1.0, 1.0 | the nano's tabs gave at 5.2-5.3 N, while the ring's and the mini's (in series) peaked at 5.3-5.5 N and held; the nano lay on the table 0.4 s later |
 | `none` | does nothing | 0.0 / 0.0 | nothing torn |
 | `onearm` | the right hand alone, the card not held | 0.0 / 0.0 | the card tipped about the stack's edge (40 degrees, its end on the table); nothing torn |
-| `careless` | the same press landing 5.2 mm across from the nano's centre: on the micro ring, by the nano's cut line | 0.25 / 0.25 | the micro ring's tabs gave at 7.1-7.2 N with the nano still in it (nano tabs 0.3-0.4 N) |
+| `careless` | the same press landing 5.2 mm across from the nano's centre: on the micro ring, by the nano's cut line | 0.0 / 0.0 | the micro ring's tabs gave at 7.1-7.2 N with the nano still in it (nano tabs 0.3-0.4 N); a torn frame with the nano still in earns nothing |
 | `hold` | as `full`, but the left hand never lets go | 0.75 / 0.75 | nano out, frames whole, but a hand stays on the card |
+| mini band (a one-off red-team copy of the script, not shipped) | as `careless`, but the press lands 10 mm along the card from the nano's centre, on the mini piece's band outside the micro outline | 0.0 (GPU only) | nothing tore (the mini's tabs peaked at 0.8 N); even had it torn, the nano would still be in, which scores 0 |
 | straight down (a one-off red-team copy of the script, not shipped) | the naive press: card held as in `full`, the right gripper pointing straight down with its fingers closed, on the nano's centre (turned 0 and 90 degrees) | 0.0, 0.0 (GPU only) | the right hand stopped about 5 cm above the card, against the holding hand 4 cm away, and never touched it; nothing torn |
 
 GPU is PhysX's GPU pipeline, which `inspect-robots` trials use (`-E device=cuda:0`); CPU is `--fast`. Each set was run in one
@@ -79,7 +88,7 @@ simulator session, so it also checks that a reset restores torn tabs.
 
 ## Results
 
-Final GPU runs with cameras (`python demokit.py task.py OUT`, 640 x 360), current `task.py`:
+Final GPU runs with cameras (`python demokit.py task.py OUT`, 640 x 360), rerun with the revised `task.py` (only the score's 0.25 branch changed, so the motion and the numbers are the same as before):
 
 - run 1: **1.0**, full credit at step 266 (13.3 s). The nano's tabs gave at 5.33 N; the ring's and the mini's peaked at 5.41 N
   and 5.52 N and held. The card stayed flat (tilt 0.1 degrees) throughout. The demo video and the screenshot are from this run.
@@ -131,11 +140,11 @@ Read at the end of the trial from the state of the card, the nano and the hands:
   It stays 1.0 while the nano is out and both frames are untorn.
 - **0.75**: the nano is out and both frames are untorn, without the 1.0 conditions (a hand still on the card, say).
 - **0.5**: the nano is out, but the micro ring or the mini frame is torn.
-- **0.25**: the nano is not out, and the micro ring (with the nano still in it) or the whole mini piece is torn out.
-- **0**: the nano is not out and neither frame is torn (nothing torn, or a nano that fell off the table). Also 0, whatever else
-  happened, if the card was ever more than 2 cm below the table top (knocked off the table).
+- **0**: the nano is not out (still in the card, or fallen off the table), whether or not the micro ring or the mini frame is
+  torn: tearing a frame alone earns nothing. Also 0, whatever else happened, if the card was ever more than 2 cm below the
+  table top (knocked off the table).
 
-Possible scores: 0, 0.25, 0.5, 0.75, 1.0. The fingertip points are mechkit's `fingertips()` (tip and 3 cm up each finger, at its
+Possible scores: 0, 0.5, 0.75, 1.0. Every nonzero score needs the nano out of the card, the outcome the instruction asks for. The fingertip points are mechkit's `fingertips()` (tip and 3 cm up each finger, at its
 middle and both edges). There are no force or impulse rules in the score: the tab loads only decide what tears, as the real tabs do.
 
 ## Real trial
