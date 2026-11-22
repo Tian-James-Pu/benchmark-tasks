@@ -1,0 +1,21 @@
+{
+  "title": "Top a soft-boiled egg with a drop-weight topper: bell centred on the crown, weight dropped full height, cap lifted off",
+  "category": "Societal relatability",
+  "keywords": [
+    "breakfast",
+    "soft-boiled egg",
+    "egg topper",
+    "drop weight",
+    "bimanual",
+    "kitchen"
+  ],
+  "instruction": "Take the top off the soft-boiled egg with the egg topper, then stand the topper back up on the table.",
+  "context": "Opening a soft-boiled egg in its cup is an everyday breakfast job. A drop-weight topper does it in one blow: the bell is set on the crown, the weight dropped down the rod, and the ring of teeth scores a clean circle; lifting the topper brings the cut top away in the bell. One hand keeps the bell centred and upright on the egg while the other lifts the 45 g weight the full height and lets go; a short drop does not cut, and an off-centre or tilted bell cracks the egg's side.",
+  "setup": "Units cm, kg; x forward from the arm bases, y left; heights above the table top (74.75 cm). Porcelain egg cup, 4.7 rim dia (3.8 inside), 5.5 tall, foot 4.4 dia, 0.075, at (30, 0). Soft-boiled large egg, shell on, 4.3 dia x 5.7 long, pointed end up, 0.057, resting in the cup, centre 6.7 up. Drop-weight egg topper, stainless steel and silicone, 22.5 tall: bell 4.0 dia x 2.0, its open bottom a ring of teeth 3.4 inside dia; silicone collar 2.2 dia from 2.0 to 7.0 up; rod 0.8 dia to 21.5, end knob 1.5 dia; weight a 3.0 dia x 3.5 steel sleeve, 0.045, resting on the collar and sliding 10 up the rod; frame 0.070; standing on its bell at (36, 10). Distractors, ignored by scoring (SimReady): side plate 17.2 x 17.7 x 2.6, 0.15, at (27, -17); teaspoon 19.1 long, 0.02, at (16, 22) yaw 0.3 rad; tea cup 11.9 x 8.4 x 10.2, 0.20, at (50, 25) yaw -1.57 rad; salt shaker 6.2 dia x 11, 0.12, at (47, -4).",
+  "scoring": "A drop counts when the weight falls freely (highest point to rest in at most 0.4 s) from at least 8 cm above its rest on the collar while the bell sits on the egg (ring within 6 mm of its seat height on the shell and within 12 mm of the egg's axis). A counted drop with the ring's centre within 3 mm of the egg's axis and the topper within 8 degrees of the egg's axis cuts the shell in a clean ring, and the cut top then lifts away in the bell; otherwise it cracks the egg's side. Shorter drops do nothing. 0 if the side was ever cracked, if the egg ever leaves its cup (centre more than 12 mm off the cup's axis, egg tilted over 25 degrees or cup over 20 degrees), or if the shell was never cut. 1.0: shell cut, the cut top off the egg (over 3 cm from its seat), the topper off the egg (ring over 5 cm from its seat) and standing on the table (within 15 degrees of upright, bell within 1.5 cm of the table top), egg in its cup, egg and topper moving under 1 cm/s, every fingertip at least 3 cm from the egg, the topper and the cut top, all held 1 s (kept afterwards unless a 0 condition follows). 0.75: shell cut, topper and cut top off the egg, topper standing on the table. 0.5: shell cut, topper and cut top off the egg. 0.25: shell cut.",
+  "run_limit": "2,400 steps (2 minutes at 20 Hz)",
+  "reset_notes": "One soft-boiled egg per trial (boiled 6 min from the fridge, 1 min in cold water; see the README). Tip the cut top out of the bell, stand the topper back on its tape mark with the weight down, and set a new egg in the cup on its mark, pointed end up.",
+  "fidelity": "Egg, egg cup and topper are custom rigid meshes at the listed sizes (SimReady has no egg cup or topper, and its egg is one piece). The egg is two rigid bodies, top and shell, held together until a counted drop, after which the top rides in the bell; shell fracture is not simulated: the drop rule decides clean ring or cracked side. The weight slides almost freely under gravity. Masses and ring size are estimates. Distractors are SimReady props.",
+  "scores": "Dream-1 run: 0.0; demo: 1.0",
+  "media": "M-VLC332"
+}
