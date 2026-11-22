@@ -3,9 +3,10 @@
 The stand is a small live-tree stand with three 5/16"-18 eye bolts in a raised collar at 120 degrees (modelled on the Jack-Post Oasis
 313-ST: 13 in across, 7 in tall, 5 in opening). The tree's butt sits on the stand's centre spike and its trunk is caged by the three bolts'
 steel end caps. Someone set the tree up with the bolts uneven: the bolt on the tree's left (A) is backed out, the front-right one (B) is run
-in too far, and the back one (C) is right. All three caps touch the bark, so the tree is firm but leans 2.5 degrees to the left. Turning A
-in alone jams (B and C hold the trunk); B has to come out as A goes in, about 3.5 turns each, until the trunk is within 1 degree of plumb
-with all three caps on the bark.
+in too far, and the back one (C) is right. All three caps sit on the bark, not tightened, and the tree leans 2.5 degrees to the left.
+Turning A in alone jams (B and C hold the trunk); B has to come out as A goes in, about 3.5 turns each, until the trunk is within 1 degree of
+plumb, and then the bolts are snugged so that every cap grips: the scorer pushes the trunk 5 N towards each bolt in turn and the treetop
+must move at most 3 mm.
 
 Model (declared in code):
 - Stand ("stand", fixed): green polypropylene bowl and bolt collar (custom meshes, segment colliders that leave the trunk's well open).
@@ -110,10 +111,24 @@ BOWL_PROFILE = [(BASE_R, 0.0), (BASE_R, 0.008), (0.158, 0.020), (0.128, 0.085), 
 
 
 def _hull(points) -> m.Mesh:
-    from scipy.spatial import ConvexHull
-
-    p = np.asarray(points, float)
-    return m.Mesh(p, ConvexHull(p).simplices.astype(int))
+    """The convex hull's boundary triangles of a few points (brute force, numpy only: importing scipy before the simulator starts can crash
+    its startup). The collider is cooked as the convex hull of the points anyway; the triangles only give the mesh a closed surface."""
+    p = np.unique(np.round(np.asarray(points, float), 9), axis=0)
+    c = p.mean(axis=0)
+    faces = []
+    n = len(p)
+    for i in range(n):
+        for j in range(i + 1, n):
+            for k in range(j + 1, n):
+                nrm = np.cross(p[j] - p[i], p[k] - p[i])
+                if np.linalg.norm(nrm) < 1e-12:
+                    continue
+                d = (p - p[i]) @ nrm
+                if d.max() <= 1e-12:
+                    faces.append((i, j, k) if (c - p[i]) @ nrm < 0 else (i, k, j))
+                elif d.min() >= -1e-12:
+                    faces.append((i, k, j) if (c - p[i]) @ nrm > 0 else (i, j, k))
+    return m.Mesh(p, np.array(faces, int))
 
 
 def _ring_segments(prefix: str, r_in: float, profile, n: int = 12, skip=()) -> list[str]:
@@ -341,9 +356,51 @@ def hands_gap(states: dict, tips: np.ndarray) -> float:
 
 
 PLUMB_DEG, NEAR_DEG, HARM_DEG = 1.0, 2.0, 6.0
-GAP_MAX = 0.001  # m: a cap "bears on the bark" when a 1 mm feeler gauge will not pass
+BEAR_N = 3.0  # N: a cap "bears on the bark" when the bark pushes it back along its thread at least this hard (real trial: a 0.05 mm feeler blade will not enter)
 CLEAR = 0.03
 STILL_RAD_S = 0.02
+
+# The firmness probe, run by the scorer once the tree has stood plumb, bearing on all three caps, still and untouched for 2 s: a 5 N horizontal push on the
+# bare trunk 25 cm above the butt, towards each bolt in turn (so each cap alone takes it), ramped on over 0.25 s and held 1 s, then released for
+# 0.75 s. Read: the treetop's sideways movement under the load and after release. Real trial: a push gauge (or a luggage scale pulling) at the mark,
+# and a ruler clamped level beside the treetop, read from a phone video.
+PROBE_F = 5.0  # N
+PROBE_H = 0.25  # m above the butt, on the bare trunk (the lowest branches start at 30 cm)
+PROBE_ORDER = ("a", "b", "c")  # pushed towards bolt A, then B, then C
+PROBE_RAMP, PROBE_LOAD, PROBE_REST = 5, 20, 15  # control steps: 0.25 s ramp, 1 s at full load, 0.75 s released
+DEFLECT_MAX = 0.003  # m: the treetop moves at most 3 mm under the load
+RETURN_MAX = 0.001  # m: and comes back to within 1 mm of where it stood once released
+
+
+def bearing(env, states: dict) -> dict:
+    """How hard (N) the bark pushes each cap back along its bolt: the thread's spring, from where the thread holds the cap and where it is."""
+    out = {}
+    for b in BOLTS:
+        target = min(max(THREADS.screwed[b], SLIDE_LO), SLIDE_HI)
+        out[b] = K_S * (target - states[f"bolt_{b}"].joint("slide"))
+    return out
+
+
+def treetop(tree_state) -> np.ndarray:
+    """The treetop (station frame, m)."""
+    return np.array([SC[0], SC[1], TOP + Z_PIVOT]) + TREE_H * trunk_axis(tree_state)
+
+
+def push(env, force_xyz=None, tree_state=None) -> None:
+    """Apply (or, with None, remove) the probe's horizontal force on the trunk PROBE_H above the butt."""
+    import torch
+
+    asset = env.unwrapped.scene["tree"]
+    composer = asset.permanent_wrench_composer
+    if force_xyz is None:
+        composer.reset()
+        return
+    body = asset.find_bodies("tree")[0][0]
+    origin = m._np(env.unwrapped.scene.env_origins[0])
+    p = origin + np.array([SC[0], SC[1], TOP + Z_PIVOT]) + PROBE_H * trunk_axis(tree_state)
+    f = torch.tensor(np.asarray(force_xyz, float).reshape(1, 1, 3), dtype=torch.float32, device=asset.device)
+    pos = torch.tensor(p.reshape(1, 1, 3), dtype=torch.float32, device=asset.device)
+    composer.set_forces_and_torques_index(forces=f, positions=pos, body_ids=[body], env_ids=torch.tensor([0], device=asset.device), is_global=True)
 
 
 def now(env) -> dict:
@@ -351,15 +408,22 @@ def now(env) -> dict:
     states = {n: m.state(env, n) for n in names}
     tips = m.fingertips(env)
     gaps = cap_gaps(states)
+    bear = bearing(env, states)
     still = abs(_joint_vel(env, "tree", "pitch")) < STILL_RAD_S and abs(_joint_vel(env, "tree", "tree")) < STILL_RAD_S
     tilt = tilt_deg(states["tree"])
-    return {"tilt": tilt, "lean_y": lean_y_deg(states["tree"]), "gaps": gaps, "firm": all(g <= GAP_MAX for g in gaps.values()),
-            "plumb": tilt <= PLUMB_DEG, "near": tilt <= NEAR_DEG, "hands": hands_gap(states, tips), "clear": hands_gap(states, tips) >= CLEAR,
-            "still": still, "slides": {b: states[f"bolt_{b}"].joint("slide") for b in BOLTS}, "eyes": {b: states[f"bolt_{b}"].deg("eye") for b in BOLTS}}
+    hands = hands_gap(states, tips)
+    return {"tilt": tilt, "lean_y": lean_y_deg(states["tree"]), "gaps": gaps, "bear": bear, "firm": all(f >= BEAR_N for f in bear.values()),
+            "plumb": tilt <= PLUMB_DEG, "near": tilt <= NEAR_DEG, "hands": hands, "clear": hands >= CLEAR, "top": treetop(states["tree"]),
+            "tree_state": states["tree"], "still": still, "slides": {b: states[f"bolt_{b}"].joint("slide") for b in BOLTS},
+            "eyes": {b: states[f"bolt_{b}"].deg("eye") for b in BOLTS}}
 
 
 class Trial:
-    """The score, and the record of a tree let flop: the trunk ever more than HARM_DEG from plumb (cleared only at a reset)."""
+    """The score, the firmness probe, and the record of a tree let flop: the trunk ever more than HARM_DEG from plumb (cleared only at a reset).
+
+    Full credit: plumb, all three caps bearing, both grippers clear and the tree still for HOLD_STEPS; then, with the grippers still clear, the probe
+    pushes the trunk towards each bolt in turn and the treetop must move at most DEFLECT_MAX under the load and come back to within RETURN_MAX, with
+    the tree plumb and every cap bearing again after each release. A failed or interrupted probe starts the hold over."""
 
     def __init__(self):
         self.reset()
@@ -370,15 +434,38 @@ class Trial:
         self.score = 0.0
         self.flopped = False
         self.last = {}
+        self.probe = None  # None, or [index into PROBE_ORDER, step within that push, the treetop before it, the largest movement under load]
+        self.probe_log = []  # one line per push: bolt, deflection under load (m), movement after release (m), passed
+        self.probes_run = 0
+        if env is not None:
+            try:
+                push(env, None)
+            except Exception:
+                pass
+
+    def _abort(self, env, why: str):
+        push(env, None)
+        if self.probe is not None:
+            self.probe_log.append((PROBE_ORDER[self.probe[0]], float("nan"), float("nan"), False, why))
+        self.probe = None
+        self.hold = 0
 
     def step(self, env):
         c = now(env)
         self.last = c
         if c["tilt"] > HARM_DEG:
             self.flopped = True
-        ok = c["plumb"] and c["firm"] and c["clear"] and c["still"] and not self.flopped
-        self.hold = self.hold + 1 if ok else 0
-        self.full = self.full or self.hold >= HOLD_STEPS
+        if self.full or self.flopped:
+            if self.probe is not None:
+                self._abort(env, "ended")
+        elif self.probe is not None:
+            self._probe_step(env, c)
+        else:
+            ok = c["plumb"] and c["firm"] and c["clear"] and c["still"]
+            self.hold = self.hold + 1 if ok else 0
+            if self.hold >= HOLD_STEPS:
+                self.probe = [0, 0, c["top"].copy(), 0.0]
+                self.probes_run += 1
         if self.flopped:
             self.score = 0.0
         elif self.full:
@@ -389,6 +476,36 @@ class Trial:
             self.score = 0.25
         else:
             self.score = 0.0
+
+    def _probe_step(self, env, c):
+        if not c["clear"]:
+            self._abort(env, "a gripper came within 3 cm")
+            return
+        k, s, ref, worst = self.probe
+        b = PROBE_ORDER[k]
+        moved = float(np.linalg.norm((c["top"] - ref)[:2]))
+        if s < PROBE_RAMP + PROBE_LOAD:
+            if s >= PROBE_RAMP:
+                worst = max(worst, moved)
+            scale = min(1.0, (s + 1) / PROBE_RAMP)
+            push(env, PROBE_F * scale * unit(BOLTS[b]), c["tree_state"])
+        else:
+            push(env, None)
+        s += 1
+        self.probe = [k, s, ref, worst]
+        if s < PROBE_RAMP + PROBE_LOAD + PROBE_REST:
+            return
+        ok = worst <= DEFLECT_MAX and moved <= RETURN_MAX and c["plumb"] and c["firm"]
+        self.probe_log.append((b, worst, moved, ok, ""))
+        if not ok:
+            self.probe = None
+            self.hold = 0
+            return
+        if k + 1 < len(PROBE_ORDER):
+            self.probe = [k + 1, 0, c["top"].copy(), 0.0]
+        else:
+            self.probe = None
+            self.full = True
 
 
 TRIAL = Trial()
@@ -412,7 +529,10 @@ def _report(ctx, env, label=""):
     g = c["gaps"]
     print(f"[tree] t {ctx.t:5.1f} {label}tilt {c['tilt']:.2f} lean_y {c['lean_y']:+.2f} deg, gaps a {g['a'] * 1000:+.2f} b {g['b'] * 1000:+.2f} c {g['c'] * 1000:+.2f} mm, "
           f"slides a {c['slides']['a'] * 1000:+.2f} b {c['slides']['b'] * 1000:+.2f} c {c['slides']['c'] * 1000:+.2f} mm, eyes a {math.degrees(THREADS.angle['a']):+.0f} b {math.degrees(THREADS.angle['b']):+.0f}, "
+          f"bearing a {c['bear']['a']:.1f} b {c['bear']['b']:.1f} c {c['bear']['c']:.1f} N, "
           f"jam {THREADS.jam}, hands {c['hands'] * 1000:.0f} mm, still {c['still']}, score {TRIAL.score:.2f} full {TRIAL.full} flopped {TRIAL.flopped}", flush=True)
+    log = ", ".join(f"{b}: {w * 1000:.3f} mm loaded / {r * 1000:.3f} mm released {'ok' if ok else 'FAIL'}{(' ' + why) if why else ''}" for b, w, r, ok, why in TRIAL.probe_log[-6:])
+    print(f"[tree] probes started {TRIAL.probes_run}; last pushes: {log or 'none'}", flush=True)
 
 
 def demo_script(ctx):
@@ -420,11 +540,13 @@ def demo_script(ctx):
     that rolling the wrist turns the bolt. Each pinches its bolt's eye across the wire at the start of the wrist's roll (the eye's angle
     allows a pinch every half turn), turns it as far as the wrist allows, lets go, rolls back and pinches again. B is backed out (anticlockwise
     as seen from outside) a little ahead of A being screwed in (clockwise), so the trunk is never squeezed; both stop when the tree is seen
-    upright. Then both let go and move clear.
+    upright. Then each screws its bolt in until it bites (the eye stops following the wrist), so that all three caps grip the trunk, and both
+    let go and move clear.
     Failure checks (--mode): none does nothing; onearm screws A in without touching B; careless backs B out without touching A; wrongway
     backs A out (the tree's lean side) instead; hold does the full job but keeps the left gripper on A's eye; push pushes the tree's trunk
     upright with the left hand and lets go; short stops both bolts when the tree is seen at 1.5 degrees; loose does the full job, then backs
-    A out two more pinches."""
+    A out two more pinches; nosnug straightens the tree but never snugs the bolts (the previous demonstration's end); gap1 and gap05 do the
+    full job, and then the test itself (not the arms) backs every cap's thread off to leave it 1 mm or 0.5 mm from the bark."""
     import demokit as d
     from yam_arena.constants import FINGER_OPEN
     from yam_arena.urdf import axis_angle_matrix
@@ -432,7 +554,7 @@ def demo_script(ctx):
     env = ctx.emb._env
     l, r = ctx.left, ctx.right
     mode = ctx.mode
-    if mode not in ("full", "none", "onearm", "careless", "wrongway", "hold", "push", "short", "loose"):
+    if mode not in ("full", "none", "onearm", "careless", "wrongway", "hold", "push", "short", "loose", "nosnug", "gap1", "gap05"):
         raise ValueError(mode)
     for _ in range(4):
         yield
@@ -502,8 +624,8 @@ def demo_script(ctx):
 
     left_a = Turner(l, "a", +1 if mode != "wrongway" else -1)
     right_b = Turner(r, "b", -1)
-    use_left = mode in ("full", "onearm", "wrongway", "hold", "short", "loose")
-    use_right = mode in ("full", "careless", "hold", "short", "loose")
+    use_left = mode in ("full", "onearm", "wrongway", "hold", "short", "loose", "nosnug", "gap1", "gap05")
+    use_right = mode in ("full", "careless", "hold", "short", "loose", "nosnug", "gap1", "gap05")
 
     if mode == "push":  # the left hand pushes the trunk below the branches towards plumb, holds, lets go
         p = np.array([SC[0], SC[1] + 0.06, TOP + Z_PIVOT + 0.25])
@@ -539,8 +661,23 @@ def demo_script(ctx):
     def still_to_go(extra=0.0):
         return (lean_mm() + extra) if lean_y_deg(ctx.state("tree")) > goal_deg + 0.08 else 0.0
 
-    if mode in ("full", "hold", "short", "loose"):
+    def snug(t: Turner, tries: int = 4):
+        """Screw the bolt in until it bites: pinch-turn cycles until the eye stops following the wrist (the cap is tight on the bark)."""
+        t.sign = +1
+        for _ in range(tries):
+            before = THREADS.angle[t.b]  # the eye's own angle, counted through turns (what a camera on the eye sees)
+            span = yield from t.cycle(200.0)
+            turned = math.degrees(THREADS.angle[t.b] - before)
+            print(f"[tree] snug {t.b}: wrist {span:.0f} deg, eye {turned:.0f} deg", flush=True)
+            if span >= 30.0 and turned < 0.6 * span:
+                return
+
+    if mode in ("full", "hold", "short", "loose", "nosnug", "gap1", "gap05"):
         yield from ctx.together(run_bolt(right_b, 0.0, lambda: still_to_go(0.0003)), run_bolt(left_a, 1.0, still_to_go))
+        _report(ctx, env, "plumbed: ")
+        if mode != "nosnug":  # both bolts snugged onto the bark, so that all three caps grip
+            yield from ctx.together(snug(right_b), snug(left_a))
+            _report(ctx, env, "snugged: ")
         if mode == "loose":
             left_a.sign = -1
             yield from run_bolt(left_a, 0.0, cycles=2)
@@ -568,7 +705,18 @@ def demo_script(ctx):
             yield from l.close(2 * EYE_WIRE, 20.0, t=0.4, label="keep the eye pinched")
         gens.append(keep())
     yield from ctx.together(*gens)
-    for k in range(60):
+    if mode in ("gap1", "gap05"):  # a scorer check, not a robot action: the test itself backs every cap's thread off to leave it this far from the bark
+        want = 0.001 if mode == "gap1" else 0.0005
+        g = cap_gaps({n: ctx.state(n) for n in ["tree", *(f"bolt_{b}" for b in BOLTS)]})
+        for b in BOLTS:
+            back = want - g[b]
+            THREADS.screwed[b] -= back
+            THREADS.angle[b] -= back * 2 * math.pi / PITCH
+        _report(ctx, env, "caps backed off by the test: ")
+        for _ in range(20):
+            yield
+        _report(ctx, env, "settled: ")
+    for k in range(300):
         yield
         if k % 30 == 29:
             _report(ctx, env, "end: ")
