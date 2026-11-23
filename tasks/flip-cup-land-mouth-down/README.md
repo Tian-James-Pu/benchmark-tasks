@@ -17,6 +17,16 @@ Files: [`task.py`](task.py) (scene, scorer, scripted demonstration), [`task.json
 [`mechkit.py`](mechkit.py) (builds the cup and the tabletop), [`simready.py`](simready.py) (loads the distractor props),
 [`demokit.py`](demokit.py) (runs the closed-loop demonstration script).
 
+## Response to review
+
+| Review request | Change |
+|---|---|
+| Construct validity: "A gripper can use the loose bottle or can as a lever to rotate the cup beyond 45 degrees without triggering the finger-contact penalty." | New recorded violation *assisted* in `Trial.step` (`task.py`): if the can, the bottle or the napkin comes within 2 mm of the cup's outer surface at any step, at any cup angle, the trial scores 0, cleared only in `on_reset`. A distractor can no longer be used as a tool to push, lever or turn the cup, whether or not a finger touches the cup. |
+| Scoring: "The scorer never excludes distractor contact with the cup, allowing an assisted rotation to earn partial or full credit." | `task.py`: `distractor_gaps()` checks each distractor's collision hull (the convex hull PhysX collides, read from the pinned SimReady file) against the cup both ways every step; `score()` returns 0 once *assisted* is set. `task.json` `scoring` now lists the rule ("any distractor (the can, the bottle or the napkin) came within 2 mm of the cup's outside at any moment, whatever the cup's angle"), and matches `score()`. README: Scoring. |
+| What to change: "Prevent the can, bottle, and napkin from being used to turn the cup: score zero if any distractor contacts the cup during the trial." | Done as above for all three distractors, for the whole trial, at any cup angle. `task.json` `setup` and `reset_notes` and the README's scene notes say so. |
+| "Implement this check in the simulator scorer" | `task.py` (`PROP_TOUCH = 0.002`, `distractor_gaps`, `Trial.assisted`); the scorer prints which distractor touched the cup and at which step. Red-team mode `lever` (picks up the can and pushes the cup over with it, fingers well clear of the cup): the can touches the cup at step 217 with the cup still upright, *assisted* latches, and the trial scores 0, although the fingers never come within 25 mm of the cup while the can tips it 82 degrees. The demonstration still scores 1.0 (three fresh recorded runs): no distractor comes within 10 cm of the cup. |
+| "and specify the corresponding real-video check." | README, A real trial: a second phone overhead, about 1 m above the board looking straight down, frames the cup and all three distractors for the whole trial; any frame of it or of the side video showing the can, bottle or napkin touching the cup (no visible gap) scores 0. The distractors stand on taped marks and are reset with the cup. |
+
 ## Importance and sources
 
 - **Most adults know this motion.** Flip Cup is one of the best-known party games. Wikipedia describes the set-up used
@@ -64,7 +74,8 @@ The board's edge facing the right arm (the line y = -0.05) is the table edge. Th
 outermost point is at y = -0.065), and its base (6.43 cm across) stands 2.1 mm inside the edge, so the cup stands on
 the board but part of its rim hangs over open air. The board stands in for the party table: it is thick enough to give a
 real edge with nothing under the overhanging rim. The distractors stand on the far side of the board, outside the
-cup's flight; they do not take part in scoring.
+cup's flight. Scoring ignores them, except that a distractor touching the cup at any moment scores the trial 0 (see
+Scoring): they can't be used as tools to push or lever the cup over.
 
 The cup (mechkit `free`, one rigid body):
 - wall: 24 flat panels following the taper from the base (radius 32.1 mm) up to just under the rim (radius 46.7 mm,
@@ -80,13 +91,20 @@ with no change to `mechkit.py`). Friction: cup 0.45 static and 0.40 dynamic, boa
 
 ## Scoring
 
-The scorer (class `Trial` in `task.py`) runs every control step (20 Hz) on the cup's pose and on 24 sample points on the
-grippers' fingers (mechkit `fingertips`). It never reads the robot's commands.
+The scorer (class `Trial` in `task.py`) runs every control step (20 Hz) on the cup's pose, on 24 sample points on the
+grippers' fingers (mechkit `fingertips`) and on the poses of the three distractors. It never reads the robot's commands.
 
 - **Touch:** a finger touches the cup when any finger sample point is within 12 mm of the cup's outer surface (the
   wall's taper, the rim and the base). The points sit 4.5 mm behind the finger pads, so this is a gap of about 7.5 mm.
 - **Handled** (recorded): a touch while the cup's axis is more than 45 degrees from upright. A flick leaves the cup
   long before that. Carrying, turning or righting the cup by hand all have to touch it further over.
+- **Assisted** (recorded): any distractor (the soda can, the beer bottle or the napkin) comes within 2 mm of the cup's
+  outer surface, at any step and whatever the cup's angle: it was used to push, lever or turn the cup, or knocked into
+  it. Each distractor is checked by its collision hull, the convex hull of its SimReady collision mesh that PhysX
+  collides (read once from the pinned SimReady file), both ways every step: the hull's vertices against the cup's outer
+  surface (taper, rim and base), and about 2,600 points on the cup's surface (every 4 mm up, every 5 degrees round, the
+  base and the rim top) against the hull's faces. A distractor point inside the cup's outline counts as touching. The
+  scorer prints which distractor touched the cup and at which step.
 - **Fell** (recorded): any point of the cup's base or rim circle more than 2 cm below the tabletop: it went off the
   table.
 - **Turn:** the largest angle between the cup's axis and straight up, over the whole trial.
@@ -94,7 +112,7 @@ grippers' fingers (mechkit `fingertips`). It never reads the robot's commands.
   under 2 cm/s and turning under 0.3 rad/s, and every finger sample point 5 cm or more from it.
 - **Mouth down:** the axis within 15 degrees of straight down.
 
-Score, every step: handled or fell -> 0 for the rest of the trial; otherwise, if the cup is resting: mouth down for 1 s
+Score, every step: handled, assisted or fell -> 0 for the rest of the trial; otherwise, if the cup is resting: mouth down for 1 s
 in a row -> 1.0 (success: the trial ends after another `SUCCESS_HOLD_S` = 1 s of it); not mouth down, but the turn has
 reached 135 degrees -> 0.5; the turn has reached 100 degrees (past lying on its side, which for this taper is 82
 degrees) -> 0.25; anything else, including a cup not resting yet, standing where it was or only tipped onto its side ->
@@ -102,28 +120,33 @@ degrees) -> 0.25; anything else, including a cup not resting yet, standing where
 
 Possible scores: 0, 0.25, 0.5, 1.0.
 
-The recorded `handled` and `fell` flags and the largest turn are cleared only in mechkit's `on_reset` hook, never
+The recorded `handled`, `assisted` and `fell` flags and the largest turn are cleared only in mechkit's `on_reset` hook, never
 because the cup looks right again.
 
 ## A real trial: setup, measurement, reset
 
 **You need:** a table with a straight edge (any party or kitchen table), a pack of Solo P16R 16 oz cups (about $10 for
-50), a ruler, tape, a phone filming at 60 fps or more from the side, and the same three distractors (a full can of
-soda, an empty beer bottle, a cloth napkin) standing at least 15 cm from the cup.
+50), a ruler, tape, two phones filming at 60 fps or more (one from the side, along the table edge; one overhead, see below),
+and the same three distractors (a full can of soda, an empty beer bottle, a cloth napkin) on taped marks at the
+positions in the scene table, at least 15 cm from the cup.
 
 **Preparation (each trial):** draw the cup's base circle (6.43 cm across) on a piece of tape on the table, with its edge
 2.1 mm inside the table edge, so that the rim stands 1.5 cm past the edge. Weigh the cup (10-12 g) and stand it mouth
 up on the circle. Check with the ruler that the rim stands 1.5 cm +- 2 mm past the edge.
 
-**Measurement (from the video and the scene once still):**
-- Watch the video frame by frame: if a finger touches the cup in any frame in which the cup leans more than 45 degrees,
-  the trial scores 0. If the cup goes off the table, 0.
+**Measurement (from the videos and the scene once still):**
+- **Distractor view:** the overhead phone, on a stand about 1 m above the board, looking straight down, framing the
+  whole board (the cup, the can, the bottle and the napkin) for the whole trial. Watch it and the side video frame by
+  frame: if any frame of either shows the can, the bottle or the napkin touching the cup (no visible gap between them),
+  at any moment and whatever the cup's angle, the trial scores 0. This matches the simulator's 2 mm check.
+- If a finger touches the cup in any frame in which the cup leans more than 45 degrees, the trial scores 0. If the
+  cup goes off the table, 0.
 - Find the frame in which the cup is turned furthest from upright and read the angle (an on-screen protractor or a
   phone app): 100 degrees or more, 135 degrees or more.
 - When everything is still, with the hands at least 5 cm from the cup: is the cup mouth down (its base up, flat on its
   rim, within 15 degrees of vertical) on the table? 1.0 if so, otherwise 0.5 or 0.25 by the largest turn, otherwise 0.
 
-**Reset (under a minute):** stand the cup back on its circle. A cup with a creased rim is replaced (they cost 20 cents).
+**Reset (under a minute):** stand the cup back on its circle and the can, bottle and napkin back on their marks. A cup with a creased rim is replaced (they cost 20 cents).
 
 **Rig safety:** the cup weighs 12 g and the finger only strikes upward past the table edge; nothing can be broken or
 spilled. Keep the soda can and bottle at the far side of the table, as in the scene.
@@ -159,8 +182,9 @@ the underside of the rim at about 1.5 m/s. Then the targets jump to a point belo
 drops out of the turning cup's way. The cup does not move before the strike, so the flick is played open loop. The
 strike values are in `task.py` (`ZF`, `XOFF`, `FY`, `FZ`).
 
-Results: `task_score` 1.0 in each of two fresh runs on the GPU, rendered at 640 x 360 (and in two more runs before the
-beer bottle was moved away from the left arm's start pose). In each run the finger leaves the cup at step 82, the cup
+Results: `task_score` 1.0 in each of three fresh runs on the GPU with the revised scorer (distractor check included),
+rendered at 640 x 360, as in the four runs before the revision; the scene is unchanged. The distractors stay more than
+10 cm from the cup throughout. In each run the finger leaves the cup at step 82, the cup
 leaves the table spinning at about 16 rad/s, reaches mouth down about 0.25 s later and settles 1.5 cm in from where it
 stood; success holds from step 111 and the trial ends at step 130 (6.5 s).
 
@@ -179,6 +203,7 @@ rest scored 0.5, 0.25 or 0: the cup lay on its side, turned past mouth down, or 
 | `push` | tips the cup over slowly with the finger, as a hand pushing it over would | 0.0: it lies on its side (largest turn 82 degrees) |
 | `swat` | a fast sideways hit at the rim with no lift | 0.0: the cup slides and rolls off the far side of the table (recorded as fell) |
 | `hard` | the flick with too much lift (0.60 m target) and more inward push | 0.0: the cup only tipped over onto its side (largest turn 87 degrees) |
+| `lever` | picks up the soda can in the right gripper and pushes the cup over inward with it; the fingers never come near the cup | 0.0: the can touched the cup at step 217, while the cup was still upright, and the trial was scored 0 there (*assisted*); the can then tipped the cup 82 degrees onto its side with the fingers never closer than 25 mm to it, so the finger rule alone would not have caught it |
 
 Carrying the cup over by hand was not run as a mode. Any route that holds the cup while turning it touches it past
 45 degrees and scores 0 by the handled rule.
@@ -202,7 +227,8 @@ leaving the table scores 0.
 - No air drag (it slows a 12 g cup a little in a 0.2 s flight) and no restitution (a real polystyrene cup bounces very
   little).
 - Friction values are estimates for polystyrene on melamine; PhysX averages the two surfaces.
-- Touch is judged from sample points on the fingers within about 7.5 mm, not from contact forces.
+- Touch is judged by distance, not contact forces: sample points on the fingers within about 7.5 mm, and each
+  distractor's convex collision hull within 2 mm of the cup's surface.
 - The tabletop is a fixed 4 cm board on the station table, standing in for a party table's edge.
 
 ## Runtime per trial
