@@ -20,11 +20,29 @@ different jobs, both timed against what is on the screen.
 | File | What it is |
 |---|---|
 | `task.py` | The scene, the game (one function per step, all constants in `GAME`), the console that reads the controller and draws the picture, the scorer, and the closed-loop demo (`demo_script`, with failure modes) |
-| `game.html` | The same level, physics and constants as a self-contained web page, for real trials with a real controller (below) |
+| `game.html` | The same level, physics and constants as a self-contained web page, for real trials with a real controller (below); it reads only the controller, and no key moves or jumps the character |
 | `mechkit.py` | The mechanism kit (articulations written as USD text, hooks, fingertip points), unchanged |
 | `demokit.py` | The closed-loop demo runner, unchanged |
 | `simready.py` | Loads the SimReady props (see Assets) |
 | `task.json` | The task's details for the board |
+
+## Revision (response to the review of TK-Q9GHDX)
+
+> "Construct validity (not met): The real game accepts arrow keys and Space on the reachable keyboard, allowing game progress
+> without using the gamepad as required. What to change: Disable arrow-key movement and Space jumping in game.html during scored
+> trials, so progress can only be earned through the controller; retain a separate way to reset the game."
+
+- `game.html`: the keyboard input path is removed. The page now reads only the controller's left stick (`axes[0]`) and A
+  (`buttons[0]`); the arrow keys, Space and every other key are ignored. R stays as the separate way to restart the level, as
+  does the controller's Menu button; a restart puts the lives back to 3 and the progress markers back to zero, so it can never earn
+  progress. With only a keyboard, the character stands still at the start: score 0.
+- `README.md` (this section, the file table and "Real trials: Equipment") and `task.json` (`setup`, `reset_notes`) say so.
+- The simulated task was already gamepad-only: `task.py` drives the game from the controller's stick hinge and A slider alone, and
+  the keyboard there is a passive distractor. `task.py` is unchanged (same file, same hash), so the recorded demo, the failure-mode
+  runs and the Dream-1 run below still apply. Two fresh demo runs on the revised folder scored 1.0 again.
+- Keyboard-only check of the revised page: its input code has no arrow-key, Space or Shift handling, its only key handler is
+  R -> restart, and the game step is fed only by the controller. Running the same game model with what a keyboard-only player now
+  gives it (stick centred, A up) for the full 1,200 steps, with or without R presses, leaves the character at the start, scoring 0.
 
 ## Requirements
 
@@ -148,7 +166,9 @@ pushes of the stick and buttons, as a controller stand or an accessibility mount
 - A 24-inch 1080p monitor and a computer with Chrome or Edge; open `game.html` from this folder and press F11 for full screen.
   The page reads the controller through the browser's Gamepad API (standard mapping: `axes[0]` is the left stick's left-right value,
   `buttons[0]` is A) once per 1/20 s step, with the same deadzone, speed curve, jump and level as the simulation. Menu (`buttons[9]`)
-  or R restarts the level. Arrow keys and Space work too, only to check the page.
+  or R restarts the level. The keyboard can't move or jump the character: the page ignores the arrow keys, Space and every other
+  key except R, and R only restarts the level (lives back to 3, progress back to zero), so all progress in a trial has to come
+  through the controller. With no controller connected the character stands still at the start.
 - A cradle: a tray 11.6 x 16.7 cm inside with 14 mm walls (3D-printed or stiff card), taped to the desk.
 
 **Mapping the stick:** the browser reports the stick's deflection as a fraction of its full throw (-1 to +1), which is what the

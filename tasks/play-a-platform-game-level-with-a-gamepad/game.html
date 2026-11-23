@@ -16,6 +16,7 @@
 // The same level, physics and constants as task.py's GAME (keep the two in step). Screen pixels, x right, y up from the bottom left.
 // One fixed game step per 1/20 s; the gamepad is read once per step (Gamepad API, standard mapping: axes[0] is the left stick's
 // left-right value, -1 left to +1 right; buttons[0] is A). R or the controller's Menu button (buttons[9]) restarts the level.
+// Only the controller plays: no key moves or jumps the character (R only restarts the level, which sets progress back to zero).
 const GAME = {
   HZ: 20,
   W: 1920, H: 1080,
@@ -163,9 +164,10 @@ function draw(game, axis, aDown) {
 }
 
 // -- input, once per fixed step ------------------------------------------------------------------------------------------------------
-const keys = new Set();
-window.addEventListener("keydown", e => { keys.add(e.code); if (e.code === "KeyR") game.reset(); });
-window.addEventListener("keyup", e => keys.delete(e.code));
+// The page reads only the controller's left stick (axes[0]) and A (buttons[0]). The keyboard can't move or jump the character:
+// arrow keys, Space and every other key are ignored, except R, which restarts the level (lives back to 3, progress back to 0),
+// the same as the controller's Menu button. So all progress in a trial has to be earned through the controller.
+window.addEventListener("keydown", e => { if (e.code === "KeyR" && !e.repeat) game.reset(); });
 let menuPrev = false;
 function readInput() {
   let axis = 0, a = false;
@@ -179,10 +181,7 @@ function readInput() {
       break;
     }
   }
-  if (keys.has("ArrowRight")) axis = keys.has("ShiftLeft") ? 0.5 : 1;   // keyboard only for checking the page
-  if (keys.has("ArrowLeft")) axis = keys.has("ShiftLeft") ? -0.5 : -1;
-  if (keys.has("Space")) a = true;
-  return [axis, a];
+  return [axis, a];   // controller only; with no controller connected the character stands still at the start
 }
 
 const game = new Game();
