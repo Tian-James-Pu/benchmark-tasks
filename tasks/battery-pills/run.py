@@ -9,8 +9,9 @@ Policies:
 The seed picks the trial's draw (geometry.draws); the bodies are authored at the drawn poses, so no pose is written
 during the trial. Actions are clipped to the URDF limits and rate-limited to the joint and gripper speeds as in
 peg-out-a-tshirt/run.py. The scorer (scoring.SimScorer, the card's rule) reads every body's pose after every control
-step and the gripper collision hulls every 10 steps, over the last 30 steps and whenever a tablet lies beyond the
-dish rim; nothing it reads reaches a policy.
+step and the gripper collision hulls every 10 steps and over the last 30 steps (Released); whenever a tablet lies
+beyond the dish rim it also reads that tablet's top-view gap to the grippers (r7 spill rule); nothing it reads reaches
+a policy.
 
 Outputs in --out: run.json, score.json, trace.jsonl.gz, poses.npz, top_cam.mp4 / left_cam.mp4 / right_cam.mp4,
 start-*.png / final-*.png / phase-*.png, task-source/ (frozen copy of this folder).
@@ -128,6 +129,7 @@ class HullDistance:
 
     def set_grippers(self, hulls):
         self.grip = {}
+        self.foot = None
         for side, lst in hulls.items():
             rows = []
             for _, h in lst:
@@ -135,6 +137,49 @@ class HullDistance:
                 c = v.mean(0)
                 rows.append((v, np.asarray(h.planes, float), c, float(np.linalg.norm(v - c, axis=1).max())))
             self.grip[side] = rows
+
+    def _footprints(self):
+        """Top-view footprints of the gripper hulls: the convex hull of each hull's vertices projected on the
+        horizontal plane, as ordered polygons (metres). Built once per set_grippers, only when a spill check needs it."""
+        if self.foot is None:
+            from scipy.spatial import ConvexHull
+            self.foot = {}
+            for side, rows in self.grip.items():
+                polys = []
+                for v, _, _, _ in rows:
+                    xy = v[:, :2]
+                    try:
+                        polys.append(xy[ConvexHull(xy).vertices])
+                    except Exception:            # degenerate (flat) footprint: keep its points
+                        polys.append(xy)
+                self.foot[side] = polys
+        return self.foot
+
+    def xy_gap(self, pose, radius_m):
+        """r7 spill rule: lower bound (mm) of the top-view gap between a tablet (footprint disc of ``radius_m`` about its
+        centre) and each side's gripper parts (convex footprints), as (left, right)."""
+        q = np.asarray(pose[0], float)[:2]
+        out = []
+        for side in ('left', 'right'):
+            best = 1.0
+            for poly in self._footprints()[side]:
+                n = len(poly)
+                if n >= 3:
+                    a, b = poly, np.roll(poly, -1, axis=0)
+                    e = b - a
+                    cross = e[:, 0] * (q[1] - a[:, 1]) - e[:, 1] * (q[0] - a[:, 0])
+                    if (cross >= 0).all() or (cross <= 0).all():
+                        best = 0.0                      # centre inside the footprint
+                        break
+                else:
+                    a, b = poly, np.roll(poly, -1, axis=0)
+                    e = b - a
+                L2 = np.maximum((e ** 2).sum(1), 1e-18)
+                t = np.clip(((q - a) * e).sum(1) / L2, 0.0, 1.0)
+                d = np.linalg.norm(a + t[:, None] * e - q, axis=1).min()
+                best = min(best, d)
+            out.append(max(0.0, best - radius_m) * 1000.0)
+        return out
 
     def __call__(self, name, pose, cull=0.04):
         p, r = pose
@@ -237,7 +282,9 @@ def main():
         report['build_wall_seconds'] = time.monotonic() - t0
         import arena_bp as AB
         import geometry as G
+        from scoring import S as SCORING
         from scoring import SimScorer, explain
+        SPILL_R = SCORING['spill_tablet_radius_mm'] / 1000.0
         lay = G.layout(args.seed)
         report['draw'] = lay['draw']
         report['layout_mm'] = dict(tray=lay['tray'], dish=lay['dish'], jar=lay['jar'], cell=lay['cell'], tablets=lay['tablets'])
@@ -331,7 +378,8 @@ def main():
             ending = ((policy is not None and policy.done) or step >= args.steps - 30 or time.monotonic() - t0 > args.wall_limit)
             read_robot = step % 10 == 0 or ending
             hd.set_grippers(AB.gripper_hulls(env)) if True else None
-            result = tracker.update(poses, lambda n: hd(n, poses[n]), read_robot=read_robot)
+            result = tracker.update(poses, lambda n: hd(n, poses[n]), read_robot=read_robot,
+                                    grip_xy=lambda n: hd.xy_gap(poses[n], SPILL_R))
             obs = emb._observation()
             phase = policy.log[-1].name if policy is not None and policy.log else None
             row = dict(step=step, wall_s=round(time.monotonic() - t0, 3), policy_s=round(policy_s, 4),

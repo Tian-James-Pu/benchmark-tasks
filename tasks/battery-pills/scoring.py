@@ -1,4 +1,4 @@
-"""battery-pills scorer (scoring.py): the card's scorer.py (revision r6) verbatim, plus SimScorer at the end, which
+"""battery-pills scorer (scoring.py): the card's scorer.py (revision r7) verbatim, plus SimScorer at the end, which
 builds the scorer's state from simulator body poses and gripper meshes. The rule part is pure stdlib.
 
 Original docstring follows.
@@ -10,14 +10,15 @@ State (raw numbers only, mm / deg, card frame: x forward, y left, z above the ta
                                                          the table top (lying or leaning raises it); None = not found
   dish:    {"x", "y", "z", "disp_1s_mm"}                 centre (upright dish); None = not found
   cell:    {"x", "y", "z", "disp_1s_mm"}                 centre; None = not found
-  tablets: list of 5 x {"x", "y", "z", "disp_1s_mm", "run"} or None (not found); run = the tablet's samples over the
-           whole run, one per step (sim) or per top-video frame (real), each {"r_dish_mm": distance of its centre from the
-           dish axis in the dish's own frame, "grip_mm": closest distance from any gripper part to it, "disp_1s_mm": how
-           far it moved over the trailing 1 s}; missing = unknown = came to rest outside the dish (r6, red-team p4 L3.2)
+  tablets: list of 5 x {"x", "y", "z", "disp_1s_mm"} or None (not found), at the end (final photos); no tablet's
+           identity or history is used (r7)
+  spilled: bool, trial-wide (r7, review TK-8X2ZNN): at some time in the run a tablet lay outside the dish (centre more
+           than left_dish_radius_mm from the dish axis) with every gripper part at least spill_gap_mm from it in the top
+           view; missing = unknown = spilled
   gripper_min_dist_mm: [left, right]  closest distance from any gripper part to any task object (cell, tablet, dish,
                        holder, tray) at the read
   holder_disp_1s_mm: number
-Run `python3 -I scorer.py` for the negative-control table and the blind-policy sweep; exits non-zero on any mismatch.
+Run `python3 -I card_scorer.py` for the negative-control table and the blind-policy sweep; exits non-zero on any mismatch.
 """
 import json, math, os, sys
 
@@ -70,26 +71,18 @@ def in_bowl(t, dish):
     return s is not None and s < zb < D_H
 
 
-def resting_out(smp):
-    """Revision r6 (red-team p4 L3.2): a sample counts only when the tablet lies at rest outside the dish: centre beyond the
-    rim's inner radius, no gripper part within the touch gap, and moved less than the still distance over the last 1 s.
-    A tablet carried in (or pushed by) a gripper is not at rest; the real top video cannot see it under the pads either."""
-    return smp['r_dish_mm'] > S['left_dish_radius_mm'] and smp['grip_mm'] > S['loose_touch_gap_mm'] and \
-        smp['disp_1s_mm'] < S['still_translation_mm']
-
-
-def left_dish(t, dish):
-    """Revision r4 (red-team p3 L2.1), narrowed in r6 (red-team p4 L3.2): the tablet came to rest outside the dish at some
-    time in the run, or its end position is beyond the rim's inner radius. Unknown (no run samples) counts as left."""
-    r_end = math.hypot(t['x'] - dish['x'], t['y'] - dish['y'])
-    run = t.get('run')
-    return run is None or r_end > S['left_dish_radius_mm'] or any(resting_out(m) for m in run)
+def spill_sample(r_dish_mm, gap_xy_mm):
+    """Revision r7 (review TK-8X2ZNN, Scoring): one top-view reading of one tablet is a spill when its centre lies outside
+    the dish (beyond the rim's inner radius, in the dish's own frame) and every gripper part is at least spill_gap_mm from
+    it in the top view: clearly released, not carried or pushed. A tablet under or between the fingers is within the gap
+    by definition, so no occluded tablet is ever tracked; the flag is trial-wide, so no tablet's identity is kept."""
+    return r_dish_mm > S['left_dish_radius_mm'] and gap_xy_mm >= S['spill_gap_mm']
 
 
 def served(t, dish, tray):
-    """Tablet inside the dish's bowl, never out of the dish during the run, and the dish on the tray (centre in the
-    outline in the tray frame, below the tray rim). A tablet that left the dish during the run does not count."""
-    return on_tray(dish, tray) and in_bowl(t, dish) and not left_dish(t, dish)
+    """Tablet inside the dish's bowl at the end, and the dish on the tray (centre in the outline in the tray frame, below
+    the tray rim). Counted in the final tray photo only (r7: no per-tablet history)."""
+    return on_tray(dish, tray) and in_bowl(t, dish)
 
 
 def in_holder(o, h):
@@ -113,6 +106,7 @@ def conditions(st):
     c['stowed'] = (not c['floor']) and c['holder_ok'] and in_holder(st['cell'], h) and \
         not any(in_holder(t, h) for t in tabs)
     c['n_on_tray'] = 0 if c['floor'] else sum(1 for t in tabs if served(t, st['dish'], st['tray']))
+    c['spilled'] = st.get('spilled') is not False      # r7: trial-wide; missing reading = spilled
     return c
 
 
@@ -122,10 +116,12 @@ def score(st):
         return 0.0
     n = c['n_on_tray']
     if n == NT:
-        return S['tiers']['full']
-    if n >= 1:
-        return S['tiers']['partial_tray']
-    return S['tiers']['stowed_only']
+        s = S['tiers']['full']
+    elif n >= 1:
+        s = S['tiers']['partial_tray']
+    else:
+        s = S['tiers']['stowed_only']
+    return min(s, S['spill_cap']) if c['spilled'] else s
 
 
 # ---------------------------------------------------------------- negative controls and blind sweep
@@ -133,11 +129,6 @@ FT = D['floor_top_mm_estimate']
 TCZ = P['tablets']['thickness_mm_estimate'] / 2
 CCZ = P['cell']['height_mm'] / 2
 TRAY_FT = T['floor_top_mm_estimate']
-
-
-def rest(r, grip=200.0, disp=0.0):
-    """One run sample: the tablet at r from the dish axis, grip mm from the nearest gripper part, moved disp over 1 s."""
-    return {"r_dish_mm": r, "grip_mm": grip, "disp_1s_mm": disp}
 
 
 def slots(cx, cy, phi):
@@ -154,14 +145,13 @@ def start_state(draw):
     tcx, tcy = T['start_centre_mm'][0] + draw['tray'][0], T['start_centre_mm'][1] + draw['tray'][1]
     hcx, hcy = H['start_centre_mm'][0] + draw['holder'][0], H['start_centre_mm'][1] + draw['holder'][1]
     sl = slots(dcx, dcy, draw['phi'])
-    tabs = [{"x": sl[j][0], "y": sl[j][1], "z": FT + TCZ, "disp_1s_mm": 0.0,
-             "run": [rest(round(math.hypot(sl[j][0] - dcx, sl[j][1] - dcy), 6))]}
+    tabs = [{"x": sl[j][0], "y": sl[j][1], "z": FT + TCZ, "disp_1s_mm": 0.0}
             for j in range(7) if j not in (draw['cell'], draw['empty'])]
     return {"tray": {"x": tcx, "y": tcy, "yaw_deg": T['start_yaw_deg']},
             "holder": {"x": hcx, "y": hcy, "z_bottom": 0.0},
             "dish": {"x": dcx, "y": dcy, "z": D['height_mm'] / 2, "disp_1s_mm": 0.0},
             "cell": {"x": sl[draw['cell']][0], "y": sl[draw['cell']][1], "z": FT + CCZ, "disp_1s_mm": 0.0},
-            "tablets": tabs, "gripper_min_dist_mm": [200.0, 200.0], "holder_disp_1s_mm": 0.0,
+            "tablets": tabs, "gripper_min_dist_mm": [200.0, 200.0], "holder_disp_1s_mm": 0.0, "spilled": False,
             "_slots": sl}
 
 
@@ -218,16 +208,18 @@ def rows():
     st = start_state(NOM); to_holder(st['cell'], st)
     for i, t in enumerate(st['tablets']):
         t.update(x=st['tray']['x'] - 40 + 20 * i, y=st['tray']['y'] + 100, z=TRAY_FT + TCZ)
+    st['spilled'] = True
     add('tablets set loose on the tray one by one, dish left on the table (not in their dish, as the instruction asks)', st, 0.25)
     st = start_state(NOM)
     for i, t in enumerate(st['tablets']):
         t.update(x=st['tray']['x'] - 50 + 25 * i, y=st['tray']['y'] - 60 + 7 * i, z=TRAY_FT + TCZ)
     st['cell'].update(x=st['tray']['x'] + 30, y=st['tray']['y'] + 90, z=TRAY_FT + CCZ); to_holder(st['cell'], st)
+    st['spilled'] = True
     add('pour route: dish tipped onto the tray, cell pinched off the bare tray floor into the jar, dish back on the table (pills not in their dish)', st, 0.25)
     st = start_state(NOM)
     for i, t in enumerate(st['tablets']):
         t.update(x=st['tray']['x'] - 50 + 25 * i, y=st['tray']['y'] - 100, z=TRAY_FT + TCZ)
-    to_holder(st['cell'], st)
+    to_holder(st['cell'], st); st['spilled'] = True
     st['dish'].update(x=st['tray']['x'] - 15, y=st['tray']['y'] + 60, z=TRAY_FT + D['height_mm'] / 2)
     add('pour route, empty dish then set on the tray beside the loose tablets (pills not in their dish)', st, 0.25)
     st = start_state(NOM); move_dish_to_tray(st); to_holder(st['cell'], st)
@@ -253,11 +245,12 @@ def rows():
         to_holder(t, st, 5, 5)
     to_holder(st['cell'], st)
     add('whole dish tipped into the jar (cell and all tablets)', st, 0.0)
-    st = full_state(); st['tablets'][0].update(x=200, y=100, z=TCZ)
+    st = full_state(); st['tablets'][0].update(x=200, y=100, z=TCZ); st['spilled'] = True
     add('stowed; 4 tablets on the tray, 1 spilt on the table', st, 0.5)
     st = full_state(); st['tablets'][0].update(x=200, y=100, z=TCZ); st['tablets'][1].update(x=210, y=-100, z=TCZ)
+    st['spilled'] = True
     add('stowed; 3 tablets on the tray, 2 spilt on the table', st, 0.5)
-    st = full_state(); st['tablets'][2].update(z=-700)
+    st = full_state(); st['tablets'][2].update(z=-700); st['spilled'] = True
     add('one tablet on the floor, rest full', st, 0.0)
     st = full_state(); st['cell'].update(x=500, y=700, z=-700)
     add('cell on the floor', st, 0.0)
@@ -297,6 +290,7 @@ def rows():
     add('tablet 57.4 mm from the dish axis, 0.05 mm below the rim height (inside the bowl, boundary in)', st, 1.0)
     st = full_state(); t = st['tablets'][0]; t.update(x=st['dish']['x'] + D_IN_R + 0.1, y=st['dish']['y'],
                                                        z=st['dish']['z'] + D_HALF_H - 0.05)
+    st['spilled'] = True
     add('tablet 57.6 mm from the dish axis, same height (beyond the rim\'s inner edge: not in the bowl)', st, 0.5)
     r45 = 45.0; s45 = inner_surface(r45)
     for dz, exp, lab in ((0.1, 1.0, '0.1 mm above'), (-0.1, 0.5, '0.1 mm below')):
@@ -313,6 +307,7 @@ def rows():
     for i, t in enumerate(st['tablets']):
         a = math.radians(72 * i)
         t.update(x=dcx + 50 * math.cos(a), y=dcy + 50 * math.sin(a), z=TRAY_FT + TCZ)
+    st['spilled'] = True
     add('pour route: dish tipped onto the tray, cell pinched off the tray floor into the jar, dish set upright over the '
         'tablets (all 5 at r 50 mm under its wall; pills not in their dish)', st, 0.25)
     st = full_state(); t = st['tablets'][0]
@@ -338,9 +333,9 @@ def rows():
     add('jar base centre 2.1 mm above the table top (not standing on its base on the table)', st, 0.0)
     st = full_state(); st['cell']['z'] = H_RIM - 0.1
     add('cell centre 0.1 mm below the jar rim height, on its axis (boundary in)', st, 1.0)
-    st = full_state(); st['tablets'][0].update(x=200, y=100, z=S['floor_z_mm'] + 0.1)
+    st = full_state(); st['tablets'][0].update(x=200, y=100, z=S['floor_z_mm'] + 0.1); st['spilled'] = True
     add('tablet centre 9.9 mm below the table top (not on the floor; off the tray)', st, 0.5)
-    st = full_state(); st['tablets'][0].update(x=200, y=100, z=S['floor_z_mm'] - 0.1)
+    st = full_state(); st['tablets'][0].update(x=200, y=100, z=S['floor_z_mm'] - 0.1); st['spilled'] = True
     add('tablet centre 10.1 mm below the table top (on the floor)', st, 0.0)
     st = full_state(); st['tray']['x'] += 30
     for t in st['tablets']:
@@ -374,8 +369,7 @@ def rows():
     st = start_state(NOM)
     for i, t in enumerate(st['tablets']):
         t.update(x=st['tray']['x'] - 50 + 25 * i, y=st['tray']['y'] - 100, z=TRAY_FT + TCZ)
-    for t in st['tablets']:
-        t['run'].append(rest(round(math.hypot(t['x'] - st['dish']['x'], t['y'] - st['dish']['y']), 3)))
+    st['spilled'] = True       # the tablets lay loose on the tray, clear of both grippers
     to_holder(st['cell'], st)
     dcx, dcy = st['tray']['x'] + D['place_on_tray_offset_x_mm'], st['tray']['y']
     st['dish'].update(x=dcx, y=dcy, z=TRAY_FT + D_HALF_H)
@@ -383,16 +377,23 @@ def rows():
         a = math.radians(72 * i)
         t.update(x=dcx + 12 * math.cos(a), y=dcy + 12 * math.sin(a), z=TRAY_FT + FT + TCZ)
     add('refill route: all six discs tipped onto the tray, cell pinched off the bare tray into the jar, empty dish set on the '
-        'tray, 5 tablets pinched back into it at r 12 mm (they left the dish: not served)', st, 0.25)
-    for m, exp, lab in ((S['left_dish_radius_mm'] - 0.1, 1.0, 'boundary in'), (S['left_dish_radius_mm'] + 0.1, 0.5, 'left the dish')):
-        st = full_state(); st['tablets'][0]['run'].append(rest(m))
-        add(f'one tablet slid to {m:.1f} mm from the dish axis during the run, back on the floor at the end ({lab})', st, exp)
+        'tray, 5 tablets pinched back into it at r 12 mm (spill: capped at 0.5; r7)', st, 0.5)
+    # r7 (review TK-8X2ZNN): boundaries of one top-view spill reading (tablet centre's distance from the dish axis, gap to
+    # the nearest gripper part in the top view); the tablet is back in the dish at the end in every row
+    RL, GAP = S['left_dish_radius_mm'], S['spill_gap_mm']
+    for r, g, exp, lab in ((RL - 0.1, 200.0, 1.0, 'inside the rim\'s inner edge: no spill'),
+                           (RL + 0.1, 200.0, 0.5, 'outside the dish, clear of the grippers: spill'),
+                           (70.0, GAP - 0.1, 1.0, 'a gripper part within the gap: carried or pushed, no spill'),
+                           (70.0, GAP, 0.5, 'gripper parts at the gap: spill')):
+        st = full_state(); st['spilled'] = spill_sample(r, g)
+        add(f'one tablet seen at {r:.1f} mm from the dish axis with the nearest gripper part {g:.1f} mm from it in the top '
+            f'view, back in the dish at the end ({lab})', st, exp)
     # red-team p3 L2.2: tablets swept to the dish floor's edge (allowed: moving a tablet within the dish), cell from the centre
     st = start_state(NOM)
     for i, t in enumerate(st['tablets']):
         a = math.radians(72 * i)
         t.update(x=st['dish']['x'] + 27 * math.cos(a), y=st['dish']['y'] + 27 * math.sin(a))
-        t['run'].append(rest(27.0))
+    st['spilled'] = spill_sample(27.0, 200.0)
     to_holder(st['cell'], st); move_dish_to_tray(st)
     add('tablets swept to r 27 mm on the dish floor (within the dish, allowed), cell pinched, dish served', st, 1.0)
     # red-team p3 L3.4: tray outline boundary along y (the 340 mm side)
@@ -407,7 +408,7 @@ def rows():
         t.update(x=st['tray']['x'] - 50 + 25 * i, y=st['tray']['y'] - 60, z=TRAY_FT + TCZ)
     zb = round(inner_surface(H_R), 2)
     st['holder'].update(x=st['dish']['x'], y=st['dish']['y'], z_bottom=zb)
-    to_holder(st['cell'], st); st['cell']['z'] = zb + 3.0
+    to_holder(st['cell'], st); st['cell']['z'] = zb + 3.0; st['spilled'] = True
     add(f'tablets poured loose on the tray, cell in the jar, jar stood in the empty dish on the table (base centre {zb} mm up)',
         st, 0.0)
     # r5 (blind review r2 note): G1 measures the tray floor at its pass minimum; that floor, not 340 x 150, sets the outline
@@ -425,24 +426,21 @@ def rows():
     add('cell pushed over the dish rim onto the table 70 mm from the dish axis (not yet stowed)', deep(st), 0.0)
     to_holder(st['cell'], st); move_dish_to_tray(st)
     add('cell pushed over the dish rim onto the table, then pinched off the table into the jar; dish served', st, 1.0)
-    # r6 (red-team p4 L3.2): a tablet carried out in the pinch and put back has not come to rest outside the dish
-    TG, SD = S['loose_touch_gap_mm'], S['still_translation_mm']
-    st = full_state(); st['tablets'][0]['run'] += [rest(40.0, 0.0, 30.0), rest(70.0, 0.0, 25.0), rest(70.0, 0.0, 0.0),
-                                                  rest(40.0, 0.0, 30.0)]
-    add('one tablet caught in the cell pinch, carried 70 mm from the dish axis in the gripper and dropped back on the dish '
-        'floor (never at rest outside the dish)', st, 1.0)
-    st = full_state(); st['tablets'][0]['run'] += [rest(70.0, 0.0, 25.0), rest(70.0, 200.0, 0.0)]
-    add('one tablet set down on the table 70 mm from the dish axis, left at rest for 1 s untouched, then put back', st, 0.5)
-    for g, exp, lab in ((TG, 1.0, 'touching (boundary in)'), (TG + 0.1, 0.5, 'not touching')):
-        st = full_state(); st['tablets'][0]['run'].append(rest(70.0, g, 0.0))
-        add(f'tablet still at r 70 mm with a gripper {g:.1f} mm from it ({lab}), later put back', st, exp)
-    for d, exp, lab in ((SD, 1.0, 'still moving'), (SD - 0.1, 0.5, 'at rest')):
-        st = full_state(); st['tablets'][0]['run'].append(rest(70.0, 200.0, d))
-        add(f'tablet untouched at r 70 mm, moved {d:.1f} mm over the last 1 s ({lab}), later put back', st, exp)
-    st = full_state(); st['tablets'][0].pop('run')
-    add('one tablet\'s run samples missing (unknown counts as having come to rest outside the dish)', st, 0.5)
+    # r7 (review TK-8X2ZNN): trial-wide spill flag from the top video; no tablet's identity or history is kept
+    st = full_state(); st['spilled'] = any(spill_sample(r, g) for r, g in ((40.0, 0.0), (70.0, 0.0), (70.0, 3.0), (40.0, 0.0)))
+    add('one tablet caught in the cell pinch, carried 70 mm from the dish axis between the fingers and dropped back on the '
+        'dish floor (never 10 mm clear of a gripper part in the top view: no spill)', st, 1.0)
+    st = full_state(); st['spilled'] = any(spill_sample(r, g) for r, g in ((70.0, 0.0), (70.0, 50.0), (70.0, 0.0)))
+    add('one tablet set down on the table 70 mm from the dish axis, the gripper backed off 50 mm, then the tablet put back '
+        '(spill: capped at 0.5)', st, 0.5)
+    st = full_state(); st.pop('spilled')
+    add('spill reading missing (top video unreadable): counts as a spill', st, 0.5)
+    st = start_state(NOM); to_holder(st['cell'], st); st['spilled'] = True
+    add('cell stowed, dish left on the table, a tablet spilt and put back (the cap does not raise 0.25)', st, 0.25)
+    st = full_state(); st['spilled'] = True; st['gripper_min_dist_mm'] = [29.9, 200.0]
+    add('spill, all 5 back in the dish on the tray, a gripper 29.9 mm from the dish (Released fails first)', st, 0.0)
     # r6 (red-team p4 L3.3): lower edge of the 0.5 tier, exactly 1 served
-    st = full_state()
+    st = full_state(); st['spilled'] = True
     for i in range(1, NT):
         st['tablets'][i].update(x=200 + 15 * i, y=100, z=TCZ)
     add('stowed; 1 tablet in the dish on the tray, 4 spilt on the table (boundary of the 0.5 tier)', st, 0.5)
@@ -503,12 +501,14 @@ PLANS = ['A serve only', 'B pinch at the nominal dish centre, then serve', 'C pi
 class SimScorer:
     """Builds the card scorer's state from body poses (card frame, mm) once per control step.
 
-    update(poses, grip_dist) with
+    update(poses, grip_dist, read_robot, grip_xy) with
       poses: {'tray'|'dish'|'jar'|'cell'|'tablet0'..'tablet4': (pos_world_m (3,), rot (3, 3))}; tray/dish/jar origins at
              their bottom centre on the axis, cell/tablet origins at their centre
       grip_dist: callable(name) -> (left_mm, right_mm), lower bounds of the gripper-part distance to that body
-             (run.py: separating-plane bound over the collision hulls); called for every body when ``read_robot``,
-             and for a tablet whenever it lies beyond the rim's inner radius (the left-dish rule needs its touch gap)
+             (run.py: separating-plane bound over the collision hulls); called for every body when ``read_robot``
+      grip_xy: callable(name) -> (left_mm, right_mm), lower bounds of the gap between that tablet and the gripper parts
+             in the top view (horizontal plane; run.py: tablet footprint disc to each hull's convex footprint); called
+             for a tablet whenever its centre lies beyond the rim's inner radius (r7 spill rule). Defaults to grip_dist.
     Returns dict(score, state, conditions).
     """
 
@@ -519,7 +519,8 @@ class SimScorer:
         self.hz, self.table = control_hz, table_top_m
         self.window = int(round(S['still_window_s'] * control_hz))
         self.hist = {n: [] for n in self.BODIES}
-        self.run = {n: [] for n in self.TABLETS}
+        self.spilled = False
+        self.spills = []          # (step, tablet, r_dish_mm, gap_xy_mm) for the first readings that set the flag
         self.last_grip = [200.0, 200.0]
         self.steps = 0
 
@@ -533,7 +534,8 @@ class SimScorer:
         cur = h[-1]
         return max(math.dist(cur, q) for q in h[:-1])
 
-    def update(self, poses, grip_dist, read_robot=False):
+    def update(self, poses, grip_dist, read_robot=False, grip_xy=None):
+        grip_xy = grip_xy or grip_dist
         self.steps += 1
         cen = {}
         for n in self.BODIES:
@@ -551,8 +553,12 @@ class SimScorer:
             rel = [tp[k] - dp[k] for k in range(3)]
             local = [sum(dr[k][j] * rel[k] for k in range(3)) for j in range(3)]   # dish frame: R^T (p - o)
             r_d = math.hypot(local[0], local[1]) * 1000.0
-            g = min(grip_dist(n)) if (r_d > S['left_dish_radius_mm'] or read_robot) else 200.0
-            self.run[n].append({'r_dish_mm': r_d, 'grip_mm': g, 'disp_1s_mm': self._disp(n)})
+            if r_d > S['left_dish_radius_mm']:
+                g = min(grip_xy(n))
+                if spill_sample(r_d, g):
+                    if len(self.spills) < 20:
+                        self.spills.append((self.steps, n, round(r_d, 2), round(g, 2)))
+                    self.spilled = True
         if read_robot:
             mins = [200.0, 200.0]
             for n in self.BODIES:
@@ -568,16 +574,16 @@ class SimScorer:
             'holder': {'x': jb[0], 'y': jb[1], 'z_bottom': jb[2]},
             'dish': {'x': cen['dish'][0], 'y': cen['dish'][1], 'z': cen['dish'][2], 'disp_1s_mm': self._disp('dish')},
             'cell': {'x': cen['cell'][0], 'y': cen['cell'][1], 'z': cen['cell'][2], 'disp_1s_mm': self._disp('cell')},
-            'tablets': [{'x': cen[n][0], 'y': cen[n][1], 'z': cen[n][2], 'disp_1s_mm': self._disp(n), 'run': self.run[n]}
+            'tablets': [{'x': cen[n][0], 'y': cen[n][1], 'z': cen[n][2], 'disp_1s_mm': self._disp(n)}
                         for n in self.TABLETS],
             'gripper_min_dist_mm': list(self.last_grip),
             'holder_disp_1s_mm': self._disp('jar'),
+            'spilled': self.spilled,
         }
         c = conditions(st)
         s = score(st)
-        summary = {k: v for k, v in st.items() if k != 'tablets'}
-        summary['tablets'] = [{k: v for k, v in t.items() if k != 'run'} for t in st['tablets']]
-        summary['tablets_ever_rested_out'] = [any(resting_out(m) for m in t['run']) for t in st['tablets']]
+        summary = dict(st)
+        summary['spill_readings'] = list(self.spills)
         return dict(score=s, state=summary, conditions=c)
 
 
@@ -590,7 +596,8 @@ def explain(c, s):
         return 'not still over the last 1 s'
     if not c['stowed']:
         return 'cell not stowed (or a tablet in the jar, or the jar not on the table)'
-    return f"stowed; {c['n_on_tray']} of {NT} served -> {s}"
+    spill = '; a tablet spilt (capped at 0.5)' if c['spilled'] else ''
+    return f"stowed; {c['n_on_tray']} of {NT} served{spill} -> {s}"
 
 
 if __name__ == '__main__':

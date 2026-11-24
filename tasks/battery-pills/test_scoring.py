@@ -1,5 +1,6 @@
-"""scoring.py = the card's scorer.py (r6) + SimScorer. Checks: the card's 77 negative-control rows and 3 sweep checks
-(identical to card_scorer_test.txt), the rule part byte-identical to the card's, and SimScorer on synthetic poses."""
+"""scoring.py = the card's scorer.py (r7) + SimScorer. Checks: the card's 77 negative-control rows and 3 sweep checks
+(the same as `python3 -I card_scorer.py`), the rule part byte-identical to the card's, and SimScorer on synthetic poses,
+including the r7 trial-wide spill flag (review TK-8X2ZNN)."""
 import hashlib
 import math
 import unittest
@@ -39,7 +40,7 @@ class CardRows(unittest.TestCase):
         rule = card.split("if __name__ == '__main__':")[0].split('import json, math, os, sys', 1)[1]
         self.assertIn(rule, ours)
         self.assertEqual(hashlib.sha256((HERE / 'card_scorer.py').read_bytes()).hexdigest(),
-                         '9dee58efed42901693e72dcff9a72eaee5cab54f12dfa7635fd6feab296ef824')
+                         '6f08be230464e33cc3201a39cc0ede4caf4d768fb3db83c892ad98acf3a8acf2')
 
 
 def _poses(lay, cell=None, dish_shift=(0, 0, 0), jar_cell=False, tray_dish=False):
@@ -67,12 +68,38 @@ def _poses(lay, cell=None, dish_shift=(0, 0, 0), jar_cell=False, tray_dish=False
 
 
 class SimAdapter(unittest.TestCase):
-    def _run(self, poses, steps=25, grip=(200.0, 200.0)):
+    def _run(self, poses, steps=25, grip=(200.0, 200.0), before=None, gap_xy=(200.0, 200.0)):
         s = SC.SimScorer(20, G.TABLE_TOP)
         r = None
+        for p in before or []:               # earlier steps (e.g. a tablet lying out of the dish), then the end poses
+            s.update(p, lambda n: grip, read_robot=False, grip_xy=lambda n: gap_xy)
         for k in range(steps):
-            r = s.update(poses, lambda n: grip, read_robot=(k % 10 == 0 or k == steps - 1))
+            r = s.update(poses, lambda n: grip, read_robot=(k % 10 == 0 or k == steps - 1), grip_xy=lambda n: gap_xy)
         return r
+
+    def _out_then_back(self, gap_xy):
+        """tablet0 lies on the table 80 mm from the dish axis for 5 steps, then everything ends served."""
+        lay = G.layout(1)
+        end = _poses(lay, jar_cell=True, tray_dish=True)
+        out = dict(_poses(lay, jar_cell=True))
+        dish = np.array([*lay['dish'], G.TAB_H / 2])
+        out['tablet0'] = (np.array(G.world(dish + np.array([80.0, 0.0, 0.0]))), np.eye(3))
+        return self._run(end, before=[out] * 5, gap_xy=gap_xy)
+
+    def test_spill_caps_at_half(self):
+        r = self._out_then_back((50.0, 200.0))
+        self.assertTrue(r['state']['spilled'])
+        self.assertEqual(r['score'], 0.5, r['conditions'])
+
+    def test_carried_tablet_is_no_spill(self):
+        r = self._out_then_back((3.0, 200.0))          # between or under the fingers in the top view
+        self.assertFalse(r['state']['spilled'])
+        self.assertEqual(r['score'], 1.0, r['conditions'])
+
+    def test_spill_gap_boundary(self):
+        g = SC.S['spill_gap_mm']
+        self.assertEqual(self._out_then_back((g - 0.01, 200.0))['score'], 1.0)
+        self.assertEqual(self._out_then_back((g, 200.0))['score'], 0.5)
 
     def test_start_scores_zero(self):
         for seed in (0, 1, 2, 3):
