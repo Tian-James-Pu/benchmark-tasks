@@ -1,4 +1,4 @@
-# Ready a kitchen magnet board for Dad with Alzheimer's: food-shaped magnets off into a shut box, note and plain magnets stay up
+# Ready a kitchen magnet board for Dad with Alzheimer's: food-shaped magnets off into a shut box, note stays up
 
 Dad has Alzheimer's and moves in tonight. Get the kitchen magnet board ready for him. Anything you take down goes in the
 wooden box, lid shut.
