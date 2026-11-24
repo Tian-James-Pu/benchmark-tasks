@@ -1,10 +1,11 @@
 """On the station table, in front of the robot: a galvanized steel sheet (610 x 305 mm) stands upright on a plywood
-stand 400 mm out. On it, at four random cells of six: a red strawberry, a tan cookie and a pink-topped doughnut magnet,
-and a plain black disc magnet holding a white 4 x 6 in note card. A small plywood box with its hinged lid resting open
-sits on the table between the arms and the board, at one of four spots.
+stand 400 mm out. On it, one per cell of six in a random order: a red strawberry, a tan cookie and a pink-topped
+doughnut magnet, a plain black disc magnet holding a white 4 x 6 in note card, and two ordinary plain black magnets (a
+30 mm disc and a 30 mm square) that hold nothing. A small plywood box with its hinged lid resting open sits on the table
+between the arms and the board, at one of four spots.
 
 The job (instruction below): take the three food-shaped magnets off the board into the box and shut the lid, leaving
-the note and its plain magnet where they are. Every body is a native PhysX rigid body; the board and box body are
+the note, its plain magnet and the two ordinary magnets where they are. Every body is a native PhysX rigid body; the board and box body are
 static (taped), the lid turns on a revolute hinge, and each magnet is held to the steel by a gap-dependent attraction
 (arena_fm.MagnetForces). Load it with yam_arena (``-E task=task.py``) or run it with run.py. Scoring: scoring.py.
 """
@@ -43,7 +44,7 @@ SEED = TRIAL['seed']
 DRAW = TRIAL['draw'] = layout.draw(SEED)
 OBJECTS = [
     *(Magnet(n, pos=layout.body_start(n, DRAW), size=(G.THICK[n], *G.EXTENT[n]), color=layout.COLORS[n])
-      for n in ('strawberry', 'cookie', 'donut', 'plain')),
+      for n in ('strawberry', 'cookie', 'donut', 'plain') + G.ORDINARY),
     NoteCard('card', pos=layout.card_start(DRAW), size=(G.CARD_T, G.CARD_W, G.CARD_H), color=layout.COLORS['card']),
     Lid('lid', pos=layout.lid_start(DRAW), size=(G.BOX_LX, G.BOX_LY, G.LID_T), color=layout.COLORS['box']),
 ]
@@ -58,7 +59,7 @@ def _tracker():
 
 def evaluate(objects):
     """One scorer update per control step from the rigid poses (the grippers' distances are read by run.py)."""
-    poses = {n: (objects[n].pos, objects[n].rot) for n in ('strawberry', 'cookie', 'donut', 'plain', 'card', 'lid')}
+    poses = {n: (objects[n].pos, objects[n].rot) for n in ('strawberry', 'cookie', 'donut', 'plain', 'card', 'lid') + G.ORDINARY}
     return _tracker().update(poses)
 
 

@@ -19,6 +19,9 @@ Plan (one arm, the one on the box's side; the other stays at its ready pose):
            vertical it falls shut on its hinge
   home     both arms at ready, grippers open; hold 1.5 s
 Mode 'hover' carries the last magnet over the box and holds it there (a baseline: never released, lid open).
+Mode 'boxall' (r5 red team, not a demo) is the route review TK-9NQBPY names, every magnet that does not hold the note
+boxed: the demo plus the two ordinary magnets, whose drawn centres it reads from the trial's layout (an oracle, the
+strongest form of that route); each is pinched 4 mm inside its own height.
 """
 import math
 from dataclasses import dataclass, field
@@ -200,6 +203,14 @@ class MagnetDemo:
         self.arm = V.ArmModel(self.side)
         self.flip = self.side == 'left'          # pitched poses: IK branch that reaches every spot on the arm's side
         foods = [b['yz'] for b in blobs[:3]]
+        pinch_h = {}                             # boxall only: target index -> its height (m) for the pinch
+        if self.mode == 'boxall':
+            import os
+            import scene
+            d = scene.draw(int(os.environ.get('ROBOCURVE_FM_SEED', '0')))
+            for n in G.ORDINARY:
+                pinch_h[tuple(d[n])] = G.EXTENT[n][1]
+                foods.append(tuple(d[n]))
         self.log[-1].info.update(box_spot=spot, box_y_mm=round(box_y / G.MM), spot_diffs=diffs, arm=self.side,
                                  food_yz_mm=[(np.array(f) / G.MM).round(1).tolist() for f in foods],
                                  blobs=[dict(yz_mm=(np.array(b['yz']) / G.MM).round(1).tolist(), px=b['px'], rgb=b['rgb'])
@@ -211,6 +222,9 @@ class MagnetDemo:
         r_drop = rot(DROP_PITCH, self.flip)
         for k, yz in enumerate(foods):
             last = k == len(foods) - 1
+            h = pinch_h.get(tuple(yz))
+            g_pinch = GRIP_PINCH if h is None else (h / G.MM - 8.0) / 93.9
+            g_held = GRIP_HELD if h is None else (h / G.MM - 4.0) / 93.9
             held = False
             for attempt in range(3):
                 self._phase(f'approach{k + 1}' + (f'_retry{attempt}' if attempt else ''))
@@ -226,7 +240,8 @@ class MagnetDemo:
                 yield from self._move(far, r_pinch, settle=2)
                 near = self._tcp_for_tip(G.FACE_X - 0.060, yz[0], yz[1], r_pinch)
                 yield from self._move(near, r_pinch, settle=8)
-                yz = self._refit(yz)
+                if h is None:
+                    yz = self._refit(yz)
                 self.log[-1].info['yz_mm'] = (np.array(yz) / G.MM).round(1).tolist()
                 self._phase(f'pinch{k + 1}')
                 near = self._tcp_for_tip(G.FACE_X - 0.060, yz[0], yz[1], r_pinch)
@@ -234,14 +249,14 @@ class MagnetDemo:
                 at = self._tcp_for_tip(G.FACE_X - TIP_OFF_STEEL, yz[0], yz[1], r_pinch)
                 yield from self._move(at, r_pinch, speed=0.03, settle=6)
                 yield from self._correct(at)
-                yield from self._grip_to(GRIP_PINCH, 12)
+                yield from self._grip_to(g_pinch, 12)
                 yield from self._hold(10)
                 self.log[-1].info['pinch_reading'] = round(self.reading(), 4)
                 self._phase(f'pull{k + 1}')
                 yield from self._move(self._tcp_for_tip(G.FACE_X - 0.060, yz[0], yz[1], r_pinch), r_pinch, speed=0.02, settle=8)
                 rd = self.reading()
                 self.log[-1].info['pulled_reading'] = round(rd, 4)
-                if rd > GRIP_HELD:
+                if rd > g_held:
                     held = True
                     break
             self.log[-1].info['held'] = held

@@ -1,18 +1,21 @@
-"""food-magnets scorer (pure stdlib), r4 (red-team p3 revision; scoring rule unchanged since r3). score(state) implements card.md "Scoring" exactly,
-reading every threshold from params.json. Run as a script: prints the negative-control table and the blind-policy sweep,
-exits non-zero on any mismatch.
+"""food-magnets scorer (pure stdlib), r5 (review TK-9NQBPY, Construct validity: two ordinary magnets that must stay on
+the board; r4 red-team p3 before that). score(state) implements card.md "Scoring" exactly, reading every threshold from
+params.json. Run as a script: prints the negative-control table and the blind-policy sweep, exits non-zero on any
+mismatch.
 
 state (raw numbers only, mm / deg; a missing value counts as failed). Released is read over the last 1 s of the run,
 grippers as the policy left them; everything else at the end (r3: Kept is an end-state reading, no whole-run maximum):
-  food:  3 dicts {box_xy: [x, y] centre in the box frame (box centre, x toward +x), box_top: highest point above the box
-         floor, off_table_max: largest distance beyond the table edge or below the table top over the whole run (<= 0 =
-         never), grip_clear: least gripper distance over the last 1 s}
-  plain: 1 dict (r3: magnet A only) {disp: centre displacement from its start at the end, gap: back-face gap to its card at
-         the end, grip_clear}
-  cards: 1 dict {disp: largest displacement of any of its 4 corners from its start at the end, rot: turn (deg) at the end,
-         grip_clear}
-  box:   {lid_gap: lid free edge above the rim at the side photo, grip_clear, lid_grip_clear}
-         (the box is taped at its drawn spot; the In rim is params box.inner_depth, set from gate G2)
+  food:     3 dicts {box_xy: [x, y] centre in the box frame (box centre, x toward +x), box_top: highest point above the
+            box floor, off_table_max: largest distance beyond the table edge or below the table top over the whole run
+            (<= 0 = never), grip_clear: least gripper distance over the last 1 s}
+  plain:    1 dict (r3: magnet A only) {disp: centre displacement from its start at the end, gap: back-face gap to its
+            card at the end, grip_clear}
+  ordinary: 2 dicts (r5: the round and the square ordinary magnets, holding nothing) {disp: centre displacement from its
+            start at the end, gap: back-face gap to the steel at the end, grip_clear}
+  cards:    1 dict {disp: largest displacement of any of its 4 corners from its start at the end, rot: turn (deg) at the
+            end, grip_clear}
+  box:      {lid_gap: lid free edge above the rim at the side photo, grip_clear, lid_grip_clear}
+            (the box is taped at its drawn spot; the In rim is params box.inner_depth, set from gate G2)
 """
 import itertools, json, os, random, sys
 
@@ -45,17 +48,17 @@ def inside(f):                   # centre inside the inner walls, no point more 
     return in_walls(f) and h is not None and 0 <= h <= BOX["inner_depth"] + S["in_above_rim_max"]
 
 
-def kept(st):                    # end state: magnet A and every note corner within kept_disp_max, card turn, A's gap
-    pl, ca = st.get("plain") or [], st.get("cards") or []
-    if len(pl) != P["plain"]["count"] or len(ca) != P["cards"]["count"]:
+def kept(st):                    # end state: magnet A, every note corner and (r5) both ordinary magnets kept
+    pl, ca, od = st.get("plain") or [], st.get("cards") or [], st.get("ordinary") or []
+    if len(pl) != P["plain"]["count"] or len(ca) != P["cards"]["count"] or len(od) != P["ordinary"]["count"]:
         return False
-    return all(_le(p, "disp", S["kept_disp_max"]) and _le(p, "gap", S["kept_gap_max"]) for p in pl) and \
+    return all(_le(p, "disp", S["kept_disp_max"]) and _le(p, "gap", S["kept_gap_max"]) for p in pl + od) and \
         all(_le(c, "disp", S["kept_disp_max"]) and _le(c, "rot", S["card_rot_max"]) for c in ca)
 
 
 def released(st):                # every part of both grippers >= release_clear from every magnet, the note, box and lid
     b = st.get("box") or {}
-    parts = (st.get("food") or []) + (st.get("plain") or []) + (st.get("cards") or [])
+    parts = (st.get("food") or []) + (st.get("plain") or []) + (st.get("ordinary") or []) + (st.get("cards") or [])
     return all(_ge(p, "grip_clear", S["release_clear"]) for p in parts) and \
         _ge(b, "grip_clear", S["release_clear"]) and _ge(b, "lid_grip_clear", S["release_clear"])
 
@@ -94,12 +97,15 @@ def food_on_table():
 def base(food, lid_gap=0.0):
     return {"food": food,
             "plain": [{"disp": 0, "gap": 0, "grip_clear": 200} for _ in range(P["plain"]["count"])],
+            "ordinary": [{"disp": 0, "gap": 0, "grip_clear": 200} for _ in range(P["ordinary"]["count"])],
             "cards": [{"disp": 0, "rot": 0, "grip_clear": 200} for _ in range(P["cards"]["count"])],
             "box": {"lid_gap": lid_gap, "grip_clear": 200, "lid_grip_clear": 200}}
 
 
 LID_OPEN = P["geometry"]["lid_open_edge_height"]  # lid free edge above the rim at the 100 deg rest, geometry.md
 RIM = BOX["inner_depth"]
+ORD_NAMES = P["ordinary"]["names"]                # round, square
+BOXED = dict(disp=150, gap=120)                   # an ordinary magnet taken off the board into the box
 
 
 def mod(st, f):
@@ -116,7 +122,7 @@ def rows():
     B3 = lambda lid=0.0: base([food_in_box() for _ in range(3)], lid)
     A = S["in_above_rim_max"]
     add("start scene / do nothing", base([food_on_board() for _ in range(3)], LID_OPEN), 0.0)
-    add("full: 3 in box, lid shut, note kept, released", base([food_in_box(-30, -40), food_in_box(0, 0), food_in_box(25, 40)]), 1.0)
+    add("full: 3 in box, lid shut, note and ordinary magnets kept, released", base([food_in_box(-30, -40), food_in_box(0, 0), food_in_box(25, 40)]), 1.0)
     add("full, magnets stacked (stack top 32 above the floor)", base([food_in_box(0, 0, 12), food_in_box(0, 0, 24), food_in_box(0, 0, 32)]), 1.0)
     add("magnet top 4 above the rim, lid open (boundary in)", base([food_in_box(), food_in_box(), food_in_box(0, 0, RIM + A)], LID_OPEN), 0.5)
     add("magnet top 4.5 above the rim, lid open (boundary out)", base([food_in_box(), food_in_box(), food_in_box(0, 0, RIM + A + 0.5)], LID_OPEN), 0.0)
@@ -133,8 +139,8 @@ def rows():
     add("third magnet still pinched over the open box at the run end (grip_clear 0)", base([food_in_box(), food_in_box(), fm(food_in_box(0, 0, 60), grip_clear=0)], LID_OPEN), 0.0)
     add("gripper 29 mm from the lid (boundary out)", mod(B3(), lambda s: s["box"].update(lid_grip_clear=29)), 0.0)
     add("gripper 30 mm from everything (boundary in)", mod(B3(), lambda s: s["box"].update(grip_clear=30, lid_grip_clear=30)), 1.0)
-    for part, path in (("a food magnet", ("food", 0)), ("plain magnet A", ("plain", 0)),
-                       ("the note card", ("cards", 0)), ("the box body", ("box", None))):
+    for part, path in (("a food magnet", ("food", 0)), ("plain magnet A", ("plain", 0)), ("the round ordinary magnet", ("ordinary", 0)),
+                       ("the square ordinary magnet", ("ordinary", 1)), ("the note card", ("cards", 0)), ("the box body", ("box", None))):
         for g, e in ((29, 0.0), (30, 1.0)):
             def setg(s, path=path, g=g):
                 (s[path[0]] if path[1] is None else s[path[0]][path[1]]).update(grip_clear=g)
@@ -143,11 +149,29 @@ def rows():
     add("magnet in the box corner (x 34, y 58: boundary in)", base([food_in_box(34, 58), food_in_box(), food_in_box()]), 1.0)
     add("magnet centre just outside the inner wall (x 35)", base([food_in_box(35, 0, 12), food_in_box(), food_in_box()]), 0.0)
     add("magnet centre just outside the inner end wall (y 59)", base([food_in_box(0, 59, 12), food_in_box(), food_in_box()]), 0.0)
-    add("everything boxed incl. the note and its magnet", mod(B3(),
-        lambda s: (s["plain"][0].update(disp=180, gap=150), s["cards"][0].update(disp=170, rot=60))), 0.0)
-    add("card-aware, shape-blind: every magnet with no card under it boxed (= the 3 food), lid shut (r4: the construct is removal and shut storage, not shape recognition)",
-        base([food_in_box(-30, -40), food_in_box(0, 0), food_in_box(25, 40)]), 1.0)
-    add("box every magnet: plain magnet A (cookie-sized disc) boxed too, its note fallen", mod(B3(), lambda s: (s["plain"][0].update(disp=180, gap=150), s["cards"][0].update(disp=120, rot=40))), 0.0)
+    add("everything boxed incl. the note, its magnet and both ordinary magnets", mod(B3(),
+        lambda s: (s["plain"][0].update(disp=180, gap=150), s["cards"][0].update(disp=170, rot=60),
+                   [o.update(**BOXED) for o in s["ordinary"]])), 0.0)
+    # r5 (review TK-9NQBPY): the route the review names, every magnet not holding the note boxed, no longer scores
+    add("box every loose magnet (every magnet with no card under it: the 3 food and both ordinary magnets), lid shut "
+        "(r5: the ordinary magnets are no hazard and must stay up)",
+        mod(base([food_in_box(-30, -40), food_in_box(0, 0), food_in_box(25, 40)]), lambda s: [o.update(**BOXED) for o in s["ordinary"]]), 0.0)
+    add("box every loose magnet, lid left open", mod(B3(LID_OPEN), lambda s: [o.update(**BOXED) for o in s["ordinary"]]), 0.0)
+    for i, nm in enumerate(ORD_NAMES):
+        add(f"the 3 food and the {nm} ordinary magnet boxed, lid shut", mod(B3(), lambda s, i=i: s["ordinary"][i].update(**BOXED)), 0.0)
+    add("box every magnet: plain magnet A (cookie-sized disc) and both ordinary magnets boxed too, the note fallen",
+        mod(B3(), lambda s: (s["plain"][0].update(disp=180, gap=150), s["cards"][0].update(disp=120, rot=40),
+                             [o.update(**BOXED) for o in s["ordinary"]])), 0.0)
+    add("square ordinary magnet knocked onto the counter, 3 food boxed, lid shut", mod(B3(), lambda s: s["ordinary"][1].update(disp=260, gap=200)), 0.0)
+    add("round ordinary magnet slid 40 mm along the board, 3 food boxed, lid shut", mod(B3(), lambda s: s["ordinary"][0].update(disp=40, gap=0)), 0.0)
+    add("ordinary magnet moved 10 mm (boundary in)", mod(B3(), lambda s: s["ordinary"][0].update(disp=10)), 1.0)
+    add("ordinary magnet moved 10.5 mm (boundary out)", mod(B3(), lambda s: s["ordinary"][1].update(disp=10.5)), 0.0)
+    add("ordinary magnet gap 1 mm to the steel (boundary in)", mod(B3(), lambda s: s["ordinary"][1].update(gap=1)), 1.0)
+    add("ordinary magnet tilted off the steel, gap 1.5 mm", mod(B3(), lambda s: s["ordinary"][0].update(gap=1.5)), 0.0)
+    add("ordinary magnet taken down and put back on its marks (end: disp 3, gap 0)", mod(B3(), lambda s: s["ordinary"][0].update(disp=3, gap=0)), 1.0)
+    add("3 in box, lid open, an ordinary magnet boxed too (0.5 also needs Kept)", mod(B3(LID_OPEN), lambda s: s["ordinary"][0].update(**BOXED)), 0.0)
+    add("missing reading (an ordinary magnet's gap unknown)", mod(B3(), lambda s: s["ordinary"][1].update(gap=None)), 0.0)
+    add("missing reading (only one ordinary magnet read)", mod(B3(), lambda s: s["ordinary"].pop()), 0.0)
     add("note knocked down (corner disp 120, rot 40)", mod(B3(), lambda s: s["cards"][0].update(disp=120, rot=40)), 0.0)
     add("note nudged: worst corner 10 mm, 5 deg (boundary in)", mod(B3(), lambda s: s["cards"][0].update(disp=10, rot=5)), 1.0)
     add("note nudged: worst corner 10.5 mm (boundary out)", mod(B3(), lambda s: s["cards"][0].update(disp=10.5)), 0.0)
@@ -171,12 +195,16 @@ def rows():
     return T
 
 
-# ---------------------------------------------------------------- blind-policy sweep (r3: cells)
+# ---------------------------------------------------------------- blind-policy sweep (r5: six items in six cells)
 DIMS = {"strawberry": (P["food"]["strawberry"]["w"], P["food"]["strawberry"]["h"]),
         "cookie": (P["food"]["cookie"]["dia"], P["food"]["cookie"]["dia"]),
         "donut": (P["food"]["donut"]["od"], P["food"]["donut"]["od"]),
-        "A": (P["plain"]["dia"], P["plain"]["dia"])}
+        "A": (P["plain"]["dia"], P["plain"]["dia"]),
+        "round": (P["ordinary"]["round"]["dia"], P["ordinary"]["round"]["dia"]),
+        "square": (P["ordinary"]["square"]["w"], P["ordinary"]["square"]["h"])}
 FOODS = ("strawberry", "cookie", "donut")
+KEEP = ("A", "round", "square")                                       # must not be taken
+ITEMS = FOODS + KEEP
 HALF_OPEN, PAD_HALF = P["geometry"]["finger_open"] / 2, 10     # pad half-width 10 mm (estimate)
 SPOTS = R["box_spots_y"]
 J = R["jitter_y"]
@@ -189,7 +217,7 @@ GRID = [i - J for i in range(2 * J + 1)]                               # 1 mm ji
 
 def captured(pick, item, y, z):
     """Generous capture model: fingers open 94; a pinch closing along z takes an item whose z extent fits between the
-    open fingers and whose y extent overlaps a 20 mm pad (and the converse for y). Used for food AND for A."""
+    open fingers and whose y extent overlaps a 20 mm pad (and the converse for y). Used for every item."""
     py, pz, axis = pick
     w, h = DIMS[item]
     if axis == "z":
@@ -198,36 +226,32 @@ def captured(pick, item, y, z):
 
 
 def assignments():
-    """Note cell x ordered food cells: 6 x (5 x 4 x 3) = 360 (= 6 note cells x 10 food cell sets x 6 orders)."""
-    out = []
-    for n in CELLS:
-        rest = [c for c in CELLS if c != n]
-        for trip in itertools.permutations(rest, 3):
-            out.append((n, trip))
-    return out
+    """r5: the six items fill the six cells in any order: 6! = 720."""
+    return list(itertools.permutations(CELLS))
 
 
 def cell_probs(pattern):
     """pattern: list of (dy, dz, axis) offsets from a cell centre (all cells alike: same jitter ranges, no pinch reaches
-    a neighbouring cell). Returns P(capture) for each food type and for A over the 21 x 21 jitter grid (uniform)."""
+    a neighbouring cell). Returns P(capture) for each item over the 21 x 21 jitter grid (uniform)."""
     out = {}
-    for item in FOODS + ("A",):
+    for item in ITEMS:
         hit = sum(any(captured(p, item, dy, dz) for p in pattern) for dy in GRID for dz in GRID)
         out[item] = hit / len(GRID) ** 2
     return out
 
 
-def plan_mean(cell_patterns, probs):
-    """Exact mean over all 360 assignments x 4 box spots x the jitter grid of a plan that pinches cell_patterns[i] in cell
-    i, carries every capture to one fixed drop spot and pushes the lid there. Success (1.0) needs all three food captured,
-    A not captured, and the box drawn at the drop spot (spots 130 apart > the 122 box: one spot only); every other outcome
-    scores 0 (a food magnet left out of the box, or A taken)."""
+def plan_mean(cell_patterns, probs, A_=None):
+    """Exact mean over all 720 assignments x 4 box spots x the jitter grid of a plan that pinches cell_patterns[i] in cell
+    i, carries every capture to one fixed drop spot and pushes the lid there. Success (1.0) needs all three food
+    captured, none of A, round and square captured, and the box drawn at the drop spot (spots 130 apart > the 122 box:
+    one spot only); every other outcome scores 0."""
     tot = 0.0
-    A_ = assignments()
-    for n, trip in A_:
-        pr = 1 - probs[cell_patterns[CELLS.index(n)]]["A"]
-        for food, c in zip(FOODS, trip):
-            pr *= probs[cell_patterns[CELLS.index(c)]][food]
+    A_ = A_ or assignments()
+    for cells in A_:
+        pr = 1.0
+        for item, c in zip(ITEMS, cells):
+            q = probs[cell_patterns[CELLS.index(c)]][item]
+            pr *= q if item in FOODS else 1 - q
         tot += pr
     return tot / len(A_) / len(SPOTS)
 
@@ -247,30 +271,21 @@ def pattern_library():
     return lib
 
 
-def best_fixed_plan():
-    lib = pattern_library()
-    probs = {k: cell_probs(v) for k, v in lib.items()}
-    # cookie, doughnut and A share the 40 x 40 outline, so their capture probabilities are equal for every pattern; the
-    # frontier keeps, per 0.1 bin of P(A), the pattern with the best P(strawberry)
-    bins = {}
-    for k, pr in probs.items():
-        b = round(pr["A"] * 10)
-        if b not in bins or (pr["strawberry"], -pr["A"]) > (probs[bins[b]]["strawberry"], -probs[bins[b]]["A"]):
-            bins[b] = k
-    front = sorted(set(bins.values()) | {"none"})
-    best = None
-    for combo in itertools.combinations_with_replacement(front, len(CELLS)):
-        m = plan_mean(list(combo), probs)      # the assignment is uniform over cells: only the multiset matters
-        if best is None or m > best[0]:
-            best = (m, list(combo))
-    same = max(((plan_mean([k] * len(CELLS), probs), k) for k in probs), key=lambda t: t[0])
-    return best, same, probs, lib, front
+def analytic_bound():
+    """Upper bound for EVERY fixed plan. The cookie, the doughnut and A share the 40 x 40 outline, so any cell's pattern
+    captures each of them with the same probability p_c (checked over the library below). Success needs the cookie's
+    and the doughnut's cells to capture and A's cell not to: E[p_a p_b (1 - p_c)] over ordered distinct cells (a, b, c)
+    of the random order, a multilinear function of p in [0, 1]^6, so its maximum is at a 0/1 vertex: k cells that
+    capture give k (k - 1) (6 - k) / 120, at most 0.2 (k = 4). The box must also stand at the one drop spot: 1/4.
+    (The strawberry, round and square conditions only lower it.)"""
+    best = max(k * (k - 1) * (6 - k) for k in range(7)) / 120
+    return best / len(SPOTS)
 
 
 def draw_state(plan_abs, draw, drop):
     """End state of a fixed absolute plan on one concrete draw (generous: every capture lands at the drop spot; the lid is
-    pushed shut there; a captured A takes its note down)."""
-    (n, ny, nz), foods, spot = draw
+    pushed shut there; a captured A takes its note down; a captured ordinary magnet is boxed)."""
+    (n, ny, nz), foods, ords, spot = draw
     hit = drop == spot
     fo = []
     for name, y, z in foods:
@@ -281,15 +296,19 @@ def draw_state(plan_abs, draw, drop):
     st = base(fo, 0.0 if hit else LID_OPEN)
     if any(captured(p, "A", ny, nz) for p in plan_abs):
         st["plain"][0].update(disp=150, gap=150); st["cards"][0].update(disp=150, rot=40)
+    for i, (name, y, z) in enumerate(ords):
+        if any(captured(p, name, y, z) for p in plan_abs):
+            st["ordinary"][i].update(**BOXED)
     return st
 
 
 def concrete_draw(rng):
-    n, trip = rng.choice(assignments())
+    cells = rng.choice(assignments())
     jit = lambda cell: (CENTRE[cell][0] + rng.uniform(-J, J), CENTRE[cell][1] + rng.uniform(-DZ, DZ))
-    ny, nz = jit(n)
-    foods = [(f,) + jit(c) for f, c in zip(FOODS, trip)]
-    return ((n, ny, nz), foods, rng.randrange(len(SPOTS)))
+    pos = {item: jit(c) for item, c in zip(ITEMS, cells)}
+    foods = [(f,) + pos[f] for f in FOODS]
+    ords = [(o,) + pos[o] for o in ("round", "square")]
+    return ((cells[3],) + pos["A"], foods, ords, rng.randrange(len(SPOTS)))
 
 
 def to_abs(cell_patterns, lib):
@@ -306,40 +325,39 @@ def main():
         bad += not ok
         print(f"  {'ok ' if ok else 'BAD'} {name}: expected {exp:.2f}, scorer {got:.2f}")
     print(f"{len(T)} negative-control rows")
-    (m, combo), (m_same, k_same), probs, lib, front = best_fixed_plan()
-    print(f"\nblind-policy sweep (r3): 6 cells {CELLS} (z ranges {ROWS}), note + 3 food in 4 random cells "
-          f"({len(assignments())} assignments), each centre jittered y +/-{J}, z +/-{DZ:g} (1 mm grid), x 4 box spots {SPOTS}")
-    print(f"pattern library: {len(lib)} per-cell pinch patterns (1, 2, 4 or 8 pinches, both closing axes); frontier kept: {len(front)}")
-    for k in front:
-        pr = probs[k]
-        print(f"  frontier {k}: P(strawberry) {pr['strawberry']:.3f}, P(cookie) {pr['cookie']:.3f}, P(doughnut) {pr['donut']:.3f}, P(A) {pr['A']:.3f}")
-    print(f"best FIXED plan (exact mean over every assignment, jitter point and box spot): cells -> patterns {list(zip(CELLS, combo))}; "
-          f"drop and lid push at one spot: mean {m:.4f}")
-    print(f"best plan using one pattern in every cell: {k_same}: mean {m_same:.4f}")
+    lib = pattern_library()
+    probs = {k: cell_probs(v) for k, v in lib.items()}
+    A_ = assignments()
+    print(f"\nblind-policy sweep (r5): 6 cells {CELLS} (z ranges {ROWS}); the note's magnet A, 3 food and 2 ordinary magnets fill "
+          f"them in a random order ({len(A_)} assignments), each centre jittered y +/-{J}, z +/-{DZ:g} (1 mm grid), x 4 box spots {SPOTS}")
     cookie_eq = all(abs(pr["cookie"] - pr["A"]) < 1e-12 and abs(pr["donut"] - pr["A"]) < 1e-12 for pr in probs.values())
-    print(f"cookie, doughnut and A captured with equal probability by every pattern: {cookie_eq}")
+    print(f"pattern library: {len(lib)} per-cell pinch patterns (1, 2, 4 or 8 pinches, both closing axes); cookie, doughnut and A "
+          f"captured with equal probability by every pattern: {cookie_eq}")
     bad += not cookie_eq
-    vertex = 1 / 6 / len(SPOTS)
-    print(f"cell-level reference (take all of 5 cells, none of 1: succeeds only if the note is in the untouched cell, 1/6, and "
-          f"the box at the drop spot, 1/4): {vertex:.4f}")
-    plan_abs = to_abs(combo, lib)
-    rng = random.Random(20261122)
+    bound = analytic_bound()
+    print(f"upper bound for every fixed plan (see analytic_bound): {bound:.4f}")
+    same = max(((plan_mean([k] * len(CELLS), probs, A_), k) for k in probs), key=lambda t: t[0])
+    print(f"best plan using one pattern in every cell (exact over the library): {same[1]}: mean {same[0]:.4f}")
+    take = next(k for k in probs if probs[k]["cookie"] == 1.0 and probs[k]["strawberry"] == 1.0)
+    cells3 = [take, take, take, "none", "none", "none"]
+    m3 = plan_mean(cells3, probs, A_)
+    print(f"cell-level reference (take everything in 3 fixed cells with {take}, none of the other 3: succeeds only if the 3 food "
+          f"sit in those cells, 1/20, and the box at the drop spot, 1/4): exact mean {m3:.4f}")
+    plan_abs = to_abs(cells3, lib)
+    rng = random.Random(20261124)
     N = 20000
     mc = sum(score(draw_state(plan_abs, d, 0)) for d in (concrete_draw(rng) for _ in range(N))) / N
-    print(f"cross-check: best plan, drop at spot {SPOTS[0]}, scorer.score on {N} random draws (seed 20261122): mean {mc:.4f}")
-    print("draw table (best plan, drop and lid push at y = %d; scorer.score):" % SPOTS[0])
-    rng = random.Random(7)
-    for i in range(16):
-        d = concrete_draw(rng)
-        if i < 8:       # every box spot appears; the first four at the drop spot
-            d = (d[0], d[1], 0 if i < 4 else i - 4)
-        (n, ny, nz), foods, spot = d
-        print(f"  draw {i + 1}: note A {n} at ({ny:.0f}, {nz:.0f}); food {[(f, round(y), round(z)) for f, y, z in foods]}; "
-              f"box y {SPOTS[spot]} -> {score(draw_state(plan_abs, d, 0)):.2f}")
+    print(f"cross-check: that plan, drop at spot {SPOTS[0]}, scorer.score on {N} random draws (seed 20261124): mean {mc:.4f}")
+    loose = base([food_in_box(-30, -40), food_in_box(0, 0), food_in_box(25, 40)])
+    for o in loose["ordinary"]:
+        o.update(**BOXED)
+    print(f"the reviewed route, every loose magnet (no card under it) boxed and the lid shut: {score(loose):.2f}")
+    bad += score(loose) != 0.0
     sweep = score(base([food_on_table() for _ in range(3)], LID_OPEN))
-    print(f"band sweeps alone (every magnet knocked to the counter, note kept): {sweep:.2f} (no counter tier in r3)")
-    ok = m <= 0.125
-    print(f"sweep mean {m:.4f} (r3 target: well under 0.25; check <= 0.125): {'ok' if ok else 'FAIL'}")
+    print(f"band sweeps alone (every food magnet knocked to the counter, note kept): {sweep:.2f} (no counter tier)")
+    ok = max(bound, same[0], m3, mc) <= 0.125
+    print(f"sweep: bound {bound:.4f}, best uniform {same[0]:.4f}, 3-cell {m3:.4f}, Monte Carlo {mc:.4f} (target well under 0.25; "
+          f"check <= 0.125): {'ok' if ok else 'FAIL'}")
     bad += not ok
     print("ALL PASS" if not bad else f"{bad} FAILURES")
     return 1 if bad else 0

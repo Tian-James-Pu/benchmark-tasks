@@ -1,5 +1,5 @@
-"""food-magnets scoring: exactly the card's rule (generated/v2/cards/food-magnets/scorer.py, r4), read from the
-simulator's rigid poses.
+"""food-magnets scoring: exactly the card's rule (card_scorer.py, r5: review TK-9NQBPY added two ordinary magnets that
+must stay on the board), read from the simulator's rigid poses.
 
 ``score(state)`` is the card scorer's function, line for line (thresholds from params.json). ``ScoreTracker`` builds
 that state dict from the bodies' poses every control step:
@@ -7,6 +7,8 @@ that state dict from the bodies' poses every control step:
          off_table_max (largest excursion beyond the table edge or below the table top over the whole run, mm),
          grip_clear (least distance from any gripper hull to it over the last 1 s, mm)
   plain: disp (centre displacement from its start), gap (back face to the card's front face), grip_clear
+  ordinary (r5, round and square): disp (centre displacement from its start), gap (back face to the steel: the largest
+         back-face rim point's distance off the sheet's front face), grip_clear
   cards: disp (largest corner displacement from its start), rot (turn from its start, deg), grip_clear
   box:   lid_gap (lid free edge above the rim), grip_clear (box body), lid_grip_clear
 Released is read over the last 1 s of the run, grippers as the policy left them. Then (card, Scoring) the arms are
@@ -25,9 +27,10 @@ P = G.P
 S, BOX, R = P["scoring"], P["box"], P["randomisation"]
 GRIPPER_LINKS = ('gripper', 'tip_left', 'tip_right')
 FOOD = G.NAMES
+ORDINARY = G.ORDINARY
 
 
-# ---------------------------------------------------------------- the card's scorer (scorer.py r4), unchanged
+# ---------------------------------------------------------------- the card's scorer (card_scorer.py r5), unchanged
 def _num(d, k):
     v = d.get(k) if isinstance(d, dict) else None
     return v if isinstance(v, (int, float)) and not isinstance(v, bool) else None
@@ -54,16 +57,16 @@ def inside(f):
 
 
 def kept(st):
-    pl, ca = st.get("plain") or [], st.get("cards") or []
-    if len(pl) != P["plain"]["count"] or len(ca) != P["cards"]["count"]:
+    pl, ca, od = st.get("plain") or [], st.get("cards") or [], st.get("ordinary") or []
+    if len(pl) != P["plain"]["count"] or len(ca) != P["cards"]["count"] or len(od) != P["ordinary"]["count"]:
         return False
-    return all(_le(p, "disp", S["kept_disp_max"]) and _le(p, "gap", S["kept_gap_max"]) for p in pl) and \
+    return all(_le(p, "disp", S["kept_disp_max"]) and _le(p, "gap", S["kept_gap_max"]) for p in pl + od) and \
         all(_le(c, "disp", S["kept_disp_max"]) and _le(c, "rot", S["card_rot_max"]) for c in ca)
 
 
 def released(st):
     b = st.get("box") or {}
-    parts = (st.get("food") or []) + (st.get("plain") or []) + (st.get("cards") or [])
+    parts = (st.get("food") or []) + (st.get("plain") or []) + (st.get("ordinary") or []) + (st.get("cards") or [])
     return all(_ge(p, "grip_clear", S["release_clear"]) for p in parts) and \
         _ge(b, "grip_clear", S["release_clear"]) and _ge(b, "lid_grip_clear", S["release_clear"])
 
@@ -94,7 +97,8 @@ def explain(st):
         return 'zero: not released (a gripper within 30 mm of a magnet, the note, the box or the lid in the last 1 s)'
     parts = [f"{n} {'in' if inside(f) else 'not in'}" for n, f in zip(FOOD, fo)]
     lid = _le(st.get("box") or {}, "lid_gap", S["lid_gap_max"])
-    return ', '.join(parts + [f"lid {'shut' if lid else 'open'}", f"note {'kept' if kept(st) else 'not kept'}"])
+    return ', '.join(parts + [f"lid {'shut' if lid else 'open'}",
+                              f"note and ordinary magnets {'kept' if kept(st) else 'not kept'}"])
 
 
 # ---------------------------------------------------------------- pose readings
@@ -163,7 +167,7 @@ class ScoreTracker:
 
     def _grip(self, poses, hulls):
         gh = gripper_hulls(hulls)
-        d = {n: min_distance_to_hulls(surface_points(n, *poses[n]), gh) / G.MM for n in (*FOOD, 'plain', 'card', 'lid')}
+        d = {n: min_distance_to_hulls(surface_points(n, *poses[n]), gh) / G.MM for n in (*FOOD, 'plain', *ORDINARY, 'card', 'lid')}
         d['box'] = min_distance_to_hulls(surface_points('box', self.box_c, np.eye(3)), gh) / G.MM
         return d
 
@@ -182,7 +186,7 @@ class ScoreTracker:
         return self.result(poses)
 
     def state(self, poses):
-        st = dict(food=[], plain=[], cards=[], box={})
+        st = dict(food=[], plain=[], ordinary=[], cards=[], box={})
         clear = {}
         if len(self.clear) == self.clear.maxlen:
             for k in self.clear[0]:
@@ -206,6 +210,14 @@ class ScoreTracker:
         gaps = [float(np.dot(front - q, n_card)) for q in ring + [rim]]
         st['plain'].append(dict(disp=float(np.linalg.norm(np.asarray(p) - p0) / G.MM), gap=float(min(gaps) / G.MM),
                                 grip_clear=clear.get('plain')))
+        for n in ORDINARY:
+            # r5: an ordinary magnet stays where it was, back face on the steel (gap = geometry.magnet_gap: the back-face
+            # disc's nearest point to the sheet's front face, the same reading the magnetic pull uses; None if it faces away)
+            p, r = poses[n]
+            p0, _ = self.start[n]
+            g, nx, _ = G.magnet_gap(n, p, r)
+            st['ordinary'].append(dict(name=n, disp=float(np.linalg.norm(np.asarray(p) - p0) / G.MM),
+                                       gap=float(g / G.MM) if nx > 0 else None, grip_clear=clear.get(n)))
         c0, r0 = self.start['card']
         corners0, corners1 = G.card_corners(c0, r0), G.card_corners(cp, cr)
         st['cards'].append(dict(disp=float(np.linalg.norm(corners1 - corners0, axis=1).max() / G.MM),

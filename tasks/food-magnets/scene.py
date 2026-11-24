@@ -6,8 +6,9 @@ Bodies (every contact native PhysX; no attachment, fixed joint, kinematic body o
   upright and base; the box body (walls and floor). They carry no rigid body, so nothing can move them.
 - ``lid``: one dynamic rigid body on a revolute hinge (the only joint outside the arms) along the box's robot-side top
   edge, resting open at 100 deg against the hinge's limit.
-- ``strawberry``, ``cookie``, ``donut``, ``plain``: dynamic rigid bodies (convex prisms), each pulled toward the steel by
-  arena_fm.MagnetForces (F0 / (1 + g / 1 mm)^2 at its back-face disc), held only by that force and friction.
+- ``strawberry``, ``cookie``, ``donut``, ``plain``, ``round``, ``square``: dynamic rigid bodies (convex prisms), each
+  pulled toward the steel by arena_fm.MagnetForces (F0 / (1 + g / 1 mm)^2 at its back-face disc), held only by that force
+  and friction. ``round`` and ``square`` are the two ordinary magnets (r5, review TK-9NQBPY): they hold nothing.
 - ``card``: the note, a 152.4 x 101.6 x 0.2 mm dynamic rigid plate, held only by friction under the plain magnet.
 """
 import math
@@ -27,8 +28,9 @@ CONTACT_OFFSET = 0.001
 CONTACT_OFFSET_CARD = 0.0004
 
 COLORS = dict(strawberry=(0.80, 0.10, 0.12), cookie=(0.80, 0.60, 0.36), donut=(0.93, 0.52, 0.68),
-              plain=(0.04, 0.04, 0.045), card=(0.96, 0.96, 0.94), sheet=(0.60, 0.62, 0.64), ply=(0.86, 0.74, 0.55),
-              box=(0.86, 0.74, 0.55))
+              plain=(0.04, 0.04, 0.045), round=(0.04, 0.04, 0.045), square=(0.04, 0.04, 0.045),
+              card=(0.96, 0.96, 0.94), sheet=(0.60, 0.62, 0.64), ply=(0.86, 0.74, 0.55), box=(0.86, 0.74, 0.55))
+ITEMS = ('plain',) + G.NAMES + G.ORDINARY   # the six magnets, one per cell (r5)
 
 
 def linear_rgb(srgb):
@@ -36,12 +38,13 @@ def linear_rgb(srgb):
 
 
 def draw(seed):
-    """One trial's draw: cells (note + 3 food in 4 of the 6 cells), each centre y +/-10 mm and z anywhere in its row,
-    the box spot. seed 0 = a fixed nominal draw. Returns dict(name -> (y, z) above the table, m) + box_y."""
+    """One trial's draw: cells (r5: the note's magnet, the 3 food and the 2 ordinary magnets fill the 6 cells in a random
+    order), each centre y +/-10 mm and z anywhere in its row, the box spot. seed 0 = a fixed nominal draw.
+    Returns dict(name -> (y, z) above the table, m) + box_y."""
     rng = np.random.default_rng(seed if seed else 20261122)
-    cells = list(rng.permutation(6)[:4])
+    cells = list(rng.permutation(6))
     out = {}
-    for name, ci in zip(('plain',) + G.NAMES, cells):
+    for name, ci in zip(ITEMS, cells):
         col, row = G.CELLS[ci]
         y = G.COLS[col] + rng.uniform(-G.JITTER_Y, G.JITTER_Y)
         z = rng.uniform(*G.ROWS[row])
@@ -70,15 +73,16 @@ def lid_start(d):
 def gaps_ok(d, min_gap=0.020):
     """The card's rule: every draw keeps 20 mm or more between any two items, the note card included (rectangles)."""
     rects = []
-    for n in ('plain',) + G.NAMES:
+    for n in ITEMS:
         y, z = d[n]
         w, h = G.EXTENT[n]
         rects.append((y - w / 2, y + w / 2, z - h / 2, z + h / 2))
     y, z = d['plain']
     rects.append((y - G.CARD_W / 2, y + G.CARD_W / 2, z - G.CARD_BELOW_MAGNET - G.CARD_H / 2, z - G.CARD_BELOW_MAGNET + G.CARD_H / 2))
+    card = len(rects) - 1
     for i in range(len(rects)):
         for j in range(i + 1, len(rects)):
-            if {i, j} == {0, 4}:
+            if {i, j} == {0, card}:
                 continue      # the plain magnet sits on its card
             a, b = rects[i], rects[j]
             dy = max(a[0] - b[1], b[0] - a[1], 0.0)

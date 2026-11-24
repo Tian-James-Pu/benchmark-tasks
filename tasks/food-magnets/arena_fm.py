@@ -2,7 +2,8 @@
 build/ring-on-finger/arena_ring.py: ``Box`` subclasses in task.OBJECTS and an import hook wrapping
 ``yam_arena.scene.task_object`` / ``object_states`` so that
 
-- each magnet (strawberry, cookie, donut, plain) is one dynamic rigid body authored by scene.author_magnet,
+- each magnet (strawberry, cookie, donut, plain and, r5, the ordinary round and square) is one dynamic rigid body
+  authored by scene.author_magnet,
 - ``card`` is the note's rigid plate (scene.author_card),
 - ``lid`` is the hinged lid; its spawn also authors the static board and box body and the hinge (scene.author_lid).
 
@@ -24,7 +25,7 @@ import geometry as G
 
 SPECS = {}
 TRIAL = dict(seed=int(os.environ.get('ROBOCURVE_FM_SEED', '0')), tracker=None, audit={}, draw=None, magnets=None)
-MAGNETS = ('strawberry', 'cookie', 'donut', 'plain')
+MAGNETS = ('strawberry', 'cookie', 'donut', 'plain') + G.ORDINARY     # r5: + the two ordinary magnets
 
 
 @dataclass(frozen=True)

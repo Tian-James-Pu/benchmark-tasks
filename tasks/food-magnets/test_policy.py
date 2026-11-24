@@ -35,7 +35,7 @@ def render(cam, d, held=()):
     y, z = d['plain']
     cz = G.TABLE_TOP + z - G.CARD_BELOW_MAGNET
     paint(t - 1e-4, (np.abs(hit[:, 1] - y) <= G.CARD_W / 2) & (np.abs(hit[:, 2] - cz) <= G.CARD_H / 2), np.array(scene.COLORS['card']) * 255)
-    for name in ('plain',) + G.NAMES:
+    for name in scene.ITEMS:
         if name in held:
             continue
         y, z = d[name]
@@ -44,7 +44,10 @@ def render(cam, d, held=()):
         for x in np.linspace(back - G.THICK[name], back - 0.0005, 5):   # stacked sections: the prism's silhouette
             tt = (x - cam.pos[0]) / rays[:, 0]
             h = cam.pos + rays * tt[:, None]
-            ok = ((h[:, 1] - y) / (w / 2)) ** 2 + ((h[:, 2] - G.TABLE_TOP - z) / (hh / 2)) ** 2 <= 1
+            if name == 'square':
+                ok = (np.abs(h[:, 1] - y) <= w / 2) & (np.abs(h[:, 2] - G.TABLE_TOP - z) <= hh / 2)
+            else:
+                ok = ((h[:, 1] - y) / (w / 2)) ** 2 + ((h[:, 2] - G.TABLE_TOP - z) / (hh / 2)) ** 2 <= 1
             paint(tt, ok, np.array(scene.COLORS[name]) * 255)
     tt = (G.TABLE_TOP + G.BOX_H - cam.pos[2]) / rays[:, 2]
     h = cam.pos + rays * tt[:, None]
@@ -64,6 +67,9 @@ class Survey(unittest.TestCase):
             for n in G.NAMES:
                 err = min(np.linalg.norm(np.array(b['yz']) - np.array(d[n])) for b in blobs[:3])
                 self.assertLess(err, 0.012, (seed, n, err))
+            for n in G.ORDINARY + ('plain',):        # r5: no food blob on an ordinary (black) magnet or the note's
+                near = min(np.linalg.norm(np.array(b['yz']) - np.array(d[n])) for b in blobs)
+                self.assertGreater(near, 0.05, (seed, n, near))
             spot, _ = V.find_box(img, cam)
             self.assertEqual(G.SPOTS[spot], d['box_y'], seed)
 

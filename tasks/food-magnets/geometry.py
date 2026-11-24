@@ -30,14 +30,20 @@ FORCE_CUTOFF = 0.060                    # no pull beyond a 60 mm back-face gap (
 
 FOOD = P['food']
 NAMES = ('strawberry', 'cookie', 'donut')
+ORD = P['ordinary']                     # r5 (review TK-9NQBPY): two ordinary magnets that must stay on the board
+ORDINARY = tuple(ORD['names'])          # ('round', 'square')
+MAGNETS = NAMES + ('plain',) + ORDINARY
 THICK = dict(strawberry=FOOD['strawberry']['t'] * MM, cookie=FOOD['cookie']['t'] * MM, donut=FOOD['donut']['t'] * MM,
-             plain=P['plain']['t'] * MM)
+             plain=P['plain']['t'] * MM, round=ORD['round']['t'] * MM, square=ORD['square']['t'] * MM)
 MASS = dict(strawberry=FOOD['strawberry']['mass_g'] * 1e-3, cookie=FOOD['cookie']['mass_g'] * 1e-3,
-            donut=FOOD['donut']['mass_g'] * 1e-3, plain=P['plain']['mass_g'] * 1e-3)
+            donut=FOOD['donut']['mass_g'] * 1e-3, plain=P['plain']['mass_g'] * 1e-3,
+            round=ORD['round']['mass_g'] * 1e-3, square=ORD['square']['mass_g'] * 1e-3)
 # extents in the board plane (y width, z height)
 EXTENT = dict(strawberry=(FOOD['strawberry']['w'] * MM, FOOD['strawberry']['h'] * MM),
               cookie=(FOOD['cookie']['dia'] * MM,) * 2, donut=(FOOD['donut']['od'] * MM,) * 2,
-              plain=(P['plain']['dia'] * MM,) * 2)
+              plain=(P['plain']['dia'] * MM,) * 2, round=(ORD['round']['dia'] * MM,) * 2,
+              square=(ORD['square']['w'] * MM, ORD['square']['h'] * MM))
+SQUARE_CORNER_R = ORD['square']['corner_r'] * MM
 
 CARD = P['cards']
 CARD_W, CARD_H, CARD_T = CARD['w'] * MM, CARD['h'] * MM, CARD['t'] * MM
@@ -111,6 +117,16 @@ def outline(name, n=40):
         y = y * f
         y = y / np.abs(y).max() * w / 2
         return np.column_stack([y, z * h / 2])
+    if name == 'square':
+        # r5: rounded square (corner radius SQUARE_CORNER_R), n points, convex, counter-clockwise like the ellipses
+        rc = SQUARE_CORNER_R
+        k = max(2, n // 4)
+        pts = []
+        for i, (cy, cz) in enumerate(((1, 1), (-1, 1), (-1, -1), (1, -1))):
+            a0 = math.pi / 2 * i
+            for a in np.linspace(a0, a0 + math.pi / 2, k, endpoint=False):
+                pts.append((cy * (w / 2 - rc) + rc * math.cos(a), cz * (h / 2 - rc) + rc * math.sin(a)))
+        return np.array(pts)
     return np.column_stack([np.cos(t) * w / 2, np.sin(t) * h / 2])
 
 

@@ -1,5 +1,5 @@
-"""Scorer tests: every negative-control row of the card's scorer (card_scorer.py = generated/v2/cards/food-magnets/
-scorer.py r4, copied unchanged) through scoring.score, plus ScoreTracker readings from synthetic poses."""
+"""Scorer tests: every negative-control row of the card's scorer (card_scorer.py, r5: review TK-9NQBPY added two
+ordinary magnets that must stay on the board) through scoring.score, plus ScoreTracker readings from synthetic poses."""
 import unittest
 
 import numpy as np
@@ -11,7 +11,7 @@ import scoring
 
 
 def start_poses(d):
-    p = {n: (np.array(scene.body_start(n, d)), np.eye(3)) for n in ('strawberry', 'cookie', 'donut', 'plain')}
+    p = {n: (np.array(scene.body_start(n, d)), np.eye(3)) for n in ('strawberry', 'cookie', 'donut', 'plain') + G.ORDINARY}
     p['card'] = (np.array(scene.card_start(d)), np.eye(3))
     p['lid'] = (np.array(scene.lid_start(d)), G.LID_OPEN_ROT.copy())
     return p
@@ -42,24 +42,34 @@ def hulls_at(c):
 class CardRows(unittest.TestCase):
     def test_card_rows(self):
         rows = card_scorer.rows()
-        self.assertEqual(len(rows), 52)
+        self.assertEqual(len(rows), 69)
         for name, st, exp in rows:
             with self.subTest(name):
                 self.assertAlmostEqual(scoring.score(st), exp)
                 self.assertAlmostEqual(card_scorer.score(st), exp)
 
+    def test_box_every_loose_magnet_scores_zero(self):
+        """r5 (review TK-9NQBPY): boxing every magnet that does not hold the note (3 food + 2 ordinary), lid shut: 0."""
+        st = card_scorer.base([card_scorer.food_in_box(-30, -40), card_scorer.food_in_box(), card_scorer.food_in_box(25, 40)])
+        self.assertEqual(scoring.score(st), 1.0)
+        for o in st['ordinary']:
+            o.update(**card_scorer.BOXED)
+        self.assertEqual(scoring.score(st), 0.0)
+
     def test_blind_sweep(self):
-        """The card's best fixed (blind) plan: mean 0.0426 over every assignment, jitter point and box spot; band sweeps 0;
+        """r5: every fixed (blind) plan is bounded by 0.05; the 3-cell reference is exactly 1/80; band sweeps 0;
         cross-checked through scoring.score on 2,000 random draws."""
         import random
-        (m, combo), _, _, lib, _ = card_scorer.best_fixed_plan()
-        self.assertAlmostEqual(m, 0.0426, places=4)
-        self.assertLess(m, 0.25)
+        self.assertAlmostEqual(card_scorer.analytic_bound(), 0.05)
+        lib = card_scorer.pattern_library()
+        probs = {k: card_scorer.cell_probs(lib[k]) for k in ('none', '1@(-15,-15)z')}
+        cells3 = ['1@(-15,-15)z'] * 3 + ['none'] * 3
+        self.assertAlmostEqual(card_scorer.plan_mean(cells3, probs), 1 / 80)
         self.assertEqual(scoring.score(card_scorer.base([card_scorer.food_on_table() for _ in range(3)], card_scorer.LID_OPEN)), 0.0)
-        plan = card_scorer.to_abs(combo, lib)
-        rng = random.Random(20261122)
+        plan = card_scorer.to_abs(cells3, lib)
+        rng = random.Random(20261124)
         mc = sum(scoring.score(card_scorer.draw_state(plan, card_scorer.concrete_draw(rng), 0)) for _ in range(2000)) / 2000
-        self.assertLess(mc, 0.125)
+        self.assertLess(mc, 0.05)
 
     def test_same_thresholds(self):
         self.assertEqual(scoring.S, card_scorer.S)
@@ -114,6 +124,36 @@ class Tracker(unittest.TestCase):
         p['donut'] = self.p0['donut']
         self.assertEqual(self.run_steps(p)['score'], 0.0)
 
+    def test_ordinary_kept_readings(self):
+        r = self.run_steps(boxed(self.d, self.p0))
+        for o in r['state']['ordinary']:
+            self.assertLess(o['disp'], 1e-6)
+            self.assertLess(abs(o['gap']), 0.2)
+
+    def test_ordinary_boxed_scores_zero(self):
+        """r5: the route the review names, every loose magnet boxed (here both ordinary magnets on the box floor)."""
+        p = boxed(self.d, self.p0)
+        for k, n in enumerate(G.ORDINARY):
+            c = np.array([G.BOX_X + 0.02, self.d['box_y'] + (k - 0.5) * 0.04, G.TABLE_TOP + G.FLOOR_T + 0.016])
+            p[n] = (c, G.rot_y(90))
+        r = self.run_steps(p)
+        self.assertEqual(r['score'], 0.0, r['explanation'])
+        self.assertIn('not kept', r['explanation'])
+
+    def test_ordinary_slid_on_board(self):
+        p = boxed(self.d, self.p0)
+        c, rr = p['square']
+        p['square'] = (c + [0, 0.0105, 0], rr)
+        self.assertEqual(self.run_steps(p)['score'], 0.0)
+        p['square'] = (c + [0, 0.0095, 0], rr)
+        self.assertEqual(self.run_steps(p)['score'], 1.0)
+
+    def test_ordinary_lifted_off_steel(self):
+        p = boxed(self.d, self.p0)
+        c, rr = p['round']
+        p['round'] = (c + [-0.0016, 0, 0], rr)          # back face 1.6 mm off the steel
+        self.assertEqual(self.run_steps(p)['score'], 0.0)
+
 
 class Draws(unittest.TestCase):
     def test_draws_keep_gaps(self):
@@ -121,8 +161,16 @@ class Draws(unittest.TestCase):
             d = scene.draw(seed)
             self.assertTrue(scene.gaps_ok(d), seed)
             self.assertIn(d['box_y'], G.SPOTS)
-            cells = {d[n + '_cell'] for n in ('plain',) + G.NAMES}
-            self.assertEqual(len(cells), 4)
+            cells = {d[n + '_cell'] for n in scene.ITEMS}
+            self.assertEqual(len(cells), 6)
+
+    def test_seed1_keeps_the_r4_layout(self):
+        """r5 fills the two cells left empty before; seed 1's note and food magnets and box spot are unchanged."""
+        d = scene.draw(1)
+        got = {n: (round(d[n][0] * 1000), round(d[n][1] * 1000)) for n in scene.ITEMS}
+        self.assertEqual({n: got[n] for n in ('plain', 'strawberry', 'cookie', 'donut')},
+                         dict(plain=(-4, 298), strawberry=(-133, 158), cookie=(141, 151), donut=(5, 161)))
+        self.assertEqual(round(d['box_y'] * 1000), 195)
 
 
 class Magnet(unittest.TestCase):

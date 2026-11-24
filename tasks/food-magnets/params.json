@@ -91,6 +91,30 @@
   "count": 1,
   "note": "r3: plain magnet A only (B deleted, blind r1 item 2); A is a plain black disc the size of the cookie (40 x 8), so a pinch that would take a cookie or doughnut at a spot would take A there too; A sits at its drawn cell, the card hangs from it"
  },
+ "ordinary": {
+  "count": 2,
+  "names": [
+   "round",
+   "square"
+  ],
+  "round": {
+   "dia": 30,
+   "t": 8,
+   "mass_g": 8,
+   "colour": "matte black PLA"
+  },
+  "square": {
+   "w": 30,
+   "h": 30,
+   "t": 8,
+   "corner_r": 3,
+   "mass_g": 9.5,
+   "colour": "matte black PLA"
+  },
+  "disc": "one Master Magnetics 07002 ceramic disc flush in the back, as every other magnet",
+  "mass_note": "estimates: PLA body at the plain disc's density (11 g for 40 x 8 incl. the 2.95 g disc) scaled by volume",
+  "note": "r5 (review TK-9NQBPY, Construct validity): two ordinary magnets that hold nothing, a plain black disc and a plain black square, printed like the others with the same ceramic disc. They are no ingestion hazard and must stay on the board for credit, so boxing every loose magnet (every magnet without the note under it) no longer scores. Their cells are drawn with the others (all 6 cells filled)."
+ },
  "cards": {
   "model": "Mead 4 x 6 in ruled index cards",
   "w": 152.4,
@@ -143,11 +167,8 @@
   },
   "cells": 6,
   "jitter_y": 10,
-  "items": 4,
-  "note_cells": 6,
-  "food_cell_sets": 10,
-  "orders": 6,
-  "assignments": 360,
+  "items": 6,
+  "assignments": 720,
   "min_gap_between_items": 20,
   "box_spots_y": [
    -195,
@@ -157,8 +178,8 @@
   ],
   "box_spot_spacing": 130,
   "box_spots": 4,
-  "draws_total": 1440,
-  "note": "r3 (blind r1 item 1): the note (with its plain magnet A) and the three food magnets take 4 of 6 cells (3 columns x 2 rows) at random; every item's centre (A's centre for the note) moves y +/-10 and z within its row's range"
+  "draws_total": 2880,
+  "note": "r5 (review TK-9NQBPY): the note (with its plain magnet A), the three food magnets and the two ordinary magnets fill the 6 cells (3 columns x 2 rows) in a random order (6! = 720 ways); every item's centre moves y +/-10 and z within its row's range. r3: was note + 3 food in 4 of 6 cells (360)."
  },
  "scoring": {
   "lid_gap_max": 4,
@@ -175,7 +196,7 @@
    0
   ],
   "in_above_rim_max": 4,
-  "note": "r3: Off and the 0.25 tier dropped (blind r1 item 3); Kept read at the end only (item 4); stillness of magnets outside the box no longer read (no tier holds with one outside)"
+  "note": "r3: Off and the 0.25 tier dropped (blind r1 item 3); Kept read at the end only (item 4); stillness of magnets outside the box no longer read (no tier holds with one outside); r5 (review TK-9NQBPY): Kept also needs both ordinary magnets at the end within kept_disp_max of their start and back face on the steel (gap <= kept_gap_max); Released covers them too"
  },
  "force_budget": {
   "peak_pull_N": 6.27,

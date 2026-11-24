@@ -3,6 +3,7 @@
 Policies:
   demo     demo_policy.MagnetDemo: top and wrist cameras + joint readings only (full plan)
   hover    the same, holding the last magnet over the open box (baseline: never released, lid open)
+  boxall   r5 red team: the demo plus the two ordinary magnets (drawn centres from the layout): every loose magnet boxed
   nothing  hold the ready joint targets (baseline: do nothing)
   dream    Dream-1 (dreamlabs/dream-1-beta via inspect_robots_dream), cameras + joints + the instruction
 
@@ -78,7 +79,7 @@ def audit(stage):
     """Fail closed on attachments, joints outside the robots other than the lid hinge, or a kinematic / missing body."""
     from pxr import UsdPhysics
     res = dict(attachments=[], joints_outside_robots=[], hinge=None, bodies={}, static_fixtures=[], physics_scenes=[])
-    names = ('strawberry', 'cookie', 'donut', 'plain', 'card', 'lid')
+    names = ('strawberry', 'cookie', 'donut', 'plain', 'card', 'lid', 'round', 'square')
     for prim in stage.Traverse():
         path = str(prim.GetPath())
         schemas = [str(s) for s in prim.GetAppliedSchemas()]
@@ -112,7 +113,7 @@ def audit(stage):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--policy', choices=('demo', 'hover', 'nothing', 'dream'), default='nothing')
+    ap.add_argument('--policy', choices=('demo', 'hover', 'boxall', 'nothing', 'dream'), default='nothing')
     ap.add_argument('--wall-limit', type=float, default=2150.0, help='stop stepping after this many seconds (still scores)')
     ap.add_argument('--dream-rows-per-request', type=int, choices=(1, 2, 4, 8), default=2)
     ap.add_argument('--steps', type=int, default=None, help=f'control steps (nothing: 60; else up to {MAX_STEPS})')
@@ -200,7 +201,7 @@ def main():
         save()
 
         ready = emb._ready.detach().clone()
-        NAMES = ('strawberry', 'cookie', 'donut', 'plain', 'card', 'lid')
+        NAMES = ('strawberry', 'cookie', 'donut', 'plain', 'card', 'lid') + G.ORDINARY
 
         def measure():
             return {n: AR.body_pose(env, n) for n in NAMES}
@@ -210,7 +211,7 @@ def main():
 
         def summary(p):
             out = {}
-            for n in ('strawberry', 'cookie', 'donut', 'plain'):
+            for n in ('strawberry', 'cookie', 'donut', 'plain') + G.ORDINARY:
                 g, nx, _ = G.magnet_gap(n, *p[n])
                 out[n] = dict(pos_mm=(p[n][0] / G.MM).round(2), gap_mm=round(g / G.MM, 3), facing=round(nx, 4))
             out['card'] = dict(pos_mm=(p['card'][0] / G.MM).round(2))
@@ -244,7 +245,7 @@ def main():
                                  [GRIPPER['velocity'] / abs(FINGER_OPEN) / CONTROL_HZ]), 2)
         policy = dream = None
         request_audit, session_audit, queued = [], {'session_count': 0}, []
-        if args.policy in ('demo', 'hover'):
+        if args.policy in ('demo', 'hover', 'boxall'):
             from demo_policy import make_policy
             policy = make_policy(320, 176, CONTROL_HZ, mode=args.policy)
             report['policy_description'] = 'scripted: top and wrist camera RGB, rig calibration, joint readings only'
@@ -338,7 +339,8 @@ def main():
         clear = {k: v for k, v in (
             [(f'food{i}', f.get('grip_clear')) for i, f in enumerate(released_state['food'])] +
             [('plain', released_state['plain'][0].get('grip_clear')), ('card', released_state['cards'][0].get('grip_clear')),
-             ('box', released_state['box'].get('grip_clear')), ('lid', released_state['box'].get('lid_grip_clear'))])}
+             ('box', released_state['box'].get('grip_clear')), ('lid', released_state['box'].get('lid_grip_clear'))] +
+            [(o.get('name', f'ordinary{i}'), o.get('grip_clear')) for i, o in enumerate(released_state['ordinary'])])}
         report['released_clearances_mm'] = clear
         # post-run jog to ready (2 s; grippers unchanged), then the reading for In, Lid shut and Kept
         jog = ready.detach().cpu().numpy()[0].copy()
@@ -349,6 +351,8 @@ def main():
         for i, f in enumerate(final_state['food']):
             f['grip_clear'] = released_state['food'][i].get('grip_clear')
         final_state['plain'][0]['grip_clear'] = released_state['plain'][0].get('grip_clear')
+        for i, o in enumerate(final_state['ordinary']):
+            o['grip_clear'] = released_state['ordinary'][i].get('grip_clear')
         final_state['cards'][0]['grip_clear'] = released_state['cards'][0].get('grip_clear')
         final_state['box']['grip_clear'] = released_state['box'].get('grip_clear')
         final_state['box']['lid_grip_clear'] = released_state['box'].get('lid_grip_clear')
