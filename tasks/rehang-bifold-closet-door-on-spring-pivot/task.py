@@ -1,7 +1,7 @@
 """The station table stands in for a bedroom floor. Across it stands the front wall of a reach-in closet with a 24 x
 80-3/4 in finished opening (61.0 cm wide, 205.1 cm high) and, in the opening, a full-size two-panel bifold closet
-door: two hollow-core molded panels 29.8 cm wide, 200.7 cm tall and 3.5 cm thick, hinged together, white primer
-finish, a round knob on the lead panel. The door hangs from a 1 in aluminium track under the head jamb. The pivot
+door: two louvred pine panels 30.0 cm wide, 200.0 cm tall and 3.5 cm thick (a 24 x 80 in louvred pine bifold, ReliaBilt,
+listed at 15.2 lb), hinged together, white primer finish, a round knob on the lead panel. The door hangs from a 1 in aluminium track under the head jamb. The pivot
 panel's spring-loaded top pivot pin is in the top pivot bracket next to the left jamb, and the lead panel's guide is
 in the track. At the floor, the pivot panel's bottom pivot bolt (a toothed wheel and a pin) belongs in a steel jamb
 bracket screwed to the left jamb and the floor: a 7 cm slot along the opening, with toothed rails on both sides of it.
@@ -31,18 +31,18 @@ TOP = TABLE_TOP[SCENE]  # the floor stand-in
 IN = 0.0254
 OPEN_W = 24.0 * IN  # finished opening width
 OPEN_H = 80.75 * IN  # finished opening height (Masonite chart for a 79 in panel)
-H = 79.0 * IN  # panel height
-W = 11.75 * IN  # each panel's width (two panels = 23.5 in set, 1/4 in clear at the jamb)
+H = 78.75 * IN  # panel height (ReliaBilt 24 x 80 in louvred pine bifold: actual 23.63 x 78.75 x 1.375 in)
+W = 11.75 * IN  # each panel's width (two panels and the hinge gap = 23.62 in, 1/4 in clear at the jamb)
 T = 1.375 * IN  # panel thickness
 PIV_IN = 1.25 * IN  # pivot and guide holes' centres from the panel's edges (JELD-WEN JII103)
 JAMB_GAP = 0.25 * IN  # pivot panel to jamb
 HINGE_GAP = 0.003  # between the two panels at their hinges
 TRACK_H = 1.0 * IN  # "1 in top track"
 TOP_GAP = 0.375 * IN  # door top to track, as adjusted
-SEAT_BOTTOM = OPEN_H - TRACK_H - TOP_GAP - H  # door bottom above the floor when seated: 3/8 in
+SEAT_BOTTOM = OPEN_H - TRACK_H - TOP_GAP - H  # door bottom above the floor when seated: 5/8 in
 
 # bottom pivot bolt and jamb bracket (reconstruction; see README)
-STEM = 0.0015  # bolt shank showing between the door's bottom and the wheel
+STEM = 0.0015 + 0.25 * IN  # bolt shank showing between the door's bottom and the wheel (adjusted for the 78-3/4 in panel)
 WHEEL_R, WHEEL_T = 0.011, 0.003  # the toothed adjusting wheel
 PIN_R, PIN_L, PIN_CHAMFER = 0.004, 0.004, 0.0015  # the pin below the wheel, with its rounded-off tip
 PLATE_T = 0.002  # bracket's floor plate
@@ -170,16 +170,20 @@ def _pose_b(mesh):
 
 
 def _panel_faces(y0, y1, prefix, look_line):
-    """A one-panel shaker face on both sides: a 1.5 mm groove outline 9 cm in from the edges."""
+    """A full-louvre face on both sides, drawn on the panel's solid slab: a frame line 5.7 cm in from the edges (the
+    stiles), a 6 cm top rail and a 15 cm bottom rail, and the slats' shadow lines every 3.2 cm between them."""
     out = []
-    inset, g = 0.09, 0.004
-    zb, zt = -H + 0.11, -0.11
+    stile, top_rail, bottom_rail, pitch, g = 0.057, 0.06, 0.15, 0.032, 0.004
+    zb, zt = -H + bottom_rail, -top_rail
     for side, x in (("f", -T / 2 - 0.0004), ("b", T / 2 + 0.0004)):
-        ya, yb = y0 + inset, y1 - inset
-        out += [(f"{prefix}{side}l", m.box((0.0008, g, zt - zb), (x, ya, (zb + zt) / 2)), look_line),
-                (f"{prefix}{side}r", m.box((0.0008, g, zt - zb), (x, yb, (zb + zt) / 2)), look_line),
-                (f"{prefix}{side}t", m.box((0.0008, yb - ya, g), (x, (ya + yb) / 2, zt)), look_line),
-                (f"{prefix}{side}u", m.box((0.0008, yb - ya, g), (x, (ya + yb) / 2, zb)), look_line)]
+        ya, yb = y0 + stile, y1 - stile
+        lines = [m.box((0.0008, g, zt - zb), (x, ya, (zb + zt) / 2)), m.box((0.0008, g, zt - zb), (x, yb, (zb + zt) / 2)),
+                 m.box((0.0008, yb - ya, g), (x, (ya + yb) / 2, zt)), m.box((0.0008, yb - ya, g), (x, (ya + yb) / 2, zb))]
+        z = zb + pitch
+        while z < zt - 0.01:
+            lines.append(m.box((0.0008, yb - ya, 0.006), (x, (ya + yb) / 2, z)))
+            z += pitch
+        out.append((f"{prefix}{side}", m.join(*lines), look_line))
     return out
 
 
@@ -227,7 +231,7 @@ def _lead_panel_link():
                    com=tuple(float(v) for v in com), inertia=_panel_inertia(), friction=0.0, damping=0.3, parent="pivot_panel")
 
 
-PANEL_MASS = 1.2  # kg each (a real 24 x 80 in hollow-core pair weighs about 9-10 kg: README)
+PANEL_MASS = 6.90 / 2  # kg each: the real pair's listed 15.2 lb (6.90 kg), README
 
 
 def _panel_inertia():
@@ -476,6 +480,42 @@ m.on_step(TRIAL.step)
 m.on_reset(TRIAL.reset)
 
 
+# -- embodiment: two i2rt YAM Ultra (v2) arms --------------------------------------------------------------------------
+# yam_arena models the standard YAM (DM4340 motors at joints 1-3, DM4310 at 4-6). The YAM Ultra v2 has the same
+# kinematics to within a few millimetres, drives joint 4 with a DM4340 too and has heavier links 2 and 3: i2rt's
+# i2rt/robots/config/yam_ultra_v2.yml (motors, gains) and i2rt/robot_models/arm/yam_ultra/v2/README.md (link masses).
+# The task applies those to both arms at every reset, in the simulation only: joint 4 gets the DM4340's limits that
+# yam_arena already uses for joints 1-3 (27 Nm peak, 5.5 rad/s) and Ultra v2's gains (kp 40, kd 3). It also caps each
+# finger at 40 N (yam_arena allows i2rt's driver limit of 50 N).
+J4 = dict(effort=27.0, velocity=5.5, stiffness=40.0, damping=3.0)
+FINGER_CAP = 40.0  # N a finger
+ULTRA_MASS = {"base": 0.940115, "link1": 0.101218, "link2": 1.63122, "link3": 1.06053, "link4": 0.46079, "link5": 0.403307}
+
+
+def _ultra_arms(env=None):
+    if env is None:
+        return
+    import torch
+    base = env.unwrapped
+    for side in ("left", "right"):
+        r = base.scene[f"{side}_robot"]
+        j4 = r.find_joints("joint4")[0]
+        one = lambda v: torch.full((1, 1), float(v), device=r.device)  # noqa: E731
+        r.write_joint_effort_limit_to_sim_index(limits=one(J4["effort"]), joint_ids=j4)
+        r.write_joint_velocity_limit_to_sim_index(limits=one(J4["velocity"]), joint_ids=j4)
+        r.write_joint_stiffness_to_sim_index(stiffness=one(J4["stiffness"]), joint_ids=j4)
+        r.write_joint_damping_to_sim_index(damping=one(J4["damping"]), joint_ids=j4)
+        names = list(ULTRA_MASS)
+        ids = [r.find_bodies(n)[0][0] for n in names]
+        masses = torch.tensor([[ULTRA_MASS[n] for n in names]], dtype=torch.float32, device=r.data.body_mass.torch.device)
+        r.set_masses_index(masses=masses, body_ids=ids)
+        fingers = r.find_joints("joint[7-8]")[0]
+        r.write_joint_effort_limit_to_sim_index(limits=torch.full((1, len(fingers)), FINGER_CAP, device=r.device), joint_ids=fingers)
+
+
+m.on_reset(_ultra_arms)
+
+
 def score(objects):
     return float(TRIAL.value)
 
@@ -506,10 +546,39 @@ def _door_points(st):
     return a, b, r @ rs
 
 
+# -- the held door's weight, fed forward to the arm commands -----------------------------------------------------------
+# The embodiment takes joint position targets, and its joints hold a load only by lagging their targets (torque = gain
+# x lag). Once the hands have the door, the demo adds to each arm's target the lag that its half of the door's weight
+# needs, from a static model of the arm on the URDF's kinematics, as a load-compensating controller would.
+KP_ARM = np.array([80.0, 80.0, 80.0, J4["stiffness"], 10.0, 10.0])
+_STATIC = {}
+
+
+def load_torque(q, force):
+    """Joint torques an arm at joints `q` needs to hold `force` (N, world frame) pushing on its TCP."""
+    from yam_arena.urdf import forward_kinematics
+    if not _STATIC:
+        from yam_arena import YAM_URDF
+        from yam_arena.constants import ARM_JOINTS, TCP_OFFSET
+        from yam_arena.urdf import parse_joints
+        _STATIC.update(urdf=YAM_URDF, joints=parse_joints(YAM_URDF), names=ARM_JOINTS, tcp=np.array(TCP_OFFSET))
+    st = _STATIC
+    P = forward_kinematics(st["urdf"], {n: float(v) for n, v in zip(st["names"], q)})
+    tcp = P["gripper"][:3, :3] @ st["tcp"] + P["gripper"][:3, 3]
+    tau = np.zeros(6)
+    for i, n in enumerate(st["names"]):
+        j = st["joints"][n]
+        o = P[j.child][:3, 3]
+        ax = P[j.child][:3, :3] @ (j.axis / np.linalg.norm(j.axis))
+        tau[i] = -np.cross(tcp - o, np.asarray(force, float)) @ ax
+    return tau
+
+
 GRIP_UP = {"left": 0.14, "right": 0.34}  # each hand's grip height above the door's bottom edge
 GRIP_IN = 0.026  # TCP this far in from the panels' front (hinge) edge
 OVER = 0.0085  # pin tip this high while carried over the rails (rail tops at 5 mm)
 SERVO_GAIN, SERVO_STEP = 0.2, 0.004
+LIFT_S, UNLOAD_S = 1.5, 1.2  # the hands take the door's weight, and give it to the bracket, over these times
 
 
 def demo_script(ctx):
@@ -559,6 +628,33 @@ def demo_script(ctx):
     if mode == "none":
         yield from ctx.until(lambda: False, timeout=20.0)
         return
+
+    from inspect_robots.types import Action
+    from inspect_robots_yam.packing import pack
+    from yam_arena import ik as _ik
+
+    share = {"left": 0.0, "right": 0.0}  # N of the door's weight each hand is set to carry
+    total = 2 * PANEL_MASS * 9.81 + SPRING_SEATED + SPRING_K * (OVER + 0.004)  # the door and the pivot spring, lifted
+
+    def action():
+        cmds = []
+        for sd in ("left", "right"):
+            c = np.array(ctx.arm(sd).cmd, dtype=float)
+            if share[sd] > 0.0:
+                c[:6] = np.clip(c[:6] + load_torque(c[:6], (0.0, 0.0, -share[sd])) / KP_ARM, _ik.LOWER, _ik.UPPER)
+            cmds.append(c)
+        return Action(data=pack(cmds[0], cmds[1]))
+
+    ctx.action = action
+
+    def ramp(to, t):
+        """Ramp each hand's share to `to` times its half of the load."""
+        start = dict(share)
+        n = max(1, round(t * d.CONTROL_HZ))
+        for k in range(1, n + 1):
+            for a in arms:
+                share[a.side] = start[a.side] + (to * total / len(arms) - start[a.side]) * k / n
+            yield
     _, inward = grip_point("left")
     phi = math.degrees(math.atan2(inward[1], inward[0]))
     g = d.level(phi)
@@ -573,6 +669,7 @@ def demo_script(ctx):
     if mode == "drag":  # careless: push the bottom back toward the bracket without lifting it
         yield from carry(np.array([XP, YP, t0[2]]), 0.002, 6.0, "drag the pin")
     else:
+        yield from ramp(1.0, LIFT_S)
         yield from carry(t0 + np.array([0.0, 0.0, OVER + 0.002 - (t0[2] - TOP)]), 0.0015, 3.0, "lift the door on its top pivot spring")
         lane = np.array([XP - 0.006, t0[1] if mode == "straight_back" else YP, TOP + OVER + 0.002])
         yield from carry(lane, 0.002, 5.0, "carry the pin back toward the bracket")
@@ -584,11 +681,12 @@ def demo_script(ctx):
             yield from carry(np.array([over[0], over[1], TOP + SEAT_TIP + 0.0003]), 0.0008, 3.0, "lower the pin into the slot")
             # unload the arms before letting go: command them down until the door's weight is on the bracket, so that
             # their sag does not spring back up and drag the panels with them while the fingers open
-            yield from together([a.move(a.at() + np.array([0.0, 0.0, -0.008]), t=0.8, label="let the bracket take the weight") for a in arms])
+            yield from together([a.move(a.at() + np.array([0.0, 0.0, -0.008]), t=UNLOAD_S, label="let the bracket take the weight") for a in arms] + [ramp(0.0, UNLOAD_S)])
             yield from ctx.left.wait(0.4)
             if mode == "hold":  # seat it but keep holding
                 yield from ctx.until(lambda: False, timeout=8.0)
                 return
+    yield from ramp(0.0, 0.3)  # nothing to carry once the fingers open
     yield from together([a.open(t=0.4, label="let go") for a in arms])
     yield from together([a.move(a.at() - 0.10 * inward, t=1.5, label="back off along the panels") for a in arms])
     yield from together([a.move(a.at() + np.array([-0.02, 0.06 if a.side == "left" else -0.06, 0.10]), t=1.5, label="away") for a in arms])
